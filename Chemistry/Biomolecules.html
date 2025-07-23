@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biomolecules</title>
+
+    <!-- RDKit.js for Chemical Structure Drawing -->
+    <script src="https://unpkg.com/@rdkit/rdkit/dist/RDKit_minimal.js"></script>
+
+    <!-- MathJax v3 Configuration (for simple inline formulas) -->
+    <script>
+    window.MathJax = {
+      loader: {load: ['[tex]/mhchem', '[tex]/cancel']},
+      tex: {
+        packages: {'[+]': ['mhchem', 'cancel']},
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    
+    <!-- Link to Central Stylesheet -->
+    <link rel="stylesheet" href="../style_light.css">
+
+</head>
+<body class="body-content">
+    <!-- Top navigation bar placeholder -->
+    <nav class="global-nav" id="global-navbar"></nav>
+    
+    <!-- Sidebar placeholder -->
+    <nav id="index-sidebar"></nav>
+
+    <script src="../nav.js"></script>
+
+    <main class="main-content">
+        <h3 id="carbohydrates">Carbohydrates</h3>
+        <p>Carbohydrates are a large group of naturally occurring organic compounds, primarily produced by plants. Examples include glucose, sugar, and starch. Initially defined as 'hydrates of carbon' with the general formula \(\ce{C_x(H2O)_y}\), this definition was found to be too broad (e.g., acetic acid, \(\ce{CH3COOH}\), fits the formula but is not a carbohydrate) and also too restrictive (e.g., rhamnose, \(\ce{C6H12O5}\), is a carbohydrate but doesn't fit the formula).</p>
+        <div class="note-box">
+            <p><strong>Modern Definition:</strong> Carbohydrates are optically active polyhydroxy aldehydes or ketones, or compounds which produce such units on hydrolysis.</p>
+        </div>
+
+        <h4 id="classification-of-carbohydrates">Classification of Carbohydrates</h4>
+        <ol>
+            <li><strong>Monosaccharides:</strong> The simplest carbohydrates that cannot be hydrolysed further. Examples: Glucose, Fructose, Ribose.</li>
+            <li><strong>Oligosaccharides:</strong> Yield two to ten monosaccharide units on hydrolysis.
+                <ul>
+                    <li><strong>Disaccharides</strong> are the most common, yielding two units. Examples: Sucrose, Maltose, Lactose.</li>
+                </ul>
+            </li>
+            <li><strong>Polysaccharides:</strong> Yield a large number of monosaccharide units on hydrolysis. They are not sweet and are also called 'non-sugars'. Examples: Starch, Cellulose, Glycogen.</li>
+        </ol>
+
+        <hr>
+
+        <h3 id="monosaccharides">Monosaccharides</h3>
+        <h4 id="glucose">Structure of Glucose (\(\ce{C6H12O6}\))</h4>
+        <p>Glucose is an aldohexose, also known as dextrose. Its structure was elucidated based on the following evidence:</p>
+        <ul>
+            <li>On prolonged heating with HI, it forms n-hexane, suggesting a six-carbon straight chain.</li>
+            <li>It reacts with hydroxylamine (\(\ce{NH2OH}\)) and hydrogen cyanide (\(\ce{HCN}\)), confirming the presence of a carbonyl group (>C=O).</li>
+            <li>It gets oxidised by mild agents like bromine water to gluconic acid, indicating the carbonyl group is an aldehyde.</li>
+            <li>Acetylation with acetic anhydride gives glucose pentaacetate, confirming the presence of five -OH groups.</li>
+            <li>Oxidation with nitric acid yields saccharic acid (a dicarboxylic acid), indicating the presence of a primary alcohol group.</li>
+        </ul>
+        <p>This evidence points to the following open-chain structure for D-glucose:</p>
+        <div class="reaction-display">
+            <div class="molecule-container">
+                <div class="molecule" id="mol-glucose-open"></div>
+            </div>
+        </div>
+
+        <h5 id="cyclic-structure-of-glucose">Cyclic Structure of Glucose</h5>
+        <p>The open-chain structure could not explain some observations, such as glucose not giving the Schiff's test and the existence of two different crystalline forms (anomers): \(\alpha\)-glucose and \(\beta\)-glucose.</p>
+        <p>This led to the proposal of a cyclic hemiacetal structure, formed by the intramolecular reaction between the -OH group at C-5 and the -CHO group at C-1. This forms a six-membered ring, called a <strong>pyranose</strong> structure.</p>
+        <div class="reaction-display">
+            <div class="molecule-container">
+                <div class="molecule" id="mol-alpha-glucose"></div>
+            </div>
+            <div class="arrow-group"><div class="arrow">⇌</div></div>
+            <div class="molecule-container">
+                <div class="molecule" id="mol-glucose-open-eq"></div>
+            </div>
+            <div class="arrow-group"><div class="arrow">⇌</div></div>
+            <div class="molecule-container">
+                <div class="molecule" id="mol-beta-glucose"></div>
+            </div>
+        </div>
+        <div class="note-box">
+            <p><strong>Anomers:</strong> Isomers that differ in the configuration of the hydroxyl group at the anomeric carbon (C-1 in glucose). In the \(\alpha\)-anomer, the -OH on C-1 is trans to the \(\ce{-CH2OH}\) group, while in the \(\beta\)-anomer, it is cis.</p>
+        </div>
+
+        <h4 id="fructose">Structure of Fructose (\(\ce{C6H12O6}\))</h4>
+        <p>Fructose is a ketohexose. It also has a cyclic structure. The intramolecular reaction occurs between the C-2 keto group and the C-5 -OH group, forming a five-membered ring called a <strong>furanose</strong> structure.</p>
+        <div class="reaction-display">
+             <div class="molecule-container">
+                <div class="molecule" id="mol-alpha-fructose"></div>
+            </div>
+            <div class="plus-sign" style="font-size: 2em; align-self: center;">&</div>
+             <div class="molecule-container">
+                <div class="molecule" id="mol-beta-fructose"></div>
+            </div>
+        </div>
+
+        <hr>
+
+        <h3 id="disaccharides">Disaccharides</h3>
+        <p>In disaccharides, two monosaccharides are joined by an oxide linkage known as a <strong>glycosidic linkage</strong>. </p>
+        
+        <ol>
+            <li><p><strong>Sucrose:</strong> Formed from \(\alpha\)-D-glucose and \(\beta\)-D-fructose. The glycosidic linkage is between C1 of glucose and C2 of fructose (\(\alpha, \beta-1,2\) linkage). It is a <strong>non-reducing sugar</strong> because the aldehydic and ketonic groups are involved in the linkage.</p>
+                <div class="reaction-display">
+                    <div class="molecule-container">
+                        <div class="molecule" id="mol-sucrose"></div>
+                    </div>
+                </div>
+            </li>
+            <li><p><strong>Maltose:</strong> Formed from two units of \(\alpha\)-D-glucose. The linkage is between C1 of one unit and C4 of the other (\(\alpha-1,4'\) linkage). It is a <strong>reducing sugar</strong>.</p>
+                <div class="reaction-display">
+                    <div class="molecule-container">
+                        <div class="molecule" id="mol-maltose"></div>
+                    </div>
+                </div>
+            </li>
+            <li><p><strong>Lactose:</strong> Formed from \(\beta\)-D-galactose and \(\beta\)-D-glucose. The linkage is between C1 of galactose and C4 of glucose (\(\beta-1,4'\) linkage). It is a <strong>reducing sugar</strong>.</p>
+                <div class="reaction-display">
+                    <div class="molecule-container">
+                        <div class="molecule" id="mol-lactose"></div>
+                    </div>
+                </div>
+            </li>
+        </ol>
+
+        <h3 id="polysaccharides">Polysaccharides</h3>
+        <ol>
+            <li><strong>Starch:</strong> A polymer of \(\alpha\)-D-glucose. It has two components:
+                <ul>
+                    <li><strong>Amylose:</strong> A long, unbranched chain with \(\alpha-1,4'\) glycosidic linkages.</li>
+                    <li><strong>Amylopectin:</strong> A branched-chain polymer with \(\alpha-1,4'\) linkages in the chain and \(\alpha-1,6'\) linkages at the branch points.</li>
+                </ul>
+            </li>
+            <li><strong>Cellulose:</strong> A straight-chain polymer of \(\beta\)-D-glucose units joined by \(\beta-1,4'\) glycosidic linkages.</li>
+        </ol>
+
+        <hr>
+
+        <h3 id="proteins">Proteins</h3>
+        <p>Proteins are the most abundant biomolecules in living systems. They are polymers of \(\alpha\)-amino acids.</p>
+        <h4 id="amino-acids">Amino Acids</h4>
+        <p>Amino acids contain both an amino group (\(\ce{-NH2}\)) and a carboxyl group (\(\ce{-COOH}\)). In aqueous solution, they exist as dipolar ions called <strong>zwitterions</strong>.</p>
+        <div class="reaction-display">
+            <div class="molecule-container">
+                <div class="molecule" id="mol-alanine"></div>
+            </div>
+            <div class="arrow-group"><div class="arrow">⇌</div></div>
+            <div class="molecule-container">
+                <div class="molecule" id="mol-alanine-zwitterion"></div>
+            </div>
+        </div>
+        <p>There are about 20 common amino acids. Those that cannot be synthesized by the body are called <strong>essential amino acids</strong> and must be obtained through diet.</p>
+
+        <h4 id="peptide-bond">Peptide Bond</h4>
+        <p>Proteins are formed when amino acids link together via an amide linkage, called a <strong>peptide bond</strong> (\(\ce{-CO-NH-}\)). When two amino acids link, the product is a dipeptide. Many amino acids linked together form a polypeptide.</p>
+        <div class="reaction-display text-formula">
+            <span>Glycine + Alanine</span>
+            <div class="arrow-group"><div class="arrow">⟶</div></div>
+            <span>Glycylalanine (a dipeptide) + \(\ce{H2O}\)
+            </span>
+        </div>
+        <div class="reaction-display">
+            <div class="molecule-container">
+                <div class="molecule" id="mol-glycylalanine"></div>
+            </div>
+        </div>
+
+        <h4 id="structure-of-proteins">Structure of Proteins</h4>
+        <ul>
+            <li><strong>Primary Structure:</strong> The specific sequence of amino acids in a polypeptide chain.</li>
+            <li><strong>Secondary Structure:</strong> The local folding of the polypeptide chain into regular patterns like the \(\alpha\)-helix and \(\beta\)-pleated sheet, stabilized by hydrogen bonds.</li>
+            <li><strong>Tertiary Structure:</strong> The overall 3D folding of the polypeptide chain, giving rise to fibrous or globular shapes. It is stabilized by hydrogen bonds, disulfide linkages, van der Waals forces, and electrostatic forces.</li>
+            <li><strong>Quaternary Structure:</strong> The arrangement of multiple polypeptide chains (subunits) in a protein complex.</li>
+        </ul>
+
+        <hr>
+
+        <h3 id="nucleic-acids">Nucleic Acids</h3>
+        <p>Nucleic acids are polymers of nucleotides, responsible for the transmission of hereditary characteristics (heredity). There are two types: Deoxyribonucleic Acid (DNA) and Ribonucleic Acid (RNA).</p>
+        
+        <h4 id="composition-of-nucleic-acids">Chemical Composition of Nucleic Acids</h4>
+        <p>Complete hydrolysis of DNA or RNA yields three components:</p>
+        <ol>
+            <li><strong>A Pentose Sugar:</strong> \(\beta\)-D-ribose in RNA and \(\beta\)-D-2-deoxyribose in DNA.
+                <div class="reaction-display">
+                    <div class="molecule-container">
+                        <div class="molecule" id="mol-ribose"></div>
+                    </div>
+                    <div class="molecule-container">
+                        <div class="molecule" id="mol-deoxyribose"></div>
+                    </div>
+                </div>
+            </li>
+            <li><strong>Phosphoric Acid:</strong> Forms the phosphate group.</li>
+            <li><strong>Nitrogenous Bases:</strong>
+                <ul>
+                    <li><strong>Purines:</strong> Adenine (A) and Guanine (G).</li>
+                    <li><strong>Pyrimidines:</strong> Cytosine (C), Thymine (T) (in DNA only), and Uracil (U) (in RNA only).</li>
+                </ul>
+                <div class="reaction-display">
+                    <div class="molecule-container"><div class="molecule" id="mol-adenine"></div></div>
+                    <div class="molecule-container"><div class="molecule" id="mol-guanine"></div></div>
+                    <div class="molecule-container"><div class="molecule" id="mol-cytosine"></div></div>
+                    <div class="molecule-container"><div class="molecule" id="mol-thymine"></div></div>
+                    <div class="molecule-container"><div class="molecule" id="mol-uracil"></div></div>
+                </div>
+            </li>
+        </ol>
+
+        <h4 id="structure-of-nucleic-acids">Structure of Nucleic Acids</h4>
+        <ul>
+            <li>A <strong>Nucleoside</strong> is formed when a base is attached to the 1' position of the sugar.</li>
+            <li>A <strong>Nucleotide</strong> is formed when a phosphate group is linked to the 5' -OH group of a nucleoside.
+                <div class="reaction-display">
+                     <div class="molecule-container">
+                        <div class="molecule" id="mol-adenosine-monophosphate"></div>
+                    </div>
+                </div>
+            </li>
+            <li>Nucleotides are joined together by <strong>phosphodiester linkages</strong> between the 5' position of one sugar and the 3' position of the next, forming a polynucleotide chain.</li>
+        </ul>
+
+        <h4 id="dna-structure">DNA Structure</h4>
+        <p>DNA consists of two polynucleotide strands coiled around each other to form a <strong>double helix</strong>. The strands are held together by hydrogen bonds between specific pairs of bases:</p>
+        <ul>
+            <li>Adenine (A) always pairs with Thymine (T) with two hydrogen bonds.</li>
+            <li>Guanine (G) always pairs with Cytosine (C) with three hydrogen bonds.</li>
+        </ul>
+        <p>The two strands are complementary, not identical.</p>
+
+    </main>
+
+    <!-- RDKit Drawing Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            window.initRDKitModule().then(function(RDKit) {
+                window.RDKit = RDKit;
+                drawAllMolecules();
+            }).catch(e => {
+                console.error("RDKit initialization failed.", e);
+                document.querySelectorAll('.molecule').forEach(el => {
+                    el.innerHTML = '<p style="color: #ff5555; font-size: 0.8em;">Error: RDKit.js failed to load.</p>';
+                });
+            });
+        });
+
+        function drawAllMolecules() {
+            if (!window.RDKit) {
+                console.error("RDKit not initialized yet.");
+                return;
+            }
+
+            const moleculeData = {
+                'mol-glucose-open': { smiles: 'O=C[C@H](O)[C@@H](O)[C@H](O)[C@H](O)CO', label: 'D-Glucose (Open Chain)' },
+                'mol-alpha-glucose': { smiles: 'O[C@H]1[C@H](O)[C@@H](O)[C@H](CO)O[C@H]1O', label: 'α-D-Glucopyranose' },
+                'mol-glucose-open-eq': { smiles: 'O=C[C@H](O)[C@@H](O)[C@H](O)[C@H](O)CO', label: 'Equilibrium' },
+                'mol-beta-glucose': { smiles: 'O[C@@H]1[C@H](O)[C@@H](O)[C@H](CO)O[C@H]1O', label: 'β-D-Glucopyranose' },
+                'mol-alpha-fructose': { smiles: 'OC[C@]1(O)O[C@H](CO)[C@@H](O)[C@H]1O', label: 'α-D-Fructofuranose' },
+                'mol-beta-fructose': { smiles: 'OC[C@]1(O[C@H](CO)[C@@H](O)[C@H]1O)CO', label: 'β-D-Fructofuranose' },
+                'mol-sucrose': { smiles: 'O[C@H]1[C@H](O)[C@@H](O)[C@H](CO)O[C@H]1O[C@]2(CO)O[C@H](CO)[C@@H](O)[C@H]2O', label: 'Sucrose' },
+                'mol-maltose': { smiles: 'O[C@H]1[C@H](O)[C@@H](O)[C@H](CO)O[C@H]1O[C@H]2[C@H](O)[C@@H](O)[C@H](O)[C@H](CO)O2', label: 'Maltose' },
+                'mol-lactose': { smiles: 'O[C@H]1[C@H](O)[C@H](O[C@H]2[C@H](O)[C@@H](O)[C@H](O)[C@H](CO)O2)[C@H](CO)O1', label: 'Lactose' },
+                'mol-alanine': { smiles: 'C[C@@H](N)C(O)=O', label: 'Alanine' },
+                'mol-alanine-zwitterion': { smiles: 'C[C@@H]([NH3+])C([O-])=O', label: 'Zwitterion form' },
+                'mol-glycylalanine': { smiles: 'C[C@H](C(=O)O)NC(=O)CN', label: 'Glycylalanine (Gly-Ala)' },
+                'mol-ribose': { smiles: 'O[C@H]1[C@@H](O)[C@@H](O)[C@H](CO)O1', label: 'β-D-Ribose' },
+                'mol-deoxyribose': { smiles: 'O[C@H]1[C@@H](O)C[C@H](CO)O1', label: 'β-D-2-Deoxyribose' },
+                'mol-adenine': { smiles: 'N1=CN=C2NC=NC2=C1N', label: 'Adenine (A)' },
+                'mol-guanine': { smiles: 'NC=1NC(C=2N=CNC2N1)=O', label: 'Guanine (G)' },
+                'mol-cytosine': { smiles: 'n1ccc(=O)[nH]c1N', label: 'Cytosine (C)' },
+                'mol-thymine': { smiles: 'Cc1c[nH]c(=O)[nH]c1=O', label: 'Thymine (T)' },
+                'mol-uracil': { smiles: 'c1c[nH]c(=O)[nH]c1=O', label: 'Uracil (U)' },
+                'mol-adenosine-monophosphate': { smiles: 'Nc1ncnc2c1ncn2[C@H]1O[C@H](COP(O)(O)=O)[C@@H](O)[C@H]1O', label: 'Adenosine Monophosphate (a nucleotide)' },
+            };
+
+
+            for (const id in moleculeData) {
+                const element = document.getElementById(id);
+                if (element) {
+                    const data = moleculeData[id];
+                    try {
+                        const mol = window.RDKit.get_mol(data.smiles);
+                        if (mol) {
+                            const svg = mol.get_svg(200, 120); // Adjusted size slightly for clarity
+                            element.innerHTML = svg;
+                            
+                            const parent = element.parentElement;
+                            const existingLabel = parent.querySelector('.molecule-label');
+                            if (existingLabel) {
+                                existingLabel.remove();
+                            }
+                            
+                            if (data.label) {
+                                const labelDiv = document.createElement('div');
+                                labelDiv.className = 'molecule-label';
+                                labelDiv.innerText = data.label;
+                                parent.appendChild(labelDiv);
+                            }
+                        } else {
+                            throw new Error(`Invalid SMILES: ${data.smiles}`);
+                        }
+                        mol.delete();
+                    } catch (e) {
+                        console.error(`Error drawing molecule ${id}:`, e);
+                        element.innerHTML = `<p style="color: #ff5555; font-size: 0.8em; text-align: center;">Error:<br>Invalid SMILES</p>`;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

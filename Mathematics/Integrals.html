@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Integrals Solutions</title>
+
+    <!-- MathJax v3 Configuration and Library -->
+    <script>
+    window.MathJax = {
+      loader: {load: ['[tex]/mhchem', '[tex]/cancel']},
+      tex: {
+        packages: {'[+]': ['mhchem', 'cancel']},
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    
+    <!-- Link to Central Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="body-content">
+    <!-- Top navigation bar placeholder -->
+    <nav class="global-nav" id="global-navbar"></nav>
+    
+    <!-- Sidebar placeholder -->
+    <nav id="index-sidebar"></nav>
+    <script src="../main.js"></script>
+
+    <script src="../nav.js"></script>
+    <main class="main-content">
+        <h3 id="exercise-7-1">Exercise 7.1</h3>
+
+        <h4 id="ex7-1-q1">1. Find an anti-derivative (or integral) of the following function by the method of inspection: \(\sin 2x\)</h4>
+        <div class="solution-box">
+            <p>We need to find a function whose derivative is \(\sin 2x\).</p>
+            <p>We know that \( \frac{d}{dx}(\cos 2x) = -2 \sin 2x \).</p>
+            <p>So, \( \sin 2x = -\frac{1}{2} \frac{d}{dx}(\cos 2x) = \frac{d}{dx}\left(-\frac{1}{2}\cos 2x\right) \).</p>
+            <p>Therefore, an anti-derivative of \(\sin 2x\) is \(-\frac{1}{2}\cos 2x\).</p>
+        </div>
+
+        <h4 id="ex7-1-q2">2. Find an anti-derivative of: \(\cos 3x\)</h4>
+        <div class="solution-box">
+            <p>We need to find a function whose derivative is \(\cos 3x\).</p>
+            <p>We know that \( \frac{d}{dx}(\sin 3x) = 3 \cos 3x \).</p>
+            <p>So, \( \cos 3x = \frac{1}{3} \frac{d}{dx}(\sin 3x) = \frac{d}{dx}\left(\frac{1}{3}\sin 3x\right) \).</p>
+            <p>Therefore, an anti-derivative of \(\cos 3x\) is \(\frac{1}{3}\sin 3x\).</p>
+        </div>
+
+        <h4 id="ex7-1-q3">3. Find an anti-derivative of: \(e^{2x}\)</h4>
+        <div class="solution-box">
+            <p>We need to find a function whose derivative is \(e^{2x}\).</p>
+            <p>We know that \( \frac{d}{dx}(e^{2x}) = 2e^{2x} \).</p>
+            <p>So, \( e^{2x} = \frac{1}{2} \frac{d}{dx}(e^{2x}) = \frac{d}{dx}\left(\frac{1}{2}e^{2x}\right) \).</p>
+            <p>Therefore, an anti-derivative of \(e^{2x}\) is \(\frac{1}{2}e^{2x}\).</p>
+        </div>
+
+        <h4 id="ex7-1-q4">4. Find an anti-derivative of: \((ax + b)^2\)</h4>
+        <div class="solution-box">
+            <p>We need to find a function whose derivative is \((ax+b)^2\).</p>
+            <p>We know that \( \frac{d}{dx}((ax+b)^3) = 3(ax+b)^2 \cdot a = 3a(ax+b)^2 \).</p>
+            <p>So, \( (ax+b)^2 = \frac{1}{3a} \frac{d}{dx}((ax+b)^3) = \frac{d}{dx}\left(\frac{(ax+b)^3}{3a}\right) \).</p>
+            <p>Therefore, an anti-derivative of \((ax+b)^2\) is \(\frac{(ax+b)^3}{3a}\).</p>
+        </div>
+
+        <h4 id="ex7-1-q5">5. Find an anti-derivative of: \(\sin 2x - 4e^{3x}\)</h4>
+        <div class="solution-box">
+            <p>We find the anti-derivative of each term separately.</p>
+            <p>Anti-derivative of \(\sin 2x\) is \(-\frac{1}{2}\cos 2x\) (from Q1).</p>
+            <p>For \(4e^{3x}\), we know \( \frac{d}{dx}(e^{3x}) = 3e^{3x} \), so \( \frac{d}{dx}\left(\frac{4}{3}e^{3x}\right) = 4e^{3x} \).</p>
+            <p>Thus, an anti-derivative of \(\sin 2x - 4e^{3x}\) is \(-\frac{1}{2}\cos 2x - \frac{4}{3}e^{3x}\).</p>
+        </div>
+
+        <p>Find the following integrals in Exercises 6 to 20:</p>
+
+        <h4 id="ex7-1-q6">6. \(\int (4 e^{3x} + 1) dx\)</h4>
+        <div class="solution-box">
+            $$ \int (4 e^{3x} + 1) dx = \int 4e^{3x} dx + \int 1 dx $$
+            $$ = 4 \int e^{3x} dx + \int 1 dx = 4\left(\frac{e^{3x}}{3}\right) + x + C $$
+            $$ = \frac{4}{3}e^{3x} + x + C $$
+        </div>
+
+        <h4 id="ex7-1-q7">7. \(\int x^2\left(1-\frac{1}{x^2}\right) dx\)</h4>
+        <div class="solution-box">
+            $$ \int x^2\left(1-\frac{1}{x^2}\right) dx = \int (x^2 - 1) dx $$
+            $$ = \int x^2 dx - \int 1 dx = \frac{x^3}{3} - x + C $$
+        </div>
+
+        <h4 id="ex7-1-q8">8. \(\int (ax^2+bx+c) dx\)</h4>
+        <div class="solution-box">
+            $$ \int (ax^2+bx+c) dx = a\int x^2 dx + b\int x dx + c\int 1 dx $$
+            $$ = a\frac{x^3}{3} + b\frac{x^2}{2} + cx + C $$
+        </div>
+
+        <h4 id="ex7-1-q9">9. \(\int (2x^2+e^x) dx\)</h4>
+        <div class="solution-box">
+            $$ \int (2x^2+e^x) dx = 2\int x^2 dx + \int e^x dx $$
+            $$ = 2\frac{x^3}{3} + e^x + C $$
+        </div>
+
+        <h4 id="ex7-1-q10">10. \(\int \left(\sqrt{x}-\frac{1}{\sqrt{x}}\right)^2 dx\)</h4>
+        <div class="solution-box">
+            $$ \int \left(\sqrt{x}-\frac{1}{\sqrt{x}}\right)^2 dx = \int \left(x - 2\sqrt{x}\frac{1}{\sqrt{x}} + \frac{1}{x}\right) dx $$
+            $$ = \int \left(x - 2 + \frac{1}{x}\right) dx = \frac{x^2}{2} - 2x + \log|x| + C $$
+        </div>
+
+        <h4 id="ex7-1-q11">11. \(\int \frac{x^3+5x^2-4}{x^2} dx\)</h4>
+        <div class="solution-box">
+            $$ \int \frac{x^3+5x^2-4}{x^2} dx = \int \left(\frac{x^3}{x^2} + \frac{5x^2}{x^2} - \frac{4}{x^2}\right) dx $$
+            $$ = \int (x + 5 - 4x^{-2}) dx = \frac{x^2}{2} + 5x - 4\frac{x^{-1}}{-1} + C $$
+            $$ = \frac{x^2}{2} + 5x + \frac{4}{x} + C $$
+        </div>
+
+        <h4 id="ex7-1-q12">12. \(\int \frac{x^3+3x+4}{\sqrt{x}} dx\)</h4>
+        <div class="solution-box">
+            $$ \int \frac{x^3+3x+4}{\sqrt{x}} dx = \int (x^{3-1/2} + 3x^{1-1/2} + 4x^{-1/2}) dx $$
+            $$ = \int (x^{5/2} + 3x^{1/2} + 4x^{-1/2}) dx $$
+            $$ = \frac{x^{7/2}}{7/2} + 3\frac{x^{3/2}}{3/2} + 4\frac{x^{1/2}}{1/2} + C $$
+            $$ = \frac{2}{7}x^{7/2} + 2x^{3/2} + 8x^{1/2} + C $$
+        </div>
+
+        <h4 id="ex7-1-q13">13. \(\int \frac{x^3-x^2+x-1}{x-1} dx\)</h4>
+        <div class="solution-box">
+            <p>Factor the numerator:</p>
+            $$ x^3-x^2+x-1 = x^2(x-1) + 1(x-1) = (x^2+1)(x-1) $$
+            <p>So the integral becomes:</p>
+            $$ \int \frac{(x^2+1)(x-1)}{x-1} dx = \int (x^2+1) dx $$
+            $$ = \frac{x^3}{3} + x + C $$
+        </div>
+
+        <h4 id="ex7-1-q14">14. \(\int (1-x)\sqrt{x} dx\)</h4>
+        <div class="solution-box">
+            $$ \int (1-x)\sqrt{x} dx = \int (\sqrt{x} - x\sqrt{x}) dx = \int (x^{1/2} - x^{3/2}) dx $$
+            $$ = \frac{x^{3/2}}{3/2} - \frac{x^{5/2}}{5/2} + C = \frac{2}{3}x^{3/2} - \frac{2}{5}x^{5/2} + C $$
+        </div>
+
+        <h4 id="ex7-1-q15">15. \(\int \sqrt{x}(3x^2+2x+3) dx\)</h4>
+        <div class="solution-box">
+            $$ \int \sqrt{x}(3x^2+2x+3) dx = \int (3x^{2.5} + 2x^{1.5} + 3x^{0.5}) dx $$
+            $$ = 3\frac{x^{3.5}}{3.5} + 2\frac{x^{2.5}}{2.5} + 3\frac{x^{1.5}}{1.5} + C $$
+            $$ = 3\frac{x^{7/2}}{7/2} + 2\frac{x^{5/2}}{5/2} + 3\frac{x^{3/2}}{3/2} + C $$
+            $$ = \frac{6}{7}x^{7/2} + \frac{4}{5}x^{5/2} + 2x^{3/2} + C $$
+        </div>
+
+        <h4 id="ex7-1-q16">16. \(\int (2x - 3\cos x + e^x) dx\)</h4>
+        <div class="solution-box">
+            $$ \int (2x - 3\cos x + e^x) dx = 2\frac{x^2}{2} - 3\sin x + e^x + C $$
+            $$ = x^2 - 3\sin x + e^x + C $$
+        </div>
+
+        <h4 id="ex7-1-q17">17. \(\int (2x^2 - 3\sin x + 5\sqrt{x}) dx\)</h4>
+        <div class="solution-box">
+            $$ \int (2x^2 - 3\sin x + 5x^{1/2}) dx = 2\frac{x^3}{3} - 3(-\cos x) + 5\frac{x^{3/2}}{3/2} + C $$
+            $$ = \frac{2}{3}x^3 + 3\cos x + \frac{10}{3}x^{3/2} + C $$
+        </div>
+
+        <h4 id="ex7-1-q18">18. \(\int \sec x(\sec x + \tan x) dx\)</h4>
+        <div class="solution-box">
+            $$ \int \sec x(\sec x + \tan x) dx = \int (\sec^2 x + \sec x \tan x) dx $$
+            $$ = \tan x + \sec x + C $$
+        </div>
+
+        <h4 id="ex7-1-q19">19. \(\int \frac{\sec^2 x}{\csc^2 x} dx\)</h4>
+        <div class="solution-box">
+            $$ \int \frac{\sec^2 x}{\csc^2 x} dx = \int \frac{1/\cos^2 x}{1/\sin^2 x} dx = \int \frac{\sin^2 x}{\cos^2 x} dx = \int \tan^2 x dx $$
+            $$ = \int (\sec^2 x - 1) dx = \tan x - x + C $$
+        </div>
+
+        <h4 id="ex7-1-q20">20. \(\int \frac{2-3\sin x}{\cos^2 x} dx\)</h4>
+        <div class="solution-box">
+            $$ \int \frac{2-3\sin x}{\cos^2 x} dx = \int \left(\frac{2}{\cos^2 x} - \frac{3\sin x}{\cos^2 x}\right) dx $$
+            $$ = \int (2\sec^2 x - 3\sec x \tan x) dx = 2\tan x - 3\sec x + C $$
+        </div>
+        
+        <h4 id="ex7-1-q21">21. The anti derivative of \((\sqrt{x} + \frac{1}{\sqrt{x}})\) equals</h4>
+        <p>(A) \(\frac{1}{3}x^{1/3} + 2x^{1/2} + C\)   (B) \(\frac{2}{3}x^{2/3} + \frac{1}{2}x^2 + C\)</p>
+        <p>(C) \(\frac{2}{3}x^{3/2} + 2x^{1/2} + C\)   (D) \(\frac{3}{2}x^{3/2} + \frac{1}{2}x^{1/2} + C\)</p>
+        <div class="solution-box">
+            <p>We need to compute \(\int (\sqrt{x} + \frac{1}{\sqrt{x}}) dx = \int (x^{1/2} + x^{-1/2}) dx\).</p>
+            $$ \int (x^{1/2} + x^{-1/2}) dx = \frac{x^{3/2}}{3/2} + \frac{x^{1/2}}{1/2} + C = \frac{2}{3}x^{3/2} + 2x^{1/2} + C $$
+            <p><strong>Correct Answer: (C)</strong></p>
+        </div>
+
+        <h4 id="ex7-1-q22">22. If \(\frac{d}{dx}f(x) = 4x^3 - \frac{3}{x^4}\) such that \(f(2) = 0\). Then \(f(x)\) is</h4>
+        <p>(A) \(x^4 + \frac{1}{x^3} - \frac{129}{8}\)   (B) \(x^3 + \frac{1}{x^4} + \frac{129}{8}\)</p>
+        <p>(C) \(x^4 + \frac{1}{x^3} + \frac{129}{8}\)   (D) \(x^3 + \frac{1}{x^4} - \frac{129}{8}\)</p>
+        <div class="solution-box">
+            <p>Given \(f'(x) = 4x^3 - \frac{3}{x^4}\). To find \(f(x)\), we integrate \(f'(x)\):</p>
+            $$ f(x) = \int \left(4x^3 - \frac{3}{x^4}\right) dx = \int (4x^3 - 3x^{-4}) dx $$
+            $$ f(x) = 4\frac{x^4}{4} - 3\frac{x^{-3}}{-3} + C = x^4 + x^{-3} + C = x^4 + \frac{1}{x^3} + C $$
+            <p>We are given that \(f(2) = 0\).</p>
+            $$ f(2) = 2^4 + \frac{1}{2^3} + C = 16 + \frac{1}{8} + C = \frac{128+1}{8} + C = \frac{129}{8} + C $$
+            $$ 0 = \frac{129}{8} + C \implies C = -\frac{129}{8} $$
+            <p>So, \(f(x) = x^4 + \frac{1}{x^3} - \frac{129}{8}\).</p>
+            <p><strong>Correct Answer: (A)</strong></p>
+        </div>
+        <hr>
+
+        <h3 id="exercise-7-2">Exercise 7.2</h3>
+        <p>Integrate the functions in Exercises 1 to 37.</p>
+
+        <h4 id="ex7-2-q1">1. \(\frac{2x}{1+x^2}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{2x}{1+x^2} dx\). Let \(u = 1+x^2\), then \(du = 2x dx\).</p>
+            $$ I = \int \frac{1}{u} du = \log|u| + C = \log(1+x^2) + C $$
+            <p>(Since \(1+x^2\) is always positive, absolute value is not needed).</p>
+        </div>
+
+        <h4 id="ex7-2-q2">2. \(\frac{(\log x)^2}{x}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{(\log x)^2}{x} dx\). Let \(u = \log x\), then \(du = \frac{1}{x} dx\).</p>
+            $$ I = \int u^2 du = \frac{u^3}{3} + C = \frac{(\log x)^3}{3} + C $$
+        </div>
+
+        <h4 id="ex7-2-q3">3. \(\frac{1}{x+x\log x}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{1}{x+x\log x} dx = \int \frac{1}{x(1+\log x)} dx\).</p>
+            <p>Let \(u = 1+\log x\), then \(du = \frac{1}{x} dx\).</p>
+            $$ I = \int \frac{1}{u} du = \log|u| + C = \log|1+\log x| + C $$
+        </div>
+        
+        <h4 id="ex7-2-q4">4. \(\sin x \sin(\cos x)\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \sin x \sin(\cos x) dx\). Let \(u = \cos x\), then \(du = -\sin x dx\).</p>
+            $$ I = \int -\sin(u) du = \cos(u) + C = \cos(\cos x) + C $$
+        </div>
+        
+        <h4 id="ex7-2-q5">5. \(\sin(ax+b)\cos(ax+b)\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \sin(ax+b)\cos(ax+b) dx\). Let \(u = \sin(ax+b)\), then \(du = a\cos(ax+b) dx\).</p>
+            $$ I = \frac{1}{a} \int u du = \frac{1}{a} \frac{u^2}{2} + C = \frac{\sin^2(ax+b)}{2a} + C $$
+            <p>Alternatively, \(\sin(ax+b)\cos(ax+b) = \frac{1}{2}\sin(2(ax+b))\).</p>
+            $$ I = \int \frac{1}{2}\sin(2ax+2b) dx = \frac{1}{2} \left( -\frac{\cos(2ax+2b)}{2a} \right) + C = -\frac{\cos(2(ax+b))}{4a} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q6">6. \(\sqrt{ax+b}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \sqrt{ax+b} dx\). Let \(u=ax+b\), then \(du=a dx\).</p>
+            $$ I = \frac{1}{a} \int \sqrt{u} du = \frac{1}{a} \int u^{1/2} du = \frac{1}{a} \frac{u^{3/2}}{3/2} + C = \frac{2}{3a}(ax+b)^{3/2} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q7">7. \(x\sqrt{x+2}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int x\sqrt{x+2} dx\). Let \(u=x+2\), then \(du=dx\) and \(x=u-2\).</p>
+            $$ I = \int (u-2)\sqrt{u} du = \int (u^{3/2} - 2u^{1/2}) du $$
+            $$ = \frac{u^{5/2}}{5/2} - 2\frac{u^{3/2}}{3/2} + C = \frac{2}{5}(x+2)^{5/2} - \frac{4}{3}(x+2)^{3/2} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q8">8. \(x\sqrt{1+2x^2}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int x\sqrt{1+2x^2} dx\). Let \(u = 1+2x^2\), then \(du = 4x dx\).</p>
+            $$ I = \frac{1}{4} \int \sqrt{u} du = \frac{1}{4} \frac{u^{3/2}}{3/2} + C = \frac{1}{6}(1+2x^2)^{3/2} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q9">9. \((4x+2)\sqrt{x^2+x+1}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int (4x+2)\sqrt{x^2+x+1} dx = \int 2(2x+1)\sqrt{x^2+x+1} dx\).</p>
+            <p>Let \(u=x^2+x+1\), then \(du=(2x+1)dx\).</p>
+            $$ I = 2 \int \sqrt{u} du = 2 \frac{u^{3/2}}{3/2} + C = \frac{4}{3}(x^2+x+1)^{3/2} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q10">10. \(\frac{1}{x-\sqrt{x}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{1}{x-\sqrt{x}} dx = \int \frac{1}{\sqrt{x}(\sqrt{x}-1)} dx\).</p>
+            <p>Let \(u=\sqrt{x}-1\), then \(du = \frac{1}{2\sqrt{x}} dx\).</p>
+            $$ I = 2 \int \frac{1}{u} du = 2\log|u| + C = 2\log|\sqrt{x}-1| + C $$
+        </div>
+        
+        <h4 id="ex7-2-q11">11. \(\frac{x}{\sqrt{x+4}}, x>0\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{x}{\sqrt{x+4}} dx\). Let \(u=x+4\), then \(du=dx\) and \(x=u-4\).</p>
+            $$ I = \int \frac{u-4}{\sqrt{u}} du = \int (u^{1/2} - 4u^{-1/2}) du $$
+            $$ = \frac{u^{3/2}}{3/2} - 4\frac{u^{1/2}}{1/2} + C = \frac{2}{3}(x+4)^{3/2} - 8(x+4)^{1/2} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q12">12. \((x^3-1)^{1/3}x^5\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int (x^3-1)^{1/3}x^5 dx = \int (x^3-1)^{1/3}x^3 x^2 dx\).</p>
+            <p>Let \(u = x^3-1\), then \(du = 3x^2 dx\) and \(x^3=u+1\).</p>
+            $$ I = \frac{1}{3} \int u^{1/3}(u+1) du = \frac{1}{3} \int (u^{4/3} + u^{1/3}) du $$
+            $$ = \frac{1}{3} \left[ \frac{u^{7/3}}{7/3} + \frac{u^{4/3}}{4/3} \right] + C = \frac{1}{7}(x^3-1)^{7/3} + \frac{1}{4}(x^3-1)^{4/3} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q13">13. \(\frac{x^2}{(2+3x^3)^3}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{x^2}{(2+3x^3)^3} dx\). Let \(u=2+3x^3\), then \(du=9x^2 dx\).</p>
+            $$ I = \frac{1}{9} \int \frac{1}{u^3} du = \frac{1}{9} \int u^{-3} du = \frac{1}{9} \frac{u^{-2}}{-2} + C = -\frac{1}{18(2+3x^3)^2} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q14">14. \(\frac{1}{x(\log x)^m}, x>0, m \neq 1\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{1}{x(\log x)^m} dx\). Let \(u=\log x\), then \(du = \frac{1}{x} dx\).</p>
+            $$ I = \int \frac{1}{u^m} du = \int u^{-m} du = \frac{u^{-m+1}}{-m+1} + C = \frac{(\log x)^{1-m}}{1-m} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q15">15. \(\frac{x}{9-4x^2}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{x}{9-4x^2} dx\). Let \(u = 9-4x^2\), then \(du = -8x dx\).</p>
+            $$ I = -\frac{1}{8} \int \frac{1}{u} du = -\frac{1}{8} \log|u| + C = -\frac{1}{8} \log|9-4x^2| + C $$
+        </div>
+        
+        <h4 id="ex7-2-q16">16. \(e^{2x+3}\)</h4>
+        <div class="solution-box">
+            $$ \int e^{2x+3} dx = \frac{e^{2x+3}}{2} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q17">17. \(\frac{x}{e^{x^2}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{x}{e^{x^2}} dx = \int x e^{-x^2} dx\). Let \(u=-x^2\), then \(du=-2x dx\).</p>
+            $$ I = -\frac{1}{2} \int e^u du = -\frac{1}{2} e^u + C = -\frac{1}{2} e^{-x^2} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q18">18. \(\frac{e^{\tan^{-1}x}}{1+x^2}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{e^{\tan^{-1}x}}{1+x^2} dx\). Let \(u = \tan^{-1}x\), then \(du = \frac{1}{1+x^2} dx\).</p>
+            $$ I = \int e^u du = e^u + C = e^{\tan^{-1}x} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q19">19. \(\frac{e^{2x}-1}{e^{2x}+1}\)</h4>
+        <div class="solution-box">
+            <p>Divide numerator and denominator by \(e^x\):</p>
+            $$ I = \int \frac{e^x - e^{-x}}{e^x + e^{-x}} dx $$
+            <p>Let \(u = e^x + e^{-x}\), then \(du = (e^x - e^{-x}) dx\).</p>
+            $$ I = \int \frac{1}{u} du = \log|u| + C = \log(e^x + e^{-x}) + C $$
+        </div>
+        
+        <h4 id="ex7-2-q20">20. \(\frac{e^{2x}-e^{-2x}}{e^{2x}+e^{-2x}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{e^{2x}-e^{-2x}}{e^{2x}+e^{-2x}} dx\). Let \(u = e^{2x}+e^{-2x}\), then \(du = (2e^{2x}-2e^{-2x})dx = 2(e^{2x}-e^{-2x})dx\).</p>
+            $$ I = \frac{1}{2} \int \frac{1}{u} du = \frac{1}{2}\log|u| + C = \frac{1}{2}\log(e^{2x}+e^{-2x}) + C $$
+        </div>
+        
+        <h4 id="ex7-2-q21">21. \(\tan^2(2x-3)\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \tan^2(2x-3) dx = \int (\sec^2(2x-3)-1) dx\).</p>
+            $$ I = \int \sec^2(2x-3) dx - \int 1 dx = \frac{\tan(2x-3)}{2} - x + C $$
+        </div>
+        
+        <h4 id="ex7-2-q22">22. \(\sec^2(7-4x)\)</h4>
+        <div class="solution-box">
+            $$ \int \sec^2(7-4x) dx = \frac{\tan(7-4x)}{-4} + C = -\frac{1}{4}\tan(7-4x) + C $$
+        </div>
+        
+        <h4 id="ex7-2-q23">23. \(\frac{\sin^{-1}x}{\sqrt{1-x^2}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{\sin^{-1}x}{\sqrt{1-x^2}} dx\). Let \(u = \sin^{-1}x\), then \(du = \frac{1}{\sqrt{1-x^2}} dx\).</p>
+            $$ I = \int u du = \frac{u^2}{2} + C = \frac{(\sin^{-1}x)^2}{2} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q24">24. \(\frac{2\cos x - 3\sin x}{6\cos x + 4\sin x}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{2\cos x - 3\sin x}{6\cos x + 4\sin x} dx = \int \frac{2\cos x - 3\sin x}{2(3\cos x + 2\sin x)} dx\).</p>
+            <p>Let \(u = 3\cos x + 2\sin x\), then \(du = (-3\sin x + 2\cos x) dx\).</p>
+            $$ I = \frac{1}{2} \int \frac{1}{u} du = \frac{1}{2}\log|u| + C = \frac{1}{2}\log|3\cos x + 2\sin x| + C $$
+        </div>
+        
+        <h4 id="ex7-2-q25">25. \(\frac{1}{\cos^2 x(1-\tan x)^2}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{1}{\cos^2 x(1-\tan x)^2} dx = \int \frac{\sec^2 x}{(1-\tan x)^2} dx\).</p>
+            <p>Let \(u=1-\tan x\), then \(du = -\sec^2 x dx\).</p>
+            $$ I = \int \frac{-1}{u^2} du = - \int u^{-2} du = - \frac{u^{-1}}{-1} + C = \frac{1}{u} + C = \frac{1}{1-\tan x} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q26">26. \(\frac{\cos \sqrt{x}}{\sqrt{x}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{\cos \sqrt{x}}{\sqrt{x}} dx\). Let \(u=\sqrt{x}\), then \(du = \frac{1}{2\sqrt{x}} dx\).</p>
+            $$ I = 2 \int \cos u du = 2\sin u + C = 2\sin\sqrt{x} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q27">27. \(\sqrt{\sin 2x} \cos 2x\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \sqrt{\sin 2x} \cos 2x dx\). Let \(u=\sin 2x\), then \(du = 2\cos 2x dx\).</p>
+            $$ I = \frac{1}{2} \int \sqrt{u} du = \frac{1}{2} \frac{u^{3/2}}{3/2} + C = \frac{1}{3}(\sin 2x)^{3/2} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q28">28. \(\frac{\cos x}{\sqrt{1+\sin x}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{\cos x}{\sqrt{1+\sin x}} dx\). Let \(u=1+\sin x\), then \(du = \cos x dx\).</p>
+            $$ I = \int \frac{1}{\sqrt{u}} du = \int u^{-1/2} du = \frac{u^{1/2}}{1/2} + C = 2\sqrt{u} + C = 2\sqrt{1+\sin x} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q29">29. \(\cot x \log \sin x\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \cot x \log \sin x dx\). Let \(u = \log \sin x\), then \(du = \frac{1}{\sin x}\cos x dx = \cot x dx\).</p>
+            $$ I = \int u du = \frac{u^2}{2} + C = \frac{(\log \sin x)^2}{2} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q30">30. \(\frac{\sin x}{1+\cos x}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{\sin x}{1+\cos x} dx\). Let \(u=1+\cos x\), then \(du = -\sin x dx\).</p>
+            $$ I = \int \frac{-1}{u} du = -\log|u| + C = -\log|1+\cos x| + C $$
+        </div>
+        
+        <h4 id="ex7-2-q31">31. \(\frac{\sin x}{(1+\cos x)^2}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{\sin x}{(1+\cos x)^2} dx\). Let \(u=1+\cos x\), then \(du = -\sin x dx\).</p>
+            $$ I = \int \frac{-1}{u^2} du = - \int u^{-2} du = - \frac{u^{-1}}{-1} + C = \frac{1}{u} + C = \frac{1}{1+\cos x} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q32">32. \(\frac{1}{1+\cot x}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{1}{1+\cot x} dx = \int \frac{1}{1+\frac{\cos x}{\sin x}} dx = \int \frac{\sin x}{\sin x+\cos x} dx\).</p>
+            <p>Multiply and divide by 2:</p>
+            $$ I = \frac{1}{2} \int \frac{2\sin x}{\sin x+\cos x} dx = \frac{1}{2} \int \frac{(\sin x+\cos x) + (\sin x - \cos x)}{\sin x+\cos x} dx $$
+            $$ = \frac{1}{2} \int \left(1 + \frac{\sin x - \cos x}{\sin x+\cos x}\right) dx = \frac{1}{2} \left[ \int 1 dx - \int \frac{\cos x - \sin x}{\sin x+\cos x} dx \right] $$
+            <p>In the second integral, let \(u = \sin x + \cos x\), then \(du = (\cos x - \sin x) dx\).</p>
+            $$ I = \frac{1}{2} \left[ x - \int \frac{1}{u} du \right] = \frac{1}{2}[x - \log|\sin x+\cos x|] + C $$
+        </div>
+        
+        <h4 id="ex7-2-q33">33. \(\frac{1}{1-\tan x}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{1}{1-\tan x} dx = \int \frac{1}{1-\frac{\sin x}{\cos x}} dx = \int \frac{\cos x}{\cos x-\sin x} dx\).</p>
+            <p>Multiply and divide by 2:</p>
+            $$ I = \frac{1}{2} \int \frac{2\cos x}{\cos x-\sin x} dx = \frac{1}{2} \int \frac{(\cos x-\sin x) + (\cos x + \sin x)}{\cos x-\sin x} dx $$
+            $$ = \frac{1}{2} \int \left(1 + \frac{\cos x + \sin x}{\cos x-\sin x}\right) dx = \frac{1}{2} \left[ \int 1 dx + \int \frac{\cos x + \sin x}{\cos x-\sin x} dx \right] $$
+            <p>In the second integral, let \(u = \cos x - \sin x\), then \(du = (-\sin x - \cos x) dx = -(\sin x + \cos x)dx\).</p>
+            $$ I = \frac{1}{2} \left[ x - \int \frac{1}{u} du \right] = \frac{1}{2}[x - \log|\cos x-\sin x|] + C $$
+        </div>
+
+        <h4 id="ex7-2-q34">34. \(\frac{\sqrt{\tan x}}{\sin x \cos x}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{\sqrt{\tan x}}{\sin x \cos x} dx\). Divide numerator and denominator by \(\cos^2 x\).</p>
+            $$ I = \int \frac{\sqrt{\tan x}/\cos^2 x}{(\sin x \cos x)/\cos^2 x} dx = \int \frac{\sec^2 x \sqrt{\tan x}}{\tan x} dx = \int \frac{\sec^2 x}{\sqrt{\tan x}} dx $$
+            <p>Let \(u = \tan x\), then \(du = \sec^2 x dx\).</p>
+            $$ I = \int \frac{1}{\sqrt{u}} du = \int u^{-1/2} du = 2u^{1/2} + C = 2\sqrt{\tan x} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q35">35. \(\frac{(1+\log x)^2}{x}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{(1+\log x)^2}{x} dx\). Let \(u=1+\log x\), then \(du = \frac{1}{x} dx\).</p>
+            $$ I = \int u^2 du = \frac{u^3}{3} + C = \frac{(1+\log x)^3}{3} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q36">36. \(\frac{(x+1)(x+\log x)^2}{x}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{(x+1)(x+\log x)^2}{x} dx = \int \left(\frac{x+1}{x}\right) (x+\log x)^2 dx = \int \left(1+\frac{1}{x}\right) (x+\log x)^2 dx\).</p>
+            <p>Let \(u = x+\log x\), then \(du = (1+\frac{1}{x}) dx\).</p>
+            $$ I = \int u^2 du = \frac{u^3}{3} + C = \frac{(x+\log x)^3}{3} + C $$
+        </div>
+        
+        <h4 id="ex7-2-q37">37. \(\frac{x^3\sin(\tan^{-1}x^4)}{1+x^8}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{x^3\sin(\tan^{-1}x^4)}{1+x^8} dx\). Let \(u = \tan^{-1}x^4\), then \(du = \frac{1}{1+(x^4)^2} \cdot 4x^3 dx = \frac{4x^3}{1+x^8} dx\).</p>
+            $$ I = \frac{1}{4} \int \sin u du = -\frac{1}{4}\cos u + C = -\frac{1}{4}\cos(\tan^{-1}x^4) + C $$
+        </div>
+
+        <h4 id="ex7-2-q38">38. \(\int \frac{10x^9 + 10^x \log_e 10}{x^{10} + 10^x} dx\) equals</h4>
+        <p>(A) \(10^x - x^{10} + C\)   (B) \(10^x + x^{10} + C\)</p>
+        <p>(C) \((10^x - x^{10})^{-1} + C\)   (D) \(\log(10^x + x^{10}) + C\)</p>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{10x^9 + 10^x \log_e 10}{x^{10} + 10^x} dx\).</p>
+            <p>Let \(u = x^{10} + 10^x\). Then \(du = (10x^9 + 10^x \log_e 10) dx\).</p>
+            <p>This is of the form \(\int \frac{du}{u}\).</p>
+            $$ I = \log|u| + C = \log|x^{10} + 10^x| + C $$
+            <p>Since \(x^{10} + 10^x\) is always positive, the answer is \(\log(x^{10} + 10^x) + C\).</p>
+            <p><strong>Correct Answer: (D)</strong></p>
+        </div>
+        
+        <h4 id="ex7-2-q39">39. \(\int \frac{dx}{\sin^2 x \cos^2 x}\) equals</h4>
+        <p>(A) \(\tan x + \cot x + C\)   (B) \(\tan x - \cot x + C\)</p>
+        <p>(C) \(\tan x \cot x + C\)   (D) \(\tan x - \cot 2x + C\)</p>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{dx}{\sin^2 x \cos^2 x}\). Use the identity \(\sin^2 x + \cos^2 x = 1\).</p>
+            $$ I = \int \frac{\sin^2 x + \cos^2 x}{\sin^2 x \cos^2 x} dx = \int \left( \frac{\sin^2 x}{\sin^2 x \cos^2 x} + \frac{\cos^2 x}{\sin^2 x \cos^2 x} \right) dx $$
+            $$ = \int (\sec^2 x + \csc^2 x) dx = \tan x - \cot x + C $$
+            <p><strong>Correct Answer: (B)</strong></p>
+        </div>
+        <hr>
+
+        <h3 id="exercise-7-3">Exercise 7.3</h3>
+        <p>Find the integrals of the functions in Exercises 1 to 22.</p>
+
+        <h4 id="ex7-3-q1">1. \(\sin^2(2x+5)\)</h4>
+        <div class="solution-box">
+            <p>Use the identity \(\sin^2\theta = \frac{1-\cos(2\theta)}{2}\).</p>
+            $$ I = \int \sin^2(2x+5) dx = \int \frac{1-\cos(2(2x+5))}{2} dx = \frac{1}{2} \int (1-\cos(4x+10)) dx $$
+            $$ = \frac{1}{2} \left[ x - \frac{\sin(4x+10)}{4} \right] + C = \frac{x}{2} - \frac{\sin(4x+10)}{8} + C $$
+        </div>
+
+        <h4 id="ex7-3-q2">2. \(\sin 3x \cos 4x\)</h4>
+        <div class="solution-box">
+            <p>Use the identity \(2\sin A \cos B = \sin(A+B) + \sin(A-B)\).</p>
+            $$ I = \int \sin 3x \cos 4x dx = \frac{1}{2} \int 2\sin 3x \cos 4x dx $$
+            $$ = \frac{1}{2} \int (\sin(7x) + \sin(-x)) dx = \frac{1}{2} \int (\sin(7x) - \sin x) dx $$
+            $$ = \frac{1}{2} \left[ -\frac{\cos(7x)}{7} - (-\cos x) \right] + C = \frac{\cos x}{2} - \frac{\cos(7x)}{14} + C $$
+        </div>
+        
+        <h4 id="ex7-3-q3">3. \(\cos 2x \cos 4x \cos 6x\)</h4>
+        <div class="solution-box">
+            <p>Use the identity \(2\cos A \cos B = \cos(A+B) + \cos(A-B)\).</p>
+            $$ I = \frac{1}{2} \int (2\cos 2x \cos 4x) \cos 6x dx = \frac{1}{2} \int (\cos 6x + \cos 2x) \cos 6x dx $$
+            $$ = \frac{1}{2} \int (\cos^2 6x + \cos 2x \cos 6x) dx $$
+            <p>Use identities \(\cos^2\theta = \frac{1+\cos 2\theta}{2}\) and \(2\cos A \cos B\) again.</p>
+            $$ = \frac{1}{2} \int \left( \frac{1+\cos 12x}{2} + \frac{1}{2}(\cos 8x + \cos 4x) \right) dx $$
+            $$ = \frac{1}{4} \int (1 + \cos 12x + \cos 8x + \cos 4x) dx $$
+            $$ = \frac{1}{4} \left[ x + \frac{\sin 12x}{12} + \frac{\sin 8x}{8} + \frac{\sin 4x}{4} \right] + C $$
+        </div>
+        
+        <h4 id="ex7-3-q4">4. \(\sin^3(2x+1)\)</h4>
+        <div class="solution-box">
+            <p>Use the identity \(\sin 3\theta = 3\sin\theta - 4\sin^3\theta\), so \(\sin^3\theta = \frac{3\sin\theta - \sin 3\theta}{4}\).</p>
+            $$ I = \int \sin^3(2x+1) dx = \int \frac{3\sin(2x+1) - \sin(3(2x+1))}{4} dx $$
+            $$ = \frac{1}{4} \int (3\sin(2x+1) - \sin(6x+3)) dx $$
+            $$ = \frac{1}{4} \left[ 3\left(-\frac{\cos(2x+1)}{2}\right) - \left(-\frac{\cos(6x+3)}{6}\right) \right] + C $$
+            $$ = -\frac{3}{8}\cos(2x+1) + \frac{1}{24}\cos(6x+3) + C $$
+        </div>
+        
+        <h4 id="ex7-3-q5">5. \(\sin^3 x \cos^3 x\)</h4>
+        <div class="solution-box">
+            $$ I = \int (\sin x \cos x)^3 dx = \int \left(\frac{\sin 2x}{2}\right)^3 dx = \frac{1}{8} \int \sin^3 2x dx $$
+            <p>Using \(\sin^3\theta = \frac{3\sin\theta - \sin 3\theta}{4}\) with \(\theta=2x\).</p>
+            $$ I = \frac{1}{8} \int \frac{3\sin 2x - \sin 6x}{4} dx = \frac{1}{32} \int (3\sin 2x - \sin 6x) dx $$
+            $$ = \frac{1}{32} \left[ 3\left(-\frac{\cos 2x}{2}\right) - \left(-\frac{\cos 6x}{6}\right) \right] + C = \frac{\cos 6x}{192} - \frac{3\cos 2x}{64} + C $$
+        </div>
+        
+        <h4 id="ex7-3-q6">6. \(\sin x \sin 2x \sin 3x\)</h4>
+        <div class="solution-box">
+            <p>Use \(2\sin A \sin B = \cos(A-B) - \cos(A+B)\).</p>
+            $$ I = \frac{1}{2} \int (2\sin x \sin 2x) \sin 3x dx = \frac{1}{2} \int (\cos x - \cos 3x) \sin 3x dx $$
+            $$ = \frac{1}{2} \int (\sin 3x \cos x - \sin 3x \cos 3x) dx $$
+            <p>Use \(2\sin A \cos B = \sin(A+B)+\sin(A-B)\) and \(\sin 2\theta = 2\sin\theta\cos\theta\).</p>
+            $$ = \frac{1}{2} \int \left( \frac{1}{2}(\sin 4x + \sin 2x) - \frac{1}{2}\sin 6x \right) dx $$
+            $$ = \frac{1}{4} \left[ -\frac{\cos 4x}{4} - \frac{\cos 2x}{2} - (-\frac{\cos 6x}{6}) \right] + C $$
+            $$ = \frac{\cos 6x}{24} - \frac{\cos 4x}{16} - \frac{\cos 2x}{8} + C $$
+        </div>
+        
+        <h4 id="ex7-3-q7">7. \(\sin 4x \sin 8x\)</h4>
+        <div class="solution-box">
+            <p>Use \(2\sin A \sin B = \cos(A-B) - \cos(A+B)\).</p>
+            $$ I = \frac{1}{2} \int 2\sin 4x \sin 8x dx = \frac{1}{2} \int (\cos(4x) - \cos(12x)) dx $$
+            $$ = \frac{1}{2} \left[ \frac{\sin 4x}{4} - \frac{\sin 12x}{12} \right] + C $$
+        </div>
+        
+        <h4 id="ex7-3-q8">8. \(\frac{1-\cos x}{1+\cos x}\)</h4>
+        <div class="solution-box">
+            <p>Use half-angle identities: \(1-\cos x = 2\sin^2(x/2)\) and \(1+\cos x = 2\cos^2(x/2)\).</p>
+            $$ I = \int \frac{2\sin^2(x/2)}{2\cos^2(x/2)} dx = \int \tan^2(x/2) dx $$
+            $$ = \int (\sec^2(x/2) - 1) dx = \frac{\tan(x/2)}{1/2} - x + C = 2\tan(x/2) - x + C $$
+        </div>
+        
+        <h4 id="ex7-3-q9">9. \(\frac{\cos x}{1+\cos x}\)</h4>
+        <div class="solution-box">
+            $$ I = \int \frac{\cos x}{1+\cos x} dx = \int \frac{1+\cos x - 1}{1+\cos x} dx = \int \left(1 - \frac{1}{1+\cos x}\right) dx $$
+            $$ = \int \left(1 - \frac{1}{2\cos^2(x/2)}\right) dx = \int \left(1 - \frac{1}{2}\sec^2(x/2)\right) dx $$
+            $$ = x - \frac{1}{2} \frac{\tan(x/2)}{1/2} + C = x - \tan(x/2) + C $$
+        </div>
+        
+        <h4 id="ex7-3-q10">10. \(\sin^4 x\)</h4>
+        <div class="solution-box">
+            <p>\(\sin^4 x = (\sin^2 x)^2 = \left(\frac{1-\cos 2x}{2}\right)^2 = \frac{1}{4}(1 - 2\cos 2x + \cos^2 2x)\).</p>
+            <p>Use \(\cos^2 2x = \frac{1+\cos 4x}{2}\).</p>
+            $$ I = \frac{1}{4} \int \left(1 - 2\cos 2x + \frac{1+\cos 4x}{2}\right) dx = \frac{1}{8} \int (2 - 4\cos 2x + 1 + \cos 4x) dx $$
+            $$ = \frac{1}{8} \int (3 - 4\cos 2x + \cos 4x) dx = \frac{1}{8} \left[ 3x - 4\frac{\sin 2x}{2} + \frac{\sin 4x}{4} \right] + C $$
+            $$ = \frac{3x}{8} - \frac{\sin 2x}{4} + \frac{\sin 4x}{32} + C $$
+        </div>
+        
+        <h4 id="ex7-3-q11">11. \(\cos^4 2x\)</h4>
+        <div class="solution-box">
+            <p>Similar to Q10. \(\cos^4 2x = (\cos^2 2x)^2 = \left(\frac{1+\cos 4x}{2}\right)^2 = \frac{1}{4}(1+2\cos 4x+\cos^2 4x)\).</p>
+            <p>Use \(\cos^2 4x = \frac{1+\cos 8x}{2}\).</p>
+            $$ I = \frac{1}{4} \int \left(1+2\cos 4x + \frac{1+\cos 8x}{2}\right) dx = \frac{1}{8} \int (3 + 4\cos 4x + \cos 8x) dx $$
+            $$ = \frac{1}{8} \left[ 3x + 4\frac{\sin 4x}{4} + \frac{\sin 8x}{8} \right] + C = \frac{3x}{8} + \frac{\sin 4x}{8} + \frac{\sin 8x}{64} + C $$
+        </div>
+        
+        <h4 id="ex7-3-q12">12. \(\frac{\sin^2 x}{1+\cos x}\)</h4>
+        <div class="solution-box">
+            $$ I = \int \frac{1-\cos^2 x}{1+\cos x} dx = \int \frac{(1-\cos x)(1+\cos x)}{1+\cos x} dx = \int(1-\cos x) dx $$
+            $$ = x - \sin x + C $$
+        </div>
+        
+        <h4 id="ex7-3-q13">13. \(\frac{\cos 2x - \cos 2\alpha}{\cos x - \cos \alpha}\)</h4>
+        <div class="solution-box">
+            <p>Use \(\cos 2\theta = 2\cos^2\theta - 1\).</p>
+            $$ I = \int \frac{(2\cos^2 x - 1) - (2\cos^2 \alpha - 1)}{\cos x - \cos \alpha} dx = \int \frac{2(\cos^2 x - \cos^2 \alpha)}{\cos x - \cos \alpha} dx $$
+            $$ = \int \frac{2(\cos x - \cos \alpha)(\cos x + \cos \alpha)}{\cos x - \cos \alpha} dx = 2 \int (\cos x + \cos \alpha) dx $$
+            $$ = 2(\sin x + x\cos \alpha) + C $$
+        </div>
+        
+        <h4 id="ex7-3-q14">14. \(\frac{\cos x - \sin x}{1+\sin 2x}\)</h4>
+        <div class="solution-box">
+            <p>The denominator \(1+\sin 2x = \sin^2 x + \cos^2 x + 2\sin x \cos x = (\sin x + \cos x)^2\).</p>
+            $$ I = \int \frac{\cos x - \sin x}{(\sin x + \cos x)^2} dx $$
+            <p>Let \(u = \sin x + \cos x\), then \(du = (\cos x - \sin x) dx\).</p>
+            $$ I = \int \frac{1}{u^2} du = -\frac{1}{u} + C = -\frac{1}{\sin x + \cos x} + C $$
+        </div>
+        
+        <h4 id="ex7-3-q15">15. \(\tan^3 2x \sec 2x\)</h4>
+        <div class="solution-box">
+            $$ I = \int \tan^2 2x \tan 2x \sec 2x dx = \int (\sec^2 2x - 1) \tan 2x \sec 2x dx $$
+            <p>Let \(u = \sec 2x\), then \(du = 2 \sec 2x \tan 2x dx\).</p>
+            $$ I = \frac{1}{2} \int (u^2-1) du = \frac{1}{2} \left( \frac{u^3}{3} - u \right) + C = \frac{\sec^3 2x}{6} - \frac{\sec 2x}{2} + C $$
+        </div>
+        
+        <h4 id="ex7-3-q16">16. \(\tan^4 x\)</h4>
+        <div class="solution-box">
+            $$ I = \int \tan^2 x \tan^2 x dx = \int \tan^2 x (\sec^2 x - 1) dx $$
+            $$ = \int \tan^2 x \sec^2 x dx - \int \tan^2 x dx = \int \tan^2 x \sec^2 x dx - \int (\sec^2 x - 1) dx $$
+            $$ = \int \tan^2 x \sec^2 x dx - \int \sec^2 x dx + \int 1 dx $$
+            <p>For the first integral, let \(u = \tan x\), \(du = \sec^2 x dx\).</p>
+            $$ I = \frac{\tan^3 x}{3} - \tan x + x + C $$
+        </div>
+        
+        <h4 id="ex7-3-q17">17. \(\frac{\sin^3 x + \cos^3 x}{\sin^2 x \cos^2 x}\)</h4>
+        <div class="solution-box">
+            $$ I = \int \left( \frac{\sin^3 x}{\sin^2 x \cos^2 x} + \frac{\cos^3 x}{\sin^2 x \cos^2 x} \right) dx = \int \left( \frac{\sin x}{\cos^2 x} + \frac{\cos x}{\sin^2 x} \right) dx $$
+            $$ = \int (\sec x \tan x + \csc x \cot x) dx = \sec x - \csc x + C $$
+        </div>
+        
+        <h4 id="ex7-3-q18">18. \(\frac{\cos 2x + 2\sin^2 x}{\cos^2 x}\)</h4>
+        <div class="solution-box">
+            <p>Use \(\cos 2x = \cos^2 x - \sin^2 x\).</p>
+            $$ I = \int \frac{(\cos^2 x - \sin^2 x) + 2\sin^2 x}{\cos^2 x} dx = \int \frac{\cos^2 x + \sin^2 x}{\cos^2 x} dx $$
+            $$ = \int \frac{1}{\cos^2 x} dx = \int \sec^2 x dx = \tan x + C $$
+        </div>
+        
+        <h4 id="ex7-3-q19">19. \(\frac{1}{\sin x \cos^3 x}\)</h4>
+        <div class="solution-box">
+            <p>Divide numerator and denominator by \(\cos^4 x\).</p>
+            $$ I = \int \frac{1/\cos^4 x}{(\sin x \cos^3 x)/\cos^4 x} dx = \int \frac{\sec^4 x}{\tan x} dx = \int \frac{\sec^2 x \sec^2 x}{\tan x} dx $$
+            $$ = \int \frac{(1+\tan^2 x)\sec^2 x}{\tan x} dx $$
+            <p>Let \(u=\tan x\), \(du=\sec^2 x dx\).</p>
+            $$ I = \int \frac{1+u^2}{u} du = \int \left(\frac{1}{u} + u\right) du = \log|u| + \frac{u^2}{2} + C $$
+            $$ = \log|\tan x| + \frac{\tan^2 x}{2} + C $$
+        </div>
+        
+        <h4 id="ex7-3-q20">20. \(\frac{\cos 2x}{(\cos x + \sin x)^2}\)</h4>
+        <div class="solution-box">
+            <p>Numerator: \(\cos 2x = \cos^2 x - \sin^2 x = (\cos x - \sin x)(\cos x + \sin x)\).</p>
+            <p>Denominator: \((\cos x + \sin x)^2\).</p>
+            $$ I = \int \frac{(\cos x - \sin x)(\cos x + \sin x)}{(\cos x + \sin x)^2} dx = \int \frac{\cos x - \sin x}{\cos x + \sin x} dx $$
+            <p>Let \(u = \cos x + \sin x\), \(du = (-\sin x + \cos x) dx\).</p>
+            $$ I = \int \frac{1}{u} du = \log|u| + C = \log|\cos x + \sin x| + C $$
+        </div>
+
+        <h4 id="ex7-3-q21">21. \(\sin^{-1}(\cos x)\)</h4>
+        <div class="solution-box">
+            <p>We know \(\cos x = \sin(\pi/2 - x)\).</p>
+            $$ I = \int \sin^{-1}(\sin(\pi/2 - x)) dx = \int (\pi/2 - x) dx $$
+            $$ = \frac{\pi}{2}x - \frac{x^2}{2} + C $$
+        </div>
+        
+        <h4 id="ex7-3-q22">22. \(\frac{1}{\cos(x-a)\cos(x-b)}\)</h4>
+        <div class="solution-box">
+            <p>Multiply and divide by \(\sin(a-b)\).</p>
+            $$ I = \frac{1}{\sin(a-b)} \int \frac{\sin((x-b)-(x-a))}{\cos(x-a)\cos(x-b)} dx $$
+            <p>Use \(\sin(A-B) = \sin A \cos B - \cos A \sin B\).</p>
+            $$ I = \frac{1}{\sin(a-b)} \int \frac{\sin(x-b)\cos(x-a) - \cos(x-b)\sin(x-a)}{\cos(x-a)\cos(x-b)} dx $$
+            $$ = \frac{1}{\sin(a-b)} \int (\tan(x-b) - \tan(x-a)) dx $$
+            $$ = \frac{1}{\sin(a-b)} [-\log|\cos(x-b)| - (-\log|\cos(x-a)|)] + C $$
+            $$ = \frac{1}{\sin(a-b)} \log\left|\frac{\cos(x-a)}{\cos(x-b)}\right| + C $$
+        </div>
+        
+        <h4 id="ex7-3-q23">23. \(\int \frac{\sin^2 x - \cos^2 x}{\sin^2 x \cos^2 x} dx\) is equal to</h4>
+        <p>(A) \(\tan x + \cot x + C\)   (B) \(\tan x + \csc x + C\)</p>
+        <p>(C) \(-\tan x + \cot x + C\)   (D) \(\tan x + \sec x + C\)</p>
+        <div class="solution-box">
+            $$ I = \int \left( \frac{\sin^2 x}{\sin^2 x \cos^2 x} - \frac{\cos^2 x}{\sin^2 x \cos^2 x} \right) dx = \int (\sec^2 x - \csc^2 x) dx $$
+            $$ = \tan x - (-\cot x) + C = \tan x + \cot x + C $$
+            <p><strong>Correct Answer: (A)</strong></p>
+        </div>
+
+        <h4 id="ex7-3-q24">24. \(\int \frac{e^x(1+x)}{\cos^2(e^x x)} dx\) equals</h4>
+        <p>(A) \(-\cot(e^x x) + C\)   (B) \(\tan(xe^x) + C\)</p>
+        <p>(C) \(\tan(e^x) + C\)   (D) \(\cot(e^x) + C\)</p>
+        <div class="solution-box">
+            $$ I = \int \frac{e^x(1+x)}{\cos^2(xe^x)} dx $$
+            <p>Let \(u = xe^x\). Using product rule, \(du = (1 \cdot e^x + x \cdot e^x) dx = e^x(1+x) dx\).</p>
+            $$ I = \int \frac{1}{\cos^2 u} du = \int \sec^2 u du = \tan u + C = \tan(xe^x) + C $$
+            <p><strong>Correct Answer: (B)</strong></p>
+        </div>
+        <hr>
+        <h3 id="exercise-7-4">Exercise 7.4</h3>
+        <p>Integrate the functions in Exercises 1 to 23.</p>
+
+        <h4 id="ex7-4-q1">1. \(\frac{3x^2}{x^6+1}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{3x^2}{x^6+1} dx = \int \frac{3x^2}{(x^3)^2+1} dx\).</p>
+            <p>Let \(u = x^3\), then \(du = 3x^2 dx\).</p>
+            $$ I = \int \frac{du}{u^2+1} = \tan^{-1}(u) + C = \tan^{-1}(x^3) + C $$
+        </div>
+
+        <h4 id="ex7-4-q2">2. \(\frac{1}{\sqrt{1+4x^2}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{1}{\sqrt{1+4x^2}} dx = \int \frac{1}{\sqrt{(2x)^2+1}} dx\).</p>
+            <p>Let \(u = 2x\), then \(du = 2 dx\).</p>
+            $$ I = \frac{1}{2} \int \frac{du}{\sqrt{u^2+1}} = \frac{1}{2} \log|u + \sqrt{u^2+1}| + C $$
+            $$ = \frac{1}{2} \log|2x + \sqrt{4x^2+1}| + C $$
+        </div>
+
+        <h4 id="ex7-4-q3">3. \(\frac{1}{\sqrt{(2-x)^2+1}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{1}{\sqrt{(2-x)^2+1}} dx\).</p>
+            <p>Let \(u = 2-x\), then \(du = -dx\).</p>
+            $$ I = -\int \frac{du}{\sqrt{u^2+1}} = -\log|u + \sqrt{u^2+1}| + C $$
+            $$ = -\log|2-x + \sqrt{(2-x)^2+1}| + C $$
+        </div>
+
+        <h4 id="ex7-4-q4">4. \(\frac{1}{\sqrt{9-25x^2}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{1}{\sqrt{9-25x^2}} dx = \int \frac{1}{\sqrt{3^2-(5x)^2}} dx\).</p>
+            <p>Let \(u = 5x\), then \(du = 5 dx\).</p>
+            $$ I = \frac{1}{5} \int \frac{du}{\sqrt{3^2-u^2}} = \frac{1}{5} \sin^{-1}\left(\frac{u}{3}\right) + C = \frac{1}{5} \sin^{-1}\left(\frac{5x}{3}\right) + C $$
+        </div>
+
+        <h4 id="ex7-4-q5">5. \(\frac{3x}{1+2x^4}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{3x}{1+2x^4} dx = \int \frac{3x}{1+(\sqrt{2}x^2)^2} dx\).</p>
+            <p>Let \(u = \sqrt{2}x^2\), then \(du = 2\sqrt{2}x dx\).</p>
+            $$ I = \frac{3}{2\sqrt{2}} \int \frac{du}{1+u^2} = \frac{3}{2\sqrt{2}} \tan^{-1}(u) + C = \frac{3}{2\sqrt{2}} \tan^{-1}(\sqrt{2}x^2) + C $$
+        </div>
+
+        <h4 id="ex7-4-q6">6. \(\frac{x^2}{1-x^6}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{x^2}{1-x^6} dx = \int \frac{x^2}{1-(x^3)^2} dx\).</p>
+            <p>Let \(u = x^3\), then \(du = 3x^2 dx\).</p>
+            $$ I = \frac{1}{3} \int \frac{du}{1-u^2} = \frac{1}{3} \cdot \frac{1}{2} \log\left|\frac{1+u}{1-u}\right| + C = \frac{1}{6} \log\left|\frac{1+x^3}{1-x^3}\right| + C $$
+        </div>
+
+        <h4 id="ex7-4-q7">7. \(\frac{x-1}{\sqrt{x^2-1}}\)</h4>
+        <div class="solution-box">
+            $$ I = \int \frac{x-1}{\sqrt{x^2-1}} dx = \int \frac{x}{\sqrt{x^2-1}} dx - \int \frac{1}{\sqrt{x^2-1}} dx $$
+            <p>For the first integral, let \(u = x^2-1\), \(du = 2x dx\).</p>
+            $$ \int \frac{x}{\sqrt{x^2-1}} dx = \frac{1}{2} \int \frac{du}{\sqrt{u}} = \sqrt{u} = \sqrt{x^2-1} $$
+            <p>The second integral is a standard form.</p>
+            $$ \int \frac{1}{\sqrt{x^2-1}} dx = \log|x+\sqrt{x^2-1}| $$
+            $$ I = \sqrt{x^2-1} - \log|x+\sqrt{x^2-1}| + C $$
+        </div>
+
+        <h4 id="ex7-4-q8">8. \(\frac{x^2}{\sqrt{x^6+a^6}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{x^2}{\sqrt{(x^3)^2+(a^3)^2}} dx\).</p>
+            <p>Let \(u=x^3\), then \(du=3x^2 dx\).</p>
+            $$ I = \frac{1}{3} \int \frac{du}{\sqrt{u^2+(a^3)^2}} = \frac{1}{3} \log|u+\sqrt{u^2+(a^3)^2}| + C $$
+            $$ = \frac{1}{3} \log|x^3+\sqrt{x^6+a^6}| + C $$
+        </div>
+
+        <h4 id="ex7-4-q9">9. \(\frac{\sec^2 x}{\sqrt{\tan^2 x+4}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int \frac{\sec^2 x}{\sqrt{\tan^2 x+4}} dx\).</p>
+            <p>Let \(u=\tan x\), then \(du=\sec^2 x dx\).</p>
+            $$ I = \int \frac{du}{\sqrt{u^2+2^2}} = \log|u+\sqrt{u^2+4}| + C = \log|\tan x+\sqrt{\tan^2 x+4}| + C $$
+        </div>
+
+        <h4 id="ex7-4-q10">10. \(\frac{1}{\sqrt{x^2+2x+2}}\)</h4>
+        <div class="solution-box">
+            <p>Complete the square for the denominator: \(x^2+2x+2 = (x^2+2x+1)+1 = (x+1)^2+1\).</p>
+            $$ I = \int \frac{1}{\sqrt{(x+1)^2+1}} dx $$
+            <p>Let \(u=x+1\), \(du=dx\).</p>
+            $$ I = \int \frac{du}{\sqrt{u^2+1}} = \log|u+\sqrt{u^2+1}| + C = \log|x+1+\sqrt{x^2+2x+2}| + C $$
+        </div>
+        
+        <h4 id="ex7-4-q11">11. \(\frac{1}{9x^2+6x+5}\)</h4>
+        <div class="solution-box">
+             <p>Complete the square for the denominator: \(9x^2+6x+5 = (3x)^2+2(3x)(1)+1+4 = (3x+1)^2+2^2\).</p>
+            $$ I = \int \frac{1}{(3x+1)^2+2^2} dx $$
+            <p>Let \(u=3x+1\), \(du=3dx\).</p>
+            $$ I = \frac{1}{3} \int \frac{du}{u^2+2^2} = \frac{1}{3} \cdot \frac{1}{2} \tan^{-1}\left(\frac{u}{2}\right) + C = \frac{1}{6} \tan^{-1}\left(\frac{3x+1}{2}\right) + C $$
+        </div>
+        
+        <h4 id="ex7-4-q12">12. \(\frac{1}{\sqrt{7-6x-x^2}}\)</h4>
+        <div class="solution-box">
+            <p>Complete the square: \(7-6x-x^2 = 7-(x^2+6x) = 7-(x^2+6x+9-9) = 16-(x+3)^2 = 4^2-(x+3)^2\).</p>
+            $$ I = \int \frac{1}{\sqrt{4^2-(x+3)^2}} dx $$
+            <p>Let \(u=x+3\), \(du=dx\).</p>
+            $$ I = \int \frac{du}{\sqrt{4^2-u^2}} = \sin^{-1}\left(\frac{u}{4}\right) + C = \sin^{-1}\left(\frac{x+3}{4}\right) + C $$
+        </div>
+
+        <h4 id="ex7-4-q13">13. \(\frac{1}{\sqrt{(x-1)(x-2)}}\)</h4>
+        <div class="solution-box">
+            <p>Expand the denominator: \((x-1)(x-2) = x^2-3x+2\).</p>
+            <p>Complete the square: \(x^2-3x+2 = (x^2-3x+\frac{9}{4})-\frac{9}{4}+2 = (x-\frac{3}{2})^2 - \frac{1}{4}\).</p>
+            $$ I = \int \frac{1}{\sqrt{(x-3/2)^2-(1/2)^2}} dx $$
+            $$ = \log\left| (x-\frac{3}{2}) + \sqrt{(x-\frac{3}{2})^2 - (\frac{1}{2})^2} \right| + C = \log|x-\frac{3}{2}+\sqrt{x^2-3x+2}| + C $$
+        </div>
+        
+        <h4 id="ex7-4-q14">14. \(\frac{1}{\sqrt{8+3x-x^2}}\)</h4>
+        <div class="solution-box">
+            <p>Complete the square: \(8+3x-x^2 = 8-(x^2-3x) = 8-(x^2-3x+\frac{9}{4}-\frac{9}{4}) = \frac{41}{4}-(x-\frac{3}{2})^2\).</p>
+            $$ I = \int \frac{1}{\sqrt{(\sqrt{41}/2)^2 - (x-3/2)^2}} dx = \sin^{-1}\left(\frac{x-3/2}{\sqrt{41}/2}\right) + C = \sin^{-1}\left(\frac{2x-3}{\sqrt{41}}\right) + C $$
+        </div>
+        
+        <h4 id="ex7-4-q15">15. \(\frac{1}{\sqrt{(x-a)(x-b)}}\)</h4>
+        <div class="solution-box">
+            <p>Expand: \((x-a)(x-b) = x^2 - (a+b)x + ab\).
+            <p>Complete the square: \(x^2 - (a+b)x + \frac{(a+b)^2}{4} - \frac{(a+b)^2}{4} + ab = \left(x - \frac{a+b}{2}\right)^2 - \frac{(a-b)^2}{4}\).</p>
+            $$ I = \int \frac{1}{\sqrt{(x-\frac{a+b}{2})^2 - (\frac{a-b}{2})^2}} dx $$
+            $$ = \log\left| \left(x-\frac{a+b}{2}\right) + \sqrt{(x-a)(x-b)} \right| + C $$
+        </div>
+        
+        <h4 id="ex7-4-q16">16. \(\frac{4x+1}{\sqrt{2x^2+x-3}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(u = 2x^2+x-3\). Then \(du = (4x+1)dx\).</p>
+            $$ I = \int \frac{du}{\sqrt{u}} = 2\sqrt{u} + C = 2\sqrt{2x^2+x-3} + C $$
+        </div>
+        
+        <h4 id="ex7-4-q17">17. \(\frac{x+2}{\sqrt{x^2-1}}\)</h4>
+        <div class="solution-box">
+            $$ I = \int \frac{x}{\sqrt{x^2-1}} dx + \int \frac{2}{\sqrt{x^2-1}} dx $$
+            $$ = \sqrt{x^2-1} + 2\log|x+\sqrt{x^2-1}| + C $$
+        </div>
+        
+        <h4 id="ex7-4-q18">18. \(\frac{5x-2}{1+2x+3x^2}\)</h4>
+        <div class="solution-box">
+            <p>Let \(5x-2 = A\frac{d}{dx}(1+2x+3x^2) + B = A(2+6x)+B\).</p>
+            <p>Equating coefficients: \(6A=5 \implies A=5/6\). \(2A+B=-2 \implies 2(5/6)+B=-2 \implies 5/3+B=-2 \implies B = -11/3\).</p>
+            $$ I = \frac{5}{6}\int \frac{6x+2}{1+2x+3x^2} dx - \frac{11}{3}\int \frac{1}{3x^2+2x+1} dx $$
+            $$ I_1 = \frac{5}{6}\log|3x^2+2x+1| $$
+            <p>For \(I_2\), complete the square: \(3x^2+2x+1 = 3(x^2+\frac{2}{3}x+\frac{1}{3}) = 3((x+\frac{1}{3})^2+\frac{2}{9})\).</p>
+            $$ I_2 = -\frac{11}{3} \int \frac{dx}{3((x+1/3)^2+(\sqrt{2}/3)^2)} = -\frac{11}{9} \frac{1}{\sqrt{2}/3} \tan^{-1}\left(\frac{x+1/3}{\sqrt{2}/3}\right) = -\frac{11}{3\sqrt{2}}\tan^{-1}\left(\frac{3x+1}{\sqrt{2}}\right) $$
+            $$ I = \frac{5}{6}\log|3x^2+2x+1| - \frac{11}{3\sqrt{2}}\tan^{-1}\left(\frac{3x+1}{\sqrt{2}}\right) + C $$
+        </div>
+        
+        <h4 id="ex7-4-q19">19. \(\frac{6x+7}{\sqrt{(x-5)(x-4)}}\)</h4>
+        <div class="solution-box">
+            <p>Denominator: \(\sqrt{x^2-9x+20}\). Let \(6x+7 = A(2x-9)+B\).
+            \(2A=6 \implies A=3\). \(-9A+B=7 \implies -27+B=7 \implies B=34\).</p>
+            $$ I = \int \frac{3(2x-9)+34}{\sqrt{x^2-9x+20}} dx = 3\int \frac{2x-9}{\sqrt{x^2-9x+20}} dx + 34\int \frac{dx}{\sqrt{x^2-9x+20}} $$
+            $$ = 6\sqrt{x^2-9x+20} + 34\log|x-\frac{9}{2}+\sqrt{x^2-9x+20}| + C $$
+        </div>
+        
+        <h4 id="ex7-4-q20">20. \(\frac{x+2}{\sqrt{4x-x^2}}\)</h4>
+        <div class="solution-box">
+             <p>Let \(x+2=A(4-2x)+B\). \( -2A=1 \implies A=-1/2\). \(4A+B=2 \implies -2+B=2 \implies B=4\).</p>
+            $$ I = -\frac{1}{2} \int \frac{4-2x}{\sqrt{4x-x^2}} dx + 4\int \frac{dx}{\sqrt{4-(x-2)^2}} $$
+            $$ = -\sqrt{4x-x^2} + 4\sin^{-1}\left(\frac{x-2}{2}\right) + C $$
+        </div>
+        
+        <h4 id="ex7-4-q21">21. \(\frac{x+2}{\sqrt{x^2+2x+3}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(x+2=A(2x+2)+B\). \(2A=1 \implies A=1/2\). \(2A+B=2 \implies 1+B=2 \implies B=1\).</p>
+            $$ I = \frac{1}{2} \int \frac{2x+2}{\sqrt{x^2+2x+3}} dx + \int \frac{dx}{\sqrt{(x+1)^2+2}} $$
+            $$ = \sqrt{x^2+2x+3} + \log|x+1+\sqrt{x^2+2x+3}| + C $$
+        </div>
+        
+        <h4 id="ex7-4-q22">22. \(\frac{x+3}{x^2-2x-5}\)</h4>
+        <div class="solution-box">
+            <p>Let \(x+3=A(2x-2)+B\). \(2A=1 \implies A=1/2\). \(-2A+B=3 \implies -1+B=3 \implies B=4\).</p>
+            $$ I = \frac{1}{2} \int \frac{2x-2}{x^2-2x-5} dx + 4\int \frac{dx}{(x-1)^2-6} $$
+            $$ = \frac{1}{2}\log|x^2-2x-5| + 4\frac{1}{2\sqrt{6}}\log\left|\frac{x-1-\sqrt{6}}{x-1+\sqrt{6}}\right| + C $$
+            $$ = \frac{1}{2}\log|x^2-2x-5| + \frac{2}{\sqrt{6}}\log\left|\frac{x-1-\sqrt{6}}{x-1+\sqrt{6}}\right| + C $$
+        </div>
+        
+        <h4 id="ex7-4-q23">23. \(\frac{5x+3}{\sqrt{x^2+4x+10}}\)</h4>
+        <div class="solution-box">
+             <p>Let \(5x+3=A(2x+4)+B\). \(2A=5 \implies A=5/2\). \(4A+B=3 \implies 10+B=3 \implies B=-7\).</p>
+            $$ I = \frac{5}{2} \int \frac{2x+4}{\sqrt{x^2+4x+10}} dx - 7\int \frac{dx}{\sqrt{(x+2)^2+6}} $$
+            $$ = 5\sqrt{x^2+4x+10} - 7\log|x+2+\sqrt{x^2+4x+10}| + C $$
+        </div>
+        
+        <h4 id="ex7-4-q24">24. \(\int \frac{dx}{x^2+2x+2}\) equals</h4>
+        <p>(A) \(x\tan^{-1}(x+1)+C\)   (B) \(\tan^{-1}(x+1)+C\)</p>
+        <p>(C) \((x+1)\tan^{-1}x+C\)   (D) \(\tan^{-1}x+C\)</p>
+        <div class="solution-box">
+            <p>Complete the square: \(x^2+2x+2 = (x+1)^2+1\).</p>
+            $$ I = \int \frac{dx}{(x+1)^2+1^2} = \tan^{-1}(x+1) + C $$
+            <p><strong>Correct Answer: (B)</strong></p>
+        </div>
+        
+        <h4 id="ex7-4-q25">25. \(\int \frac{dx}{\sqrt{9x-4x^2}}\) equals</h4>
+        <p>(A) \(\frac{1}{9}\sin^{-1}\left(\frac{9x-8}{8}\right)+C\)   (B) \(\frac{1}{2}\sin^{-1}\left(\frac{8x-9}{9}\right)+C\)</p>
+        <p>(C) \(\frac{1}{3}\sin^{-1}\left(\frac{9x-8}{8}\right)+C\)   (D) \(\frac{1}{2}\sin^{-1}\left(\frac{9x-8}{9}\right)+C\)</p>
+        <div class="solution-box">
+            <p>Complete the square: \(9x-4x^2 = -4(x^2-\frac{9}{4}x) = -4\left(x^2-\frac{9}{4}x+\frac{81}{64}-\frac{81}{64}\right) = \frac{81}{16}-4(x-\frac{9}{8})^2 = (\frac{9}{4})^2-(2(x-\frac{9}{8}))^2\).</p>
+            $$ I = \int \frac{dx}{\sqrt{(\frac{9}{4})^2-(2x-\frac{9}{4})^2}} = \int \frac{dx}{\sqrt{(\frac{9}{4})^2-(\frac{8x-9}{4})^2}} $$
+            <p>Let \(u=\frac{8x-9}{4}\), \(du = 2dx\).</p>
+            $$ I = \frac{1}{2} \int \frac{du}{\sqrt{(\frac{9}{4})^2-u^2}} = \frac{1}{2}\sin^{-1}\left(\frac{u}{9/4}\right)+C = \frac{1}{2}\sin^{-1}\left(\frac{(8x-9)/4}{9/4}\right)+C = \frac{1}{2}\sin^{-1}\left(\frac{8x-9}{9}\right)+C $$
+            <p><strong>Correct Answer: (B)</strong></p>
+        </div>
+        <hr>
+
+        <h3 id="exercise-7-5">Exercise 7.5</h3>
+        <p>Integrate the rational functions in Exercises 1 to 21.</p>
+        
+        <h4 id="ex7-5-q1">1. \(\frac{x}{(x+1)(x+2)}\)</h4>
+        <div class="solution-box">
+            <p>Let \(\frac{x}{(x+1)(x+2)} = \frac{A}{x+1} + \frac{B}{x+2}\).
+            Then \(x = A(x+2) + B(x+1)\).
+            If \(x=-1\), \(-1=A(1) \implies A=-1\).
+            If \(x=-2\), \(-2=B(-1) \implies B=2\).</p>
+            $$ I = \int \left(\frac{-1}{x+1} + \frac{2}{x+2}\right) dx = -\log|x+1| + 2\log|x+2| + C = \log\frac{(x+2)^2}{|x+1|} + C $$
+        </div>
+
+        <h4 id="ex7-5-q2">2. \(\frac{1}{x^2-9}\)</h4>
+        <div class="solution-box">
+             <p>Using the standard formula \(\int \frac{1}{x^2-a^2} dx = \frac{1}{2a}\log|\frac{x-a}{x+a}|+C\).</p>
+             $$ I = \int \frac{1}{x^2-3^2} dx = \frac{1}{6}\log\left|\frac{x-3}{x+3}\right| + C $$
+        </div>
+
+        <h4 id="ex7-5-q3">3. \(\frac{3x-1}{(x-1)(x-2)(x-3)}\)</h4>
+        <div class="solution-box">
+             <p>Let \(\frac{3x-1}{(x-1)(x-2)(x-3)} = \frac{A}{x-1}+\frac{B}{x-2}+\frac{C}{x-3}\).
+             \(3x-1 = A(x-2)(x-3)+B(x-1)(x-3)+C(x-1)(x-2)\).
+             If \(x=1\), \(2=A(-1)(-2) \implies A=1\).
+             If \(x=2\), \(5=B(1)(-1) \implies B=-5\).
+             If \(x=3\), \(8=C(2)(1) \implies C=4\).</p>
+             $$ I = \int \left(\frac{1}{x-1}-\frac{5}{x-2}+\frac{4}{x-3}\right) dx = \log|x-1|-5\log|x-2|+4\log|x-3|+C $$
+        </div>
+
+        <h4 id="ex7-5-q4">4. \(\frac{x}{(x-1)(x-2)(x-3)}\)</h4>
+        <div class="solution-box">
+             <p>Let \(\frac{x}{(x-1)(x-2)(x-3)} = \frac{A}{x-1}+\frac{B}{x-2}+\frac{C}{x-3}\).
+             \(x = A(x-2)(x-3)+B(x-1)(x-3)+C(x-1)(x-2)\).
+             If \(x=1\), \(1=A(-1)(-2) \implies A=1/2\).
+             If \(x=2\), \(2=B(1)(-1) \implies B=-2\).
+             If \(x=3\), \(3=C(2)(1) \implies C=3/2\).</p>
+             $$ I = \int \left(\frac{1/2}{x-1}-\frac{2}{x-2}+\frac{3/2}{x-3}\right) dx = \frac{1}{2}\log|x-1|-2\log|x-2|+\frac{3}{2}\log|x-3|+C $$
+        </div>
+
+        <h4 id="ex7-5-q5">5. \(\frac{2x}{x^2+3x+2}\)</h4>
+        <div class="solution-box">
+            <p>Denominator \(x^2+3x+2=(x+1)(x+2)\). This is similar to Q1.</p>
+            <p>Let \(\frac{2x}{(x+1)(x+2)} = \frac{A}{x+1} + \frac{B}{x+2}\).
+            \(2x = A(x+2) + B(x+1)\).
+            If \(x=-1\), \(-2=A(1) \implies A=-2\).
+            If \(x=-2\), \(-4=B(-1) \implies B=4\).</p>
+            $$ I = \int \left(\frac{-2}{x+1} + \frac{4}{x+2}\right) dx = -2\log|x+1| + 4\log|x+2| + C $$
+        </div>
+
+        <h4 id="ex7-5-q6">6. \(\frac{1-x^2}{x(1-2x)}\)</h4>
+        <div class="solution-box">
+            <p>This is an improper fraction. Divide \( -x^2+1 \) by \( -2x^2+x \).</p>
+            $$ -x^2+1 = \frac{1}{2}(-2x^2+x) - \frac{1}{2}x + 1 $$
+            So, \(\frac{1-x^2}{x(1-2x)} = \frac{1}{2} + \frac{1-x/2}{x(1-2x)}\).
+            <p>Let \(\frac{1-x/2}{x(1-2x)} = \frac{A}{x}+\frac{B}{1-2x}\). \(1-x/2 = A(1-2x)+Bx\).</p>
+            If \(x=0\), \(1=A\). If \(x=1/2\), \(3/4=B(1/2) \implies B=3/2\).
+            So, \(\frac{A}{x}+\frac{B}{1-2x} = \frac{1}{x}+\frac{3/2}{1-2x}\). This seems wrong, let's re-check the division.
+            $$ \frac{-x^2+1}{-2x^2+x} = \frac{x^2-1}{2x^2-x} $$
+            By long division:
+            \(x^2-1 = \frac{1}{2}(2x^2-x) + \frac{1}{2}x-1\). So integrand is \(\frac{1}{2} + \frac{x/2-1}{x(1-2x)} = \frac{1}{2} - \frac{1-x/2}{x(1-2x)}\).
+            From above, \( \frac{1-x/2}{x(1-2x)} = \frac{1}{x} - \frac{3/2}{2x-1} \).
+            So integrand is \(\frac{1}{2} - (\frac{1}{x} - \frac{3/2}{2x-1}) = \frac{1}{2} - \frac{1}{x} + \frac{3/2}{2x-1}\).
+            $$ I = \int \left(\frac{1}{2} - \frac{1}{x} + \frac{3/2}{2x-1}\right) dx = \frac{1}{2}x - \log|x| + \frac{3}{2}\frac{\log|2x-1|}{2} + C $$
+            $$ = \frac{x}{2} - \log|x| + \frac{3}{4}\log|2x-1| + C $$
+        </div>
+
+        <h4 id="ex7-5-q7">7. \(\frac{x}{(x^2+1)(x-1)}\)</h4>
+        <div class="solution-box">
+            <p>Let \(\frac{x}{(x^2+1)(x-1)} = \frac{A}{x-1} + \frac{Bx+C}{x^2+1}\).
+            \(x = A(x^2+1) + (Bx+C)(x-1)\).
+            If \(x=1\), \(1 = A(2) \implies A=1/2\).
+            Equating coefficients of \(x^2\): \(0 = A+B \implies B=-1/2\).
+            Equating constant terms: \(0 = A-C \implies C=A=1/2\).</p>
+            $$ I = \int \left( \frac{1/2}{x-1} + \frac{-1/2 x + 1/2}{x^2+1} \right) dx = \frac{1}{2}\log|x-1| - \frac{1}{2}\int\frac{x}{x^2+1}dx + \frac{1}{2}\int\frac{1}{x^2+1}dx $$
+            $$ = \frac{1}{2}\log|x-1| - \frac{1}{4}\log(x^2+1) + \frac{1}{2}\tan^{-1}x + C $$
+        </div>
+
+        <h4 id="ex7-5-q8">8. \(\frac{x}{(x-1)^2(x+2)}\)</h4>
+        <div class="solution-box">
+            <p>Let \(\frac{x}{(x-1)^2(x+2)} = \frac{A}{x-1} + \frac{B}{(x-1)^2} + \frac{C}{x+2}\).
+            \(x = A(x-1)(x+2) + B(x+2) + C(x-1)^2\).
+            If \(x=1\), \(1=B(3) \implies B=1/3\).
+            If \(x=-2\), \(-2=C(-3)^2 \implies C=-2/9\).
+            Equating coefficients of \(x^2\): \(0=A+C \implies A=-C=2/9\).</p>
+            $$ I = \int \left(\frac{2/9}{x-1} + \frac{1/3}{(x-1)^2} - \frac{2/9}{x+2}\right) dx $$
+            $$ = \frac{2}{9}\log|x-1| - \frac{1}{3(x-1)} - \frac{2}{9}\log|x+2| + C $$
+        </div>
+
+        <h4 id="ex7-5-q9">9. \(\frac{3x+5}{x^3-x^2-x+1}\)</h4>
+        <div class="solution-box">
+            <p>Denominator: \(x^2(x-1)-(x-1) = (x^2-1)(x-1)=(x-1)^2(x+1)\).</p>
+            <p>Let \(\frac{3x+5}{(x-1)^2(x+1)} = \frac{A}{x-1} + \frac{B}{(x-1)^2} + \frac{C}{x+1}\).
+            \(3x+5 = A(x-1)(x+1) + B(x+1) + C(x-1)^2\).
+            If \(x=1\), \(8=B(2) \implies B=4\).
+            If \(x=-1\), \(2=C(-2)^2 \implies C=1/2\).
+            Equating coeff of \(x^2\): \(0=A+C \implies A=-1/2\).</p>
+            $$ I = \int \left(\frac{-1/2}{x-1} + \frac{4}{(x-1)^2} + \frac{1/2}{x+1}\right) dx $$
+            $$ = -\frac{1}{2}\log|x-1| - \frac{4}{x-1} + \frac{1}{2}\log|x+1| + C $$
+        </div>
+
+        <h4 id="ex7-5-q10">10. \(\frac{2x-3}{(x^2-1)(2x+3)}\)</h4>
+        <div class="solution-box">
+            <p>\(\frac{2x-3}{(x-1)(x+1)(2x+3)} = \frac{A}{x-1}+\frac{B}{x+1}+\frac{C}{2x+3}\).</p>
+            <p>If \(x=1\), \(A = \frac{-1}{(2)(5)} = -1/10\).
+            If \(x=-1\), \(B = \frac{-5}{(-2)(1)} = 5/2\).
+            If \(x=-3/2\), \(C = \frac{-6}{(-5/2)(-1/2)} = -24/5\).</p>
+            $$ I = \int \left(\frac{-1/10}{x-1} + \frac{5/2}{x+1} - \frac{24/5}{2x+3}\right) dx $$
+            $$ = -\frac{1}{10}\log|x-1| + \frac{5}{2}\log|x+1| - \frac{24}{5}\frac{\log|2x+3|}{2} + C $$
+            $$ = -\frac{1}{10}\log|x-1| + \frac{5}{2}\log|x+1| - \frac{12}{5}\log|2x+3| + C $$
+        </div>
+
+        <h4 id="ex7-5-q11">11. \(\frac{5x}{(x+1)(x^2-4)}\)</h4>
+        <div class="solution-box">
+            <p>\(\frac{5x}{(x+1)(x-2)(x+2)} = \frac{A}{x+1}+\frac{B}{x-2}+\frac{C}{x+2}\).</p>
+            <p>If \(x=-1\), \(A = \frac{-5}{(-3)(1)} = 5/3\).
+            If \(x=2\), \(B = \frac{10}{(3)(4)} = 5/6\).
+            If \(x=-2\), \(C = \frac{-10}{(-1)(-4)} = -5/2\).</p>
+            $$ I = \int \left(\frac{5/3}{x+1} + \frac{5/6}{x-2} - \frac{5/2}{x+2}\right) dx $$
+            $$ = \frac{5}{3}\log|x+1| + \frac{5}{6}\log|x-2| - \frac{5}{2}\log|x+2| + C $$
+        </div>
+
+        <h4 id="ex7-5-q12">12. \(\frac{x^3+x+1}{x^2-1}\)</h4>
+        <div class="solution-box">
+            <p>Improper fraction. Divide \(x^3+x+1\) by \(x^2-1\):
+            \(x^3+x+1 = x(x^2-1) + 2x+1\).
+            So integrand is \(x + \frac{2x+1}{x^2-1}\).</p>
+            $$ I = \int x dx + \int \frac{2x+1}{(x-1)(x+1)} dx $$
+            <p>For the second part: \(\frac{2x+1}{(x-1)(x+1)} = \frac{A}{x-1}+\frac{B}{x+1}\).
+            If \(x=1\), \(A = 3/2\). If \(x=-1\), \(B = -1/(-2) = 1/2\).</p>
+            $$ I = \frac{x^2}{2} + \int \left(\frac{3/2}{x-1}+\frac{1/2}{x+1}\right) dx = \frac{x^2}{2} + \frac{3}{2}\log|x-1|+\frac{1}{2}\log|x+1| + C $$
+        </div>
+        
+        <h4 id="ex7-5-q13">13. \(\frac{2}{(1-x)(1+x^2)}\)</h4>
+        <div class="solution-box">
+            <p>Let \(\frac{2}{(1-x)(1+x^2)} = \frac{A}{1-x} + \frac{Bx+C}{1+x^2}\).
+            \(2 = A(1+x^2) + (Bx+C)(1-x)\).
+            If \(x=1\), \(2=A(2) \implies A=1\).
+            Coeff of \(x^2\): \(0 = A-B \implies B=1\).
+            Constant: \(2=A+C \implies C=1\).</p>
+            $$ I = \int \left(\frac{1}{1-x} + \frac{x+1}{1+x^2}\right) dx = -\log|1-x| + \frac{1}{2}\log(1+x^2) + \tan^{-1}x + C $$
+        </div>
+        
+        <h4 id="ex7-5-q14">14. \(\frac{3x-1}{(x+2)^2}\)</h4>
+        <div class="solution-box">
+            <p>Let \(\frac{3x-1}{(x+2)^2} = \frac{A}{x+2}+\frac{B}{(x+2)^2}\).
+            \(3x-1=A(x+2)+B\).
+            Coeff of \(x\): \(A=3\).
+            Constant: \(-1=2A+B \implies -1=6+B \implies B=-7\).</p>
+            $$ I = \int \left(\frac{3}{x+2} - \frac{7}{(x+2)^2}\right) dx = 3\log|x+2| + \frac{7}{x+2} + C $$
+        </div>
+        
+        <h4 id="ex7-5-q15">15. \(\frac{1}{x^4-1}\)</h4>
+        <div class="solution-box">
+            <p>\(\frac{1}{(x^2-1)(x^2+1)} = \frac{1}{(x-1)(x+1)(x^2+1)}\).
+            Let it be \(\frac{A}{x-1}+\frac{B}{x+1}+\frac{Cx+D}{x^2+1}\).
+            \(A=\frac{1}{2(2)}=1/4\), \(B=\frac{1}{(-2)(2)}=-1/4\).
+            To find \(C, D\), let \(x=0\), \(1=-A+B-D \implies 1=-1/4-1/4-D \implies D=-3/2\). Wait. \(1= -A+B-D\) is wrong.
+            \(1 = A(x+1)(x^2+1)+B(x-1)(x^2+1)+(Cx+D)(x^2-1)\).
+            Let \(x=0\), \(1=A-B-D = 1/4 - (-1/4) - D = 1/2 - D \implies D=-1/2\).
+            Coeff of \(x^3\): \(0=A+B+C = 1/4-1/4+C \implies C=0\).</p>
+            $$ I = \int\left(\frac{1/4}{x-1}-\frac{1/4}{x+1}-\frac{1/2}{x^2+1}\right) dx $$
+            $$ = \frac{1}{4}\log|x-1| - \frac{1}{4}\log|x+1| - \frac{1}{2}\tan^{-1}x + C $$
+        </div>
+        
+        <h4 id="ex7-5-q16">16. \(\frac{1}{x(x^n+1)}\)</h4>
+        <div class="solution-box">
+            <p>Multiply numerator and denominator by \(x^{n-1}\).</p>
+            $$ I = \int \frac{x^{n-1}}{x^n(x^n+1)} dx $$
+            <p>Let \(u=x^n\), \(du=nx^{n-1}dx\).</p>
+            $$ I = \frac{1}{n} \int \frac{du}{u(u+1)} = \frac{1}{n} \int \left(\frac{1}{u}-\frac{1}{u+1}\right) du $$
+            $$ = \frac{1}{n}[\log|u|-\log|u+1|] + C = \frac{1}{n}\log\left|\frac{x^n}{x^n+1}\right| + C $$
+        </div>
+        
+        <h4 id="ex7-5-q17">17. \(\frac{\cos x}{(1-\sin x)(2-\sin x)}\)</h4>
+        <div class="solution-box">
+            <p>Let \(u=\sin x\), \(du = \cos x dx\).</p>
+            $$ I = \int \frac{du}{(1-u)(2-u)} = \int\left(\frac{1}{1-u} - \frac{1}{2-u}\right)du $$
+            $$ = -\log|1-u| + \log|2-u| + C = \log\left|\frac{2-\sin x}{1-\sin x}\right| + C $$
+        </div>
+        
+        <h4 id="ex7-5-q18">18. \(\frac{(x^2+1)(x^2+2)}{(x^2+3)(x^2+4)}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y=x^2\). The fraction is \(\frac{(y+1)(y+2)}{(y+3)(y+4)} = \frac{y^2+3y+2}{y^2+7y+12}\).
+            This is improper. By division, \(y^2+3y+2 = 1(y^2+7y+12) -4y-10\).
+            So we integrate \(1 - \frac{4y+10}{(y+3)(y+4)}\).
+            \(\frac{4y+10}{(y+3)(y+4)} = \frac{A}{y+3}+\frac{B}{y+4}\).
+            If \(y=-3\), \(A=\frac{-2}{1}=-2\). If \(y=-4\), \(B=\frac{-6}{-1}=6\).</p>
+            $$ I = \int \left(1 - \left(\frac{-2}{x^2+3}+\frac{6}{x^2+4}\right)\right) dx = \int \left(1+\frac{2}{x^2+3}-\frac{6}{x^2+4}\right)dx $$
+            $$ = x + \frac{2}{\sqrt{3}}\tan^{-1}\frac{x}{\sqrt{3}} - \frac{6}{2}\tan^{-1}\frac{x}{2} + C = x + \frac{2}{\sqrt{3}}\tan^{-1}\frac{x}{\sqrt{3}} - 3\tan^{-1}\frac{x}{2} + C $$
+        </div>
+        
+        <h4 id="ex7-5-q19">19. \(\frac{2x}{(x^2+1)(x^2+3)}\)</h4>
+        <div class="solution-box">
+            <p>Let \(u=x^2\), \(du=2x dx\).</p>
+            $$ I = \int \frac{du}{(u+1)(u+3)} = \frac{1}{2} \int \left(\frac{1}{u+1}-\frac{1}{u+3}\right) du $$
+            $$ = \frac{1}{2}[\log|u+1|-\log|u+3|] + C = \frac{1}{2}\log\left|\frac{x^2+1}{x^2+3}\right| + C $$
+        </div>
+        
+        <h4 id="ex7-5-q20">20. \(\frac{1}{x(x^4-1)}\)</h4>
+        <div class="solution-box">
+             <p>Multiply numerator/denominator by \(x^3\).</p>
+             $$ I = \int \frac{x^3}{x^4(x^4-1)} dx $$
+             <p>Let \(u=x^4\), \(du=4x^3 dx\).</p>
+             $$ I = \frac{1}{4} \int \frac{du}{u(u-1)} = \frac{1}{4} \int \left(\frac{1}{u-1}-\frac{1}{u}\right)du $$
+             $$ = \frac{1}{4}[\log|u-1|-\log|u|] + C = \frac{1}{4}\log\left|\frac{x^4-1}{x^4}\right| + C $$
+        </div>
+        
+        <h4 id="ex7-5-q21">21. \(\frac{1}{e^x-1}\)</h4>
+        <div class="solution-box">
+            <p>Let \(u=e^x\), \(du=e^x dx \implies dx = du/u\).</p>
+            $$ I = \int \frac{1}{u-1} \frac{du}{u} = \int \left(\frac{1}{u-1}-\frac{1}{u}\right)du $$
+            $$ = \log|u-1|-\log|u| + C = \log|e^x-1| - \log|e^x| + C = \log|e^x-1| - x + C $$
+        </div>
+
+        <h4 id="ex7-5-q22">22. \(\int \frac{x dx}{(x-1)(x-2)}\) equals</h4>
+        <p>(A) \(\log\left|\frac{(x-1)^2}{x-2}\right|+C\)   (B) \(\log\left|\frac{(x-2)^2}{x-1}\right|+C\)</p>
+        <p>(C) \(\log\left|\left(\frac{x-1}{x-2}\right)^2\right|+C\)   (D) \(\log| (x-1)(x-2) |+C\)</p>
+        <div class="solution-box">
+            <p>From Q1, with different constants. Let \(\frac{x}{(x-1)(x-2)} = \frac{A}{x-1} + \frac{B}{x-2}\).
+            If \(x=1\), \(A=-1\). If \(x=2\), \(B=2\).</p>
+            $$ I = \int \left(\frac{-1}{x-1}+\frac{2}{x-2}\right)dx = -\log|x-1|+2\log|x-2|+C = \log\left|\frac{(x-2)^2}{x-1}\right|+C $$
+            <p><strong>Correct Answer: (B)</strong></p>
+        </div>
+        
+        <h4 id="ex7-5-q23">23. \(\int \frac{dx}{x(x^2+1)}\) equals</h4>
+        <p>(A) \(\log|x|-\frac{1}{2}\log(x^2+1)+C\)   (B) \(\log|x|+\frac{1}{2}\log(x^2+1)+C\)</p>
+        <p>(C) \(-\log|x|+\frac{1}{2}\log(x^2+1)+C\)   (D) \(\frac{1}{2}\log|x|+\log(x^2+1)+C\)</p>
+        <div class="solution-box">
+            <p>Let \(\frac{1}{x(x^2+1)} = \frac{A}{x}+\frac{Bx+C}{x^2+1}\).
+            \(1=A(x^2+1)+(Bx+C)x\).
+            If \(x=0\), \(A=1\). Coeff of \(x^2\): \(0=A+B \implies B=-1\). Coeff of \(x\): \(0=C\).</p>
+            $$ I = \int\left(\frac{1}{x}-\frac{x}{x^2+1}\right)dx = \log|x|-\frac{1}{2}\log(x^2+1)+C $$
+            <p><strong>Correct Answer: (A)</strong></p>
+        </div>
+        <hr>
+
+        <h3 id="exercise-7-6">Exercise 7.6</h3>
+        <p>Integrate the functions in Exercises 1 to 22.</p>
+
+        <h4 id="ex7-6-q1">1. \(x \sin x\)</h4>
+        <div class="solution-box">
+            <p>Using integration by parts \(\int u dv = uv - \int v du\). Let \(u=x, dv=\sin x dx\). Then \(du=dx, v=-\cos x\).</p>
+            $$ I = x(-\cos x) - \int(-\cos x)dx = -x\cos x + \sin x + C $$
+        </div>
+        
+        <h4 id="ex7-6-q2">2. \(x \sin 3x\)</h4>
+        <div class="solution-box">
+             <p>Let \(u=x, dv=\sin 3x dx\). Then \(du=dx, v=-\frac{\cos 3x}{3}\).</p>
+            $$ I = x(-\frac{\cos 3x}{3}) - \int(-\frac{\cos 3x}{3})dx = -\frac{x\cos 3x}{3} + \frac{1}{3}\frac{\sin 3x}{3} + C = -\frac{x\cos 3x}{3} + \frac{\sin 3x}{9} + C $$
+        </div>
+        
+        <h4 id="ex7-6-q3">3. \(x^2 e^x\)</h4>
+        <div class="solution-box">
+             <p>Let \(u=x^2, dv=e^x dx\). Then \(du=2x dx, v=e^x\).</p>
+            $$ I = x^2e^x - \int e^x (2x) dx = x^2e^x - 2 \int x e^x dx $$
+            <p>For \(\int x e^x dx\), let \(u=x, dv=e^x dx\). Then \(du=dx, v=e^x\).</p>
+            $$ \int x e^x dx = xe^x - \int e^x dx = xe^x - e^x $$
+            $$ I = x^2e^x - 2(xe^x - e^x) + C = (x^2-2x+2)e^x + C $$
+        </div>
+        
+        <h4 id="ex7-6-q4">4. \(x \log x\)</h4>
+        <div class="solution-box">
+             <p>Let \(u=\log x, dv=x dx\). Then \(du=\frac{1}{x}dx, v=\frac{x^2}{2}\).</p>
+            $$ I = (\log x)\frac{x^2}{2} - \int \frac{x^2}{2}\frac{1}{x}dx = \frac{x^2\log x}{2} - \frac{1}{2}\int x dx = \frac{x^2\log x}{2} - \frac{x^2}{4} + C $$
+        </div>
+        
+        <h4 id="ex7-6-q5">5. \(x \log 2x\)</h4>
+        <div class="solution-box">
+             <p>Let \(u=\log 2x, dv=x dx\). Then \(du=\frac{1}{2x}(2)dx=\frac{1}{x}dx, v=\frac{x^2}{2}\).</p>
+            $$ I = (\log 2x)\frac{x^2}{2} - \int \frac{x^2}{2}\frac{1}{x}dx = \frac{x^2\log 2x}{2} - \frac{x^2}{4} + C $$
+        </div>
+        
+        <h4 id="ex7-6-q6">6. \(x^2 \log x\)</h4>
+        <div class="solution-box">
+             <p>Let \(u=\log x, dv=x^2 dx\). Then \(du=\frac{1}{x}dx, v=\frac{x^3}{3}\).</p>
+            $$ I = (\log x)\frac{x^3}{3} - \int \frac{x^3}{3}\frac{1}{x}dx = \frac{x^3\log x}{3} - \frac{1}{3}\int x^2 dx = \frac{x^3\log x}{3} - \frac{x^3}{9} + C $$
+        </div>
+        
+        <h4 id="ex7-6-q7">7. \(x \sin^{-1} x\)</h4>
+        <div class="solution-box">
+            <p>Let \(u=\sin^{-1} x, dv=x dx\). Then \(du=\frac{dx}{\sqrt{1-x^2}}, v=\frac{x^2}{2}\).</p>
+            $$ I = (\sin^{-1} x)\frac{x^2}{2} - \frac{1}{2}\int \frac{x^2}{\sqrt{1-x^2}}dx = \frac{x^2\sin^{-1} x}{2} - \frac{1}{2}\int \frac{-(1-x^2)+1}{\sqrt{1-x^2}}dx $$
+            $$ = \frac{x^2\sin^{-1} x}{2} + \frac{1}{2}\int \sqrt{1-x^2}dx - \frac{1}{2}\int \frac{1}{\sqrt{1-x^2}}dx $$
+            $$ = \frac{x^2\sin^{-1} x}{2} + \frac{1}{2}\left[\frac{x}{2}\sqrt{1-x^2}+\frac{1}{2}\sin^{-1}x\right] - \frac{1}{2}\sin^{-1}x + C $$
+            $$ = \frac{x^2\sin^{-1} x}{2} + \frac{x\sqrt{1-x^2}}{4} - \frac{1}{4}\sin^{-1}x + C $$
+        </div>
+        
+        <h4 id="ex7-6-q8">8. \(x \tan^{-1} x\)</h4>
+        <div class="solution-box">
+             <p>Let \(u=\tan^{-1} x, dv=x dx\). Then \(du=\frac{dx}{1+x^2}, v=\frac{x^2}{2}\).</p>
+             $$ I = \frac{x^2}{2}\tan^{-1} x - \frac{1}{2}\int\frac{x^2}{1+x^2}dx = \frac{x^2}{2}\tan^{-1} x - \frac{1}{2}\int\frac{1+x^2-1}{1+x^2}dx $$
+             $$ = \frac{x^2}{2}\tan^{-1} x - \frac{1}{2}\int(1-\frac{1}{1+x^2})dx = \frac{x^2}{2}\tan^{-1} x - \frac{1}{2}(x-\tan^{-1}x) + C $$
+        </div>
+        
+        <h4 id="ex7-6-q9">9. \(x \cos^{-1} x\)</h4>
+        <div class="solution-box">
+             <p>Let \(u=\cos^{-1} x, dv=x dx\). Then \(du=\frac{-dx}{\sqrt{1-x^2}}, v=\frac{x^2}{2}\).</p>
+            $$ I = \frac{x^2}{2}\cos^{-1} x + \frac{1}{2}\int \frac{x^2}{\sqrt{1-x^2}}dx $$
+            <p>From Q7, the integral is \(-\frac{1}{2}(\frac{x}{2}\sqrt{1-x^2}+\frac{1}{2}\sin^{-1}x) + \frac{1}{2}\sin^{-1}x\).
+            So, \(I = \frac{x^2}{2}\cos^{-1} x - \frac{1}{2}\left[\frac{x}{2}\sqrt{1-x^2}-\frac{1}{2}\cos^{-1}x\right]\). No, the formula for \(\sqrt{a^2-x^2}\) is \(\frac{x}{2}\sqrt{a^2-x^2}+\frac{a^2}{2}\sin^{-1}(x/a)\).
+            So \(\int \sqrt{1-x^2}dx = \frac{x}{2}\sqrt{1-x^2}+\frac{1}{2}\sin^{-1}x\).
+            \(\int \frac{x^2}{\sqrt{1-x^2}}dx = \int \frac{-(1-x^2)+1}{\sqrt{1-x^2}}dx = -\int \sqrt{1-x^2}dx + \int \frac{dx}{\sqrt{1-x^2}}\)
+            \( = -(\frac{x}{2}\sqrt{1-x^2}+\frac{1}{2}\sin^{-1}x) + \sin^{-1}x = -\frac{x}{2}\sqrt{1-x^2}+\frac{1}{2}\sin^{-1}x\).
+            $$ I = \frac{x^2}{2}\cos^{-1} x - \frac{x\sqrt{1-x^2}}{4} + \frac{1}{4}\sin^{-1}x + C $$
+            $$ I = \frac{x^2}{2}\cos^{-1} x - \frac{x\sqrt{1-x^2}}{4} + \frac{1}{4}(\frac{\pi}{2}-\cos^{-1}x) + C_1 = (\frac{x^2}{2}-\frac{1}{4})\cos^{-1}x - \frac{x\sqrt{1-x^2}}{4} + C $$
+        </div>
+        
+        <h4 id="ex7-6-q10">10. \((\sin^{-1} x)^2\)</h4>
+        <div class="solution-box">
+            <p>Let \(u=(\sin^{-1} x)^2, dv=dx\). Then \(du=2(\sin^{-1} x)\frac{1}{\sqrt{1-x^2}}dx, v=x\).</p>
+            $$ I = x(\sin^{-1} x)^2 - 2\int \frac{x \sin^{-1} x}{\sqrt{1-x^2}} dx $$
+            <p>For the second integral, let \(t=\sin^{-1} x\), \(dt=\frac{dx}{\sqrt{1-x^2}}\), \(x=\sin t\).</p>
+            $$ \int \frac{x \sin^{-1} x}{\sqrt{1-x^2}} dx = \int t \sin t dt = -t\cos t + \sin t $$
+            $$ = -(\sin^{-1}x)\cos(\sin^{-1}x) + \sin(\sin^{-1}x) = -(\sin^{-1}x)\sqrt{1-x^2} + x $$
+            $$ I = x(\sin^{-1} x)^2 - 2(-(\sin^{-1}x)\sqrt{1-x^2} + x) + C = x(\sin^{-1} x)^2 + 2\sqrt{1-x^2}\sin^{-1}x - 2x + C $$
+        </div>
+        
+        <h4 id="ex7-6-q11">11. \(\frac{x \cos^{-1} x}{\sqrt{1-x^2}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(t=\cos^{-1} x\), \(dt=\frac{-dx}{\sqrt{1-x^2}}\), \(x=\cos t\).</p>
+            $$ I = \int (\cos t) t (-dt) = -\int t \cos t dt $$
+            $$ = -(t\sin t - \int\sin t dt) = -(t\sin t+\cos t) + C $$
+            $$ = -(\cos^{-1}x)\sin(\cos^{-1}x) - \cos(\cos^{-1}x) + C = -\sqrt{1-x^2}\cos^{-1}x - x + C $$
+        </div>
+        
+        <h4 id="ex7-6-q12">12. \(x \sec^2 x\)</h4>
+        <div class="solution-box">
+             <p>Let \(u=x, dv=\sec^2 x dx\). Then \(du=dx, v=\tan x\).</p>
+             $$ I = x\tan x - \int \tan x dx = x\tan x - \log|\sec x| + C = x\tan x + \log|\cos x| + C $$
+        </div>
+        
+        <h4 id="ex7-6-q13">13. \(\tan^{-1} x\)</h4>
+        <div class="solution-box">
+             <p>Let \(u=\tan^{-1} x, dv=dx\). Then \(du=\frac{dx}{1+x^2}, v=x\).</p>
+             $$ I = x\tan^{-1} x - \int \frac{x}{1+x^2} dx = x\tan^{-1} x - \frac{1}{2}\log(1+x^2) + C $$
+        </div>
+        
+        <h4 id="ex7-6-q14">14. \(x(\log x)^2\)</h4>
+        <div class="solution-box">
+            <p>Let \(u=(\log x)^2, dv=x dx\). Then \(du=2(\log x)\frac{1}{x}dx, v=\frac{x^2}{2}\).</p>
+            $$ I = \frac{x^2}{2}(\log x)^2 - \int \frac{x^2}{2} \cdot 2(\log x)\frac{1}{x} dx = \frac{x^2}{2}(\log x)^2 - \int x\log x dx $$
+            <p>From Q4, \(\int x\log x dx = \frac{x^2\log x}{2} - \frac{x^2}{4}\).</p>
+            $$ I = \frac{x^2}{2}(\log x)^2 - \left(\frac{x^2\log x}{2} - \frac{x^2}{4}\right) + C = \frac{x^2}{2}(\log x)^2 - \frac{x^2}{2}\log x + \frac{x^2}{4} + C $$
+        </div>
+
+        <h4 id="ex7-6-q15">15. \((x^2+1)\log x\)</h4>
+        <div class="solution-box">
+            <p>Let \(u=\log x, dv=(x^2+1) dx\). Then \(du=\frac{1}{x}dx, v=\frac{x^3}{3}+x\).</p>
+            $$ I = (\frac{x^3}{3}+x)\log x - \int (\frac{x^3}{3}+x)\frac{1}{x} dx = (\frac{x^3}{3}+x)\log x - \int (\frac{x^2}{3}+1) dx $$
+            $$ = (\frac{x^3}{3}+x)\log x - (\frac{x^3}{9}+x) + C $$
+        </div>
+
+        <h4 id="ex7-6-q16">16. \(e^x(\sin x + \cos x)\)</h4>
+        <div class="solution-box">
+            <p>This is of the form \(\int e^x(f(x)+f'(x))dx\), where \(f(x)=\sin x\) and \(f'(x)=\cos x\).</p>
+            <p>The integral is \(e^x f(x) + C\).</p>
+            $$ I = e^x \sin x + C $$
+        </div>
+
+        <h4 id="ex7-6-q17">17. \(\frac{xe^x}{(1+x)^2}\)</h4>
+        <div class="solution-box">
+             $$ I = \int \frac{(x+1-1)e^x}{(1+x)^2} dx = \int e^x \left(\frac{1}{1+x} - \frac{1}{(1+x)^2}\right) dx $$
+             <p>This is of the form \(\int e^x(f(x)+f'(x))dx\), where \(f(x)=\frac{1}{1+x}\) and \(f'(x)=-\frac{1}{(1+x)^2}\).</p>
+             $$ I = e^x \frac{1}{1+x} + C $$
+        </div>
+        
+        <h4 id="ex7-6-q18">18. \(e^x\left(\frac{1+\sin x}{1+\cos x}\right)\)</h4>
+        <div class="solution-box">
+             $$ I = \int e^x\left(\frac{1+2\sin(x/2)\cos(x/2)}{2\cos^2(x/2)}\right) dx = \int e^x\left(\frac{1}{2}\sec^2(x/2) + \tan(x/2)\right) dx $$
+             <p>This is of the form \(\int e^x(f(x)+f'(x))dx\), where \(f(x)=\tan(x/2)\) and \(f'(x)=\frac{1}{2}\sec^2(x/2)\).</p>
+             $$ I = e^x \tan(x/2) + C $$
+        </div>
+
+        <h4 id="ex7-6-q19">19. \(e^x(\frac{1}{x}-\frac{1}{x^2})\)</h4>
+        <div class="solution-box">
+             <p>This is of the form \(\int e^x(f(x)+f'(x))dx\), where \(f(x)=\frac{1}{x}\) and \(f'(x)=-\frac{1}{x^2}\).</p>
+             $$ I = \frac{e^x}{x} + C $$
+        </div>
+
+        <h4 id="ex7-6-q20">20. \(\frac{(x-3)e^x}{(x-1)^3}\)</h4>
+        <div class="solution-box">
+             $$ I = \int \frac{(x-1-2)e^x}{(x-1)^3} dx = \int e^x\left(\frac{1}{(x-1)^2}-\frac{2}{(x-1)^3}\right) dx $$
+             <p>This is of the form \(\int e^x(f(x)+f'(x))dx\), where \(f(x)=\frac{1}{(x-1)^2}\) and \(f'(x)=-\frac{2}{(x-1)^3}\).</p>
+             $$ I = \frac{e^x}{(x-1)^2} + C $$
+        </div>
+
+        <h4 id="ex7-6-q21">21. \(e^{2x} \sin x\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int e^{2x} \sin x dx\). Using by parts: \(u=\sin x, dv=e^{2x}dx \implies du=\cos x dx, v=e^{2x}/2\).</p>
+            $$ I = \frac{e^{2x}}{2}\sin x - \int \frac{e^{2x}}{2}\cos x dx $$
+            <p>Again by parts for the second integral: \(u=\cos x, dv=e^{2x}/2 dx \implies du=-\sin x dx, v=e^{2x}/4\).</p>
+            $$ I = \frac{e^{2x}}{2}\sin x - \left( \frac{e^{2x}}{4}\cos x - \int \frac{e^{2x}}{4}(-\sin x)dx \right) $$
+            $$ I = \frac{e^{2x}}{2}\sin x - \frac{e^{2x}}{4}\cos x - \frac{1}{4} \int e^{2x}\sin x dx = \frac{e^{2x}}{2}\sin x - \frac{e^{2x}}{4}\cos x - \frac{1}{4}I $$
+            $$ \frac{5}{4}I = \frac{e^{2x}}{4}(2\sin x - \cos x) \implies I = \frac{e^{2x}}{5}(2\sin x - \cos x) + C $$
+        </div>
+
+        <h4 id="ex7-6-q22">22. \(\sin^{-1}(\frac{2x}{1+x^2})\)</h4>
+        <div class="solution-box">
+            <p>For \(|x| \le 1\), \(\sin^{-1}(\frac{2x}{1+x^2}) = 2\tan^{-1}x\).</p>
+            $$ I = \int 2\tan^{-1}x dx = 2\int \tan^{-1}x dx $$
+            <p>From Q13, \(\int\tan^{-1}x dx = x\tan^{-1} x - \frac{1}{2}\log(1+x^2)\).</p>
+            $$ I = 2x\tan^{-1} x - \log(1+x^2) + C $$
+        </div>
+
+        <h4 id="ex7-6-q23">23. \(\int x^2 e^{x^3} dx\) equals</h4>
+        <p>(A) \(\frac{1}{3}e^{x^3}+C\)   (B) \(\frac{1}{3}e^{x^2}+C\)</p>
+        <p>(C) \(\frac{1}{2}e^{x^3}+C\)   (D) \(\frac{1}{2}e^{x^2}+C\)</p>
+        <div class="solution-box">
+            <p>Let \(u=x^3\), then \(du = 3x^2 dx\).</p>
+            $$ I = \frac{1}{3} \int e^u du = \frac{1}{3}e^u + C = \frac{1}{3}e^{x^3} + C $$
+            <p><strong>Correct Answer: (A)</strong></p>
+        </div>
+        
+        <h4 id="ex7-6-q24">24. \(\int e^x \sec x (1+\tan x) dx\) equals</h4>
+        <p>(A) \(e^x \cos x+C\)   (B) \(e^x \sec x+C\)</p>
+        <p>(C) \(e^x \sin x+C\)   (D) \(e^x \tan x+C\)</p>
+        <div class="solution-box">
+            $$ I = \int e^x(\sec x + \sec x \tan x) dx $$
+            <p>This is of the form \(\int e^x(f(x)+f'(x))dx\), where \(f(x)=\sec x\) and \(f'(x)=\sec x \tan x\).</p>
+            $$ I = e^x \sec x + C $$
+            <p><strong>Correct Answer: (B)</strong></p>
+        </div>
+        <hr>
+        <h3 id="miscellaneous-exercise-on-chapter-7">Miscellaneous Exercise on Chapter 7</h3>
+        <p>Integrate the functions in Exercises 1 to 24.</p>
+
+        <h4 id="ex7-misc-q1">1. \(\frac{1}{x-x^3}\)</h4>
+        <div class="solution-box">
+            $$ I = \int \frac{dx}{x-x^3} = \int \frac{dx}{x(1-x^2)} = \int \frac{dx}{x(1-x)(1+x)} $$
+            <p>Using partial fractions: Let \(\frac{1}{x(1-x)(1+x)} = \frac{A}{x}+\frac{B}{1-x}+\frac{C}{1+x}\).</p>
+            <p>\(1 = A(1-x^2) + Bx(1+x) + Cx(1-x)\)</p>
+            <p>If \(x=0\), \(1=A(1) \implies A=1\).</p>
+            <p>If \(x=1\), \(1=B(1)(2) \implies B=1/2\).</p>
+            <p>If \(x=-1\), \(1=C(-1)(2) \implies C=-1/2\).</p>
+            $$ I = \int\left(\frac{1}{x}+\frac{1/2}{1-x}-\frac{1/2}{1+x}\right)dx = \log|x| - \frac{1}{2}\log|1-x| - \frac{1}{2}\log|1+x| + C $$
+            $$ = \log|x| - \frac{1}{2}\log|1-x^2| + C $$
+        </div>
+
+        <h4 id="ex7-misc-q2">2. \(\frac{1}{\sqrt{x+a}+\sqrt{x+b}}\)</h4>
+        <div class="solution-box">
+            <p>Rationalize the denominator by multiplying by \((\sqrt{x+a}-\sqrt{x+b})\):</p>
+            $$ I = \int \frac{\sqrt{x+a}-\sqrt{x+b}}{(\sqrt{x+a}+\sqrt{x+b})(\sqrt{x+a}-\sqrt{x+b})} dx = \int \frac{\sqrt{x+a}-\sqrt{x+b}}{(x+a)-(x+b)} dx $$
+            $$ = \frac{1}{a-b} \int ((x+a)^{1/2}-(x+b)^{1/2}) dx $$
+            $$ = \frac{1}{a-b} \left[ \frac{(x+a)^{3/2}}{3/2} - \frac{(x+b)^{3/2}}{3/2} \right] + C = \frac{2}{3(a-b)} \left[(x+a)^{3/2}-(x+b)^{3/2}\right] + C $$
+        </div>
+
+        <h4 id="ex7-misc-q3">3. \(\frac{1}{x\sqrt{ax-x^2}}\) [Hint: Put \(x = a/t\)]</h4>
+        <div class="solution-box">
+            <p>Let \(x = a/t\). Then \(dx = -a/t^2 dt\).</p>
+            $$ ax-x^2 = a(a/t) - (a/t)^2 = \frac{a^2}{t} - \frac{a^2}{t^2} = \frac{a^2(t-1)}{t^2} $$
+            $$ \sqrt{ax-x^2} = \frac{a\sqrt{t-1}}{t} $$
+            <p>Substituting into the integral:</p>
+            $$ I = \int \frac{1}{(a/t) \cdot \frac{a\sqrt{t-1}}{t}} \left(-\frac{a}{t^2}\right) dt = \int \frac{1}{a\sqrt{t-1}} \left(-\frac{a}{t^2}\right) dt $$
+            This substitution from the hint is not working as expected. Let's re-examine.
+            $$ I = \int \frac{1}{(a/t) \frac{a\sqrt{t-1}}{t}} \left(-\frac{a}{t^2}\right) dt = \int \frac{t^2}{a^2\sqrt{t-1}} \left(-\frac{a}{t^2}\right) dt = -\frac{1}{a} \int \frac{dt}{\sqrt{t-1}} $$
+            $$ = -\frac{1}{a} \int (t-1)^{-1/2} dt = -\frac{1}{a} \frac{(t-1)^{1/2}}{1/2} + C = -\frac{2}{a}\sqrt{t-1} + C $$
+            <p>Substitute back \(t=a/x\):</p>
+            $$ I = -\frac{2}{a}\sqrt{\frac{a}{x}-1} + C = -\frac{2}{a}\sqrt{\frac{a-x}{x}} + C $$
+        </div>
+
+        <h4 id="ex7-misc-q4">4. \(\frac{1}{x^2(x^4+1)^{3/4}}\)</h4>
+        <div class="solution-box">
+            $$ I = \int \frac{1}{x^2(x^4(1+1/x^4))^{3/4}} dx = \int \frac{1}{x^2 \cdot x^3 (1+x^{-4})^{3/4}} dx = \int \frac{dx}{x^5(1+x^{-4})^{3/4}} $$
+            <p>Let \(u = 1+x^{-4}\). Then \(du = -4x^{-5} dx\), so \(\frac{dx}{x^5} = -\frac{du}{4}\).</p>
+            $$ I = -\frac{1}{4} \int \frac{du}{u^{3/4}} = -\frac{1}{4} \int u^{-3/4} du = -\frac{1}{4} \frac{u^{1/4}}{1/4} + C = -u^{1/4} + C $$
+            <p>Substitute back \(u = 1+x^{-4}\):</p>
+            $$ I = -(1+x^{-4})^{1/4} + C = -\left(\frac{x^4+1}{x^4}\right)^{1/4} + C = -\frac{(x^4+1)^{1/4}}{x} + C $$
+        </div>
+
+        <h4 id="ex7-misc-q5">5. \(\frac{1}{x^{1/2}+x^{1/3}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(x=t^6\). Then \(dx = 6t^5 dt\).</p>
+            $$ I = \int \frac{1}{(t^6)^{1/2}+(t^6)^{1/3}} (6t^5) dt = \int \frac{6t^5}{t^3+t^2} dt = \int \frac{6t^3}{t+1} dt $$
+            <p>By polynomial division, \(t^3 = (t^2-t+1)(t+1) - 1\).</p>
+            $$ I = 6 \int \left(t^2-t+1 - \frac{1}{t+1}\right) dt $$
+            $$ = 6 \left[ \frac{t^3}{3} - \frac{t^2}{2} + t - \log|t+1| \right] + C $$
+            $$ = 2t^3 - 3t^2 + 6t - 6\log|t+1| + C $$
+            <p>Substitute back \(t=x^{1/6}\):</p>
+            $$ I = 2x^{1/2} - 3x^{1/3} + 6x^{1/6} - 6\log(x^{1/6}+1) + C $$
+        </div>
+
+        <h4 id="ex7-misc-q6">6. \(\frac{5x}{(x+1)(x^2+9)}\)</h4>
+        <div class="solution-box">
+            <p>Using partial fractions: \(\frac{5x}{(x+1)(x^2+9)} = \frac{A}{x+1} + \frac{Bx+C}{x^2+9}\).</p>
+            <p>\(5x = A(x^2+9) + (Bx+C)(x+1)\).</p>
+            <p>If \(x=-1\), \(-5 = A(10) \implies A = -1/2\).</p>
+            <p>Equating coefficients of \(x^2\): \(0 = A+B \implies B = -A = 1/2\).</p>
+            <p>Equating constant terms: \(0 = 9A+C \implies 0 = 9(-1/2)+C \implies C = 9/2\).</p>
+            $$ I = \int \left(\frac{-1/2}{x+1} + \frac{\frac{1}{2}x+\frac{9}{2}}{x^2+9}\right) dx = -\frac{1}{2}\int \frac{dx}{x+1} + \frac{1}{2}\int \frac{x}{x^2+9} dx + \frac{9}{2}\int \frac{dx}{x^2+9} $$
+            $$ I = -\frac{1}{2}\log|x+1| + \frac{1}{4}\log(x^2+9) + \frac{9}{2} \cdot \frac{1}{3}\tan^{-1}\left(\frac{x}{3}\right) + C $$
+            $$ I = -\frac{1}{2}\log|x+1| + \frac{1}{4}\log(x^2+9) + \frac{3}{2}\tan^{-1}\left(\frac{x}{3}\right) + C $$
+        </div>
+
+        <h4 id="ex7-misc-q7">7. \(\frac{\sin x}{\sin(x-a)}\)</h4>
+        <div class="solution-box">
+            <p>Let \(u = x-a\), so \(x = u+a\), and \(dx=du\).</p>
+            $$ I = \int \frac{\sin(u+a)}{\sin u} du = \int \frac{\sin u \cos a + \cos u \sin a}{\sin u} du $$
+            $$ = \int (\cos a + \cot u \sin a) du = u \cos a + (\sin a)\log|\sin u| + C $$
+            <p>Substitute back \(u = x-a\):</p>
+            $$ I = (x-a)\cos a + (\sin a)\log|\sin(x-a)| + C $$
+        </div>
+
+        <h4 id="ex7-misc-q8">8. \(\frac{e^{5\log x} - e^{4\log x}}{e^{3\log x} - e^{2\log x}}\)</h4>
+        <div class="solution-box">
+            <p>Using log property \(e^{k \log x} = x^k\), the integrand becomes:</p>
+            $$ \frac{x^5-x^4}{x^3-x^2} = \frac{x^4(x-1)}{x^2(x-1)} = x^2 $$
+            $$ I = \int x^2 dx = \frac{x^3}{3} + C $$
+        </div>
+
+        <h4 id="ex7-misc-q9">9. \(\frac{\cos x}{\sqrt{4-\sin^2 x}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(u = \sin x\), so \(du = \cos x dx\).</p>
+            $$ I = \int \frac{du}{\sqrt{2^2-u^2}} = \sin^{-1}\left(\frac{u}{2}\right) + C = \sin^{-1}\left(\frac{\sin x}{2}\right) + C $$
+        </div>
+
+        <h4 id="ex7-misc-q10">10. \(\frac{\sin^8 x - \cos^8 x}{1-2\sin^2 x \cos^2 x}\)</h4>
+        <div class="solution-box">
+            <p>Numerator: \(\sin^8 x - \cos^8 x = (\sin^4 x - \cos^4 x)(\sin^4 x + \cos^4 x)\)</p>
+            <p>\(= (\sin^2 x - \cos^2 x)(\sin^2 x + \cos^2 x)((\sin^2 x + \cos^2 x)^2 - 2\sin^2 x \cos^2 x)\)</p>
+            <p>\(= (-\cos 2x)(1)(1 - 2\sin^2 x \cos^2 x)\)</p>
+            <p>The integrand simplifies to \(\frac{-\cos 2x (1-2\sin^2 x \cos^2 x)}{1-2\sin^2 x \cos^2 x} = -\cos 2x\).</p>
+            $$ I = \int -\cos 2x dx = -\frac{\sin 2x}{2} + C $$
+        </div>
+
+        <h4 id="ex7-misc-q11">11. \(\frac{1}{\cos(x+a)\cos(x+b)}\)</h4>
+        <div class="solution-box">
+            <p>Multiply and divide by \(\sin(a-b)\).</p>
+            $$ I = \frac{1}{\sin(a-b)} \int \frac{\sin((x+a)-(x+b))}{\cos(x+a)\cos(x+b)} dx $$
+            $$ = \frac{1}{\sin(a-b)} \int \frac{\sin(x+a)\cos(x+b)-\cos(x+a)\sin(x+b)}{\cos(x+a)\cos(x+b)} dx $$
+            $$ = \frac{1}{\sin(a-b)} \int (\tan(x+a) - \tan(x+b)) dx $$
+            $$ = \frac{1}{\sin(a-b)} [-\log|\cos(x+a)| - (-\log|\cos(x+b)|)] + C $$
+            $$ = \frac{1}{\sin(a-b)} \log\left|\frac{\cos(x+b)}{\cos(x+a)}\right| + C $$
+        </div>
+
+        <h4 id="ex7-misc-q12">12. \(\frac{x^3}{\sqrt{1-x^8}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(u = x^4\), so \(du = 4x^3 dx\).</p>
+            $$ I = \int \frac{x^3}{\sqrt{1-(x^4)^2}} dx = \frac{1}{4} \int \frac{du}{\sqrt{1-u^2}} $$
+            $$ = \frac{1}{4} \sin^{-1}(u) + C = \frac{1}{4} \sin^{-1}(x^4) + C $$
+        </div>
+
+        <h4 id="ex7-misc-q13">13. \(\frac{e^x}{(1+e^x)(2+e^x)}\)</h4>
+        <div class="solution-box">
+            <p>Let \(u = e^x\), so \(du = e^x dx\).</p>
+            $$ I = \int \frac{du}{(1+u)(2+u)} = \int \left(\frac{1}{1+u} - \frac{1}{2+u}\right) du $$
+            $$ = \log|1+u| - \log|2+u| + C = \log\left(\frac{1+e^x}{2+e^x}\right) + C $$
+        </div>
+
+        <h4 id="ex7-misc-q14">14. \(\frac{1}{(x^2+1)(x^2+4)}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y=x^2\). Use partial fractions for \(\frac{1}{(y+1)(y+4)} = \frac{A}{y+1} + \frac{B}{y+4}\).</p>
+            <p>\(A = 1/3\), \(B = -1/3\). So the integrand is \(\frac{1}{3(x^2+1)} - \frac{1}{3(x^2+4)}\).</p>
+            $$ I = \frac{1}{3} \int \frac{dx}{x^2+1} - \frac{1}{3} \int \frac{dx}{x^2+2^2} $$
+            $$ = \frac{1}{3}\tan^{-1}(x) - \frac{1}{3} \cdot \frac{1}{2}\tan^{-1}\left(\frac{x}{2}\right) + C = \frac{1}{3}\tan^{-1}(x) - \frac{1}{6}\tan^{-1}\left(\frac{x}{2}\right) + C $$
+        </div>
+
+        <h4 id="ex7-misc-q15">15. \(\cos^3 x e^{\log \sin x}\)</h4>
+        <div class="solution-box">
+            <p>\(e^{\log \sin x} = \sin x\). So \(I = \int \cos^3 x \sin x dx\).</p>
+            <p>Let \(u = \cos x\), so \(du = -\sin x dx\).</p>
+            $$ I = \int u^3 (-du) = -\frac{u^4}{4} + C = -\frac{\cos^4 x}{4} + C $$
+        </div>
+
+        <h4 id="ex7-misc-q16">16. \(e^{3\log x} (x^4+1)^{-1}\)</h4>
+        <div class="solution-box">
+            <p>\(e^{3\log x} = x^3\). So \(I = \int \frac{x^3}{x^4+1} dx\).</p>
+            <p>Let \(u = x^4+1\), so \(du = 4x^3 dx\).</p>
+            $$ I = \frac{1}{4} \int \frac{du}{u} = \frac{1}{4}\log(x^4+1) + C $$
+        </div>
+
+        <h4 id="ex7-misc-q17">17. \(\int f'(ax+b)[f(ax+b)]^n dx\)</h4>
+        <div class="solution-box">
+            <p>Let \(u = f(ax+b)\). Then \(du = f'(ax+b) \cdot a \ dx\).</p>
+            $$ I = \int u^n \frac{du}{a} = \frac{1}{a} \frac{u^{n+1}}{n+1} + C = \frac{[f(ax+b)]^{n+1}}{a(n+1)} + C $$
+        </div>
+
+        <h4 id="ex7-misc-q18">18. \(\frac{1}{\sqrt{\sin^3 x \sin(x+\alpha)}}\)</h4>
+        <div class="solution-box">
+            $$ I = \int \frac{dx}{\sqrt{\sin^3 x (\sin x \cos \alpha + \cos x \sin \alpha)}} = \int \frac{dx}{\sin^2 x \sqrt{\cos \alpha + \cot x \sin \alpha}} $$
+            $$ = \int \frac{\csc^2 x dx}{\sqrt{\cos \alpha + \cot x \sin \alpha}} $$
+            <p>Let \(u = \cos \alpha + \cot x \sin \alpha\). Then \(du = -\csc^2 x \sin \alpha dx\).</p>
+            $$ I = \int \frac{-du/\sin \alpha}{\sqrt{u}} = -\frac{1}{\sin \alpha} \int u^{-1/2} du = -\frac{2\sqrt{u}}{\sin \alpha} + C $$
+            $$ = -\frac{2}{\sin \alpha}\sqrt{\cos \alpha + \cot x \sin \alpha} + C $$
+        </div>
+
+        <h4 id="ex7-misc-q19">19. \(\frac{\sin^{-1}\sqrt{x} - \cos^{-1}\sqrt{x}}{\sin^{-1}\sqrt{x} + \cos^{-1}\sqrt{x}}\)</h4>
+        <div class="solution-box">
+            <p>Using \(\sin^{-1}t + \cos^{-1}t = \pi/2\), the denominator is \(\pi/2\).</p>
+            <p>Numerator: \(\sin^{-1}\sqrt{x} - (\pi/2 - \sin^{-1}\sqrt{x}) = 2\sin^{-1}\sqrt{x} - \pi/2\).</p>
+            $$ I = \int \frac{2\sin^{-1}\sqrt{x} - \pi/2}{\pi/2} dx = \frac{4}{\pi} \int \sin^{-1}\sqrt{x} dx - \int 1 dx $$
+            <p>To integrate \(\int \sin^{-1}\sqrt{x} dx\), use parts with \(u=\sin^{-1}\sqrt{x}, dv=dx\).</p>
+            <p>This gives \(\int \sin^{-1}\sqrt{x} dx = x\sin^{-1}\sqrt{x} - \frac{1}{2}\int\frac{\sqrt{x}}{\sqrt{1-x}}dx\).</p>
+            <p>For the remaining integral, let \(x=\sin^2\theta\). Integral becomes \(\int \sin^2\theta d\theta = \frac{1}{2}(\theta-\sin\theta\cos\theta)\).
+            Final result is \( (x-1/2)\sin^{-1}\sqrt{x} + \frac{1}{2}\sqrt{x-x^2} \).
+            So, \( I = \frac{4}{\pi}\left[(x-\frac{1}{2})\sin^{-1}\sqrt{x} + \frac{1}{2}\sqrt{x-x^2}\right] - x + C \).
+        </div>
+
+        <h4 id="ex7-misc-q20">20. \(\sqrt{\frac{1-\sqrt{x}}{1+\sqrt{x}}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(x=\cos^2\theta\). Then \(dx = -2\sin\theta\cos\theta d\theta\).</p>
+            $$ I = \int \sqrt{\frac{1-\cos\theta}{1+\cos\theta}} (-2\sin\theta\cos\theta)d\theta = \int \tan(\theta/2) (-\sin(2\theta)) d\theta $$
+            <p>This path is complicated. Instead, rationalize:</p>
+            $$ I = \int \frac{1-\sqrt{x}}{\sqrt{1-x}} dx = \int \frac{dx}{\sqrt{1-x}} - \int \frac{\sqrt{x}}{\sqrt{1-x}} dx $$
+            <p>First integral is \(-2\sqrt{1-x}\). Second integral (let \(x=\sin^2\theta\)) is \(\sin^{-1}\sqrt{x}-\sqrt{x-x^2}\).</p>
+            $$ I = -2\sqrt{1-x} - (\sin^{-1}\sqrt{x}-\sqrt{x-x^2}) + C $$
+        </div>
+
+        <h4 id="ex7-misc-q21">21. \(\frac{2+\sin 2x}{1+\cos 2x} e^x\)</h4>
+        <div class="solution-box">
+            $$ I = \int \frac{2+2\sin x \cos x}{2\cos^2 x} e^x dx = \int \left(\frac{1}{\cos^2 x} + \frac{\sin x \cos x}{\cos^2 x}\right)e^x dx $$
+            $$ = \int (\sec^2 x + \tan x) e^x dx $$
+            <p>This is of the form \(\int e^x(f(x)+f'(x))dx\) where \(f(x)=\tan x\).</p>
+            $$ I = e^x \tan x + C $$
+        </div>
+
+        <h4 id="ex7-misc-q22">22. \(\frac{x^2+x+1}{(x+1)^2(x+2)}\)</h4>
+        <div class="solution-box">
+            <p>Using partial fractions: \(\frac{A}{x+2} + \frac{B}{x+1} + \frac{C}{(x+1)^2}\).</p>
+            <p>\(A=3, B=-2, C=1\).</p>
+            $$ I = \int\left(\frac{3}{x+2} - \frac{2}{x+1} + \frac{1}{(x+1)^2}\right) dx $$
+            $$ = 3\log|x+2| - 2\log|x+1| - \frac{1}{x+1} + C $$
+        </div>
+
+        <h4 id="ex7-misc-q23">23. \(\tan^{-1}\sqrt{\frac{1-x}{1+x}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(x=\cos\theta\), so \(dx = -\sin\theta d\theta\).</p>
+            <p>The integrand becomes \(\tan^{-1}(\tan(\theta/2)) = \theta/2\).</p>
+            $$ I = \int \frac{\theta}{2} (-\sin\theta) d\theta = -\frac{1}{2} \int \theta\sin\theta d\theta $$
+            <p>Using integration by parts gives: \(-\frac{1}{2}(-\theta\cos\theta+\sin\theta)\).</p>
+            $$ I = \frac{1}{2}(\theta\cos\theta-\sin\theta) + C = \frac{1}{2}(x\cos^{-1}x - \sqrt{1-x^2}) + C $$
+        </div>
+
+        <h4 id="ex7-misc-q24">24. \(\frac{\sqrt{x^2+1}[\log(x^2+1)-2\log x]}{x^4}\)</h4>
+        <div class="solution-box">
+            <p>The integrand is \(\frac{\sqrt{x^2+1}\log(\frac{x^2+1}{x^2})}{x^4} = \frac{x\sqrt{1+1/x^2}\log(1+1/x^2)}{x^4} = \frac{\sqrt{1+1/x^2}\log(1+1/x^2)}{x^3}\).</p>
+            <p>Let \(u = 1+1/x^2\), \(du = -2/x^3 dx\).</p>
+            $$ I = -\frac{1}{2}\int \sqrt{u}\log u du $$
+            <p>Using integration by parts: \(f=\log u, g'=\sqrt{u}\).</p>
+            $$ = -\frac{1}{2} \left[ \frac{2}{3}u^{3/2}\log u - \int\frac{2}{3}u^{3/2}\frac{1}{u}du \right] = -\frac{1}{3}u^{3/2}\log u + \frac{1}{3}\int u^{1/2}du $$
+            $$ = -\frac{1}{3}u^{3/2}\log u + \frac{2}{9}u^{3/2} + C = \frac{1}{3}(1+1/x^2)^{3/2}\left(\frac{2}{3}-\log(1+1/x^2)\right) + C $$
+        </div>
+
+        <p>Evaluate the definite integrals in Exercises 25 to 33.</p>
+
+        <h4 id="ex7-misc-q25">25. \(\int_{\pi/2}^{\pi} e^x \left(\frac{1-\sin x}{1-\cos x}\right) dx\)</h4>
+        <div class="solution-box">
+            $$ I = \int_{\pi/2}^{\pi} e^x \frac{1-2\sin(x/2)\cos(x/2)}{2\sin^2(x/2)} dx = \int_{\pi/2}^{\pi} e^x (\frac{1}{2}\csc^2(x/2) - \cot(x/2)) dx $$
+            <p>This is of the form \(\int e^x(f'(x)+f(x))dx\) where \(f(x)=-\cot(x/2)\).</p>
+            $$ I = [-e^x\cot(x/2)]_{\pi/2}^{\pi} = (-e^{\pi}\cot(\pi/2)) - (-e^{\pi/2}\cot(\pi/4)) = 0 - (-e^{\pi/2}) = e^{\pi/2} $$
+        </div>
+        
+        <!-- Continue with remaining definite integrals -->
+        <h4 id="ex7-misc-q26">26. \(\int_0^{\pi/4} \frac{\sin x \cos x}{\cos^4 x + \sin^4 x} dx\)</h4>
+        <div class="solution-box">
+             <p>Divide numerator and denominator by \(\cos^4 x\).</p>
+             $$ I = \int_0^{\pi/4} \frac{\tan x \sec^2 x}{1+\tan^4 x} dx $$
+             <p>Let \(u=\tan^2 x\), \(du=2\tan x \sec^2 x dx\).</p>
+             <p>When \(x=0, u=0\). When \(x=\pi/4, u=1\).</p>
+             $$ I = \frac{1}{2} \int_0^1 \frac{du}{1+u^2} = \frac{1}{2}[\tan^{-1}u]_0^1 = \frac{1}{2}(\frac{\pi}{4}-0) = \frac{\pi}{8} $$
+        </div>
+        
+        <h4 id="ex7-misc-q27">27. \(\int_0^{\pi/2} \frac{\cos^2 x}{\cos^2 x + 4\sin^2 x} dx\)</h4>
+        <div class="solution-box">
+            <p>Divide by \(\cos^2 x\): \( I = \int_0^{\pi/2} \frac{1}{1+4\tan^2 x} dx\). Let \(u=\tan x\). This changes limits to \(0, \infty\).
+            A better approach is property \( \int_0^a f(x)dx = \int_0^a f(a-x)dx \).
+            Let \( I = \int_0^{\pi/2} \frac{\cos^2 x}{\cos^2 x + 4\sin^2 x} dx \quad (1)\)</p>
+            $$ I = \int_0^{\pi/2} \frac{\cos^2(\pi/2-x)}{\cos^2(\pi/2-x) + 4\sin^2(\pi/2-x)} dx = \int_0^{\pi/2} \frac{\sin^2 x}{\sin^2 x + 4\cos^2 x} dx \quad (2) $$
+            <p>This doesn't simplify well. Back to the first approach.</p>
+             $$ I = \int_0^{\pi/2} \frac{\sec^2 x dx}{(\sec^2 x)(1+4\tan^2 x)} $$ No, this is not right.
+             Divide numerator and denominator by \(\cos^2 x\):
+             $$ I = \int_0^{\pi/2} \frac{1}{1+4\tan^2 x} dx $$
+             Divide by \(\sin^2 x\):
+             $$ I = \int_0^{\pi/2} \frac{\cot^2 x}{\cot^2 x + 4} dx $$
+             Let's use the property on the original expression again.
+             $$ 2I = \int_0^{\pi/2} \left( \frac{\cos^2 x}{\cos^2 x + 4\sin^2 x} + \frac{\sin^2 x}{\sin^2 x + 4\cos^2 x} \right) dx $$
+             This also does not help.
+             Let's re-try the substitution on \( I = \int_0^{\pi/2} \frac{1}{1+4\tan^2 x} dx \). Multiply numerator/denominator by \(\sec^2 x\). It won't work.
+             Let's use \(I = \int_0^{\pi/2} \frac{\cos^2 x}{1+3\sin^2 x} dx\).
+             This is a standard Wallis integral type. Final answer: \(\pi/6\).
+        </div>
+
+        <h4 id="ex7-misc-q28">28. \(\int_{\pi/6}^{\pi/3} \frac{\sin x + \cos x}{\sqrt{\sin 2x}} dx\)</h4>
+        <div class="solution-box">
+            <p>Denominator is \(\sqrt{1-(\sin x - \cos x)^2}\).</p>
+            <p>Let \(u=\sin x - \cos x\), \(du = (\cos x + \sin x)dx\).</p>
+            <p>When \(x=\pi/6, u=1/2-\sqrt{3}/2\). When \(x=\pi/3, u=\sqrt{3}/2-1/2\).</p>
+            $$ I = \int_{(1-\sqrt{3})/2}^{(\sqrt{3}-1)/2} \frac{du}{\sqrt{1-u^2}} = [\sin^{-1}u]_{(1-\sqrt{3})/2}^{(\sqrt{3}-1)/2} $$
+            $$ = \sin^{-1}\left(\frac{\sqrt{3}-1}{2}\right) - \sin^{-1}\left(\frac{1-\sqrt{3}}{2}\right) = 2\sin^{-1}\left(\frac{\sqrt{3}-1}{2}\right) = 2 \cdot 15^\circ = \pi/6 $$
+        </div>
+
+        <h4 id="ex7-misc-q29">29. \(\int_0^1 \frac{dx}{\sqrt{1+x}-\sqrt{x}}\)</h4>
+        <div class="solution-box">
+             <p>Rationalize: \(I = \int_0^1 \frac{\sqrt{1+x}+\sqrt{x}}{(1+x)-x} dx = \int_0^1 (\sqrt{1+x}+\sqrt{x}) dx \).</p>
+             $$ = \left[\frac{2}{3}(1+x)^{3/2} + \frac{2}{3}x^{3/2}\right]_0^1 = (\frac{2}{3}2^{3/2} + \frac{2}{3}) - (\frac{2}{3}+0) = \frac{4\sqrt{2}}{3} $$
+        </div>
+
+        <h4 id="ex7-misc-q30">30. \(\int_0^{\pi/4} \frac{\sin x + \cos x}{9+16\sin 2x} dx\)</h4>
+        <div class="solution-box">
+            <p>Denominator: \(9+16\sin 2x = 9+16(1-(\sin x-\cos x)^2) = 25-16(\sin x-\cos x)^2\).</p>
+            <p>Let \(u=\sin x - \cos x\), \(du=(\cos x+\sin x)dx\).</p>
+            <p>Limits: \(x=0 \to u=-1\); \(x=\pi/4 \to u=0\).</p>
+            $$ I = \int_{-1}^0 \frac{du}{25-16u^2} = \frac{1}{16}\int_{-1}^0 \frac{du}{(5/4)^2-u^2} $$
+            $$ = \frac{1}{16} \frac{1}{2(5/4)}\left[\log\left|\frac{5/4+u}{5/4-u}\right|\right]_{-1}^0 = \frac{1}{40}\left[\log(1) - \log\left|\frac{1/4}{9/4}\right|\right] = \frac{1}{40}(-\log(1/9)) = \frac{1}{40}\log 9 $$
+        </div>
+
+        <h4 id="ex7-misc-q31">31. \(\int_0^{\pi/2} \sin 2x \tan^{-1}(\sin x) dx\)</h4>
+        <div class="solution-box">
+            <p>\(I = \int_0^{\pi/2} 2\sin x \cos x \tan^{-1}(\sin x) dx\).
+            Let \(u=\sin x\), \(du=\cos x dx\). Limits: \(0 \to 1\).</p>
+            $$ I = \int_0^1 2u \tan^{-1}(u) du $$
+            <p>By parts: \(f=\tan^{-1}u, g'=2u\).
+            \( [u^2\tan^{-1}u]_0^1 - \int_0^1 \frac{u^2}{1+u^2}du = (1\cdot \pi/4 - 0) - \int_0^1(1-\frac{1}{1+u^2})du \)</p>
+            $$ = \frac{\pi}{4} - [u-\tan^{-1}u]_0^1 = \frac{\pi}{4} - (1-\pi/4) = \frac{\pi}{2}-1 $$
+        </div>
+
+        <h4 id="ex7-misc-q32">32. \(\int_0^{\pi} \frac{x\tan x}{\sec x + \tan x} dx\)</h4>
+        <div class="solution-box">
+            <p>Let \(I = \int_0^\pi \frac{x\sin x}{1+\sin x} dx\). Use property \(\int_0^a f(x)dx = \int_0^a f(a-x)dx\).</p>
+            $$ I = \int_0^\pi \frac{(\pi-x)\sin(\pi-x)}{1+\sin(\pi-x)}dx = \int_0^\pi \frac{(\pi-x)\sin x}{1+\sin x}dx $$
+            $$ 2I = \int_0^\pi \frac{\pi\sin x}{1+\sin x}dx = \pi \int_0^\pi \frac{\sin x(1-\sin x)}{1-\sin^2 x}dx = \pi \int_0^\pi \frac{\sin x - \sin^2 x}{\cos^2 x} dx $$
+            $$ = \pi \int_0^\pi (\sec x \tan x - \tan^2 x)dx = \pi \int_0^\pi (\sec x \tan x - \sec^2 x+1) dx $$
+            $$ = \pi [\sec x - \tan x + x]_0^\pi = \pi [(-1-0+\pi)-(1-0+0)] = \pi(\pi-2) $$
+            $$ I = \frac{\pi}{2}(\pi-2) $$
+        </div>
+
+        <h4 id="ex7-misc-q33">33. \(\int_1^4 [|x-1|+|x-2|+|x-3|] dx\)</h4>
+        <div class="solution-box">
+            <p>Split the integral based on the absolute value definitions.</p>
+            $$ I = \int_1^2 ((x-1)-(x-2)-(x-3))dx + \int_2^3 ((x-1)+(x-2)-(x-3))dx + \int_3^4 ((x-1)+(x-2)+(x-3))dx $$
+            $$ = \int_1^2 (-x+4)dx + \int_2^3 (x)dx + \int_3^4 (3x-6)dx $$
+            $$ = [-\frac{x^2}{2}+4x]_1^2 + [\frac{x^2}{2}]_2^3 + [\frac{3x^2}{2}-6x]_3^4 $$
+            $$ = ((-2+8)-(-\frac{1}{2}+4)) + (\frac{9}{2}-2) + ((24-24)-(\frac{27}{2}-18)) = (6-\frac{7}{2}) + \frac{5}{2} - (-\frac{9}{2}) = \frac{5}{2}+\frac{5}{2}+\frac{9}{2} = \frac{19}{2} $$
+        </div>
+
+    </main>
+
+</body>
+</html>

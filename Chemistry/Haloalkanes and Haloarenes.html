@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Haloalkanes and Haloarenes</title>
+
+    <!-- RDKit.js for Chemical Structure Drawing -->
+    <script src="https://unpkg.com/@rdkit/rdkit/dist/RDKit_minimal.js"></script>
+
+    <!-- MathJax v3 Configuration (for simple inline formulas) -->
+    <script>
+    window.MathJax = {
+      loader: {load: ['[tex]/mhchem', '[tex]/cancel']},
+      tex: {
+        packages: {'[+]': ['mhchem', 'cancel']},
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    
+    <!-- Link to Central Stylesheet -->
+    <link rel="stylesheet" href="../style_light.css">
+
+</head>
+<body class="body-content">
+    <!-- Top navigation bar placeholder -->
+    <nav class="global-nav" id="global-navbar"></nav>
+    
+    <!-- Sidebar placeholder -->
+    <nav id="index-sidebar"></nav>
+
+    <script src="../nav.js"></script>
+
+    <main class="main-content">
+        <h3 id="nature-of-cx-bond">Nature of C-X Bond in Alkyl Halides</h3>
+        <p>The carbon-halogen bond (\(\ce{C-X}\)) in alkyl halides is polar due to the difference in electronegativity between carbon and the halogen atom. The halogen atom is more electronegative, carrying a partial negative charge (\(\ce{X^{\delta-}}\)), while the carbon atom carries a partial positive charge (\(\ce{C^{\delta+}}\)).</p>
+        <p><strong>Electronegativity Order:</strong> F > Cl > Br > I</p>
+        <p><strong>Increasing Order of Bond Lengths:</strong> \(\ce{C-F < C-Cl < C-Br < C-I}\)</p>
+        <p>This trend is due to the increasing atomic size of the halogen atom down the group.</p>
+        <p><strong>Order of Bond Dissociation Energy:</strong> \(\ce{C-F > C-Cl > C-Br > C-I}\)</p>
+        <p>This trend indicates that the C-F bond is the strongest and requires the most energy to break, while the C-I bond is the weakest.</p>
+
+        <hr>
+
+        <h3 id="preparation-of-haloalkanes-and-haloarenes">Preparation of Haloalkane and Haloarene</h3>
+
+        <h4 id="preparation-from-alcohols">1. From Alcohols</h4>
+        <ol>
+            <li>
+                <p>Reaction with Hydrogen Halides (e.g., \(\ce{HCl}\)):</p>
+                <div class="reaction-display text-formula">
+                    <span>R-OH</span>
+                    <span class="plus-sign">+</span>
+                    <span>HCl</span>
+                    <div class="arrow-group">
+                        <div class="reagents-above">Anh. ZnCl<sub>2</sub></div>
+                        <div class="arrow">⟶</div>
+                    </div>
+                    <span>R-Cl</span>
+                    <span class="plus-sign">+</span>
+                    <span>H<sub>2</sub>O</span>
+                </div>
+                <p>The mixture of anhydrous \(\ce{ZnCl2}\) and concentrated \(\ce{HCl}\) is known as <strong>Lucas Reagent</strong>.</p>
+                <div class="note-box">
+                    <p><strong>Application:</strong> Lucas Reagent is used to differentiate between primary (1°), secondary (2°), and tertiary (3°) alcohols based on the turbidity formed due to the alkyl halide product (which is insoluble in water).</p>
+                    <p><strong>Order of Reactivity of Alcohols:</strong> \(3^\circ > 2^\circ > 1^\circ\)</p>
+                </div>
+            </li>
+            <li>
+                <p>Using \(\ce{NaBr + Conc. H2SO4}\):</p>
+                <div class="reaction-display text-formula">
+                    <span>R-OH + NaBr + H<sub>2</sub>SO<sub>4</sub></span>
+                    <div class="arrow-group"><div class="arrow">⟶</div></div>
+                    <span>R-Br + NaHSO<sub>4</sub> + H<sub>2</sub>O</span>
+                </div>
+            </li>
+            <li>
+                <p>Using \(\ce{SOCl2}\) (Thionyl Chloride):</p>
+                <div class="reaction-display text-formula">
+                    <span>R-OH + SOCl<sub>2</sub></span>
+                    <div class="arrow-group"><div class="arrow">⟶</div></div>
+                    <span>R-Cl + HCl ↑ + SO<sub>2</sub> ↑</span>
+                </div>
+                <div class="note-box">
+                    <p>This method is preferred for the preparation of alkyl chlorides because the by-products (\(\ce{HCl}\) and \(\ce{SO2}\)) are gases and can be easily removed, leading to a pure alkyl chloride product.</p>
+                </div>
+            </li>
+        </ol>
+
+        <h4 id="preparation-from-alkanes">2. From Alkanes (by free radical halogenation)</h4>
+        <p>Example: Chlorination of n-butane</p>
+        <div class="reaction-display">
+            <div class="molecule-container">
+                <div class="molecule" id="mol-n-butane"></div>
+            </div>
+            <div class="plus-sign">+</div>
+            <div class="text-formula">Cl<sub>2</sub></div>
+            <div class="arrow-group">
+                <div class="reagents-above">UV light</div>
+                <div class="arrow">⟶</div>
+            </div>
+            <div class="molecule-container">
+                <div class="molecule" id="mol-1-chlorobutane"></div>
+            </div>
+            <div class="plus-sign">+</div>
+            <div class="molecule-container">
+                <div class="molecule" id="mol-2-chlorobutane"></div>
+            </div>
+        </div>
+        
+        <h4 id="preparation-from-alkenes">3. From Alkenes</h4>
+        <ol>
+            <li>
+                <p>Addition of Hydrogen Halides (\(\ce{HBr}\)):</p>
+                <ul>
+                    <li>Unsymmetrical alkene (Markovnikov's Rule):
+                        <div class="reaction-display">
+                            <div class="molecule-container">
+                                <div class="molecule" id="mol-propene-mark"></div>
+                            </div>
+                            <div class="plus-sign">+</div>
+                            <div class="text-formula">HBr</div>
+                            <div class="arrow-group">
+                                <div class="arrow">⟶</div>
+                            </div>
+                            <div class="molecule-container">
+                                <div class="molecule" id="mol-2-bromopropane"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>Unsymmetrical alkene (Anti-Markovnikov's Rule):
+                        <div class="reaction-display">
+                            <div class="molecule-container">
+                                <div class="molecule" id="mol-propene-anti"></div>
+                            </div>
+                            <div class="plus-sign">+</div>
+                            <div class="text-formula">HBr</div>
+                            <div class="arrow-group">
+                                <div class="reagents-above">Peroxide</div>
+                                <div class="arrow">⟶</div>
+                            </div>
+                            <div class="molecule-container">
+                                <div class="molecule" id="mol-1-bromopropane"></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p>Addition of Halogens (\(\ce{Br2}\)):</p>
+                <div class="reaction-display">
+                    <div class="molecule-container">
+                        <div class="molecule" id="mol-ethene"></div>
+                    </div>
+                    <div class="plus-sign">+</div>
+                    <div class="text-formula">Br<sub>2</sub></div>
+                    <div class="arrow-group">
+                        <div class="reagents-above">CCl<sub>4</sub></div>
+                        <div class="arrow">⟶</div>
+                    </div>
+                    <div class="molecule-container">
+                        <div class="molecule" id="mol-12-dibromoethane"></div>
+                    </div>
+                </div>
+            </li>
+        </ol>
+
+        <h4 id="halogen-exchange">4. Halogen Exchange</h4>
+        <ol>
+            <li>
+                <p><strong>Finkelstein Reaction</strong> (for preparing alkyl iodides):</p>
+                <div class="reaction-display">
+                    <div class="molecule-container">
+                        <div class="molecule" id="mol-chloroethane"></div>
+                    </div>
+                    <div class="plus-sign">+</div>
+                    <div class="text-formula">NaI</div>
+                    <div class="arrow-group">
+                        <div class="reagents-above">dry acetone</div>
+                        <div class="arrow">⟶</div>
+                    </div>
+                    <div class="molecule-container">
+                        <div class="molecule" id="mol-iodoethane"></div>
+                    </div>
+                    <div class="plus-sign">+</div>
+                    <div class="text-formula">NaCl</div>
+                </div>
+            </li>
+            <li>
+                <p><strong>Swarts Reaction</strong> (for preparing alkyl fluorides):</p>
+                <div class="reaction-display text-formula">
+                    <span>R-Cl</span>
+                    <span class="plus-sign">+</span>
+                    <span>AgF</span>
+                    <div class="arrow-group"><div class="arrow">⟶</div></div>
+                    <span>R-F</span>
+                    <span class="plus-sign">+</span>
+                    <span>AgCl</span>
+                </div>
+            </li>
+        </ol>
+
+        <hr>
+
+        <h3 id="methods-of-preparation-of-haloarenes">Methods of Preparation of Haloarenes</h3>
+        <ol>
+            <li>
+                <p><strong>By Electrophilic Substitution Reactions</strong></p>
+                <ul>
+                    <li>Chlorination of Benzene:
+                        <div class="reaction-display">
+                            <div class="molecule-container">
+                                <div class="molecule" id="mol-benzene-chloro"></div>
+                            </div>
+                            <div class="plus-sign">+</div>
+                            <div class="text-formula">Cl<sub>2</sub></div>
+                            <div class="arrow-group">
+                                <div class="reagents-above">Anh. AlCl<sub>3</sub></div>
+                                <div class="arrow">⟶</div>
+                            </div>
+                            <div class="molecule-container">
+                                <div class="molecule" id="mol-chlorobenzene"></div>
+                            </div>
+                            <div class="plus-sign">+</div>
+                            <div class="text-formula">HCl</div>
+                        </div>
+                    </li>
+                    <li>Chlorination of Toluene:
+                        <div class="reaction-display">
+                            <div class="molecule-container">
+                                <div class="molecule" id="mol-toluene"></div>
+                            </div>
+                             <div class="plus-sign">+</div>
+                            <div class="text-formula">Cl<sub>2</sub></div>
+                            <div class="arrow-group">
+                                <div class="reagents-above">Fe, dark</div>
+                                <div class="arrow">⟶</div>
+                            </div>
+                            <div class="molecule-container">
+                                <div class="molecule" id="mol-o-chlorotoluene"></div>
+                            </div>
+                            <div class="plus-sign">+</div>
+                            <div class="molecule-container">
+                                <div class="molecule" id="mol-p-chlorotoluene"></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p><strong>Sandmeyer's Reaction</strong></p>
+                 <div class="reaction-display">
+                    <div class="molecule-container">
+                        <div class="molecule" id="mol-aniline-sand"></div>
+                    </div>
+                    <div class="arrow-group">
+                        <div class="reagents-above">NaNO<sub>2</sub>, HCl</div>
+                        <div class="reagents-below">0-5 °C</div>
+                        <div class="arrow">⟶</div>
+                    </div>
+                    <div class="molecule-container">
+                        <div class="molecule" id="mol-diazonium-sand"></div>
+                    </div>
+                    <div class="arrow-group">
+                        <div class="reagents-above">CuCl/HCl</div>
+                        <div class="arrow">⟶</div>
+                    </div>
+                    <div class="molecule-container">
+                        <div class="molecule" id="mol-chlorobenzene-sand"></div>
+                    </div>
+                    <div class="plus-sign">+</div>
+                    <div class="text-formula">N<sub>2</sub></div>
+                </div>
+                <p class="note-box">Note: Using CuBr/HBr in the second step yields bromobenzene.</p>
+            </li>
+        </ol>
+
+        <p><strong>Preparation of Aryl Iodides:</strong></p>
+        <div class="reaction-display">
+            <div class="molecule-container">
+                <div class="molecule" id="mol-diazonium-iodide"></div>
+            </div>
+            <div class="plus-sign">+</div>
+            <div class="text-formula">KI</div>
+            <div class="arrow-group">
+                <div class="arrow">⟶</div>
+            </div>
+            <div class="molecule-container">
+                <div class="molecule" id="mol-iodobenzene"></div>
+            </div>
+             <div class="plus-sign">+</div>
+            <div class="text-formula">KCl + N<sub>2</sub>↑</div>
+        </div>
+
+        <hr>
+
+        <h3 id="chemical-properties-of-haloalkanes">Chemical Properties of Haloalkanes</h3>
+        <p><strong>General Nucleophilic Substitution Reaction:</strong></p>
+        <div class="reaction-display text-formula">
+            <span>R-X</span>
+            <span class="plus-sign">+</span>
+            <span>Nu:<sup>-</sup></span>
+            <div class="arrow-group"><div class="arrow">⟶</div></div>
+            <span>R-Nu</span>
+            <span class="plus-sign">+</span>
+            <span>X<sup>-</sup></span>
+        </div>
+
+        <h3 id="nucleophilic-substitution-reactions">Nucleophilic Substitution Reactions</h3>
+        
+        <h4 id="sn1-reaction">1. SN1 Reaction (Two-step reaction)</h4>
+        <p>The overall reaction is shown below. The mechanism involves a slow first step to form a stable carbocation, followed by a fast attack by the nucleophile.</p>
+        <div class="reaction-display">
+            <div class="molecule-container">
+                <div class="molecule" id="mol-tbutyl-bromide"></div>
+            </div>
+            <div class="plus-sign">+</div>
+            <div class="text-formula">OH<sup>-</sup></div>
+            <div class="arrow-group">
+                <div class="arrow">⟶</div>
+            </div>
+            <div class="molecule-container">
+                <div class="molecule" id="mol-tbutanol"></div>
+            </div>
+            <div class="plus-sign">+</div>
+            <div class="text-formula">Br<sup>-</sup></div>
+        </div>
+        
+        <h4 id="sn2-reaction">2. SN2 Reaction (Concerted or Transition State reaction)</h4>
+        <p>The overall reaction is shown below. The mechanism involves a single step where the nucleophile attacks from the side opposite to the leaving group, causing an inversion of stereochemistry.</p>
+        <div class="reaction-display">
+            <div class="molecule-container">
+                <div class="molecule" id="mol-chloromethane"></div>
+            </div>
+            <div class="plus-sign">+</div>
+            <div class="text-formula">OH<sup>-</sup></div>
+            <div class="arrow-group">
+                <div class="arrow">⟶</div>
+            </div>
+            <div class="molecule-container">
+                <div class="molecule" id="mol-methanol"></div>
+            </div>
+            <div class="plus-sign">+</div>
+            <div class="text-formula">Cl<sup>-</sup></div>
+        </div>
+
+
+        <h3 id="elimination-reactions">Elimination Reactions</h3>
+        <h4 id="saytzeffs-rule">Saytzeff's Rule (Zaitsev's Rule)</h4>
+        <p>In dehydrohalogenation reactions, the preferred product is the alkene that has the greater number of alkyl groups attached to the doubly bonded carbon atoms.</p>
+        <p>Example: Dehydrohalogenation of 2-Bromobutane</p>
+        <div class="reaction-display">
+            <div class="molecule-container">
+                <div class="molecule" id="mol-2-bromobutane"></div>
+            </div>
+            <div class="arrow-group">
+                <div class="reagents-above">alc. KOH, Δ</div>
+                <div class="arrow">⟶</div>
+            </div>
+            <div class="molecule-container">
+                <div class="molecule" id="mol-but2ene"></div>
+            </div>
+            <div class="plus-sign">+</div>
+            <div class="molecule-container">
+                <div class="molecule" id="mol-but1ene"></div>
+            </div>
+        </div>
+
+        <h3 id="wurtz-fittig-reaction">Wurtz-Fittig Reaction</h3>
+        <div class="reaction-display">
+            <div class="molecule-container">
+                <div class="molecule" id="mol-bromobenzene-wf"></div>
+            </div>
+            <div class="plus-sign">+</div>
+            <div class="molecule-container">
+                <div class="molecule" id="mol-bromomethane-wf"></div>
+            </div>
+             <div class="plus-sign">+</div>
+            <div class="text-formula">2 Na</div>
+            <div class="arrow-group">
+                <div class="reagents-above">dry ether</div>
+                <div class="arrow">⟶</div>
+            </div>
+            <div class="molecule-container">
+                <div class="molecule" id="mol-toluene-wf"></div>
+            </div>
+            <div class="plus-sign">+</div>
+            <div class="text-formula">2 NaBr</div>
+        </div>
+
+        <h4 id="fittig-reaction">Fittig Reaction</h4>
+        <div class="reaction-display">
+            <div class="text-formula">2</div>
+            <div class="molecule-container">
+                <div class="molecule" id="mol-bromobenzene-fittig"></div>
+            </div>
+            <div class="plus-sign">+</div>
+            <div class="text-formula">2 Na</div>
+            <div class="arrow-group">
+                 <div class="reagents-above">dry ether</div>
+                <div class="arrow">⟶</div>
+            </div>
+            <div class="molecule-container">
+                <div class="molecule" id="mol-biphenyl"></div>
+            </div>
+             <div class="plus-sign">+</div>
+            <div class="text-formula">2 NaBr</div>
+        </div>
+
+        <hr>
+
+        <h3 id="comparison-of-reactivity">Comparison of Reactivity of Haloalkane and Haloarenes Towards SN Reactions</h3>
+        <p>Aryl halides (haloarenes) are generally <strong>less reactive</strong> towards nucleophilic substitution reactions compared to alkyl halides due to resonance, differences in hybridization, instability of the phenyl cation, and electron-electron repulsion.</p>
+
+        <h4 id="daws-process">Daws Process (Industrial Preparation of Phenol from Chlorobenzene)</h4>
+        <div class="reaction-display">
+            <div class="molecule-container">
+                <div class="molecule" id="mol-chlorobenzene-dows"></div>
+            </div>
+            <div class="arrow-group">
+                <div class="reagents-above">(i) aq. NaOH</div>
+                <div class="reagents-below">623K, 300atm</div>
+                <div class="arrow">⟶</div>
+            </div>
+            <div class="molecule-container">
+                <div class="molecule" id="mol-phenoxide-dows"></div>
+            </div>
+             <div class="arrow-group">
+                <div class="reagents-above">(ii) H<sup>+</sup></div>
+                <div class="arrow">⟶</div>
+            </div>
+            <div class="molecule-container">
+                <div class="molecule" id="mol-phenol-dows"></div>
+            </div>
+        </div>
+
+        <h3 id="electrophilic-substitution">Electrophilic Substitution (in Haloarenes)</h3>
+        <p>Halogens are deactivating but ortho-para directing groups.</p>
+        <ol>
+            <li>
+                <p><strong>Nitration:</strong></p>
+                <div class="reaction-display">
+                    <div class="molecule-container">
+                        <div class="molecule" id="mol-chlorobenzene-nitration"></div>
+                    </div>
+                     <div class="arrow-group">
+                        <div class="reagents-above">Conc. HNO<sub>3</sub></div>
+                        <div class="reagents-below">Conc. H<sub>2</sub>SO<sub>4</sub></div>
+                        <div class="arrow">⟶</div>
+                    </div>
+                    <div class="molecule-container">
+                        <div class="molecule" id="mol-o-nitrochloro"></div>
+                    </div>
+                    <div class="plus-sign">+</div>
+                    <div class="molecule-container">
+                        <div class="molecule" id="mol-p-nitrochloro"></div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p><strong>Friedel-Crafts Acylation:</strong></p>
+                <div class="reaction-display">
+                    <div class="molecule-container">
+                        <div class="molecule" id="mol-chlorobenzene-fc"></div>
+                    </div>
+                    <div class="plus-sign">+</div>
+                    <div class="molecule-container">
+                        <div class="molecule" id="mol-acetylchloride-fc"></div>
+                    </div>
+                    <div class="arrow-group">
+                        <div class="reagents-above">Anh. AlCl<sub>3</sub></div>
+                        <div class="arrow">⟶</div>
+                    </div>
+                    <div class="molecule-container">
+                        <div class="molecule" id="mol-4-chloroacetophenone"></div>
+                    </div>
+                </div>
+            </li>
+        </ol>
+
+    </main>
+
+    <!-- RDKit Drawing Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Wait for the RDKit module to be initialized
+            window.initRDKitModule().then(function(RDKit) {
+                window.RDKit = RDKit;
+                drawAllMolecules();
+            }).catch(e => {
+                console.error("RDKit initialization failed.", e);
+                // Fallback for all molecule containers
+                document.querySelectorAll('.molecule').forEach(el => {
+                    el.innerHTML = '<p style="color: #ff5555; font-size: 0.8em;">Error: RDKit.js failed to load.</p>';
+                });
+            });
+        });
+
+        function drawAllMolecules() {
+            if (!window.RDKit) {
+                console.error("RDKit not initialized yet.");
+                return;
+            }
+
+            const moleculeData = {
+                'mol-n-butane': { smiles: 'CCCC', label: 'n-Butane' },
+                'mol-1-chlorobutane': { smiles: 'CCCCCl', label: '1-Chlorobutane' },
+                'mol-2-chlorobutane': { smiles: 'CCC(C)Cl', label: '2-Chlorobutane' },
+                'mol-propene-mark': { smiles: 'C=CC', label: 'Propene' },
+                'mol-2-bromopropane': { smiles: 'CC(Br)C', label: '2-Bromopropane (Major)' },
+                'mol-propene-anti': { smiles: 'C=CC', label: 'Propene' },
+                'mol-1-bromopropane': { smiles: 'CCCBr', label: '1-Bromopropane (Major)' },
+                'mol-ethene': { smiles: 'C=C', label: 'Ethene' },
+                'mol-12-dibromoethane': { smiles: 'BrCCBr', label: '1,2-Dibromoethane' },
+                'mol-chloroethane': { smiles: 'CCCl', label: 'Chloroethane' },
+                'mol-iodoethane': { smiles: 'CCI', label: 'Iodoethane' },
+                'mol-benzene-chloro': { smiles: 'c1ccccc1', label: 'Benzene' },
+                'mol-chlorobenzene': { smiles: 'c1ccccc1Cl', label: 'Chlorobenzene' },
+                'mol-toluene': { smiles: 'Cc1ccccc1', label: 'Toluene' },
+                'mol-o-chlorotoluene': { smiles: 'Cc1ccccc1Cl', label: 'o-Chlorotoluene' },
+                'mol-p-chlorotoluene': { smiles: 'Cc1ccc(Cl)cc1', label: 'p-Chlorotoluene' },
+                'mol-aniline-sand': { smiles: 'Nc1ccccc1', label: 'Aniline' },
+                'mol-diazonium-sand': { smiles: '[Cl-].C1(=CC=CC=C1)[N+]#N', label: 'Diazonium Salt' },
+                'mol-chlorobenzene-sand': { smiles: 'ClC1=CC=CC=C1', label: 'Chlorobenzene' },
+                'mol-diazonium-iodide': { smiles: 'C1(=CC=CC=C1)[N+]#N.[Cl-]', label: 'Diazonium Salt' },
+                'mol-iodobenzene': { smiles: 'c1ccccc1I', label: 'Iodobenzene' },
+                'mol-tbutyl-bromide': { smiles: 'CC(C)(C)Br', label: 'tert-Butyl bromide' },
+                'mol-tbutanol': { smiles: 'CC(C)(C)O', label: 'tert-Butanol' },
+                'mol-chloromethane': { smiles: 'CCl', label: 'Chloromethane' },
+                'mol-methanol': { smiles: 'CO', label: 'Methanol' },
+                'mol-2-bromobutane': { smiles: 'CCC(Br)C', label: '2-Bromobutane' },
+                'mol-but2ene': { smiles: 'C=C(C)C', label: 'But-2-ene (Major)' },
+                'mol-but1ene': { smiles: 'C=CCC', label: 'But-1-ene (Minor)' },
+                'mol-bromobenzene-wf': { smiles: 'c1ccccc1Br', label: 'Bromobenzene' },
+                'mol-bromomethane-wf': { smiles: 'CBr', label: 'Bromomethane' },
+                'mol-toluene-wf': { smiles: 'Cc1ccccc1', label: 'Toluene' },
+                'mol-bromobenzene-fittig': { smiles: 'c1ccccc1Br', label: 'Bromobenzene' },
+                'mol-biphenyl': { smiles: 'c1ccccc1-c2ccccc2', label: 'Biphenyl' },
+                'mol-chlorobenzene-dows': { smiles: 'c1ccccc1Cl', label: 'Chlorobenzene' },
+                'mol-phenoxide-dows': { smiles: '[Na]Oc1ccccc1', label: 'Sodium Phenoxide' },
+                'mol-phenol-dows': { smiles: 'Oc1ccccc1', label: 'Phenol' },
+                'mol-chlorobenzene-nitration': { smiles: 'c1ccccc1Cl', label: 'Chlorobenzene' },
+                'mol-o-nitrochloro': { smiles: 'Clc1ccccc1[N+](=O)[O-]', label: 'Minor Product' },
+                'mol-p-nitrochloro': { smiles: 'Clc1ccc([N+](=O)[O-])cc1', label: 'Major Product' },
+                'mol-chlorobenzene-fc': { smiles: 'c1ccccc1Cl', label: 'Chlorobenzene' },
+                'mol-acetylchloride-fc': { smiles: 'CC(=O)Cl', label: 'Acetyl chloride' },
+                'mol-4-chloroacetophenone': { smiles: 'CC(=O)c1ccc(Cl)cc1', label: '4-Chloroacetophenone' },
+            };
+
+            for (const id in moleculeData) {
+                const element = document.getElementById(id);
+                if (element) {
+                    const data = moleculeData[id];
+                    try {
+                        const mol = window.RDKit.get_mol(data.smiles);
+                        if (mol) {
+                            const svg = mol.get_svg(150, 100);
+                            element.innerHTML = svg;
+                            
+                            const parent = element.parentElement;
+                            const existingLabel = parent.querySelector('.molecule-label');
+                            if (existingLabel) {
+                                existingLabel.remove();
+                            }
+                            
+                            if (data.label) {
+                                const labelDiv = document.createElement('div');
+                                labelDiv.className = 'molecule-label';
+                                labelDiv.innerText = data.label;
+                                parent.appendChild(labelDiv);
+                            }
+                        } else {
+                            throw new Error(`Invalid SMILES: ${data.smiles}`);
+                        }
+                        mol.delete(); // Free up memory
+                    } catch (e) {
+                        console.error(`Error drawing molecule ${id}:`, e);
+                        element.innerHTML = `<p style="color: #ff5555; font-size: 0.8em; text-align: center;">Error:<br>Invalid SMILES</p>`;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amines</title>
+
+    <!-- RDKit.js for Chemical Structure Drawing -->
+    <script src="https://unpkg.com/@rdkit/rdkit/dist/RDKit_minimal.js"></script>
+
+    <!-- MathJax v3 Configuration -->
+    <script>
+    window.MathJax = {
+      loader: {load: ['[tex]/mhchem', '[tex]/cancel']},
+      tex: {
+        packages: {'[+]': ['mhchem', 'cancel']},
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    
+    <!-- Link to Central Stylesheet -->
+    <link rel="stylesheet" href="../style_light.css">
+
+    <style>
+        /* Basic Table Styling */
+        .styled-table {
+            border-collapse: collapse;
+            margin: 25px auto;
+            font-size: 0.9em;
+            width: 90%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+        .styled-table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+            border: 1px solid #dddddd;
+        }
+        .styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+    </style>
+</head>
+<body class="body-content">
+    <!-- Top navigation bar placeholder -->
+    <nav class="global-nav" id="global-navbar"></nav>
+    
+    <!-- Sidebar placeholder -->
+    <nav id="index-sidebar"></nav>
+
+    <script src="../nav.js"></script>
+
+    <main class="main-content">
+        <h3 id="intro-amines">Introduction to Amines</h3>
+        <p>Amines are organic compounds derived from ammonia (\(\ce{NH3}\)) by replacing one, two, or all three hydrogen atoms with alkyl or aryl groups. They are vital in nature (proteins, vitamins, hormones) and industry (polymers, dyes, drugs).</p>
+
+        <h4 id="structure-amines">Structure of Amines</h4>
+        <p>The nitrogen atom in an amine is trivalent and has an unshared pair of electrons. The nitrogen orbitals are \(sp^3\) hybridized, giving amines a <strong>pyramidal</strong> geometry, similar to ammonia. The C-N-E bond angle (where E is C or H) is slightly less than the tetrahedral angle of 109.5° due to lone pair-bond pair repulsion. For example, the angle in trimethylamine is 108°.</p>
+        <div class="reaction-display">
+            <div class="molecule-container">
+                <div class="molecule" id="mol-trimethylamine-shape"></div>
+            </div>
+        </div>
+
+        <h4 id="classification-amines">Classification of Amines</h4>
+        <p>Amines are classified based on the number of hydrogen atoms replaced in the ammonia molecule:</p>
+        <ul>
+            <li><strong>Primary (1°) Amine:</strong> One hydrogen is replaced by an alkyl/aryl group (\(\ce{R-NH2}\)).</li>
+            <li><strong>Secondary (2°) Amine:</strong> Two hydrogens are replaced (\(\ce{R2NH}\)).</li>
+            <li><strong>Tertiary (3°) Amine:</strong> All three hydrogens are replaced (\(\ce{R3N}\)).</li>
+        </ul>
+        <div class="note-box">
+            <p><strong>Simple Amines:</strong> All alkyl/aryl groups are the same (e.g., triethylamine).</p>
+            <p><strong>Mixed Amines:</strong> The alkyl/aryl groups are different (e.g., N-ethyl-N-methylpropanamine).</p>
+        </div>
+
+        <hr>
+
+        <h3 id="nomenclature-amines">Nomenclature of Amines</h3>
+        <p><strong>Common System:</strong> Aliphatic amines are named by prefixing the alkyl group to "amine" (e.g., methylamine). For secondary and tertiary amines with identical groups, the prefixes 'di' or 'tri' are used (e.g., diethylamine).</p>
+        <p><strong>IUPAC System:</strong>
+        <ul>
+            <li>Primary amines are named as <strong>alkanamines</strong>, where the '-e' of the parent alkane is replaced by '-amine'. The position of the amino group is indicated by a number.</li>
+            <li>For secondary and tertiary amines, the largest alkyl group is considered the parent chain. The other alkyl groups are treated as substituents and are designated with the prefix '<strong>N-</strong>' (e.g., N-methylethanamine, N,N-dimethylbutanamine).</li>
+            <li>Aromatic amines, or arylamines, are named as derivatives of the simplest arylamine, <strong>aniline</strong>, which is also its accepted IUPAC name. The IUPAC name for aniline is <strong>benzenamine</strong>.</li>
+        </ul>
+
+        <hr>
+
+        <h3 id="preparation-amines">Preparation of Amines</h3>
+
+        <h4 id="prep-reduction-nitro">1. Reduction of Nitro Compounds</h4>
+        <p>Nitro compounds are reduced to amines using:</p>
+        <ul>
+            <li>Catalytic hydrogenation with finely divided Ni, Pd, or Pt.</li>
+            <li>Reduction with metals in an acidic medium, such as Sn/HCl or Fe/HCl. The reduction with iron scrap and HCl is preferred industrially as the \(\ce{FeCl2}\) formed gets hydrolyzed, regenerating HCl in the process. This minimizes the amount of acid required.</li>
+        </ul>
+        <div class="reaction-display">
+            <div class="molecule-container"><div class="molecule" id="mol-nitrobenzene"></div></div>
+            <div class="arrow-group">
+                <div class="reagents-above">Fe / HCl</div><div class="arrow">⟶</div>
+            </div>
+            <div class="molecule-container"><div class="molecule" id="mol-aniline"></div></div>
+        </div>
+
+        <h4 id="prep-ammonolysis">2. Ammonolysis of Alkyl Halides</h4>
+        <p>This method involves the nucleophilic substitution of an alkyl or benzyl halide with an ethanolic solution of ammonia. This process is called <strong>ammonolysis</strong>. The primary amine formed is also nucleophilic and can react further, leading to a mixture of primary, secondary, tertiary amines, and even a quaternary ammonium salt. To obtain the primary amine as the major product, a large excess of ammonia is used.</p>
+        <p><strong>Reactivity Order of Halides:</strong> \(\ce{R-I > R-Br > R-Cl}\)</p>
+
+        <h4 id="prep-reduction-nitriles">3. Reduction of Nitriles</h4>
+        <p>Nitriles are reduced to primary amines using \(\ce{LiAlH4}\) or catalytic hydrogenation (\(\ce{H2/Ni}\)). This method is useful for an <strong>ascent of series</strong>, as it adds a \(\ce{-CH2-}\) group to the alkyl chain.</p>
+        <div class="reaction-display text-formula">
+            <span>R-C≡N</span>
+            <div class="arrow-group"><div class="reagents-above">\(\ce{LiAlH4}\) or \(\ce{H2/Ni}\)</div><div class="arrow">⟶</div></div>
+            <span>\(\ce{R-CH2-NH2}\)</span>
+        </div>
+
+        <h4 id="prep-reduction-amides">4. Reduction of Amides</h4>
+        <p>Amides are reduced to their corresponding amines (with the same number of carbon atoms) using lithium aluminium hydride (\(\ce{LiAlH4}\)).</p>
+
+        <h4 id="gabriel-synthesis">5. Gabriel Phthalimide Synthesis</h4>
+        <p>This is an excellent method for preparing <strong>pure primary amines</strong>. It proceeds in three steps:</p>
+        <ol>
+            <li>Phthalimide is treated with ethanolic KOH to form its potassium salt (a strong nucleophile).</li>
+            <li>The salt is heated with an alkyl halide to form an N-alkylphthalimide.</li>
+            <li>The N-alkylphthalimide is then hydrolyzed with aqueous alkali (e.g., NaOH) to yield the primary amine and sodium phthalate.</li>
+        </ol>
+        <div class="note-box">
+            <p><strong>Limitation:</strong> Aromatic primary amines (like aniline) cannot be prepared by this method because aryl halides do not undergo nucleophilic substitution with the phthalimide anion due to the partial double bond character of the C-X bond in aryl halides.</p>
+        </div>
+
+        <h4 id="hoffmann-bromamide">6. Hoffmann Bromamide Degradation Reaction</h4>
+        <p>This method is used to prepare primary amines from amides. An amide is treated with bromine in an aqueous or ethanolic solution of NaOH. The key feature is that the amine formed has <strong>one carbon atom less</strong> than the parent amide, making this a <strong>descent of series</strong> or degradation reaction.</p>
+        <div class="reaction-display text-formula">
+            \(\ce{R-CONH2 + Br2 + 4NaOH -> R-NH2 + Na2CO3 + 2NaBr + 2H2O}\)
+        </div>
+
+        <hr>
+
+        <h3 id="physical-properties-amines">Physical Properties</h3>
+        <ul>
+            <li><strong>Boiling Point:</strong> Amines have higher boiling points than nonpolar compounds of similar molar mass due to their polarity and ability to form intermolecular hydrogen bonds. The order of boiling points for isomeric amines is: <strong>Primary > Secondary > Tertiary</strong>. This is because primary amines have two H-atoms for H-bonding, secondary have one, and tertiary have none.</li>
+            <li><strong>Solubility:</strong> Lower aliphatic amines are soluble in water because they can form hydrogen bonds with water molecules. Solubility decreases as the molar mass increases due to the larger hydrophobic alkyl part.</li>
+        </ul>
+
+        <hr>
+
+        <h3 id="chemical-reactions-amines">Chemical Reactions of Amines</h3>
+        <h4 id="basicity-amines">1. Basic Character of Amines</h4>
+        <p>Amines act as Lewis bases due to the lone pair of electrons on the nitrogen atom. The basicity of an amine in aqueous solution depends on the stability of the substituted ammonium cation formed after accepting a proton. This stability is governed by a combination of:</p>
+        <ul>
+            <li><strong>Inductive Effect (+I):</strong> Alkyl groups are electron-donating and increase electron density on the nitrogen, making the lone pair more available for protonation.</li>
+            <li><strong>Solvation Effect:</strong> The ammonium cation is stabilized by hydrogen bonding with water. More H-atoms on the nitrogen lead to better solvation. 1° > 2° > 3°.</li>
+            <li><strong>Steric Hindrance:</strong> Bulky alkyl groups can hinder the approach of a proton and also hinder solvation.</li>
+        </ul>
+        <div class="note-box">
+            <p><strong>Alkanamines vs. Ammonia:</strong> Alkanamines are generally stronger bases than ammonia due to the +I effect of alkyl groups.</p>
+            <p><strong>Arylamines vs. Ammonia:</strong> Arylamines (like aniline) are much weaker bases than ammonia. The lone pair on nitrogen is delocalized into the benzene ring via resonance, making it less available for protonation.</p>
+        </div>
+
+        <h4 id="acylation-amines">2. Acylation</h4>
+        <p>Primary and secondary amines react with acid chlorides, anhydrides, and esters via nucleophilic substitution to form amides. This reaction is known as acylation. The reaction is often carried out in the presence of a base like pyridine to neutralize the HCl formed.</p>
+        <div class="reaction-display">
+            <div class="molecule-container"><div class="molecule" id="mol-ethylamine"></div></div>
+            <div class="plus-sign">+</div>
+            <div class="molecule-container"><div class="molecule" id="mol-acetyl-chloride"></div></div>
+            <div class="arrow-group"><div class="reagents-above">Base</div><div class="arrow">⟶</div></div>
+            <div class="molecule-container"><div class="molecule" id="mol-n-ethylethanamide"></div></div>
+        </div>
+
+        <h4 id="carbylamine-reaction">3. Carbylamine Reaction (Isocyanide Test)</h4>
+        <p>This is a test specific for <strong>primary amines</strong>. When a primary amine is heated with chloroform and alcoholic KOH, it forms a foul-smelling isocyanide (or carbylamine). Secondary and tertiary amines do not give this test.</p>
+
+        <h4 id="reaction-nitrous-acid">4. Reaction with Nitrous Acid (\(\ce{HNO2}\))</h4>
+        <ul>
+            <li><strong>Primary Aliphatic Amines:</strong> React with \(\ce{HNO2}\) (from \(\ce{NaNO2 + HCl}\)) to form a highly unstable aliphatic diazonium salt, which immediately decomposes to form an alcohol and liberates nitrogen gas.</li>
+            <li><strong>Primary Aromatic Amines:</strong> React with \(\ce{HNO2}\) at low temperatures (0-5 °C) to form a relatively stable <strong>arenediazonium salt</strong>. This process is called <strong>diazotisation</strong>.</li>
+        </ul>
+
+        <h4 id="hinsberg-test">5. Hinsberg's Test (Reaction with Benzenesulphonyl Chloride)</h4>
+        <p>This test is used to distinguish between primary, secondary, and tertiary amines using Hinsberg's reagent (benzenesulphonyl chloride, \(\ce{C6H5SO2Cl}\)).</p>
+        <ul>
+            <li><strong>Primary Amine:</strong> Forms a sulphonamide that is soluble in alkali (KOH) because it still has an acidic hydrogen on the nitrogen.</li>
+            <li><strong>Secondary Amine:</strong> Forms a sulphonamide that is insoluble in alkali because it has no acidic hydrogen on the nitrogen.</li>
+            <li><strong>Tertiary Amine:</strong> Does not react.</li>
+        </ul>
+
+        <h4 id="electrophilic-substitution-aniline">6. Electrophilic Substitution on Aniline</h4>
+        <p>The \(\ce{-NH2}\) group is a powerful activating, ortho, para-directing group.</p>
+        <ul>
+            <li><strong>Bromination:</strong> Aniline reacts with bromine water to give a white precipitate of 2,4,6-tribromoaniline instantly.</li>
+            <li><strong>Controlling Reactivity:</strong> To achieve monosubstitution, the activating effect of the \(\ce{-NH2}\) group is reduced by protecting it through acylation (forming acetanilide). The less activating \(\ce{-NHCOCH3}\) group then directs the incoming electrophile mainly to the para position. The protecting group can be removed by hydrolysis.</li>
+            <li><strong>Nitration:</strong> Direct nitration is problematic, yielding a mixture of o-, p-, and a significant amount of m-nitroaniline, because in the strongly acidic medium, aniline is protonated to the meta-directing anilinium ion (\(\ce{-NH3+}\)). Controlled nitration to get the para-product requires protection of the amino group.</li>
+        </ul>
+
+        <hr>
+        <h3 id="diazonium-salts">Diazonium Salts</h3>
+        <p>Arenediazonium salts have the general formula \(\ce{ArN2+ X-}\) and are key intermediates in the synthesis of a wide variety of aromatic compounds.</p>
+        <h4 id="prep-diazonium">Preparation: Diazotisation</h4>
+        <div class="reaction-display text-formula">
+            \(\ce{Ar-NH2 + NaNO2 + 2HCl ->[273-278 K] Ar-N2+Cl- + NaCl + 2H2O}\)
+        </div>
+
+        <h4 id="reactions-diazonium">Chemical Reactions of Diazonium Salts</h4>
+        <h5>A. Reactions Involving Displacement of Nitrogen</h5>
+        <ul>
+            <li><strong>Sandmeyer Reaction:</strong> Replacement of the diazo group by \(\ce{-Cl, -Br,}\) or \(\ce{-CN}\) using the corresponding cuprous salt (\(\ce{CuCl/HCl, CuBr/HBr, CuCN/KCN}\)).</li>
+            <li><strong>Gattermann Reaction:</strong> Similar to Sandmeyer, but uses copper powder and the corresponding acid (\(\ce{Cu/HCl, Cu/HBr}\)).</li>
+            <li><strong>Replacement by Iodide:</strong> Shaking the diazonium salt solution with potassium iodide (KI).</li>
+            <li><strong>Replacement by Hydroxyl (\(\ce{-OH}\)):</strong> Warming the aqueous diazonium salt solution.</li>
+        </ul>
+        <h5>B. Reactions Involving Retention of the Diazo Group (Coupling Reactions)</h5>
+        <p>The diazonium ion acts as a weak electrophile and attacks electron-rich aromatic rings like phenols and anilines to form brightly colored <strong>azo compounds</strong> (\(\ce{Ar-N=N-Ar'}\)), which are used as dyes.</p>
+        <div class="reaction-display">
+            <div class="molecule-container"><div class="molecule" id="mol-benzenediazonium"></div></div>
+            <div class="plus-sign">+</div>
+            <div class="molecule-container"><div class="molecule" id="mol-phenol"></div></div>
+            <div class="arrow-group"><div class="reagents-above">OH⁻ (pH 9-10)</div><div class="arrow">⟶</div></div>
+            <div class="molecule-container"><div class="molecule" id="mol-p-hydroxyazobenzene"></div></div>
+        </div>
+
+    </main>
+
+    <!-- RDKit Drawing Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            window.initRDKitModule().then(function(RDKit) {
+                window.RDKit = RDKit;
+                drawAllMolecules();
+            }).catch(e => {
+                console.error("RDKit initialization failed.", e);
+                document.querySelectorAll('.molecule').forEach(el => {
+                    el.innerHTML = '<p style="color: #ff5555; font-size: 0.8em;">Error: RDKit.js failed to load.</p>';
+                });
+            });
+        });
+
+        function drawAllMolecules() {
+            if (!window.RDKit) {
+                console.error("RDKit not initialized yet.");
+                return;
+            }
+
+            const moleculeData = {
+                'mol-trimethylamine-shape': { smiles: 'CN(C)C', label: 'Trimethylamine' },
+                'mol-nitrobenzene': { smiles: 'c1ccc(cc1)[N+](=O)[O-]', label: 'Nitrobenzene' },
+                'mol-aniline': { smiles: 'Nc1ccccc1', label: 'Aniline' },
+                'mol-ethylamine': { smiles: 'CCN', label: 'Ethanamine' },
+                'mol-acetyl-chloride': { smiles: 'CC(=O)Cl', label: 'Ethanoyl chloride' },
+                'mol-n-ethylethanamide': { smiles: 'CCNC(=O)C', label: 'N-Ethylethanamide' },
+                'mol-benzenediazonium': { smiles: 'c1ccccc1[N+]#N', label: 'Benzenediazonium ion' },
+                'mol-phenol': { smiles: 'Oc1ccccc1', label: 'Phenol' },
+                'mol-p-hydroxyazobenzene': { smiles: 'O=N/N=c1/cc/c(O)/cc/1', label: 'p-Hydroxyazobenzene (Orange Dye)' }
+            };
+
+            for (const id in moleculeData) {
+                const element = document.getElementById(id);
+                if (element) {
+                    const data = moleculeData[id];
+                    try {
+                        let mol;
+                        // Handle special cases like resonance structures manually if needed
+                        mol = window.RDKit.get_mol(data.smiles);
+
+                        if (mol) {
+                            const svg = mol.get_svg(200, 120);
+                            element.innerHTML = svg;
+                            
+                            const parent = element.parentElement;
+                            const existingLabel = parent.querySelector('.molecule-label');
+                            if (existingLabel) {
+                                existingLabel.remove();
+                            }
+                            
+                            if (data.label) {
+                                const labelDiv = document.createElement('div');
+                                labelDiv.className = 'molecule-label';
+                                labelDiv.innerText = data.label;
+                                parent.appendChild(labelDiv);
+                            }
+                        } else {
+                            throw new Error(`Invalid SMILES: ${data.smiles}`);
+                        }
+                        if (mol) mol.delete();
+                    } catch (e) {
+                        console.error(`Error drawing molecule ${id}:`, e);
+                        element.innerHTML = `<p style="color: #ff5555; font-size: 0.8em; text-align: center;">Error:<br>Invalid SMILES</p>`;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

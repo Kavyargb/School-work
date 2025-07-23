@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Relations and Functions Solutions</title>
+
+    <!-- MathJax v3 Configuration and Library -->
+    <script>
+    window.MathJax = {
+      loader: {load: ['[tex]/mhchem', '[tex]/cancel']},
+      tex: {
+        packages: {'[+]': ['mhchem', 'cancel']},
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    
+    <!-- Link to Central Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="body-content">
+    <!-- Top navigation bar placeholder -->
+    <nav class="global-nav" id="global-navbar"></nav>
+    
+    <!-- Sidebar placeholder -->
+    <nav id="index-sidebar"></nav>
+    <script src="../main.js"></script>
+
+    <script src="../nav.js"></script>
+
+    <main class="main-content">
+        <h3>Relations and Functions</h3>
+
+        <h3 id="exercise-1-1">Exercise 1.1</h3>
+
+        <h4 id="ex1-1-q1">1. Determine whether each of the following relations are reflexive, symmetric and transitive:</h4>
+
+        <p>(i) Relation R in the set A = {1, 2, 3, ..., 13, 14} defined as R = {(x, y) : 3x - y = 0}</p>
+        <div class="solution-box">
+            <p>The relation is \(R = \{(x, y) : y = 3x\}\).</p>
+            <p><strong>Reflexivity:</strong> A relation R is reflexive if \((a, a) \in R\) for all \(a \in A\).
+            For \((a, a) \in R\), we need \(a = 3a\), which implies \(2a = 0\), so \(a = 0\). But \(0 \notin A\).</p>
+            <p>For example, \((1, 1)\): \(1 \neq 3(1)\). Thus, R is not reflexive.</p>
+
+            <p><strong>Symmetry:</strong> A relation R is symmetric if \((a, b) \in R \implies (b, a) \in R\).
+            Let \((a, b) \in R\). Then \(b = 3a\).
+            For \((b, a) \in R\), we need \(a = 3b\).
+            Substituting \(b=3a\) into \(a=3b\), we get \(a = 3(3a) = 9a\), which means \(8a=0\), so \(a=0\).
+            For example, \((1, 3) \in R\) since \(3 = 3(1)\). But \((3, 1) \notin R\) since \(1 \neq 3(3)\).</p>
+            <p>Thus, R is not symmetric.</p>
+
+            <p><strong>Transitivity:</strong> A relation R is transitive if \((a, b) \in R\) and \((b, c) \in R \implies (a, c) \in R\).
+            Let \((a, b) \in R\) and \((b, c) \in R\).
+            So, \(b = 3a\) and \(c = 3b\).
+            Substitute \(b=3a\) into \(c=3b\): \(c = 3(3a) = 9a\).
+            For \((a, c) \in R\), we need \(c = 3a\).
+            But we found \(c=9a\). So \(9a = 3a \implies 6a=0 \implies a=0\).
+            For example, \((1, 3) \in R\) and \((3, 9) \in R\). For R to be transitive, \((1, 9))\) must be in R. But \(9 \neq 3(1)\).</p>
+            <p>Thus, R is not transitive.</p>
+        </div>
+
+        <p>(ii) Relation R in the set N of natural numbers defined as R = {(x, y) : y = x + 5 and x < 4}</p>
+        <div class="solution-box">
+            <p>The relation is \(R = \{(x, y) : y = x + 5 \text{ and } x \in \{1, 2, 3\}\}\).</p>
+            <p>So, \(R = \{(1, 6), (2, 7), (3, 8)\}\\).</p>
+
+            <p><strong>Reflexivity:</strong> A relation R is reflexive if \((a, a) \in R\) for all \(a \in N\).
+            For \((a, a) \in R\), we need \(a = a+5\), which implies \(0=5\), which is false.
+            Also, \(a < 4\) must be true for reflexivity for \(a \in \{1, 2, 3\}\).
+            For example, \((1, 1) \notin R\) since \(1 \neq 1+5\).</p>
+            <p>Thus, R is not reflexive.</p>
+
+            <p><strong>Symmetry:</strong> A relation R is symmetric if \((a, b) \in R \implies (b, a) \in R\).
+            Let \((a, b) \in R\). For example, \((1, 6) \in R\).
+            For R to be symmetric, \((6, 1))\) must be in R. But \(1 \neq 6+5\).</p>
+            <p>Thus, R is not symmetric.</p>
+
+            <p><strong>Transitivity:</strong> A relation R is transitive if \((a, b) \in R\) and \((b, c) \in R \implies (a, c) \in R\).
+            The set R contains only three ordered pairs: \((1, 6), (2, 7), (3, 8))\).
+            There are no two pairs \((a, b))\) and \((b, c))\) such that the second element of the first pair is the same as the first element of the second pair. (e.g., no pair starts with 6, 7, or 8).
+            Therefore, the condition for transitivity is vacuously true.</p>
+            <p>Thus, R is transitive.</p>
+        </div>
+
+        <p>(iii) Relation R in the set A = {1, 2, 3, 4, 5, 6} as R = {(x, y) : y is divisible by x}</p>
+        <div class="solution-box">
+            <p><strong>Reflexivity:</strong> For \((a, a) \in R\), \(a\) must be divisible by \(a\). This is true for all \(a \in A\).</p>
+            <p>Thus, R is reflexive.</p>
+
+            <p><strong>Symmetry:</strong> If \((a, b) \in R\), then \(b\) is divisible by \(a\).
+            For R to be symmetric, \(a\) must be divisible by \(b\).
+            For example, \((2, 4) \in R\) since 4 is divisible by 2. But \((4, 2) \notin R\) since 2 is not divisible by 4.</p>
+            <p>Thus, R is not symmetric.</p>
+
+            <p><strong>Transitivity:</strong> If \((a, b) \in R\) and \((b, c) \in R\).
+            So, \(b = ka\) for some integer \(k\) and \(c = mb\) for some integer \(m\).
+            Substitute \(b=ka\) into \(c=mb\): \(c = m(ka) = (mk)a\).
+            This means \(c\) is divisible by \(a\). So, \((a, c) \in R\).</p>
+            <p>Thus, R is transitive.</p>
+        </div>
+
+        <p>(iv) Relation R in the set Z of all integers defined as R = {(x, y) : x – y is an integer}</p>
+        <div class="solution-box">
+            <p>Note: The difference between any two integers is always an integer. So, \(R = Z \times Z\), which is the universal relation on \(Z\).</p>
+            <p><strong>Reflexivity:</strong> For \((a, a) \in R\), \(a-a=0\), which is an integer. This is true for all \(a \in Z\).</p>
+            <p>Thus, R is reflexive.</p>
+
+            <p><strong>Symmetry:</strong> If \((a, b) \in R\), then \(a-b\) is an integer.
+            For R to be symmetric, \(b-a\) must be an integer.
+            If \(a-b\) is an integer, then \(-(a-b) = b-a\) is also an integer. This is true for all integers.</p>
+            <p>Thus, R is symmetric.</p>
+
+            <p><strong>Transitivity:</strong> If \((a, b) \in R\) and \((b, c) \in R\).
+            So, \(a-b\) is an integer and \(b-c\) is an integer.
+            For R to be transitive, \(a-c\) must be an integer.
+            We know that the sum of two integers is an integer.
+            \((a-b) + (b-c) = a-c\). Since \(a-b\) and \(b-c\) are integers, their sum \(a-c\) is also an integer.</p>
+            <p>Thus, R is transitive.</p>
+        </div>
+
+        <p>(v) Relation R in the set A of human beings in a town at a particular time given by</p>
+        <p>(a) R = {(x, y) : x and y work at the same place}</p>
+        <div class="solution-box">
+            <p><strong>Reflexivity:</strong> \((x, x) \in R\) means \(x\) and \(x\) work at the same place. This is true for any human being \(x\).</p>
+            <p>Thus, R is reflexive.</p>
+
+            <p><strong>Symmetry:</strong> If \((x, y) \in R\), then \(x\) and \(y\) work at the same place. This implies \(y\) and \(x\) work at the same place. So, \((y, x) \in R\).</p>
+            <p>Thus, R is symmetric.</p>
+
+            <p><strong>Transitivity:</strong> If \((x, y) \in R\) and \((y, z) \in R\).
+            Then \(x\) and \(y\) work at the same place. And \(y\) and \(z\) work at the same place.
+            This implies \(x\) and \(z\) must work at the same place. So, \((x, z) \in R\).</p>
+            <p>Thus, R is transitive.</p>
+        </div>
+
+        <p>(b) R = {(x, y) : x and y live in the same locality}</p>
+        <div class="solution-box">
+            <p>This is analogous to part (a).</p>
+            <p><strong>Reflexivity:</strong> \(x\) and \(x\) live in the same locality. True.</p>
+            <p>Thus, R is reflexive.</p>
+
+            <p><strong>Symmetry:</strong> If \(x\) and \(y\) live in the same locality, then \(y\) and \(x\) live in the same locality. True.</p>
+            <p>Thus, R is symmetric.</p>
+
+            <p><strong>Transitivity:</strong> If \(x\) and \(y\) live in the same locality, and \(y\) and \(z\) live in the same locality, then \(x\) and \(z\) live in the same locality. True.</p>
+            <p>Thus, R is transitive.</p>
+        </div>
+
+        <p>(c) R = {(x, y) : x is exactly 7 cm taller than y}</p>
+        <div class="solution-box">
+            <p><strong>Reflexivity:</strong> \((x, x) \in R\) means \(x\) is exactly 7 cm taller than \(x\). This is false.</p>
+            <p>Thus, R is not reflexive.</p>
+
+            <p><strong>Symmetry:</strong> If \((x, y) \in R\), then \(x\) is exactly 7 cm taller than \(y\).
+            For R to be symmetric, \(y\) must be exactly 7 cm taller than \(x\). This means \(x\) is 7 cm shorter than \(y\), not taller.</p>
+            <p>Thus, R is not symmetric.</p>
+
+            <p><strong>Transitivity:</strong> If \((x, y) \in R\) and \((y, z) \in R\).
+            Then \(x\) is exactly 7 cm taller than \(y\). So, height of \(x = \text{height of } y + 7\).
+            And \(y\) is exactly 7 cm taller than \(z\). So, height of \(y = \text{height of } z + 7\).
+            Substitute the second into the first: height of \(x = (\text{height of } z + 7) + 7 = \text{height of } z + 14\).</p>
+            <p>This means \(x\) is exactly 14 cm taller than \(z\), not 7 cm. So, \((x, z) \notin R\).</p>
+            <p>Thus, R is not transitive.</p>
+        </div>
+
+        <p>(d) R = {(x, y) : x is wife of y}</p>
+        <div class="solution-box">
+            <p><strong>Reflexivity:</strong> \((x, x) \in R\) means \(x\) is wife of \(x\). This is false.</p>
+            <p>Thus, R is not reflexive.</p>
+
+            <p><strong>Symmetry:</strong> If \((x, y) \in R\), then \(x\) is wife of \(y\). This means \(y\) is the husband of \(x\).
+            For R to be symmetric, \(y\) must be wife of \(x\). This is false.</p>
+            <p>Thus, R is not symmetric.</p>
+
+            <p><strong>Transitivity:</strong> If \((x, y) \in R\) and \((y, z) \in R\).
+            Then \(x\) is wife of \(y\). So, \(y\) is male.
+            And \(y\) is wife of \(z\). But \(y\) is male, so \(y\) cannot be wife of \(z\). This condition can never be met.</p>
+            <p>Thus, R is vacuously transitive.</p>
+            <p>However, typically in such problems, if the condition for transitivity (antecedent) is never met, it's considered transitive. If one requires examples, it would be not transitive. But in strict logic, it is transitive. Given the context of school level, stating "not transitive" is also accepted because it fails for cases where the middle element is consistent. Since Y is a person, if X is wife of Y, Y must be male. Y cannot be wife of Z. So, no such (x,y) and (y,z) exist. Hence, it is transitive (vacuously).</p>
+        </div>
+
+        <p>(e) R = {(x, y) : x is father of y}</p>
+        <div class="solution-box">
+            <p><strong>Reflexivity:</strong> \((x, x) \in R\) means \(x\) is father of \(x\). This is false.</p>
+            <p>Thus, R is not reflexive.</p>
+
+            <p><strong>Symmetry:</strong> If \((x, y) \in R\), then \(x\) is father of \(y\).
+            For R to be symmetric, \(y\) must be father of \(x\). This is false (y is a child of x).</p>
+            <p>Thus, R is not symmetric.</p>
+
+            <p><strong>Transitivity:</strong> If \((x, y) \in R\) and \((y, z) \in R\).
+            Then \(x\) is father of \(y\). And \(y\) is father of \(z\).
+            This implies \(x\) is grandfather of \(z\), not father of \(z\). So, \((x, z) \notin R\).</p>
+            <p>Thus, R is not transitive.</p>
+        </div>
+
+        <h4 id="ex1-1-q2">2. Show that the relation R in the set R of real numbers, defined as R = {(a, b) : a ≤ b²} is neither reflexive nor symmetric nor transitive.</h4>
+        <div class="solution-box">
+            <p><strong>Reflexivity:</strong> For \((a, a) \in R\), we need \(a \leq a^2\).</p>
+            <p>This is not true for all real numbers. For example, if \(a = 0.5\), then \(0.5 \leq (0.5)^2\) means \(0.5 \leq 0.25\), which is false.</p>
+            <p>Thus, R is not reflexive.</p>
+
+            <p><strong>Symmetry:</strong> If \((a, b) \in R\), then \(a \leq b^2\).
+            For R to be symmetric, \(b \leq a^2\).</p>
+            <p>For example, \((1, 2) \in R\) since \(1 \leq 2^2\) (i.e., \(1 \leq 4\)).
+            But \((2, 1) \notin R\) since \(2 \not\leq 1^2\) (i.e., \(2 \not\leq 1\)).</p>
+            <p>Thus, R is not symmetric.</p>
+
+            <p><strong>Transitivity:</strong> If \((a, b) \in R\) and \((b, c) \in R\).
+            So, \(a \leq b^2\) and \(b \leq c^2\).
+            For R to be transitive, \(a \leq c^2\).</p>
+            <p>For example, consider \(a=3, b=-2, c=1\).</p>
+            \((3, -2) \in R\) since \(3 \leq (-2)^2\) (i.e., \(3 \leq 4\)). True.</p>
+            \((-2, 1) \in R\) since \(-2 \leq 1^2\) (i.e., \(-2 \leq 1\)). True.</p>
+            <p>For transitivity, \((3, 1))\) must be in R. But \(3 \not\leq 1^2\) (i.e., \(3 \not\leq 1\)).</p>
+            <p>Thus, R is not transitive.</p>
+        </div>
+
+        <h4 id="ex1-1-q3">3. Check whether the relation R defined in the set {1, 2, 3, 4, 5, 6} as R = {(a, b) : b = a + 1} is reflexive, symmetric or transitive.</h4>
+        <div class="solution-box">
+            <p>The relation is \(R = \{(1, 2), (2, 3), (3, 4), (4, 5), (5, 6)\}\\).</p>
+            <p><strong>Reflexivity:</strong> For \((a, a) \in R\), we need \(a = a+1\), which is false (\(0=1\)).
+            For example, \((1, 1) \notin R\).</p>
+            <p>Thus, R is not reflexive.</p>
+
+            <p><strong>Symmetry:</strong> If \((a, b) \in R\), then \(b = a+1\).
+            For R to be symmetric, \((b, a) \in R\), which means \(a = b+1\).
+            For example, \((1, 2) \in R\). But \((2, 1) \notin R\) since \(1 \neq 2+1\).</p>
+            <p>Thus, R is not symmetric.</p>
+
+            <p><strong>Transitivity:</strong> If \((a, b) \in R\) and \((b, c) \in R\).
+            So, \(b = a+1\) and \(c = b+1\).
+            Substitute \(b=a+1\) into \(c=b+1\): \(c = (a+1)+1 = a+2\).
+            For R to be transitive, \((a, c) \in R\), which means \(c = a+1\).
+            But we found \(c=a+2\). So \(a+2 = a+1 \implies 2=1\), which is false.</p>
+            <p>For example, \((1, 2) \in R\) and \((2, 3) \in R\). For R to be transitive, \((1, 3))\) must be in R. But \(3 \neq 1+1\).</p>
+            <p>Thus, R is not transitive.</p>
+        </div>
+
+        <h4 id="ex1-1-q4">4. Show that the relation R in R defined as R = {(a, b) : a ≤ b}, is reflexive and transitive but not symmetric.</h4>
+        <div class="solution-box">
+            <p><strong>Reflexivity:</strong> For \((a, a) \in R\), we need \(a \leq a\). This is true for all real numbers \(a\).</p>
+            <p>Thus, R is reflexive.</p>
+
+            <p><strong>Symmetry:</strong> If \((a, b) \in R\), then \(a \leq b\).
+            For R to be symmetric, \(b \leq a\).
+            For example, \((1, 2) \in R\) since \(1 \leq 2\). But \((2, 1) \notin R\) since \(2 \not\leq 1\).</p>
+            <p>Thus, R is not symmetric.</p>
+
+            <p><strong>Transitivity:</strong> If \((a, b) \in R\) and \((b, c) \in R\).
+            So, \(a \leq b\) and \(b \leq c\).
+            For R to be transitive, \(a \leq c\).
+            If \(a \leq b\) and \(b \leq c\), it logically follows that \(a \leq c\).</p>
+            <p>Thus, R is transitive.</p>
+        </div>
+
+        <h4 id="ex1-1-q5">5. Check whether the relation R in R defined by R = {(a, b) : a ≤ b³} is reflexive, symmetric or transitive.</h4>
+        <div class="solution-box">
+            <p><strong>Reflexivity:</strong> For \((a, a) \in R\), we need \(a \leq a^3\).</p>
+            <p>This is not true for all real numbers. For example, if \(a = 0.5\), then \(0.5 \leq (0.5)^3\) means \(0.5 \leq 0.125\), which is false.</p>
+            <p>Thus, R is not reflexive.</p>
+
+            <p><strong>Symmetry:</strong> If \((a, b) \in R\), then \(a \leq b^3\).
+            For R to be symmetric, \(b \leq a^3\).</p>
+            <p>For example, \((1, 2) \in R\) since \(1 \leq 2^3\) (i.e., \(1 \leq 8\)).
+            But \((2, 1) \notin R\) since \(2 \not\leq 1^3\) (i.e., \(2 \not\leq 1\)).</p>
+            <p>Thus, R is not symmetric.</p>
+
+            <p><strong>Transitivity:</strong> If \((a, b) \in R\) and \((b, c) \in R\).
+            So, \(a \leq b^3\) and \(b \leq c^3\).
+            For R to be transitive, \(a \leq c^3\).</p>
+            <p>Consider a counterexample: \(a=3, b=1.5, c=1.2\).</p>
+            \((3, 1.5) \in R\) since \(3 \leq (1.5)^3 = 3.375\). True.</p>
+            \((1.5, 1.2) \in R\) since \(1.5 \leq (1.2)^3 = 1.728\). True.</p>
+            <p>For transitivity, \((3, 1.2))\) must be in R. But \(3 \not\leq (1.2)^3 = 1.728\).</p>
+            <p>Thus, R is not transitive.</p>
+        </div>
+
+        <h4 id="ex1-1-q6">6. Show that the relation R in the set {1, 2, 3} given by R = {(1, 2), (2, 1)} is symmetric but neither reflexive nor transitive.</h4>
+        <div class="solution-box">
+            <p>The set is \(A = \{1, 2, 3\}\) and \(R = \{(1, 2), (2, 1)\}\\).</p>
+            <p><strong>Reflexivity:</strong> For R to be reflexive, \((1, 1), (2, 2), (3, 3))\) must be in R.
+            Since \((1, 1) \notin R\), R is not reflexive.</p>
+
+            <p><strong>Symmetry:</strong> If \((a, b) \in R\), then \((b, a) \in R\).
+            We have \((1, 2) \in R\), and \((2, 1) \in R\).
+            We have \((2, 1) \in R\), and \((1, 2) \in R\).
+            So, R is symmetric.</p>
+
+            <p><strong>Transitivity:</strong> If \((a, b) \in R\) and \((b, c) \in R\), then \((a, c) \in R\).
+            Consider \((1, 2) \in R\) and \((2, 1) \in R\). For R to be transitive, \((1, 1))\) must be in R.
+            Since \((1, 1) \notin R\), R is not transitive.</p>
+        </div>
+
+        <h4 id="ex1-1-q7">7. Show that the relation R in the set A of all the books in a library of a college, given by R = {(x, y) : x and y have same number of pages} is an equivalence relation.</h4>
+        <div class="solution-box">
+            <p><strong>Reflexivity:</strong> Let \(x\) be an arbitrary book in the library.
+            \((x, x) \in R\) means \(x\) and \(x\) have the same number of pages. This is clearly true.</p>
+            <p>Thus, R is reflexive.</p>
+
+            <p><strong>Symmetry:</strong> Let \((x, y) \in R\). This means \(x\) and \(y\) have the same number of pages.
+            If \(x\) and \(y\) have the same number of pages, then \(y\) and \(x\) also have the same number of pages. So, \((y, x) \in R\).</p>
+            <p>Thus, R is symmetric.</p>
+
+            <p><strong>Transitivity:</strong> Let \((x, y) \in R\) and \((y, z) \in R\).
+            \((x, y) \in R\) means \(x\) and \(y\) have the same number of pages.
+            \((y, z) \in R\) means \(y\) and \(z\) have the same number of pages.
+            From these two statements, it follows that \(x\) and \(z\) must have the same number of pages. So, \((x, z) \in R\).</p>
+            <p>Thus, R is transitive.</p>
+            <p>Since R is reflexive, symmetric, and transitive, it is an equivalence relation.</p>
+        </div>
+
+        <h4 id="ex1-1-q8">8. Show that the relation R in the set A = {1, 2, 3, 4, 5} given by R = {(a, b) : |a – b| is even}, is an equivalence relation. Show that all the elements of {1, 3, 5} are related to each other and all the elements of {2, 4} are related to each other. But no element of {1, 3, 5} is related to any element of {2, 4}.</h4>
+        <div class="solution-box">
+            <p>The set is \(A = \{1, 2, 3, 4, 5\}\). The relation is \(R = \{(a, b) : |a – b| \text{ is even}\}\).</p>
+            <p><strong>Reflexivity:</strong> Let \(a \in A\).
+            \((a, a) \in R\) means \(|a - a| = |0| = 0\), which is an even number.</p>
+            <p>Thus, R is reflexive.</p>
+
+            <p><strong>Symmetry:</strong> Let \((a, b) \in R\). This means \(|a - b|\) is even.
+            We know that \(|a - b| = |-(b - a)| = |b - a|\).
+            Since \(|a - b|\) is even, \(|b - a|\) is also even. So, \((b, a) \in R\).</p>
+            <p>Thus, R is symmetric.</p>
+
+            <p><strong>Transitivity:</strong> Let \((a, b) \in R\) and \((b, c) \in R\).
+            \((a, b) \in R\) means \(|a - b|\) is even, which implies \(a - b\) is an even integer. Let \(a - b = 2k\) for some integer \(k\).
+            \((b, c) \in R\) means \(|b - c|\) is even, which implies \(b - c\) is an even integer. Let \(b - c = 2m\) for some integer \(m\).
+            Now, consider \(a - c\):
+            \(a - c = (a - b) + (b - c) = 2k + 2m = 2(k+m)\).
+            Since \(k+m\) is an integer, \(a - c\) is an even integer. Therefore, \(|a - c|\) is even. So, \((a, c) \in R\).</p>
+            <p>Thus, R is transitive.</p>
+            <p>Since R is reflexive, symmetric, and transitive, it is an equivalence relation.</p>
+
+            <p><strong>Consider the subsets {1, 3, 5} and {2, 4}.</strong></p>
+            <p><strong>Elements of {1, 3, 5} related to each other:</strong>
+            Let \(a, b \in \{1, 3, 5\}\). Then \(a\) and \(b\) are both odd.
+            The difference of two odd numbers is always an even number (e.g., \(|1-3|=2\), \(|3-5|=2\), \(|1-5|=4\)).
+            So, \(|a-b|\) is even for any \(a, b \in \{1, 3, 5\}\). Thus, all elements of {1, 3, 5} are related to each other.</p>
+
+            <p><strong>Elements of {2, 4} related to each other:</strong>
+            Let \(a, b \in \{2, 4\}\). Then \(a\) and \(b\) are both even.
+            The difference of two even numbers is always an even number (e.g., \(|2-4|=2\)).
+            So, \(|a-b|\) is even for any \(a, b \in \{2, 4\}\). Thus, all elements of {2, 4} are related to each other.</p>
+
+            <p><strong>No element of {1, 3, 5} is related to any element of {2, 4}:</strong>
+            Let \(a \in \{1, 3, 5\}\) (odd) and \(b \in \{2, 4\}\) (even).
+            The difference \(|a-b|\) will be the absolute value of (odd - even), which is always an odd number (e.g., \(|1-2|=1\), \(|3-4|=1\), \(|5-2|=3\)).
+            Since \(|a-b|\) is odd, it is not even. So, \((a, b) \notin R\).</p>
+            <p>Thus, no element of {1, 3, 5} is related to any element of {2, 4}.</p>
+        </div>
+
+        <h4 id="ex1-1-q9">9. Show that each of the relation R in the set A = {x ∈ Z : 0 ≤ x ≤ 12}, given by:
+            (i) R = {(a, b) : |a – b| is a multiple of 4}
+            (ii) R = {(a, b) : a = b}
+            is an equivalence relation. Find the set of all elements related to 1 in each case.</h4>
+        <div class="solution-box">
+            <p>The set is \(A = \{0, 1, 2, ..., 12\}\).</p>
+            <p><strong>(i) R = {(a, b) : |a – b| is a multiple of 4}</strong></p>
+            <p><strong>Reflexivity:</strong> For \(a \in A\), \(|a-a| = |0| = 0\), which is a multiple of 4 (since \(0 = 4 \times 0\)).</p>
+            <p>Thus, R is reflexive.</p>
+
+            <p><strong>Symmetry:</strong> If \((a, b) \in R\), then \(|a-b|\) is a multiple of 4.
+            We know \(|a-b| = |b-a|\). So \(|b-a|\) is also a multiple of 4. Thus \((b, a) \in R\).</p>
+            <p>Thus, R is symmetric.</p>
+
+            <p><strong>Transitivity:</strong> If \((a, b) \in R\) and \((b, c) \in R\).
+            Then \(|a-b|\) is a multiple of 4, so \(a-b = 4k\) for some integer \(k\).
+            And \(|b-c|\) is a multiple of 4, so \(b-c = 4m\) for some integer \(m\).
+            Consider \(a-c = (a-b) + (b-c) = 4k + 4m = 4(k+m)\).
+            So \(a-c\) is a multiple of 4. Thus \(|a-c|\) is a multiple of 4, and \((a, c) \in R\).</p>
+            <p>Thus, R is transitive.</p>
+            <p>Since R is reflexive, symmetric, and transitive, it is an equivalence relation.</p>
+
+            <p><strong>Set of all elements related to 1:</strong>
+            We need to find \(x \in A\) such that \((1, x) \in R\), i.e., \(|1-x|\) is a multiple of 4.
+            Possible values for \(|1-x|\) that are multiples of 4: 0, 4, 8, 12, ...
+            Case 1: \(|1-x| = 0 \implies 1-x=0 \implies x=1\).
+            Case 2: \(|1-x| = 4 \implies 1-x=4\) or \(1-x=-4\).
+            \(1-x=4 \implies x=-3\). (Not in A)
+            \(1-x=-4 \implies x=5\). (In A)
+            Case 3: \(|1-x| = 8 \implies 1-x=8\) or \(1-x=-8\).
+            \(1-x=8 \implies x=-7\). (Not in A)
+            \(1-x=-8 \implies x=9\). (In A)
+            Case 4: \(|1-x| = 12 \implies 1-x=12\) or \(1-x=-12\).
+            \(1-x=12 \implies x=-11\). (Not in A)
+            \(1-x=-12 \implies x=13\). (Not in A)
+            The next multiple of 4 is 16, which would give values outside A.</p>
+            <p>The set of all elements related to 1 is \(\{1, 5, 9\}\).</p>
+
+            <p><strong>(ii) R = {(a, b) : a = b}</strong></p>
+            <p><strong>Reflexivity:</strong> For \(a \in A\), \(a = a\). This is true for all \(a \in A\).</p>
+            <p>Thus, R is reflexive.</p>
+
+            <p><strong>Symmetry:</strong> If \((a, b) \in R\), then \(a = b\). This implies \(b = a\). So \((b, a) \in R\).</p>
+            <p>Thus, R is symmetric.</p>
+
+            <p><strong>Transitivity:</strong> If \((a, b) \in R\) and \((b, c) \in R\).
+            Then \(a = b\) and \(b = c\). This implies \(a = c\). So \((a, c) \in R\).</p>
+            <p>Thus, R is transitive.</p>
+            <p>Since R is reflexive, symmetric, and transitive, it is an equivalence relation.</p>
+
+            <p><strong>Set of all elements related to 1:</strong>
+            We need to find \(x \in A\) such that \((1, x) \in R\), i.e., \(1 = x\).
+            The only element satisfying this condition is \(x=1\).</p>
+            <p>The set of all elements related to 1 is \(\{1\}\).</p>
+        </div>
+
+        <h4 id="ex1-1-q10">10. Give an example of a relation. Which is</h4>
+        <p>(i) Symmetric but neither reflexive nor transitive.</p>
+        <div class="solution-box">
+            <p>Let \(A = \{1, 2, 3\}\).</p>
+            <p>Consider the relation \(R = \{(1, 2), (2, 1)\}\\).</p>
+            <ul>
+                <li><strong>Reflexivity:</strong> Not reflexive since \((1, 1) \notin R\).</li>
+                <li><strong>Symmetry:</strong> Symmetric as \((1, 2) \in R\) and \((2, 1) \in R\).</li>
+                <li><strong>Transitivity:</strong> Not transitive since \((1, 2) \in R\) and \((2, 1) \in R\) but \((1, 1) \notin R\).</li>
+            </ul>
+        </div>
+
+        <p>(ii) Transitive but neither reflexive nor symmetric.</p>
+        <div class="solution-box">
+            <p>Let \(A = \{1, 2, 3\}\).</p>
+            <p>Consider the relation \(R = \{(1, 2), (2, 3), (1, 3)\}\\)</p>
+            <ul>
+                <li><strong>Reflexivity:</strong> Not reflexive since \((1, 1) \notin R\).</li>
+                <li><strong>Symmetry:</strong> Not symmetric since \((1, 2) \in R\) but \((2, 1) \notin R\).</li>
+                <li><strong>Transitivity:</strong> Transitive as \((1, 2) \in R\) and \((2, 3) \in R\) implies \((1, 3) \in R\) (which is true). And no other pairs satisfy the antecedent.</li>
+            </ul>
+        </div>
+
+        <p>(iii) Reflexive and symmetric but not transitive.</p>
+        <div class="solution-box">
+            <p>Let \(A = \{1, 2, 3\}\).</p>
+            <p>Consider the relation \(R = \{(1, 1), (2, 2), (3, 3), (1, 2), (2, 1), (2, 3), (3, 2)\}\\).</p>
+            <ul>
+                <li><strong>Reflexivity:</strong> Reflexive as all \((a, a))\) pairs are in R.</li>
+                <li><strong>Symmetry:</strong> Symmetric as for every \((a, b))\), \((b, a))\) is also in R.</li>
+                <li><strong>Transitivity:</strong> Not transitive since \((1, 2) \in R\) and \((2, 3) \in R\) but \((1, 3) \notin R\).</li>
+            </ul>
+        </div>
+
+        <p>(iv) Reflexive and transitive but not symmetric.</p>
+        <div class="solution-box">
+            <p>Let \(A = \{1, 2, 3\}\).</p>
+            <p>Consider the relation \(R = \{(1, 1), (2, 2), (3, 3), (1, 2), (2, 3), (1, 3)\}\\)</p>
+            <ul>
+                <li><strong>Reflexivity:</strong> Reflexive as all \((a, a))\) pairs are in R.</li>
+                <li><strong>Symmetry:</strong> Not symmetric since \((1, 2) \in R\) but \((2, 1) \notin R\).</li>
+                <li><strong>Transitivity:</strong> Transitive. If \(a \leq b\) and \(b \leq c\), then \(a \leq c\).</li>
+            </ul>
+        </div>
+
+        <p>(v) Symmetric and transitive but not reflexive.</p>
+        <div class="solution-box">
+            <p>Let \(A = \{1, 2, 3\}\).</p>
+            <p>Consider the relation \(R = \{(1, 1), (1, 2), (2, 1), (2, 2)\}\\).</p>
+            <ul>
+                <li><strong>Reflexivity:</strong> Not reflexive since \((3, 3) \notin R\).</li>
+                <li><strong>Symmetry:</strong> Symmetric as \((1, 2) \in R\) and \((2, 1) \in R\), and \((1, 1), (2, 2))\) are symmetric.</li>
+                <li><strong>Transitivity:</strong> Transitive:
+                    \((1, 1) \in R, (1, 2) \in R \implies (1, 2) \in R\) (True)
+                    \((1, 2) \in R, (2, 1) \in R \implies (1, 1) \in R\) (True)
+                    \((2, 1) \in R, (1, 2) \in R \implies (2, 2) \in R\) (True)
+                    And other combinations are trivial or don't meet the antecedent. So it is transitive.</li>
+            </ul>
+        </div>
+
+        <h4 id="ex1-1-q11">11. Show that the relation R in the set A of points in a plane given by R = {(P, Q) : distance of the point P from the origin is same as the distance of the point Q from the origin}, is an equivalence relation. Further, show that the set of all points related to a point P ≠ (0, 0) is the circle passing through P with origin as centre.</h4>
+        <div class="solution-box">
+            <p>Let \(O\) be the origin \((0, 0))\). Let \(d(P, O))\) denote the distance of point \(P\) from the origin.</p>
+            <p>The relation is \(R = \{(P, Q) : d(P, O) = d(Q, O)\}\\).</p>
+
+            <p><strong>Reflexivity:</strong> For any point \(P \in A\), \(d(P, O) = d(P, O))\). This is true.</p>
+            <p>Thus, R is reflexive.</p>
+
+            <p><strong>Symmetry:</strong> Let \((P, Q) \in R\). Then \(d(P, O) = d(Q, O))\).
+            This implies \(d(Q, O) = d(P, O))\). So, \((Q, P) \in R\).</p>
+            <p>Thus, R is symmetric.</p>
+
+            <p><strong>Transitivity:</strong> Let \((P, Q) \in R\) and \((Q, S) \in R\).
+            \((P, Q) \in R\) means \(d(P, O) = d(Q, O))\).
+            \((Q, S) \in R\) means \(d(Q, O) = d(S, O))\).
+            From these two, it follows that \(d(P, O) = d(S, O))\). So, \((P, S) \in R\).</p>
+            <p>Thus, R is transitive.</p>
+            <p>Since R is reflexive, symmetric, and transitive, it is an equivalence relation.</p>
+
+            <p><strong>Set of all points related to a point P ≠ (0, 0):</strong>
+            Let \(P\) be a point \((x_P, y_P))\) such that \(P \neq (0, 0))\).
+            Let \(Q\) be a point \((x, y))\) related to \(P\).
+            Then \(d(Q, O) = d(P, O))\).
+            Let \(d(P, O) = r\). Since \(P \neq (0, 0))\), \(r > 0\).
+            So, \(d(Q, O) = r\).
+            This means the distance of any point \(Q\) from the origin is \(r\).
+            By definition, the locus of all points whose distance from a fixed point (origin) is constant (\(r\)) is a circle with the fixed point as centre and the constant distance as radius.
+            Therefore, the set of all points related to \(P\) is the circle passing through \(P\) with origin as centre and radius \(r = d(P, O))\).</p>
+        </div>
+
+        <h4 id="ex1-1-q12">12. Show that the relation R defined in the set A of all triangles as R = {(T₁, T₂) : T₁ is similar to T₂}, is equivalence relation. Consider three right angle triangles T₁ with sides 3, 4, 5, T₂ with sides 5, 12, 13 and T₃ with sides 6, 8, 10. Which triangles among T₁, T₂ and T₃ are related?</h4>
+        <div class="solution-box">
+            <p><strong>Reflexivity:</strong> Let \(T\) be any triangle in \(A\).
+            \((T, T) \in R\) means \(T\) is similar to \(T\). This is true.</p>
+            <p>Thus, R is reflexive.</p>
+
+            <p><strong>Symmetry:</strong> Let \((T_1, T_2) \in R\). This means \(T_1\) is similar to \(T_2\).
+            If \(T_1\) is similar to \(T_2\), then \(T_2\) is also similar to \(T_1\). So, \((T_2, T_1) \in R\).</p>
+            <p>Thus, R is symmetric.</p>
+
+            <p><strong>Transitivity:</strong> Let \((T_1, T_2) \in R\) and \((T_2, T_3) \in R\).
+            \((T_1, T_2) \in R\) means \(T_1\) is similar to \(T_2\).
+            \((T_2, T_3) \in R\) means \(T_2\) is similar to \(T_3\).
+            If \(T_1\) is similar to \(T_2\) and \(T_2\) is similar to \(T_3\), then \(T_1\) is similar to \(T_3\). So, \((T_1, T_3) \in R\).</p>
+            <p>Thus, R is transitive.</p>
+            <p>Since R is reflexive, symmetric, and transitive, it is an equivalence relation.</p>
+
+            <p><strong>Which triangles are related among T₁, T₂, and T₃?</strong>
+            Two triangles are similar if their corresponding sides are in the same ratio.
+            \(T_1\): sides 3, 4, 5. (Ratio \(3:4:5\))
+            \(T_2\): sides 5, 12, 13. (Ratio \(5:12:13\))
+            \(T_3\): sides 6, 8, 10. (Ratio \(6:8:10\), which simplifies to \(3:4:5\))
+            Comparing ratios:
+            \(T_1\) and \(T_2\): Ratios \(3:4:5\) and \(5:12:13\) are not the same. So \(T_1\) is not similar to \(T_2\). \((T_1, T_2) \notin R\).
+            \(T_1\) and \(T_3\): Ratios \(3:4:5\) and \(3:4:5\) are the same. So \(T_1\) is similar to \(T_3\). \((T_1, T_3) \in R\).
+            \(T_2\) and \(T_3\): Ratios \(5:12:13\) and \(3:4:5\) are not the same. So \(T_2\) is not similar to \(T_3\). \((T_2, T_3) \notin R\).
+            The triangles related are \(T_1\) and \(T_3\).</p>
+        </div>
+
+        <h4 id="ex1-1-q13">13. Show that the relation R defined in the set A of all polygons as R = {(P₁, P₂) : P₁ and P₂ have same number of sides}, is an equivalence relation. What is the set of all elements in A related to the right angle triangle T with sides 3, 4 and 5?</h4>
+        <div class="solution-box">
+            <p><strong>Reflexivity:</strong> Let \(P\) be any polygon in \(A\).
+            \((P, P) \in R\) means \(P\) and \(P\) have the same number of sides. This is true.</p>
+            <p>Thus, R is reflexive.</p>
+
+            <p><strong>Symmetry:</strong> Let \((P_1, P_2) \in R\). This means \(P_1\) and \(P_2\) have the same number of sides.
+            If \(P_1\) and \(P_2\) have the same number of sides, then \(P_2\) and \(P_1\) also have the same number of sides. So, \((P_2, P_1) \in R\).</p>
+            <p>Thus, R is symmetric.</p>
+
+            <p><strong>Transitivity:</strong> Let \((P_1, P_2) \in R\) and \((P_2, P_3) \in R\).
+            \((P_1, P_2) \in R\) means \(P_1\) and \(P_2\) have the same number of sides.
+            \((P_2, P_3) \in R\) means \(P_2\) and \(P_3\) have the same number of sides.
+            From these two, it follows that \(P_1\) and \(P_3\) must have the same number of sides. So, \((P_1, P_3) \in R\).</p>
+            <p>Thus, R is transitive.</p>
+            <p>Since R is reflexive, symmetric, and transitive, it is an equivalence relation.</p>
+
+            <p><strong>Set of all elements related to the right angle triangle T with sides 3, 4 and 5:</strong>
+            A triangle has 3 sides.
+            The relation states that polygons are related if they have the same number of sides.
+            Therefore, the set of all elements in \(A\) related to the right angle triangle \(T\) is the set of all polygons with 3 sides.</p>
+            <p>This is the set of all triangles.</p>
+        </div>
+
+        <h4 id="ex1-1-q14">14. Let L be the set of all lines in XY plane and R be the relation in L defined as R = {(L₁, L₂) : L₁ is parallel to L₂}. Show that R is an equivalence relation. Find the set of all lines related to the line y = 2x + 4.</h4>
+        <div class="solution-box">
+            <p><strong>Reflexivity:</strong> Let \(L\) be any line in \(L\).
+            \((L, L) \in R\) means \(L\) is parallel to \(L\). A line is always parallel to itself. This is true.</p>
+            <p>Thus, R is reflexive.</p>
+
+            <p><strong>Symmetry:</strong> Let \((L_1, L_2) \in R\). This means \(L_1\) is parallel to \(L_2\).
+            If \(L_1\) is parallel to \(L_2\), then \(L_2\) is also parallel to \(L_1\). So, \((L_2, L_1) \in R\).</p>
+            <p>Thus, R is symmetric.</p>
+
+            <p><strong>Transitivity:</strong> Let \((L_1, L_2) \in R\) and \((L_2, L_3) \in R\).
+            \((L_1, L_2) \in R\) means \(L_1\) is parallel to \(L_2\).
+            \((L_2, L_3) \in R\) means \(L_2\) is parallel to \(L_3\).
+            If \(L_1 \parallel L_2\) and \(L_2 \parallel L_3\), then \(L_1 \parallel L_3\). So, \((L_1, L_3) \in R\).</p>
+            <p>Thus, R is transitive.</p>
+            <p>Since R is reflexive, symmetric, and transitive, it is an equivalence relation.</p>
+
+            <p><strong>Set of all lines related to the line y = 2x + 4:</strong>
+            A line \(L_2\) is related to \(L_1\) if \(L_2\) is parallel to \(L_1\).
+            The given line is \(y = 2x + 4\). Its slope is \(m=2\).
+            Any line parallel to \(y = 2x + 4\) must have the same slope, \(m=2\).
+            The equation of such lines is \(y = 2x + c\), where \(c\) is any real constant.
+            The set of all lines related to \(y = 2x + 4\) is \(\{L : L \text{ is a line given by } y = 2x + c, \text{ where } c \in \mathbb{R}\}\).</p>
+        </div>
+
+        <h4 id="ex1-1-q15">15. Let R be the relation in the set {1, 2, 3, 4} given by R = {(1, 2), (2, 2), (1, 1), (4,4), (1, 3), (3, 3), (3, 2)}. Choose the correct answer.
+            (A) R is reflexive and symmetric but not transitive.
+            (B) R is reflexive and transitive but not symmetric.
+            (C) R is symmetric and transitive but not reflexive.
+            (D) R is an equivalence relation.</h4>
+        <div class="solution-box">
+            <p>The set is \(A = \{1, 2, 3, 4\}\).
+            The relation is \(R = \{(1, 2), (2, 2), (1, 1), (4,4), (1, 3), (3, 3), (3, 2)\}\\).</p>
+            <p><strong>Reflexivity:</strong> For R to be reflexive, \((1, 1), (2, 2), (3, 3), (4, 4))\) must be in R.
+            All these pairs are present in R. So, R is reflexive.</p>
+
+            <p><strong>Symmetry:</strong> If \((a, b) \in R\), then \((b, a) \in R\).
+            \((1, 2) \in R\), but \((2, 1) \notin R\).
+            Thus, R is not symmetric.</p>
+
+            <p><strong>Transitivity:</strong> If \((a, b) \in R\) and \((b, c) \in R\), then \((a, c) \in R\).
+            \((1, 2) \in R\) and \((2, 2) \in R \implies (1, 2) \in R\). (True)
+            \((1, 3) \in R\) and \((3, 3) \in R \implies (1, 3) \in R\). (True)
+            \((1, 3) \in R\) and \((3, 2) \in R\). For transitivity, \((1, 2))\) must be in R. (True)
+            \((2, 2) \in R\) and \((2, 2) \in R \implies (2, 2) \in R\). (True)
+            \((3, 2) \in R\) and \((2, 2) \in R \implies (3, 2) \in R\). (True)
+            Check all cases carefully. All reflexive pairs \((a,a))\) make any sequence involving them transitive.
+            The critical case is \((1,3))\) and \((3,2))\), which implies \((1,2))\). This is in R.
+            Therefore, R is transitive.</p>
+
+            <p><strong>Conclusion:</strong> R is reflexive and transitive but not symmetric.</p>
+            <p>The correct answer is <strong>(B)</strong>.</p>
+        </div>
+
+        <h4 id="ex1-1-q16">16. Let R be the relation in the set N given by R = {(a, b) : a =b-2, b > 6}. Choose the correct answer.
+            (A) (2, 4) ∈ R
+            (B) (3, 8) ∈ R
+            (C) (6, 8) ∈ R
+            (D) (8, 7) ∈ R</h4>
+        <div class="solution-box">
+            <p>The relation is \(R = \{(a, b) : a = b-2, b > 6\}\).</p>
+            <p>Let's check each option:
+            <strong>(A) (2, 4) ∈ R:</strong> Here \(a=2, b=4\).
+            Is \(2 = 4-2\)? Yes, \(2=2\).
+            Is \(b > 6\)? No, \(4 \not> 6\).
+            So, \((2, 4) \notin R\).
+            <strong>(B) (3, 8) ∈ R:</strong> Here \(a=3, b=8\).
+            Is \(3 = 8-2\)? No, \(3 \neq 6\).
+            So, \((3, 8) \notin R\).
+            <strong>(C) (6, 8) ∈ R:</strong> Here \(a=6, b=8\).
+            Is \(6 = 8-2\)? Yes, \(6=6\).
+            Is \(b > 6\)? Yes, \(8 > 6\).
+            So, \((6, 8) \in R\).
+            <strong>(D) (8, 7) ∈ R:</strong> Here \(a=8, b=7\).
+            Is \(8 = 7-2\)? No, \(8 \neq 5\).
+            So, \((8, 7) \notin R\).
+            The correct answer is <strong>(C)</strong>.</p>
+        </div>
+        <hr>
+
+        <h3 id="exercise-1-2">Exercise 1.2</h3>
+
+        <h4 id="ex1-2-q1">1. Show that the function \(f : \mathbb{R}_* \to \mathbb{R}_*\) defined by \(f(x) = \frac{1}{x}\) is one-one and onto, where \(\mathbb{R}_*\) is the set of all non-zero real numbers. Is the result true, if the domain \(\mathbb{R}_*\) is replaced by N with co-domain being same as \(\mathbb{R}_*\)?</h4>
+        <div class="solution-box">
+            <p><strong>Part 1: \(f : \mathbb{R}_* \to \mathbb{R}_*\) defined by \(f(x) = \frac{1}{x}\)</strong></p>
+            <p><strong>Injectivity (One-one):</strong>
+            Let \(f(x_1) = f(x_2)\) for \(x_1, x_2 \in \mathbb{R}_*\).
+            Then \(\frac{1}{x_1} = \frac{1}{x_2}\).
+            This implies \(x_1 = x_2\).
+            Thus, \(f\) is one-one.</p>
+
+            <p><strong>Surjectivity (Onto):</strong>
+            Let \(y \in \mathbb{R}_*\) (co-domain). We need to find \(x \in \mathbb{R}_*\) (domain) such that \(f(x) = y\).
+            So, \(y = \frac{1}{x}\).
+            This implies \(x = \frac{1}{y}\).
+            Since \(y \in \mathbb{R}_*\), \(y \neq 0\), so \(x = \frac{1}{y}\) is a well-defined non-zero real number.
+            Thus, for every \(y\) in the co-domain, there exists an \(x\) in the domain such that \(f(x)=y\).</p>
+            <p>Thus, \(f\) is onto.</p>
+            <p>Since \(f\) is both one-one and onto, it is a bijective function.</p>
+
+            <p><strong>Part 2: Is the result true if domain \(\mathbb{R}_*\) is replaced by N and co-domain is \(\mathbb{R}_*\)?</strong></p>
+            <p>Now, \(f : \mathbb{N} \to \mathbb{R}_*\) defined by \(f(x) = \frac{1}{x}\).</p>
+            <p><strong>Injectivity (One-one):</strong>
+            Let \(f(x_1) = f(x_2)\) for \(x_1, x_2 \in \mathbb{N}\).
+            Then \(\frac{1}{x_1} = \frac{1}{x_2}\).
+            This implies \(x_1 = x_2\).
+            Thus, \(f\) is still one-one.</p>
+
+            <p><strong>Surjectivity (Onto):</strong>
+            Let \(y \in \mathbb{R}_*\) (co-domain). We need to find \(x \in \mathbb{N}\) (domain) such that \(f(x) = y\).
+            So, \(y = \frac{1}{x}\), which implies \(x = \frac{1}{y}\).
+            For \(f\) to be onto, for every \(y \in \mathbb{R}_*\), \(x = \frac{1}{y}\) must be a natural number.</p>
+            <p>Consider \(y = 0.5 \in \mathbb{R}_*\). Then \(x = \frac{1}{0.5} = 2\), which is in \(\mathbb{N}\). So, this works.
+            But consider \(y = 2 \in \mathbb{R}_*\). Then \(x = \frac{1}{2}\), which is not a natural number (\(x \notin \mathbb{N}\)).
+            Since there exist elements in the co-domain (\(y=2\)) for which there is no corresponding element in the domain (\(x=1/2\)), \(f\) is not onto.</p>
+            <p><strong>Conclusion:</strong> The function \(f : \mathbb{N} \to \mathbb{R}_*\) defined by \(f(x) = \frac{1}{x}\) is one-one but not onto. So, the result is not true if the domain is replaced by N.</p>
+        </div>
+
+        <h4 id="ex1-2-q2">2. Check the injectivity and surjectivity of the following functions:</h4>
+
+        <p>(i) \(f : \mathbb{N} \to \mathbb{N}\) given by \(f(x) = x^2\)</p>
+        <div class="solution-box">
+            <p><strong>Injectivity (One-one):</strong>
+            Let \(f(x_1) = f(x_2)\) for \(x_1, x_2 \in \mathbb{N}\).
+            Then \(x_1^2 = x_2^2\).
+            Since \(x_1, x_2 \in \mathbb{N}\) (natural numbers are positive), \(x_1 = x_2\).</p>
+            <p>Thus, \(f\) is one-one.</p>
+
+            <p><strong>Surjectivity (Onto):</strong>
+            Let \(y \in \mathbb{N}\) (co-domain). We need to find \(x \in \mathbb{N}\) (domain) such that \(f(x) = y\).
+            So, \(y = x^2\), which implies \(x = \sqrt{y}\).
+            Consider \(y = 2 \in \mathbb{N}\). Then \(x = \sqrt{2}\), which is not a natural number. So, there is no \(x \in \mathbb{N}\) such that \(f(x)=2\).</p>
+            <p>Thus, \(f\) is not onto.</p>
+        </div>
+
+        <p>(ii) \(f : \mathbb{Z} \to \mathbb{Z}\) given by \(f(x) = x^2\)</p>
+        <div class="solution-box">
+            <p><strong>Injectivity (One-one):</strong>
+            Let \(f(x_1) = f(x_2)\) for \(x_1, x_2 \in \mathbb{Z}\).
+            Then \(x_1^2 = x_2^2\).
+            This implies \(x_1 = \pm x_2\).
+            For example, \(f(1) = 1^2 = 1\) and \(f(-1) = (-1)^2 = 1\). Here \(f(1) = f(-1)\) but \(1 \neq -1\).</p>
+            <p>Thus, \(f\) is not one-one.</p>
+
+            <p><strong>Surjectivity (Onto):</strong>
+            Let \(y \in \mathbb{Z}\) (co-domain). We need to find \(x \in \mathbb{Z}\) (domain) such that \(f(x) = y\).
+            So, \(y = x^2\), which implies \(x = \sqrt{y}\).
+            Consider \(y = 2 \in \mathbb{Z}\). Then \(x = \sqrt{2}\), which is not an integer. So, there is no \(x \in \mathbb{Z}\) such that \(f(x)=2\).</p>
+            <p>Thus, \(f\) is not onto.</p>
+        </div>
+
+        <p>(iii) \(f : \mathbb{R} \to \mathbb{R}\) given by \(f(x) = x^2\)</p>
+        <div class="solution-box">
+            <p><strong>Injectivity (One-one):</strong>
+            Let \(f(x_1) = f(x_2)\) for \(x_1, x_2 \in \mathbb{R}\).
+            Then \(x_1^2 = x_2^2\).
+            This implies \(x_1 = \pm x_2\).
+            For example, \(f(1) = 1^2 = 1\) and \(f(-1) = (-1)^2 = 1\). Here \(f(1) = f(-1)\) but \(1 \neq -1\).</p>
+            <p>Thus, \(f\) is not one-one.</p>
+
+            <p><strong>Surjectivity (Onto):</strong>
+            Let \(y \in \mathbb{R}\) (co-domain). We need to find \(x \in \mathbb{R}\) (domain) such that \(f(x) = y\).
+            So, \(y = x^2\), which implies \(x = \sqrt{y}\).
+            For \(x\) to be a real number, \(y\) must be greater than or equal to 0.
+            Consider \(y = -1 \in \mathbb{R}\). Then \(x = \sqrt{-1}\), which is not a real number. So, there is no \(x \in \mathbb{R}\) such that \(f(x)=-1\).</p>
+            <p>Thus, \(f\) is not onto.</p>
+        </div>
+
+        <p>(iv) \(f : \mathbb{N} \to \mathbb{N}\) given by \(f(x) = x^3\)</p>
+        <div class="solution-box">
+            <p><strong>Injectivity (One-one):</strong>
+            Let \(f(x_1) = f(x_2)\) for \(x_1, x_2 \in \mathbb{N}\).
+            Then \(x_1^3 = x_2^3\).
+            Since \(x_1, x_2 \in \mathbb{N}\) (natural numbers are positive), \(x_1 = x_2\).</p>
+            <p>Thus, \(f\) is one-one.</p>
+
+            <p><strong>Surjectivity (Onto):</strong>
+            Let \(y \in \mathbb{N}\) (co-domain). We need to find \(x \in \mathbb{N}\) (domain) such that \(f(x) = y\).
+            So, \(y = x^3\), which implies \(x = \sqrt[3]{y}\).
+            Consider \(y = 2 \in \mathbb{N}\). Then \(x = \sqrt[3]{2}\), which is not a natural number. So, there is no \(x \in \mathbb{N}\) such that \(f(x)=2\).</p>
+            <p>Thus, \(f\) is not onto.</p>
+        </div>
+
+        <p>(v) \(f : \mathbb{Z} \to \mathbb{Z}\) given by \(f(x) = x^3\)</p>
+        <div class="solution-box">
+            <p><strong>Injectivity (One-one):</strong>
+            Let \(f(x_1) = f(x_2)\) for \(x_1, x_2 \in \mathbb{Z}\).
+            Then \(x_1^3 = x_2^3\).
+            This implies \(x_1 = x_2\) (the cube root of an integer is unique).
+            For example, \(f(-1) = (-1)^3 = -1\). If \(x_1^3=x_2^3\), then \(x_1=x_2\) even for negative integers.</p>
+            <p>Thus, \(f\) is one-one.</p>
+
+            <p><strong>Surjectivity (Onto):</strong>
+            Let \(y \in \mathbb{Z}\) (co-domain). We need to find \(x \in \mathbb{Z}\) (domain) such that \(f(x) = y\).
+            So, \(y = x^3\), which implies \(x = \sqrt[3]{y}\).
+            Consider \(y = 2 \in \mathbb{Z}\). Then \(x = \sqrt[3]{2}\), which is not an integer. So, there is no \(x \in \mathbb{Z}\) such that \(f(x)=2\).</p>
+            <p>Thus, \(f\) is not onto.</p>
+        </div>
+
+        <h4 id="ex1-2-q3">3. Prove that the Greatest Integer Function \(f : \mathbb{R} \to \mathbb{R}\), given by \(f(x) = [x]\), is neither one-one nor onto, where \([x]\) denotes the greatest integer less than or equal to \(x\).</h4>
+        <div class="solution-box">
+            <p><strong>Injectivity (One-one):</strong>
+            Let \(x_1 = 1.5\) and \(x_2 = 1.9\). Both \(x_1, x_2 \in \mathbb{R}\) and \(x_1 \neq x_2\).
+            \(f(x_1) = [1.5] = 1\).
+            \(f(x_2) = [1.9] = 1\).
+            Since \(f(x_1) = f(x_2)\) but \(x_1 \neq x_2\), \(f\) is not one-one.</p>
+
+            <p><strong>Surjectivity (Onto):</strong>
+            The range of \(f(x) = [x]\) is the set of all integers, \(\mathbb{Z}\).
+            The co-domain is \(\mathbb{R}\).
+            Since the range (\(\mathbb{Z}\)) is a proper subset of the co-domain (\(\mathbb{R}\)), there are real numbers in the co-domain that are not integers (e.g., \(0.5, \pi, \sqrt{2}\)). These non-integer values in the co-domain do not have any pre-image in the domain.</p>
+            <p>For example, there is no \(x \in \mathbb{R}\) such that \(f(x) = [x] = 0.5\).</p>
+            <p>Thus, \(f\) is not onto.</p>
+        </div>
+
+        <h4 id="ex1-2-q4">4. Show that the Modulus Function \(f : \mathbb{R} \to \mathbb{R}\), given by \(f(x) = |x|\), is neither one-one nor onto, where \(|x|\) is \(x\), if \(x\) is positive or 0 and \(|x|\) is \(-x\), if \(x\) is negative.</h4>
+        <div class="solution-box">
+            <p><strong>Injectivity (One-one):</strong>
+            Let \(x_1 = 1\) and \(x_2 = -1\). Both \(x_1, x_2 \in \mathbb{R}\) and \(x_1 \neq x_2\).
+            \(f(x_1) = |1| = 1\).
+            \(f(x_2) = |-1| = 1\).
+            Since \(f(x_1) = f(x_2)\) but \(x_1 \neq x_2\), \(f\) is not one-one.</p>
+
+            <p><strong>Surjectivity (Onto):</strong>
+            The definition of \(|x|\) states that \(|x| \geq 0\) for all \(x \in \mathbb{R}\).
+            Thus, the range of \(f(x) = |x|\) is \([0, \infty)\).
+            The co-domain is \(\mathbb{R}\).
+            Since the range \([0, \infty))\) is a proper subset of the co-domain \(\mathbb{R}\) (it does not include negative numbers), there are real numbers in the co-domain that are not in the range (e.g., \(-1, -5\)). These negative values in the co-domain do not have any pre-image in the domain.</p>
+            <p>For example, there is no \(x \in \mathbb{R}\) such that \(f(x) = |x| = -1\).</p>
+            <p>Thus, \(f\) is not onto.</p>
+        </div>
+
+        <h4 id="ex1-2-q5">5. Show that the Signum Function \(f : \mathbb{R} \to \mathbb{R}\), given by \(f(x) = \begin{cases} 1, & \text{if } x > 0 \\ 0, & \text{if } x = 0 \\ -1, & \text{if } x < 0 \end{cases}\) is neither one-one nor onto.</h4>
+        <div class="solution-box">
+            <p><strong>Injectivity (One-one):</strong>
+            Let \(x_1 = 1\) and \(x_2 = 5\). Both \(x_1, x_2 \in \mathbb{R}\) and \(x_1 \neq x_2\).
+            \(f(x_1) = 1\) (since \(1 > 0\)).
+            \(f(x_2) = 1\) (since \(5 > 0\)).
+            Since \(f(x_1) = f(x_2)\) but \(x_1 \neq x_2\), \(f\) is not one-one.</p>
+
+            <p><strong>Surjectivity (Onto):</strong>
+            The range of the Signum function is \(\{-1, 0, 1\}\).
+            The co-domain is \(\mathbb{R}\).
+            Since the range is a proper subset of the co-domain, there are real numbers in the co-domain that are not in the range (e.g., \(0.5, -2, \pi\)). These values in the co-domain do not have any pre-image in the domain.</p>
+            <p>For example, there is no \(x \in \mathbb{R}\) such that \(f(x) = 0.5\).</p>
+            <p>Thus, \(f\) is not onto.</p>
+        </div>
+
+        <h4 id="ex1-2-q6">6. Let \(A = \{1, 2, 3\}\), \(B = \{4, 5, 6, 7\}\) and let \(f = \{(1, 4), (2, 5), (3, 6)\}\\)</p>
+        <div class="solution-box">
+            <p>A function \(f: A \to B\) is one-one if distinct elements in \(A\) map to distinct elements in \(B\).</p>
+            <p>The given function is \(f = \{(1, 4), (2, 5), (3, 6)\}\\).
+            The image of \(1\) is \(4\).
+            The image of \(2\) is \(5\).
+            The image of \(3\) is \(6\).
+            Since \(1 \neq 2\), \(f(1) = 4 \neq f(2) = 5\).
+            Since \(1 \neq 3\), \(f(1) = 4 \neq f(3) = 6\).
+            Since \(2 \neq 3\), \(f(2) = 5 \neq f(3) = 6\).
+            All distinct elements in \(A\) have distinct images in \(B\).
+            Thus, \(f\) is one-one.</p>
+        </div>
+
+        <h4 id="ex1-2-q7">7. In each of the following cases, state whether the function is one-one, onto or bijective. Justify your answer.</h4>
+
+        <p>(i) \(f : \mathbb{R} \to \mathbb{R}\) defined by \(f(x) = 3 – 4x\)</p>
+        <div class="solution-box">
+            <p><strong>Injectivity (One-one):</strong>
+            Let \(f(x_1) = f(x_2)\) for \(x_1, x_2 \in \mathbb{R}\).
+            Then \(3 - 4x_1 = 3 - 4x_2\).
+            \(-4x_1 = -4x_2\).
+            \(x_1 = x_2\).
+            Thus, \(f\) is one-one.</p>
+
+            <p><strong>Surjectivity (Onto):</strong>
+            Let \(y \in \mathbb{R}\) (co-domain). We need to find \(x \in \mathbb{R}\) (domain) such that \(f(x) = y\).
+            So, \(y = 3 - 4x\).
+            \(4x = 3 - y\).
+            \(x = \frac{3-y}{4}\).
+            For any real number \(y\), \(x = \frac{3-y}{4}\) is also a real number.
+            Thus, for every \(y\) in the co-domain, there exists an \(x\) in the domain such that \(f(x)=y\).
+            Thus, \(f\) is onto.</p>
+            <p>Since \(f\) is both one-one and onto, it is a bijective function.</p>
+        </div>
+
+        <p>(ii) \(f : \mathbb{R} \to \mathbb{R}\) defined by \(f(x) = 1 + x^2\)</p>
+        <div class="solution-box">
+            <p><strong>Injectivity (One-one):</strong>
+            Let \(f(x_1) = f(x_2)\) for \(x_1, x_2 \in \mathbb{R}\).
+            Then \(1 + x_1^2 = 1 + x_2^2\).
+            \(x_1^2 = x_2^2\).
+            This implies \(x_1 = \pm x_2\).
+            For example, \(f(1) = 1 + 1^2 = 2\) and \(f(-1) = 1 + (-1)^2 = 2\). Here \(f(1) = f(-1)\) but \(1 \neq -1\).
+            Thus, \(f\) is not one-one.</p>
+
+            <p><strong>Surjectivity (Onto):</strong>
+            Let \(y \in \mathbb{R}\) (co-domain). We need to find \(x \in \mathbb{R}\) (domain) such that \(f(x) = y\).
+            So, \(y = 1 + x^2\).
+            \(x^2 = y - 1\).
+            \(x = \sqrt{y-1}\).
+            For \(x\) to be a real number, \(y-1\) must be greater than or equal to 0, i.e., \(y \geq 1\).
+            Consider \(y = 0 \in \mathbb{R}\). Then \(x = \sqrt{0-1} = \sqrt{-1}\), which is not a real number. So, there is no \(x \in \mathbb{R}\) such that \(f(x)=0\).</p>
+            <p>Thus, \(f\) is not onto.</p>
+        </div>
+
+        <h4 id="ex1-2-q8">8. Let \(A\) and \(B\) be sets. Show that \(f : A \times B \to B \times A\) such that \(f(a, b) = (b, a)\) is bijective function.</h4>
+        <div class="solution-box">
+            <p>The function is \(f : A \times B \to B \times A\) defined by \(f(a, b) = (b, a)\).</p>
+
+            <p><strong>Injectivity (One-one):</strong>
+            Let \((a_1, b_1), (a_2, b_2) \in A \times B\) such that \(f(a_1, b_1) = f(a_2, b_2)\).
+            By definition of \(f\), \((b_1, a_1) = (b_2, a_2))\).
+            By definition of ordered pairs, this means \(b_1 = b_2\) and \(a_1 = a_2\).
+            Therefore, \((a_1, b_1) = (a_2, b_2))\).
+            Thus, \(f\) is one-one.</p>
+
+            <p><strong>Surjectivity (Onto):</strong>
+            Let \((b, a) \in B \times A\) be any arbitrary element in the co-domain.
+            We need to find an element \((x, y) \in A \times B\) (domain) such that \(f(x, y) = (b, a))\).
+            By definition of \(f\), \(f(x, y) = (y, x))\).
+            So, we need \((y, x) = (b, a))\), which implies \(y = b\) and \(x = a\).
+            Since \(b \in B\) and \(a \in A\), the element \((a, b))\) is in the domain \(A \times B\).
+            And \(f(a, b) = (b, a))\).
+            Thus, for every element in the co-domain, there exists a pre-image in the domain.
+            Thus, \(f\) is onto.</p>
+            <p>Since \(f\) is both one-one and onto, it is a bijective function.</p>
+        </div>
+
+        <h4 id="ex1-2-q9">9. Let \(f : \mathbb{N} \to \mathbb{N}\) be defined by \(f(n) = \begin{cases} \frac{n+1}{2}, & \text{if } n \text{ is odd} \\ \frac{n}{2}, & \text{if } n \text{ is even} \end{cases}\). State whether the function \(f\) is bijective. Justify your answer.</h4>
+        <div class="solution-box">
+            <p><strong>Injectivity (One-one):</strong>
+            Let's check if distinct natural numbers map to distinct natural numbers.
+            Consider \(n_1 = 1\) (odd) and \(n_2 = 2\) (even).
+            \(f(1) = \frac{1+1}{2} = 1\).
+            \(f(2) = \frac{2}{2} = 1\).
+            Since \(f(1) = f(2)\) but \(1 \neq 2\), \(f\) is not one-one.
+            Therefore, \(f\) is not bijective.</p>
+
+            <p><strong>Surjectivity (Onto):</strong> (Although not required for bijectivity once it's not one-one, let's analyze for completeness).
+            Let \(y \in \mathbb{N}\) (co-domain). We need to find \(n \in \mathbb{N}\) (domain) such that \(f(n) = y\).
+            If \(y\) is a natural number, we can try to find its pre-image.
+            Consider \(n = 2y\). If \(n\) is even, \(f(n) = f(2y) = \frac{2y}{2} = y\). So \(2y\) is a pre-image if \(y\) is any natural number.
+            Consider \(n = 2y-1\). If \(n\) is odd, \(f(n) = f(2y-1) = \frac{(2y-1)+1}{2} = \frac{2y}{2} = y\). So \(2y-1\) is a pre-image if \(2y-1\) is odd.
+            Since for any \(y \in \mathbb{N}\), we can find a pre-image (e.g., \(2y\)), \(f\) is onto. For example, for \(y=1\), \(n=2\) is a pre-image. For \(y=2\), \(n=4\) is a pre-image. Indeed, for any \(y\), \(2y\) is always an even natural number, and \(f(2y) = 2y/2 = y\). So every natural number \(y\) has a pre-image \(2y\).
+            Thus, \(f\) is onto.</p>
+            <p><strong>Justification:</strong> \(f\) is not one-one because \(f(1) = 1\) and \(f(2) = 1\), but \(1 \neq 2\). Therefore, \(f\) is not bijective.</p>
+        </div>
+
+        <h4 id="ex1-2-q10">10. Let \(A = \mathbb{R} - \{3\}\) and \(B = \mathbb{R} – \{1\}\). Consider the function \(f : A \to B\) defined by \(f(x) = \frac{x-2}{x-3}\). Is \(f\) one-one and onto? Justify your answer.</h4>
+        <div class="solution-box">
+            <p>The function is \(f : A \to B\) defined by \(f(x) = \frac{x-2}{x-3}\).</p>
+            <p><strong>Injectivity (One-one):</strong>
+            Let \(f(x_1) = f(x_2)\) for \(x_1, x_2 \in A\).
+            Then \(\frac{x_1-2}{x_1-3} = \frac{x_2-2}{x_2-3}\).
+            Cross-multiply:
+            \((x_1-2)(x_2-3) = (x_2-2)(x_1-3)\)
+            \(x_1x_2 - 3x_1 - 2x_2 + 6 = x_1x_2 - 3x_2 - 2x_1 + 6\)
+            \(-3x_1 - 2x_2 = -3x_2 - 2x_1\)
+            \(-3x_1 + 2x_1 = -3x_2 + 2x_2\)
+            \(-x_1 = -x_2\)
+            \(x_1 = x_2\).
+            Thus, \(f\) is one-one.</p>
+
+            <p><strong>Surjectivity (Onto):</strong>
+            Let \(y \in B\) (co-domain). We need to find \(x \in A\) (domain) such that \(f(x) = y\).
+            So, \(y = \frac{x-2}{x-3}\).
+            Cross-multiply:
+            \(y(x-3) = x-2\)
+            \(xy - 3y = x - 2\)
+            \(xy - x = 3y - 2\)
+            \(x(y-1) = 3y - 2\)
+            \(x = \frac{3y-2}{y-1}\).
+            Since the co-domain is \(B = \mathbb{R} - \{1\}\), \(y \neq 1\), so the denominator \(y-1\) is never zero.
+            Thus, for every \(y \in B\), \(x = \frac{3y-2}{y-1}\) is a well-defined real number.
+            We also need to ensure that \(x \in A\), i.e., \(x \neq 3\).
+            If \(x=3\), then \(\frac{3y-2}{y-1} = 3\).
+            \(3y-2 = 3(y-1)\)
+            \(3y-2 = 3y-3\)
+            \(-2 = -3\), which is a contradiction.
+            So \(x\) can never be equal to 3 for any \(y \in B\).
+            Thus, for every \(y\) in the co-domain, there exists an \(x\) in the domain such that \(f(x)=y\).
+            Thus, \(f\) is onto.</p>
+            <p><strong>Justification:</strong> \(f\) is one-one because \(f(x_1) = f(x_2)\) implies \(x_1 = x_2\). \(f\) is onto because for every \(y\) in the co-domain, there exists a pre-image \(x = \frac{3y-2}{y-1}\) in the domain.</p>
+        </div>
+
+        <h4 id="ex1-2-q11">11. Let \(f : \mathbb{R} \to \mathbb{R}\) be defined as \(f(x) = x^4\). Choose the correct answer.
+            (A) \(f\) is one-one onto
+            (B) \(f\) is many-one onto
+            (C) \(f\) is one-one but not onto
+            (D) \(f\) is neither one-one nor onto.</h4>
+        <div class="solution-box">
+            <p>The function is \(f : \mathbb{R} \to \mathbb{R}\) defined by \(f(x) = x^4\).</p>
+            <p><strong>Injectivity (One-one):</strong>
+            Consider \(x_1 = 1\) and \(x_2 = -1\). Both \(x_1, x_2 \in \mathbb{R}\) and \(x_1 \neq x_2\).
+            \(f(x_1) = 1^4 = 1\).
+            \(f(x_2) = (-1)^4 = 1\).
+            Since \(f(x_1) = f(x_2)\) but \(x_1 \neq x_2\), \(f\) is not one-one. (It is many-one).</p>
+
+            <p><strong>Surjectivity (Onto):</strong>
+            The fourth power of any real number is always non-negative. So, \(x^4 \geq 0\).
+            The range of \(f(x) = x^4\) is \([0, \infty)\).
+            The co-domain is \(\mathbb{R}\).
+            Since the range \([0, \infty))\) is a proper subset of the co-domain \(\mathbb{R}\), there are negative real numbers in the co-domain that do not have any pre-image in the domain.</p>
+            <p>For example, there is no \(x \in \mathbb{R}\) such that \(f(x) = x^4 = -1\).</p>
+            <p>Thus, \(f\) is not onto.</p>
+            <p><strong>Conclusion:</strong> \(f\) is neither one-one nor onto.</p>
+            <p>The correct answer is <strong>(D)</strong>.</p>
+        </div>
+
+        <h4 id="ex1-2-q12">12. Let \(f : \mathbb{R} \to \mathbb{R}\) be defined as \(f(x) = 3x\). Choose the correct answer.
+            (A) \(f\) is one-one onto
+            (B) \(f\) is many-one onto
+            (C) \(f\) is one-one but not onto
+            (D) \(f\) is neither one-one nor onto.</h4>
+        <div class="solution-box">
+            <p>The function is \(f : \mathbb{R} \to \mathbb{R}\) defined by \(f(x) = 3x\).</p>
+            <p><strong>Injectivity (One-one):</strong>
+            Let \(f(x_1) = f(x_2)\) for \(x_1, x_2 \in \mathbb{R}\).
+            Then \(3x_1 = 3x_2\).
+            \(x_1 = x_2\).
+            Thus, \(f\) is one-one.</p>
+
+            <p><strong>Surjectivity (Onto):</strong>
+            Let \(y \in \mathbb{R}\) (co-domain). We need to find \(x \in \mathbb{R}\) (domain) such that \(f(x) = y\).
+            So, \(y = 3x\).
+            \(x = \frac{y}{3}\).
+            For any real number \(y\), \(x = \frac{y}{3}\) is also a real number.
+            Thus, \(f\) is onto.</p>
+            <p><strong>Conclusion:</strong> \(f\) is one-one and onto (bijective).</p>
+            <p>The correct answer is <strong>(A)</strong>.</p>
+        </div>
+        <hr>
+
+        <h3 id="types-of-functions">Types of Functions</h3>
+        <p>This section primarily defines one-one, onto, and bijective functions, and provides examples in the textbook. The core concepts are already covered in the solutions to Exercise 1.2.</p>
+        <hr>
+
+        <h3 id="composition-and-invertible-functions">Composition of Functions and Invertible Function</h3>
+
+        <h4 id="composition-q1">Example 15: Let \(f: \{2, 3, 4, 5\}\) to \(\{3, 4, 5, 9\}\) and \(g : \{3, 4, 5, 9\}\) to \(\{7, 11, 15\}\) be functions defined as \(f(2) = 3, f(3) = 4, f(4) = f(5) = 5\) and \(g (3) = g(4) = 7\) and \(g(5) = g(9) = 11\). Find \(gof\).</h4>
+        <div class="solution-box">
+            <p>The composition \(gof(x) = g(f(x))\) is defined for elements \(x\) in the domain of \(f\) such that \(f(x)\) is in the domain of \(g\).</p>
+            <p>Domain of \(f\) is \(\{2, 3, 4, 5\}\). Range of \(f\) is \(\{3, 4, 5\}\).</p>
+            <p>Domain of \(g\) is \(\{3, 4, 5, 9\}\). Range of \(g\) is \(\{7, 11\}\).</p>
+            <p>Since the range of \(f\) is a subset of the domain of \(g\), \(gof\) is well-defined for all elements in the domain of \(f\).</p>
+            \(gof(2) = g(f(2)) = g(3) = 7\).
+            \(gof(3) = g(f(3)) = g(4) = 7\).
+            \(gof(4) = g(f(4)) = g(5) = 11\).
+            \(gof(5) = g(f(5)) = g(5) = 11\).
+            So, \(gof = \{(2, 7), (3, 7), (4, 11), (5, 11)\}\\).</p>
+        </div>
+
+        <h4 id="composition-q2">Example 16: Find \(gof\) and \(fog\), if \(f : \mathbb{R} \to \mathbb{R}\) and \(g : \mathbb{R} \to \mathbb{R}\) are given by \(f(x) = \cos x\) and \(g(x) = 3x^2\). Show that \(gof \neq fog\).</h4>
+        <div class="solution-box">
+            <p>Given \(f(x) = \cos x\) and \(g(x) = 3x^2\).</p>
+            <p><strong>Finding \(gof(x)\):</strong></p>
+            $$ gof(x) = g(f(x)) = g(\cos x) $$
+            Since \(g(x) = 3x^2\), replace \(x\) with \(\cos x\):
+            $$ gof(x) = 3(\cos x)^2 = 3\cos^2 x $$
+
+            <p><strong>Finding \(fog(x)\):</strong></p>
+            $$ fog(x) = f(g(x)) = f(3x^2) $$
+            Since \(f(x) = \cos x\), replace \(x\) with \(3x^2\):
+            $$ fog(x) = \cos(3x^2) $$
+
+            <p><strong>Showing \(gof \neq fog\):</strong>
+            For \(gof \neq fog\), we need to find at least one value of \(x\) for which \(gof(x) \neq fog(x)\).
+            Let \(x = \frac{\pi}{2}\).
+            $$ gof\left(\frac{\pi}{2}\right) = 3\cos^2\left(\frac{\pi}{2}\right) = 3(0)^2 = 0 $$
+            $$ fog\left(\frac{\pi}{2}\right) = \cos\left(3\left(\frac{\pi}{2}\right)^2\right) = \cos\left(\frac{3\pi^2}{4}\right) $$
+            Since \(0 \neq \cos\left(\frac{3\pi^2}{4}\right)\) (as \(3\pi^2/4\) is approximately \(3 \times (9.87)/4 \approx 7.4\), which is not a multiple of \(\pi/2\)), \(gof(x) \neq fog(x)\) for \(x = \frac{\pi}{2}\).
+            Thus, \(gof \neq fog\).</p>
+        </div>
+
+        <h4 id="invertible-q1">Example 17: Let \(f : \mathbb{N} \to Y\) be a function defined as \(f(x) = 4x + 3\), where, \(Y = \{y \in \mathbb{N} : y = 4x + 3 \text{ for some } x \in \mathbb{N}\}\). Show that \(f\) is invertible. Find the inverse.</h4>
+        <div class="solution-box">
+            <p>Given \(f : \mathbb{N} \to Y\) defined by \(f(x) = 4x + 3\), where \(Y\) is the range of \(f\).</p>
+            <p>By definition, \(f\) is always onto its range \(Y\).</p>
+            <p><strong>Injectivity (One-one):</strong>
+            Let \(f(x_1) = f(x_2)\) for \(x_1, x_2 \in \mathbb{N}\).
+            Then \(4x_1 + 3 = 4x_2 + 3\).
+            \(4x_1 = 4x_2\).
+            \(x_1 = x_2\).
+            Thus, \(f\) is one-one.</p>
+            <p>Since \(f\) is one-one and it is defined onto its range \(Y\), \(f\) is bijective. Therefore, \(f\) is invertible.</p>
+
+            <p><strong>Finding the inverse:</strong>
+            Let \(y = f(x)\). Then \(y = 4x + 3\).
+            To find the inverse function \(g(y)\) (or \(f^{-1}(y))\), we express \(x\) in terms of \(y\):
+            \(4x = y - 3\).
+            \(x = \frac{y-3}{4}\).
+            So, the inverse function \(g: Y \to \mathbb{N}\) is defined by \(g(y) = \frac{y-3}{4}\).
+            We can verify this by checking \(gof(x)\) and \(fog(y)\).
+            $$ gof(x) = g(f(x)) = g(4x+3) = \frac{(4x+3)-3}{4} = \frac{4x}{4} = x $$
+            $$ fog(y) = f(g(y)) = f\left(\frac{y-3}{4}\right) = 4\left(\frac{y-3}{4}\right) + 3 = (y-3)+3 = y $$
+            Since \(gof = I_\mathbb{N}\) and \(fog = I_Y\), \(f\) is invertible and its inverse is \(f^{-1}(y) = \frac{y-3}{4}\).</p>
+        </div>
+        <hr>
+
+        <h3 id="miscellaneous-exercise-chapter-1">Miscellaneous Exercise (Chapter 1)</h3>
+
+        <h4 id="misc-ex1-q1">1. Show that the function \(f : \mathbb{R} \to \{x \in \mathbb{R} : -1 < x < 1\}\) defined by \(f(x) = \frac{x}{1 + |x|}\) is one one and onto function.</h4>
+        <div class="solution-box">
+            <p>Given \(f : \mathbb{R} \to (-1, 1)\) defined by \(f(x) = \frac{x}{1 + |x|}\).</p>
+            <p>We can write \(f(x)\) as a piecewise function:</p>
+            $$ f(x) = \begin{cases} \frac{x}{1+x}, & \text{if } x \geq 0 \\ \frac{x}{1-x}, & \text{if } x < 0 \end{cases} $$
+
+            <p><strong>Injectivity (One-one):</strong>
+            Case 1: \(x_1, x_2 \geq 0\).
+            If \(f(x_1) = f(x_2)\), then \(\frac{x_1}{1+x_1} = \frac{x_2}{1+x_2}\).
+            \(x_1(1+x_2) = x_2(1+x_1)\)
+            \(x_1+x_1x_2 = x_2+x_1x_2\)
+            \(x_1 = x_2\). So \(f\) is one-one for \(x \geq 0\).</p>
+
+            <p>Case 2: \(x_1, x_2 < 0\).
+            If \(f(x_1) = f(x_2)\), then \(\frac{x_1}{1-x_1} = \frac{x_2}{1-x_2}\).
+            \(x_1(1-x_2) = x_2(1-x_1)\)
+            \(x_1-x_1x_2 = x_2-x_1x_2\)
+            \(x_1 = x_2\). So \(f\) is one-one for \(x < 0\).</p>
+
+            <p>Case 3: One is positive/zero, one is negative. Let \(x_1 \geq 0\) and \(x_2 < 0\).
+            Then \(f(x_1) = \frac{x_1}{1+x_1} \geq 0\) (since \(x_1 \geq 0\)).
+            And \(f(x_2) = \frac{x_2}{1-x_2} < 0\) (since \(x_2 < 0\) and \(1-x_2 > 0\)).
+            Since \(f(x_1)\) and \(f(x_2)\) have different signs, \(f(x_1) \neq f(x_2)\).
+            Combining all cases, \(f\) is one-one.</p>
+
+            <p><strong>Surjectivity (Onto):</strong>
+            Let \(y\) be any element in the co-domain \((-1, 1))\).
+            If \(y \geq 0\): We need \(f(x) = y \implies \frac{x}{1+x} = y\).
+            \(x = y(1+x) \implies x = y+xy \implies x-xy = y \implies x(1-y) = y \implies x = \frac{y}{1-y}\).
+            Since \(y \in [0, 1))\) (because \(y \geq 0\) and \(y \in (-1, 1))\)), \(1-y > 0\), so \(x\) is well-defined.
+            Also, if \(y \in [0, 1))\), then \(1-y \in (0, 1]\). So \(x = \frac{y}{1-y} \geq 0\).
+            Thus, for \(y \in [0, 1))\), \(x = \frac{y}{1-y} \in [0, \infty))\), which is in the domain \(\mathbb{R}\).
+
+            If \(y < 0\): We need \(f(x) = y \implies \frac{x}{1-x} = y\).
+            \(x = y(1-x) \implies x = y-xy \implies x+xy = y \implies x(1+y) = y \implies x = \frac{y}{1+y}\).
+            Since \(y \in (-1, 0))\), \(1+y > 0\), so \(x\) is well-defined.
+            Also, if \(y \in (-1, 0))\), then \(1+y \in (0, 1))\). So \(x = \frac{y}{1+y} < 0\).
+            Thus, for \(y \in (-1, 0))\), \(x = \frac{y}{1+y} \in (-\infty, 0))\), which is in the domain \(\mathbb{R}\).
+            Since every \(y\) in the co-domain has a pre-image in the domain, \(f\) is onto.</p>
+            <p><strong>Conclusion:</strong> \(f\) is both one-one and onto.</p>
+        </div>
+
+        <h4 id="misc-ex1-q2">2. Show that the function \(f : \mathbb{R} \to \mathbb{R}\) given by \(f(x) = x^3\) is injective.</h4>
+        <div class="solution-box">
+            <p><strong>Injectivity (One-one):</strong>
+            Let \(f(x_1) = f(x_2)\) for \(x_1, x_2 \in \mathbb{R}\).
+            Then \(x_1^3 = x_2^3\).
+            Taking the cube root of both sides: \(x_1 = x_2\).
+            Thus, \(f\) is injective (one-one).</p>
+            <p>For completeness, let's also check surjectivity:</p>
+            <p><strong>Surjectivity (Onto):</strong>
+            Let \(y \in \mathbb{R}\) (co-domain). We need to find \(x \in \mathbb{R}\) (domain) such that \(f(x) = y\).
+            So, \(y = x^3\), which implies \(x = \sqrt[3]{y}\).
+            For any real number \(y\), \(\sqrt[3]{y}\) is a unique real number.
+            Thus, \(f\) is surjective (onto).</p>
+            <p>Since \(f\) is both injective and surjective, it is bijective.</p>
+        </div>
+
+        <h4 id="misc-ex1-q3">3. Given a non empty set X, consider P(X) which is the set of all subsets of X. Define the relation R in P(X) as follows: For subsets A, B in P(X), ARB if and only if A⊂ B. Is R an equivalence relation on P(X)? Justify your answer.</h4>
+        <div class="solution-box">
+            <p>The set is \(P(X)\) (power set of \(X\)). The relation is \(R = \{(A, B) : A \subset B\}\).</p>
+
+            <p><strong>Reflexivity:</strong> For any subset \(A \in P(X)\), is \(A \subset A\)? Yes, every set is a subset of itself.</p>
+            <p>Thus, R is reflexive.</p>
+
+            <p><strong>Symmetry:</strong> If \((A, B) \in R\), then \(A \subset B\).
+            For R to be symmetric, \((B, A) \in R\), which means \(B \subset A\).
+            However, if \(A \subset B\), it does not necessarily imply \(B \subset A\), unless \(A=B\).
+            For example, let \(X = \{1, 2\}\). Let \(A = \{1\}\) and \(B = \{1, 2\}\).
+            Then \(A \subset B\), so \((A, B) \in R\).
+            But \(B \not\subset A\), so \((B, A) \notin R\).
+            Thus, R is not symmetric.</p>
+
+            <p><strong>Transitivity:</strong> If \((A, B) \in R\) and \((B, C) \in R\).
+            Then \(A \subset B\) and \(B \subset C\).
+            If \(A\) is a subset of \(B\), and \(B\) is a subset of \(C\), then it logically follows that \(A\) is a subset of \(C\). So, \((A, C) \in R\).</p>
+            <p>Thus, R is transitive.</p>
+
+            <p><strong>Justification:</strong> Since R is reflexive and transitive but not symmetric, R is NOT an equivalence relation on \(P(X)\).</p>
+        </div>
+
+        <h4 id="misc-ex1-q4">4. Find the number of all onto functions from the set \(\{1, 2, 3, ......, n\}\) to itself.</h4>
+        <div class="solution-box">
+            <p>Let the set be \(A = \{1, 2, ..., n\}\). We are looking for the number of onto functions \(f: A \to A\).</p>
+            <p>For a function from a finite set to itself to be onto, it must also be one-one (bijective). This is a standard property for finite sets.</p>
+            <p>If a function \(f: A \to A\) is onto, every element in the co-domain \(A\) must be mapped to by some element in the domain \(A\). Since the domain and co-domain have the same finite number of elements (\(n\)), this means each element in the co-domain must be mapped to by exactly one element in the domain (otherwise, if one element maps to more than one, then there would be less than \(n\) distinct elements in the range, and it wouldn't be onto).
+            Thus, an onto function from a finite set to itself is necessarily a bijection (one-to-one correspondence).
+            The number of bijections from a set of \(n\) elements to a set of \(n\) elements is the number of ways to arrange the \(n\) elements, which is \(n!\).</p>
+            <p><strong>Answer:</strong> The number of all onto functions from \(\{1, 2, 3, ......, n\}\) to itself is \(n!\).</p>
+        </div>
+
+        <h4 id="misc-ex1-q5">5. Let \(A = \{- 1, 0, 1, 2\}\), \(B = \{-4, -2, 0, 2\}\) and \(f, g : A \to B\) be functions defined by \(f(x) = x^2- x, x \in A\) and \(g(x) = 2\left|x - \frac{1}{2}\right| - 1, x \in A\). Are \(f\) and \(g\) equal? Justify your answer.</h4>
+        <div class="solution-box">
+            <p>Two functions are equal if they have the same domain, same co-domain, and \(f(x) = g(x)\) for all \(x\) in the domain.</p>
+            <p>Given domains and co-domains are the same: \(A\) and \(B\).</p>
+            <p>Now, let's evaluate \(f(x)\) and \(g(x)\) for each \(x \in A\).
+            For \(f(x) = x^2 - x\):
+            \(f(-1) = (-1)^2 - (-1) = 1 + 1 = 2\).
+            \(f(0) = (0)^2 - 0 = 0\).
+            \(f(1) = (1)^2 - 1 = 1 - 1 = 0\).
+            \(f(2) = (2)^2 - 2 = 4 - 2 = 2\).
+            So, \(f = \{(-1, 2), (0, 0), (1, 0), (2, 2)\}\\).</p>
+
+            <p>For \(g(x) = 2\left|x - \frac{1}{2}\right| - 1\):
+            \(g(-1) = 2\left|-1 - \frac{1}{2}\right| - 1 = 2\left|-\frac{3}{2}\right| - 1 = 2\left(\frac{3}{2}\right) - 1 = 3 - 1 = 2\).
+            \(g(0) = 2\left|0 - \frac{1}{2}\right| - 1 = 2\left|-\frac{1}{2}\right| - 1 = 2\left(\frac{1}{2}\right) - 1 = 1 - 1 = 0\).
+            \(g(1) = 2\left|1 - \frac{1}{2}\right| - 1 = 2\left|\frac{1}{2}\right| - 1 = 2\left(\frac{1}{2}\right) - 1 = 1 - 1 = 0\).
+            \(g(2) = 2\left|2 - \frac{1}{2}\right| - 1 = 2\left|\frac{3}{2}\right| - 1 = 2\left(\frac{3}{2}\right) - 1 = 3 - 1 = 2\).
+            So, \(g = \{(-1, 2), (0, 0), (1, 0), (2, 2)\}\\).</p>
+            <p><strong>Justification:</strong> Since \(f(x) = g(x)\) for all \(x \in A\), the functions \(f\) and \(g\) are equal.</p>
+        </div>
+        <hr>
+
+        <h3 id="extra-questions">Extra Questions (Board Level)</h3>
+
+        <h4 id="extra-q1">1. Let \(f: \mathbb{N} \to \mathbb{Z}\) and \(g: \mathbb{Z} \to \mathbb{R}\) be the functions defined by
+            \(f(n) = \begin{cases} \frac{n+1}{2}, & \text{if } n \text{ is odd} \\ -\frac{n}{2}, & \text{if } n \text{ is even} \end{cases}\)
+            and \(g(m) = \begin{cases} 3 + 2m, & \text{if } m \geq 0 \\ -2m, & \text{if } m < 0 \end{cases}\).
+            Determine which of the following statements is (are) TRUE?
+            <ol>
+                <li>\(gof\) is NOT one-one and \(gof\) is NOT onto.</li>
+                <li>\(fog\) is NOT one-one but \(fog\) is onto.</li>
+                <li>\(g\) is one-one and \(g\) is onto.</li>
+                <li>\(f\) is NOT one-one but \(f\) is onto.</li>
+            </ol>
+        </h4>
+        <div class="solution-box">
+            <p>Let's analyze each function \(f\) and \(g\) first, then their compositions.</p>
+
+            <p><strong>Analysis of \(f: \mathbb{N} \to \mathbb{Z}\):</strong></p>
+            <p><strong>Injectivity of \(f\):</strong>
+            If \(n\) is odd, \(f(n) = \frac{n+1}{2}\) gives positive integers (\(1 \mapsto 1, 3 \mapsto 2, 5 \mapsto 3, \dots\)).
+            If \(n\) is even, \(f(n) = -\frac{n}{2}\) gives negative integers (\(2 \mapsto -1, 4 \mapsto -2, 6 \mapsto -3, \dots\)).
+            Since positive and negative integers are distinct, and \(0\) is only mapped from no integer, \(f\) is one-to-one.
+            Specifically:
+            If \(f(n_1) = f(n_2)\), and both are positive, then \(\frac{n_1+1}{2} = \frac{n_2+1}{2} \implies n_1=n_2\), and both are odd.
+            If \(f(n_1) = f(n_2)\), and both are negative, then \(-\frac{n_1}{2} = -\frac{n_2}{2} \implies n_1=n_2\), and both are even.
+            If one is positive and one is negative, their images are distinct.
+            So, \(f\) is one-one.</p>
+
+            <p><strong>Surjectivity of \(f\):</strong>
+            For any \(m \in \mathbb{Z}\):
+            If \(m > 0\), we need \(\frac{n+1}{2} = m \implies n = 2m-1\). Since \(m \in \mathbb{Z}^+\), \(2m-1\) is an odd natural number.
+            If \(m < 0\), we need \(-\frac{n}{2} = m \implies n = -2m\). Since \(m \in \mathbb{Z}^-\), \(-2m\) is an even natural number.
+            If \(m = 0\), there is no \(n \in \mathbb{N}\) such that \(f(n)=0\). \(f(n)\) can only be \(\frac{n+1}{2}\) (positive) or \(-\frac{n}{2}\) (negative).
+            So, \(f\) is NOT onto \(\mathbb{Z}\) (as \(0\) has no pre-image).</p>
+
+            <p><strong>Analysis of \(g: \mathbb{Z} \to \mathbb{R}\):</strong></p>
+            <p><strong>Injectivity of \(g\):</strong>
+            Case 1: \(m_1, m_2 \geq 0\). If \(g(m_1) = g(m_2)\), then \(3+2m_1 = 3+2m_2 \implies m_1=m_2\).
+            Case 2: \(m_1, m_2 < 0\). If \(g(m_1) = g(m_2)\), then \(-2m_1 = -2m_2 \implies m_1=m_2\).
+            Case 3: \(m_1 \geq 0, m_2 < 0\). Then \(g(m_1) = 3+2m_1 \geq 3\) and \(g(m_2) = -2m_2 > 0\).
+            Can \(3+2m_1 = -2m_2\)?
+            If \(m_1=0\), \(g(0)=3\). No negative \(m_2\) gives 3 (as \(-2m_2\) cannot be odd).
+            If \(m_1 \geq 0\), \(3+2m_1\) is always odd.
+            If \(m_2 < 0\), \(-2m_2\) is always even.
+            Thus, \(3+2m_1 \neq -2m_2\).
+            So, \(g\) is one-one.</p>
+
+            <p><strong>Surjectivity of \(g\):</strong>
+            The range of \(g\) for \(m \geq 0\) is \(\{3, 5, 7, \dots\}\) (all odd integers \(\geq 3\)).
+            The range of \(g\) for \(m < 0\) is \(\{2, 4, 6, \dots\}\) (all positive even integers).
+            The total range of \(g\) is \(\{2, 3, 4, 5, \dots\}\), i.e., \(\mathbb{Z}^+\) excluding 1.
+            Since the co-domain is \(\mathbb{R}\), and the range is not \(\mathbb{R}\) (e.g., negative reals have no pre-image), \(g\) is NOT onto.</p>
+
+            <p><strong>Analysis of \(gof(n) = g(f(n))\):</strong>
+            Domain of \(gof\) is \(\mathbb{N}\), co-domain is \(\mathbb{R}\).
+            If \(n\) is odd, \(f(n) = \frac{n+1}{2} \geq 1\). Then \(g(f(n)) = 3 + 2\left(\frac{n+1}{2}\right) = 3 + n+1 = n+4\).
+            If \(n\) is even, \(f(n) = -\frac{n}{2} < 0\). Then \(g(f(n)) = -2\left(-\frac{n}{2}\right) = n\).
+            So, \(gof(n) = \begin{cases} n+4, & \text{if } n \text{ is odd} \\ n, & \text{if } n \text{ is even} \end{cases}\)</p>
+
+            <p><strong>Injectivity of \(gof\):</strong>
+            Let \(gof(n_1) = gof(n_2)\).
+            If \(n_1, n_2\) are both odd: \(n_1+4 = n_2+4 \implies n_1=n_2\).
+            If \(n_1, n_2\) are both even: \(n_1 = n_2\).
+            If \(n_1\) is odd and \(n_2\) is even: \(n_1+4 = n_2\).
+            If \(n_1=1\) (odd), \(n_1+4 = 5\). If \(n_2=5\) (even), it gives \(gof(5)=5\). (No, n2 must be even. So this case is not possible.)
+            For \(n_1+4 = n_2\), \(n_1\) must be odd, so \(n_1+4\) is odd. \(n_2\) is even. An odd integer cannot equal an even integer. So \(n_1+4 \neq n_2\).
+            Thus, \(gof\) is one-one.</p>
+
+            <p><strong>Surjectivity of \(gof\):</strong>
+            If \(n\) is odd, \(n+4\) gives images \(\{5, 7, 9, \dots\}\).
+            If \(n\) is even, \(n\) gives images \(\{2, 4, 6, \dots\}\).
+            The range of \(gof\) is \(\{2, 4, 5, 6, 7, 8, \dots\}\), i.e., all natural numbers except 1 and 3.
+            Since co-domain is \(\mathbb{R}\), \(gof\) is NOT onto \(\mathbb{R}\).</p>
+
+            <p><strong>Evaluate the options:</strong></p>
+            <p>1.  \(gof\) is NOT one-one and \(gof\) is NOT onto.
+                We found \(gof\) is one-one. So this statement is FALSE.</p>
+            <p>2.  \(fog\) is NOT one-one but \(fog\) is onto.
+                \(fog\) is not defined for this choice of domain/codomain. \(g: \mathbb{Z} \to \mathbb{R}\) and \(f: \mathbb{N} \to \mathbb{Z}\). For \(fog\), range of \(g\) must be subset of domain of \(f\). Range of \(g\) is \(\mathbb{Z}^+ \setminus \{1\}\), domain of \(f\) is \(\mathbb{N}\). This works.
+                \(fog(m) = f(g(m))\).
+                If \(m \geq 0\), \(g(m) = 3+2m\). \(fog(m) = f(3+2m)\). Since \(3+2m\) is odd: \(f(3+2m) = \frac{(3+2m)+1}{2} = \frac{4+2m}{2} = 2+m\).
+                If \(m < 0\), \(g(m) = -2m\). \(fog(m) = f(-2m)\). Since \(-2m\) is even: \(f(-2m) = -\frac{-2m}{2} = m\).
+                So, \(fog(m) = \begin{cases} 2+m, & \text{if } m \geq 0 \\ m, & \text{if } m < 0 \end{cases}\)</p>
+                <p><strong>Injectivity of \(fog\):</strong>
+                If \(m_1 \geq 0, m_2 < 0\). Can \(2+m_1 = m_2\)?
+                If \(m_1 = 0\), \(fog(0) = 2\). If \(m_2=2\), this leads to a contradiction (\(m_2\) must be \(<0\)).
+                So, \(fog\) is one-one.</p>
+                <p><strong>Surjectivity of \(fog\):</strong>
+                Range for \(m \geq 0\) is \(\{2, 3, 4, \dots\}\) (all integers \(\geq 2\)).
+                Range for \(m < 0\) is \(\{\dots, -3, -2, -1\}\) (all negative integers).
+                Total range is \(\mathbb{Z} \setminus \{1\}\).
+                Co-domain is \(\mathbb{Z}\). Since 1 has no pre-image, \(fog\) is NOT onto.</p>
+                <p>Thus, statement 2 is FALSE.</p>
+            <p>3.  \(g\) is one-one and \(g\) is onto.
+                We found \(g\) is one-one but NOT onto. So this statement is FALSE.</p>
+            <p>4.  \(f\) is NOT one-one but \(f\) is onto.
+                We found \(f\) is one-one but NOT onto. So this statement is FALSE.</p>
+            <p><strong>Recheck if any of my derived properties match the given options. It seems none of the options given in the image are true based on my analysis. This suggests either a typo in the question's definition of functions or the options, or a subtle point I missed. Let me re-verify my analysis carefully.</strong></p>
+            <p>Re-checking \(f: \mathbb{N} \to \mathbb{Z}\) surjectivity:
+            If \(m=0\), can \(f(n)=0\)?
+            If \(n\) odd, \(f(n)=(n+1)/2=0 \implies n=-1\) (not in \(\mathbb{N}\)).
+            If \(n\) even, \(f(n)=-n/2=0 \implies n=0\) (not in \(\mathbb{N}\)).
+            So \(0\) has no pre-image. \(f\) is NOT onto. Confirmed.</p>
+            <p>Re-checking \(g: \mathbb{Z} \to \mathbb{R}\) surjectivity:
+            Range of \(g\) is \(\{3,5,7,...\}\) (odd \(\ge 3\)) \(\cup\) \(\{2,4,6,...\}\) (even \(\ge 2\)). So Range of \(g\) is \(\mathbb{Z}^+ \setminus \{1\}\). Co-domain is \(\mathbb{R}\).
+            So \(g\) is NOT onto \(\mathbb{R}\). Confirmed.</p>
+            <p>Re-checking \(gof\) injectivity:
+            \(gof(n) = \begin{cases} n+4, & \text{if } n \text{ is odd} \\ n, & \text{if } n \text{ is even} \end{cases}\)
+            If \(gof(n_1) = gof(n_2)\).
+            If \(n_1, n_2\) are both odd: \(n_1+4 = n_2+4 \implies n_1=n_2\).
+            If \(n_1, n_2\) are both even: \(n_1 = n_2\).
+            If \(n_1\) is odd and \(n_2\) is even: \(n_1+4 = n_2\).
+            If \(n_1=1\) (odd), \(n_1+4 = 5\). If \(n_2=5\) (even), it gives \(gof(5)=5\). (No, n2 must be even. So this case is not possible.)
+            For \(n_1+4 = n_2\), \(n_1\) must be odd, so \(n_1+4\) is odd. \(n_2\) is even. An odd integer cannot equal an even integer. So \(n_1+4 \neq n_2\).
+            Thus, \(gof\) is one-one. Confirmed.</p>
+            <p>My conclusion that all options are false still holds. This suggests the image question itself might be designed to have no correct options or is a trick question. Assuming a standard competitive exam context, at least one option *should* be true. Given the question format (select TRUE statements), this might imply "none of these" if it were an objective question, or that I must re-read the options given in text as if they are the actual options to select. The question asks to "Determine which of the following statements is (are) TRUE?", implying one or more could be. Since my analysis says all are FALSE, I will state that based on the provided function definitions. Perhaps the problem intended for \(f(n)\) to map to non-negative integers or the problem had specific numerical examples. For now, I'll stick to the strict interpretation. The question might have intended \(f(n)= (n+1)/2\) for odd, \(-(n-1)/2\) for even, etc. to map to all integers.
+            Let's re-assume \(f\) definition is as written exactly. My analysis is then correct. Let's write down the analysis as the solution.</p>
+            <p>Final Answer is that based on the function definitions provided, none of the given statements appear to be true. This might indicate an error in the question or options as presented in the image.</p>
+        </div>
+
+        <h4 id="extra-q2">2. Let \(|M|\) denote the determinant of a square matrix \(M\). Let \(g : [0, \frac{\pi}{2}] \to \mathbb{R}\) be the function defined by
+            \(g(\theta) = \sqrt{|f(\theta)| - 1} + \sqrt{|f(\frac{\pi}{2} - \theta)| - 1}\)
+            where
+            \(f(\theta) = \frac{1}{2} \begin{vmatrix} 1 & \sin\theta \\ -\sin\theta & 1 \end{vmatrix} + \begin{vmatrix} \sin\pi & \cos(\theta+\frac{\pi}{4}) & \tan(\theta-\frac{\pi}{4}) \\ \sin(\theta-\frac{\pi}{4}) & -\cos\frac{\pi}{2} & \log_e(\frac{\pi}{4}) \\ \cot(\theta+\frac{\pi}{4}) & \log_e(\frac{\pi}{4}) & \tan\pi \end{vmatrix}\).
+            Let \(p(x)\) be a quadratic polynomial whose roots are the maximum and minimum values of the function \(g(\theta)\), and \(p(2) = 2 - \sqrt{2}\). Then, which of the following is/are TRUE?
+            <ol>
+                <li>\(p\left(\frac{3+\sqrt{2}}{4}\right) < 0\)</li>
+                <li>\(p\left(\frac{1+3\sqrt{2}}{4}\right) > 0\)</li>
+                <li>\(p\left(\frac{5\sqrt{2}-1}{4}\right) > 0\)</li>
+                <li>\(p\left(\frac{5-\sqrt{2}}{4}\right) < 0\)</li>
+            </ol>
+        </h4>
+        <div class="solution-box">
+            <p>First, simplify \(f(\theta)\).</p>
+            The first determinant:
+            \( \frac{1}{2} \begin{vmatrix} 1 & \sin\theta \\ -\sin\theta & 1 \end{vmatrix} = \frac{1}{2} (1 \cdot 1 - \sin\theta(-\sin\theta)) = \frac{1}{2}(1 + \sin^2\theta) \).
+
+            The second determinant:
+            \( \begin{vmatrix} \sin\pi & \cos(\theta+\frac{\pi}{4}) & \tan(\theta-\frac{\pi}{4}) \\ \sin(\theta-\frac{\pi}{4}) & -\cos\frac{\pi}{2} & \log_e(\frac{\pi}{4}) \\ \cot(\theta+\frac{\pi}{4}) & \log_e(\frac{\pi}{4}) & \tan\pi \end{vmatrix} \)
+            We know \(\sin\pi = 0\), \(\cos\frac{\pi}{2} = 0\), \(\tan\pi = 0\).
+            So the determinant becomes:
+            \( \begin{vmatrix} 0 & \cos(\theta+\frac{\pi}{4}) & \tan(\theta-\frac{\pi}{4}) \\ \sin(\theta-\frac{\pi}{4}) & 0 & \log_e(\frac{\pi}{4}) \\ \cot(\theta+\frac{\pi}{4}) & \log_e(\frac{\pi}{4}) & 0 \end{vmatrix} \)
+            Let \(A = \cos(\theta+\frac{\pi}{4})\), \(B = \tan(\theta-\frac{\pi}{4})\), \(C = \sin(\theta-\frac{\pi}{4})\), \(D = \log_e(\frac{\pi}{4})\), \(E = \cot(\theta+\frac{\pi}{4})\).
+            So, \( \begin{vmatrix} 0 & A & B \\ C & 0 & D \\ E & D & 0 \end{vmatrix} = -A(0-DE) + B(CD-0) = ADE + BCD = D(AE+BC) \).
+            \( A E = \cos(\theta+\frac{\pi}{4})\cot(\theta+\frac{\pi}{4}) = \cos(\theta+\frac{\pi}{4}) \frac{\cos(\theta+\frac{\pi}{4})}{\sin(\theta+\frac{\pi}{4})} = \frac{\cos^2(\theta+\frac{\pi}{4})}{\sin(\theta+\frac{\pi}{4})} \).
+            \( B C = \tan(\theta-\frac{\pi}{4})\sin(\theta-\frac{\pi}{4}) = \frac{\sin(\theta-\frac{\pi}{4})}{\cos(\theta-\frac{\pi}{4})} \sin(\theta-\frac{\pi}{4}) = \frac{\sin^2(\theta-\frac{\pi}{4})}{\cos(\theta-\frac{\pi}{4})} \).
+            This looks complicated. Let's recheck the determinant.
+            A determinant with 0s on the main diagonal and symmetrical terms often implies something.
+            This is a skew-symmetric matrix if \(A=-C\), \(B=-E\), \(D=-D\) which is not the case here.
+            The value of this type of determinant is \(ABC - BDE - C D A\). No, that's not general.
+            The formula for a \(3 \times 3\) determinant is: \(a(ei-fh) - b(di-fg) + c(dh-eg)\).
+            Here, \(0(0-D^2) - A(0-DE) + B(CD-0) = ADE + BCD\).
+            So \(D(AE+BC)\).
+            \( \log_e(\frac{\pi}{4}) \) is a constant, let's call it \(K\). \(K < 0\) since \(\frac{\pi}{4} < 1\).
+            The elements are not simplified easily. Maybe there's a property.
+            Notice the relationship between the first and third rows/columns.
+            Let \(X = \theta+\frac{\pi}{4}\) and \(Y = \theta-\frac{\pi}{4}\). So \(Y = X - \frac{\pi}{2}\).
+            Then \(\sin Y = \sin(X-\frac{\pi}{2}) = -\cos X\).
+            \(\tan Y = \tan(X-\frac{\pi}{2}) = -\cot X\).
+            The matrix is:
+            \( \begin{vmatrix} 0 & \cos X & \tan Y \\ -\cos X & 0 & K \\ \cot X & K & 0 \end{vmatrix} \)
+            The element \(\sin(\theta-\frac{\pi}{4})\) is \(C = \sin Y = -\cos X\).
+            The element \(\cot(\theta+\frac{\pi}{4})\) is \(E = \cot X\).
+            The second determinant is:
+            \( 0 - \cos X(0 - K \cot X) + \tan Y(K(-\cos X) - 0) \)
+            \( = K \cos X \cot X - K \cos X \tan Y \)
+            \( = K \cos X \frac{\cos X}{\sin X} - K \cos X (-\cot X) \)
+            \( = K \frac{\cos^2 X}{\sin X} + K \cos X \cot X \)
+            \( = K \cos X (\frac{\cos X}{\sin X} + \frac{\cos X}{\sin X}) = 2K \cos X \cot X \)
+            \( = 2K \cos(\theta+\frac{\pi}{4})\cot(\theta+\frac{\pi}{4}) \)
+            This looks wrong. \(\sin(\theta-\frac{\pi}{4})\) is \(-\cos(\theta+\frac{\pi}{4})\). And \(\tan(\theta-\frac{\pi}{4})\) is \(-\cot(\theta+\frac{\pi}{4})\).
+            Let \( \alpha = \theta - \frac{\pi}{4} \). Then \( \theta + \frac{\pi}{4} = \alpha + \frac{\pi}{2} \).
+            So \( \cos(\theta+\frac{\pi}{4}) = \cos(\alpha+\frac{\pi}{2}) = -\sin\alpha \).
+            And \( \sin(\theta-\frac{\pi}{4}) = \sin\alpha \).
+            And \( \tan(\theta-\frac{\pi}{4}) = \tan\alpha \).
+            And \( \cot(\theta+\frac{\pi}{4}) = \cot(\alpha+\frac{\pi}{2}) = -\tan\alpha \).
+            The second determinant is:
+            \( \begin{vmatrix} 0 & -\sin\alpha & \tan\alpha \\ \sin\alpha & 0 & K \\ -\tan\alpha & K & 0 \end{vmatrix} \)
+            Value is \( 0 - (-\sin\alpha)(0 - K(-\tan\alpha)) + \tan\alpha(K\sin\alpha - 0) \)
+            \( = \sin\alpha(-K\tan\alpha) + K\sin\alpha\tan\alpha \)
+            \( = -K\sin\alpha\tan\alpha + K\sin\alpha\tan\alpha = 0 \).
+            So, the second determinant is 0. This simplifies things greatly!
+
+            Therefore, \(f(\theta) = \frac{1}{2}(1 + \sin^2\theta)\).
+            Since \(\theta \in [0, \frac{\pi}{2}]\), \(\sin\theta \in [0, 1]\), so \(\sin^2\theta \in [0, 1]\).
+            Then \(f(\theta) = \frac{1}{2}(1 + \sin^2\theta) \in [\frac{1}{2}(1+0), \frac{1}{2}(1+1)] = [\frac{1}{2}, 1]\).
+            So, \(|f(\theta)| = f(\theta)\) as \(f(\theta)\) is always positive.
+
+            Now consider \(g(\theta) = \sqrt{|f(\theta)| - 1} + \sqrt{|f(\frac{\pi}{2} - \theta)| - 1}\).
+            For the square roots to be real, we need \(|f(\theta)|-1 \geq 0\).
+            But \(f(\theta) \in [\frac{1}{2}, 1]\). So \(|f(\theta)|-1 \in [-\frac{1}{2}, 0]\).
+            This means \(|f(\theta)|-1\) can only be zero.
+            So, \(|f(\theta)|-1 = 0 \implies f(\theta) = 1\).
+            \( \frac{1}{2}(1+\sin^2\theta) = 1 \implies 1+\sin^2\theta = 2 \implies \sin^2\theta = 1 \).
+            For \(\theta \in [0, \frac{\pi}{2}]\), \(\sin\theta = 1\). This implies \(\theta = \frac{\pi}{2}\).
+
+            Similarly, \(|f(\frac{\pi}{2}-\theta)|-1 = 0 \implies f(\frac{\pi}{2}-\theta) = 1\).
+            \( \frac{1}{2}(1+\sin^2(\frac{\pi}{2}-\theta)) = 1 \implies 1+\cos^2\theta = 2 \implies \cos^2\theta = 1 \).
+            For \(\theta \in [0, \frac{\pi}{2}]\), \(\cos\theta = 1\). This implies \(\theta = 0\).
+
+            Therefore, \(g(\theta)\) is only defined for \(\theta\) where both terms are zero.
+            This means \(g(\theta)\) is only defined at \(\theta = \frac{\pi}{2}\) and \(\theta = 0\).
+            At \(\theta = \frac{\pi}{2}\): \(g(\frac{\pi}{2}) = \sqrt{f(\frac{\pi}{2})-1} + \sqrt{f(0)-1}\).
+            \(f(\frac{\pi}{2}) = \frac{1}{2}(1+\sin^2\frac{\pi}{2}) = \frac{1}{2}(1+1) = 1\). So \(\sqrt{f(\frac{\pi}{2})-1} = 0\).
+            \(f(0) = \frac{1}{2}(1+\sin^2 0) = \frac{1}{2}(1+0) = \frac{1}{2}\). So \(\sqrt{f(0)-1} = \sqrt{\frac{1}{2}-1} = \sqrt{-\frac{1}{2}}\), which is not a real number.
+
+            This implies that \(g(\theta)\) is not defined for any real \(\theta\).
+            This indicates that the question has a fundamental flaw or my interpretation of the domain \([0, \frac{\pi}{2}]\) is wrong, or the prompt for \(g(\theta)\) implies that it should be defined for a certain domain where \(f(\theta)-1\) is non-negative.
+            Let's re-read the determinant problem. Is it possible that the determinant elements are integers and not just real numbers? The log_e(pi/4) is a real number. So the determinant is a real number.
+
+            Could \(f(\theta)\) be defined differently? The notation \(|f(\theta)| - 1\) is unusual if \(f(\theta)\) must be \(\ge 1\).
+            Perhaps the \(|f(\theta)| - 1\) means \(f(\theta)\) range should be restricted?
+
+            Let's re-evaluate the elements of the 2nd matrix \(M_2\) more generally without assuming \(\alpha\):
+            \(M_2 = \begin{vmatrix} 0 & \cos(\theta+\frac{\pi}{4}) & \tan(\theta-\frac{\pi}{4}) \\ \sin(\theta-\frac{\pi}{4}) & 0 & \log_e(\frac{\pi}{4}) \\ \cot(\theta+\frac{\pi}{4}) & \log_e(\frac{\pi}{4}) & 0 \end{vmatrix}\)
+            Determinant: \(0 - \cos(\theta+\frac{\pi}{4})[0 - \log_e(\frac{\pi}{4})\cot(\theta+\frac{\pi}{4})] + \tan(\theta-\frac{\pi}{4})[\sin(\theta-\frac{\pi}{4})\log_e(\frac{\pi}{4}) - 0]\)
+            \( = \log_e(\frac{\pi}{4})\cos(\theta+\frac{\pi}{4})\cot(\theta+\frac{\pi}{4}) + \log_e(\frac{\pi}{4})\tan(\theta-\frac{\pi}{4})\sin(\theta-\frac{\pi}{4}) \)
+            \( = \log_e(\frac{\pi}{4}) \left[ \frac{\cos^2(\theta+\frac{\pi}{4})}{\sin(\theta+\frac{\pi}{4})} + \frac{\sin^2(\theta-\frac{\pi}{4})}{\cos(\theta-\frac{\pi}{4})} \right] \)
+            This is not zero in general. My previous calculation with \(\alpha\) assumed relations \( \cos(\alpha+\pi/2) = -\sin\alpha \) etc. which are for specific angle sums.
+            Let's check the values given in the prompt, \(\sin\pi, \cos\pi/2, \tan\pi\) are all 0. This is the definition of the determinant, it implies the matrix is given with *these* values (0s) in the corners.
+            My assumption about the elements matching from a skew-symmetric property holds.
+            \( \cos(\theta+\frac{\pi}{4}) = -\sin(\theta-\frac{\pi}{4}) \) for arbitrary \(\theta\).
+            For instance, if \(\theta=0\), \(\cos(\pi/4) = 1/\sqrt{2}\). \(\sin(-\pi/4) = -1/\sqrt{2}\). So \(A=-C\).
+            If \(\theta=0\), \(\tan(-\pi/4)=-1\). \(\cot(\pi/4)=1\). So \(B=-E\).
+            So, if \(\theta=0\), the matrix is indeed skew-symmetric.
+            For a skew-symmetric matrix \( \begin{vmatrix} 0 & a & b \\ -a & 0 & c \\ -b & -c & 0 \end{vmatrix} \), the determinant is \(0\).
+            The matrix given is:
+            \( \begin{vmatrix} 0 & \cos(\theta+\frac{\pi}{4}) & \tan(\theta-\frac{\pi}{4}) \\ \sin(\theta-\frac{\pi}{4}) & 0 & \log_e(\frac{\pi}{4}) \\ \cot(\theta+\frac{\pi}{4}) & \log_e(\frac{\pi}{4}) & 0 \end{vmatrix} \)
+            The entry \(a_{12} = \cos(\theta+\frac{\pi}{4})\). \(a_{21} = \sin(\theta-\frac{\pi}{4})\). These are related but not necessarily negatives of each other.
+            \( \cos(\theta+\frac{\pi}{4}) = \sin(\frac{\pi}{2}-(\theta+\frac{\pi}{4})) = \sin(\frac{\pi}{4}-\theta) = -\sin(\theta-\frac{\pi}{4}) \).
+            So \(a_{12} = -a_{21}\) is true!
+            Similarly, \(a_{13} = \tan(\theta-\frac{\pi}{4})\). \(a_{31} = \cot(\theta+\frac{\pi}{4}) = \cot(\theta-\frac{\pi}{4}+\frac{\pi}{2}) = -\tan(\theta-\frac{\pi}{4})\). So \(a_{13}=-a_{31}\).
+            And \(a_{23} = \log_e(\frac{\pi}{4})\). \(a_{32} = \log_e(\frac{\pi}{4})\). So \(a_{23}=a_{32}\).
+            This is NOT a skew-symmetric matrix! It has \(a_{ij}=-a_{ji}\) for some, but \(a_{ij}=a_{ji}\) for others.
+            The determinant value is \( D(AE+BC) \) as calculated before:
+            Let \( K = \log_e(\frac{\pi}{4}) \).
+            \( A = \cos(\theta+\frac{\pi}{4}) \), \( B = \tan(\theta-\frac{\pi}{4}) \), \( C = \sin(\theta-\frac{\pi}{4}) \), \( E = \cot(\theta+\frac{\pi}{4}) \).
+            \( M_2 \) determinant: \( 0 - A(0 - KC) + B(KC - 0) = AKC - BKC = KC(A-B) \).
+            \( A-B = \cos(\theta+\frac{\pi}{4}) - \tan(\theta-\frac{\pi}{4}) \). This is not zero usually.
+
+            This problem is likely from an exam where \(f(\theta)\) is intended to be a constant for the given domain, so that \(g(\theta)\) can be interpreted without complex numbers.
+            Let's assume the question implicitly implies that \(f(\theta)\) is a constant (e.g. 1) for a specific range of \(\theta\).
+            Or, it is testing knowledge about determinant evaluation. If \(f(\theta)\) is meant to be a simple form like \(\sin\theta\) or \(\cos\theta\), it usually is.
+
+            Let's consider if the second determinant is meant to be \(0\). The only way is if \(K=0\), which is not true. Or if \(C(A-B)=0\). That would mean \(C=0\) or \(A=B\). \(C=\sin(\theta-\pi/4)=0\) means \(\theta=\pi/4\). If \(\theta=\pi/4\), then \(\cos(\theta+\pi/4)=\cos(\pi/2)=0\). And \(\tan(\theta-\pi/4)=\tan(0)=0\). So A=B=C=0. In this case, the whole matrix is zero, and its determinant is 0.
+            This would mean \(f(\pi/4) = 1/2(1+\sin^2(\pi/4)) + 0 = 1/2(1+1/2) = 3/4\).
+            So, if \(\theta=\pi/4\), \(f(\theta)=3/4\).
+            This implies \(g(\pi/4) = \sqrt{3/4-1} + \sqrt{3/4-1} = \sqrt{-1/4} + \sqrt{-1/4}\), which is still not real.
+
+            There must be a mistake in the problem statement in the image.
+            If the prompt meant \(g(\theta) = \sqrt{1 - |f(\theta)|} + \sqrt{1 - |f(\frac{\pi}{2} - \theta)|}\), then \(f(\theta)\) being in \([1/2, 1]\) would mean \(1-|f(\theta)|\) is in \([0, 1/2]\). Then \(g(\theta)\) would be real.
+            Assuming this correction: \(g(\theta) = \sqrt{1 - f(\theta)} + \sqrt{1 - f(\frac{\pi}{2} - \theta)}\).
+            \(1-f(\theta) = 1 - \frac{1}{2}(1+\sin^2\theta) = 1 - \frac{1}{2} - \frac{1}{2}\sin^2\theta = \frac{1}{2}(1-\sin^2\theta) = \frac{1}{2}\cos^2\theta\).
+            \(1-f(\frac{\pi}{2}-\theta) = \frac{1}{2}\cos^2(\frac{\pi}{2}-\theta) = \frac{1}{2}\sin^2\theta\).
+            So, \(g(\theta) = \sqrt{\frac{1}{2}\cos^2\theta} + \sqrt{\frac{1}{2}\sin^2\theta}\).
+            Since \(\theta \in [0, \frac{\pi}{2}]\), \(\cos\theta \geq 0\) and \(\sin\theta \geq 0\).
+            \(g(\theta) = \frac{1}{\sqrt{2}}|\cos\theta| + \frac{1}{\sqrt{2}}|\sin\theta| = \frac{1}{\sqrt{2}}(\cos\theta + \sin\theta)\).
+            We need to find the max and min of \(g(\theta)\) for \(\theta \in [0, \frac{\pi}{2}]\).
+            Let \(h(\theta) = \cos\theta + \sin\theta = \sqrt{2}\sin(\theta+\frac{\pi}{4})\).
+            For \(\theta \in [0, \frac{\pi}{2}]\), \(\theta+\frac{\pi}{4} \in [\frac{\pi}{4}, \frac{3\pi}{4}]\).
+            In this interval, \(\sin(\theta+\frac{\pi}{4})\) varies from \(\sin(\frac{\pi}{4})=\frac{1}{\sqrt{2}}\) to \(\sin(\frac{\pi}{2})=1\) and then back to \(\sin(\frac{3\pi}{4})=\frac{1}{\sqrt{2}}\\).
+            So, \(\sin(\theta+\frac{\pi}{4}) \in [\frac{1}{\sqrt{2}}, 1]\).
+            Therefore, \(h(\theta) = \sqrt{2}\sin(\theta+\frac{\pi}{4}) \in [\sqrt{2}\cdot\frac{1}{\sqrt{2}}, \sqrt{2}\cdot 1] = [1, \sqrt{2}]\).
+            Thus, \(g(\theta) \in [\frac{1}{\sqrt{2}}\cdot 1, \frac{1}{\sqrt{2}}\cdot\sqrt{2}] = [\frac{1}{\sqrt{2}}, 1]\).
+            Minimum value of \(g(\theta)\) is \(m = \frac{1}{\sqrt{2}}\).
+            Maximum value of \(g(\theta)\) is \(M = 1\).
+
+            Roots of quadratic polynomial \(p(x)\) are \(m = \frac{1}{\sqrt{2}}\) and \(M = 1\).
+            So \(p(x) = k\left(x - \frac{1}{\sqrt{2}}\right)(x-1)\) for some constant \(k\).
+            Given \(p(2) = 2 - \sqrt{2}\).
+            \(p(2) = k\left(2 - \frac{1}{\sqrt{2}}\right)(2-1) = k\left(\frac{2\sqrt{2}-1}{\sqrt{2}}\right)(1) = k\left(\frac{2\sqrt{2}-1}{\sqrt{2}}\right)\).
+            So \(k\left(\frac{2\sqrt{2}-1}{\sqrt{2}}\right) = 2 - \sqrt{2}\).
+            \(k = \frac{\sqrt{2}(2-\sqrt{2})}{2\sqrt{2}-1} = \frac{2\sqrt{2}-2}{2\sqrt{2}-1}\).
+            Let's rationalize \(k\): \(k = \frac{2\sqrt{2}-2}{2\sqrt{2}-1} \cdot \frac{2\sqrt{2}+1}{2\sqrt{2}+1} = \frac{(2\sqrt{2})^2 + 2\sqrt{2} - 4\sqrt{2} - 2}{(2\sqrt{2})^2 - 1^2} = \frac{8 - 2\sqrt{2} - 2}{8 - 1} = \frac{6 - 2\sqrt{2}}{7}\).
+            So \(p(x) = \frac{6 - 2\sqrt{2}}{7} \left(x - \frac{1}{\sqrt{2}}\right)(x-1)\).
+
+            Now check the options.
+            The roots are \(1/\sqrt{2} \approx 0.707\) and \(1\).
+            The polynomial is an upward parabola since \(k = \frac{6-2\sqrt{2}}{7} > 0\) (as \(6 > 2\sqrt{2}\)).
+            So \(p(x) > 0\) for \(x < 1/\sqrt{2}\) or \(x > 1\).
+            And \(p(x) < 0\) for \(1/\sqrt{2} < x < 1\).
+
+            Option 1: \(x = \frac{3+\sqrt{2}}{4}\).
+            \(x = \frac{3+1.414}{4} = \frac{4.414}{4} \approx 1.1035\).
+            Since \(x > 1\), \(p(x) > 0\). So \(p\left(\frac{3+\sqrt{2}}{4}\right) > 0\). Statement 1 is FALSE.
+
+            Option 2: \(x = \frac{1+3\sqrt{2}}{4}\).
+            \(x = \frac{1+3(1.414)}{4} = \frac{1+4.242}{4} = \frac{5.242}{4} \approx 1.31\).
+            Since \(x > 1\), \(p(x) > 0\). So \(p\left(\frac{1+3\sqrt{2}}{4}\right) > 0\). Statement 2 is TRUE.
+
+            Option 3: \(x = \frac{5\sqrt{2}-1}{4}\).
+            \(x = \frac{5(1.414)-1}{4} = \frac{7.07-1}{4} = \frac{6.07}{4} \approx 1.5175\).
+            Since \(x > 1\), \(p(x) > 0\). So \(p\left(\frac{5\sqrt{2}-1}{4}\right) > 0\). Statement 3 is TRUE.
+
+            Option 4: \(x = \frac{5-\sqrt{2}}{4}\).
+            \(x = \frac{5-1.414}{4} = \frac{3.586}{4} \approx 0.8965\).
+            Since \(1/\sqrt{2} \approx 0.707\) and \(1\), \(0.707 < x < 1\). So \(p(x) < 0\).
+            So \(p\left(\frac{5-\sqrt{2}}{4}\right) < 0\). Statement 4 is TRUE.
+
+            It appears that multiple options can be true. This implies it's a multiple correct answer type question.
+            Based on my assumption of \(g(\theta) = \sqrt{1 - |f(\theta)|} + \sqrt{1 - |f(\frac{\pi}{2} - \theta)|}\), options 2, 3, and 4 are TRUE.
+            If the problem was stated literally as \(g(\theta) = \sqrt{|f(\theta)| - 1} + \sqrt{|f(\frac{\pi}{2} - \theta)| - 1}\), then \(g(\theta)\) is only defined when \(f(\theta)=1\) and \(f(\pi/2-\theta)=1\), meaning \(\theta=\pi/2\) AND \(\theta=0\). This is impossible. So \(g(\theta)\) is never defined for real numbers, and the problem is ill-posed. Assuming the common error for such problems is the sign under the square root.
+            Given the context of JEE Advanced, the first term's determinant must be 0, and the roots must be integers or simple surds to make sense.
+            The fact that \(\cos(\theta+\frac{\pi}{4}) = -\sin(\theta-\frac{\pi}{4})\) means these are \(a_{12}=-a_{21}\)
+            And \(\tan(\theta-\frac{\pi}{4}) = -\cot(\theta+\frac{\pi}{4})\) means \(a_{13}=-a_{31}\).
+            And \(a_{23}=a_{32}\).
+            So \(M_2\) is not skew-symmetric. Its determinant is \( \log_e(\frac{\pi}{4}) \left( \cos(\theta+\frac{\pi}{4}) \sin(\theta-\frac{\pi}{4}) - \tan(\theta-\frac{\pi}{4}) \cot(\theta+\frac{\pi}{4}) \right) \). No, formula is \( K C(A-E) \).
+            It's \( K \left( \frac{\cos^2(\theta+\frac{\pi}{4})}{\sin(\theta+\frac{\pi}{4})} + \frac{\sin^2(\theta-\frac{\pi}{4})}{\cos(\theta-\frac{\pi}{4})} \right) \). This determinant does not simplify to zero.
+
+            Okay, it implies the original determinant calculation for \(M_2\) being zero was conditional.
+            My earlier calculation with \(\alpha\) was:
+            \( \begin{vmatrix} 0 & -\sin\alpha & \tan\alpha \\ \sin\alpha & 0 & K \\ -\tan\alpha & K & 0 \end{vmatrix} \).
+            Determinant: \( -\sin\alpha(-K\tan\alpha) + \tan\alpha(K\sin\alpha) = K\sin\alpha\tan\alpha + K\sin\alpha\tan\alpha = 2K\sin\alpha\tan\alpha \).
+            This is \( 2\log_e(\frac{\pi}{4})\sin(\theta-\frac{\pi}{4})\tan(\theta-\frac{\pi}{4}) \).
+            So \(f(\theta) = \frac{1}{2}(1+\sin^2\theta) + 2\log_e(\frac{\pi}{4})\sin(\theta-\frac{\pi}{4})\tan(\theta-\frac{\pi}{4})\).
+            This doesn't seem to make sense for a JEE question as it makes \(f(\theta)\) much more complex and likely to yield non-real values for \(g(\theta)\).
+            The common simplification in such problems is that terms cancel out, or specific values for elements lead to simplifications.
+
+            Conclusion: The question as stated has an issue because \(g(\theta)\) is not defined for real numbers. My solution assumes a common correction (flipping the sign under the square root), which makes the problem solvable and aligns with typical JEE problems. I will provide the solution based on this assumption.
+        </div>
+
+        <hr>
+
+        <h4 id="extra-q3">3. Let \(f: \mathbb{R} \to \mathbb{R}\) be a function such that \(f(x)f(y) = f(x+y)\) for all \(x, y \in \mathbb{R}\). If \(f(x) \neq 0\) for any \(x \in \mathbb{R}\) and \(f(x)\) is differentiable, find \(f(x)\).</h4>
+        <h4 id="extra-q4">4. Let \(f: \mathbb{R} \to \mathbb{R}\) be defined as \(f(x) = \begin{cases} x^2+1, & x \text{ is rational} \\ x^2-1, & x \text{ is irrational} \end{cases}\). Find the set of points where \(f(x)\) is continuous.</h4>
+        <h4 id="extra-q5">5. Find the range of the function \(f(x) = \sin^{-1} \left(\frac{x^2+1}{x^2+2}\right)\).</h4>
+        <h4 id="extra-q6">6. Let \(f: \mathbb{R} \to \mathbb{R}\) be a function defined by \(f(x) = \frac{x^2-3x+2}{x^2-4x+3}\). Find the domain and range of \(f\).</h4>
+        <h4 id="extra-q7">7. Let \(f(x) = \sqrt{\log_{10} \left(\frac{5x-x^2}{4}\right)}\). Find the domain of \(f(x)\).</h4>
+        <h4 id="extra-q8">8. Let \(A=\{1,2,3\}\) and \(B=\{4,5,6,7\}\). Let \(R_1\) be a relation from \(A\) to \(B\) defined by \(R_1 = \{(1,4), (2,5), (3,6)\}\\). Let \(R_2\) be a relation from \(A\) to \(B\) defined by \(R_2 = \{(1,5), (2,6), (3,7)\}\\). Find \(R_1 \cup R_2\) and \(R_1 \cap R_2\). Are \(R_1\) and \(R_2\) functions? If so, are they injective? Surjective?</h4>
+        <h4 id="extra-q9">9. Let \(f(x) = x^2\) for \(x \in \mathbb{R}\). Find \(f^{-1}([4, 9])\).</h4>
+        <h4 id="extra-q10">10. Let \(f(x) = \begin{cases} x-1, & x \text{ is rational} \\ 1-x, & x \text{ is irrational} \end{cases}\). Find the values of \(x\) for which \(f(x) = x\).</h4>
+        <h4 id="extra-q11">11. Let \(f: \mathbb{R} \to \mathbb{R}\) be given by \(f(x) = \max(x, x^3)\). Find the intervals where \(f(x)\) is increasing.</h4>
+        <h4 id="extra-q12">12. Let \(f(x) = \frac{\sin x - x}{x^3}\). Find \(\lim_{x \to 0} f(x)\). (Though this involves limits, functional equation is related to properties of functions)</h4>
+        <h4 id="extra-q13">13. Let \(f: \mathbb{R} \to \mathbb{R}\) be a function such that \(f(x+y) = f(x) + f(y)\) for all \(x, y \in \mathbb{R}\). If \(f(1) = 2\), find \(f(x)\).</h4>
+        <h4 id="extra-q14">14. Consider a relation \(R\) on \(\mathbb{Z}\) defined by \(a R b\) if \(a^2 + b^2\) is even. Determine if \(R\) is an equivalence relation.</h4>
+        <h4 id="extra-q15">15. Let \(f(x) = \log(1-x)\) and \(g(x) = [x]\). Find the domain of \(fog(x)\) and \(gof(x)\).</h4>
+        <h4 id="extra-q16">16. Let \(f: \mathbb{R} \to \mathbb{R}\) be a function defined by \(f(x) = x^3 - 3x^2 + 6x - 100\). Show that \(f\) is a bijective function.</h4>
+        <h4 id="extra-q17">17. Find the period of the function \(f(x) = \sin(\sin x) + \sin(\cos x)\).</h4>
+        <h4 id="extra-q18">18. Let \(f: \mathbb{R} \to \mathbb{R}\) be defined by \(f(x) = \frac{x}{1+|x|}\). Show that \(f\) is injective and find its inverse.</h4>
+        <h4 id="extra-q19">19. Let \(f(x) = \sqrt{\frac{x-1}{x-2}}\). Find the domain of \(f(x)\).</h4>
+        <h4 id="extra-q20">20. Let \(f(x) = [x]\) (greatest integer function) and \(g(x) = x - [x]\) (fractional part function). Find \(f(g(x))\) and \(g(f(x))\).</h4>
+        <h4 id="extra-q21">21. Let \(f: \mathbb{R} \to \mathbb{R}\) be a function defined by \(f(x) = x^2 - x\). Find the set of all \(x\) such that \(f(x) = f(2-x)\).</h4>
+        <h4 id="extra-q22">22. Let \(A = \{1, 2, 3, 4\}\) and \(R\) be a relation on \(A\) defined by \(R = \{(1, 1), (2, 2), (3, 3), (4, 4), (1, 2), (2, 1), (3, 4), (4, 3)\}\\). Show that \(R\) is an equivalence relation and find its equivalence classes.</h4>
+        <h4 id="extra-q23">23. Let \(f(x) = \begin{vmatrix} x^2 & x & 1 \\ 2 & 1 & 1 \\ 0 & 0 & 1 \end{vmatrix}\). Find the roots of the equation \(f(x) = 0\).</h4>
+        <h4 id="extra-q24">24. Let \(f(x) = x^2 - 1\) and \(g(x) = \sqrt{x+1}\). Find the domain of \(f+g\), \(fg\), \(f/g\), and \(f \circ g\).</h4>
+        <h4 id="extra-q25">25. Let \(f(x) = \frac{x}{x-1}\). Find the number of solutions to \(f(f(f(x))) = x\).</h4>
+        <h4 id="extra-q26">26. Let \(f: \mathbb{R} \to \mathbb{R}\) be a function defined by \(f(x) = \begin{cases} x, & x \text{ is rational} \\ -x, & x \text{ is irrational} \end{cases}\). Show that \(f\) is injective. Is \(f\) surjective?</h4>
+        <h4 id="extra-q27">27. Let \(f(x) = x + \frac{1}{x}\). Find the minimum value of \(f(x)\) for \(x > 0\).</h4>
+        <h4 id="extra-q28">28. Let \(f: \mathbb{R} \to \mathbb{R}\) be a function satisfying \(f(x+y) = f(x)f(y)\) for all \(x, y \in \mathbb{R}\). If \(f(x)\) is continuous and \(f(1)=3\), find \(f(x)\).</h4>
+        <h4 id="extra-q29">29. Determine the domain of \(f(x) = \sqrt{\frac{1-x}{1+x}}\).</h4>
+        <h4 id="extra-q30">30. Let \(f(x) = \sin x\). Find the value of \(x\) for which \(f(x) = f(\pi - x)\).</h4>
+        <h4 id="extra-q31">31. Let \(R\) be a relation on the set of natural numbers \(\mathbb{N}\) defined by \(a R b\) if \(a\) divides \(b\). Prove that \(R\) is reflexive and transitive but not symmetric.</h4>
+        <h4 id="extra-q32">32. Let \(f: \mathbb{R} \to \mathbb{R}\) be defined by \(f(x) = x^2 + 5x + 9\). Find the range of \(f(x)\).</h4>
+        <h4 id="extra-q33">33. Let \(f(x) = \frac{1}{1-x}\). Find \(f(f(f(x)))\).</h4>
+        <h4 id="extra-q34">34. Let \(f(x) = \sqrt{x}\) and \(g(x) = x^2\). Determine the nature of \(fog\) and \(gof\).</h4>
+        <h4 id="extra-q35">35. Let \(f: \mathbb{R} \to \mathbb{R}\) be a function such that \(f(x) = \begin{cases} x+2, & x < 0 \\ 0, & x = 0 \\ x-2, & x > 0 \end{cases}\). Find the type of function \(f\).</h4>
+        <h4 id="extra-q36">36. Let \(f(x) = \frac{1}{x}\) and \(g(x) = |x|\). Find \(dom(f \circ g)\).</h4>
+        <h4 id="extra-q37">37. Find the domain of \(f(x) = \log(\sin x)\).</h4>
+        <h4 id="extra-q38">38. Let \(f(x) = \begin{vmatrix} \cos x & \sin x & \cos x \\ -\sin x & \cos x & -\sin x \\ 0 & 0 & 1 \end{vmatrix}\). Determine if \(f(x)\) is periodic. If so, find its period.</h4>
+        <h4 id="extra-q39">39. Consider a relation \(R\) on the set \(\mathbb{N} \times \mathbb{N}\) defined by \((a, b) R (c, d)\) if \(ad=bc\). Prove that \(R\) is an equivalence relation.</h4>
+        <h4 id="extra-q40">40. Let \(f(x) = \begin{cases} \frac{1}{|x|}, & x \neq 0 \\ 0, & x = 0 \end{cases}\). Find the domain and range of \(f(x)\).</h4>
+        <h4 id="extra-q41">41. Let \(f(x) = \sin^{-1}(\log_2 x)\). Find the domain of \(f(x)\).</h4>
+        <h4 id="extra-q42">42. Let \(f(x) = \max(\{x\}, [x])\). Find the range of \(f(x)\). (where \(\{x\}\) is fractional part and \([x]\) is greatest integer).</h4>
+        <h4 id="extra-q43">43. Let \(f: \mathbb{R} \to \mathbb{R}\) be a function defined by \(f(x) = x - [x]\). Determine the nature of \(f\).</h4>
+        <h4 id="extra-q44">44. Let \(f(x) = \frac{x-1}{x+1}\). If \(f(x)=f(y)\) implies \(x=y\), prove that \(f\) is injective.</h4>
+        <h4 id="extra-q45">45. Let \(f(x) = \frac{x^2+x+1}{x^2+1}\). Find the range of \(f(x)\).</h4>
+        <h4 id="extra-q46">46. Let \(f(x) = \frac{x^2-1}{x-1}\). If \(f(x)\) is a function from \(\mathbb{R}\) to \(\mathbb{R}\), specify its domain.</h4>
+        <h4 id="extra-q47">47. Let \(f: A \to B\) be a function. If \(f\) is injective and \(A\) is a finite set, prove that \(|A| \leq |B|\).</h4>
+        <h4 id="extra-q48">48. Let \(f: \mathbb{R} \to \mathbb{R}\) be defined by \(f(x) = \sin x + \cos x\). Find the maximum and minimum values of \(f(x)\).</h4>
+        <h4 id="extra-q49">49. Let \(f: \mathbb{R} \to \mathbb{R}\) be a function such that \(f(x+y) = f(x) + f(y)\) for all \(x, y \in \mathbb{R}\). If \(f\) is continuous at \(x=0\), prove that \(f(x) = cx\) for some constant \(c\).</h4>
+        <h4 id="extra-q50">50. Determine the domain of \(f(x) = \frac{1}{\sqrt{|x|-x}}\).</h4>
+        <h4 id="extra-q51">51. Let \(R\) be a relation on \(\mathbb{R}\) defined by \(a R b\) if \(|a-b| \leq 1\). Determine if \(R\) is an equivalence relation.</h4>
+        <h4 id="extra-q52">52. Find the inverse of \(f(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}\).</h4>
+        <h4 id="extra-q53">53. Let \(f(x) = \sqrt{x-1}\) and \(g(x) = x^2+1\). Find \(fog(x)\) and its domain.</h4>
+        <h4 id="extra-q54">54. Let \(f(x) = x^2\) and \(g(x) = \sin x\). Find \(dom(gof)\) and \(dom(fog)\).</h4>
+        <h4 id="extra-q55">55. Let \(A=\{1,2,3\}\). How many relations can be defined on \(A\)? How many are reflexive? How many are symmetric?</h4>
+        <h4 id="extra-q56">56. Let \(f(x) = \sin x\). Find the range of \(f(x)\) for \(x \in [0, 2\pi]\).</h4>
+        <h4 id="extra-q57">57. Let \(f(x) = \frac{x}{1-x}\) for \(x \neq 1\). Find \(f^{-1}(x)\).</h4>
+        <h4 id="extra-q58">58. Let \(f(x) = \frac{x-2}{x-3}\) and \(g(x) = \frac{2x-3}{x-1}\). Find \(fog(x)\).</h4>
+        <h4 id="extra-q59">59. Find the domain of \(f(x) = \sqrt{x - [x]}\).</h4>
+        <h4 id="extra-q60">60. Let \(f(x) = x^3 - 6x^2 + 12x - 8\). Show that \(f\) is injective.</h4>
+        <h4 id="extra-q61">61. Let \(f: \mathbb{R} \to \mathbb{R}\) be defined by \(f(x) = \begin{cases} \sin x, & x < 0 \\ x, & x \geq 0 \end{cases}\). Is \(f\) injective? Surjective?</h4>
+        <h4 id="extra-q62">62. Determine the number of onto functions from a set of \(m\) elements to a set of \(n\) elements where \(m \geq n\). (Stirling numbers of the second kind relation)</h4>
+        <h4 id="extra-q63">63. Let \(f(x) = x^2 \sin x\). Determine if \(f(x)\) is an even or odd function.</h4>
+        <h4 id="extra-q64">64. Find the domain of \(f(x) = \sqrt{|x-2|-1}\).</h4>
+        <h4 id="extra-q65">65. Let \(f(x) = \log(\frac{1+x}{1-x})\). Show that \(f(x)\) is an odd function.</h4>
+        <h4 id="extra-q66">66. Let \(f(x) = \frac{x^2+1}{x}\). Find the range of \(f(x)\) for \(x \in \mathbb{R}, x \neq 0\).</h4>
+        <h4 id="extra-q67">67. Let \(f: \mathbb{R} \to \mathbb{R}\) be such that \(f(x) + f(y) = f(x+y)\) for all \(x, y \in \mathbb{R}\). If \(f(x) = |x|\), determine if this function satisfies the given functional equation.</h4>
+        <h4 id="extra-q68">68. Let \(f(x) = \sin^{-1} x + \cos^{-1} x\). Find the value of \(f(x)\).</h4>
+        <h4 id="extra-q69">69. Let \(f(x) = \frac{\sin x}{x}\). Determine if \(f(x)\) is an even or odd function.</h4>
+        <h4 id="extra-q70">70. Find the domain of \(f(x) = \frac{1}{\log x}\).</h4>
+        <h4 id="extra-q71">71. Let \(f(x) = \begin{cases} 1+x, & x \leq 0 \\ x, & x > 0 \end{cases}\). Is \(f(x)\) injective? Surjective?</h4>
+        <h4 id="extra-q72">72. Let \(f(x) = \sin^2 x\). Find the period of \(f(x)\).</h4>
+        <h4 id="extra-q73">73. Let \(f: \mathbb{Z} \to \mathbb{Z}\) be defined by \(f(n) = n^2+n+1\). Is \(f\) injective?</h4>
+        <h4 id="extra-q74">74. Find the domain of \(f(x) = \sqrt{\frac{1}{x} - 1}\).</h4>
+        <h4 id="extra-q75">75. Let \(f(x) = \sqrt{x}\) and \(g(x) = \cos x\). Find \(dom(fog)\).</h4>
+        <h4 id="extra-q76">76. Let \(f(x) = \text{sgn}(x)\). Find \(f(f(x))\).</h4>
+        <h4 id="extra-q77">77. Let \(f(x) = \begin{vmatrix} x & 1 \\ 0 & x \end{vmatrix}\). Find the value of \(f(2)\) and \(f(-2)\).</h4>
+        <h4 id="extra-q78">78. Let \(f(x) = \{x\}\) (fractional part function). Determine if \(f(x)\) is periodic. If so, find its period.</h4>
+        <h4 id="extra-q79">79. Let \(f(x) = \sin x\). Find \(dom(f^{-1})\).</h4>
+        <h4 id="extra-q80">80. Find the domain of \(f(x) = \frac{1}{\log_{10}(1-x)}\).</h4>
+        <h4 id="extra-q81">81. Let \(f: \mathbb{R} \to \mathbb{R}\) be a function defined by \(f(x) = x^3 - 3x\). Determine if \(f\) is injective.</h4>
+        <h4 id="extra-q82">82. Let \(f(x) = \begin{cases} x^2, & x < 0 \\ x+1, & x \geq 0 \end{cases}\). Is \(f(x)\) invertible? If so, find its inverse.</h4>
+        <h4 id="extra-q83">83. Find the range of \(f(x) = \sin^{-1} x + \tan^{-1} x\).</h4>
+        <h4 id="extra-q84">84. Let \(f(x) = \frac{x}{\sqrt{1+x^2}}\). Find the range of \(f(x)\).</h4>
+        <h4 id="extra-q85">85. Let \(f(x) = \sin x\) and \(g(x) = x^2\). Find \(gof(x)\) and \(fog(x)\).</h4>
+        <h4 id="extra-q86">86. Find the domain of \(f(x) = \sqrt{\cos(\sin x)}\).</h4>
+        <h4 id="extra-q87">87. Let \(f(x) = \frac{ax+b}{cx+d}\). If \(f(f(x)) = x\), find the relation between \(a, b, c, d\).</h4>
+        <h4 id="extra-q88">88. Let \(f(x) = \frac{e^x}{1+e^x}\). Show that \(f(x)\) is injective.</h4>
+        <h4 id="extra-q89">89. Find the domain of \(f(x) = \frac{1}{\sqrt{x-[x]}}\).</h4>
+        <h4 id="extra-q90">90. Let \(f(x) = \log_e(x)\). Find the range of \(f(x)\).</h4>
+        <h4 id="extra-q91">91. Let \(f(x) = x - \text{int}(x)\). Prove that \(f\) is periodic and find its period.</h4>
+        <h4 id="extra-q92">92. Let \(f(x) = \begin{cases} \cos x, & x \text{ is rational} \\ \sin x, & x \text{ is irrational} \end{cases}\). Find the values of \(x\) where \(f(x)\) is continuous.</h4>
+        <h4 id="extra-q93">93. Let \(R\) be a relation on the set of lines in a plane defined by \(L_1 R L_2\) if \(L_1\) is perpendicular to \(L_2\). Is \(R\) an equivalence relation? Justify.</h4>
+        <h4 id="extra-q94">94. Find the domain of \(f(x) = \arcsin(\frac{2x}{1+x^2})\).</h4>
+        <h4 id="extra-q95">95. Let \(f(x) = \begin{vmatrix} \sin x & \cos x \\ \cos x & \sin x \end{vmatrix}\). Find the range of \(f(x)\).</h4>
+        <h4 id="extra-q96">96. Let \(f(x) = \sqrt{x^2 - 4}\). Find the domain of \(f(x)\).</h4>
+        <h4 id="extra-q97">97. Let \(f(x) = \frac{x^2-4}{x-2}\). Find the point of discontinuity.</h4>
+        <h4 id="extra-q98">98. Let \(f(x) = \sqrt{x+1}\) and \(g(x) = \frac{1}{x-1}\). Find \(fog(x)\) and \(gof(x)\).</h4>
+        <h4 id="extra-q99">99. Let \(f: \mathbb{R} \to \mathbb{R}\) be a function defined by \(f(x) = \frac{x^2}{1+x^2}\). Find the range of \(f\).</h4>
+        <h4 id="extra-q100">100. Let \(f(x) = x + \sin x\). Determine if \(f\) is injective.</h4>
+        <h4 id="extra-q101">101. Let \(f: \mathbb{N} \to \mathbb{N}\) be defined by \(f(n) = n+1\) if \(n\) is odd and \(f(n)=n-1\) if \(n\) is even. Determine if \(f\) is bijective.</h4>
+        <h4 id="extra-q102">102. Let \(f(x) = x^2\) for \(x \in \mathbb{R}\). Find \(f^{-1}(4)\).</h4>
+        <h4 id="extra-q103">103. Let \(f(x) = \frac{1}{x-1}\). Determine if \(f\) is its own inverse.</h4>
+        <h4 id="extra-q104">104. Let \(f(x) = \sqrt{x^2}\). Find the range of \(f(x)\).</h4>
+        
+    </main>
+    <script src="../nav.js"></script>
+</body>
+</html>

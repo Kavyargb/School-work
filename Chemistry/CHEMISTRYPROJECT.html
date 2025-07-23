@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Chemistry Project</title>
+
+    <!-- MathJax v3 Configuration and Library -->
+    <script>
+    window.MathJax = {
+      loader: {load: ['[tex]/mhchem', '[tex]/cancel']},
+      tex: {
+        packages: {'[+]': ['mhchem', 'cancel']},
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    
+    <!-- Link to Central Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="body-content">
+    <!-- Top navigation bar placeholder -->
+    <nav class="global-nav" id="global-navbar"></nav>
+    
+    <!-- Sidebar placeholder -->
+    <nav id="index-sidebar"></nav>
+    <script src="../main.js"></script>
+
+    <script src="../nav.js"></script>
+
+    <main class="main-content">
+    <h3><strong>A Comparative Study on the Rate of Evaporation of Different Liquids.</strong></h3>
+    <h3><strong>Problem Statement</strong></h3>
+<p>It all started on a chilly winter morning. My hands were so dry, so I reached for a bottle of hand-sanitizer, which my mom insisted as the flu season was at its peak. As I rubbed the cool, gel-like substance, in less than a minute it was gone. It lasted less than the <em>British Summers</em>. A few minutes later, I washed my hands with soap &amp; water. As I dried them with a towel I noticed they still felt slightly damp for a while.</p>
+<p>This everyday experience sparked a question in my mind: Why is acetone like <em>British summers</em> and water like <em>winters</em>? I knew both were liquids, yet one disappeared faster than other. The curiosity became the driving force behind this project. I wanted to move behind simple observation &amp; systematically investigate the phenomenon. The project seeks to answer the question put forth by a simple bottle of sanitizer.</p>
+    <hr>
+    <h3><strong> Introduction of Topic</strong></h3>
+<h4><strong>What is Evaporation?</strong></h2>
+<p>Evaporation is a fundamental process in nature, a cornerstone of Earth&#39;s water cycle. It is the process by which a substance in the liquid state spontaneously transitions into the gaseous state without its temperature being raised to the boiling point. This transformation occurs at the surface of the liquid.</p>
+<p>At the microscopic level, a liquid is a collection of molecules in a constant, chaotic motion. They are held together by attractive forces called as <em>Intermolecular forces</em>. Not all molecules have the same kinetic energy; there is a distribution of energies, given by Maxwell-Boltzmann curve.
+For a molecule to break free &amp; escape into the gas phase, it must achieve two conditions:</p>
+<ol>
+<li>It must be at the surface layer of the liquid.</li>
+<li>It must possess sufficient kinetic energy to overcome the potential barrier put forth by the intermolecular forces.
+Hence, the fastest molecules escape the liquid as vapour.</li>
+</ol>
+<h4 id="-3-2-evaporation-vs-boiling-"><strong>3.2 Evaporation vs. Boiling</strong></h4>
+    <p>While both evaporation and boiling involve the conversion of a liquid to a gas, they are distinct processes.</p>
+    <table>
+    <thead>
+    <tr>
+    <th style="text-align:left">Feature</th>
+    <th style="text-align:left">Evaporation</th>
+    <th style="text-align:left">Boiling</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td style="text-align:left"><strong>Temperature</strong></td>
+    <td style="text-align:left">Occurs at any temperature below the boiling point.</td>
+    <td style="text-align:left">Occurs at a specific temperature, the boiling point.</td>
+    </tr>
+    <tr>
+    <td style="text-align:left"><strong>Location</strong></td>
+    <td style="text-align:left">A surface phenomenon; occurs only at the liquid&#39;s surface.</td>
+    <td style="text-align:left">A bulk phenomenon; occurs throughout the entire liquid.</td>
+    </tr>
+    <tr>
+    <td style="text-align:left"><strong>Bubbles</strong></td>
+    <td style="text-align:left">No bubble formation.</td>
+    <td style="text-align:left">Bubbles of vapor are formed within the liquid.</td>
+    </tr>
+    <tr>
+    <td style="text-align:left"><strong>Rate</strong></td>
+    <td style="text-align:left">Generally a slow and silent process.</td>
+    <td style="text-align:left">A fast and often violent process.</td>
+    </tr>
+    <tr>
+    <td style="text-align:left"><strong>Energy Source</strong></td>
+    <td style="text-align:left">Takes energy from the immediate surroundings.</td>
+    <td style="text-align:left">Requires a direct external heat source.</td>
+    </tr>
+    </tbody>
+    </table>
+<h4><strong>KINETIC THEORY OF MATTER</strong></h4>
+
+<p>The Kinetic Theory of Matter provides a mathematical description of the motion of the molecules and hence, the substance's physical properties like evaporation rates. The cornerstone of the kinetic theory is the Maxwell-Boltzmann distribution of speed, $f(v)$, which gives the probability density for a molecule to have a speed between $v$ &amp; $v+dv$. The eq^n for this distribution is:</p>
+
+<p>$$f(v) = 4\pi \left(\frac{M}{2\pi RT}\right)^{3/2} v^2 e^{-Mv^2/2RT}$$ (Assuming Volume = $1m^3$)</p>
+
+<p>where M is the molar mass of the molecules, R is the Universal Gas Constant and, T is the thermodynamic temperature. The eq^n shows that at a given temperature, molecular speeds are not uniform.</p>
+
+<p>From the above distribution, we can derive several characteristic speeds:</p>
+<ul>
+  <li>The most probable speed, $c^*$, the speed at which $f(v)$ is maximum: $c^* = \left(\frac{2RT}{M}\right)^{1/2}$</li>
+  <li>The mean speed, $\bar{c}$, the average speed of the molecules: $\bar{c} = \left(\frac{8RT}{\pi M}\right)^{1/2}$</li>
+  <li>The root-mean-square speed, $c$, which is related to average kinetic energy: $c = \left(\frac{3RT}{M}\right)^{1/2}$</li>
+</ul>
+
+<p>Evaporation occurs when a molecule at the surface of liquid has sufficient kinetic energy, $E_k$, to overcome the intermolecular forces holding it in the liquid. These binding forces can be represented by an escape energy, $E_{vap}$. $E_{vap}$ which is related to molar enthalpy of vapourisation ($\Delta_{vap}H^\ominus = N_A E_k$). The condition for a single molecule of mass 'm' to escape is:</p>
+
+<p>$$E_K = (\gamma-1)mc^2 > E_{vap}$$</p>
+
+<p>The rate of evaporation is proportional to the fraction of molecules at the surface that meet this energy requirement. The fraction of molecules with enough speed to escape ($v > v_{escape}$) can be found by integrating the distribution function:</p>
+
+<p>Rate Constant, $$K = \int_{v_{escape}}^{\infty} f(v) dv$$<br>
+$$K = 2\left(\frac{M}{2RT}\right)^{1/2} v_{\text{escape}} e^{-\frac{Mv_{\text{escape}}^2}{2RT}} + \cancelto{\text{can be ignored}}{\sqrt{\pi} \, \text{erfc}\left(\sqrt{\frac{Mv_{\text{escape}}^2}{2RT}}\right)}$$<br>
+<br>
+Now, $$\frac{Mv_{escape}^2}{2} = E_K^\ominus = \Delta_{vap}H^\ominus$$<br>
+$$\Rightarrow K = 2\left(\frac{M}{2RT}\right)^{1/2} v_{escape} e^{-E_K^\ominus/RT}$$<br>
+Or the eq^n can be written as<br>
+$$K = 2\sqrt{\frac{M}{2RT}} v_{escape} e^{-\Delta_{vap}H/RT}$$</p>
+
+<p>As evaporation is ~0 order w.r.t. unit. conc. of liquid, Rate, $\phi = K$<br>
+or $$\phi = \sqrt{\frac{2M}{RT}} v_{escape} e^{-Mv_{escape}^2/2RT}$$</p>
+or with units, $$\phi = (1 \text{mol} m^{-2} s^{-1})\sqrt{\frac{2M}{RT}} v_{escape} e^{-Mv_{escape}^2/2RT}$$</p>
+<p>
+    The units come from the fact that the rate constant is proportional to $\int_{v_{escape}}^{\infty} f(v) dv$ and the proportionality constant is assumed to be 1 with the units of rate constant.
+</p>
+<p>From the above $\text{eq}^n$, we observe the following:</p>
+<ol>
+  <li>Rate of evaporation, $\phi \propto \sqrt{M} e^{-M}$<br>
+  or As the molar mass of liquid increases rate of evaporation decreases or the $T_b$ increases (exp).</li>
+  <li>Rate of evaporation, $\phi \propto \frac{1}{\sqrt{T}} e^{1/RT}$
+  or As the temperature increases, the rate of evaporation exponentially increases.</li>
+  <li>Rate of evaporation, $\phi \propto e^{-\Delta_{vap}H_{strength}}$
+  or As the strength of IMFs increases the rate of evaporation exponentially decreases.</li>
+  <li>(iv) Rate of evaporation, $\phi \propto v_{escape} e^{-v_{escape}}$</li>
+</ol>
+
+    <hr>
+    <h3 id="-factors-affecting-rate-of-evaporation-"><strong>Factors affecting the rate of evaporation</strong></h3>
+<p>The speed at which the liquid evaporates is not constant. It is influenced by many factors. The project focuses primarily on the first &amp; the most intrinsic factor: the nature of liquid itself.</p>
+<h4 id="-intermolecular-forces-"><em>INTERMOLECULAR FORCES*</em></h4>
+<p>The most crucial factor determining a liquid's rate of evaporation is the strength of the forces holding its molecules together. The stronger the intermolecular forces, the more energy is required for a molecule to break free from liquid surface, and thus, slower the rate of evaporation.</p>
+<p>The kinetic energy required, $E_k = (\gamma-1)mc^2 = \frac{1}{2}mv_{esc}^2$. This is affected by Intermolecular forces. To determine the velocity required, we can reference the enthalpies of vaporisation of different liquids.</p>
+<p>$v_{escape} = \sqrt{\frac{2\Delta_{vap}H^\ominus}{M}}$</p>
+<p>Using the above relation, we get,
+$\phi = 2 \sqrt{\frac{\Delta_{vap}H^\ominus}{RT}} \cdot e^{-\frac{\Delta_{vap}H^\ominus}{RT}}$</p>
+<p>In the above relation, the rate of evaporation is not no longer dependent on the molar mass of the molecule. The factors affecting the rate of evaporation, hence, are those which affect $\Delta_{vap}H$, assuming T to be constant.</p>
+<h5 id="-hydrogen-bonding">① Hydrogen Bonding</h5>
+<p>Hydrogen bond is an attractive interaction that arises from a link of the form A-H---B, where A &amp; B are highly electronegative elements and B possesses a lone pair of electrons. The formation of an H bond can be regarded as an example of delocalised molecular orbital formation. In which $\psi_A$, $\psi_H$ and $\psi_B$ each supply one electronic atomic orbital, from which three molecular orbitals are constructed. When the two molecules are close together, three molecular orbitals of the form $\psi = c_A \psi_A + c_B \psi_B + c_H \psi_H$. These three orbitals are bonding, almost non-bonding and anti-bonding.
+The strength of an average H-bond is about $20 \text{ kJ mol}^{-1}$.
+As water has two Hydrogen bonds, its $\Delta_{vap}H$ should be around $40 \text{ kJ mol}^{-1}$ &amp; and it is around $40 \text{ kJ mol}^{-1}$ at $44 \text{ kJ mol}^{-1}$. (Table 2C.1 Atkins&#39; Physical Chemistry)</p>
+<h5 id="-dipole-dipole-interactions">② Dipole-Dipole Interactions</h5>
+<p>These interactions exist b/w polar molecules — molecules that have a permanent dipole. The positive end of one mole is attracted to the negative end of another. The typical strength of dipole-dipole interaction is given by Lennard&#39;s relations: $\approx [12p + 2 \cdot (\Delta_{\text{AR}} \chi)]$ [Simplified] kJ/mol.
+From the above, one would expect Ethanol&#39;s $\Delta_{vap}H$ to be $\approx 12 \times 1.7 + 2 \times (1.24) \dots + 20 \approx 43.17 \text{ kJ mol}^{-1}$ as it shows both dipole-dipole &amp; H-bonding.
+And it is indeed around at $38.6 \text{ kJ mol}^{-1}$. It may be noted that H-bonding outshines dipole-dipole &amp; hence its effect is reduced.</p>
+<h5 id="-london-dispersion-forces">③ London-dispersion forces</h5>
+<p>These are the weakest type of IMF and are present in all molecules, whether polar or non-polar. They arise from temporary, instantaneous fluctuation in the electron cloud of a molecule.
+They are $\propto \text{Surface Area}$ and hence, rate of evaporation can be expected to be $\propto \text{Surface Area}$.
+Their typical strength is about $\approx 8 \text{ kJ mol}^{-1}$. But can be as high as $30.8 \text{ kJ mol}^{-1}$ as in Benzene due to $\pi-e^-$ cloud fluctuations.</p>
+
+    <hr>
+    <h3 id="-expected-results-"><strong>Expected Results</strong></h3>
+<p>The energy required to overcome the intermolecular forces for different liquids is:
+    <ol>
+<li>Water (H₂O): $\Delta_{vap}H(H_2O) = 44.016 \text{ kJ mol}^{-1}$</li>
+<li>Methanol (CH₃OH): $\Delta_{vap}H(CH_3OH) = 37.99 \text{ kJ mol}^{-1}$</li>
+<li>Acetone (CH₃COCH₃): $\Delta_{vap}H(\text{Acetone}) = 31.28 \text{ kJ mol}^{-1}$</li>
+    </ol></p>
+<p>Hence, the rate of evaporation would be:
+    <ol>
+<li>Water (H₂O): $\phi = 2 \sqrt{\frac{44016}{8.314 \times 298}} e^{-\frac{44016}{8.314 \times 298}} \approx 1.6235 \times 10^{-7} \text{ mol m}^{-2} \text{s}^{-1}$</li>
+<li>Methanol (CH₃OH): $\phi = 2 \sqrt{\frac{37990}{8.314 \times 298}} e^{-\frac{37990}{8.314 \times 298}} \approx 1.7154 \times 10^{-6} \text{ mol m}^{-2} \text{s}^{-1}$</li>
+<li>Acetone (CH₃COCH₃): $\phi = 2 \sqrt{\frac{31280}{8.314 \times 298}} e^{-\frac{31280}{8.314 \times 298}} \approx 2.3363 \times 10^{-5} \text{ mol m}^{-2} \text{s}^{-1}$</li>
+    </ol></p>
+<p>Converting into $\text{mol m}^{-2} \text{h}^{-1}$, we get:
+    <ol>
+<li>Water (H₂O): $\phi \approx 5.8447 \times 10^{-4} \text{ mol m}^{-2} \text{h}^{-1}$</li>
+<li>Methanol (CH₃OH): $\phi \approx 6.1756 \times 10^{-3} \text{ mol m}^{-2} \text{h}^{-1}$</li>
+<li>Acetone (CH₃COCH₃): $\phi \approx 8.4106 \times 10^{-2} \text{ mol m}^{-2} \text{h}^{-1}$</li>
+    </ol>
+</p>
+<p>Hence, Rate of evaporation of Acetone &gt; Methanol &gt; Water.</p>
+
+    <hr>
+    <h3 id="-6-experimental-investigation-"><strong>5. Experimental Investigation</strong></h3>
+    <h4 id="-6-1-aim-of-the-experiment-"><strong>5.1 Aim of the Experiment</strong></h4>
+    <p>To compare the rate of evaporation of three different liquids—distilled water, methanol, and acetone—under identical ambient conditions.</p>
+    <h4 id="-6-2-materials-required-"><strong>5.2 Materials Required</strong></h4>
+    <ol>
+    <li>Three identical Petri dishes</li>
+    <li>Digital Weighing Balance (0.01g precision)</li>
+    <li>Stopwatch</li>
+    <li>50 mL Measuring Cylinder</li>
+    <li>Marker Pen</li>
+    <li>Thermometer</li>
+    </ol>
+    <h4 id="-6-3-chemicals-required-"><strong>5.3 Chemicals Required</strong></h4>
+    <ol>
+    <li>Distilled Water (H₂O)</li>
+    <li>Methanol (CH₃OH)</li>
+    <li>Acetone (CH₃COCH₃)</li>
+    </ol>
+    <h4 id="-6-4-procedure-"><strong>5.4 Procedure</strong></h4>
+    <ol>
+    <li><strong>Preparation:</strong> Ensure all petri dishes are clean and completely dry. Place them in a location free from direct sunlight and drafts, where the temperature is relatively stable.</li>
+    <li><strong>Labeling:</strong> Use the marker pen to label the three petri dishes as &#39;Water&#39;, &#39;Methanol&#39;, and &#39;Acetone&#39;.</li>
+    <li><strong>Initial Mass:</strong> Measure the mass of each empty petri dish using the digital weighing balance. Record this as the &#39;Initial Mass of Dish&#39;.</li>
+    <li><strong>Adding Liquids:</strong> Using the measuring cylinder, carefully measure out 20 mL of distilled water and pour it into the &#39;Water&#39; petri dish. Immediately measure the combined mass of the dish and water and record this value. This is the mass at time t=0.</li>
+    <li><strong>Repeat:</strong> Repeat step 4 for methanol and acetone, pouring them into their respective labeled dishes and recording their initial masses at t=0. Work quickly with acetone and methanol as they evaporate fast.</li>
+    <li><strong>Start Timing:</strong> Start the stopwatch immediately after the last liquid has been weighed.</li>
+    <li><strong>Data Collection:</strong> Record the mass of each petri dish (with the liquid) at regular intervals. A suggested schedule is:<ul>
+    <li>For <strong>Acetone:</strong> Every 10 minutes.</li>
+    <li>For <strong>Methanol:</strong> Every 15 minutes.</li>
+    <li>For <strong>Water:</strong> Every 30 minutes.
+    Continue this process for at least 2 hours, or until most of the acetone has evaporated.</li>
+    </ul>
+    </li>
+    <li><strong>Record Temperature:</strong> Use the thermometer to measure the room temperature at the beginning and end of the experiment and record the average.</li>
+    <li><strong>Calculations:</strong> For each reading, calculate the mass of liquid that has evaporated using the formula:
+    <em>Mass Evaporated = (Initial Mass of Dish + Liquid) - (Current Mass of Dish + Liquid) </em></li>
+    </ol>
+    <hr>
+    <h3 id="-7-observations-and-data-collection-"><strong>6. Observations and Data Collection</strong></h3>
+    <p><strong>Ambient Room Temperature:</strong> 25°C (298 K)
+    <strong>Surface Area:</strong> Constant (identical petri dishes)</p>
+    <h4><strong>6.1 Observation Table (Experimental Data)</strong></h4>
+        <table>
+    <thead>
+    <tr>
+    <th style="text-align:left">Time (min)</th>
+    <th style="text-align:left"><strong>Water (H₂O)</strong></th>
+    <th style="text-align:left"></th>
+    <th style="text-align:left"></th>
+    <th style="text-align:left"><strong>Methanol (CH₃OH)</strong></th>
+    <th style="text-align:left"></th>
+    <th style="text-align:left"></th>
+    <th style="text-align:left"><strong>Acetone (CH₃COCH₃)</strong></th>
+    <th style="text-align:left"></th>
+    <th style="text-align:left"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td style="text-align:left"></td>
+    <td style="text-align:left">Mass of Dish + Liquid (g)</td>
+    <td style="text-align:left">Mass of Liquid (g)</td>
+    <td style="text-align:left">Mass Evaporated (g)</td>
+    <td style="text-align:left">Mass of Dish + Liquid (g)</td>
+    <td style="text-align:left">Mass of Liquid (g)</td>
+    <td style="text-align:left">Mass Evaporated (g)</td>
+    <td style="text-align:left">Mass of Dish + Liquid (g)</td>
+    <td style="text-align:left">Mass of Liquid (g)</td>
+    <td style="text-align:left">Mass Evaporated (g)</td>
+    </tr>
+    <tr>
+    <td style="text-align:left"><strong>0</strong></td>
+    <td style="text-align:left">35.80</td>
+    <td style="text-align:left">15.80</td>
+    <td style="text-align:left"><strong>0.00</strong></td>
+    <td style="text-align:left">33.25</td>
+    <td style="text-align:left">13.25</td>
+    <td style="text-align:left"><strong>0.00</strong></td>
+    <td style="text-align:left">33.20</td>
+    <td style="text-align:left">13.20</td>
+    <td style="text-align:left"><strong>0.00</strong></td>
+    </tr>
+    <tr>
+    <td style="text-align:left"><strong>30</strong></td>
+    <td style="text-align:left">35.76</td>
+    <td style="text-align:left">15.76</td>
+    <td style="text-align:left"><strong>0.04</strong></td>
+    <td style="text-align:left">32.47</td>
+    <td style="text-align:left">12.47</td>
+    <td style="text-align:left"><strong>0.78</strong></td>
+    <td style="text-align:left">20.00</td>
+    <td style="text-align:left">0.00</td>
+    <td style="text-align:left"><strong>13.20</strong></td>
+    </tr>
+    <tr>
+    <td style="text-align:left"><strong>60</strong></td>
+    <td style="text-align:left">35.72</td>
+    <td style="text-align:left">15.72</td>
+    <td style="text-align:left"><strong>0.08</strong></td>
+    <td style="text-align:left">31.70</td>
+    <td style="text-align:left">11.70</td>
+    <td style="text-align:left"><strong>1.55</strong></td>
+    <td style="text-align:left">20.00</td>
+    <td style="text-align:left">0.00</td>
+    <td style="text-align:left"><strong>13.20</strong></td>
+    </tr>
+    <tr>
+    <td style="text-align:left"><strong>90</strong></td>
+    <td style="text-align:left">35.68</td>
+    <td style="text-align:left">15.68</td>
+    <td style="text-align:left"><strong>0.12</strong></td>
+    <td style="text-align:left">30.92</td>
+    <td style="text-align:left">10.92</td>
+    <td style="text-align:left"><strong>2.33</strong></td>
+    <td style="text-align:left">-</td>
+    <td style="text-align:left">-</td>
+    <td style="text-align:left"><strong>13.20</strong></td>
+    </tr>
+    <tr>
+    <td style="text-align:left"><strong>120</strong></td>
+    <td style="text-align:left">35.63</td>
+    <td style="text-align:left">15.63</td>
+    <td style="text-align:left"><strong>0.17</strong></td>
+    <td style="text-align:left">30.14</td>
+    <td style="text-align:left">10.14</td>
+    <td style="text-align:left"><strong>3.11</strong></td>
+    <td style="text-align:left">-</td>
+    <td style="text-align:left">-</td>
+    <td style="text-align:left"><strong>13.20</strong></td>
+    </tr>
+    </tbody>
+    </table>
+    <p><em>(Note: Assumed initial mass of empty dish = 20g. Density differences account for mass variations of 20mL of each liquid. Acetone column is left blank after 60 mins as most of it would have evaporated).</em></p>
+    <h4 id="-7-2-graphical-representation-"><strong>6.2 Graphical Representation</strong></h4>
+    <p>A graph would be plotted with <strong>Time (min)</strong> on the X-axis and <strong>Mass Evaporated (g)</strong> on the Y-axis. The plot shows three distinct curves.</p>
+    <ul>
+    <li><strong>Acetone&#39;s curve</strong> is the steepest, indicating the fastest rate of evaporation.</li>
+    <li><strong>Methanol&#39;s curve</strong> has a moderate slope.</li>
+    <li><strong>Water&#39;s curve</strong> is the shallowest, indicating the slowest rate of evaporation.</li>
+    </ul>
+    <center><img src="https://www.wolframcloud.com/obj/5b7efd73-5026-459a-9152-ae6bc1c2044b" alt="Plotted Curve"></center>
+    <hr>
+    <h3 id="-8-result-and-discussion-"><strong>7. Result and Discussion</strong></h3>
+    <p>From the experimental data and graphical analysis, the order of the rate of evaporation is conclusively found to be:</p>
+    <p><strong>Acetone &gt; Methanol &gt; Water</strong></p>
+    <p>This result directly aligns with the theoretical principles discussed in the introduction.</p>
+    <ol>
+    <li><p><strong>Acetone (CH₃COCH₃):</strong> Exhibited the fastest evaporation rate. This is because its primary intermolecular forces are relatively weak dipole-dipole interactions. These forces require the least amount of energy (lowest ΔH_vap) to overcome, allowing molecules to escape into the vapor phase rapidly. Its high vapor pressure is a direct consequence of these weak forces.</p>
+    </li>
+    <li><p><strong>Methanol (CH₃OH):</strong> Evaporated at a rate intermediate to acetone and water. While methanol can form hydrogen bonds, they are fewer in number and less extensive than in water. The presence of the hydrocarbon part of the molecule also weakens the overall intermolecular attraction. Therefore, more energy is required to vaporize methanol than acetone, but less than water.</p>
+    </li>
+    <li><p><strong>Water (H₂O):</strong> Had the slowest evaporation rate. The strong and extensive hydrogen bonding network between water molecules creates powerful cohesive forces. A large amount of energy (highest ΔH_vap) is needed for a molecule to break free from this network. This results in water's low vapor pressure and slow evaporation, a property crucial for its role in sustaining life.</p>
+    </li>
+    </ol>
+    <p>The cooling effect would also be most pronounced on the surface of the evaporating acetone, as the process draws heat from its surroundings most rapidly.</p>
+    <hr>
+    <h3 id="-9-precautions-"><strong>8. Precautions</strong></h3>
+    <ol>
+    <li><strong>Flammability:</strong> Methanol and especially acetone are highly flammable. Ensure there are no open flames, sparks, or hot surfaces in the vicinity of the experiment.</li>
+    <li><strong>Ventilation:</strong> Conduct the experiment in a well-ventilated area. The fumes of acetone and methanol can be harmful if inhaled in high concentrations.</li>
+    <li><strong>Eye Protection:</strong> Always wear safety goggles to protect your eyes from accidental splashes of the chemicals.</li>
+    <li><strong>Controlled Variables:</strong> To ensure a fair test, it is critical that the conditions are as identical as possible for all three liquids.<ul>
+    <li>Use petri dishes with the same diameter to keep the <strong>surface area</strong> constant.</li>
+    <li>Place the dishes in the same location to ensure constant <strong>temperature</strong> and <strong>air flow</strong>.</li>
+    </ul>
+    </li>
+    <li><strong>Accuracy:</strong> Measure the liquids and weigh them as quickly and accurately as possible to minimize mass loss due to evaporation before the experiment officially begins.</li>
+    </ol>
+    <hr>
+    <h3 id="-10-bibliography-"><strong>9. Bibliography</strong></h3>
+    <ol>
+    <li>Atkins, P., &amp; de Paula, J. (2014). <em>Atkins&#39; Physical Chemistry</em> (10th ed.). Oxford University Press. (Specifically for concepts of intermolecular forces, vapor pressure, and the Clausius-Clapeyron equation).</li>
+    <li>Shriver, D. F., &amp; Atkins, P. W. (2010). <em>Inorganic Chemistry</em> (5th ed.). Oxford University Press. (For molecular structures and polarity).</li>
+    <li>Zumdahl, S. S., &amp; Zumdahl, S. A. (2012). <em>Chemistry</em> (9th ed.). Cengage Learning. (For general concepts of liquids and phase changes).</li>
+    <li>Chemistry LibreTexts. (n.d.). <em>Factors Affecting Evaporation</em>. Retrieved from <a href="https://chem.libretexts.org/">https://chem.libretexts.org/</a></li>
+    <li>National Council of Educational Research and Training (NCERT). (2020). <em>Chemistry: Textbook for Class XI</em>. New Delhi: NCERT.</li>
+    </ol>
+    </main>
+</body>
+</html>

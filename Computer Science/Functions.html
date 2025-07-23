@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Python Functions</title>
+
+    <!-- MathJax v3 Configuration and Library -->
+    <script>
+    window.MathJax = {
+      loader: {load: ['[tex]/mhchem', '[tex]/cancel']},
+      tex: {
+        packages: {'[+]': ['mhchem', 'cancel']},
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    
+    <!-- Link to Central Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="body-content">
+    <!-- Top navigation bar placeholder -->
+    <nav class="global-nav" id="global-navbar"></nav>
+    
+    <!-- Sidebar placeholder -->
+    <nav id="index-sidebar"></nav>
+    <script src="../main.js"></script>
+
+    <script src="../nav.js"></script>
+    <main class="main-content">
+        <h3 id="s1">1. Understanding Functions</h3>
+        <div class="question-box">
+            <strong>Topic:</strong> Defining and calling custom functions to create modular and reusable code.
+        </div>
+        <div class="solution-box">
+            <h5>What is a Function?</h5>
+            <p>A function is a named, reusable block of code that performs a specific, well-defined task. The core principle behind functions is <strong>DRY (Don't Repeat Yourself)</strong>. By encapsulating logic into a function, you can call it multiple times from different parts of your program without rewriting the code. This makes your programs shorter, more readable, and easier to maintain.</p>
+            
+            <h5>Defining and Calling a Function</h5>
+            <p>You define a function using the <code>def</code> keyword, followed by a function name, parentheses <code>()</code>, and a colon <code>:</code>. The code block within the function must be indented.</p>
+<pre class="code-box"><span class="comment"># Defining the function</span>
+<span class="keyword">def</span> <span class="function">greet</span>()<span class="operator">:</span>
+    <span class="function builtin">print</span>(<span class="string">"Hello from a function!"</span>)
+    <span class="function builtin">print</span>(<span class="string">"Welcome to the module."</span>)
+
+<span class="comment"># Calling the function</span>
+<span class="function">greet</span>()</pre>
+            <p>When `greet()` is called, the Python interpreter jumps to the function's definition and executes the code inside it. After the function finishes, the program execution returns to the line where the function was called.</p>
+        </div>
+
+        <h3 id="s2">2. Parameters & Arguments</h3>
+        <div class="question-box">
+            <strong>Topic:</strong> Passing data into functions using parameters and arguments.
+        </div>
+        <div class="solution-box">
+            <p>Functions become truly powerful when you can pass data into them. This is done using parameters and arguments.</p>
+            <ul>
+                <li><strong>Parameters:</strong> The variables listed inside the function's parentheses in its definition. They are placeholders for the data the function expects to receive.</li>
+                <li><strong>Arguments:</strong> The actual values that are passed to the function when it is called.</li>
+            </ul>
+<pre class="code-box"><span class="comment"># 'name' is a parameter</span>
+<span class="keyword">def</span> <span class="function">greet_user</span>(<span class="variable">name</span>)<span class="operator">:</span>
+    <span class="function builtin">print</span>(<span class="string">f"Hello, </span><span class="operator">{</span><span class="variable">name</span><span class="operator">}</span><span class="string">!"</span>)
+
+<span class="comment"># "Alice" is a positional argument</span>
+<span class="function">greet_user</span>(<span class="string">"Alice"</span>)
+
+<span class="comment"># 'name="Bob"' is a keyword argument</span>
+<span class="function">greet_user</span>(<span class="variable">name</span><span class="operator">=</span><span class="string">"Bob"</span>)</pre>
+            
+            <h5>Default Parameter Values</h5>
+            <p>You can provide a default value for a parameter, making it optional when the function is called. If an argument for that parameter is not provided, the default value is used.</p>
+<pre class="code-box"><span class="keyword">def</span> <span class="function">describe_pet</span>(<span class="variable">pet_name</span>, <span class="variable">animal_type</span><span class="operator">=</span><span class="string">'dog'</span>)<span class="operator">:</span>
+    <span class="function builtin">print</span>(<span class="string">f"I have a </span><span class="operator">{</span><span class="variable">animal_type</span><span class="operator">}</span><span class="string"> named </span><span class="operator">{</span><span class="variable">pet_name</span><span class="operator">}</span><span class="string">."</span>)
+
+<span class="function">describe_pet</span>(<span class="string">"Fido"</span>)                    <span class="comment"># Uses the default animal_type</span>
+<span class="function">describe_pet</span>(<span class="string">"Whiskers"</span>, <span class="string">"cat"</span>)     <span class="comment"># Overrides the default</span>
+</pre>
+        </div>
+        
+        <h3 id="s3">3. The `return` Statement</h3>
+        <div class="question-box">
+            <strong>Topic:</strong> Getting data out of a function using the `return` statement.
+        </div>
+        <div class="solution-box">
+            <p>While `print()` displays information to the console, the `return` statement sends a value back from the function to the place where it was called. This returned value can be stored in a variable or used in other expressions, making functions a fundamental building block for complex programs.</p>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#c9c5d4">
+              <defs>
+                <marker id="arrow-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#00e5ff" />
+                </marker>
+              </defs>
+              <rect width="100%" height="100%" fill="#1e1b29" rx="10" />
+              
+              <text x="400" y="40" text-anchor="middle" font-size="24" fill="var(--heading-glow)" font-weight="bold">Anatomy of a Function with `return`</text>
+              
+              <g id="input-args">
+                <text x="125" y="100" text-anchor="middle" font-size="18" fill="#ff3d8b">Arguments (Data In)</text>
+                <text x="100" y="150" font-family="'Fira Code', 'Courier New', monospace">a = 5</text>
+                <text x="150" y="150" font-family="'Fira Code', 'Courier New', monospace">b = 10</text>
+                <line x1="125" y1="170" x2="125" y2="210" stroke="#ff3d8b" stroke-width="2.5" marker-end="url(#arrow-flow)" />
+              </g>
+
+              <g id="function-box">
+                <rect x="250" y="100" width="300" height="150" rx="8" fill="#161420" stroke="#3a354f" />
+                <text x="400" y="130" text-anchor="middle" font-family="'Fira Code', 'Courier New', monospace" fill="#dcdcaa">def add(a, b):</text>
+                <text x="400" y="170" text-anchor="middle" font-family="'Fira Code', 'Courier New', monospace" fill="#c9c5d4">  result = a + b</text>
+                <text x="400" y="210" text-anchor="middle" font-family="'Fira Code', 'Courier New', monospace" fill="#c586c0">  return result</text>
+              </g>
+
+              <g id="output-return">
+                <line x1="550" y1="175" x2="600" y2="175" stroke="#00e5ff" stroke-width="2.5" marker-end="url(#arrow-flow)" />
+                <text x="675" y="150" text-anchor="middle" font-size="18" fill="#00e5ff">Return Value (Data Out)</text>
+                <text x="675" y="185" text-anchor="middle" font-family="'Fira Code', 'Courier New', monospace" font-size="20" fill="#f0f0f0">15</text>
+              </g>
+            </svg>
+            <p class="img-caption">Figure: Arguments flow in, the function processes them, and a value flows out via `return`.</p>
+<pre class="code-box"><span class="keyword">def</span> <span class="function">square</span>(<span class="variable">number</span>)<span class="operator">:</span>
+    <span class="keyword">return</span> <span class="variable">number</span> <span class="operator">*</span> <span class="variable">number</span>
+
+<span class="variable">result</span> <span class="operator">=</span> <span class="function">square</span>(<span class="number">4</span>)  <span class="comment"># The value 16 is returned and stored in 'result'</span>
+<span class="function builtin">print</span>(<span class="variable">result</span>)       <span class="comment"># Output: 16</span>
+<span class="function builtin">print</span>(<span class="function">square</span>(<span class="number">5</span>)) <span class="comment"># The returned value 25 is passed directly to print()</span></pre>
+            <p>A function can only have one `return` statement that executes. Once a `return` is hit, the function exits immediately. It can, however, return any kind of Python object: a number, a string, a list, a dictionary, or even another function.</p>
+        </div>
+
+        <h3 id="s4">4. Scope and Docstrings</h3>
+        <div class="question-box">
+            <strong>Topic:</strong> Understanding variable scope and documenting functions with docstrings.
+        </div>
+        <div class="solution-box">
+            <h5>Variable Scope</h5>
+            <p>Scope refers to the region of a program where a variable is accessible. Variables defined inside a function have <strong>local scope</strong>, meaning they only exist and can only be accessed from within that function. Variables defined outside of any function have <strong>global scope</strong>.</p>
+<pre class="code-box"><span class="variable">global_var</span> <span class="operator">=</span> <span class="string">"I'm outside!"</span>
+
+<span class="keyword">def</span> <span class="function">my_function</span>()<span class="operator">:</span>
+    <span class="variable">local_var</span> <span class="operator">=</span> <span class="string">"I'm inside!"</span>
+    <span class="function builtin">print</span>(<span class="variable">global_var</span>) <span class="comment"># Can access global variables</span>
+    <span class="function builtin">print</span>(<span class="variable">local_var</span>)
+
+<span class="function">my_function</span>()
+<span class="comment"># print(local_var) # This would cause a NameError</span>
+</pre>
+
+            <h5>Docstrings</h5>
+            <p>A docstring is a string literal that occurs as the first statement in a module, function, class, or method definition. It's a crucial part of good coding practice, as it provides documentation on what the function does. It is enclosed in triple quotes <code>"""..."""</code>.</p>
+<pre class="code-box"><span class="keyword">def</span> <span class="function">calculate_area</span>(<span class="variable">length</span>, <span class="variable">width</span>)<span class="operator">:</span>
+    <span class="string">"""Calculate the area of a rectangle.
+
+    Args:
+        length (int or float): The length of the rectangle.
+        width (int or float): The width of the rectangle.
+
+    Returns:
+        int or float: The calculated area of the rectangle.
+    """</span>
+    <span class="keyword">return</span> <span class="variable">length</span> <span class="operator">*</span> <span class="variable">width</span></pre>
+            <p>You can access a function's docstring using the `help()` function or the `__doc__` attribute: `help(calculate_area)` or `print(calculate_area.__doc__)`.</p>
+        </div>
+        
+        <hr>
+
+        <h3 id="questions">Practice Questions & Solutions</h3>
+
+        <div class="question-box"><strong>Q1.</strong> Write a function `is_palindrome(s)` that takes a string `s` and returns `True` if the string is a palindrome and `False` otherwise. A palindrome is a word that reads the same forwards and backward (e.g., "racecar").</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <p>This can be solved efficiently by comparing the string to its reverse, which can be obtained using slicing.</p>
+            <pre class="code-box"><span class="keyword">def</span> <span class="function">is_palindrome</span>(<span class="variable">s</span>)<span class="operator">:</span>
+    <span class="string">"""Checks if a string is a palindrome."""</span>
+    <span class="comment"># Clean the string: remove spaces and convert to lowercase for a robust check</span>
+    <span class="variable">cleaned_s</span> <span class="operator">=</span> <span class="string">''</span>.<span class="function">join</span>(<span class="variable">char</span> <span class="keyword">for</span> <span class="variable">char</span> <span class="keyword">in</span> <span class="variable">s</span> <span class="keyword">if</span> <span class="variable">char</span>.<span class="function">isalnum</span>()).<span class="function">lower</span>()
+    <span class="keyword">return</span> <span class="variable">cleaned_s</span> <span class="operator">==</span> <span class="variable">cleaned_s</span>[<span class="operator">::-</span><span class="number">1</span>]
+
+<span class="function builtin">print</span>(<span class="function">is_palindrome</span>(<span class="string">"racecar"</span>))  <span class="comment"># True</span>
+<span class="function builtin">print</span>(<span class="function">is_palindrome</span>(<span class="string">"hello"</span>))    <span class="comment"># False</span>
+<span class="function builtin">print</span>(<span class="function">is_palindrome</span>(<span class="string">"A man a plan a canal Panama"</span>)) <span class="comment"># True</span></pre>
+        </div>
+        
+        <div class="question-box"><strong>Q2.</strong> Write a function `calculate_factorial(n)` that computes the factorial of a non-negative integer `n`. The factorial is the product of all positive integers up to `n` (e.g., 5! = 5 * 4 * 3 * 2 * 1 = 120). The factorial of 0 is 1.</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <p>This requires a loop and an "accumulator" variable that keeps track of the running product.</p>
+            <pre class="code-box"><span class="keyword">def</span> <span class="function">calculate_factorial</span>(<span class="variable">n</span>)<span class="operator">:</span>
+    <span class="string">"""Computes the factorial of a non-negative integer."""</span>
+    <span class="keyword">if</span> <span class="variable">n</span> <span class="operator"><</span> <span class="number">0</span><span class="operator">:</span>
+        <span class="keyword">return</span> <span class="string">"Factorial is not defined for negative numbers"</span>
+    <span class="keyword">if</span> <span class="variable">n</span> <span class="operator">==</span> <span class="number">0</span><span class="operator">:</span>
+        <span class="keyword">return</span> <span class="number">1</span>
+    
+    <span class="variable">factorial</span> <span class="operator">=</span> <span class="number">1</span>
+    <span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="function builtin">range</span>(<span class="number">1</span>, <span class="variable">n</span> <span class="operator">+</span> <span class="number">1</span>)<span class="operator">:</span>
+        <span class="variable">factorial</span> <span class="operator">*=</span> <span class="variable">i</span>
+    <span class="keyword">return</span> <span class="variable">factorial</span>
+
+<span class="function builtin">print</span>(<span class="function">calculate_factorial</span>(<span class="number">5</span>)) <span class="comment"># 120</span>
+<span class="function builtin">print</span>(<span class="function">calculate_factorial</span>(<span class="number">0</span>)) <span class="comment"># 1</span></pre>
+        </div>
+
+        <div class="question-box"><strong>Q3.</strong> Write a function `is_prime(num)` that checks if a number is prime. A prime number is a number greater than 1 that has no positive divisors other than 1 and itself. The function should return `True` if it's prime, and `False` otherwise.</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <p>The logic involves checking for divisibility from 2 up to the square root of the number. If any number in that range divides it evenly, it's not prime.</p>
+            <pre class="code-box"><span class="keyword">import</span> math
+
+<span class="keyword">def</span> <span class="function">is_prime</span>(<span class="variable">num</span>)<span class="operator">:</span>
+    <span class="string">"""Checks if a number is prime."""</span>
+    <span class="keyword">if</span> <span class="variable">num</span> <span class="operator"><=</span> <span class="number">1</span><span class="operator">:</span>
+        <span class="keyword">return</span> <span class="keyword">False</span>
+    <span class="keyword">if</span> <span class="variable">num</span> <span class="operator">==</span> <span class="number">2</span><span class="operator">:</span>
+        <span class="keyword">return</span> <span class="keyword">True</span>
+    <span class="keyword">if</span> <span class="variable">num</span> <span class="operator">%</span> <span class="number">2</span> <span class="operator">==</span> <span class="number">0</span><span class="operator">:</span>
+        <span class="keyword">return</span> <span class="keyword">False</span> <span class="comment"># All other even numbers are not prime</span>
+
+    <span class="comment"># Check for odd divisors from 3 up to the square root of num</span>
+    <span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="function builtin">range</span>(<span class="number">3</span>, <span class="function builtin">int</span>(math.sqrt(<span class="variable">num</span>)) <span class="operator">+</span> <span class="number">1</span>, <span class="number">2</span>)<span class="operator">:</span>
+        <span class="keyword">if</span> <span class="variable">num</span> <span class="operator">%</span> <span class="variable">i</span> <span class="operator">==</span> <span class="number">0</span><span class="operator">:</span>
+            <span class="keyword">return</span> <span class="keyword">False</span>
+    
+    <span class="keyword">return</span> <span class="keyword">True</span>
+
+<span class="function builtin">print</span>(<span class="function">is_prime</span>(<span class="number">29</span>)) <span class="comment"># True</span>
+<span class="function builtin">print</span>(<span class="function">is_prime</span>(<span class="number">30</span>)) <span class="comment"># False</span></pre>
+        </div>
+        
+        <div class="question-box"><strong>Q4.</strong> Write a function `find_max(numbers)` that takes a list of numbers and returns the largest number in the list *without* using the built-in `max()` function. The function should return `None` if the list is empty.</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <p>This tests algorithmic thinking. We initialize a variable with the first element, then loop through the rest, updating our variable whenever we find a larger number.</p>
+            <pre class="code-box"><span class="keyword">def</span> <span class="function">find_max</span>(<span class="variable">numbers</span>)<span class="operator">:</span>
+    <span class="string">"""Finds the maximum number in a list without using max()."""</span>
+    <span class="keyword">if</span> <span class="keyword">not</span> <span class="variable">numbers</span><span class="operator">:</span> <span class="comment"># Check if the list is empty</span>
+        <span class="keyword">return</span> <span class="keyword">None</span>
+    
+    <span class="variable">max_so_far</span> <span class="operator">=</span> <span class="variable">numbers</span>[<span class="number">0</span>]
+    <span class="keyword">for</span> <span class="variable">num</span> <span class="keyword">in</span> <span class="variable">numbers</span>[<span class="number">1</span><span class="operator">:</span>]<span class="operator">:</span>
+        <span class="keyword">if</span> <span class="variable">num</span> <span class="operator">></span> <span class="variable">max_so_far</span><span class="operator">:</span>
+            <span class="variable">max_so_far</span> <span class="operator">=</span> <span class="variable">num</span>
+            
+    <span class="keyword">return</span> <span class="variable">max_so_far</span>
+
+<span class="function builtin">print</span>(<span class="function">find_max</span>([<span class="number">1</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">9</span>, <span class="number">3</span>])) <span class="comment"># 9</span>
+<span class="function builtin">print</span>(<span class="function">find_max</span>([])) <span class="comment"># None</span></pre>
+        </div>
+
+        <div class="question-box"><strong>Q5.</strong> Write a function `count_frequency(items)` that takes a list and returns a dictionary where keys are the unique items in the list and values are their frequencies (how many times they appear). For example, `count_frequency(['a', 'b', 'a', 'c', 'b', 'a'])` should return `{'a': 3, 'b': 2, 'c': 1}`.</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <p>This is a practical problem that combines loops and dictionaries. The `dictionary.get(key, default)` method is perfect for this task.</p>
+            <pre class="code-box"><span class="keyword">def</span> <span class="function">count_frequency</span>(<span class="variable">items</span>)<span class="operator">:</span>
+    <span class="string">"""Counts the frequency of items in a list."""</span>
+    <span class="variable">frequency_dict</span> <span class="operator">=</span> <span class="operator">{}</span>
+    <span class="keyword">for</span> <span class="variable">item</span> <span class="keyword">in</span> <span class="variable">items</span><span class="operator">:</span>
+        <span class="comment"># Get the current count (or 0 if it's not there), add 1, and update</span>
+        <span class="variable">frequency_dict</span>[<span class="variable">item</span>] <span class="operator">=</span> <span class="variable">frequency_dict</span>.<span class="function">get</span>(<span class="variable">item</span>, <span class="number">0</span>) <span class="operator">+</span> <span class="number">1</span>
+    <span class="keyword">return</span> <span class="variable">frequency_dict</span>
+
+<span class="function builtin">print</span>(<span class="function">count_frequency</span>([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>]))</pre>
+        </div>
+
+        <div class="question-box"><strong>Q6.</strong> Write a function `sum_all(*args)` that can accept any number of numeric arguments and return their sum. For example, `sum_all(1, 2, 3)` should return `6`, and `sum_all(10, 20)` should return `30`.</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <p>The `*args` syntax allows a function to accept a variable number of positional arguments. These arguments are collected into a tuple.</p>
+            <pre class="code-box"><span class="keyword">def</span> <span class="function">sum_all</span>(<span class="operator">*</span><span class="variable">args</span>)<span class="operator">:</span>
+    <span class="string">"""Accepts any number of numeric arguments and returns their sum."""</span>
+    <span class="comment"># 'args' will be a tuple containing all passed arguments, e.g., (1, 2, 3)</span>
+    <span class="keyword">return</span> <span class="function builtin">sum</span>(<span class="variable">args</span>)
+
+<span class="function builtin">print</span>(<span class="function">sum_all</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)) <span class="comment"># 15</span>
+<span class="function builtin">print</span>(<span class="function">sum_all</span>(<span class="number">10</span>, <span class="number">20</span>))        <span class="comment"># 30</span></pre>
+        </div>
+
+        <div class="question-box"><strong>Q7.</strong> Write a function `create_user(username, role='guest', is_active=False)` that returns a dictionary representing a user. The `username` should be a required argument, while `role` and `is_active` should have default values.</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <p>This question tests the practical application of default arguments to create flexible functions.</p>
+            <pre class="code-box"><span class="keyword">def</span> <span class="function">create_user</span>(<span class="variable">username</span>, <span class="variable">role</span><span class="operator">=</span><span class="string">'guest'</span>, <span class="variable">is_active</span><span class="operator">=</span><span class="keyword">False</span>)<span class="operator">:</span>
+    <span class="string">"""Creates a user dictionary with default roles and status."""</span>
+    <span class="keyword">return</span> <span class="operator">{</span>
+        <span class="string">'username'</span>: <span class="variable">username</span>,
+        <span class="string">'role'</span>: <span class="variable">role</span>,
+        <span class="string">'is_active'</span>: <span class="variable">is_active</span>
+    <span class="operator">}</span>
+
+<span class="comment"># Call with only the required argument</span>
+<span class="function builtin">print</span>(<span class="function">create_user</span>(<span class="string">'john_doe'</span>))
+<span class="comment"># Expected: {'username': 'john_doe', 'role': 'guest', 'is_active': False}</span>
+
+<span class="comment"># Call overriding default arguments</span>
+<span class="function builtin">print</span>(<span class="function">create_user</span>(<span class="string">'admin_user'</span>, <span class="variable">role</span><span class="operator">=</span><span class="string">'admin'</span>, <span class="variable">is_active</span><span class="operator">=</span><span class="keyword">True</span>))
+<span class="comment"># Expected: {'username': 'admin_user', 'role': 'admin', 'is_active': True}</span></pre>
+        </div>
+        
+        <div class="question-box"><strong>Q8.</strong> Write a function `fizzbuzz(n)` that prints numbers from 1 to `n`. For multiples of 3, print "Fizz" instead of the number. For multiples of 5, print "Buzz". For numbers which are multiples of both 3 and 5, print "FizzBuzz". This function does not need to return anything.</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <p>This classic problem tests conditional logic. The key is to check for the "FizzBuzz" case (multiples of both 3 and 5) first, otherwise it will never be reached.</p>
+            <pre class="code-box"><span class="keyword">def</span> <span class="function">fizzbuzz</span>(<span class="variable">n</span>)<span class="operator">:</span>
+    <span class="string">"""Prints the FizzBuzz sequence up to n."""</span>
+    <span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="function builtin">range</span>(<span class="number">1</span>, <span class="variable">n</span> <span class="operator">+</span> <span class="number">1</span>)<span class="operator">:</span>
+        <span class="keyword">if</span> <span class="variable">i</span> <span class="operator">%</span> <span class="number">15</span> <span class="operator">==</span> <span class="number">0</span><span class="operator">:</span> <span class="comment"># Check for multiple of 3 and 5 first</span>
+            <span class="function builtin">print</span>(<span class="string">"FizzBuzz"</span>)
+        <span class="keyword">elif</span> <span class="variable">i</span> <span class="operator">%</span> <span class="number">3</span> <span class="operator">==</span> <span class="number">0</span><span class="operator">:</span>
+            <span class="function builtin">print</span>(<span class="string">"Fizz"</span>)
+        <span class="keyword">elif</span> <span class="variable">i</span> <span class="operator">%</span> <span class="number">5</span> <span class="operator">==</span> <span class="number">0</span><span class="operator">:</span>
+            <span class="function builtin">print</span>(<span class="string">"Buzz"</span>)
+        <span class="keyword">else</span><span class="operator">:</span>
+            <span class="function builtin">print</span>(<span class="variable">i</span>)
+
+<span class="function">fizzbuzz</span>(<span class="number">20</span>)
+</pre>
+        </div>
+
+    </main>
+</body>
+</html>

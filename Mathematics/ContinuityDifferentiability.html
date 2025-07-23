@@ -1,0 +1,2081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Continuity and Differentiability Solutions</title>
+
+    <!-- MathJax v3 Configuration and Library -->
+    <script>
+    window.MathJax = {
+      loader: {load: ['[tex]/mhchem', '[tex]/cancel']},
+      tex: {
+        packages: {'[+]': ['mhchem', 'cancel']},
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    
+    <!-- Link to Central Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="body-content">
+    <!-- Top navigation bar placeholder -->
+    <nav class="global-nav" id="global-navbar"></nav>
+    
+    <!-- Sidebar placeholder -->
+    <nav id="index-sidebar"></nav>
+    <script src="../main.js"></script>
+
+    <script src="../nav.js"></script>
+    <main class="main-content">
+        <h3 id="exercise-5-1">Exercise 5.1</h3>
+
+        <h4 id="ex5-1-q1">1. Prove that the function \(f(x) = 5x - 3\) is continuous at \(x = 0\), at \(x = -3\) and at \(x = 5\).</h4>
+        <div class="solution-box">
+            <p>A function \(f(x)\) is continuous at a point \(c\) if \( \lim_{x \to c} f(x) = f(c) \).</p>
+            <p><strong>At \(x = 0\):</strong></p>
+            <ul>
+                <li>Function value: \(f(0) = 5(0) - 3 = -3\)</li>
+                <li>Limit: \( \lim_{x \to 0} (5x - 3) = 5(0) - 3 = -3 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to 0} f(x) = f(0) \), the function is continuous at \(x = 0\).</p>
+
+            <p><strong>At \(x = -3\):</strong></p>
+            <ul>
+                <li>Function value: \(f(-3) = 5(-3) - 3 = -15 - 3 = -18\)</li>
+                <li>Limit: \( \lim_{x \to -3} (5x - 3) = 5(-3) - 3 = -18 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to -3} f(x) = f(-3) \), the function is continuous at \(x = -3\).</p>
+
+            <p><strong>At \(x = 5\):</strong></p>
+            <ul>
+                <li>Function value: \(f(5) = 5(5) - 3 = 25 - 3 = 22\)</li>
+                <li>Limit: \( \lim_{x \to 5} (5x - 3) = 5(5) - 3 = 22 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to 5} f(x) = f(5) \), the function is continuous at \(x = 5\).</p>
+        </div>
+
+        <h4 id="ex5-1-q2">2. Examine the continuity of the function \(f(x) = 2x^2 - 1\) at \(x = 3\).</h4>
+        <div class="solution-box">
+            <p>A function \(f(x)\) is continuous at a point \(c\) if \( \lim_{x \to c} f(x) = f(c) \).</p>
+            <p><strong>At \(x = 3\):</strong></p>
+            <ul>
+                <li>Function value: \(f(3) = 2(3)^2 - 1 = 2(9) - 1 = 18 - 1 = 17\)</li>
+                <li>Limit: \( \lim_{x \to 3} (2x^2 - 1) = 2(3)^2 - 1 = 17 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to 3} f(x) = f(3) \), the function is continuous at \(x = 3\).</p>
+        </div>
+
+        <h4 id="ex5-1-q3">3. Examine the following functions for continuity.</h4>
+        <p>(a) \(f(x) = x - 5\)</p>
+        <div class="solution-box">
+            <p>This is a polynomial function. Polynomial functions are continuous everywhere.</p>
+            <p>Let \(c\) be any real number.</p>
+            <ul>
+                <li>Function value: \(f(c) = c - 5\)</li>
+                <li>Limit: \( \lim_{x \to c} (x - 5) = c - 5 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to c} f(x) = f(c) \), the function is continuous for all real numbers.</p>
+        </div>
+
+        <p>(b) \(f(x) = \frac{1}{x-5}, x \neq 5\)</p>
+        <div class="solution-box">
+            <p>This is a rational function. Rational functions are continuous at all points in their domain.</p>
+            <p>The domain of \(f(x)\) is all real numbers except \(x = 5\).</p>
+            <p>Let \(c\) be any real number such that \(c \neq 5\).</p>
+            <ul>
+                <li>Function value: \(f(c) = \frac{1}{c-5}\)</li>
+                <li>Limit: \( \lim_{x \to c} \frac{1}{x-5} = \frac{1}{c-5} \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to c} f(x) = f(c) \) for all \(c \neq 5\), the function is continuous throughout its domain.</p>
+        </div>
+
+        <p>(c) \(f(x) = \frac{x^2 - 25}{x+5}, x \neq -5\)</p>
+        <div class="solution-box">
+            <p>This function can be simplified:</p>
+            $$f(x) = \frac{(x-5)(x+5)}{x+5} = x-5 \quad \text{for } x \neq -5$$
+            <p>Since \(f(x)\) is defined as \(x-5\) for \(x \neq -5\), it is a polynomial function within its domain. Polynomial functions are continuous everywhere.</p>
+            <p>The domain of \(f(x)\) is all real numbers except \(x = -5\).</p>
+            <p>Let \(c\) be any real number such that \(c \neq -5\).</p>
+            <ul>
+                <li>Function value: \(f(c) = c-5\)</li>
+                <li>Limit: \( \lim_{x \to c} f(x) = \lim_{x \to c} (x-5) = c-5 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to c} f(x) = f(c) \) for all \(c \neq -5\), the function is continuous throughout its domain.</p>
+        </div>
+
+        <p>(d) \(f(x) = |x - 5|\)</p>
+        <div class="solution-box">
+            <p>This is a modulus function, which can be written as a piecewise function:</p>
+            $$f(x) = \begin{cases} -(x-5), & \text{if } x < 5 \\ x-5, & \text{if } x \geq 5 \end{cases}$$
+            <p>For \(x < 5\), \(f(x) = -(x-5) = -x+5\), which is a polynomial and thus continuous.</p>
+            <p>For \(x > 5\), \(f(x) = x-5\), which is a polynomial and thus continuous.</p>
+            <p>We need to check continuity at the point where the definition changes, i.e., at \(x = 5\).</p>
+            <p><strong>At \(x = 5\):</strong></p>
+            <ul>
+                <li>Function value: \(f(5) = 5-5 = 0\)</li>
+                <li>Left-hand limit: \( \lim_{x \to 5^-} f(x) = \lim_{x \to 5^-} -(x-5) = -(5-5) = 0 \)</li>
+                <li>Right-hand limit: \( \lim_{x \to 5^+} f(x) = \lim_{x \to 5^+} (x-5) = 5-5 = 0 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to 5^-} f(x) = \lim_{x \to 5^+} f(x) = f(5) = 0 \), the function is continuous at \(x = 5\).</p>
+            <p>Thus, \(f(x) = |x-5|\) is continuous for all real numbers.</p>
+        </div>
+
+        <h4 id="ex5-1-q4">4. Prove that the function \(f(x) = x^n\) is continuous at \(x = n\), where \(n\) is a positive integer.</h4>
+        <div class="solution-box">
+            <p>The question seems to have a typo and likely intends to ask for continuity at any real number \(c\), or if \(f(x) = x^n\) is continuous generally. Assuming the question means "Prove that the function \(f(x) = x^n\) is continuous for all real \(x\), where \(n\) is a positive integer (i.e., a polynomial function)".</p>
+            <p>Let \(c\) be any real number.</p>
+            <ul>
+                <li>Function value: \(f(c) = c^n\)</li>
+                <li>Limit: \( \lim_{x \to c} x^n = c^n \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to c} f(x) = f(c) \) for any real number \(c\), the function \(f(x) = x^n\) is continuous for all real numbers.</p>
+            <p>If the question specifically asks for continuity at \(x=n\):</p>
+            <ul>
+                <li>Function value: \(f(n) = n^n\)</li>
+                <li>Limit: \( \lim_{x \to n} x^n = n^n \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to n} f(x) = f(n) \), the function is continuous at \(x=n\).</p>
+        </div>
+
+        <h4 id="ex5-1-q5">5. Is the function \(f\) defined by \(f(x) = \begin{cases} x, & \text{if } x \leq 1 \\ 5, & \text{if } x > 1 \end{cases}\) continuous at \(x = 0\)? At \(x = 1\)? At \(x = 2\)?</h4>
+        <div class="solution-box">
+            <p><strong>At \(x = 0\):</strong></p>
+            <p>Since \(0 \leq 1\), \(f(x) = x\) for \(x\) around \(0\).</p>
+            <ul>
+                <li>Function value: \(f(0) = 0\)</li>
+                <li>Limit: \( \lim_{x \to 0} x = 0 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to 0} f(x) = f(0) \), the function is continuous at \(x = 0\).</p>
+
+            <p><strong>At \(x = 1\):</strong></p>
+            <p>This is the point where the function definition changes, so we need to check left-hand limit, right-hand limit, and function value.</p>
+            <ul>
+                <li>Function value: \(f(1) = 1\) (since \(x \leq 1\), \(f(x) = x\))</li>
+                <li>Left-hand limit: \( \lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} x = 1 \)</li>
+                <li>Right-hand limit: \( \lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} 5 = 5 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to 1^-} f(x) \neq \lim_{x \to 1^+} f(x) \), the limit does not exist at \(x=1\). Therefore, the function is discontinuous at \(x = 1\).</p>
+
+            <p><strong>At \(x = 2\):</strong></p>
+            <p>Since \(2 > 1\), \(f(x) = 5\) for \(x\) around \(2\).</p>
+            <ul>
+                <li>Function value: \(f(2) = 5\)</li>
+                <li>Limit: \( \lim_{x \to 2} 5 = 5 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to 2} f(x) = f(2) \), the function is continuous at \(x = 2\).</p>
+        </div>
+
+        <h4 id="ex5-1-q6">6. Find all points of discontinuity of \(f\), where \(f\) is defined by \(f(x) = \begin{cases} 2x+3, & \text{if } x \leq 2 \\ 2x-3, & \text{if } x > 2 \end{cases}\)</h4>
+        <div class="solution-box">
+            <p>The function is defined by polynomial expressions for \(x \leq 2\) and \(x > 2\). Polynomials are continuous everywhere, so any potential discontinuity can only occur at the boundary point \(x = 2\).</p>
+            <p><strong>Check continuity at \(x = 2\):</strong></p>
+            <ul>
+                <li>Function value: \(f(2) = 2(2) + 3 = 4 + 3 = 7\) (using \(2x+3\) since \(x \leq 2\))</li>
+                <li>Left-hand limit: \( \lim_{x \to 2^-} f(x) = \lim_{x \to 2^-} (2x+3) = 2(2) + 3 = 7 \)</li>
+                <li>Right-hand limit: \( \lim_{x \to 2^+} f(x) = \lim_{x \to 2^+} (2x-3) = 2(2) - 3 = 4 - 3 = 1 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to 2^-} f(x) \neq \lim_{x \to 2^+} f(x) \), the limit does not exist at \(x=2\). Therefore, the function is discontinuous at \(x = 2\).</p>
+            <p><strong>Conclusion:</strong> The only point of discontinuity for \(f(x)\) is \(x = 2\).</p>
+        </div>
+
+        <h4 id="ex5-1-q7">7. Find all points of discontinuity of \(f\), where \(f\) is defined by \(f(x) = \begin{cases} |x|+3, & \text{if } x \leq -3 \\ -2x, & \text{if } -3 < x < 3 \\ 6x+2, & \text{if } x \geq 3 \end{cases}\)</h4>
+        <div class="solution-box">
+            <p>The function is defined by polynomial expressions over different intervals. We need to check for continuity at the boundary points \(x = -3\) and \(x = 3\).</p>
+            <p><strong>Check continuity at \(x = -3\):</strong></p>
+            <ul>
+                <li>Function value: \(f(-3) = |-3|+3 = 3+3 = 6\) (using \(|x|+3\) since \(x \leq -3\))</li>
+                <li>Left-hand limit: \( \lim_{x \to -3^-} f(x) = \lim_{x \to -3^-} (|x|+3) = |-3|+3 = 3+3 = 6 \)</li>
+                <li>Right-hand limit: \( \lim_{x \to -3^+} f(x) = \lim_{x \to -3^+} (-2x) = -2(-3) = 6 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to -3^-} f(x) = \lim_{x \to -3^+} f(x) = f(-3) = 6 \), the function is continuous at \(x = -3\).</p>
+
+            <p><strong>Check continuity at \(x = 3\):</strong></p>
+            <ul>
+                <li>Function value: \(f(3) = 6(3)+2 = 18+2 = 20\) (using \(6x+2\) since \(x \geq 3\))</li>
+                <li>Left-hand limit: \( \lim_{x \to 3^-} f(x) = \lim_{x \to 3^-} (-2x) = -2(3) = -6 \)</li>
+                <li>Right-hand limit: \( \lim_{x \to 3^+} f(x) = \lim_{x \to 3^+} (6x+2) = 6(3)+2 = 20 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to 3^-} f(x) \neq \lim_{x \to 3^+} f(x) \), the limit does not exist at \(x=3\). Therefore, the function is discontinuous at \(x = 3\).</p>
+            <p><strong>Conclusion:</strong> The only point of discontinuity for \(f(x)\) is \(x = 3\).</p>
+        </div>
+
+        <h4 id="ex5-1-q8">8. Find all points of discontinuity of \(f\), where \(f\) is defined by \(f(x) = \begin{cases} \frac{|x|}{x}, & \text{if } x \neq 0 \\ 0, & \text{if } x = 0 \end{cases}\)</h4>
+        <div class="solution-box">
+            <p>First, let's rewrite \(f(x)\) by considering the definition of \(|x|\):</p>
+            $$|x| = \begin{cases} x, & \text{if } x > 0 \\ -x, & \text{if } x < 0 \end{cases}$$
+            <p>So, for \(x \neq 0\):</p>
+            $$f(x) = \begin{cases} \frac{x}{x} = 1, & \text{if } x > 0 \\ \frac{-x}{x} = -1, & \text{if } x < 0 \end{cases}$$
+            <p>Combining with \(f(0)=0\), we have:</p>
+            $$f(x) = \begin{cases} -1, & \text{if } x < 0 \\ 0, & \text{if } x = 0 \\ 1, & \text{if } x > 0 \end{cases}$$
+            <p>For \(x < 0\), \(f(x) = -1\) (constant function, continuous).<br>
+            For \(x > 0\), \(f(x) = 1\) (constant function, continuous).</p>
+            <p>We need to check continuity at \(x = 0\).</p>
+            <p><strong>Check continuity at \(x = 0\):</strong></p>
+            <ul>
+                <li>Function value: \(f(0) = 0\)</li>
+                <li>Left-hand limit: \( \lim_{x \to 0^-} f(x) = \lim_{x \to 0^-} (-1) = -1 \)</li>
+                <li>Right-hand limit: \( \lim_{x \to 0^+} f(x) = \lim_{x \to 0^+} (1) = 1 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to 0^-} f(x) \neq \lim_{x \to 0^+} f(x) \), the limit does not exist at \(x=0\). Therefore, the function is discontinuous at \(x = 0\).</p>
+            <p><strong>Conclusion:</strong> The only point of discontinuity for \(f(x)\) is \(x = 0\).</p>
+        </div>
+
+        <h4 id="ex5-1-q9">9. Find all points of discontinuity of \(f\), where \(f\) is defined by \(f(x) = \begin{cases} \frac{x}{|x|}, & \text{if } x \neq 0 \\ -1, & \text{if } x = 0 \end{cases}\)</h4>
+        <div class="solution-box">
+            <p>Similar to the previous problem, let's rewrite \(f(x)\) using the definition of \(|x|\):</p>
+            $$|x| = \begin{cases} x, & \text{if } x > 0 \\ -x, & \text{if } x < 0 \end{cases}$$
+            <p>So, for \(x \neq 0\):</p>
+            $$f(x) = \begin{cases} \frac{x}{x} = 1, & \text{if } x > 0 \\ \frac{x}{-x} = -1, & \text{if } x < 0 \end{cases}$$
+            <p>Combining with \(f(0)=-1\), we have:</p>
+            $$f(x) = \begin{cases} -1, & \text{if } x \leq 0 \\ 1, & \text{if } x > 0 \end{cases}$$
+            <p>For \(x < 0\), \(f(x) = -1\) (constant function, continuous).<br>
+            For \(x > 0\), \(f(x) = 1\) (constant function, continuous).</p>
+            <p>We need to check continuity at \(x = 0\).</p>
+            <p><strong>Check continuity at \(x = 0\):</strong></p>
+            <ul>
+                <li>Function value: \(f(0) = -1\) (given)</li>
+                <li>Left-hand limit: \( \lim_{x \to 0^-} f(x) = \lim_{x \to 0^-} (-1) = -1 \)</li>
+                <li>Right-hand limit: \( \lim_{x \to 0^+} f(x) = \lim_{x \to 0^+} (1) = 1 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to 0^-} f(x) \neq \lim_{x \to 0^+} f(x) \), the limit does not exist at \(x=0\). Therefore, the function is discontinuous at \(x = 0\).</p>
+            <p><strong>Conclusion:</strong> The only point of discontinuity for \(f(x)\) is \(x = 0\).</p>
+        </div>
+
+        <h4 id="ex5-1-q10">10. Find all points of discontinuity of \(f\), where \(f\) is defined by \(f(x) = \begin{cases} x+1, & \text{if } x \geq 1 \\ x^2+1, & \text{if } x < 1 \end{cases}\)</h4>
+        <div class="solution-box">
+            <p>The function is defined by polynomial expressions for \(x \geq 1\) and \(x < 1\). Polynomials are continuous everywhere, so any potential discontinuity can only occur at the boundary point \(x = 1\).</p>
+            <p><strong>Check continuity at \(x = 1\):</strong></p>
+            <ul>
+                <li>Function value: \(f(1) = 1+1 = 2\) (using \(x+1\) since \(x \geq 1\))</li>
+                <li>Left-hand limit: \( \lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} (x^2+1) = (1)^2+1 = 1+1 = 2 \)</li>
+                <li>Right-hand limit: \( \lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} (x+1) = 1+1 = 2 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to 1^-} f(x) = \lim_{x \to 1^+} f(x) = f(1) = 2 \), the function is continuous at \(x = 1\).</p>
+            <p><strong>Conclusion:</strong> There are no points of discontinuity for \(f(x)\).</p>
+        </div>
+
+        <h4 id="ex5-1-q11">11. Find all points of discontinuity of \(f\), where \(f\) is defined by \(f(x) = \begin{cases} x^3-3, & \text{if } x \leq 2 \\ x^2+1, & \text{if } x > 2 \end{cases}\)</h4>
+        <div class="solution-box">
+            <p>The function is defined by polynomial expressions for \(x \leq 2\) and \(x > 2\). Polynomials are continuous everywhere, so any potential discontinuity can only occur at the boundary point \(x = 2\).</p>
+            <p><strong>Check continuity at \(x = 2\):</strong></p>
+            <ul>
+                <li>Function value: \(f(2) = (2)^3-3 = 8-3 = 5\) (using \(x^3-3\) since \(x \leq 2\))</li>
+                <li>Left-hand limit: \( \lim_{x \to 2^-} f(x) = \lim_{x \to 2^-} (x^3-3) = (2)^3-3 = 8-3 = 5 \)</li>
+                <li>Right-hand limit: \( \lim_{x \to 2^+} f(x) = \lim_{x \to 2^+} (x^2+1) = (2)^2+1 = 4+1 = 5 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to 2^-} f(x) = \lim_{x \to 2^+} f(x) = f(2) = 5 \), the function is continuous at \(x = 2\).</p>
+            <p><strong>Conclusion:</strong> There are no points of discontinuity for \(f(x)\).</p>
+        </div>
+
+        <h4 id="ex5-1-q12">12. Find all points of discontinuity of \(f\), where \(f\) is defined by \(f(x) = \begin{cases} x^{10}-1, & \text{if } x \leq 1 \\ x^2, & \text{if } x > 1 \end{cases}\)</h4>
+        <div class="solution-box">
+            <p>The function is defined by polynomial expressions for \(x \leq 1\) and \(x > 1\). Polynomials are continuous everywhere, so any potential discontinuity can only occur at the boundary point \(x = 1\).</p>
+            <p><strong>Check continuity at \(x = 1\):</strong></p>
+            <ul>
+                <li>Function value: \(f(1) = (1)^{10}-1 = 1-1 = 0\) (using \(x^{10}-1\) since \(x \leq 1\))</li>
+                <li>Left-hand limit: \( \lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} (x^{10}-1) = (1)^{10}-1 = 0 \)</li>
+                <li>Right-hand limit: \( \lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} (x^2) = (1)^2 = 1 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to 1^-} f(x) \neq \lim_{x \to 1^+} f(x) \), the limit does not exist at \(x=1\). Therefore, the function is discontinuous at \(x = 1\).</p>
+            <p><strong>Conclusion:</strong> The only point of discontinuity for \(f(x)\) is \(x = 1\).</p>
+        </div>
+
+        <h4 id="ex5-1-q13">13. Is the function defined by \(f(x) = \begin{cases} x+5, & \text{if } x \leq 1 \\ x-5, & \text{if } x > 1 \end{cases}\) a continuous function?</h4>
+        <div class="solution-box">
+            <p>The function is defined by polynomial expressions for \(x \leq 1\) and \(x > 1\). Polynomials are continuous everywhere, so any potential discontinuity can only occur at the boundary point \(x = 1\).</p>
+            <p><strong>Check continuity at \(x = 1\):</strong></p>
+            <ul>
+                <li>Function value: \(f(1) = 1+5 = 6\) (using \(x+5\) since \(x \leq 1\))</li>
+                <li>Left-hand limit: \( \lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} (x+5) = 1+5 = 6 \)</li>
+                <li>Right-hand limit: \( \lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} (x-5) = 1-5 = -4 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to 1^-} f(x) \neq \lim_{x \to 1^+} f(x) \), the limit does not exist at \(x=1\). Therefore, the function is discontinuous at \(x = 1\).</p>
+            <p><strong>Conclusion:</strong> No, the function is not continuous. It is discontinuous at \(x=1\).</p>
+        </div>
+
+        <h4 id="ex5-1-q14">14. Discuss the continuity of the function \(f\), where \(f\) is defined by \(f(x) = \begin{cases} 3, & \text{if } 0 \leq x \leq 1 \\ 4, & \text{if } 1 < x < 3 \\ 5, & \text{if } 3 \leq x \leq 10 \end{cases}\)</h4>
+        <div class="solution-box">
+            <p>The function is defined by constant values over different intervals. Constant functions are continuous within their defined intervals. We need to check continuity at the boundary points \(x = 1\) and \(x = 3\).</p>
+
+            <p><strong>Check continuity at \(x = 1\):</strong></p>
+            <ul>
+                <li>Function value: \(f(1) = 3\) (using the first case \(0 \leq x \leq 1\))</li>
+                <li>Left-hand limit: \( \lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} (3) = 3 \)</li>
+                <li>Right-hand limit: \( \lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} (4) = 4 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to 1^-} f(x) \neq \lim_{x \to 1^+} f(x) \), the limit does not exist at \(x=1\). Therefore, the function is discontinuous at \(x = 1\).</p>
+
+            <p><strong>Check continuity at \(x = 3\):</strong></p>
+            <ul>
+                <li>Function value: \(f(3) = 5\) (using the third case \(3 \leq x \leq 10\))</li>
+                <li>Left-hand limit: \( \lim_{x \to 3^-} f(x) = \lim_{x \to 3^-} (4) = 4 \)</li>
+                <li>Right-hand limit: \( \lim_{x \to 3^+} f(x) = \lim_{x \to 3^+} (5) = 5 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to 3^-} f(x) \neq \lim_{x \to 3^+} f(x) \), the limit does not exist at \(x=3\). Therefore, the function is discontinuous at \(x = 3\).</p>
+
+            <p><strong>Conclusion:</strong> The points of discontinuity for \(f(x)\) are \(x = 1\) and \(x = 3\).</p>
+        </div>
+
+        <h4 id="ex5-1-q15">15. Discuss the continuity of the function \(f\), where \(f\) is defined by \(f(x) = \begin{cases} 2x, & \text{if } x < 0 \\ 0, & \text{if } 0 \leq x \leq 1 \\ 4x, & \text{if } x > 1 \end{cases}\)</h4>
+        <div class="solution-box">
+            <p>The function is defined by polynomial expressions (or constant for the middle interval). We need to check continuity at the boundary points \(x = 0\) and \(x = 1\).</p>
+
+            <p><strong>Check continuity at \(x = 0\):</strong></p>
+            <ul>
+                <li>Function value: \(f(0) = 0\) (using the second case \(0 \leq x \leq 1\))</li>
+                <li>Left-hand limit: \( \lim_{x \to 0^-} f(x) = \lim_{x \to 0^-} (2x) = 2(0) = 0 \)</li>
+                <li>Right-hand limit: \( \lim_{x \to 0^+} f(x) = \lim_{x \to 0^+} (0) = 0 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to 0^-} f(x) = \lim_{x \to 0^+} f(x) = f(0) = 0 \), the function is continuous at \(x = 0\).</p>
+
+            <p><strong>Check continuity at \(x = 1\):</strong></p>
+            <ul>
+                <li>Function value: \(f(1) = 0\) (using the second case \(0 \leq x \leq 1\))</li>
+                <li>Left-hand limit: \( \lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} (0) = 0 \)</li>
+                <li>Right-hand limit: \( \lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} (4x) = 4(1) = 4 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to 1^-} f(x) \neq \lim_{x \to 1^+} f(x) \), the limit does not exist at \(x=1\). Therefore, the function is discontinuous at \(x = 1\).</p>
+
+            <p><strong>Conclusion:</strong> The only point of discontinuity for \(f(x)\) is \(x = 1\).</p>
+        </div>
+
+        <h4 id="ex5-1-q16">16. Discuss the continuity of the function \(f\), where \(f\) is defined by \(f(x) = \begin{cases} -2, & \text{if } x \leq -1 \\ 2x, & \text{if } -1 < x < 1 \\ 2, & \text{if } x > 1 \end{cases}\)</h4>
+        <div class="solution-box">
+            <p>The function is defined by polynomial/constant expressions over different intervals. We need to check continuity at the boundary points \(x = -1\) and \(x = 1\).</p>
+
+            <p><strong>Check continuity at \(x = -1\):</strong></p>
+            <ul>
+                <li>Function value: \(f(-1) = -2\) (using the first case \(x \leq -1\))</li>
+                <li>Left-hand limit: \( \lim_{x \to -1^-} f(x) = \lim_{x \to -1^-} (-2) = -2 \)</li>
+                <li>Right-hand limit: \( \lim_{x \to -1^+} f(x) = \lim_{x \to -1^+} (2x) = 2(-1) = -2 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to -1^-} f(x) = \lim_{x \to -1^+} f(x) = f(-1) = -2 \), the function is continuous at \(x = -1\).</p>
+
+            <p><strong>Check continuity at \(x = 1\):</strong></p>
+            <ul>
+                <li>Function value: \(f(1)\) is not directly defined by \(x \leq -1\) or \(x > 1\). However, the middle interval is \(-1 < x < 1\), so \(f(1)\) is not defined by any of the given conditions. Let's assume there's a typo and the last condition should be \(x \geq 1\). If \(f(1)\) is taken from the middle definition as \(2(1)=2\), or from the last definition as 2, then we proceed. Given the pattern of previous problems, it's highly probable the boundary definition includes the point. Let's assume the question implies the function *is* defined at $x=1$ (and $x=-1$) in one of the adjacent intervals, and the prompt just didn't specify which. Usually, if $x > 1$, it means for $x=1$, we should use the $2x$ rule. If we use the $2x$ rule for $x=1$, then $f(1) = 2(1)=2$. If the last condition was $x \ge 1$, then $f(1)=2$. Let's assume the spirit of the problem intends to have $f(1)=2$.</p>
+                <li>Left-hand limit: \( \lim_{x \to 1^-} f(x) = \lim_{x \to 1^-} (2x) = 2(1) = 2 \)</li>
+                <li>Right-hand limit: \( \lim_{x \to 1^+} f(x) = \lim_{x \to 1^+} (2) = 2 \)</li>
+            </ul>
+            <p>Assuming \(f(1) = 2\), then since \( \lim_{x \to 1^-} f(x) = \lim_{x \to 1^+} f(x) = f(1) = 2 \), the function is continuous at \(x = 1\).</p>
+
+            <p><strong>Conclusion:</strong> Based on the usual interpretation of such piecewise functions implying continuity for polynomial parts and checking boundaries, and assuming \(f(1)=2\), there are no points of discontinuity for \(f(x)\).</p>
+            <p><strong>Alternative Interpretation for Q16 (if \(f(1)\) is undefined):</strong> If \(f(1)\) is literally undefined based on the given conditions ($x \leq -1$, $-1 < x < 1$, $x > 1$), then \(x=1\) would be a point of discontinuity as the function is not defined at that point, violating the first condition of continuity. Given textbook problems usually imply the function is defined, the first interpretation is more likely intended.</p>
+        </div>
+
+        <h4 id="ex5-1-q17">17. Find the relationship between \(a\) and \(b\) so that the function \(f\) defined by \(f(x) = \begin{cases} ax+1, & \text{if } x \leq 3 \\ bx+3, & \text{if } x > 3 \end{cases}\) is continuous at \(x = 3\).</h4>
+        <div class="solution-box">
+            <p>For the function to be continuous at \(x = 3\), the left-hand limit, right-hand limit, and the function value at \(x=3\) must all be equal.</p>
+            <ul>
+                <li>Function value: \(f(3) = a(3)+1 = 3a+1\) (using \(ax+1\) since \(x \leq 3\))</li>
+                <li>Left-hand limit: \( \lim_{x \to 3^-} f(x) = \lim_{x \to 3^-} (ax+1) = a(3)+1 = 3a+1 \)</li>
+                <li>Right-hand limit: \( \lim_{x \to 3^+} f(x) = \lim_{x \to 3^+} (bx+3) = b(3)+3 = 3b+3 \)</li>
+            </ul>
+            <p>For continuity at \(x=3\), we must have \( \lim_{x \to 3^-} f(x) = \lim_{x \to 3^+} f(x) = f(3) \).</p>
+            <p>So, \(3a+1 = 3b+3\).</p>
+            <p>Rearranging this equation to find the relationship between \(a\) and \(b\):</p>
+            $$3a = 3b+3-1$$
+            $$3a = 3b+2$$
+            $$a = b + \frac{2}{3}$$
+            <p><strong>Conclusion:</strong> The relationship between \(a\) and \(b\) for the function to be continuous at \(x=3\) is \(a = b + \frac{2}{3}\).</p>
+        </div>
+
+        <h4 id="ex5-1-q18">18. For what value of \(\lambda\) is the function defined by \(f(x) = \begin{cases} \lambda(x^2-2x), & \text{if } x \leq 0 \\ 4x+1, & \text{if } x > 0 \end{cases}\) continuous at \(x = 0\)? What about continuity at \(x = 1\)?</h4>
+        <div class="solution-box">
+            <p><strong>Part 1: Continuity at \(x = 0\)</strong></p>
+            <p>For the function to be continuous at \(x = 0\), the left-hand limit, right-hand limit, and the function value at \(x=0\) must all be equal.</p>
+            <ul>
+                <li>Function value: \(f(0) = \lambda((0)^2-2(0)) = \lambda(0) = 0\) (using \(\lambda(x^2-2x)\) since \(x \leq 0\))</li>
+                <li>Left-hand limit: \( \lim_{x \to 0^-} f(x) = \lim_{x \to 0^-} \lambda(x^2-2x) = \lambda((0)^2-2(0)) = 0 \)</li>
+                <li>Right-hand limit: \( \lim_{x \to 0^+} f(x) = \lim_{x \to 0^+} (4x+1) = 4(0)+1 = 1 \)</li>
+            </ul>
+            <p>For continuity at \(x=0\), we must have \( \lim_{x \to 0^-} f(x) = \lim_{x \to 0^+} f(x) = f(0) \).</p>
+            <p>This means \(0 = 1\), which is a contradiction.</p>
+            <p><strong>Conclusion for \(x=0\):</strong> There is no value of \(\lambda\) for which the function is continuous at \(x = 0\).</p>
+
+            <p><strong>Part 2: Continuity at \(x = 1\)</strong></p>
+            <p>Since \(1 > 0\), for values of \(x\) around \(1\), the function is defined as \(f(x) = 4x+1\).</p>
+            <ul>
+                <li>Function value: \(f(1) = 4(1)+1 = 5\)</li>
+                <li>Limit: \( \lim_{x \to 1} f(x) = \lim_{x \to 1} (4x+1) = 4(1)+1 = 5 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to 1} f(x) = f(1) = 5 \), the function is continuous at \(x = 1\) for any value of \(\lambda\). The value of \(\lambda\) does not affect the continuity at \(x=1\) because \(x=1\) falls entirely within the domain of the second piece of the function definition.</p>
+        </div>
+
+        <h4 id="ex5-1-q19">19. Show that the function defined by \(g(x) = x - [x]\) is discontinuous at all integral points. Here \([x]\) denotes the greatest integer less than or equal to \(x\).</h4>
+        <div class="solution-box">
+            <p>Let \(c\) be an integer. For \(g(x)\) to be continuous at \(x=c\), we must have \( \lim_{x \to c^-} g(x) = \lim_{x \to c^+} g(x) = g(c) \).</p>
+
+            <ul>
+                <li>Function value: \(g(c) = c - [c] = c - c = 0\) (since \(c\) is an integer, \([c] = c\))</li>
+
+                <li>Left-hand limit: As \(x \to c^-\), \(x\) is slightly less than \(c\). For example, if \(c=2\), \(x\) could be \(1.9, 1.99, \dots\). In this case, \([x]\) will be \(c-1\).
+                    $$ \lim_{x \to c^-} g(x) = \lim_{x \to c^-} (x - [x]) = c - (c-1) = 1 $$</li>
+
+                <li>Right-hand limit: As \(x \to c^+\), \(x\) is slightly greater than \(c\). For example, if \(c=2\), \(x\) could be \(2.1, 2.01, \dots\). In this case, \([x]\) will be \(c\).
+                    $$ \lim_{x \to c^+} g(x) = \lim_{x \to c^+} (x - [x]) = c - c = 0 $$</li>
+            </ul>
+            <p>Since \( \lim_{x \to c^-} g(x) = 1 \) and \( \lim_{x \to c^+} g(x) = 0 \), the left-hand limit and the right-hand limit are not equal at any integer point \(c\).</p>
+            <p><strong>Conclusion:</strong> Therefore, the function \(g(x) = x - [x]\) is discontinuous at all integral points.</p>
+        </div>
+
+        <h4 id="ex5-1-q20">20. Is the function defined by \(f(x) = x^2 - \sin x + 5\) continuous at \(x = \pi\)?</h4>
+        <div class="solution-box">
+            <p>We know that \(x^2\) is a polynomial function, and polynomial functions are continuous everywhere.
+            We also know that \(\sin x\) is a trigonometric function, and it is continuous everywhere.
+            The constant function \(5\) is continuous everywhere.</p>
+            <p>According to the algebra of continuous functions, if \(f_1(x)\) and \(f_2(x)\) are continuous, then \(f_1(x) - f_2(x)\) is also continuous, and \(f_1(x) - f_2(x) + C\) (where \(C\) is a constant) is also continuous.</p>
+            <p>Thus, \(f(x) = x^2 - \sin x + 5\) is a continuous function for all real numbers.</p>
+            <p>To verify at \(x = \pi\):</p>
+            <ul>
+                <li>Function value: \(f(\pi) = \pi^2 - \sin(\pi) + 5 = \pi^2 - 0 + 5 = \pi^2+5\)</li>
+                <li>Limit: \( \lim_{x \to \pi} (x^2 - \sin x + 5) = \pi^2 - \sin(\pi) + 5 = \pi^2 - 0 + 5 = \pi^2+5 \)</li>
+            </ul>
+            <p>Since \( \lim_{x \to \pi} f(x) = f(\pi) \), the function is continuous at \(x = \pi\).</p>
+            <p><strong>Conclusion:</strong> Yes, the function is continuous at \(x = \pi\).</p>
+        </div>
+
+        <h4 id="ex5-1-q21">21. Discuss the continuity of the following functions:</h4>
+        <p>(a) \(f(x) = \sin x + \cos x\)</p>
+        <div class="solution-box">
+            <p>We know that \(\sin x\) is continuous everywhere and \(\cos x\) is continuous everywhere.</p>
+            <p>According to the algebra of continuous functions, the sum of two continuous functions is also continuous.</p>
+            <p>Let \(g(x) = \sin x\) and \(h(x) = \cos x\). Both \(g(x)\) and \(h(x)\) are continuous for all real \(x\).</p>
+            <p>Therefore, \(f(x) = g(x) + h(x)\) is continuous for all real \(x\).</p>
+            <p><strong>Conclusion:</strong> \(f(x) = \sin x + \cos x\) is continuous for all real numbers.</p>
+        </div>
+
+        <p>(b) \(f(x) = \sin x - \cos x\)</p>
+        <div class="solution-box">
+            <p>We know that \(\sin x\) is continuous everywhere and \(\cos x\) is continuous everywhere.</p>
+            <p>According to the algebra of continuous functions, the difference of two continuous functions is also continuous.</p>
+            <p>Let \(g(x) = \sin x\) and \(h(x) = \cos x\). Both \(g(x)\) and \(h(x)\) are continuous for all real \(x\).</p>
+            <p>Therefore, \(f(x) = g(x) - h(x)\) is continuous for all real \(x\).</p>
+            <p><strong>Conclusion:</strong> \(f(x) = \sin x - \cos x\) is continuous for all real numbers.</p>
+        </div>
+
+        <p>(c) \(f(x) = \sin x \cdot \cos x\)</p>
+        <div class="solution-box">
+            <p>We know that \(\sin x\) is continuous everywhere and \(\cos x\) is continuous everywhere.</p>
+            <p>According to the algebra of continuous functions, the product of two continuous functions is also continuous.</p>
+            <p>Let \(g(x) = \sin x\) and \(h(x) = \cos x\). Both \(g(x)\) and \(h(x)\) are continuous for all real \(x\).</p>
+            <p>Therefore, \(f(x) = g(x) \cdot h(x)\) is continuous for all real \(x\).</p>
+            <p><strong>Conclusion:</strong> \(f(x) = \sin x \cdot \cos x\) is continuous for all real numbers.</p>
+        </div>
+
+        <h4 id="ex5-1-q22">22. Discuss the continuity of the cosine, cosecant, secant and cotangent functions.</h4>
+        <div class="solution-box">
+            <p><strong>1. Cosine function: \(f(x) = \cos x\)</strong></p>
+            <p>Let \(c\) be any real number.
+            We know \( \lim_{x \to c} \cos x = \cos c \).
+            This can be shown using the identity \( \cos(c+h) = \cos c \cos h - \sin c \sin h \).
+            As \(h \to 0\), \( \cos h \to 1 \) and \( \sin h \to 0 \).
+            So, \( \lim_{h \to 0} \cos(c+h) = \cos c (1) - \sin c (0) = \cos c \).
+            Since \( \lim_{x \to c} f(x) = f(c) \), \(\cos x\) is continuous for all real numbers.</p>
+
+            <p><strong>2. Cosecant function: \(f(x) = \csc x = \frac{1}{\sin x}\)</strong></p>
+            <p>The cosecant function is a rational function involving \(\sin x\). It is continuous wherever \(\sin x \neq 0\).</p>
+            <p>The values of \(x\) for which \(\sin x = 0\) are \(x = n\pi\), where \(n\) is an integer (\(0, \pm\pi, \pm 2\pi, \dots\)).</p>
+            <p><strong>Conclusion:</strong> \(\csc x\) is continuous for all real numbers \(x \neq n\pi\), where \(n \in \mathbb{Z}\).</p>
+
+            <p><strong>3. Secant function: \(f(x) = \sec x = \frac{1}{\cos x}\)</strong></p>
+            <p>The secant function is a rational function involving \(\cos x\). It is continuous wherever \(\cos x \neq 0\).</p>
+            <p>The values of \(x\) for which \(\cos x = 0\) are \(x = (2n+1)\frac{\pi}{2}\), where \(n\) is an integer (\(\pm\frac{\pi}{2}, \pm\frac{3\pi}{2}, \dots\)).</p>
+            <p><strong>Conclusion:</strong> \(\sec x\) is continuous for all real numbers \(x \neq (2n+1)\frac{\pi}{2}\), where \(n \in \mathbb{Z}\).</p>
+
+            <p><strong>4. Cotangent function: \(f(x) = \cot x = \frac{\cos x}{\sin x}\)</strong></p>
+            <p>The cotangent function is a rational function (quotient of two continuous functions). It is continuous wherever \(\sin x \neq 0\).</p>
+            <p>The values of \(x\) for which \(\sin x = 0\) are \(x = n\pi\), where \(n\) is an integer (\(0, \pm\pi, \pm 2\pi, \dots\)).</p>
+            <p><strong>Conclusion:</strong> \(\cot x\) is continuous for all real numbers \(x \neq n\pi\), where \(n \in \mathbb{Z}\).</p>
+        </div>
+
+        <h4 id="ex5-1-q23">23. Find all points of discontinuity of \(f\), where \(f(x) = \sin x / x\) if \(x \neq 0\) and \(f(x) = x+1\) if \(x \geq 0\). (There seems to be a typo or ambiguity in the question in the PDF, as Q24 is a similar function and Q23 is just missing. I will use the function defined in Q24 as Q23 for now, as it's the next logical one. Or, I will skip Q23 from the original pdf if it's missing and only do Q24.)</h4>
+        <p>The PDF has no Q23. It directly skips from Q22 to Q24. I will proceed with Q24 as given.</p>
+
+        <h4 id="ex5-1-q24">24. Determine if \(f\) defined by \(f(x) = \begin{cases} x^2 \sin \frac{1}{x}, & \text{if } x \neq 0 \\ 0, & \text{if } x = 0 \end{cases}\) is a continuous function?</h4>
+        <div class="solution-box">
+            <p>For \(x \neq 0\), \(f(x) = x^2 \sin \frac{1}{x}\).
+            We know that \(x^2\) is continuous for all \(x\).
+            The function \(\sin \frac{1}{x}\) is continuous for all \(x \neq 0\).</p>
+            <p>The product of continuous functions is continuous, so \(f(x)\) is continuous for all \(x \neq 0\).</p>
+            <p>We need to check continuity at \(x = 0\).</p>
+            <p><strong>Check continuity at \(x = 0\):</strong></p>
+            <ul>
+                <li>Function value: \(f(0) = 0\) (given)</li>
+                <li>Limit: \( \lim_{x \to 0} x^2 \sin \frac{1}{x} \)</li>
+            </ul>
+            <p>We know that \( -1 \leq \sin \frac{1}{x} \leq 1 \) for all \(x \neq 0\).</p>
+            <p>Multiplying by \(x^2\) (which is positive for \(x \neq 0\)):</p>
+            $$ -x^2 \leq x^2 \sin \frac{1}{x} \leq x^2 $$
+            <p>Now, take the limit as \(x \to 0\):</p>
+            $$ \lim_{x \to 0} (-x^2) = 0 $$
+            $$ \lim_{x \to 0} (x^2) = 0 $$
+            <p>By the Squeeze Theorem, since \( \lim_{x \to 0} (-x^2) = 0 \) and \( \lim_{x \to 0} (x^2) = 0 \), it implies:</p>
+            $$ \lim_{x \to 0} x^2 \sin \frac{1}{x} = 0 $$
+            <p>Since \( \lim_{x \to 0} f(x) = f(0) = 0 \), the function is continuous at \(x = 0\).</p>
+            <p><strong>Conclusion:</strong> The function \(f(x)\) is continuous for all real numbers.</p>
+        </div>
+        <hr>
+
+        <h3 id="exercise-5-2">Exercise 5.2</h3>
+        <p>Differentiate the functions with respect to \(x\) in Exercises 1 to 8.</p>
+
+        <h4 id="ex5-2-q1">1. \(\sin (x^2 + 5)\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \sin (x^2+5)\). We use the Chain Rule.
+            Let \(u = x^2+5\). Then \(y = \sin u\).</p>
+            $$ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} $$
+            $$ \frac{dy}{du} = \frac{d}{du}(\sin u) = \cos u $$
+            $$ \frac{du}{dx} = \frac{d}{dx}(x^2+5) = 2x $$
+            $$ \frac{dy}{dx} = (\cos u)(2x) = 2x \cos (x^2+5) $$
+        </div>
+
+        <h4 id="ex5-2-q2">2. \(\cos (\sin x)\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \cos (\sin x)\). We use the Chain Rule.
+            Let \(u = \sin x\). Then \(y = \cos u\).</p>
+            $$ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} $$
+            $$ \frac{dy}{du} = \frac{d}{du}(\cos u) = -\sin u $$
+            $$ \frac{du}{dx} = \frac{d}{dx}(\sin x) = \cos x $$
+            $$ \frac{dy}{dx} = (-\sin u)(\cos x) = -\cos x \sin (\sin x) $$
+        </div>
+
+        <h4 id="ex5-2-q3">3. \(\sin (ax + b)\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \sin (ax+b)\). We use the Chain Rule.
+            Let \(u = ax+b\). Then \(y = \sin u\).</p>
+            $$ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} $$
+            $$ \frac{dy}{du} = \frac{d}{du}(\sin u) = \cos u $$
+            $$ \frac{du}{dx} = \frac{d}{dx}(ax+b) = a $$
+            $$ \frac{dy}{dx} = (\cos u)(a) = a \cos (ax+b) $$
+        </div>
+
+        <h4 id="ex5-2-q4">4. \(\sec (\tan (\sqrt{x}))\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \sec (\tan (\sqrt{x}))\). We use the Chain Rule multiple times.</p>
+            <p>Let \(u = \tan (\sqrt{x})\). Then \(y = \sec u\).</p>
+            $$ \frac{dy}{du} = \sec u \tan u $$
+            <p>Now, to find \(\frac{du}{dx}\), let \(v = \sqrt{x}\). Then \(u = \tan v\).</p>
+            $$ \frac{du}{dv} = \sec^2 v $$
+            $$ \frac{dv}{dx} = \frac{d}{dx}(\sqrt{x}) = \frac{d}{dx}(x^{1/2}) = \frac{1}{2} x^{-1/2} = \frac{1}{2\sqrt{x}} $$
+            <p>So, \( \frac{du}{dx} = \frac{du}{dv} \cdot \frac{dv}{dx} = (\sec^2 v) \left(\frac{1}{2\sqrt{x}}\right) = \frac{\sec^2 \sqrt{x}}{2\sqrt{x}} \)</p>
+            <p>Finally,</p>
+            $$ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = (\sec u \tan u) \left(\frac{\sec^2 \sqrt{x}}{2\sqrt{x}}\right) $$
+            $$ \frac{dy}{dx} = \sec(\tan\sqrt{x}) \tan(\tan\sqrt{x}) \frac{\sec^2 \sqrt{x}}{2\sqrt{x}} $$
+        </div>
+
+        <h4 id="ex5-2-q5">5. \(\frac{\sin (ax+b)}{\cos (cx+d)}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \frac{\sin (ax+b)}{\cos (cx+d)}\). We use the Quotient Rule: \( \frac{d}{dx}\left(\frac{u}{v}\right) = \frac{u'v - uv'}{v^2} \).</p>
+            <p>Let \(u = \sin (ax+b)\) and \(v = \cos (cx+d)\).</p>
+            <p>First, find \(u'\) and \(v'\) using the Chain Rule from Q3.</p>
+            $$ u' = \frac{d}{dx}(\sin (ax+b)) = a \cos (ax+b) $$
+            $$ v' = \frac{d}{dx}(\cos (cx+d)) = -c \sin (cx+d) $$
+            <p>Now, apply the Quotient Rule:</p>
+            $$ \frac{dy}{dx} = \frac{(a \cos (ax+b))(\cos (cx+d)) - (\sin (ax+b))(-c \sin (cx+d))}{(\cos (cx+d))^2} $$
+            $$ \frac{dy}{dx} = \frac{a \cos (ax+b)\cos (cx+d) + c \sin (ax+b)\sin (cx+d)}{\cos^2 (cx+d)} $$
+            <p>This can also be written as:</p>
+            $$ \frac{dy}{dx} = a \cos (ax+b) \sec (cx+d) + c \sin (ax+b) \tan (cx+d) \sec (cx+d) $$
+        </div>
+
+        <h4 id="ex5-2-q6">6. \(e^{\sin x}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = e^{\sin x}\). We use the Chain Rule.
+            Let \(u = \sin x\). Then \(y = e^u\).</p>
+            $$ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} $$
+            $$ \frac{dy}{du} = \frac{d}{du}(e^u) = e^u $$
+            $$ \frac{du}{dx} = \frac{d}{dx}(\sin x) = \cos x $$
+            $$ \frac{dy}{dx} = (e^u)(\cos x) = \cos x e^{\sin x} $$
+        </div>
+
+        <h4 id="ex5-2-q7">7. \(2\sqrt{\cot (x^2)}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = 2\sqrt{\cot (x^2)}\). We use the Chain Rule multiple times.</p>
+            <p>Let \(u = \cot (x^2)\). Then \(y = 2\sqrt{u} = 2u^{1/2}\).</p>
+            $$ \frac{dy}{du} = 2 \cdot \frac{1}{2} u^{-1/2} = \frac{1}{\sqrt{u}} = \frac{1}{\sqrt{\cot (x^2)}} $$
+            <p>Now, to find \(\frac{du}{dx}\), let \(v = x^2\). Then \(u = \cot v\).</p>
+            $$ \frac{du}{dv} = \frac{d}{dv}(\cot v) = -\csc^2 v = -\csc^2 (x^2) $$
+            $$ \frac{dv}{dx} = \frac{d}{dx}(x^2) = 2x $$
+            <p>So, \( \frac{du}{dx} = \frac{du}{dv} \cdot \frac{dv}{dx} = (-\csc^2 (x^2))(2x) = -2x \csc^2 (x^2) \)</p>
+            <p>Finally,</p>
+            $$ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = \left(\frac{1}{\sqrt{\cot (x^2)}}\right) (-2x \csc^2 (x^2)) $$
+            $$ \frac{dy}{dx} = \frac{-2x \csc^2 (x^2)}{\sqrt{\cot (x^2)}} $$
+            <p>This can also be written in terms of \(\sin\) and \(\cos\):</p>
+            $$ \frac{dy}{dx} = \frac{-2x \left(\frac{1}{\sin^2 (x^2)}\right)}{\sqrt{\frac{\cos (x^2)}{\sin (x^2)}}} = \frac{-2x}{\sin^2 (x^2)} \cdot \frac{\sqrt{\sin (x^2)}}{\sqrt{\cos (x^2)}} $$
+            $$ \frac{dy}{dx} = \frac{-2x \sqrt{\sin (x^2)}}{\sin^2 (x^2) \sqrt{\cos (x^2)}} = \frac{-2x}{\sin^{3/2} (x^2) \cos^{1/2} (x^2)} $$
+            $$ \frac{dy}{dx} = \frac{-2x}{\sqrt{\sin^3 (x^2) \cos (x^2)}} $$
+        </div>
+
+        <h4 id="ex5-2-q8">8. \(\cos (\sqrt{x})\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \cos (\sqrt{x})\). We use the Chain Rule.
+            Let \(u = \sqrt{x}\). Then \(y = \cos u\).</p>
+            $$ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} $$
+            $$ \frac{dy}{du} = \frac{d}{du}(\cos u) = -\sin u $$
+            $$ \frac{du}{dx} = \frac{d}{dx}(\sqrt{x}) = \frac{d}{dx}(x^{1/2}) = \frac{1}{2} x^{-1/2} = \frac{1}{2\sqrt{x}} $$
+            $$ \frac{dy}{dx} = (-\sin u)\left(\frac{1}{2\sqrt{x}}\right) = -\frac{\sin \sqrt{x}}{2\sqrt{x}} $$
+        </div>
+
+        <h4 id="ex5-2-q9">9. Prove that the function \(f\) given by \(f(x) = |x-1|, x \in \mathbb{R}\) is not differentiable at \(x = 1\).</h4>
+        <div class="solution-box">
+            <p>A function \(f(x)\) is differentiable at a point \(c\) if the limit \( \lim_{h \to 0} \frac{f(c+h) - f(c)}{h} \) exists. This means the left-hand derivative and the right-hand derivative must be equal at \(c\).</p>
+            <p>Here, \(f(x) = |x-1|\). We need to check differentiability at \(x = 1\).</p>
+            <p>First, write \(f(x)\) as a piecewise function:</p>
+            $$ f(x) = \begin{cases} -(x-1), & \text{if } x < 1 \\ x-1, & \text{if } x \geq 1 \end{cases} $$
+            <p><strong>Left-hand derivative (LHD) at \(x = 1\):</strong></p>
+            $$ LHD = \lim_{h \to 0^-} \frac{f(1+h) - f(1)}{h} $$
+            <p>For \(h < 0\), \(1+h < 1\), so \(f(1+h) = -(1+h-1) = -h\).</p>
+            <p>\(f(1) = |1-1| = 0\).</p>
+            $$ LHD = \lim_{h \to 0^-} \frac{-h - 0}{h} = \lim_{h \to 0^-} (-1) = -1 $$
+
+            <p><strong>Right-hand derivative (RHD) at \(x = 1\):</strong></p>
+            $$ RHD = \lim_{h \to 0^+} \frac{f(1+h) - f(1)}{h} $$
+            <p>For \(h > 0\), \(1+h > 1\), so \(f(1+h) = (1+h-1) = h\).</p>
+            <p>\(f(1) = 0\).</p>
+            $$ RHD = \lim_{h \to 0^+} \frac{h - 0}{h} = \lim_{h \to 0^+} (1) = 1 $$
+
+            <p>Since LHD \(\neq\) RHD (\(-1 \neq 1\)), the function \(f(x) = |x-1|\) is not differentiable at \(x = 1\).</p>
+        </div>
+
+        <h4 id="ex5-2-q10">10. Prove that the greatest integer function defined by \(f(x) = [x], 0 < x < 3\) is not differentiable at \(x = 1\) and \(x = 2\).</h4>
+        <div class="solution-box">
+            <p>We need to check differentiability at \(x = 1\) and \(x = 2\) for \(f(x) = [x]\).</p>
+            <p><strong>At \(x = 1\):</strong></p>
+            <ul>
+                <li>Function value: \(f(1) = [1] = 1\).</li>
+                <li>Left-hand derivative (LHD) at \(x = 1\):
+                    $$ LHD = \lim_{h \to 0^-} \frac{f(1+h) - f(1)}{h} $$
+                    For \(h < 0\) (e.g., \(h = -0.1\)), \(1+h\) is slightly less than \(1\). So, \([1+h] = 0\).
+                    $$ LHD = \lim_{h \to 0^-} \frac{[1+h] - [1]}{h} = \lim_{h \to 0^-} \frac{0 - 1}{h} = \lim_{h \to 0^-} \frac{-1}{h} $$
+                    As \(h \to 0^-\), \(h\) is a small negative number, so \( \frac{-1}{h} \to +\infty \).
+                </li>
+                <li>Right-hand derivative (RHD) at \(x = 1\):
+                    $$ RHD = \lim_{h \to 0^+} \frac{f(1+h) - f(1)}{h} $$
+                    For \(h > 0\) (e.g., \(h = 0.1\)), \(1+h\) is slightly greater than or equal to \(1\). So, \([1+h] = 1\).
+                    $$ RHD = \lim_{h \to 0^+} \frac{[1+h] - [1]}{h} = \lim_{h \to 0^+} \frac{1 - 1}{h} = \lim_{h \to 0^+} \frac{0}{h} = 0 $$
+                </li>
+            </ul>
+            <p>Since LHD is \(\infty\) and RHD is \(0\), LHD \(\neq\) RHD. Therefore, \(f(x) = [x]\) is not differentiable at \(x = 1\).</p>
+
+            <p><strong>At \(x = 2\):</strong></p>
+            <ul>
+                <li>Function value: \(f(2) = [2] = 2\).</li>
+                <li>Left-hand derivative (LHD) at \(x = 2\):
+                    $$ LHD = \lim_{h \to 0^-} \frac{f(2+h) - f(2)}{h} $$
+                    For \(h < 0\), \(2+h\) is slightly less than \(2\). So, \([2+h] = 1\).
+                    $$ LHD = \lim_{h \to 0^-} \frac{[2+h] - [2]}{h} = \lim_{h \to 0^-} \frac{1 - 2}{h} = \lim_{h \to 0^-} \frac{-1}{h} $$
+                    As \(h \to 0^-\), \(h\) is a small negative number, so \( \frac{-1}{h} \to +\infty \).
+                </li>
+                <li>Right-hand derivative (RHD) at \(x = 2\):
+                    $$ RHD = \lim_{h \to 0^+} \frac{f(2+h) - f(2)}{h} $$
+                    For \(h > 0\), \(2+h\) is slightly greater than or equal to \(2\). So, \([2+h] = 2\).
+                    $$ RHD = \lim_{h \to 0^+} \frac{[2+h] - [2]}{h} = \lim_{h \to 0^+} \frac{2 - 2}{h} = \lim_{h \to 0^+} \frac{0}{h} = 0 $$
+                </li>
+            </ul>
+            <p>Since LHD is \(\infty\) and RHD is \(0\), LHD \(\neq\) RHD. Therefore, \(f(x) = [x]\) is not differentiable at \(x = 2\).</p>
+            <p><strong>Conclusion:</strong> The greatest integer function \(f(x) = [x]\) is not differentiable at \(x = 1\) and \(x = 2\).</p>
+        </div>
+        <hr>
+
+        <h3 id="exercise-5-3">Exercise 5.3</h3>
+        <p>Find \(\frac{dy}{dx}\) in the following:</p>
+
+        <h4 id="ex5-3-q1">1. \(2x + 3y = \sin x\)</h4>
+        <div class="solution-box">
+            <p>Differentiate both sides with respect to \(x\):</p>
+            $$ \frac{d}{dx}(2x) + \frac{d}{dx}(3y) = \frac{d}{dx}(\sin x) $$
+            $$ 2 + 3\frac{dy}{dx} = \cos x $$
+            $$ 3\frac{dy}{dx} = \cos x - 2 $$
+            $$ \frac{dy}{dx} = \frac{\cos x - 2}{3} $$
+        </div>
+
+        <h4 id="ex5-3-q2">2. \(2x + 3y = \sin y\)</h4>
+        <div class="solution-box">
+            <p>Differentiate both sides with respect to \(x\):</p>
+            $$ \frac{d}{dx}(2x) + \frac{d}{dx}(3y) = \frac{d}{dx}(\sin y) $$
+            $$ 2 + 3\frac{dy}{dx} = \cos y \cdot \frac{dy}{dx} $$
+            <p>Group terms with \(\frac{dy}{dx}\):</p>
+            $$ 2 = \cos y \cdot \frac{dy}{dx} - 3\frac{dy}{dx} $$
+            $$ 2 = (\cos y - 3)\frac{dy}{dx} $$
+            $$ \frac{dy}{dx} = \frac{2}{\cos y - 3} $$
+        </div>
+
+        <h4 id="ex5-3-q3">3. \(ax + by^2 = \cos y\)</h4>
+        <div class="solution-box">
+            <p>Differentiate both sides with respect to \(x\):</p>
+            $$ \frac{d}{dx}(ax) + \frac{d}{dx}(by^2) = \frac{d}{dx}(\cos y) $$
+            $$ a + b(2y)\frac{dy}{dx} = -\sin y \cdot \frac{dy}{dx} $$
+            <p>Group terms with \(\frac{dy}{dx}\):</p>
+            $$ a = -\sin y \cdot \frac{dy}{dx} - 2by\frac{dy}{dx} $$
+            $$ a = (-\sin y - 2by)\frac{dy}{dx} $$
+            $$ \frac{dy}{dx} = \frac{a}{-\sin y - 2by} = -\frac{a}{\sin y + 2by} $$
+        </div>
+
+        <h4 id="ex5-3-q4">4. \(xy + y^2 = \tan x + y\)</h4>
+        <div class="solution-box">
+            <p>Differentiate both sides with respect to \(x\).</p>
+            <p>For \(xy\), use the product rule: \( \frac{d}{dx}(xy) = 1 \cdot y + x \cdot \frac{dy}{dx} \).</p>
+            $$ \frac{d}{dx}(xy) + \frac{d}{dx}(y^2) = \frac{d}{dx}(\tan x) + \frac{d}{dx}(y) $$
+            $$ y + x\frac{dy}{dx} + 2y\frac{dy}{dx} = \sec^2 x + \frac{dy}{dx} $$
+            <p>Group terms with \(\frac{dy}{dx}\):</p>
+            $$ x\frac{dy}{dx} + 2y\frac{dy}{dx} - \frac{dy}{dx} = \sec^2 x - y $$
+            $$ (x + 2y - 1)\frac{dy}{dx} = \sec^2 x - y $$
+            $$ \frac{dy}{dx} = \frac{\sec^2 x - y}{x + 2y - 1} $$
+        </div>
+
+        <h4 id="ex5-3-q5">5. \(x^2 + xy + y^2 = 100\)</h4>
+        <div class="solution-box">
+            <p>Differentiate both sides with respect to \(x\).</p>
+            <p>For \(xy\), use the product rule: \( \frac{d}{dx}(xy) = 1 \cdot y + x \cdot \frac{dy}{dx} \).</p>
+            $$ \frac{d}{dx}(x^2) + \frac{d}{dx}(xy) + \frac{d}{dx}(y^2) = \frac{d}{dx}(100) $$
+            $$ 2x + (y + x\frac{dy}{dx}) + 2y\frac{dy}{dx} = 0 $$
+            <p>Group terms with \(\frac{dy}{dx}\):</p>
+            $$ x\frac{dy}{dx} + 2y\frac{dy}{dx} = -2x - y $$
+            $$ (x + 2y)\frac{dy}{dx} = -(2x + y) $$
+            $$ \frac{dy}{dx} = -\frac{2x + y}{x + 2y} $$
+        </div>
+
+        <h4 id="ex5-3-q6">6. \(x^3 + x^2y + xy^2 + y^3 = 81\)</h4>
+        <div class="solution-box">
+            <p>Differentiate both sides with respect to \(x\).</p>
+            <p>For \(x^2y\), use the product rule: \( \frac{d}{dx}(x^2y) = 2xy + x^2 \frac{dy}{dx} \).</p>
+            <p>For \(xy^2\), use the product rule: \( \frac{d}{dx}(xy^2) = 1 \cdot y^2 + x \cdot 2y \frac{dy}{dx} = y^2 + 2xy \frac{dy}{dx} \).</p>
+            $$ \frac{d}{dx}(x^3) + \frac{d}{dx}(x^2y) + \frac{d}{dx}(xy^2) + \frac{d}{dx}(y^3) = \frac{d}{dx}(81) $$
+            $$ 3x^2 + (2xy + x^2\frac{dy}{dx}) + (y^2 + 2xy\frac{dy}{dx}) + 3y^2\frac{dy}{dx} = 0 $$
+            <p>Group terms with \(\frac{dy}{dx}\):</p>
+            $$ x^2\frac{dy}{dx} + 2xy\frac{dy}{dx} + 3y^2\frac{dy}{dx} = -3x^2 - 2xy - y^2 $$
+            $$ (x^2 + 2xy + 3y^2)\frac{dy}{dx} = -(3x^2 + 2xy + y^2) $$
+            $$ \frac{dy}{dx} = -\frac{3x^2 + 2xy + y^2}{x^2 + 2xy + 3y^2} $$
+        </div>
+
+        <h4 id="ex5-3-q7">7. \(\sin^2 y + \cos (xy) = k\)</h4>
+        <div class="solution-box">
+            <p>Differentiate both sides with respect to \(x\).</p>
+            <p>For \(\sin^2 y\), use chain rule: \( \frac{d}{dx}(\sin^2 y) = 2 \sin y \cos y \frac{dy}{dx} \).</p>
+            <p>For \(\cos (xy)\), use chain rule and product rule: \( \frac{d}{dx}(\cos(xy)) = -\sin(xy) \cdot \frac{d}{dx}(xy) = -\sin(xy)(y + x\frac{dy}{dx}) \).</p>
+            $$ \frac{d}{dx}(\sin^2 y) + \frac{d}{dx}(\cos (xy)) = \frac{d}{dx}(k) $$
+            $$ 2 \sin y \cos y \frac{dy}{dx} - \sin(xy)(y + x\frac{dy}{dx}) = 0 $$
+            $$ \sin(2y)\frac{dy}{dx} - y\sin(xy) - x\sin(xy)\frac{dy}{dx} = 0 $$
+            <p>Group terms with \(\frac{dy}{dx}\):</p>
+            $$ (\sin(2y) - x\sin(xy))\frac{dy}{dx} = y\sin(xy) $$
+            $$ \frac{dy}{dx} = \frac{y\sin(xy)}{\sin(2y) - x\sin(xy)} $$
+        </div>
+
+        <h4 id="ex5-3-q8">8. \(\sin^2 x + \cos^2 y = 1\)</h4>
+        <div class="solution-box">
+            <p>Differentiate both sides with respect to \(x\):</p>
+            $$ \frac{d}{dx}(\sin^2 x) + \frac{d}{dx}(\cos^2 y) = \frac{d}{dx}(1) $$
+            $$ 2 \sin x \cos x + 2 \cos y (-\sin y) \frac{dy}{dx} = 0 $$
+            $$ \sin(2x) - \sin(2y) \frac{dy}{dx} = 0 $$
+            $$ \sin(2y) \frac{dy}{dx} = \sin(2x) $$
+            $$ \frac{dy}{dx} = \frac{\sin(2x)}{\sin(2y)} $$
+            <p>Alternatively, from \(\sin^2 x + \cos^2 y = 1\), we know that if \(\cos^2 y = 1 - \sin^2 x\), then \(\cos^2 y = \cos^2 x\). This implies \(\cos y = \pm \cos x\). This is not the standard way to solve implicit differentiation problems, but an observation.</p>
+        </div>
+
+        <h4 id="ex5-3-q9">9. \(y = \sin^{-1} \left(\frac{2x}{1+x^2}\right)\)</h4>
+        <div class="solution-box">
+            <p>We use the derivative of inverse sine function: \( \frac{d}{dx}(\sin^{-1} u) = \frac{1}{\sqrt{1-u^2}} \frac{du}{dx} \).</p>
+            <p>Here, \(u = \frac{2x}{1+x^2}\).</p>
+            <p>First, find \(\frac{du}{dx}\) using the quotient rule.</p>
+            $$ \frac{du}{dx} = \frac{2(1+x^2) - 2x(2x)}{(1+x^2)^2} = \frac{2+2x^2-4x^2}{(1+x^2)^2} = \frac{2-2x^2}{(1+x^2)^2} = \frac{2(1-x^2)}{(1+x^2)^2} $$
+            <p>Now, calculate \( \sqrt{1-u^2} \):</p>
+            $$ \sqrt{1-\left(\frac{2x}{1+x^2}\right)^2} = \sqrt{1-\frac{4x^2}{(1+x^2)^2}} = \sqrt{\frac{(1+x^2)^2-4x^2}{(1+x^2)^2}} $$
+            $$ = \sqrt{\frac{1+2x^2+x^4-4x^2}{(1+x^2)^2}} = \sqrt{\frac{1-2x^2+x^4}{(1+x^2)^2}} = \sqrt{\frac{(1-x^2)^2}{(1+x^2)^2}} = \frac{|1-x^2|}{1+x^2} $$
+            <p>So, \( \frac{dy}{dx} = \frac{1}{\frac{|1-x^2|}{1+x^2}} \cdot \frac{2(1-x^2)}{(1+x^2)^2} = \frac{1+x^2}{|1-x^2|} \cdot \frac{2(1-x^2)}{(1+x^2)^2} = \frac{2(1-x^2)}{|1-x^2|(1+x^2)} \)
+            This result depends on whether \(1-x^2\) is positive or negative.</p>
+            <p>However, recall the common trigonometric substitution for this form: Let \(x = \tan \theta\). Then \(\theta = \tan^{-1} x\).</p>
+            $$ y = \sin^{-1} \left(\frac{2\tan\theta}{1+\tan^2\theta}\right) = \sin^{-1} (\sin 2\theta) $$
+            <p>For this simplification to work directly as \(y = 2\theta\), we need \(-1 \leq x \leq 1\), which means \( -\frac{\pi}{4} \leq \theta \leq \frac{\pi}{4} \). This range makes \(-\frac{\pi}{2} \leq 2\theta \leq \frac{\pi}{2}\), where \(\sin^{-1}(\sin X) = X\). So \(y = 2\theta = 2\tan^{-1}x\).</p>
+            <p>Now, differentiate \(y = 2\tan^{-1}x\):</p>
+            $$ \frac{dy}{dx} = 2 \cdot \frac{1}{1+x^2} = \frac{2}{1+x^2} $$
+            <p>Note that this result is valid when \(|x| < 1\), because if \(|x|>1\), then \(1-x^2 < 0\), so \(|1-x^2| = -(1-x^2) = x^2-1\). In that case, \( \frac{2(1-x^2)}{|1-x^2|(1+x^2)} = \frac{2(1-x^2)}{-(1-x^2)(1+x^2)} = -\frac{2}{1+x^2} \). The derivative depends on the range of \(x\). The prompt for Q9 in the PDF does not specify a range, but Q11 and Q12 below do. If no range is specified, the simplest form is usually expected.</p>
+            <p>Given no range restriction, we provide the general form: \( \frac{2 \text{sgn}(1-x^2)}{1+x^2} \) or more directly, assuming \(|x|<1\):</p>
+            $$ \frac{dy}{dx} = \frac{2}{1+x^2} $$
+        </div>
+
+        <h4 id="ex5-3-q10">10. \(y = \tan^{-1} \left(\frac{3x-x^3}{1-3x^2}\right), -\frac{1}{\sqrt{3}} < x < \frac{1}{\sqrt{3}}\)</h4>
+        <div class="solution-box">
+            <p>This form resembles the tangent triple angle formula: \( \tan 3\theta = \frac{3\tan\theta - \tan^3\theta}{1-3\tan^2\theta} \).</p>
+            <p>Let \(x = \tan \theta\). Then \(\theta = \tan^{-1} x\).
+            The given range \( -\frac{1}{\sqrt{3}} < x < \frac{1}{\sqrt{3}} \) translates to \( -\frac{\pi}{6} < \theta < \frac{\pi}{6} \).
+            This implies \( -\frac{\pi}{2} < 3\theta < \frac{\pi}{2} \), which is the principal value range for \(\tan^{-1}\).</p>
+            $$ y = \tan^{-1} \left(\frac{3\tan\theta - \tan^3\theta}{1-3\tan^2\theta}\right) = \tan^{-1} (\tan 3\theta) $$
+            $$ y = 3\theta = 3\tan^{-1}x $$
+            <p>Now, differentiate with respect to \(x\):</p>
+            $$ \frac{dy}{dx} = 3 \cdot \frac{d}{dx}(\tan^{-1}x) = 3 \cdot \frac{1}{1+x^2} = \frac{3}{1+x^2} $$
+        </div>
+
+        <h4 id="ex5-3-q11">11. \(y = \cos^{-1} \left(\frac{1-x^2}{1+x^2}\right), 0 < x < 1\)</h4>
+        <div class="solution-box">
+            <p>This form resembles the cosine double angle formula: \( \cos 2\theta = \frac{1-\tan^2\theta}{1+\tan^2\theta} \).</p>
+            <p>Let \(x = \tan \theta\). Then \(\theta = \tan^{-1} x\).</p>
+            <p>The given range \( 0 < x < 1 \) translates to \( 0 < \theta < \frac{\pi}{4} \).
+            This implies \( 0 < 2\theta < \frac{\pi}{2} \), which is in the principal value range for \(\cos^{-1}\) (\([0, \pi]\)).</p>
+            $$ y = \cos^{-1} \left(\frac{1-\tan^2\theta}{1+\tan^2\theta}\right) = \cos^{-1} (\cos 2\theta) $$
+            $$ y = 2\theta = 2\tan^{-1}x $$
+            <p>Now, differentiate with respect to \(x\):</p>
+            $$ \frac{dy}{dx} = 2 \cdot \frac{d}{dx}(\tan^{-1}x) = 2 \cdot \frac{1}{1+x^2} = \frac{2}{1+x^2} $$
+        </div>
+
+        <h4 id="ex5-3-q12">12. \(y = \sin^{-1} \left(\frac{1-x^2}{1+x^2}\right), 0 < x < 1\)</h4>
+        <div class="solution-box">
+            <p>Let \(x = \tan \theta\). Then \(\theta = \tan^{-1} x\).</p>
+            <p>The given range \( 0 < x < 1 \) translates to \( 0 < \theta < \frac{\pi}{4} \).</p>
+            $$ y = \sin^{-1} \left(\frac{1-\tan^2\theta}{1+\tan^2\theta}\right) = \sin^{-1} (\cos 2\theta) $$
+            <p>We know that \( \cos 2\theta = \sin\left(\frac{\pi}{2} - 2\theta\right) \).
+            Since \( 0 < \theta < \frac{\pi}{4} \), we have \( 0 < 2\theta < \frac{\pi}{2} \).
+            This implies \( 0 < \frac{\pi}{2} - 2\theta < \frac{\pi}{2} \), which is in the principal value range for \(\sin^{-1}\) (\([-\frac{\pi}{2}, \frac{\pi}{2}]\)).</p>
+            $$ y = \sin^{-1} \left(\sin\left(\frac{\pi}{2} - 2\theta\right)\right) = \frac{\pi}{2} - 2\theta $$
+            $$ y = \frac{\pi}{2} - 2\tan^{-1}x $$
+            <p>Now, differentiate with respect to \(x\):</p>
+            $$ \frac{dy}{dx} = \frac{d}{dx}\left(\frac{\pi}{2}\right) - 2\frac{d}{dx}(\tan^{-1}x) = 0 - 2 \cdot \frac{1}{1+x^2} = -\frac{2}{1+x^2} $$
+        </div>
+
+        <h4 id="ex5-3-q13">13. \(y = \cos^{-1} \left(\frac{2x}{1+x^2}\right), -1 < x < 1\)</h4>
+        <div class="solution-box">
+            <p>Let \(x = \tan \theta\). Then \(\theta = \tan^{-1} x\).</p>
+            <p>The given range \( -1 < x < 1 \) translates to \( -\frac{\pi}{4} < \theta < \frac{\pi}{4} \).
+            This implies \( -\frac{\pi}{2} < 2\theta < \frac{\pi}{2} \).</p>
+            $$ y = \cos^{-1} \left(\frac{2\tan\theta}{1+\tan^2\theta}\right) = \cos^{-1} (\sin 2\theta) $$
+            <p>We know that \( \sin 2\theta = \cos\left(\frac{\pi}{2} - 2\theta\right) \).
+            Since \( -\frac{\pi}{2} < 2\theta < \frac{\pi}{2} \), we have \( 0 < \frac{\pi}{2} - 2\theta < \pi \). This range is within the principal value range for \(\cos^{-1}\) (\([0, \pi]\)).</p>
+            $$ y = \cos^{-1} \left(\cos\left(\frac{\pi}{2} - 2\theta\right)\right) = \frac{\pi}{2} - 2\theta $$
+            $$ y = \frac{\pi}{2} - 2\tan^{-1}x $$
+            <p>Now, differentiate with respect to \(x\):</p>
+            $$ \frac{dy}{dx} = \frac{d}{dx}\left(\frac{\pi}{2}\right) - 2\frac{d}{dx}(\tan^{-1}x) = 0 - 2 \cdot \frac{1}{1+x^2} = -\frac{2}{1+x^2} $$
+        </div>
+
+        <h4 id="ex5-3-q14">14. \(y = \sin^{-1} (2x\sqrt{1-x^2}), -\frac{1}{\sqrt{2}} < x < \frac{1}{\sqrt{2}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(x = \sin \theta\). Then \(\theta = \sin^{-1} x\).</p>
+            <p>The given range \( -\frac{1}{\sqrt{2}} < x < \frac{1}{\sqrt{2}} \) translates to \( -\frac{\pi}{4} < \theta < \frac{\pi}{4} \).
+            This implies \( -\frac{\pi}{2} < 2\theta < \frac{\pi}{2} \), which is the principal value range for \(\sin^{-1}\).</p>
+            $$ y = \sin^{-1} (2\sin\theta\sqrt{1-\sin^2\theta}) = \sin^{-1} (2\sin\theta\sqrt{\cos^2\theta}) $$
+            Since \( -\frac{\pi}{4} < \theta < \frac{\pi}{4} \), \(\cos\theta > 0\), so \(\sqrt{\cos^2\theta} = \cos\theta\).</p>
+            $$ y = \sin^{-1} (2\sin\theta\cos\theta) = \sin^{-1} (\sin 2\theta) $$
+            $$ y = 2\theta = 2\sin^{-1}x $$
+            <p>Now, differentiate with respect to \(x\):</p>
+            $$ \frac{dy}{dx} = 2 \cdot \frac{d}{dx}(\sin^{-1}x) = 2 \cdot \frac{1}{\sqrt{1-x^2}} = \frac{2}{\sqrt{1-x^2}} $$
+        </div>
+
+        <h4 id="ex5-3-q15">15. \(y = \sec^{-1} \left(\frac{1}{2x^2-1}\right), 0 < x < \frac{1}{\sqrt{2}}\)</h4>
+        <div class="solution-box">
+            <p>This form resembles the cosine double angle formula: \( \cos 2\theta = 2\cos^2\theta - 1 \).</p>
+            <p>Let \(x = \cos \theta\). Then \(\theta = \cos^{-1} x\).</p>
+            <p>The given range \( 0 < x < \frac{1}{\sqrt{2}} \) translates to \( \frac{\pi}{4} < \theta < \frac{\pi}{2} \).
+            This implies \( \frac{\pi}{2} < 2\theta < \pi \).</p>
+            $$ y = \sec^{-1} \left(\frac{1}{2\cos^2\theta-1}\right) = \sec^{-1} \left(\frac{1}{\cos 2\theta}\right) = \sec^{-1} (\sec 2\theta) $$
+            <p>For \(\sec^{-1}(\sec X) = X\), we need \(X \in [0, \pi]\) excluding \(\frac{\pi}{2}\). Our \(2\theta\) is in \( (\frac{\pi}{2}, \pi) \).</p>
+            $$ y = 2\theta = 2\cos^{-1}x $$
+            <p>Now, differentiate with respect to \(x\):</p>
+            $$ \frac{dy}{dx} = 2 \cdot \frac{d}{dx}(\cos^{-1}x) = 2 \cdot \left(-\frac{1}{\sqrt{1-x^2}}\right) = -\frac{2}{\sqrt{1-x^2}} $$
+        </div>
+        <hr>
+
+        <h3 id="exercise-5-4">Exercise 5.4</h3>
+        <p>Differentiate the following w.r.t. \(x\):</p>
+
+        <h4 id="ex5-4-q1">1. \(\frac{e^x}{\sin x}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \frac{e^x}{\sin x}\). Use the Quotient Rule: \( \frac{d}{dx}\left(\frac{u}{v}\right) = \frac{u'v - uv'}{v^2} \).</p>
+            <p>Let \(u = e^x\) and \(v = \sin x\).</p>
+            $$ u' = \frac{d}{dx}(e^x) = e^x $$
+            $$ v' = \frac{d}{dx}(\sin x) = \cos x $$
+            $$ \frac{dy}{dx} = \frac{e^x (\sin x) - e^x (\cos x)}{(\sin x)^2} = \frac{e^x (\sin x - \cos x)}{\sin^2 x} $$
+        </div>
+
+        <h4 id="ex5-4-q2">2. \(e^{\sin^{-1} x}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = e^{\sin^{-1} x}\). Use the Chain Rule.
+            Let \(u = \sin^{-1} x\). Then \(y = e^u\).</p>
+            $$ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} $$
+            $$ \frac{dy}{du} = \frac{d}{du}(e^u) = e^u $$
+            $$ \frac{du}{dx} = \frac{d}{dx}(\sin^{-1} x) = \frac{1}{\sqrt{1-x^2}} $$
+            $$ \frac{dy}{dx} = (e^u)\left(\frac{1}{\sqrt{1-x^2}}\right) = \frac{e^{\sin^{-1} x}}{\sqrt{1-x^2}} $$
+        </div>
+
+        <h4 id="ex5-4-q3">3. \(e^{x^3}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = e^{x^3}\). Use the Chain Rule.
+            Let \(u = x^3\). Then \(y = e^u\).</p>
+            $$ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} $$
+            $$ \frac{dy}{du} = \frac{d}{du}(e^u) = e^u $$
+            $$ \frac{du}{dx} = \frac{d}{dx}(x^3) = 3x^2 $$
+            $$ \frac{dy}{dx} = (e^u)(3x^2) = 3x^2 e^{x^3} $$
+        </div>
+
+        <h4 id="ex5-4-q4">4. \(\sin (\tan^{-1} e^{-x})\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \sin (\tan^{-1} e^{-x})\). Use the Chain Rule multiple times.</p>
+            <p>Let \(u = \tan^{-1} e^{-x}\). Then \(y = \sin u\).</p>
+            $$ \frac{dy}{du} = \cos u $$
+            <p>Now, to find \(\frac{du}{dx}\), let \(v = e^{-x}\). Then \(u = \tan^{-1} v\).</p>
+            $$ \frac{du}{dv} = \frac{1}{1+v^2} $$
+            <p>Now, to find \(\frac{dv}{dx}\), let \(w = -x\). Then \(v = e^w\).</p>
+            $$ \frac{dv}{dw} = e^w $$
+            $$ \frac{dw}{dx} = -1 $$
+            <p>So, \( \frac{dv}{dx} = \frac{dv}{dw} \cdot \frac{dw}{dx} = e^w (-1) = -e^{-x} \)</p>
+            <p>Then, \( \frac{du}{dx} = \frac{du}{dv} \cdot \frac{dv}{dx} = \frac{1}{1+v^2} (-e^{-x}) = \frac{-e^{-x}}{1+(e^{-x})^2} = \frac{-e^{-x}}{1+e^{-2x}} \)</p>
+            <p>Finally,</p>
+            $$ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = (\cos u) \left(\frac{-e^{-x}}{1+e^{-2x}}\right) $$
+            Substituting \(u = \tan^{-1} e^{-x}\):
+            $$ \frac{dy}{dx} = \cos(\tan^{-1} e^{-x}) \frac{-e^{-x}}{1+e^{-2x}} $$
+            <p>We can simplify \(\cos(\tan^{-1} A)\). If \(\tan^{-1} A = \theta\), then \(\tan\theta = A\). Consider a right triangle with opposite \(A\) and adjacent \(1\). Hypotenuse is \(\sqrt{A^2+1}\). So \(\cos\theta = \frac{1}{\sqrt{A^2+1}}\).</p>
+            <p>Here \(A = e^{-x}\). So \(\cos(\tan^{-1} e^{-x}) = \frac{1}{\sqrt{(e^{-x})^2+1}} = \frac{1}{\sqrt{e^{-2x}+1}}\).</p>
+            $$ \frac{dy}{dx} = \frac{1}{\sqrt{e^{-2x}+1}} \cdot \frac{-e^{-x}}{1+e^{-2x}} = \frac{-e^{-x}}{(1+e^{-2x})\sqrt{1+e^{-2x}}} = \frac{-e^{-x}}{(1+e^{-2x})^{3/2}} $$
+        </div>
+
+        <h4 id="ex5-4-q5">5. \(\log (\cos e^x)\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \log (\cos e^x)\). Use the Chain Rule multiple times.</p>
+            <p>Let \(u = \cos e^x\). Then \(y = \log u\).</p>
+            $$ \frac{dy}{du} = \frac{1}{u} $$
+            <p>Now, to find \(\frac{du}{dx}\), let \(v = e^x\). Then \(u = \cos v\).</p>
+            $$ \frac{du}{dv} = -\sin v $$
+            $$ \frac{dv}{dx} = e^x $$
+            <p>So, \( \frac{du}{dx} = \frac{du}{dv} \cdot \frac{dv}{dx} = (-\sin v)(e^x) = -e^x \sin (e^x) \)</p>
+            <p>Finally,</p>
+            $$ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = \left(\frac{1}{u}\right) (-e^x \sin (e^x)) $$
+            Substituting \(u = \cos e^x\):
+            $$ \frac{dy}{dx} = \frac{-e^x \sin (e^x)}{\cos (e^x)} = -e^x \tan (e^x) $$
+        </div>
+
+        <h4 id="ex5-4-q6">6. \(e^x + e^{x^2} + \dots + e^{x^5}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = e^x + e^{x^2} + e^{x^3} + e^{x^4} + e^{x^5}\).</p>
+            <p>Differentiate each term separately using the Chain Rule (or the pattern from Q3):</p>
+            $$ \frac{d}{dx}(e^x) = e^x $$
+            $$ \frac{d}{dx}(e^{x^2}) = e^{x^2} \cdot \frac{d}{dx}(x^2) = 2x e^{x^2} $$
+            $$ \frac{d}{dx}(e^{x^3}) = e^{x^3} \cdot \frac{d}{dx}(x^3) = 3x^2 e^{x^3} $$
+            $$ \frac{d}{dx}(e^{x^4}) = e^{x^4} \cdot \frac{d}{dx}(x^4) = 4x^3 e^{x^4} $$
+            $$ \frac{d}{dx}(e^{x^5}) = e^{x^5} \cdot \frac{d}{dx}(x^5) = 5x^4 e^{x^5} $$
+            <p>Summing these derivatives:</p>
+            $$ \frac{dy}{dx} = e^x + 2x e^{x^2} + 3x^2 e^{x^3} + 4x^3 e^{x^4} + 5x^4 e^{x^5} $$
+        </div>
+
+        <h4 id="ex5-4-q7">7. \(\sqrt{e^{\sqrt{x}}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \sqrt{e^{\sqrt{x}}} = (e^{\sqrt{x}})^{1/2}\). Use the Chain Rule multiple times.</p>
+            <p>Let \(u = e^{\sqrt{x}}\). Then \(y = u^{1/2}\).</p>
+            $$ \frac{dy}{du} = \frac{1}{2}u^{-1/2} = \frac{1}{2\sqrt{u}} $$
+            <p>Now, to find \(\frac{du}{dx}\), let \(v = \sqrt{x}\). Then \(u = e^v\).</p>
+            $$ \frac{du}{dv} = e^v $$
+            $$ \frac{dv}{dx} = \frac{1}{2\sqrt{x}} $$
+            <p>So, \( \frac{du}{dx} = \frac{du}{dv} \cdot \frac{dv}{dx} = (e^v)\left(\frac{1}{2\sqrt{x}}\right) = \frac{e^{\sqrt{x}}}{2\sqrt{x}} \)</p>
+            <p>Finally,</p>
+            $$ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} = \left(\frac{1}{2\sqrt{u}}\right) \left(\frac{e^{\sqrt{x}}}{2\sqrt{x}}\right) $$
+            Substituting \(u = e^{\sqrt{x}}\):
+            $$ \frac{dy}{dx} = \frac{1}{2\sqrt{e^{\sqrt{x}}}} \cdot \frac{e^{\sqrt{x}}}{2\sqrt{x}} = \frac{e^{\sqrt{x}}}{4\sqrt{x}\sqrt{e^{\sqrt{x}}}} = \frac{\sqrt{e^{\sqrt{x}}}}{4\sqrt{x}} $$
+        </div>
+
+        <h4 id="ex5-4-q8">8. \(\log (\log x)\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \log (\log x)\). Use the Chain Rule.</p>
+            <p>Let \(u = \log x\). Then \(y = \log u\).</p>
+            $$ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} $$
+            $$ \frac{dy}{du} = \frac{1}{u} $$
+            $$ \frac{du}{dx} = \frac{1}{x} $$
+            $$ \frac{dy}{dx} = \left(\frac{1}{u}\right)\left(\frac{1}{x}\right) = \frac{1}{\log x} \cdot \frac{1}{x} = \frac{1}{x \log x} $$
+        </div>
+
+        <h4 id="ex5-4-q9">9. \(\cos (\log x + e^x)\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \cos (\log x + e^x)\). Use the Chain Rule.</p>
+            <p>Let \(u = \log x + e^x\). Then \(y = \cos u\).</p>
+            $$ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} $$
+            $$ \frac{dy}{du} = -\sin u $$
+            $$ \frac{du}{dx} = \frac{d}{dx}(\log x + e^x) = \frac{1}{x} + e^x $$
+            $$ \frac{dy}{dx} = (-\sin u)\left(\frac{1}{x} + e^x\right) = -\left(\frac{1}{x} + e^x\right)\sin (\log x + e^x) $$
+        </div>
+
+        <h4 id="ex5-4-q10">10. Prove that the greatest integer function defined by \(f(x) = [x], 0 < x < 3\) is not differentiable at \(x = 1\) and \(x = 2\). (This is a repeat of Q10 from Ex 5.2. Assuming it's meant to be skipped, or it's just a reminder.)</h4>
+        <p>This question is identical to Exercise 5.2, Q10. The solution can be found <a href="#ex5-2-q10">here</a>.</p>
+        <hr>
+
+        <h3 id="exercise-5-5">Exercise 5.5</h3>
+        <p>Differentiate the functions given in Exercises 1 to 11 w.r.t. \(x\).</p>
+
+        <h4 id="ex5-5-q1">1. \(\cos x \cdot \cos 2x \cdot \cos 3x\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \cos x \cdot \cos 2x \cdot \cos 3x\).</p>
+            <p>We can use logarithmic differentiation for products of functions. Take \(\log\) on both sides:</p>
+            $$ \log y = \log (\cos x) + \log (\cos 2x) + \log (\cos 3x) $$
+            <p>Differentiate both sides with respect to \(x\):</p>
+            $$ \frac{1}{y}\frac{dy}{dx} = \frac{d}{dx}(\log (\cos x)) + \frac{d}{dx}(\log (\cos 2x)) + \frac{d}{dx}(\log (\cos 3x)) $$
+            $$ \frac{1}{y}\frac{dy}{dx} = \frac{1}{\cos x}(-\sin x) + \frac{1}{\cos 2x}(-2\sin 2x) + \frac{1}{\cos 3x}(-3\sin 3x) $$
+            $$ \frac{1}{y}\frac{dy}{dx} = -\tan x - 2\tan 2x - 3\tan 3x $$
+            $$ \frac{dy}{dx} = y (-\tan x - 2\tan 2x - 3\tan 3x) $$
+            $$ \frac{dy}{dx} = -\cos x \cos 2x \cos 3x (\tan x + 2\tan 2x + 3\tan 3x) $$
+        </div>
+
+        <h4 id="ex5-5-q2">2. \(\sqrt{\frac{(x-1)(x-2)}{(x-3)(x-4)(x-5)}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \sqrt{\frac{(x-1)(x-2)}{(x-3)(x-4)(x-5)}} = \left(\frac{(x-1)(x-2)}{(x-3)(x-4)(x-5)}\right)^{1/2}\).</p>
+            <p>Take \(\log\) on both sides:</p>
+            $$ \log y = \frac{1}{2} \log \left(\frac{(x-1)(x-2)}{(x-3)(x-4)(x-5)}\right) $$
+            $$ \log y = \frac{1}{2} [\log(x-1) + \log(x-2) - \log(x-3) - \log(x-4) - \log(x-5)] $$
+            <p>Differentiate both sides with respect to \(x\):</p>
+            $$ \frac{1}{y}\frac{dy}{dx} = \frac{1}{2} \left[\frac{1}{x-1} + \frac{1}{x-2} - \frac{1}{x-3} - \frac{1}{x-4} - \frac{1}{x-5}\right] $$
+            $$ \frac{dy}{dx} = \frac{1}{2} \sqrt{\frac{(x-1)(x-2)}{(x-3)(x-4)(x-5)}} \left[\frac{1}{x-1} + \frac{1}{x-2} - \frac{1}{x-3} - \frac{1}{x-4} - \frac{1}{x-5}\right] $$
+        </div>
+
+        <h4 id="ex5-5-q3">3. \((\log x)^{\cos x}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = (\log x)^{\cos x}\). This is of the form \(u^v\), so we use logarithmic differentiation.</p>
+            <p>Take \(\log\) on both sides:</p>
+            $$ \log y = \log ((\log x)^{\cos x}) $$
+            $$ \log y = \cos x \cdot \log (\log x) $$
+            <p>Differentiate both sides with respect to \(x\). Use the product rule on the right side.</p>
+            $$ \frac{1}{y}\frac{dy}{dx} = \frac{d}{dx}(\cos x) \cdot \log (\log x) + \cos x \cdot \frac{d}{dx}(\log (\log x)) $$
+            $$ \frac{1}{y}\frac{dy}{dx} = (-\sin x) \log (\log x) + \cos x \cdot \frac{1}{\log x} \cdot \frac{1}{x} $$
+            $$ \frac{1}{y}\frac{dy}{dx} = -\sin x \log (\log x) + \frac{\cos x}{x \log x} $$
+            $$ \frac{dy}{dx} = (\log x)^{\cos x} \left[ -\sin x \log (\log x) + \frac{\cos x}{x \log x} \right] $$
+        </div>
+
+        <h4 id="ex5-5-q4">4. \(x^x - 2^{\sin x}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = x^x - 2^{\sin x}\).
+            We differentiate each term separately. Let \(u = x^x\) and \(v = 2^{\sin x}\). Then \(y = u-v\).</p>
+            $$ \frac{dy}{dx} = \frac{du}{dx} - \frac{dv}{dx} $$
+
+            <p><strong>For \(u = x^x\):</strong> (Logarithmic differentiation)</p>
+            $$ \log u = \log (x^x) = x \log x $$
+            $$ \frac{1}{u}\frac{du}{dx} = 1 \cdot \log x + x \cdot \frac{1}{x} = \log x + 1 $$
+            $$ \frac{du}{dx} = u(\log x + 1) = x^x (1 + \log x) $$
+
+            <p><strong>For \(v = 2^{\sin x}\):</strong> (Chain Rule with \(a^u\), where \( \frac{d}{dx}(a^u) = a^u \log a \frac{du}{dx} \))</p>
+            $$ \frac{dv}{dx} = 2^{\sin x} \cdot \log 2 \cdot \frac{d}{dx}(\sin x) = 2^{\sin x} \log 2 \cdot \cos x $$
+
+            <p><strong>Combine the derivatives:</strong></p>
+            $$ \frac{dy}{dx} = x^x (1 + \log x) - 2^{\sin x} \cos x \log 2 $$
+        </div>
+
+        <h4 id="ex5-5-q5">5. \((x+3)^2 \cdot (x+4)^3 \cdot (x+5)^4\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = (x+3)^2 (x+4)^3 (x+5)^4\). Use logarithmic differentiation.</p>
+            <p>Take \(\log\) on both sides:</p>
+            $$ \log y = \log ((x+3)^2 (x+4)^3 (x+5)^4) $$
+            $$ \log y = 2\log(x+3) + 3\log(x+4) + 4\log(x+5) $$
+            <p>Differentiate both sides with respect to \(x\):</p>
+            $$ \frac{1}{y}\frac{dy}{dx} = 2\frac{d}{dx}(\log(x+3)) + 3\frac{d}{dx}(\log(x+4)) + 4\frac{d}{dx}(\log(x+5)) $$
+            $$ \frac{1}{y}\frac{dy}{dx} = \frac{2}{x+3} + \frac{3}{x+4} + \frac{4}{x+5} $$
+            $$ \frac{dy}{dx} = (x+3)^2 (x+4)^3 (x+5)^4 \left[ \frac{2}{x+3} + \frac{3}{x+4} + \frac{4}{x+5} \right] $$
+            <p>This expression can be expanded, but usually, this factored form is preferred.</p>
+        </div>
+
+        <h4 id="ex5-5-q6">6. \(\left(x+\frac{1}{x}\right)^x + x^{\left(1+\frac{1}{x}\right)}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \left(x+\frac{1}{x}\right)^x + x^{\left(1+\frac{1}{x}\right)}\).
+            This is a sum of two functions of the form \(u^v\). Let \(u_1 = \left(x+\frac{1}{x}\right)^x\) and \(u_2 = x^{\left(1+\frac{1}{x}\right)}\).
+            Then \(y = u_1 + u_2\), so \( \frac{dy}{dx} = \frac{du_1}{dx} + \frac{du_2}{dx} \).</p>
+
+            <p><strong>For \(u_1 = \left(x+\frac{1}{x}\right)^x\):</strong></p>
+            $$ \log u_1 = x \log \left(x+\frac{1}{x}\right) = x \log \left(\frac{x^2+1}{x}\right) = x[\log(x^2+1) - \log x] $$
+            <p>Differentiate w.r.t. \(x\):</p>
+            $$ \frac{1}{u_1}\frac{du_1}{dx} = 1 \cdot [\log(x^2+1) - \log x] + x \left[\frac{1}{x^2+1}(2x) - \frac{1}{x}\right] $$
+            $$ \frac{1}{u_1}\frac{du_1}{dx} = \log\left(\frac{x^2+1}{x}\right) + \frac{2x^2}{x^2+1} - 1 $$
+            $$ \frac{du_1}{dx} = \left(x+\frac{1}{x}\right)^x \left[ \log\left(x+\frac{1}{x}\right) + \frac{2x^2 - (x^2+1)}{x^2+1} \right] $$
+            $$ \frac{du_1}{dx} = \left(x+\frac{1}{x}\right)^x \left[ \log\left(x+\frac{1}{x}\right) + \frac{x^2-1}{x^2+1} \right] $$
+
+            <p><strong>For \(u_2 = x^{\left(1+\frac{1}{x}\right)}\):</strong></p>
+            $$ \log u_2 = \left(1+\frac{1}{x}\right) \log x $$
+            <p>Differentiate w.r.t. \(x\):</p>
+            $$ \frac{1}{u_2}\frac{du_2}{dx} = \frac{d}{dx}\left(1+\frac{1}{x}\right) \log x + \left(1+\frac{1}{x}\right) \frac{d}{dx}(\log x) $$
+            $$ \frac{1}{u_2}\frac{du_2}{dx} = \left(-\frac{1}{x^2}\right) \log x + \left(1+\frac{1}{x}\right) \frac{1}{x} $$
+            $$ \frac{1}{u_2}\frac{du_2}{dx} = -\frac{\log x}{x^2} + \frac{1}{x} + \frac{1}{x^2} $$
+            $$ \frac{du_2}{dx} = x^{\left(1+\frac{1}{x}\right)} \left[ \frac{x+1-\log x}{x^2} \right] $$
+
+            <p><strong>Combine the derivatives:</strong></p>
+            $$ \frac{dy}{dx} = \left(x+\frac{1}{x}\right)^x \left[ \log\left(x+\frac{1}{x}\right) + \frac{x^2-1}{x^2+1} \right] + x^{\left(1+\frac{1}{x}\right)} \left[ \frac{x+1-\log x}{x^2} \right] $$
+        </div>
+
+        <h4 id="ex5-5-q7">7. \((\log x)^x + x^{\log x}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = (\log x)^x + x^{\log x}\). Let \(u = (\log x)^x\) and \(v = x^{\log x}\).
+            Then \(y = u+v\), so \( \frac{dy}{dx} = \frac{du}{dx} + \frac{dv}{dx} \).</p>
+
+            <p><strong>For \(u = (\log x)^x\):</strong></p>
+            $$ \log u = x \log (\log x) $$
+            $$ \frac{1}{u}\frac{du}{dx} = 1 \cdot \log (\log x) + x \cdot \frac{1}{\log x} \cdot \frac{1}{x} $$
+            $$ \frac{1}{u}\frac{du}{dx} = \log (\log x) + \frac{1}{\log x} $$
+            $$ \frac{du}{dx} = (\log x)^x \left[ \log (\log x) + \frac{1}{\log x} \right] $$
+
+            <p><strong>For \(v = x^{\log x}\):</strong></p>
+            $$ \log v = \log x \cdot \log x = (\log x)^2 $$
+            $$ \frac{1}{v}\frac{dv}{dx} = 2(\log x) \cdot \frac{1}{x} $$
+            $$ \frac{dv}{dx} = v \cdot \frac{2\log x}{x} = x^{\log x} \frac{2\log x}{x} $$
+
+            <p><strong>Combine the derivatives:</strong></p>
+            $$ \frac{dy}{dx} = (\log x)^x \left[ \log (\log x) + \frac{1}{\log x} \right] + x^{\log x} \frac{2\log x}{x} $$
+        </div>
+
+        <h4 id="ex5-5-q8">8. \((\sin x)^x + \sin^{-1} \sqrt{x}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = (\sin x)^x + \sin^{-1} \sqrt{x}\). Let \(u = (\sin x)^x\) and \(v = \sin^{-1} \sqrt{x}\).
+            Then \(y = u+v\), so \( \frac{dy}{dx} = \frac{du}{dx} + \frac{dv}{dx} \).</p>
+
+            <p><strong>For \(u = (\sin x)^x\):</strong></p>
+            $$ \log u = x \log (\sin x) $$
+            $$ \frac{1}{u}\frac{du}{dx} = 1 \cdot \log (\sin x) + x \cdot \frac{1}{\sin x} \cdot \cos x $$
+            $$ \frac{1}{u}\frac{du}{dx} = \log (\sin x) + x \cot x $$
+            $$ \frac{du}{dx} = (\sin x)^x (\log (\sin x) + x \cot x) $$
+
+            <p><strong>For \(v = \sin^{-1} \sqrt{x}\):</strong></p>
+            $$ \frac{dv}{dx} = \frac{1}{\sqrt{1-(\sqrt{x})^2}} \cdot \frac{d}{dx}(\sqrt{x}) $$
+            $$ \frac{dv}{dx} = \frac{1}{\sqrt{1-x}} \cdot \frac{1}{2\sqrt{x}} = \frac{1}{2\sqrt{x(1-x)}} $$
+
+            <p><strong>Combine the derivatives:</strong></p>
+            $$ \frac{dy}{dx} = (\sin x)^x (\log (\sin x) + x \cot x) + \frac{1}{2\sqrt{x(1-x)}} $$
+        </div>
+
+        <h4 id="ex5-5-q9">9. \(x^{\sin x} + (\sin x)^{\cos x}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = x^{\sin x} + (\sin x)^{\cos x}\). Let \(u = x^{\sin x}\) and \(v = (\sin x)^{\cos x}\).
+            Then \(y = u+v\), so \( \frac{dy}{dx} = \frac{du}{dx} + \frac{dv}{dx} \).</p>
+
+            <p><strong>For \(u = x^{\sin x}\):</strong></p>
+            $$ \log u = \sin x \log x $$
+            $$ \frac{1}{u}\frac{du}{dx} = \cos x \cdot \log x + \sin x \cdot \frac{1}{x} $$
+            $$ \frac{du}{dx} = x^{\sin x} \left( \cos x \log x + \frac{\sin x}{x} \right) $$
+
+            <p><strong>For \(v = (\sin x)^{\cos x}\):</strong></p>
+            $$ \log v = \cos x \log (\sin x) $$
+            $$ \frac{1}{v}\frac{dv}{dx} = (-\sin x) \log (\sin x) + \cos x \cdot \frac{1}{\sin x} \cdot \cos x $$
+            $$ \frac{1}{v}\frac{dv}{dx} = -\sin x \log (\sin x) + \frac{\cos^2 x}{\sin x} $$
+            $$ \frac{dv}{dx} = (\sin x)^{\cos x} \left( -\sin x \log (\sin x) + \frac{\cos^2 x}{\sin x} \right) $$
+
+            <p><strong>Combine the derivatives:</strong></p>
+            $$ \frac{dy}{dx} = x^{\sin x} \left( \cos x \log x + \frac{\sin x}{x} \right) + (\sin x)^{\cos x} \left( -\sin x \log (\sin x) + \frac{\cos^2 x}{\sin x} \right) $$
+        </div>
+
+        <h4 id="ex5-5-q10">10. \(x^{\frac{x}{1}} + x^x + x^{\sin x}\). The problem in the PDF shows \(x^{\frac{x^2+1}{x^2-1}}\). The image has \(x^{x} + \frac{x^2+1}{x^2-1}\). There's a typo in the main prompt, using the previous MathJax for Q10 of Ex 5.4. Let's use the actual MathJax formula from Q10 in the PDF, which is \(y = x^x + \frac{x^2+1}{x^2-1}\). If it's \(x^{(x^2+1)/(x^2-1)}\), it's another form. Let's assume it is \(x^x + \left(\frac{x^2+1}{x^2-1}\right)\).</p>
+        <p>The PDF has \(y = x^{x \cos x} + \frac{x^2+1}{x^2-1}\). Let's solve that.</p>
+        <div class="solution-box">
+            <p>Let \(y = x^{x \cos x} + \frac{x^2+1}{x^2-1}\). Let \(u = x^{x \cos x}\) and \(v = \frac{x^2+1}{x^2-1}\).</p>
+            $$ \frac{dy}{dx} = \frac{du}{dx} + \frac{dv}{dx} $$
+
+            <p><strong>For \(u = x^{x \cos x}\):</strong> (Logarithmic differentiation)</p>
+            $$ \log u = x \cos x \log x $$
+            $$ \frac{1}{u}\frac{du}{dx} = \frac{d}{dx}(x \cos x) \log x + x \cos x \frac{d}{dx}(\log x) $$
+            $$ \frac{d}{dx}(x \cos x) = 1 \cdot \cos x + x (-\sin x) = \cos x - x \sin x $$
+            $$ \frac{1}{u}\frac{du}{dx} = (\cos x - x \sin x) \log x + x \cos x \cdot \frac{1}{x} $$
+            $$ \frac{1}{u}\frac{du}{dx} = (\cos x - x \sin x) \log x + \cos x $$
+            $$ \frac{du}{dx} = x^{x \cos x} [(\cos x - x \sin x) \log x + \cos x] $$
+
+            <p><strong>For \(v = \frac{x^2+1}{x^2-1}\):</strong> (Quotient Rule)</p>
+            $$ \frac{dv}{dx} = \frac{\frac{d}{dx}(x^2+1)(x^2-1) - (x^2+1)\frac{d}{dx}(x^2-1)}{(x^2-1)^2} $$
+            $$ \frac{dv}{dx} = \frac{2x(x^2-1) - (x^2+1)(2x)}{(x^2-1)^2} $$
+            $$ \frac{dv}{dx} = \frac{2x^3 - 2x - (2x^3 + 2x)}{(x^2-1)^2} = \frac{2x^3 - 2x - 2x^3 - 2x}{(x^2-1)^2} $$
+            $$ \frac{dv}{dx} = \frac{-4x}{(x^2-1)^2} $$
+
+            <p><strong>Combine the derivatives:</strong></p>
+            $$ \frac{dy}{dx} = x^{x \cos x} [(\cos x - x \sin x) \log x + \cos x] - \frac{4x}{(x^2-1)^2} $$
+        </div>
+
+        <h4 id="ex5-5-q11">11. \((x \cos x)^x + (x \sin x)^{\frac{1}{x}}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = (x \cos x)^x + (x \sin x)^{\frac{1}{x}}\). Let \(u = (x \cos x)^x\) and \(v = (x \sin x)^{\frac{1}{x}}\).
+            Then \(y = u+v\), so \( \frac{dy}{dx} = \frac{du}{dx} + \frac{dv}{dx} \).</p>
+
+            <p><strong>For \(u = (x \cos x)^x\):</strong></p>
+            $$ \log u = x \log (x \cos x) = x (\log x + \log (\cos x)) $$
+            $$ \frac{1}{u}\frac{du}{dx} = 1 \cdot (\log x + \log (\cos x)) + x \left(\frac{1}{x} + \frac{1}{\cos x}(-\sin x)\right) $$
+            $$ \frac{1}{u}\frac{du}{dx} = \log (x \cos x) + 1 - x \tan x $$
+            $$ \frac{du}{dx} = (x \cos x)^x (\log (x \cos x) + 1 - x \tan x) $$
+
+            <p><strong>For \(v = (x \sin x)^{\frac{1}{x}}\):</strong></p>
+            $$ \log v = \frac{1}{x} \log (x \sin x) = \frac{1}{x} (\log x + \log (\sin x)) $$
+            $$ \frac{1}{v}\frac{dv}{dx} = \frac{d}{dx}\left(\frac{1}{x}\right) (\log x + \log (\sin x)) + \frac{1}{x} \frac{d}{dx}(\log x + \log (\sin x)) $$
+            $$ \frac{1}{v}\frac{dv}{dx} = \left(-\frac{1}{x^2}\right) (\log x + \log (\sin x)) + \frac{1}{x} \left(\frac{1}{x} + \frac{1}{\sin x}\cos x\right) $$
+            $$ \frac{1}{v}\frac{dv}{dx} = -\frac{\log(x \sin x)}{x^2} + \frac{1}{x^2} + \frac{\cot x}{x} $$
+            $$ \frac{du}{dx} = (x \sin x)^{\frac{1}{x}} \left( \frac{1 - \log(x \sin x) + x \cot x}{x^2} \right) $$
+
+            <p><strong>Combine the derivatives:</strong></p>
+            $$ \frac{dy}{dx} = (x \cos x)^x (\log (x \cos x) + 1 - x \tan x) + (x \sin x)^{\frac{1}{x}} \left( \frac{1 - \log(x \sin x) + x \cot x}{x^2} \right) $$
+        </div>
+
+        <h4 id="ex5-5-q12">12. Find \(\frac{dy}{dx}\) of the functions given in Exercises 12 to 15. \(x^y + y^x = 1\)</h4>
+        <div class="solution-box">
+            <p>Let \(u = x^y\) and \(v = y^x\). Then \(u+v=1\).
+            Differentiate with respect to \(x\): \( \frac{du}{dx} + \frac{dv}{dx} = 0 \).</p>
+
+            <p><strong>For \(u = x^y\):</strong></p>
+            $$ \log u = y \log x $$
+            $$ \frac{1}{u}\frac{du}{dx} = \frac{dy}{dx} \log x + y \cdot \frac{1}{x} $$
+            $$ \frac{du}{dx} = x^y \left( \log x \frac{dy}{dx} + \frac{y}{x} \right) $$
+
+            <p><strong>For \(v = y^x\):</strong></p>
+            $$ \log v = x \log y $$
+            $$ \frac{1}{v}\frac{dv}{dx} = 1 \cdot \log y + x \cdot \frac{1}{y} \frac{dy}{dx} $$
+            $$ \frac{dv}{dx} = y^x \left( \log y + \frac{x}{y} \frac{dy}{dx} \right) $$
+
+            <p><strong>Substitute back into \( \frac{du}{dx} + \frac{dv}{dx} = 0 \):</strong></p>
+            $$ x^y \left( \log x \frac{dy}{dx} + \frac{y}{x} \right) + y^x \left( \log y + \frac{x}{y} \frac{dy}{dx} \right) = 0 $$
+            $$ x^y \log x \frac{dy}{dx} + \frac{y x^y}{x} + y^x \log y + \frac{x y^x}{y} \frac{dy}{dx} = 0 $$
+            $$ \left( x^y \log x + \frac{x y^x}{y} \right) \frac{dy}{dx} = - \left( \frac{y x^y}{x} + y^x \log y \right) $$
+            $$ \frac{dy}{dx} = - \frac{\frac{y x^y}{x} + y^x \log y}{x^y \log x + \frac{x y^x}{y}} $$
+            $$ \frac{dy}{dx} = - \frac{y x^y + x y^x \log y}{x y^y \log x + x^2 y^{x-1}} $$
+        </div>
+
+        <h4 id="ex5-5-q13">13. \(y^x = x^y\)</h4>
+        <div class="solution-box">
+            <p>Take \(\log\) on both sides:</p>
+            $$ \log (y^x) = \log (x^y) $$
+            $$ x \log y = y \log x $$
+            <p>Differentiate implicitly with respect to \(x\):</p>
+            $$ 1 \cdot \log y + x \cdot \frac{1}{y} \frac{dy}{dx} = \frac{dy}{dx} \log x + y \cdot \frac{1}{x} $$
+            <p>Group terms with \(\frac{dy}{dx}\):</p>
+            $$ \frac{x}{y} \frac{dy}{dx} - \log x \frac{dy}{dx} = \frac{y}{x} - \log y $$
+            $$ \left( \frac{x}{y} - \log x \right) \frac{dy}{dx} = \frac{y - x \log y}{x} $$
+            $$ \left( \frac{x - y \log x}{y} \right) \frac{dy}{dx} = \frac{y - x \log y}{x} $$
+            $$ \frac{dy}{dx} = \frac{y(y - x \log y)}{x(x - y \log x)} $$
+        </div>
+
+        <h4 id="ex5-5-q14">14. \((\cos x)^y = (\cos y)^x\)</h4>
+        <div class="solution-box">
+            <p>Take \(\log\) on both sides:</p>
+            $$ \log ((\cos x)^y) = \log ((\cos y)^x) $$
+            $$ y \log (\cos x) = x \log (\cos y) $$
+            <p>Differentiate implicitly with respect to \(x\). Use the product rule on both sides.</p>
+            $$ \frac{dy}{dx} \log (\cos x) + y \cdot \frac{1}{\cos x} (-\sin x) = 1 \cdot \log (\cos y) + x \cdot \frac{1}{\cos y} (-\sin y) \frac{dy}{dx} $$
+            $$ \frac{dy}{dx} \log (\cos x) - y \tan x = \log (\cos y) - x \tan y \frac{dy}{dx} $$
+            <p>Group terms with \(\frac{dy}{dx}\):</p>
+            $$ \frac{dy}{dx} \log (\cos x) + x \tan y \frac{dy}{dx} = \log (\cos y) + y \tan x $$
+            $$ (\log (\cos x) + x \tan y) \frac{dy}{dx} = \log (\cos y) + y \tan x $$
+            $$ \frac{dy}{dx} = \frac{\log (\cos y) + y \tan x}{\log (\cos x) + x \tan y} $$
+        </div>
+
+        <h4 id="ex5-5-q15">15. Find the derivative of the function given by \(f(x) = (1+x)(1+x^2)(1+x^4)(1+x^8)\) and hence find \(f'(1)\).</h4>
+        <div class="solution-box">
+            <p>Let \(y = (1+x)(1+x^2)(1+x^4)(1+x^8)\). Use logarithmic differentiation.</p>
+            $$ \log y = \log(1+x) + \log(1+x^2) + \log(1+x^4) + \log(1+x^8) $$
+            <p>Differentiate both sides with respect to \(x\):</p>
+            $$ \frac{1}{y}\frac{dy}{dx} = \frac{1}{1+x} + \frac{2x}{1+x^2} + \frac{4x^3}{1+x^4} + \frac{8x^7}{1+x^8} $$
+            $$ \frac{dy}{dx} = (1+x)(1+x^2)(1+x^4)(1+x^8) \left[ \frac{1}{1+x} + \frac{2x}{1+x^2} + \frac{4x^3}{1+x^4} + \frac{8x^7}{1+x^8} \right] $$
+            <p>Now, find \(f'(1)\). Substitute \(x=1\) into the expression for \(\frac{dy}{dx}\):</p>
+            $$ f'(1) = (1+1)(1+1^2)(1+1^4)(1+1^8) \left[ \frac{1}{1+1} + \frac{2(1)}{1+1^2} + \frac{4(1)^3}{1+1^4} + \frac{8(1)^7}{1+1^8} \right] $$
+            $$ f'(1) = (2)(2)(2)(2) \left[ \frac{1}{2} + \frac{2}{2} + \frac{4}{2} + \frac{8}{2} \right] $$
+            $$ f'(1) = 16 \left[ \frac{1}{2} + 1 + 2 + 4 \right] $$
+            $$ f'(1) = 16 \left[ \frac{1}{2} + 7 \right] = 16 \left[ \frac{1+14}{2} \right] = 16 \left[ \frac{15}{2} \right] $$
+            $$ f'(1) = 8 \times 15 = 120 $$
+            <p><strong>Alternative approach (algebraic simplification first):</strong></p>
+            <p>Notice that the given function is a part of the expansion of \((1-x^{16})\).</p>
+            $$ (1-x)(1+x) = (1-x^2) $$
+            $$ (1-x^2)(1+x^2) = (1-x^4) $$
+            $$ (1-x^4)(1+x^4) = (1-x^8) $$
+            $$ (1-x^8)(1+x^8) = (1-x^{16}) $$
+            <p>So, \(y = \frac{(1-x^{16})}{1-x}\) for \(x \neq 1\).</p>
+            <p>Now differentiate this form using the quotient rule:</p>
+            $$ \frac{dy}{dx} = \frac{-16x^{15}(1-x) - (1-x^{16})(-1)}{(1-x)^2} $$
+            $$ \frac{dy}{dx} = \frac{-16x^{15} + 16x^{16} + 1 - x^{16}}{(1-x)^2} = \frac{1 - 16x^{15} + 15x^{16}}{(1-x)^2} $$
+            <p>This expression is undefined at \(x=1\). However, we can use L'Hopital's rule or simply expand the original product and then differentiate.
+            Since \(f(x) = (1+x)(1+x^2)(1+x^4)(1+x^8)\),
+            \(f(1) = (1+1)(1+1)(1+1)(1+1) = 2 \times 2 \times 2 \times 2 = 16\).</p>
+            <p>Let's use the product rule in a smart way. For \(y = f_1(x) f_2(x) f_3(x) f_4(x)\),
+            \(y' = f_1' f_2 f_3 f_4 + f_1 f_2' f_3 f_4 + f_1 f_2 f_3' f_4 + f_1 f_2 f_3 f_4'\).</p>
+            <p>At \(x=1\):</p>
+            \(f_1(1)=2, f_2(1)=2, f_3(1)=2, f_4(1)=2\).</p>
+            \(f_1'(x)=1, f_2'(x)=2x, f_3'(x)=4x^3, f_4'(x)=8x^7\).</p>
+            \(f_1'(1)=1, f_2'(1)=2, f_3'(1)=4, f_4'(1)=8\).</p>
+            $$ f'(1) = (1)(2)(2)(2) + (2)(2)(2)(2) + (2)(2)(4)(2) + (2)(2)(2)(8) $$
+            This is incorrect application of formula. It should be:
+            $$ f'(1) = f_1'(1)f_2(1)f_3(1)f_4(1) + f_1(1)f_2'(1)f_3(1)f_4(1) + f_1(1)f_2(1)f_3'(1)f_4(1) + f_1(1)f_2(1)f_3(1)f_4'(1) $$
+            $$ f'(1) = (1)(2)(2)(2) + (2)(2)(2)(2) + (2)(2)(4)(2) + (2)(2)(2)(8) $$
+            $$ f'(1) = 8 + 16 + 32 + 64 = 120 $$
+            <p>Both methods yield the same result, confirming \(f'(1) = 120\).</p>
+        </div>
+
+        <h4 id="ex5-5-q16">16. Differentiate \((x^2 - 5x + 8)(x^3 + 7x + 9)\) in three ways mentioned below:
+            (i) by using product rule
+            (ii) by expanding the product to obtain a single polynomial.
+            (iii) by logarithmic differentiation.
+            Do they all give the same answer?</h4>
+        <div class="solution-box">
+            <p>Let \(y = (x^2 - 5x + 8)(x^3 + 7x + 9)\).</p>
+
+            <p><strong>(i) By using product rule:</strong></p>
+            <p>Let \(u = x^2 - 5x + 8\) and \(v = x^3 + 7x + 9\).</p>
+            $$ u' = \frac{d}{dx}(x^2 - 5x + 8) = 2x - 5 $$
+            $$ v' = \frac{d}{dx}(x^3 + 7x + 9) = 3x^2 + 7 $$
+            $$ \frac{dy}{dx} = u'v + uv' $$
+            $$ \frac{dy}{dx} = (2x - 5)(x^3 + 7x + 9) + (x^2 - 5x + 8)(3x^2 + 7) $$
+            $$ \frac{dy}{dx} = (2x^4 + 14x^2 + 18x - 5x^3 - 35x - 45) + (3x^4 + 7x^2 - 15x^3 - 35x + 24x^2 + 56) $$
+            $$ \frac{dy}{dx} = (2x^4 - 5x^3 + 14x^2 - 17x - 45) + (3x^4 - 15x^3 + 31x^2 - 35x + 56) $$
+            $$ \frac{dy}{dx} = 5x^4 - 20x^3 + 45x^2 - 52x + 11 $$
+
+            <p><strong>(ii) By expanding the product to obtain a single polynomial:</strong></p>
+            $$ y = (x^2 - 5x + 8)(x^3 + 7x + 9) $$
+            $$ y = x^2(x^3 + 7x + 9) - 5x(x^3 + 7x + 9) + 8(x^3 + 7x + 9) $$
+            $$ y = (x^5 + 7x^3 + 9x^2) - (5x^4 + 35x^2 + 45x) + (8x^3 + 56x + 72) $$
+            $$ y = x^5 - 5x^4 + (7+8)x^3 + (9-35)x^2 + (-45+56)x + 72 $$
+            $$ y = x^5 - 5x^4 + 15x^3 - 26x^2 + 11x + 72 $$
+            <p>Now, differentiate this polynomial:</p>
+            $$ \frac{dy}{dx} = \frac{d}{dx}(x^5 - 5x^4 + 15x^3 - 26x^2 + 11x + 72) $$
+            $$ \frac{dy}{dx} = 5x^4 - 5(4x^3) + 15(3x^2) - 26(2x) + 11(1) + 0 $$
+            $$ \frac{dy}{dx} = 5x^4 - 20x^3 + 45x^2 - 52x + 11 $$
+
+            <p><strong>(iii) By logarithmic differentiation:</strong></p>
+            $$ \log y = \log ((x^2 - 5x + 8)(x^3 + 7x + 9)) $$
+            $$ \log y = \log(x^2 - 5x + 8) + \log(x^3 + 7x + 9) $$
+            <p>Differentiate both sides with respect to \(x\):</p>
+            $$ \frac{1}{y}\frac{dy}{dx} = \frac{2x-5}{x^2-5x+8} + \frac{3x^2+7}{x^3+7x+9} $$
+            $$ \frac{dy}{dx} = (x^2 - 5x + 8)(x^3 + 7x + 9) \left[ \frac{2x-5}{x^2-5x+8} + \frac{3x^2+7}{x^3+7x+9} \right] $$
+            $$ \frac{dy}{dx} = (x^2 - 5x + 8)(x^3 + 7x + 9) \frac{(2x-5)(x^3+7x+9) + (3x^2+7)(x^2-5x+8)}{(x^2-5x+8)(x^3+7x+9)} $$
+            $$ \frac{dy}{dx} = (2x-5)(x^3+7x+9) + (3x^2+7)(x^2-5x+8) $$
+            <p>This is the same expression obtained in part (i) before expansion. Expanding this will give the same polynomial as in parts (i) and (ii).</p>
+            $$ \frac{dy}{dx} = 5x^4 - 20x^3 + 45x^2 - 52x + 11 $$
+
+            <p><strong>Conclusion:</strong> Yes, all three methods give the same answer.</p>
+        </div>
+
+        <h4 id="ex5-5-q17">17. Differentiate \((x^2 - 5x + 8)(x^3 + 7x + 9)\) in three ways mentioned below: (This is a repeat of Q16)</h4>
+        <p>This question is identical to Exercise 5.5, Q16. The solution can be found <a href="#ex5-5-q16">here</a>.</p>
+
+        <h4 id="ex5-5-q18">18. If \(u, v\) and \(w\) are functions of \(x\), then show that \(\frac{d}{dx}(u \cdot v \cdot w) = \frac{du}{dx} \cdot v \cdot w + u \cdot \frac{dv}{dx} \cdot w + u \cdot v \cdot \frac{dw}{dx}\) in two ways - first by repeated application of product rule, second by logarithmic differentiation.</h4>
+        <div class="solution-box">
+            <p><strong>(i) By repeated application of product rule:</strong></p>
+            <p>Let \(y = u \cdot v \cdot w\).</p>
+            <p>Consider \((v \cdot w)\) as a single function, say \(Z = v \cdot w\).</p>
+            Then \(y = u \cdot Z\).</p>
+            <p>Using the product rule on \(y = u \cdot Z\):</p>
+            $$ \frac{d}{dx}(y) = \frac{du}{dx} Z + u \frac{dZ}{dx} $$
+            <p>Now, apply the product rule to \(Z = v \cdot w\):</p>
+            $$ \frac{dZ}{dx} = \frac{d}{dx}(v \cdot w) = \frac{dv}{dx} w + v \frac{dw}{dx} $$
+            <p>Substitute \(\frac{dZ}{dx}\) back into the expression for \(\frac{dy}{dx}\):</p>
+            $$ \frac{d}{dx}(u \cdot v \cdot w) = \frac{du}{dx} (v \cdot w) + u \left(\frac{dv}{dx} w + v \frac{dw}{dx}\right) $$
+            $$ \frac{d}{dx}(u \cdot v \cdot w) = \frac{du}{dx} v w + u \frac{dv}{dx} w + u v \frac{dw}{dx} $$
+            <p>This proves the formula by repeated application of the product rule.</p>
+
+            <p><strong>(ii) By logarithmic differentiation:</strong></p>
+            <p>Let \(y = u \cdot v \cdot w\).</p>
+            <p>Take the natural logarithm of both sides:</p>
+            $$ \log y = \log (u \cdot v \cdot w) $$
+            $$ \log y = \log u + \log v + \log w $$
+            <p>Now, differentiate implicitly with respect to \(x\):</p>
+            $$ \frac{1}{y} \frac{dy}{dx} = \frac{1}{u} \frac{du}{dx} + \frac{1}{v} \frac{dv}{dx} + \frac{1}{w} \frac{dw}{dx} $$
+            <p>Multiply both sides by \(y\):</p>
+            $$ \frac{dy}{dx} = y \left( \frac{1}{u} \frac{du}{dx} + \frac{1}{v} \frac{dv}{dx} + \frac{1}{w} \frac{dw}{dx} \right) $$
+            <p>Substitute \(y = u \cdot v \cdot w\):</p>
+            $$ \frac{dy}{dx} = (u \cdot v \cdot w) \left( \frac{1}{u} \frac{du}{dx} + \frac{1}{v} \frac{dv}{dx} + \frac{1}{w} \frac{dw}{dx} \right) $$
+            <p>Distribute \((u \cdot v \cdot w)\) to each term inside the parenthesis:</p>
+            $$ \frac{dy}{dx} = \frac{u v w}{u} \frac{du}{dx} + \frac{u v w}{v} \frac{dv}{dx} + \frac{u v w}{w} \frac{dw}{dx} $$
+            $$ \frac{dy}{dx} = v w \frac{du}{dx} + u w \frac{dv}{dx} + u v \frac{dw}{dx} $$
+            <p>Rearranging the terms:</p>
+            $$ \frac{d}{dx}(u \cdot v \cdot w) = \frac{du}{dx} v w + u \frac{dv}{dx} w + u v \frac{dw}{dx} $$
+            <p>This proves the formula using logarithmic differentiation.</p>
+        </div>
+        <hr>
+
+        <h3 id="exercise-5-6">Exercise 5.6</h3>
+        <p>If \(x\) and \(y\) are connected parametrically by the equations given in Exercises 1 to 10, without eliminating the parameter, Find \(\frac{dy}{dx}\).</p>
+        <p>General formula for parametric differentiation: If \(x=f(t)\) and \(y=g(t)\), then \(\frac{dy}{dx} = \frac{dy/dt}{dx/dt}\), provided \(\frac{dx}{dt} \neq 0\).</p>
+
+        <h4 id="ex5-6-q1">1. \(x = 2at^2, y = at^4\)</h4>
+        <div class="solution-box">
+            <p>Given: \(x = 2at^2\)</p>
+            $$ \frac{dx}{dt} = \frac{d}{dt}(2at^2) = 2a(2t) = 4at $$
+            <p>Given: \(y = at^4\)</p>
+            $$ \frac{dy}{dt} = \frac{d}{dt}(at^4) = a(4t^3) = 4at^3 $$
+            <p>Now, find \(\frac{dy}{dx}\):</p>
+            $$ \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{4at^3}{4at} = t^2 $$
+        </div>
+
+        <h4 id="ex5-6-q2">2. \(x = a \cos \theta, y = b \cos \theta\)</h4>
+        <div class="solution-box">
+            <p>Given: \(x = a \cos \theta\)</p>
+            $$ \frac{dx}{d\theta} = \frac{d}{d\theta}(a \cos \theta) = -a \sin \theta $$
+            <p>Given: \(y = b \cos \theta\)</p>
+            $$ \frac{dy}{d\theta} = \frac{d}{d\theta}(b \cos \theta) = -b \sin \theta $$
+            <p>Now, find \(\frac{dy}{dx}\):</p>
+            $$ \frac{dy}{dx} = \frac{dy/d\theta}{dx/d\theta} = \frac{-b \sin \theta}{-a \sin \theta} = \frac{b}{a} $$
+        </div>
+
+        <h4 id="ex5-6-q3">3. \(x = \sin t, y = \cos 2t\)</h4>
+        <div class="solution-box">
+            <p>Given: \(x = \sin t\)</p>
+            $$ \frac{dx}{dt} = \frac{d}{dt}(\sin t) = \cos t $$
+            <p>Given: \(y = \cos 2t\)</p>
+            $$ \frac{dy}{dt} = \frac{d}{dt}(\cos 2t) = -\sin(2t) \cdot 2 = -2\sin 2t $$
+            <p>Now, find \(\frac{dy}{dx}\):</p>
+            $$ \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{-2\sin 2t}{\cos t} $$
+            <p>Using the identity \(\sin 2t = 2 \sin t \cos t\):</p>
+            $$ \frac{dy}{dx} = \frac{-2(2 \sin t \cos t)}{\cos t} = -4 \sin t $$
+            <p>This is valid for \(\cos t \neq 0\).</p>
+        </div>
+
+        <h4 id="ex5-6-q4">4. \(x = 4t, y = \frac{4}{t}\)</h4>
+        <div class="solution-box">
+            <p>Given: \(x = 4t\)</p>
+            $$ \frac{dx}{dt} = \frac{d}{dt}(4t) = 4 $$
+            <p>Given: \(y = \frac{4}{t}\)</p>
+            $$ \frac{dy}{dt} = \frac{d}{dt}(4t^{-1}) = 4(-1)t^{-2} = -\frac{4}{t^2} $$
+            <p>Now, find \(\frac{dy}{dx}\):</p>
+            $$ \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{-4/t^2}{4} = -\frac{1}{t^2} $$
+        </div>
+
+        <h4 id="ex5-6-q5">5. \(x = \cos \theta - \cos 2\theta, y = \sin \theta - \sin 2\theta\)</h4>
+        <div class="solution-box">
+            <p>Given: \(x = \cos \theta - \cos 2\theta\)</p>
+            $$ \frac{dx}{d\theta} = \frac{d}{d\theta}(\cos \theta - \cos 2\theta) = -\sin \theta - (-\sin 2\theta \cdot 2) = -\sin \theta + 2\sin 2\theta $$
+            <p>Given: \(y = \sin \theta - \sin 2\theta\)</p>
+            $$ \frac{dy}{d\theta} = \frac{d}{d\theta}(\sin \theta - \sin 2\theta) = \cos \theta - (\cos 2\theta \cdot 2) = \cos \theta - 2\cos 2\theta $$
+            <p>Now, find \(\frac{dy}{dx}\):</p>
+            $$ \frac{dy}{dx} = \frac{dy/d\theta}{dx/d\theta} = \frac{\cos \theta - 2\cos 2\theta}{2\sin 2\theta - \sin \theta} $$
+        </div>
+
+        <h4 id="ex5-6-q6">6. \(x = a(\theta - \sin \theta), y = a(1 + \cos \theta)\)</h4>
+        <div class="solution-box">
+            <p>Given: \(x = a(\theta - \sin \theta)\)</p>
+            $$ \frac{dx}{d\theta} = a\frac{d}{d\theta}(\theta - \sin \theta) = a(1 - \cos \theta) $$
+            <p>Given: \(y = a(1 + \cos \theta)\)</p>
+            $$ \frac{dy}{d\theta} = a\frac{d}{d\theta}(1 + \cos \theta) = a(0 - \sin \theta) = -a \sin \theta $$
+            <p>Now, find \(\frac{dy}{dx}\):</p>
+            $$ \frac{dy}{dx} = \frac{dy/d\theta}{dx/d\theta} = \frac{-a \sin \theta}{a(1 - \cos \theta)} = \frac{-\sin \theta}{1 - \cos \theta} $$
+            <p>Using half-angle formulas: \(\sin \theta = 2 \sin(\frac{\theta}{2})\cos(\frac{\theta}{2})\) and \(1 - \cos \theta = 2 \sin^2(\frac{\theta}{2})\):</p>
+            $$ \frac{dy}{dx} = \frac{-2 \sin(\frac{\theta}{2})\cos(\frac{\theta}{2})}{2 \sin^2(\frac{\theta}{2})} = -\frac{\cos(\frac{\theta}{2})}{\sin(\frac{\theta}{2})} = -\cot\left(\frac{\theta}{2}\right) $$
+        </div>
+
+        <h4 id="ex5-6-q7">7. \(x = \frac{\sin^3 t}{\sqrt{\cos 2t}}, y = \frac{\cos^3 t}{\sqrt{\cos 2t}}\)</h4>
+        <div class="solution-box">
+            <p>Given: \(x = \frac{\sin^3 t}{\sqrt{\cos 2t}}\)</p>
+            $$ \frac{dx}{dt} = \frac{d}{dt}\left(\frac{\sin^3 t}{(\cos 2t)^{1/2}}\right) $$
+            <p>Using Quotient Rule \(\frac{u'v - uv'}{v^2}\):</p>
+            \(u = \sin^3 t \implies u' = 3\sin^2 t \cos t\)
+            \(v = (\cos 2t)^{1/2} \implies v' = \frac{1}{2}(\cos 2t)^{-1/2} (-2\sin 2t) = -\frac{\sin 2t}{\sqrt{\cos 2t}}\)</p>
+            $$ \frac{dx}{dt} = \frac{(3\sin^2 t \cos t)\sqrt{\cos 2t} - (\sin^3 t)(-\frac{\sin 2t}{\sqrt{\cos 2t}})}{\cos 2t} $$
+            $$ \frac{dx}{dt} = \frac{3\sin^2 t \cos t \cos 2t + \sin^3 t \sin 2t}{(\cos 2t)^{3/2}} $$
+            $$ \frac{dx}{dt} = \frac{\sin^2 t (3 \cos t \cos 2t + \sin t \sin 2t)}{(\cos 2t)^{3/2}} $$
+
+            <p>Given: \(y = \frac{\cos^3 t}{\sqrt{\cos 2t}}\)</p>
+            $$ \frac{dy}{dt} = \frac{d}{dt}\left(\frac{\cos^3 t}{(\cos 2t)^{1/2}}\right) $$
+            \(u = \cos^3 t \implies u' = 3\cos^2 t (-\sin t) = -3\cos^2 t \sin t\)
+            \(v = (\cos 2t)^{1/2} \implies v' = -\frac{\sin 2t}{\sqrt{\cos 2t}}\)</p>
+            $$ \frac{dy}{dt} = \frac{(-3\cos^2 t \sin t)\sqrt{\cos 2t} - (\cos^3 t)(-\frac{\sin 2t}{\sqrt{\cos 2t}})}{\cos 2t} $$
+            $$ \frac{dy}{dt} = \frac{-3\cos^2 t \sin t \cos 2t + \cos^3 t \sin 2t}{(\cos 2t)^{3/2}} $$
+            $$ \frac{dy}{dt} = \frac{\cos^2 t (-3 \sin t \cos 2t + \cos t \sin 2t)}{(\cos 2t)^{3/2}} $$
+            <p>Now, find \(\frac{dy}{dx}\):</p>
+            $$ \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{\frac{\cos^2 t (-3 \sin t \cos 2t + \cos t \sin 2t)}{(\cos 2t)^{3/2}}}{\frac{\sin^2 t (3 \cos t \cos 2t + \sin t \sin 2t)}{(\cos 2t)^{3/2}}} $$
+            $$ \frac{dy}{dx} = \frac{\cos^2 t (\cos t \sin 2t - 3 \sin t \cos 2t)}{\sin^2 t (3 \cos t \cos 2t + \sin t \sin 2t)} $$
+            <p>Using \(\sin 2t = 2 \sin t \cos t\):</p>
+            Numerator: \(\cos^2 t (\cos t (2 \sin t \cos t) - 3 \sin t (2\cos^2 t - 1))\)
+            \( = \cos^2 t (2 \sin t \cos^2 t - 6 \sin t \cos^2 t + 3 \sin t) \)
+            \( = \cos^2 t (-4 \sin t \cos^2 t + 3 \sin t) = \sin t \cos^2 t (3 - 4 \cos^2 t) \)
+            \( = \sin t \cos^2 t (3 - 4(1 - \sin^2 t)) = \sin t \cos^2 t (3 - 4 + 4 \sin^2 t) = \sin t \cos^2 t (4 \sin^2 t - 1) \)
+            This looks incorrect. Let's restart the trig simplification.</p>
+            Let's use \(\sin 2t = 2 \sin t \cos t\) and \(\cos 2t = 2 \cos^2 t - 1 = 1 - 2 \sin^2 t = \cos^2 t - \sin^2 t\).
+
+            Numerator: \(\cos^2 t (\cos t \sin 2t - 3 \sin t \cos 2t)\)
+            \( = \cos^2 t (\cos t (2 \sin t \cos t) - 3 \sin t \cos 2t) \)
+            \( = \cos^2 t (2 \sin t \cos^2 t - 3 \sin t \cos 2t) \)
+            \( = \sin t \cos^2 t (2 \cos^2 t - 3 \cos 2t) \)
+            \( = \sin t \cos^2 t (2 \cos^2 t - 3 (2\cos^2 t - 1)) \)
+            \( = \sin t \cos^2 t (2 \cos^2 t - 6\cos^2 t + 3) \)
+            \( = \sin t \cos^2 t (3 - 4\cos^2 t) \)
+
+            Denominator: \(\sin^2 t (3 \cos t \cos 2t + \sin t \sin 2t)\)
+            \( = \sin^2 t (3 \cos t \cos 2t + \sin t (2 \sin t \cos t)) \)
+            \( = \sin^2 t (3 \cos t \cos 2t + 2 \sin^2 t \cos t) \)
+            \( = \sin^2 t \cos t (3 \cos 2t + 2 \sin^2 t) \)
+            \( = \sin^2 t \cos t (3 (1 - 2\sin^2 t) + 2 \sin^2 t) \)
+            \( = \sin^2 t \cos t (3 - 6\sin^2 t + 2 \sin^2 t) \)
+            \( = \sin^2 t \cos t (3 - 4\sin^2 t) \)
+
+            $$ \frac{dy}{dx} = \frac{\sin t \cos^2 t (3 - 4\cos^2 t)}{\sin^2 t \cos t (3 - 4\sin^2 t)} $$
+            $$ \frac{dy}{dx} = \frac{\cos t}{\sin t} \frac{3 - 4\cos^2 t}{3 - 4\sin^2 t} = \cot t \frac{-(4\cos^2 t - 3)}{3 - 4\sin^2 t} $$
+            Using \( \cos 3t = 4\cos^3 t - 3\cos t = \cos t (4\cos^2 t - 3) \) and \( \sin 3t = 3\sin t - 4\sin^3 t = \sin t (3 - 4\sin^2 t) \)
+            So, \( \frac{4\cos^2 t - 3}{3 - 4\sin^2 t} = \frac{\cos 3t / \cos t}{\sin 3t / \sin t} = \frac{\cos 3t}{\cos t} \frac{\sin t}{\sin 3t} = \cot t \cot 3t \)
+            $$ \frac{dy}{dx} = \cot t \frac{-\cos 3t / \cos t}{\sin 3t / \sin t} = -\cot t \cdot \cot 3t \cdot \tan t = -\frac{\cot 3t}{\tan t} $$
+            Something is off here. Let's recheck the ratio:
+            $$ \frac{3 - 4\cos^2 t}{3 - 4\sin^2 t} = \frac{-(4\cos^2 t - 3)}{3 - 4\sin^2 t} = \frac{- \cos t (4\cos^2 t - 3) / \cos t}{\sin t (3 - 4\sin^2 t) / \sin t} = \frac{-\cos 3t/\cos t}{\sin 3t/\sin t} $$
+            $$ \frac{dy}{dx} = \frac{\cos t}{\sin t} \cdot \frac{-\cos 3t / \cos t}{\sin 3t / \sin t} = \frac{-\cos 3t}{\sin 3t} = -\cot 3t $$
+            <p>This is a much cleaner result. So, \(\frac{dy}{dx} = -\cot 3t\).</p>
+        </div>
+
+        <h4 id="ex5-6-q8">8. \(x = a\left(\cos t + \log \tan \frac{t}{2}\right), y = a \sin t\)</h4>
+        <div class="solution-box">
+            <p>Given: \(x = a\left(\cos t + \log \tan \frac{t}{2}\right)\)</p>
+            $$ \frac{dx}{dt} = a \left[ -\sin t + \frac{1}{\tan \frac{t}{2}} \cdot \sec^2 \frac{t}{2} \cdot \frac{1}{2} \right] $$
+            $$ \frac{dx}{dt} = a \left[ -\sin t + \frac{\cos \frac{t}{2}}{\sin \frac{t}{2}} \cdot \frac{1}{\cos^2 \frac{t}{2}} \cdot \frac{1}{2} \right] $$
+            $$ \frac{dx}{dt} = a \left[ -\sin t + \frac{1}{2 \sin \frac{t}{2} \cos \frac{t}{2}} \right] $$
+            $$ \frac{dx}{dt} = a \left[ -\sin t + \frac{1}{\sin t} \right] = a \left[ \frac{1 - \sin^2 t}{\sin t} \right] = a \frac{\cos^2 t}{\sin t} $$
+
+            <p>Given: \(y = a \sin t\)</p>
+            $$ \frac{dy}{dt} = a \cos t $$
+
+            <p>Now, find \(\frac{dy}{dx}\):</p>
+            $$ \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{a \cos t}{a \frac{\cos^2 t}{\sin t}} = \frac{\cos t \sin t}{\cos^2 t} = \tan t $$
+        </div>
+
+        <h4 id="ex5-6-q9">9. \(x = a \sec \theta, y = b \tan \theta\)</h4>
+        <div class="solution-box">
+            <p>Given: \(x = a \sec \theta\)</p>
+            $$ \frac{dx}{d\theta} = a \sec \theta \tan \theta $$
+            <p>Given: \(y = b \tan \theta\)</p>
+            $$ \frac{dy}{d\theta} = b \sec^2 \theta $$
+            <p>Now, find \(\frac{dy}{dx}\):</p>
+            $$ \frac{dy}{dx} = \frac{dy/d\theta}{dx/d\theta} = \frac{b \sec^2 \theta}{a \sec \theta \tan \theta} = \frac{b}{a} \frac{\sec \theta}{\tan \theta} $$
+            $$ \frac{dy}{dx} = \frac{b}{a} \frac{1/\cos \theta}{\sin \theta/\cos \theta} = \frac{b}{a} \frac{1}{\sin \theta} = \frac{b}{a} \csc \theta $$
+        </div>
+
+        <h4 id="ex5-6-q10">10. \(x = a(\cos \theta + \theta \sin \theta), y = a(\sin \theta - \theta \cos \theta)\)</h4>
+        <div class="solution-box">
+            <p>Given: \(x = a(\cos \theta + \theta \sin \theta)\)</p>
+            $$ \frac{dx}{d\theta} = a \frac{d}{d\theta}(\cos \theta + \theta \sin \theta) $$
+            $$ \frac{dx}{d\theta} = a [-\sin \theta + (1 \cdot \sin \theta + \theta \cos \theta)] $$
+            $$ \frac{dx}{d\theta} = a [-\sin \theta + \sin \theta + \theta \cos \theta] = a\theta \cos \theta $$
+
+            <p>Given: \(y = a(\sin \theta - \theta \cos \theta)\)</p>
+            $$ \frac{dy}{d\theta} = a \frac{d}{d\theta}(\sin \theta - \theta \cos \theta) $$
+            $$ \frac{dy}{d\theta} = a [\cos \theta - (1 \cdot \cos \theta + \theta (-\sin \theta))] $$
+            $$ \frac{dy}{d\theta} = a [\cos \theta - \cos \theta + \theta \sin \theta] = a\theta \sin \theta $$
+
+            <p>Now, find \(\frac{dy}{dx}\):</p>
+            $$ \frac{dy}{dx} = \frac{dy/d\theta}{dx/d\theta} = \frac{a\theta \sin \theta}{a\theta \cos \theta} = \tan \theta $$
+        </div>
+
+        <h4 id="ex5-6-q11">11. If \(x = \sqrt{a^{\sin^{-1} t}}, y = \sqrt{a^{\cos^{-1} t}}\), show that \(\frac{dy}{dx} = -\frac{y}{x}\).</h4>
+        <div class="solution-box">
+            <p>Given: \(x = \sqrt{a^{\sin^{-1} t}} = (a^{\sin^{-1} t})^{1/2} = a^{\frac{1}{2}\sin^{-1} t}\)</p>
+            <p>Take \(\log\) on both sides:</p>
+            $$ \log x = \frac{1}{2} \sin^{-1} t \log a $$
+            <p>Differentiate with respect to \(t\):</p>
+            $$ \frac{1}{x}\frac{dx}{dt} = \frac{1}{2} \frac{1}{\sqrt{1-t^2}} \log a $$
+            $$ \frac{dx}{dt} = \frac{x \log a}{2\sqrt{1-t^2}} $$
+
+            <p>Given: \(y = \sqrt{a^{\cos^{-1} t}} = (a^{\cos^{-1} t})^{1/2} = a^{\frac{1}{2}\cos^{-1} t}\)</p>
+            <p>Take \(\log\) on both sides:</p>
+            $$ \log y = \frac{1}{2} \cos^{-1} t \log a $$
+            <p>Differentiate with respect to \(t\):</p>
+            $$ \frac{1}{y}\frac{dy}{dt} = \frac{1}{2} \left(-\frac{1}{\sqrt{1-t^2}}\right) \log a $$
+            $$ \frac{dy}{dt} = -\frac{y \log a}{2\sqrt{1-t^2}} $$
+
+            <p>Now, find \(\frac{dy}{dx}\):</p>
+            $$ \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{-\frac{y \log a}{2\sqrt{1-t^2}}}{\frac{x \log a}{2\sqrt{1-t^2}}} $$
+            $$ \frac{dy}{dx} = -\frac{y}{x} $$
+            <p>This matches the required result.</p>
+        </div>
+        <hr>
+
+        <h3 id="exercise-5-7">Exercise 5.7</h3>
+        <p>Find the second order derivatives of the functions given in Exercises 1 to 10.</p>
+
+        <h4 id="ex5-7-q1">1. \(x^2 + 3x + 2\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = x^2 + 3x + 2\).</p>
+            <p>First derivative: \( \frac{dy}{dx} = \frac{d}{dx}(x^2 + 3x + 2) = 2x + 3 \).</p>
+            <p>Second derivative: \( \frac{d^2y}{dx^2} = \frac{d}{dx}(2x + 3) = 2 \).</p>
+        </div>
+
+        <h4 id="ex5-7-q2">2. \(x^{20}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = x^{20}\).</p>
+            <p>First derivative: \( \frac{dy}{dx} = \frac{d}{dx}(x^{20}) = 20x^{19} \).</p>
+            <p>Second derivative: \( \frac{d^2y}{dx^2} = \frac{d}{dx}(20x^{19}) = 20 \cdot 19x^{18} = 380x^{18} \).</p>
+        </div>
+
+        <h4 id="ex5-7-q3">3. \(x \cdot \cos x\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = x \cos x\). Use the product rule for the first derivative.</p>
+            <p>First derivative: \( \frac{dy}{dx} = 1 \cdot \cos x + x (-\sin x) = \cos x - x \sin x \).</p>
+            <p>Second derivative: \( \frac{d^2y}{dx^2} = \frac{d}{dx}(\cos x - x \sin x) \).</p>
+            $$ \frac{d^2y}{dx^2} = -\sin x - (1 \cdot \sin x + x \cos x) $$
+            $$ \frac{d^2y}{dx^2} = -\sin x - \sin x - x \cos x = -2\sin x - x \cos x $$
+        </div>
+
+        <h4 id="ex5-7-q4">4. \(\log x\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \log x\).</p>
+            <p>First derivative: \( \frac{dy}{dx} = \frac{1}{x} \).</p>
+            <p>Second derivative: \( \frac{d^2y}{dx^2} = \frac{d}{dx}\left(\frac{1}{x}\right) = \frac{d}{dx}(x^{-1}) = -1x^{-2} = -\frac{1}{x^2} \).</p>
+        </div>
+
+        <h4 id="ex5-7-q5">5. \(x^3 \log x\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = x^3 \log x\). Use the product rule for the first derivative.</p>
+            <p>First derivative: \( \frac{dy}{dx} = 3x^2 \log x + x^3 \cdot \frac{1}{x} = 3x^2 \log x + x^2 \).</p>
+            <p>Second derivative: \( \frac{d^2y}{dx^2} = \frac{d}{dx}(3x^2 \log x + x^2) \).</p>
+            $$ \frac{d^2y}{dx^2} = (6x \log x + 3x^2 \cdot \frac{1}{x}) + 2x $$
+            $$ \frac{d^2y}{dx^2} = 6x \log x + 3x + 2x = 6x \log x + 5x = x(6 \log x + 5) $$
+        </div>
+
+        <h4 id="ex5-7-q6">6. \(e^x \sin 5x\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = e^x \sin 5x\). Use the product rule for the first derivative.</p>
+            <p>First derivative: \( \frac{dy}{dx} = e^x \sin 5x + e^x (5 \cos 5x) = e^x (\sin 5x + 5 \cos 5x) \).</p>
+            <p>Second derivative: \( \frac{d^2y}{dx^2} = \frac{d}{dx}[e^x (\sin 5x + 5 \cos 5x)] \).</p>
+            $$ \frac{d^2y}{dx^2} = e^x (\sin 5x + 5 \cos 5x) + e^x (5 \cos 5x - 25 \sin 5x) $$
+            $$ \frac{d^2y}{dx^2} = e^x (\sin 5x + 5 \cos 5x + 5 \cos 5x - 25 \sin 5x) $$
+            $$ \frac{d^2y}{dx^2} = e^x (10 \cos 5x - 24 \sin 5x) $$
+        </div>
+
+        <h4 id="ex5-7-q7">7. \(e^{6x} \cos 3x\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = e^{6x} \cos 3x\). Use the product rule for the first derivative.</p>
+            <p>First derivative: \( \frac{dy}{dx} = (6e^{6x}) \cos 3x + e^{6x} (-3 \sin 3x) = e^{6x} (6 \cos 3x - 3 \sin 3x) \).</p>
+            <p>Second derivative: \( \frac{d^2y}{dx^2} = \frac{d}{dx}[e^{6x} (6 \cos 3x - 3 \sin 3x)] \).</p>
+            $$ \frac{d^2y}{dx^2} = (6e^{6x})(6 \cos 3x - 3 \sin 3x) + e^{6x}(-18 \sin 3x - 9 \cos 3x) $$
+            $$ \frac{d^2y}{dx^2} = e^{6x} (36 \cos 3x - 18 \sin 3x - 18 \sin 3x - 9 \cos 3x) $$
+            $$ \frac{d^2y}{dx^2} = e^{6x} (27 \cos 3x - 36 \sin 3x) $$
+        </div>
+
+        <h4 id="ex5-7-q8">8. \(\tan^{-1} x\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \tan^{-1} x\).</p>
+            <p>First derivative: \( \frac{dy}{dx} = \frac{1}{1+x^2} \).</p>
+            <p>Second derivative: \( \frac{d^2y}{dx^2} = \frac{d}{dx}((1+x^2)^{-1}) \).</p>
+            $$ \frac{d^2y}{dx^2} = -1(1+x^2)^{-2} \cdot (2x) = -\frac{2x}{(1+x^2)^2} $$
+        </div>
+
+        <h4 id="ex5-7-q9">9. \(\log (\log x)\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \log (\log x)\).</p>
+            <p>First derivative (from Ex 5.4, Q8): \( \frac{dy}{dx} = \frac{1}{x \log x} = (x \log x)^{-1} \).</p>
+            <p>Second derivative: \( \frac{d^2y}{dx^2} = \frac{d}{dx}((x \log x)^{-1}) \).</p>
+            $$ \frac{d^2y}{dx^2} = -1(x \log x)^{-2} \cdot \frac{d}{dx}(x \log x) $$
+            $$ \frac{d^2y}{dx^2} = -\frac{1}{(x \log x)^2} \cdot (1 \cdot \log x + x \cdot \frac{1}{x}) $$
+            $$ \frac{d^2y}{dx^2} = -\frac{1}{(x \log x)^2} (\log x + 1) = -\frac{1 + \log x}{(x \log x)^2} $$
+        </div>
+
+        <h4 id="ex5-7-q10">10. \(\sin (\log x)\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \sin (\log x)\).</p>
+            <p>First derivative: \( \frac{dy}{dx} = \cos (\log x) \cdot \frac{1}{x} = \frac{\cos (\log x)}{x} \).</p>
+            <p>Second derivative: \( \frac{d^2y}{dx^2} = \frac{d}{dx}\left(\frac{\cos (\log x)}{x}\right) \). Use the Quotient Rule.</p>
+            $$ \frac{d^2y}{dx^2} = \frac{\frac{d}{dx}(\cos (\log x)) \cdot x - \cos (\log x) \cdot \frac{d}{dx}(x)}{x^2} $$
+            $$ \frac{d^2y}{dx^2} = \frac{(-\sin (\log x) \cdot \frac{1}{x}) \cdot x - \cos (\log x) \cdot 1}{x^2} $$
+            $$ \frac{d^2y}{dx^2} = \frac{-\sin (\log x) - \cos (\log x)}{x^2} = -\frac{\sin (\log x) + \cos (\log x)}{x^2} $$
+        </div>
+
+        <h4 id="ex5-7-q11">11. If \(y = 5 \cos x - 3 \sin x\), prove that \(\frac{d^2y}{dx^2} + y = 0\).</h4>
+        <div class="solution-box">
+            <p>Given: \(y = 5 \cos x - 3 \sin x\).</p>
+            <p>First derivative:</p>
+            $$ \frac{dy}{dx} = \frac{d}{dx}(5 \cos x - 3 \sin x) = 5(-\sin x) - 3(\cos x) = -5 \sin x - 3 \cos x $$
+            <p>Second derivative:</p>
+            $$ \frac{d^2y}{dx^2} = \frac{d}{dx}(-5 \sin x - 3 \cos x) = -5(\cos x) - 3(-\sin x) = -5 \cos x + 3 \sin x $$
+            <p>Now, we need to show that \(\frac{d^2y}{dx^2} + y = 0\).</p>
+            $$ \frac{d^2y}{dx^2} + y = (-5 \cos x + 3 \sin x) + (5 \cos x - 3 \sin x) $$
+            $$ = (-5 \cos x + 5 \cos x) + (3 \sin x - 3 \sin x) $$
+            $$ = 0 + 0 = 0 $$
+            <p>Hence, \(\frac{d^2y}{dx^2} + y = 0\) is proven.</p>
+        </div>
+
+        <h4 id="ex5-7-q12">12. If \(y = \cos^{-1} x\), Find \(\frac{d^2y}{dx^2}\) in terms of \(y\) alone.</h4>
+        <div class="solution-box">
+            <p>Given: \(y = \cos^{-1} x\). This implies \(x = \cos y\).</p>
+            <p>First derivative: \( \frac{dy}{dx} = -\frac{1}{\sqrt{1-x^2}} \).</p>
+            <p>To express in terms of \(y\), substitute \(x = \cos y\):</p>
+            $$ \frac{dy}{dx} = -\frac{1}{\sqrt{1-\cos^2 y}} = -\frac{1}{\sqrt{\sin^2 y}} = -\frac{1}{|\sin y|} $$
+            <p>Assuming \(y \in (0, \pi)\) (principal value branch of \(\cos^{-1} x\)), \(\sin y > 0\), so \(|\sin y| = \sin y\).</p>
+            $$ \frac{dy}{dx} = -\frac{1}{\sin y} = -\csc y $$
+            <p>Now, find the second derivative \(\frac{d^2y}{dx^2}\) by differentiating \(\frac{dy}{dx}\) with respect to \(x\):</p>
+            $$ \frac{d^2y}{dx^2} = \frac{d}{dx}(-\csc y) = -\frac{d}{dy}(\csc y) \cdot \frac{dy}{dx} $$
+            $$ \frac{d^2y}{dx^2} = -(-\csc y \cot y) \cdot \frac{dy}{dx} = \csc y \cot y \cdot (-\csc y) $$
+            $$ \frac{d^2y}{dx^2} = -\csc^2 y \cot y $$
+            <p>The second derivative is entirely in terms of \(y\).</p>
+        </div>
+
+        <h4 id="ex5-7-q13">13. If \(y = 3 \cos (\log x) + 4 \sin (\log x)\), show that \(x^2 y_2 + xy_1 + y = 0\).</h4>
+        <div class="solution-box">
+            <p>Given: \(y = 3 \cos (\log x) + 4 \sin (\log x)\).</p>
+            <p>First derivative, \(y_1\):</p>
+            $$ y_1 = \frac{d}{dx}[3 \cos (\log x) + 4 \sin (\log x)] $$
+            $$ y_1 = 3(-\sin (\log x)) \cdot \frac{1}{x} + 4(\cos (\log x)) \cdot \frac{1}{x} $$
+            $$ y_1 = \frac{1}{x}[-3 \sin (\log x) + 4 \cos (\log x)] $$
+            <p>Multiply by \(x\): \(xy_1 = -3 \sin (\log x) + 4 \cos (\log x)\).</p>
+            <p>Second derivative, \(y_2\): Differentiate \(xy_1\) using the product rule.</p>
+            $$ \frac{d}{dx}(xy_1) = \frac{d}{dx}[-3 \sin (\log x) + 4 \cos (\log x)] $$
+            $$ 1 \cdot y_1 + x \cdot y_2 = -3(\cos (\log x)) \cdot \frac{1}{x} + 4(-\sin (\log x)) \cdot \frac{1}{x} $$
+            $$ y_1 + xy_2 = \frac{1}{x}[-3 \cos (\log x) - 4 \sin (\log x)] $$
+            $$ y_1 + xy_2 = -\frac{1}{x}[3 \cos (\log x) + 4 \sin (\log x)] $$
+            <p>Substitute \(y = 3 \cos (\log x) + 4 \sin (\log x)\):</p>
+            $$ y_1 + xy_2 = -\frac{1}{x} y $$
+            <p>Multiply by \(x\):</p>
+            $$ xy_1 + x^2 y_2 = -y $$
+            $$ x^2 y_2 + xy_1 + y = 0 $$
+            <p>This matches the required result.</p>
+        </div>
+
+        <h4 id="ex5-7-q14">14. If \(y = A e^{mx} + B e^{nx}\), show that \(\frac{d^2y}{dx^2} - (m+n)\frac{dy}{dx} + mny = 0\).</h4>
+        <div class="solution-box">
+            <p>Given: \(y = A e^{mx} + B e^{nx}\).</p>
+            <p>First derivative:</p>
+            $$ \frac{dy}{dx} = A(me^{mx}) + B(ne^{nx}) = mA e^{mx} + nB e^{nx} $$
+            <p>Second derivative:</p>
+            $$ \frac{d^2y}{dx^2} = m(mA e^{mx}) + n(nB e^{nx}) = m^2 A e^{mx} + n^2 B e^{nx} $$
+            <p>Now, substitute \(y\), \(\frac{dy}{dx}\), and \(\frac{d^2y}{dx^2}\) into the given differential equation:</p>
+            $$ \text{LHS} = (m^2 A e^{mx} + n^2 B e^{nx}) - (m+n)(mA e^{mx} + nB e^{nx}) + mn(A e^{mx} + B e^{nx}) $$
+            $$ = m^2 A e^{mx} + n^2 B e^{nx} - (m^2 A e^{mx} + mnB e^{nx} + nmA e^{mx} + n^2 B e^{nx}) + mnA e^{mx} + mnB e^{nx} $$
+            $$ = m^2 A e^{mx} + n^2 B e^{nx} - m^2 A e^{mx} - mnB e^{nx} - nmA e^{mx} - n^2 B e^{nx} + mnA e^{mx} + mnB e^{nx} $$
+            <p>Combine like terms:</p>
+            $$ = (m^2 A e^{mx} - m^2 A e^{mx} - nmA e^{mx} + mnA e^{mx}) + (n^2 B e^{nx} - mnB e^{nx} - n^2 B e^{nx} + mnB e^{nx}) $$
+            $$ = 0 + 0 = 0 $$
+            <p>Since LHS = 0, which is the RHS, the equation is proven.</p>
+        </div>
+
+        <h4 id="ex5-7-q15">15. If \(y = 500 e^{7x} + 600 e^{-7x}\), show that \(\frac{d^2y}{dx^2} = 49y\).</h4>
+        <div class="solution-box">
+            <p>Given: \(y = 500 e^{7x} + 600 e^{-7x}\).</p>
+            <p>First derivative:</p>
+            $$ \frac{dy}{dx} = 500(7 e^{7x}) + 600(-7 e^{-7x}) = 3500 e^{7x} - 4200 e^{-7x} $$
+            <p>Second derivative:</p>
+            $$ \frac{d^2y}{dx^2} = 3500(7 e^{7x}) - 4200(-7 e^{-7x}) $$
+            $$ \frac{d^2y}{dx^2} = 24500 e^{7x} + 29400 e^{-7x} $$
+            <p>We need to show \(\frac{d^2y}{dx^2} = 49y\).</p>
+            $$ \frac{d^2y}{dx^2} = 49(500 e^{7x}) + 49(600 e^{-7x}) $$
+            $$ \frac{d^2y}{dx^2} = 24500 e^{7x} + 29400 e^{-7x} $$
+            <p>This matches the calculated second derivative. Hence, \(\frac{d^2y}{dx^2} = 49y\) is proven.</p>
+        </div>
+
+        <h4 id="ex5-7-q16">16. If \(e^y (x+1) = 1\), show that \(\frac{d^2y}{dx^2} = \left(\frac{dy}{dx}\right)^2\).</h4>
+        <div class="solution-box">
+            <p>Given: \(e^y (x+1) = 1\).</p>
+            <p>From the given equation, \(e^y = \frac{1}{x+1}\).</p>
+            <p>Take natural logarithm on both sides:</p>
+            $$ y = \log\left(\frac{1}{x+1}\right) = -\log(x+1) $$
+            <p>First derivative:</p>
+            $$ \frac{dy}{dx} = -\frac{1}{x+1} $$
+            <p>Second derivative:</p>
+            $$ \frac{d^2y}{dx^2} = \frac{d}{dx}\left(-\frac{1}{x+1}\right) = -\frac{d}{dx}((x+1)^{-1}) = -(-1)(x+1)^{-2}(1) = \frac{1}{(x+1)^2} $$
+            <p>Now, compare \(\frac{d^2y}{dx^2}\) with \(\left(\frac{dy}{dx}\right)^2\):</p>
+            $$ \left(\frac{dy}{dx}\right)^2 = \left(-\frac{1}{x+1}\right)^2 = \frac{1}{(x+1)^2} $$
+            <p>Since \(\frac{d^2y}{dx^2} = \frac{1}{(x+1)^2}\) and \(\left(\frac{dy}{dx}\right)^2 = \frac{1}{(x+1)^2}\), we have \(\frac{d^2y}{dx^2} = \left(\frac{dy}{dx}\right)^2\).</p>
+        </div>
+
+        <h4 id="ex5-7-q17">17. If \(y = (\tan^{-1} x)^2\), show that \((x^2 + 1)^2 y_2 + 2x(x^2 + 1) y_1 = 2\).</h4>
+        <div class="solution-box">
+            <p>Given: \(y = (\tan^{-1} x)^2\).</p>
+            <p>First derivative, \(y_1\):</p>
+            $$ y_1 = 2(\tan^{-1} x) \cdot \frac{d}{dx}(\tan^{-1} x) = 2(\tan^{-1} x) \cdot \frac{1}{1+x^2} $$
+            $$ y_1 = \frac{2\tan^{-1} x}{1+x^2} $$
+            <p>Multiply by \((1+x^2)\):</p>
+            $$ (1+x^2)y_1 = 2\tan^{-1} x $$
+            <p>Second derivative, \(y_2\): Differentiate \((1+x^2)y_1\) using the product rule.</p>
+            $$ \frac{d}{dx}((1+x^2)y_1) = (2x)y_1 + (1+x^2)y_2 $$
+            $$ \frac{d}{dx}(2\tan^{-1} x) = \frac{2}{1+x^2} $$
+            <p>So, the equation becomes:</p>
+            $$ (2x)y_1 + (1+x^2)y_2 = \frac{2}{1+x^2} $$
+            <p>Multiply the entire equation by \((1+x^2)\):</p>
+            $$ (1+x^2)(2x)y_1 + (1+x^2)^2 y_2 = 2 $$
+            <p>Rearranging the terms to match the required format:</p>
+            $$ (x^2+1)^2 y_2 + 2x(x^2+1) y_1 = 2 $$
+            <p>This matches the required result.</p>
+        </div>
+        <hr>
+
+        <h3 id="misc-exercise-5">Miscellaneous Exercise on Chapter 5</h3>
+        <p>Differentiate w.r.t. \(x\) the function in Exercises 1 to 11.</p>
+
+        <h4 id="misc-ex-q1">1. \((3x^2 - 9x + 5)^9\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = (3x^2 - 9x + 5)^9\). Using the chain rule:</p>
+            $$ \frac{dy}{dx} = 9(3x^2 - 9x + 5)^8 \cdot \frac{d}{dx}(3x^2 - 9x + 5) $$
+            $$ \frac{dy}{dx} = 9(3x^2 - 9x + 5)^8 \cdot (6x - 9) $$
+            $$ \frac{dy}{dx} = 27(2x - 3)(3x^2 - 9x + 5)^8 $$
+        </div>
+
+        <h4 id="misc-ex-q2">2. \(\sin^3 x + \cos^6 x\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \sin^3 x + \cos^6 x\). Differentiate term by term:</p>
+            $$ \frac{dy}{dx} = \frac{d}{dx}(\sin^3 x) + \frac{d}{dx}(\cos^6 x) $$
+            $$ \frac{dy}{dx} = 3\sin^2 x \cdot \frac{d}{dx}(\sin x) + 6\cos^5 x \cdot \frac{d}{dx}(\cos x) $$
+            $$ \frac{dy}{dx} = 3\sin^2 x (\cos x) + 6\cos^5 x (-\sin x) $$
+            $$ \frac{dy}{dx} = 3\sin^2 x \cos x - 6\sin x \cos^5 x $$
+            $$ \frac{dy}{dx} = 3\sin x \cos x (\sin x - 2\cos^4 x) $$
+        </div>
+
+        <h4 id="misc-ex-q3">3. \((5x)^{3\cos 2x}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = (5x)^{3\cos 2x}\). Use logarithmic differentiation.</p>
+            $$ \log y = 3\cos 2x \cdot \log(5x) $$
+            <p>Differentiate both sides with respect to \(x\):</p>
+            $$ \frac{1}{y}\frac{dy}{dx} = \frac{d}{dx}(3\cos 2x) \cdot \log(5x) + 3\cos 2x \cdot \frac{d}{dx}(\log(5x)) $$
+            $$ \frac{1}{y}\frac{dy}{dx} = (-6\sin 2x) \log(5x) + 3\cos 2x \cdot \frac{1}{5x} \cdot 5 $$
+            $$ \frac{1}{y}\frac{dy}{dx} = -6\sin 2x \log(5x) + \frac{3\cos 2x}{x} $$
+            $$ \frac{dy}{dx} = (5x)^{3\cos 2x} \left( \frac{3\cos 2x}{x} - 6\sin 2x \log(5x) \right) $$
+        </div>
+
+        <h4 id="misc-ex-q4">4. \(\sin^{-1}(x\sqrt{x}), 0 \leq x \leq 1\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \sin^{-1}(x\sqrt{x}) = \sin^{-1}(x^{3/2})\). Using the chain rule:</p>
+            $$ \frac{dy}{dx} = \frac{1}{\sqrt{1 - (x^{3/2})^2}} \cdot \frac{d}{dx}(x^{3/2}) $$
+            $$ \frac{dy}{dx} = \frac{1}{\sqrt{1 - x^3}} \cdot \frac{3}{2}x^{1/2} $$
+            $$ \frac{dy}{dx} = \frac{3\sqrt{x}}{2\sqrt{1-x^3}} $$
+        </div>
+
+        <h4 id="misc-ex-q5">5. \(\frac{\cos^{-1}(x/2)}{\sqrt{2x+7}}, -2 < x < 2\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \frac{\cos^{-1}(x/2)}{\sqrt{2x+7}}\). Use the quotient rule.</p>
+            <p>Let \(u = \cos^{-1}(x/2)\) and \(v = \sqrt{2x+7}\).</p>
+            $$ u' = -\frac{1}{\sqrt{1-(x/2)^2}} \cdot \frac{1}{2} = -\frac{1}{2\sqrt{\frac{4-x^2}{4}}} = -\frac{1}{\sqrt{4-x^2}} $$
+            $$ v' = \frac{1}{2\sqrt{2x+7}} \cdot 2 = \frac{1}{\sqrt{2x+7}} $$
+            <p>Applying the quotient rule \( \frac{dy}{dx} = \frac{u'v - uv'}{v^2} \):</p>
+            $$ \frac{dy}{dx} = \frac{(-\frac{1}{\sqrt{4-x^2}})\sqrt{2x+7} - \cos^{-1}(x/2)(\frac{1}{\sqrt{2x+7}})}{2x+7} $$
+            $$ \frac{dy}{dx} = \frac{-\frac{\sqrt{2x+7}}{\sqrt{4-x^2}} - \frac{\cos^{-1}(x/2)}{\sqrt{2x+7}}}{2x+7} $$
+            $$ \frac{dy}{dx} = \frac{-(2x+7) - \sqrt{4-x^2}\cos^{-1}(x/2)}{(2x+7)\sqrt{2x+7}\sqrt{4-x^2}} $$
+            $$ \frac{dy}{dx} = -\frac{2x+7 + \sqrt{4-x^2}\cos^{-1}(x/2)}{(2x+7)^{3/2}\sqrt{4-x^2}} $$
+        </div>
+
+        <h4 id="misc-ex-q6">6. \(\cot^{-1}\left[\frac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \sqrt{1-\sin x}}\right], 0 < x < \frac{\pi}{2}\)</h4>
+        <div class="solution-box">
+            <p>First, simplify the expression inside the \(\cot^{-1}\).</p>
+            <p>We use the identities:
+            \(1+\sin x = \sin^2(x/2) + \cos^2(x/2) + 2\sin(x/2)\cos(x/2) = (\sin(x/2)+\cos(x/2))^2\)
+            \(1-\sin x = \sin^2(x/2) + \cos^2(x/2) - 2\sin(x/2)\cos(x/2) = (\cos(x/2)-\sin(x/2))^2\)</p>
+            <p>For \(0 < x < \pi/2\), we have \(0 < x/2 < \pi/4\). In this interval, \(\cos(x/2) > \sin(x/2) > 0\).</p>
+            <p>So, \(\sqrt{1+\sin x} = \sin(x/2)+\cos(x/2)\) and \(\sqrt{1-\sin x} = \cos(x/2)-\sin(x/2)\).</p>
+            <p>Numerator: \((\sin(x/2)+\cos(x/2)) + (\cos(x/2)-\sin(x/2)) = 2\cos(x/2)\)</p>
+            <p>Denominator: \((\sin(x/2)+\cos(x/2)) - (\cos(x/2)-\sin(x/2)) = 2\sin(x/2)\)</p>
+            <p>The expression becomes \(\frac{2\cos(x/2)}{2\sin(x/2)} = \cot(x/2)\).</p>
+            <p>So, \(y = \cot^{-1}(\cot(x/2))\). Since \(0 < x/2 < \pi/4\), which is in the principal range of \(\cot^{-1}\), we have:</p>
+            $$ y = \frac{x}{2} $$
+            $$ \frac{dy}{dx} = \frac{1}{2} $$
+        </div>
+
+        <h4 id="misc-ex-q7">7. \((\log x)^{\log x}, x > 1\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = (\log x)^{\log x}\). Use logarithmic differentiation.</p>
+            $$ \log y = \log x \cdot \log(\log x) $$
+            <p>Differentiate both sides with respect to \(x\):</p>
+            $$ \frac{1}{y}\frac{dy}{dx} = \frac{d}{dx}(\log x) \cdot \log(\log x) + \log x \cdot \frac{d}{dx}(\log(\log x)) $$
+            $$ \frac{1}{y}\frac{dy}{dx} = \frac{1}{x}\log(\log x) + \log x \cdot \frac{1}{\log x} \cdot \frac{1}{x} $$
+            $$ \frac{1}{y}\frac{dy}{dx} = \frac{\log(\log x)}{x} + \frac{1}{x} $$
+            $$ \frac{dy}{dx} = y\left(\frac{1+\log(\log x)}{x}\right) = (\log x)^{\log x} \left(\frac{1+\log(\log x)}{x}\right) $$
+        </div>
+
+        <h4 id="misc-ex-q8">8. \(\cos(a \cos x + b \sin x)\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \cos(a \cos x + b \sin x)\). Using the chain rule:</p>
+            $$ \frac{dy}{dx} = -\sin(a \cos x + b \sin x) \cdot \frac{d}{dx}(a \cos x + b \sin x) $$
+            $$ \frac{dy}{dx} = -\sin(a \cos x + b \sin x) \cdot (-a \sin x + b \cos x) $$
+            $$ \frac{dy}{dx} = (a \sin x - b \cos x) \sin(a \cos x + b \sin x) $$
+        </div>
+
+        <h4 id="misc-ex-q9">9. \((\sin x - \cos x)^{(\sin x - \cos x)}, \frac{\pi}{4} < x < \frac{3\pi}{4}\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = (\sin x - \cos x)^{(\sin x - \cos x)}\). Let \(u = \sin x - \cos x\). So, \(y = u^u\).</p>
+            <p>In the interval \((\pi/4, 3\pi/4)\), \(\sin x > \cos x\), so \(u > 0\), which is required for the function to be defined.</p>
+            <p>Using logarithmic differentiation for \(y=u^u\):</p>
+            $$ \log y = u \log u $$
+            $$ \frac{1}{y}\frac{dy}{dx} = \frac{du}{dx}\log u + u \frac{1}{u}\frac{du}{dx} = \frac{du}{dx}(\log u + 1) $$
+            <p>We have \(u = \sin x - \cos x\), so \(\frac{du}{dx} = \cos x - (-\sin x) = \cos x + \sin x\).</p>
+            $$ \frac{dy}{dx} = y \frac{du}{dx}(\log u + 1) $$
+            $$ \frac{dy}{dx} = (\sin x - \cos x)^{(\sin x - \cos x)} (\cos x + \sin x) (1 + \log(\sin x - \cos x)) $$
+        </div>
+
+        <h4 id="misc-ex-q10">10. \(x^x + x^a + a^x + a^a\), for some fixed \(a > 0\) and \(x > 0\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = x^x + x^a + a^x + a^a\). Differentiate term by term.</p>
+            <ul>
+                <li>\(\frac{d}{dx}(x^x) = x^x(1 + \log x)\) (a standard result from logarithmic differentiation).</li>
+                <li>\(\frac{d}{dx}(x^a) = ax^{a-1}\) (power rule, since \(a\) is a constant).</li>
+                <li>\(\frac{d}{dx}(a^x) = a^x \log a\) (exponential rule, since \(a\) is a constant).</li>
+                <li>\(\frac{d}{dx}(a^a) = 0\) (since \(a^a\) is a constant).</li>
+            </ul>
+            <p>Summing the derivatives:</p>
+            $$ \frac{dy}{dx} = x^x(1 + \log x) + ax^{a-1} + a^x \log a $$
+        </div>
+
+        <h4 id="misc-ex-q11">11. \(x^{x^2-3} + (x-3)^{x^2}, \text{for } x > 3\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = x^{x^2-3} + (x-3)^{x^2}\). Let \(u = x^{x^2-3}\) and \(v = (x-3)^{x^2}\).</p>
+            
+            <p>For \(u = x^{x^2-3}\):</p>
+            $$ \log u = (x^2-3)\log x $$
+            $$ \frac{1}{u}\frac{du}{dx} = 2x\log x + (x^2-3)\frac{1}{x} = 2x\log x + x - \frac{3}{x} $$
+            $$ \frac{du}{dx} = u\left(2x\log x + x - \frac{3}{x}\right) = x^{x^2-3}\left(2x\log x + x - \frac{3}{x}\right) $$
+            
+            <p>For \(v = (x-3)^{x^2}\):</p>
+            $$ \log v = x^2 \log(x-3) $$
+            $$ \frac{1}{v}\frac{dv}{dx} = 2x\log(x-3) + x^2\frac{1}{x-3} $$
+            $$ \frac{dv}{dx} = v\left(2x\log(x-3) + \frac{x^2}{x-3}\right) = (x-3)^{x^2}\left(2x\log(x-3) + \frac{x^2}{x-3}\right) $$
+            
+            <p>Summing the derivatives:</p>
+            $$ \frac{dy}{dx} = x^{x^2-3}\left(2x\log x + x - \frac{3}{x}\right) + (x-3)^{x^2}\left(2x\log(x-3) + \frac{x^2}{x-3}\right) $$
+        </div>
+
+        <h4 id="misc-ex-q12">12. Find \(\frac{dy}{dx}\) if \(y=12(1-\cos t), x=10(t-\sin t), -\frac{\pi}{2} < t < \frac{\pi}{2}\).</h4>
+        <div class="solution-box">
+            <p>Differentiate \(x\) and \(y\) with respect to the parameter \(t\):</p>
+            $$ \frac{dy}{dt} = 12(0 - (-\sin t)) = 12 \sin t $$
+            $$ \frac{dx}{dt} = 10(1 - \cos t) $$
+            <p>Using parametric differentiation formula:</p>
+            $$ \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{12 \sin t}{10(1 - \cos t)} = \frac{6}{5}\frac{\sin t}{1 - \cos t} $$
+            <p>Using half-angle identities \(\sin t = 2\sin(t/2)\cos(t/2)\) and \(1-\cos t = 2\sin^2(t/2)\):</p>
+            $$ \frac{dy}{dx} = \frac{6}{5}\frac{2\sin(t/2)\cos(t/2)}{2\sin^2(t/2)} = \frac{6}{5}\frac{\cos(t/2)}{\sin(t/2)} = \frac{6}{5}\cot(t/2) $$
+        </div>
+
+        <h4 id="misc-ex-q13">13. Find \(\frac{dy}{dx}\) if \(y = \sin^{-1} x + \sin^{-1}(\sqrt{1-x^2}), 0 < x < 1\).</h4>
+        <div class="solution-box">
+            <p>Let's simplify the expression first. For \(0 < x < 1\), let \(x = \sin\theta\). Then \(\theta = \sin^{-1}x\).
+            The condition \(0 < x < 1\) implies \(0 < \theta < \pi/2\).</p>
+            <p>\(\sqrt{1-x^2} = \sqrt{1-\sin^2\theta} = \sqrt{\cos^2\theta} = \cos\theta\) (since \(\cos\theta > 0\) for \(0 < \theta < \pi/2\)).</p>
+            <p>\(\sin^{-1}(\sqrt{1-x^2}) = \sin^{-1}(\cos\theta)\).
+            Using the identity \(\cos\theta = \sin(\pi/2 - \theta)\):</p>
+            <p>\(\sin^{-1}(\cos\theta) = \sin^{-1}(\sin(\pi/2 - \theta))\).
+            Since \(0 < \theta < \pi/2\), we have \(0 < \pi/2 - \theta < \pi/2\), which is in the principal range of \(\sin^{-1}\).
+            So, \(\sin^{-1}(\sqrt{1-x^2}) = \pi/2 - \theta\).</p>
+            <p>Substituting back into the original equation for \(y\):</p>
+            $$ y = \theta + (\pi/2 - \theta) = \pi/2 $$
+            <p>Since \(y = \pi/2\), which is a constant:</p>
+            $$ \frac{dy}{dx} = \frac{d}{dx}(\pi/2) = 0 $$
+        </div>
+
+        <h4 id="misc-ex-q14">14. If \(x\sqrt{1+y} + y\sqrt{1+x} = 0\), for \(-1 < x < 1\), prove that \(\frac{dy}{dx} = -\frac{1}{(1+x)^2}\).</h4>
+        <div class="solution-box">
+            <p>Given: \(x\sqrt{1+y} + y\sqrt{1+x} = 0\).
+            Rearrange: \(x\sqrt{1+y} = -y\sqrt{1+x}\).</p>
+            <p>Square both sides:</p>
+            $$ x^2(1+y) = y^2(1+x) $$
+            $$ x^2 + x^2y = y^2 + y^2x $$
+            $$ x^2 - y^2 = y^2x - x^2y $$
+            $$ (x-y)(x+y) = xy(y-x) = -xy(x-y) $$
+            <p>If \(x \neq y\), we can divide by \((x-y)\):</p>
+            $$ x+y = -xy $$
+            <p>If \(x=y\), then \(x\sqrt{1+x} + x\sqrt{1+x} = 0 \implies 2x\sqrt{1+x}=0 \implies x=0\).
+            So, \(x=y=0\) is a point on the curve. Our formula for \(y\) below will also satisfy this.</p>
+            <p>Solve for \(y\):</p>
+            $$ y+xy = -x \implies y(1+x) = -x \implies y = -\frac{x}{1+x} $$
+            <p>Differentiate using the quotient rule:</p>
+            $$ \frac{dy}{dx} = -\frac{(1)(1+x) - x(1)}{(1+x)^2} = -\frac{1+x-x}{(1+x)^2} = -\frac{1}{(1+x)^2} $$
+            <p>The result is proven.</p>
+        </div>
+
+        <h4 id="misc-ex-q15">15. If \((x-a)^2 + (y-b)^2 = c^2\), for some \(c>0\), prove that \(\frac{[1+(y')^2]^{3/2}}{y''}\) is a constant independent of \(a\) and \(b\).</h4>
+        <div class="solution-box">
+            <p>Differentiate the equation of the circle with respect to \(x\):</p>
+            $$ 2(x-a) + 2(y-b)y' = 0 \implies (y-b)y' = -(x-a) \implies y' = -\frac{x-a}{y-b} $$
+            <p>Differentiate again with respect to \(x\) using the quotient rule:</p>
+            $$ y'' = -\frac{(1)(y-b) - (x-a)(y')}{(y-b)^2} $$
+            Substitute \(y'\):
+            $$ y'' = -\frac{y-b - (x-a)(-\frac{x-a}{y-b})}{(y-b)^2} = -\frac{y-b + \frac{(x-a)^2}{y-b}}{(y-b)^2} $$
+            $$ y'' = -\frac{\frac{(y-b)^2+(x-a)^2}{y-b}}{(y-b)^2} = -\frac{(y-b)^2+(x-a)^2}{(y-b)^3} $$
+            <p>Since \((x-a)^2 + (y-b)^2 = c^2\):</p>
+            $$ y'' = -\frac{c^2}{(y-b)^3} $$
+            <p>Now, evaluate the numerator of the expression to be proved:</p>
+            $$ 1 + (y')^2 = 1 + \left(-\frac{x-a}{y-b}\right)^2 = 1 + \frac{(x-a)^2}{(y-b)^2} = \frac{(y-b)^2+(x-a)^2}{(y-b)^2} = \frac{c^2}{(y-b)^2} $$
+            $$ [1+(y')^2]^{3/2} = \left(\frac{c^2}{(y-b)^2}\right)^{3/2} = \frac{c^3}{|y-b|^3} $$
+            <p>Finally, evaluate the full expression:</p>
+            $$ \frac{[1+(y')^2]^{3/2}}{y''} = \frac{c^3/|y-b|^3}{-c^2/(y-b)^3} $$
+            <p>If \(y-b > 0\), this becomes \(\frac{c^3/(y-b)^3}{-c^2/(y-b)^3} = -c\).</p>
+            <p>If \(y-b < 0\), this becomes \(\frac{c^3/(-(y-b)^3)}{-c^2/(y-b)^3} = \frac{-c^3/(y-b)^3}{-c^2/(y-b)^3} = c\).</p>
+            <p>In either case, the result is \(\pm c\), which is a constant independent of \(a\) and \(b\). The expression represents the radius of curvature of the circle, which is constant and equal to \(c\).</p>
+        </div>
+
+        <h4 id="misc-ex-q16">16. If \(\cos y = x \cos(a+y)\), with \(\cos a \neq \pm 1\), prove that \(\frac{dy}{dx} = \frac{\cos^2(a+y)}{\sin a}\).</h4>
+        <div class="solution-box">
+            <p>Given \(\cos y = x \cos(a+y)\), we can write \(x = \frac{\cos y}{\cos(a+y)}\).</p>
+            <p>It's easier to find \(\frac{dx}{dy}\) and then take the reciprocal.</p>
+            $$ \frac{dx}{dy} = \frac{(-\sin y)\cos(a+y) - \cos y(-\sin(a+y))}{\cos^2(a+y)} $$
+            $$ \frac{dx}{dy} = \frac{\cos y \sin(a+y) - \sin y \cos(a+y)}{\cos^2(a+y)} $$
+            <p>The numerator is in the form \(\sin(A-B)\) where \(A = a+y\) and \(B = y\).
+            So, \(\sin((a+y)-y) = \sin a\).</p>
+            $$ \frac{dx}{dy} = \frac{\sin a}{\cos^2(a+y)} $$
+            <p>Therefore, \(\frac{dy}{dx} = \frac{1}{dx/dy} = \frac{\cos^2(a+y)}{\sin a}\).</p>
+        </div>
+
+        <h4 id="misc-ex-q17">17. If \(x = a(\cos t + t\sin t)\) and \(y = a(\sin t - t\cos t)\), find \(\frac{d^2y}{dx^2}\).</h4>
+        <div class="solution-box">
+            <p>First, find \(\frac{dy}{dx}\).</p>
+            $$ \frac{dx}{dt} = a(-\sin t + (1\cdot\sin t + t\cos t)) = a(-\sin t + \sin t + t\cos t) = at\cos t $$
+            $$ \frac{dy}{dt} = a(\cos t - (1\cdot\cos t + t(-\sin t))) = a(\cos t - \cos t + t\sin t) = at\sin t $$
+            $$ \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{at\sin t}{at\cos t} = \tan t $$
+            <p>Now, find \(\frac{d^2y}{dx^2}\):</p>
+            $$ \frac{d^2y}{dx^2} = \frac{d}{dx}(\tan t) = \frac{d}{dt}(\tan t) \cdot \frac{dt}{dx} $$
+            $$ \frac{d^2y}{dx^2} = \sec^2 t \cdot \frac{1}{dx/dt} = \sec^2 t \cdot \frac{1}{at\cos t} = \frac{\sec^3 t}{at} $$
+        </div>
+
+        <h4 id="misc-ex-q18">18. If \(f(x) = |x|^3\), show that \(f''(x)\) exists for all real \(x\) and find it.</h4>
+        <div class="solution-box">
+            <p>Let's write \(f(x)\) as a piecewise function:</p>
+            $$ f(x) = \begin{cases} x^3, & \text{if } x \geq 0 \\ -x^3, & \text{if } x < 0 \end{cases} $$
+            <p>Find the first derivative, \(f'(x)\):</p>
+            $$ f'(x) = \begin{cases} 3x^2, & \text{if } x > 0 \\ -3x^2, & \text{if } x < 0 \end{cases} $$
+            <p>Check for differentiability at \(x=0\):
+            LHD at 0: \(\lim_{h\to 0^-}\frac{f(h)-f(0)}{h} = \lim_{h\to 0^-}\frac{-h^3}{h} = \lim_{h\to 0^-}-h^2=0\).
+            RHD at 0: \(\lim_{h\to 0^+}\frac{f(h)-f(0)}{h} = \lim_{h\to 0^+}\frac{h^3}{h} = \lim_{h\to 0^+}h^2=0\).
+            Since LHD=RHD=0, \(f'(0)=0\). So, \(f'(x)\) exists for all \(x\) and can be written as \(f'(x)=3x|x|\).</p>
+            <p>Find the second derivative, \(f''(x)\):</p>
+            $$ f''(x) = \begin{cases} 6x, & \text{if } x > 0 \\ -6x, & \text{if } x < 0 \end{cases} $$
+            <p>Check for differentiability of \(f'(x)\) at \(x=0\):
+            LHD of \(f'\) at 0: \(\lim_{h\to 0^-}\frac{f'(h)-f'(0)}{h} = \lim_{h\to 0^-}\frac{-3h^2-0}{h} = \lim_{h\to 0^-}-3h=0\).
+            RHD of \(f'\) at 0: \(\lim_{h\to 0^+}\frac{f'(h)-f'(0)}{h} = \lim_{h\to 0^+}\frac{3h^2-0}{h} = \lim_{h\to 0^+}3h=0\).
+            Since LHD=RHD=0, \(f''(0)=0\). So, \(f''(x)\) exists for all \(x\).</p>
+            <p>The second derivative is \(f''(x) = 6|x|\).</p>
+        </div>
+
+        <h4 id="misc-ex-q19">19. Using the fact that \(\sin(A+B) = \sin A \cos B + \cos A \sin B\) and differentiation, obtain the sum formula for cosines.</h4>
+        <div class="solution-box">
+            <p>Treat \(A\) as a variable, say \(x\), and \(B\) as a constant.</p>
+            $$ \sin(x+B) = \sin x \cos B + \cos x \sin B $$
+            <p>Differentiate both sides with respect to \(x\):</p>
+            $$ \frac{d}{dx}(\sin(x+B)) = \frac{d}{dx}(\sin x \cos B + \cos x \sin B) $$
+            <p>Using the chain rule on the left side:</p>
+            $$ \cos(x+B) \cdot \frac{d}{dx}(x+B) = \cos(x+B) \cdot 1 = \cos(x+B) $$
+            <p>Differentiating the right side (where \(\cos B\) and \(\sin B\) are constants):</p>
+            $$ \cos x \cos B - \sin x \sin B $$
+            <p>Equating the results:</p>
+            $$ \cos(x+B) = \cos x \cos B - \sin x \sin B $$
+            <p>Replacing \(x\) with \(A\) gives the sum formula for cosine:</p>
+            $$ \cos(A+B) = \cos A \cos B - \sin A \sin B $$
+        </div>
+
+        <h4 id="misc-ex-q20">20. Does there exist a function which is continuous everywhere but not differentiable at exactly two points? Justify your answer.</h4>
+        <div class="solution-box">
+            <p>Yes, such a function exists.</p>
+            <p><strong>Justification:</strong> Consider the function \(f(x) = |x-1| + |x+1|\).</p>
+            <p><strong>Continuity:</strong> The function \(g(x)=|x|\) is continuous everywhere. The functions \(h(x)=x-1\) and \(k(x)=x+1\) are polynomials and are continuous everywhere. Therefore, the composite functions \(|x-1|\) and \(|x+1|\) are continuous everywhere. The sum of two continuous functions is continuous, so \(f(x)\) is continuous for all real numbers.</p>
+            <p><strong>Differentiability:</strong> Let's analyze the function in a piecewise manner:</p>
+            <ul>
+                <li>For \(x < -1\): \(f(x) = -(x-1) - (x+1) = -2x\). So, \(f'(x) = -2\).</li>
+                <li>For \(-1 < x < 1\): \(f(x) = -(x-1) + (x+1) = 2\). So, \(f'(x) = 0\).</li>
+                <li>For \(x > 1\): \(f(x) = (x-1) + (x+1) = 2x\). So, \(f'(x) = 2\).</li>
+            </ul>
+            <p>At \(x=-1\), the left-hand derivative is -2 and the right-hand derivative is 0. Since they are not equal, \(f(x)\) is not differentiable at \(x=-1\).</p>
+            <p>At \(x=1\), the left-hand derivative is 0 and the right-hand derivative is 2. Since they are not equal, \(f(x)\) is not differentiable at \(x=1\).</p>
+            <p>For all other points, the function is defined by a simple polynomial and is differentiable.</p>
+            <p>Thus, \(f(x)=|x-1|+|x+1|\) is a function that is continuous everywhere but not differentiable at exactly two points, \(x=-1\) and \(x=1\).</p>
+        </div>
+
+        <h4 id="misc-ex-q21">21. If \(y = \begin{vmatrix} f(x) & g(x) & h(x) \\ l & m & n \\ a & b & c \end{vmatrix}\), prove that \(\frac{dy}{dx} = \begin{vmatrix} f'(x) & g'(x) & h'(x) \\ l & m & n \\ a & b & c \end{vmatrix}\).</h4>
+        <div class="solution-box">
+            <p>Given that \(l, m, n, a, b, c\) are constants, we can expand the determinant for \(y\):</p>
+            $$ y = f(x)(mc - nb) - g(x)(lc - na) + h(x)(lb - ma) $$
+            <p>This is an expression where \(f(x), g(x), h(x)\) are multiplied by constants. The coefficients are:
+            \(C_1 = mc - nb\), \(C_2 = -(lc-na) = na - lc\), \(C_3 = lb - ma\).</p>
+            $$ y = C_1 f(x) + C_2 g(x) + C_3 h(x) $$
+            <p>Differentiate \(y\) with respect to \(x\):</p>
+            $$ \frac{dy}{dx} = C_1 f'(x) + C_2 g'(x) + C_3 h'(x) $$
+            $$ \frac{dy}{dx} = (mc - nb)f'(x) - (lc - na)g'(x) + (lb - ma)h'(x) $$
+            <p>This expression is the expansion of the determinant:</p>
+            $$ \begin{vmatrix} f'(x) & g'(x) & h'(x) \\ l & m & n \\ a & b & c \end{vmatrix} $$
+            <p>Hence, the result is proven.</p>
+        </div>
+
+        <h4 id="misc-ex-q22">22. If \(y = e^{a\cos^{-1}x}, -1 \leq x \leq 1\), show that \((1-x^2)\frac{d^2y}{dx^2} - x\frac{dy}{dx} - a^2y = 0\).</h4>
+        <div class="solution-box">
+            <p>Given: \(y = e^{a\cos^{-1}x}\).</p>
+            <p>First derivative:</p>
+            $$ \frac{dy}{dx} = e^{a\cos^{-1}x} \cdot \frac{d}{dx}(a\cos^{-1}x) = y \cdot a\left(-\frac{1}{\sqrt{1-x^2}}\right) = -\frac{ay}{\sqrt{1-x^2}} $$
+            <p>Rearrange the equation:</p>
+            $$ \sqrt{1-x^2} \frac{dy}{dx} = -ay $$
+            <p>Square both sides:</p>
+            $$ (1-x^2)\left(\frac{dy}{dx}\right)^2 = a^2y^2 $$
+            <p>Differentiate again with respect to \(x\) using the product rule:</p>
+            $$ \frac{d}{dx}\left[(1-x^2)\left(\frac{dy}{dx}\right)^2\right] = \frac{d}{dx}(a^2y^2) $$
+            $$ (-2x)\left(\frac{dy}{dx}\right)^2 + (1-x^2) \cdot 2\left(\frac{dy}{dx}\right)\frac{d^2y}{dx^2} = a^2 \cdot 2y \frac{dy}{dx} $$
+            <p>Since \(y=e^{a\cos^{-1}x}\) is never zero, \(\frac{dy}{dx}\) is not identically zero. We can divide by \(2\frac{dy}{dx}\):</p>
+            $$ -x\frac{dy}{dx} + (1-x^2)\frac{d^2y}{dx^2} = a^2y $$
+            <p>Rearranging the terms gives the required differential equation:</p>
+            $$ (1-x^2)\frac{d^2y}{dx^2} - x\frac{dy}{dx} - a^2y = 0 $$
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,2406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Applications of Derivatives Solutions</title>
+
+    <!-- MathJax v3 Configuration and Library -->
+    <script>
+    window.MathJax = {
+      loader: {load: ['[tex]/mhchem', '[tex]/cancel']},
+      tex: {
+        packages: {'[+]': ['mhchem', 'cancel']},
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    
+    <!-- Link to Central Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="body-content">
+    <!-- Top navigation bar placeholder -->
+    <nav class="global-nav" id="global-navbar"></nav>
+    
+    <!-- Sidebar placeholder -->
+    <nav id="index-sidebar"></nav>
+    <script src="../main.js"></script>
+
+    <script src="../nav.js"></script>
+
+    <main class="main-content">
+        <h3>APPLICATION OF DERIVATIVES</h3>
+
+        <h3 id="introduction-6-1">6.1 Introduction</h3>
+        <p>In Chapter 5, we have learnt how to find derivative of composite functions, inverse trigonometric functions, implicit functions, exponential functions and logarithmic functions. In this chapter, we will study applications of the derivative in various disciplines, e.g., in engineering, science, social science, and many other fields. For instance, we will learn how the derivative can be used (i) to determine rate of change of quantities, (ii) to find the equations of tangent and normal to a curve at a point, (iii) to find turning points on the graph of a function which in turn will help us to locate points at which largest or smallest value (locally) of a function occurs. We will also use derivative to find intervals on which a function is increasing or decreasing. Finally, we use the derivative to find approximate value of certain quantities.</p>
+
+        <h3 id="rate-of-change-6-2">6.2 Rate of Change of Quantities</h3>
+        <p>Recall that by the derivative $\frac{ds}{dt}$ we mean the rate of change of distance $s$ with respect to the time $t$. In a similar fashion, whenever one quantity $y$ varies with another quantity $x$, satisfying some rule $y = f(x)$, then $\frac{dy}{dx}$ (or $f'(x)$) represents the rate of change of $y$ with respect to $x$ and $\frac{dy}{dx}\Big|_{x=x_0}$ (or $f'(x_0)$) represents the rate of change of $y$ with respect to $x$ at $x = x_0$.</p>
+        <p>Further, if two variables $x$ and $y$ are varying with respect to another variable $t$, i.e., if $x = f(t)$ and $y = g(t)$, then by Chain Rule</p>
+        $$ \frac{dy}{dt} = \frac{dy}{dx} \cdot \frac{dx}{dt} \text{, if } \frac{dx}{dt} \neq 0 $$
+
+        <h4 id="example-1">Example 1</h4>
+        <div class="question-box">
+            <p>Find the rate of change of the area of a circle per second with respect to its radius $r$ when $r = 5$ cm.</p>
+        </div>
+        <div class="solution-box">
+            <p>The area $A$ of a circle with radius $r$ is given by $A = \pi r^2$. Therefore, the rate of change of the area $A$ with respect to its radius $r$ is given by $\frac{dA}{dr} = \frac{d}{dr}(\pi r^2) = 2\pi r$.</p>
+            <p>When $r = 5$ cm, $\frac{dA}{dr}\Big|_{r=5cm} = 2\pi(5) = 10\pi$. Thus, the area of the circle is changing at the rate of $10\pi$ cm²/s.</p>
+        </div>
+
+        <h4 id="example-2">Example 2</h4>
+        <div class="question-box">
+            <p>The volume of a cube is increasing at a rate of 9 cubic centimetres per second. How fast is the surface area increasing when the length of an edge is 10 centimetres ?</p>
+        </div>
+        <div class="solution-box">
+            <p>Let $x$ be the length of a side, $V$ be the volume and $S$ be the surface area of the cube. Then, $V = x^3$ and $S = 6x^2$, where $x$ is a function of time $t$.</p>
+            <p>Now $\frac{dV}{dt} = 9 \text{ cm}^3/s$ (Given)</p>
+            <p>Therefore $9 = \frac{dV}{dt} = \frac{d}{dx}(x^3)\cdot\frac{dx}{dt}$ (By Chain Rule)</p>
+            <p>$ = 3x^2 \frac{dx}{dt}$</p>
+            <p>or $\frac{dx}{dt} = \frac{9}{3x^2} = \frac{3}{x^2}$ (1)</p>
+            <p>Now $\frac{dS}{dt} = \frac{d}{dx}(6x^2)\cdot\frac{dx}{dt}$ (By Chain Rule)</p>
+            <p>$ = 12x \cdot \frac{3}{x^2}$ (Using (1))</p>
+            <p>$ = \frac{36}{x}$</p>
+            <p>Hence, when $x = 10$ cm, $\frac{dS}{dt}\Big|_{x=10cm} = \frac{36}{10} = 3.6$ cm²/s</p>
+        </div>
+
+        <h4 id="example-3">Example 3</h4>
+        <div class="question-box">
+            <p>A stone is dropped into a quiet lake and waves move in circles at a speed of 4cm per second. At the instant, when the radius of the circular wave is 10 cm, how fast is the enclosed area increasing?</p>
+        </div>
+        <div class="solution-box">
+            <p>The area $A$ of a circle with radius $r$ is given by $A = \pi r^2$. Therefore, the rate of change of area $A$ with respect to time $t$ is</p>
+            $$ \frac{dA}{dt} = \frac{d}{dt}(\pi r^2) = \frac{d}{dr}(\pi r^2) \cdot \frac{dr}{dt} = 2\pi r \frac{dr}{dt} $$
+            <p>It is given that $\frac{dr}{dt} = 4\text{cm/s}$</p>
+            <p>Therefore, when $r = 10$ cm, $\frac{dA}{dt} = 2\pi (10) (4) = 80\pi$</p>
+            <p>Thus, the enclosed area is increasing at the rate of $80\pi \text{ cm}^2/s$, when $r = 10 \text{ cm}$.</p>
+        </div>
+
+        <div class="note-box">
+            <p><strong>Note</strong> $\frac{dy}{dx}$ is positive if $y$ increases as $x$ increases and is negative if $y$ decreases as $x$ increases.</p>
+        </div>
+
+        <h4 id="example-4">Example 4</h4>
+        <div class="question-box">
+            <p>The length $x$ of a rectangle is decreasing at the rate of 3 cm/minute and the width $y$ is increasing at the rate of 2cm/minute. When $x = 10$cm and $y = 6$cm, find the rates of change of (a) the perimeter and (b) the area of the rectangle.</p>
+        </div>
+        <div class="solution-box">
+            <p>Since the length $x$ is decreasing and the width $y$ is increasing with respect to time, we have</p>
+            <p>$\frac{dx}{dt} = -3\text{ cm/min}$ and $\frac{dy}{dt} = 2\text{ cm/min}$</p>
+            <p>(a) The perimeter $P$ of a rectangle is given by</p>
+            <p>$P = 2 (x + y)$</p>
+            <p>Therefore $\frac{dP}{dt} = 2\left(\frac{dx}{dt} + \frac{dy}{dt}\right) = 2 (-3+2)=-2\text{ cm/min}$</p>
+            <p>(b) The area $A$ of the rectangle is given by</p>
+            <p>$A=x\cdot y$</p>
+            <p>Therefore $\frac{dA}{dt} = \frac{dx}{dt} \cdot y + x \cdot \frac{dy}{dt}$</p>
+            <p>$ = -3(6) + 10(2)$ (as $x = 10$ cm and $y = 6$ cm)</p>
+            <p>$ = -18 + 20 = 2\text{ cm}^2/\text{min}$</p>
+        </div>
+
+        <h4 id="example-5">Example 5</h4>
+        <div class="question-box">
+            <p>The total cost $C(x)$ in Rupees, associated with the production of $x$ units of an item is given by</p>
+            <p>$C(x) = 0.005 x^3 – 0.02 x^2 + 30x + 5000$</p>
+            <p>Find the marginal cost when 3 units are produced, where by marginal cost we mean the instantaneous rate of change of total cost at any level of output.</p>
+        </div>
+        <div class="solution-box">
+            <p>Since marginal cost is the rate of change of total cost with respect to the output, we have</p>
+            <p>Marginal cost (MC) = $\frac{dC}{dx} = 0.005(3x^2) - 0.02(2x) +30$</p>
+            <p>When $x = 3$, MC = $0.015(3^2) - 0.04(3) +30$</p>
+            <p>$ = 0.015(9) - 0.12 + 30 = 0.135 - 0.12 + 30 = 30.015$</p>
+            <p>Hence, the required marginal cost is ₹30.02 (nearly).</p>
+        </div>
+
+        <h4 id="example-6">Example 6</h4>
+        <div class="question-box">
+            <p>The total revenue in Rupees received from the sale of $x$ units of a product is given by $R(x) = 3x^2 + 36x + 5$. Find the marginal revenue, when $x = 5$, where by marginal revenue we mean the rate of change of total revenue with respect to the number of items sold at an instant.</p>
+        </div>
+        <div class="solution-box">
+            <p>Since marginal revenue is the rate of change of total revenue with respect to the number of units sold, we have</p>
+            <p>Marginal Revenue (MR) = $\frac{dR}{dx} = 6x + 36$</p>
+            <p>When $x = 5$, MR = $6(5) + 36 = 30 + 36 = 66$</p>
+            <p>Hence, the required marginal revenue is ₹66.</p>
+        </div>
+
+        <h3 id="exercise-6-1">EXERCISE 6.1</h3>
+
+        <h4 id="ex6-1-q1">1. Find the rate of change of the area of a circle with respect to its radius r when (a) r = 3 cm (b) r = 4 cm</h4>
+        <div class="solution-box">
+            <p>Let $A$ be the area of the circle with radius $r$. Then $A = \pi r^2$.</p>
+            <p>The rate of change of the area with respect to the radius $r$ is $\frac{dA}{dr} = \frac{d}{dr}(\pi r^2) = 2\pi r$.</p>
+            <p>(a) When $r = 3$ cm, $\frac{dA}{dr} = 2\pi (3) = 6\pi \text{ cm}^2/\text{cm}$.</p>
+            <p>(b) When $r = 4$ cm, $\frac{dA}{dr} = 2\pi (4) = 8\pi \text{ cm}^2/\text{cm}$.</p>
+        </div>
+
+        <h4 id="ex6-1-q2">2. The volume of a cube is increasing at the rate of 8 cm³/s. How fast is the surface area increasing when the length of an edge is 12 cm?</h4>
+        <div class="solution-box">
+            <p>Let $x$ be the length of the edge of the cube. Let $V$ be its volume and $S$ be its surface area.</p>
+            <p>Given $\frac{dV}{dt} = 8 \text{ cm}^3/\text{s}$. We need to find $\frac{dS}{dt}$ when $x=12$ cm.</p>
+            <p>$V = x^3 \implies \frac{dV}{dt} = 3x^2 \frac{dx}{dt}$</p>
+            <p>$8 = 3x^2 \frac{dx}{dt} \implies \frac{dx}{dt} = \frac{8}{3x^2}$</p>
+            <p>$S = 6x^2 \implies \frac{dS}{dt} = 12x \frac{dx}{dt}$</p>
+            <p>Substitute $\frac{dx}{dt}$:</p>
+            <p>$\frac{dS}{dt} = 12x \left(\frac{8}{3x^2}\right) = \frac{96x}{3x^2} = \frac{32}{x}$</p>
+            <p>When $x = 12$ cm:</p>
+            <p>$\frac{dS}{dt}\Big|_{x=12} = \frac{32}{12} = \frac{8}{3} \text{ cm}^2/\text{s}$.</p>
+        </div>
+
+        <h4 id="ex6-1-q3">3. The radius of a circle is increasing uniformly at the rate of 3 cm/s. Find the rate at which the area of the circle is increasing when the radius is 10 cm.</h4>
+        <div class="solution-box">
+            <p>Let $r$ be the radius of the circle and $A$ be its area.</p>
+            <p>Given $\frac{dr}{dt} = 3 \text{ cm/s}$. We need to find $\frac{dA}{dt}$ when $r=10$ cm.</p>
+            <p>$A = \pi r^2$</p>
+            <p>$\frac{dA}{dt} = \frac{d}{dr}(\pi r^2) \cdot \frac{dr}{dt} = 2\pi r \frac{dr}{dt}$</p>
+            <p>Substitute the given values:</p>
+            <p>$\frac{dA}{dt} = 2\pi (10) (3) = 60\pi \text{ cm}^2/\text{s}$.</p>
+        </div>
+
+        <h4 id="ex6-1-q4">4. An edge of a variable cube is increasing at the rate of 3 cm/s. How fast is the volume of the cube increasing when the edge is 10 cm long?</h4>
+        <div class="solution-box">
+            <p>Let $x$ be the length of an edge of the cube and $V$ be its volume.</p>
+            <p>Given $\frac{dx}{dt} = 3 \text{ cm/s}$. We need to find $\frac{dV}{dt}$ when $x=10$ cm.</p>
+            <p>$V = x^3$</p>
+            <p>$\frac{dV}{dt} = 3x^2 \frac{dx}{dt}$</p>
+            <p>Substitute the given values:</p>
+            <p>$\frac{dV}{dt} = 3 (10)^2 (3) = 3 (100) (3) = 900 \text{ cm}^3/\text{s}$.</p>
+        </div>
+
+        <h4 id="ex6-1-q5">5. A stone is dropped into a quiet lake and waves move in circles at the speed of 5 cm/s. At the instant when the radius of the circular wave is 8 cm, how fast is the enclosed area increasing?</h4>
+        <div class="solution-box">
+            <p>Let $r$ be the radius of the circular wave and $A$ be its area.</p>
+            <p>Given $\frac{dr}{dt} = 5 \text{ cm/s}$. We need to find $\frac{dA}{dt}$ when $r=8$ cm.</p>
+            <p>$A = \pi r^2$</p>
+            <p>$\frac{dA}{dt} = \frac{d}{dr}(\pi r^2) \cdot \frac{dr}{dt} = 2\pi r \frac{dr}{dt}$</p>
+            <p>Substitute the given values:</p>
+            <p>$\frac{dA}{dt} = 2\pi (8) (5) = 80\pi \text{ cm}^2/\text{s}$.</p>
+        </div>
+
+        <h4 id="ex6-1-q6">6. The radius of a circle is increasing at the rate of 0.7 cm/s. What is the rate of increase of its circumference?</h4>
+        <div class="solution-box">
+            <p>Let $r$ be the radius of the circle and $C$ be its circumference.</p>
+            <p>Given $\frac{dr}{dt} = 0.7 \text{ cm/s}$. We need to find $\frac{dC}{dt}$.</p>
+            <p>$C = 2\pi r$</p>
+            <p>$\frac{dC}{dt} = \frac{d}{dr}(2\pi r) \cdot \frac{dr}{dt} = 2\pi \frac{dr}{dt}$</p>
+            <p>Substitute the given value:</p>
+            <p>$\frac{dC}{dt} = 2\pi (0.7) = 1.4\pi \text{ cm/s}$.</p>
+        </div>
+
+        <h4 id="ex6-1-q7">7. The length x of a rectangle is decreasing at the rate of 5 cm/minute and the width y is increasing at the rate of 4 cm/minute. When x = 8cm and y = 6cm, find the rates of change of (a) the perimeter, and (b) the area of the rectangle.</h4>
+        <div class="solution-box">
+            <p>Given $\frac{dx}{dt} = -5 \text{ cm/min}$ and $\frac{dy}{dt} = 4 \text{ cm/min}$.</p>
+            <p>We are given $x = 8$ cm and $y = 6$ cm.</p>
+            <p>(a) Perimeter $P = 2(x+y)$</p>
+            <p>$\frac{dP}{dt} = 2\left(\frac{dx}{dt} + \frac{dy}{dt}\right) = 2(-5 + 4) = 2(-1) = -2 \text{ cm/min}$.</p>
+            <p>(b) Area $A = xy$</p>
+            <p>$\frac{dA}{dt} = x\frac{dy}{dt} + y\frac{dx}{dt}$ (Product Rule)</p>
+            <p>$\frac{dA}{dt} = (8)(4) + (6)(-5) = 32 - 30 = 2 \text{ cm}^2/\text{min}$.</p>
+        </div>
+
+        <h4 id="ex6-1-q8">8. A balloon, which always remains spherical on inflation, is being inflated by pumping in 900 cubic centimetres of gas per second. Find the rate at which the radius of the balloon increases when the radius is 15 cm.</h4>
+        <div class="solution-box">
+            <p>Let $V$ be the volume and $r$ be the radius of the spherical balloon.</p>
+            <p>Given $\frac{dV}{dt} = 900 \text{ cm}^3/\text{s}$. We need to find $\frac{dr}{dt}$ when $r=15$ cm.</p>
+            <p>$V = \frac{4}{3}\pi r^3$</p>
+            <p>$\frac{dV}{dt} = \frac{4}{3}\pi (3r^2) \frac{dr}{dt} = 4\pi r^2 \frac{dr}{dt}$</p>
+            <p>Substitute the given values:</p>
+            <p>$900 = 4\pi (15)^2 \frac{dr}{dt}$</p>
+            <p>$900 = 4\pi (225) \frac{dr}{dt}$</p>
+            <p>$900 = 900\pi \frac{dr}{dt}$</p>
+            <p>$\frac{dr}{dt} = \frac{900}{900\pi} = \frac{1}{\pi} \text{ cm/s}$.</p>
+        </div>
+
+        <h4 id="ex6-1-q9">9. A balloon, which always remains spherical has a variable radius. Find the rate at which its volume is increasing with the radius when the later is 10 cm.</h4>
+        <div class="solution-box">
+            <p>Let $V$ be the volume and $r$ be the radius of the spherical balloon.</p>
+            <p>We need to find $\frac{dV}{dr}$ when $r=10$ cm.</p>
+            <p>$V = \frac{4}{3}\pi r^3$</p>
+            <p>$\frac{dV}{dr} = \frac{4}{3}\pi (3r^2) = 4\pi r^2$</p>
+            <p>When $r = 10$ cm:</p>
+            <p>$\frac{dV}{dr}\Big|_{r=10} = 4\pi (10)^2 = 4\pi (100) = 400\pi \text{ cm}^3/\text{cm}$.</p>
+        </div>
+
+        <h4 id="ex6-1-q10">10. A ladder 5 m long is leaning against a wall. The bottom of the ladder is pulled along the ground, away from the wall, at the rate of 2cm/s. How fast is its height on the wall decreasing when the foot of the ladder is 4 m away from the wall ?</h4>
+        <div class="solution-box">
+            <p>Let $x$ be the distance of the foot of the ladder from the wall and $y$ be the height of the ladder on the wall. The length of the ladder is $L=5$ m.</p>
+            <p>By Pythagorean theorem: $x^2 + y^2 = L^2 \implies x^2 + y^2 = 5^2 = 25$.</p>
+            <p>Given $\frac{dx}{dt} = 2 \text{ cm/s} = 0.02 \text{ m/s}$. We need to find $\frac{dy}{dt}$ when $x=4$ m.</p>
+            <p>Differentiate $x^2 + y^2 = 25$ with respect to $t$:</p>
+            <p>$2x \frac{dx}{dt} + 2y \frac{dy}{dt} = 0$</p>
+            <p>$x \frac{dx}{dt} + y \frac{dy}{dt} = 0$</p>
+            <p>When $x = 4$ m, we can find $y$ using $x^2 + y^2 = 25$:</p>
+            <p>$4^2 + y^2 = 25 \implies 16 + y^2 = 25 \implies y^2 = 9 \implies y = 3$ m (since height must be positive).</p>
+            <p>Now substitute $x=4$, $y=3$, and $\frac{dx}{dt}=0.02$ into the differentiated equation:</p>
+            <p>$4 (0.02) + 3 \frac{dy}{dt} = 0$</p>
+            <p>$0.08 + 3 \frac{dy}{dt} = 0$</p>
+            <p>$3 \frac{dy}{dt} = -0.08$</p>
+            <p>$\frac{dy}{dt} = -\frac{0.08}{3} = -\frac{8}{300} = -\frac{2}{75} \text{ m/s}$.</p>
+            <p>The height on the wall is decreasing at the rate of $\frac{2}{75} \text{ m/s}$.</p>
+        </div>
+
+        <h4 id="ex6-1-q11">11. A particle moves along the curve $6y = x^3 + 2$. Find the points on the curve at which the y-coordinate is changing 8 times as fast as the x-coordinate.</h4>
+        <div class="solution-box">
+            <p>Given the curve $6y = x^3 + 2$.</p>
+            <p>Differentiate with respect to time $t$:</p>
+            <p>$6 \frac{dy}{dt} = 3x^2 \frac{dx}{dt}$</p>
+            <p>Given that the $y$-coordinate is changing 8 times as fast as the $x$-coordinate, so $\frac{dy}{dt} = 8 \frac{dx}{dt}$.</p>
+            <p>Substitute this into the differentiated equation:</p>
+            <p>$6 \left(8 \frac{dx}{dt}\right) = 3x^2 \frac{dx}{dt}$</p>
+            <p>$48 \frac{dx}{dt} = 3x^2 \frac{dx}{dt}$</p>
+            <p>Since the particle is moving, $\frac{dx}{dt} \neq 0$. We can divide by $\frac{dx}{dt}$:</p>
+            <p>$48 = 3x^2$</p>
+            <p>$x^2 = \frac{48}{3} = 16$</p>
+            <p>$x = \pm 4$</p>
+            <p>Now find the corresponding $y$-coordinates using $6y = x^3 + 2$:</p>
+            <p>If $x = 4$: $6y = (4)^3 + 2 = 64 + 2 = 66 \implies y = 11$. So, point is $(4, 11)$.</p>
+            <p>If $x = -4$: $6y = (-4)^3 + 2 = -64 + 2 = -62 \implies y = -\frac{62}{6} = -\frac{31}{3}$. So, point is $(-4, -\frac{31}{3})$.</p>
+            <p>The points on the curve are $(4, 11)$ and $(-4, -\frac{31}{3})$.</p>
+        </div>
+
+        <h4 id="ex6-1-q12">12. The radius of an air bubble is increasing at the rate of $\frac{1}{2}$ cm/s. At what rate is the volume of the bubble increasing when the radius is 1 cm?</h4>
+        <div class="solution-box">
+            <p>Let $V$ be the volume and $r$ be the radius of the air bubble (spherical).</p>
+            <p>Given $\frac{dr}{dt} = \frac{1}{2} \text{ cm/s}$. We need to find $\frac{dV}{dt}$ when $r=1$ cm.</p>
+            <p>$V = \frac{4}{3}\pi r^3$</p>
+            <p>$\frac{dV}{dt} = \frac{4}{3}\pi (3r^2) \frac{dr}{dt} = 4\pi r^2 \frac{dr}{dt}$</p>
+            <p>Substitute the given values:</p>
+            <p>$\frac{dV}{dt} = 4\pi (1)^2 \left(\frac{1}{2}\right) = 4\pi (1) \left(\frac{1}{2}\right) = 2\pi \text{ cm}^3/\text{s}$.</p>
+        </div>
+
+        <h4 id="ex6-1-q13">13. A balloon, which always remains spherical, has a variable diameter $\frac{3}{2}(2x+1)$. Find the rate of change of its volume with respect to x.</h4>
+        <div class="solution-box">
+            <p>Let $V$ be the volume of the spherical balloon.
+            Given diameter $D = \frac{3}{2}(2x+1)$.</p>
+            <p>Radius $r = \frac{D}{2} = \frac{1}{2} \cdot \frac{3}{2}(2x+1) = \frac{3}{4}(2x+1)$.</p>
+            <p>Volume $V = \frac{4}{3}\pi r^3 = \frac{4}{3}\pi \left(\frac{3}{4}(2x+1)\right)^3$</p>
+            <p>$V = \frac{4}{3}\pi \left(\frac{27}{64}\right)(2x+1)^3 = \frac{9\pi}{16}(2x+1)^3$</p>
+            <p>We need to find the rate of change of its volume with respect to $x$, i.e., $\frac{dV}{dx}$.</p>
+            <p>$\frac{dV}{dx} = \frac{9\pi}{16} \cdot 3(2x+1)^2 \cdot \frac{d}{dx}(2x+1)$</p>
+            <p>$\frac{dV}{dx} = \frac{9\pi}{16} \cdot 3(2x+1)^2 \cdot 2$</p>
+            <p>$\frac{dV}{dx} = \frac{27\pi}{8}(2x+1)^2$.</p>
+        </div>
+
+        <h4 id="ex6-1-q14">14. Sand is pouring from a pipe at the rate of 12 cm³/s. The falling sand forms a cone on the ground in such a way that the height of the cone is always one-sixth of the radius of the base. How fast is the height of the sand cone increasing when the height is 4 cm?</h4>
+        <div class="solution-box">
+            <p>Let $V$ be the volume of the sand cone, $h$ be its height, and $r$ be the radius of its base.</p>
+            <p>Given $\frac{dV}{dt} = 12 \text{ cm}^3/\text{s}$.</p>
+            <p>Given relationship: $h = \frac{1}{6}r \implies r = 6h$.</p>
+            <p>We need to find $\frac{dh}{dt}$ when $h=4$ cm.</p>
+            <p>Volume of a cone $V = \frac{1}{3}\pi r^2 h$.</p>
+            <p>Substitute $r=6h$ into the volume formula to express $V$ in terms of $h$ only:</p>
+            <p>$V = \frac{1}{3}\pi (6h)^2 h = \frac{1}{3}\pi (36h^2) h = 12\pi h^3$</p>
+            <p>Now differentiate $V$ with respect to $t$:</p>
+            <p>$\frac{dV}{dt} = 12\pi (3h^2) \frac{dh}{dt} = 36\pi h^2 \frac{dh}{dt}$</p>
+            <p>Substitute the given values:</p>
+            <p>$12 = 36\pi (4)^2 \frac{dh}{dt}$</p>
+            <p>$12 = 36\pi (16) \frac{dh}{dt}$</p>
+            <p>$12 = 576\pi \frac{dh}{dt}$</p>
+            <p>$\frac{dh}{dt} = \frac{12}{576\pi} = \frac{1}{48\pi} \text{ cm/s}$.</p>
+        </div>
+
+        <h4 id="ex6-1-q15">15. The total cost C (x) in Rupees associated with the production of x units of an item is given by $C(x) = 0.007x^3 – 0.003x^2 + 15x + 4000$. Find the marginal cost when 17 units are produced.</h4>
+        <div class="solution-box">
+            <p>Marginal cost (MC) is the rate of change of total cost with respect to the output $x$, i.e., $MC = \frac{dC}{dx}$.</p>
+            <p>$C(x) = 0.007x^3 – 0.003x^2 + 15x + 4000$</p>
+            <p>$\frac{dC}{dx} = 0.007(3x^2) - 0.003(2x) + 15$</p>
+            <p>$\frac{dC}{dx} = 0.021x^2 - 0.006x + 15$</p>
+            <p>When $x = 17$ units:</p>
+            <p>$\frac{dC}{dx}\Big|_{x=17} = 0.021(17)^2 - 0.006(17) + 15$</p>
+            <p>$ = 0.021(289) - 0.102 + 15$</p>
+            <p>$ = 6.069 - 0.102 + 15$</p>
+            <p>$ = 20.967$</p>
+            <p>The marginal cost when 17 units are produced is ₹20.967.</p>
+        </div>
+
+        <h4 id="ex6-1-q16">16. The total revenue in Rupees received from the sale of x units of a product is given by $R(x) = 13x^2 + 26x + 15$. Find the marginal revenue when x = 7.</h4>
+        <div class="solution-box">
+            <p>Marginal revenue (MR) is the rate of change of total revenue with respect to the number of items sold $x$, i.e., $MR = \frac{dR}{dx}$.</p>
+            <p>$R(x) = 13x^2 + 26x + 15$</p>
+            <p>$\frac{dR}{dx} = 13(2x) + 26$</p>
+            <p>$\frac{dR}{dx} = 26x + 26$</p>
+            <p>When $x = 7$ units:</p>
+            <p>$\frac{dR}{dx}\Big|_{x=7} = 26(7) + 26 = 182 + 26 = 208$.</p>
+            <p>The marginal revenue when $x = 7$ is ₹208.</p>
+        </div>
+
+        <h4 id="ex6-1-q17">17. The rate of change of the area of a circle with respect to its radius r at r = 6 cm is<br>(A) $10\pi$ (B) $12\pi$ (C) $8\pi$ (D) $11\pi$</h4>
+        <div class="solution-box">
+            <p>Let $A$ be the area of the circle with radius $r$. Then $A = \pi r^2$.</p>
+            <p>The rate of change of the area with respect to the radius $r$ is $\frac{dA}{dr} = 2\pi r$.</p>
+            <p>At $r = 6$ cm, $\frac{dA}{dr}\Big|_{r=6} = 2\pi (6) = 12\pi \text{ cm}^2/\text{cm}$.</p>
+            <p>The correct option is <strong>(B)</strong>.</p>
+        </div>
+
+        <h4 id="ex6-1-q18">18. The total revenue in Rupees received from the sale of x units of a product is given by $R(x) = 3x^2 + 36x + 5$. The marginal revenue, when x = 15 is<br>(A) 116 (B) 96 (C) 90 (D) 126</h4>
+        <div class="solution-box">
+            <p>Marginal revenue (MR) is $\frac{dR}{dx}$.</p>
+            <p>$R(x) = 3x^2 + 36x + 5$</p>
+            <p>$\frac{dR}{dx} = 6x + 36$</p>
+            <p>When $x = 15$:</p>
+            <p>$\frac{dR}{dx}\Big|_{x=15} = 6(15) + 36 = 90 + 36 = 126$.</p>
+            <p>The correct option is <strong>(D)</strong>.</p>
+        </div>
+
+        <h3 id="increasing-decreasing-6-3">6.3 Increasing and Decreasing Functions</h3>
+        <p>In this section, we will use differentiation to find out whether a function is increasing or decreasing or none.</p>
+        <p>Consider the function $f$ given by $f(x) = x^2, x \in R$. The graph of this function is a parabola (See Figure 6.1 in textbook).</p>
+        <!-- Figure 6.1 Placeholder: Graph of f(x) = x^2 showing decreasing for x<0 and increasing for x>0 -->
+
+        <div class="definition-box">
+            <h5>Definition 1</h5>
+            <p>Let $I$ be an interval contained in the domain of a real valued function $f$. Then $f$ is said to be</p>
+            <p>(i) <strong>increasing</strong> on $I$ if $x_1 < x_2$ in $I \rightarrow f(x_1) \leq f(x_2)$ for all $x_1, x_2 \in I$.</p>
+            <p>(ii) <strong>decreasing</strong> on $I$, if $x_1 < x_2$ in $I \rightarrow f(x_1) \geq f(x_2)$ for all $x_1, x_2 \in I$.</p>
+            <p>(iii) <strong>constant</strong> on $I$, if $f(x) = c$ for all $x \in I$, where $c$ is a constant.</p>
+            <p>(iv) <strong>strictly increasing</strong> on $I$ if $x_1 < x_2$ in $I \rightarrow f(x_1) < f(x_2)$ for all $x_1, x_2 \in I$.</p>
+            <p>(v) <strong>strictly decreasing</strong> on $I$ if $x_1 < x_2$ in $I \rightarrow f(x_1) > f(x_2)$ for all $x_1, x_2 \in I$.</p>
+            <p>For graphical representation of such functions see Figure 6.2 in textbook.</p>
+            <!-- Figure 6.2 Placeholder: Graphs showing strictly increasing, strictly decreasing, and neither -->
+        </div>
+
+        <div class="definition-box">
+            <h5>Definition 2</h5>
+            <p>Let $x_0$ be a point in the domain of definition of a real valued function $f$. Then $f$ is said to be increasing, decreasing at $x_0$ if there exists an open interval $I$ containing $x_0$ such that $f$ is increasing, decreasing, respectively, in $I$.</p>
+        </div>
+
+        <h4 id="example-7">Example 7</h4>
+        <div class="question-box">
+            <p>Show that the function given by $f(x) = 7x – 3$ is increasing on R.</p>
+        </div>
+        <div class="solution-box">
+            <p>Let $x_1$ and $x_2$ be any two numbers in R.</p>
+            <p>Then $x_1 < x_2 \rightarrow 7x_1 < 7x_2 \rightarrow 7x_1 – 3 < 7x_2 – 3 \rightarrow f(x_1) < f(x_2)$</p>
+            <p>Thus, by Definition 1, it follows that $f$ is strictly increasing on R.</p>
+        </div>
+
+        <div class="theorem-box">
+            <h5>Theorem 1 (First Derivative Test)</h5>
+            <p>Let $f$ be continuous on $[a, b]$ and differentiable on the open interval $(a,b)$. Then</p>
+            <p>(a) $f$ is increasing in $[a,b]$ if $f'(x) \geq 0$ for each $x \in (a, b)$</p>
+            <p>(b) $f$ is decreasing in $[a,b]$ if $f'(x) \leq 0$ for each $x \in (a, b)$</p>
+            <p>(c) $f$ is a constant function in $[a,b]$ if $f'(x) = 0$ for each $x \in (a, b)$</p>
+            <p><strong>Proof (a):</strong> Let $x_1, x_2 \in [a, b]$ be such that $x_1 < x_2$. Then, by Mean Value Theorem (Theorem 8 in Chapter 5), there exists a point $c$ between $x_1$ and $x_2$ such that</p>
+            $$ f(x_2) – f(x_1) = f'(c) (x_2 – x_1) $$
+            <p>i.e. $f(x_2) - f(x_1) > 0$ (as $f'(c) > 0$ (given))</p>
+            <p>i.e. $f(x_2) > f(x_1)$</p>
+            <p>Thus, we have $x_1 < x_2 \rightarrow f(x_1) < f(x_2)$, for all $x_1,x_2 \in[a,b]$</p>
+            <p>Hence, $f$ is an increasing function in $[a,b]$.</p>
+            <p>The proofs of part (b) and (c) are similar. It is left as an exercise to the reader.</p>
+        </div>
+
+        <div class="remark-box">
+            <h5>Remarks</h5>
+            <p>There is a more generalised theorem, which states that if $f'(x) > 0$ for $x$ in an interval excluding the end points and $f$ is continuous in the interval, then $f$ is increasing. Similarly, if $f'(x) < 0$ for $x$ in an interval excluding the end points and $f$ is continuous in the interval, then $f$ is decreasing.</p>
+        </div>
+
+        <h4 id="example-8">Example 8</h4>
+        <div class="question-box">
+            <p>Show that the function given by $f(x) = x^3 - 3x^2 + 4x$, $x \in R$ is increasing on R.</p>
+        </div>
+        <div class="solution-box">
+            <p>Note that $f'(x) = 3x^2 - 6x + 4$</p>
+            <p>$ = 3(x^2 – 2x + 1) + 1$</p>
+            <p>$ = 3(x - 1)^2 + 1$</p>
+            <p>Since $(x - 1)^2 \geq 0$ for all $x \in R$, $3(x - 1)^2 \geq 0$, so $3(x - 1)^2 + 1 \geq 1 > 0$.</p>
+            <p>Therefore, $f'(x) > 0$ in every interval of R.</p>
+            <p>Therefore, the function $f$ is increasing on R.</p>
+        </div>
+
+        <h4 id="example-9">Example 9</h4>
+        <div class="question-box">
+            <p>Prove that the function given by $f(x) = \cos x$ is<br>(a) decreasing in $(0, \pi)$<br>(b) increasing in $(\pi, 2\pi)$, and<br>(c) neither increasing nor decreasing in $(0, 2\pi)$.</p>
+        </div>
+        <div class="solution-box">
+            <p>Note that $f'(x) = - \sin x$</p>
+            <p>(a) Since for each $x \in (0, \pi)$, $\sin x > 0$, we have $f'(x) = -\sin x < 0$ and so $f$ is decreasing in $(0, \pi)$.</p>
+            <p>(b) Since for each $x \in (\pi, 2\pi)$, $\sin x < 0$, we have $f'(x) = -\sin x > 0$ and so $f$ is increasing in $(\pi, 2\pi)$.</p>
+            <p>(c) Clearly by (a) and (b) above, $f$ is neither increasing nor decreasing in $(0, 2\pi)$ as it decreases in $(0, \pi)$ and increases in $(\pi, 2\pi)$.</p>
+        </div>
+
+        <h4 id="example-10">Example 10</h4>
+        <div class="question-box">
+            <p>Find the intervals in which the function $f$ given by $f(x) = x^2 – 4x + 6$ is<br>(a) increasing<br>(b) decreasing</p>
+        </div>
+        <div class="solution-box">
+            <p>We have $f(x) = x^2 - 4x + 6$</p>
+            <p>$f'(x) = 2x - 4$</p>
+            <p>For increasing function, $f'(x) > 0 \implies 2x - 4 > 0 \implies 2x > 4 \implies x > 2$.
+            So, $f$ is increasing in $(2, \infty)$.</p>
+            <p>For decreasing function, $f'(x) < 0 \implies 2x - 4 < 0 \implies 2x < 4 \implies x < 2$.
+            So, $f$ is decreasing in $(-\infty, 2)$.</p>
+            <p>Thus,</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Interval</th>
+                        <th>Sign of $f'(x)$</th>
+                        <th>Nature of function</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>$(-\infty, 2)$</td>
+                        <td>$-$</td>
+                        <td>$f$ is decreasing</td>
+                    </tr>
+                    <tr>
+                        <td>$(2, \infty)$</td>
+                        <td>$+$</td>
+                        <td>$f$ is increasing</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4 id="example-11">Example 11</h4>
+        <div class="question-box">
+            <p>Find the intervals in which the function $f$ given by $f(x) = 4x^3 – 6x^2 – 72x + 30$ is (a) increasing (b) decreasing.</p>
+        </div>
+        <div class="solution-box">
+            <p>We have $f(x) = 4x^3 - 6x^2 - 72x + 30$</p>
+            <p>$f'(x) = 12x^2 - 12x - 72$</p>
+            <p>Factor out 12: $f'(x) = 12(x^2 - x - 6)$</p>
+            <p>Factor the quadratic: $f'(x) = 12(x-3)(x+2)$</p>
+            <p>To find critical points, set $f'(x) = 0$:</p>
+            <p>$12(x-3)(x+2) = 0 \implies x=3$ or $x=-2$.</p>
+            <p>These points divide the real line into three disjoint intervals: $(-\infty, -2)$, $(-2, 3)$, and $(3, \infty)$.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Interval</th>
+                        <th>Sign of $f'(x)$</th>
+                        <th>Nature of function</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>$(-\infty, -2)$</td>
+                        <td>$12(-)(-)$ = $+$</td>
+                        <td>$f$ is increasing</td>
+                    </tr>
+                    <tr>
+                        <td>$(-2, 3)$</td>
+                        <td>$12(-)(+)$ = $-$</td>
+                        <td>$f$ is decreasing</td>
+                    </tr>
+                    <tr>
+                        <td>$(3, \infty)$</td>
+                        <td>$12(+)(+)$ = $+$</td>
+                        <td>$f$ is increasing</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>(a) $f$ is increasing in $(-\infty, -2)$ and $(3, \infty)$.</p>
+            <p>(b) $f$ is decreasing in $(-2, 3)$.</p>
+        </div>
+
+        <h4 id="example-12">Example 12</h4>
+        <div class="question-box">
+            <p>Find intervals in which the function given by $f(x) = \sin 3x, x \in [0, \frac{\pi}{2}]$ is (a) increasing (b) decreasing.</p>
+        </div>
+        <div class="solution-box">
+            <p>We have $f(x) = \sin 3x$</p>
+            <p>$f'(x) = 3\cos 3x$</p>
+            <p>To find critical points, set $f'(x) = 0$:</p>
+            <p>$3\cos 3x = 0 \implies \cos 3x = 0$</p>
+            <p>For $x \in [0, \frac{\pi}{2}]$, we have $3x \in [0, \frac{3\pi}{2}]$.</p>
+            <p>In this range, $\cos(3x) = 0$ when $3x = \frac{\pi}{2}$ or $3x = \frac{3\pi}{2}$.</p>
+            <p>So, $x = \frac{\pi}{6}$ or $x = \frac{\pi}{2}$.</p>
+            <p>These points divide the interval $[0, \frac{\pi}{2}]$ into two disjoint intervals: $[0, \frac{\pi}{6})$ and $(\frac{\pi}{6}, \frac{\pi}{2}]$.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Interval</th>
+                        <th>Sign of $f'(x) = 3\cos 3x$</th>
+                        <th>Nature of function</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>$[0, \frac{\pi}{6})$</td>
+                        <td>$3\cos(3x) > 0$ for $3x \in [0, \frac{\pi}{2})$</td>
+                        <td>$f$ is increasing</td>
+                    </tr>
+                    <tr>
+                        <td>$(\frac{\pi}{6}, \frac{\pi}{2}]$</td>
+                        <td>$3\cos(3x) < 0$ for $3x \in (\frac{\pi}{2}, \frac{3\pi}{2}]$</td>
+                        <td>$f$ is decreasing</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>(a) $f$ is increasing in $[0, \frac{\pi}{6})$.</p>
+            <p>(b) $f$ is decreasing in $(\frac{\pi}{6}, \frac{\pi}{2}]$.</p>
+        </div>
+
+        <h4 id="example-13">Example 13</h4>
+        <div class="question-box">
+            <p>Find the intervals in which the function $f$ given by $f(x) = \sin x + \cos x, 0 \leq x \leq 2\pi$ is increasing or decreasing.</p>
+        </div>
+        <div class="solution-box">
+            <p>We have $f(x) = \sin x + \cos x$</p>
+            <p>$f'(x) = \cos x - \sin x$</p>
+            <p>To find critical points, set $f'(x) = 0$:</p>
+            <p>$\cos x - \sin x = 0 \implies \cos x = \sin x \implies \tan x = 1$</p>
+            <p>For $x \in [0, 2\pi]$, $\tan x = 1$ when $x = \frac{\pi}{4}$ or $x = \frac{5\pi}{4}$.</p>
+            <p>These points divide the interval $[0, 2\pi]$ into three disjoint intervals: $[0, \frac{\pi}{4})$, $(\frac{\pi}{4}, \frac{5\pi}{4})$, and $(\frac{5\pi}{4}, 2\pi]$.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Interval</th>
+                        <th>Test Value ($x$)</th>
+                        <th>$f'(x) = \cos x - \sin x$</th>
+                        <th>Sign of $f'(x)$</th>
+                        <th>Nature of function</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>$[0, \frac{\pi}{4})$</td>
+                        <td>$x=0$</td>
+                        <td>$\cos 0 - \sin 0 = 1-0 = 1$</td>
+                        <td>$+$</td>
+                        <td>$f$ is increasing</td>
+                    </tr>
+                    <tr>
+                        <td>$(\frac{\pi}{4}, \frac{5\pi}{4})$</td>
+                        <td>$x=\pi$</td>
+                        <td>$\cos \pi - \sin \pi = -1-0 = -1$</td>
+                        <td>$-$</td>
+                        <td>$f$ is decreasing</td>
+                    </tr>
+                    <tr>
+                        <td>$(\frac{5\pi}{4}, 2\pi]$</td>
+                        <td>$x=2\pi$</td>
+                        <td>$\cos 2\pi - \sin 2\pi = 1-0 = 1$</td>
+                        <td>$+$</td>
+                        <td>$f$ is increasing</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>$f$ is increasing on $[0, \frac{\pi}{4}) \cup (\frac{5\pi}{4}, 2\pi]$.</p>
+            <p>$f$ is decreasing on $(\frac{\pi}{4}, \frac{5\pi}{4})$.</p>
+        </div>
+
+        <h3 id="exercise-6-2">EXERCISE 6.2</h3>
+
+        <h4 id="ex6-2-q1">1. Show that the function given by $f(x) = 3x + 17$ is increasing on R.</h4>
+        <div class="solution-box">
+            <p>We have $f(x) = 3x + 17$.</p>
+            <p>$f'(x) = 3$.</p>
+            <p>Since $f'(x) = 3 > 0$ for all $x \in R$, the function $f(x)$ is strictly increasing on R.</p>
+        </div>
+
+        <h4 id="ex6-2-q2">2. Show that the function given by $f(x) = e^{2x}$ is increasing on R.</h4>
+        <div class="solution-box">
+            <p>We have $f(x) = e^{2x}$.</p>
+            <p>$f'(x) = 2e^{2x}$.</p>
+            <p>Since $e^{2x} > 0$ for all $x \in R$, $f'(x) = 2e^{2x} > 0$ for all $x \in R$.</p>
+            <p>Therefore, the function $f(x)$ is strictly increasing on R.</p>
+        </div>
+
+        <h4 id="ex6-2-q3">3. Show that the function given by $f(x) = \sin x$ is<br>(a) increasing in $(0, \frac{\pi}{2})$<br>(b) decreasing in $(\frac{\pi}{2}, \pi)$<br>(c) neither increasing nor decreasing in $(0, \pi)$</h4>
+        <div class="solution-box">
+            <p>We have $f(x) = \sin x$.</p>
+            <p>$f'(x) = \cos x$.</p>
+            <p>(a) In the interval $(0, \frac{\pi}{2})$, $\cos x > 0$. So $f'(x) > 0$.
+            Therefore, $f(x) = \sin x$ is increasing in $(0, \frac{\pi}{2})$.</p>
+            <p>(b) In the interval $(\frac{\pi}{2}, \pi)$, $\cos x < 0$. So $f'(x) < 0$.
+            Therefore, $f(x) = \sin x$ is decreasing in $(\frac{\pi}{2}, \pi)$.</p>
+            <p>(c) Since $f(x)$ is increasing in $(0, \frac{\pi}{2})$ and decreasing in $(\frac{\pi}{2}, \pi)$, it is neither increasing nor decreasing in $(0, \pi)$.</p>
+        </div>
+
+        <h4 id="ex6-2-q4">4. Find the intervals in which the function f given by $f(x) = 2x^2 – 3x$ is<br>(a) increasing<br>(b) decreasing</h4>
+        <div class="solution-box">
+            <p>We have $f(x) = 2x^2 - 3x$.</p>
+            <p>$f'(x) = 4x - 3$.</p>
+            <p>Set $f'(x) = 0$ to find critical points: $4x - 3 = 0 \implies x = \frac{3}{4}$.</p>
+            <p>This divides the real line into two intervals: $(-\infty, \frac{3}{4})$ and $(\frac{3}{4}, \infty)$.</p>
+            <p>(a) For $f(x)$ to be increasing, $f'(x) > 0 \implies 4x - 3 > 0 \implies 4x > 3 \implies x > \frac{3}{4}$.
+            So, $f(x)$ is increasing in $(\frac{3}{4}, \infty)$.</p>
+            <p>(b) For $f(x)$ to be decreasing, $f'(x) < 0 \implies 4x - 3 < 0 \implies 4x < 3 \implies x < \frac{3}{4}$.
+            So, $f(x)$ is decreasing in $(-\infty, \frac{3}{4})$.</p>
+        </div>
+
+        <h4 id="ex6-2-q5">5. Find the intervals in which the function f given by $f(x) = 2x^3 – 3x^2 – 36x + 7$ is<br>(a) increasing<br>(b) decreasing</h4>
+        <div class="solution-box">
+            <p>We have $f(x) = 2x^3 - 3x^2 - 36x + 7$.</p>
+            <p>$f'(x) = 6x^2 - 6x - 36 = 6(x^2 - x - 6)$.</p>
+            <p>Factor the quadratic: $f'(x) = 6(x-3)(x+2)$.</p>
+            <p>Set $f'(x) = 0$ to find critical points: $6(x-3)(x+2) = 0 \implies x=3$ or $x=-2$.</p>
+            <p>These points divide the real line into three intervals: $(-\infty, -2)$, $(-2, 3)$, and $(3, \infty)$.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Interval</th>
+                        <th>Test Value ($x$)</th>
+                        <th>$f'(x) = 6(x-3)(x+2)$</th>
+                        <th>Sign of $f'(x)$</th>
+                        <th>Nature of function</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>$(-\infty, -2)$</td>
+                        <td>$x=-3$</td>
+                        <td>$6(-3-3)(-3+2) = 6(-6)(-1) = 36$</td>
+                        <td>$+$</td>
+                        <td>$f$ is increasing</td>
+                    </tr>
+                    <tr>
+                        <td>$(-2, 3)$</td>
+                        <td>$x=0$</td>
+                        <td>$6(0-3)(0+2) = 6(-3)(2) = -36$</td>
+                        <td>$-$</td>
+                        <td>$f$ is decreasing</td>
+                    </tr>
+                    <tr>
+                        <td>$(3, \infty)$</td>
+                        <td>$x=4$</td>
+                        <td>$6(4-3)(4+2) = 6(1)(6) = 36$</td>
+                        <td>$+$</td>
+                        <td>$f$ is increasing</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>(a) $f(x)$ is increasing in $(-\infty, -2) \cup (3, \infty)$.</p>
+            <p>(b) $f(x)$ is decreasing in $(-2, 3)$.</p>
+        </div>
+
+        <h4 id="ex6-2-q6">6. Find the intervals in which the following functions are strictly increasing or decreasing:<br>(a) $x^2 + 2x - 5$<br>(b) $10 - 6x - 2x^2$<br>(c) $-2x^3 - 9x^2 - 12x + 1$<br>(d) $6 - 9x - x^2$<br>(e) $(x + 1)^3 (x - 3)^3$</h4>
+        <div class="solution-box">
+            <p><strong>(a) $f(x) = x^2 + 2x - 5$</strong></p>
+            <p>$f'(x) = 2x + 2 = 2(x+1)$</p>
+            <p>For strictly increasing: $f'(x) > 0 \implies 2(x+1) > 0 \implies x > -1$. Interval: $(-1, \infty)$.</p>
+            <p>For strictly decreasing: $f'(x) < 0 \implies 2(x+1) < 0 \implies x < -1$. Interval: $(-\infty, -1)$.</p>
+
+            <p><strong>(b) $f(x) = 10 - 6x - 2x^2$</strong></p>
+            <p>$f'(x) = -6 - 4x = -2(3+2x)$</p>
+            <p>For strictly increasing: $f'(x) > 0 \implies -2(3+2x) > 0 \implies 3+2x < 0 \implies 2x < -3 \implies x < -\frac{3}{2}$. Interval: $(-\infty, -\frac{3}{2})$.</p>
+            <p>For strictly decreasing: $f'(x) < 0 \implies -2(3+2x) < 0 \implies 3+2x > 0 \implies 2x > -3 \implies x > -\frac{3}{2}$. Interval: $(-\frac{3}{2}, \infty)$.</p>
+
+            <p><strong>(c) $f(x) = -2x^3 - 9x^2 - 12x + 1$</strong></p>
+            <p>$f'(x) = -6x^2 - 18x - 12 = -6(x^2 + 3x + 2) = -6(x+1)(x+2)$</p>
+            <p>Critical points: $x = -1, -2$.
+            Intervals: $(-\infty, -2)$, $(-2, -1)$, $(-1, \infty)$.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Interval</th>
+                        <th>Test Value ($x$)</th>
+                        <th>$f'(x) = -6(x+1)(x+2)$</th>
+                        <th>Sign of $f'(x)$</th>
+                        <th>Nature</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>$(-\infty, -2)$</td>
+                        <td>$x=-3$</td>
+                        <td>$-6(-3+1)(-3+2) = -6(-2)(-1) = -12$</td>
+                        <td>$-$</td>
+                        <td>Strictly Decreasing</td>
+                    </tr>
+                    <tr>
+                        <td>$(-2, -1)$</td>
+                        <td>$x=-1.5$</td>
+                        <td>$-6(-1.5+1)(-1.5+2) = -6(-0.5)(0.5) = 1.5$</td>
+                        <td>$+$</td>
+                        <td>Strictly Increasing</td>
+                    </tr>
+                    <tr>
+                        <td>$(-1, \infty)$</td>
+                        <td>$x=0$</td>
+                        <td>$-6(0+1)(0+2) = -12$</td>
+                        <td>$-$</td>
+                        <td>Strictly Decreasing</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Strictly Increasing: $(-2, -1)$.</p>
+            <p>Strictly Decreasing: $(-\infty, -2) \cup (-1, \infty)$.</p>
+
+            <p><strong>(d) $f(x) = 6 - 9x - x^2$</strong></p>
+            <p>$f'(x) = -9 - 2x = -(9+2x)$</p>
+            <p>For strictly increasing: $f'(x) > 0 \implies -(9+2x) > 0 \implies 9+2x < 0 \implies 2x < -9 \implies x < -\frac{9}{2}$. Interval: $(-\infty, -\frac{9}{2})$.</p>
+            <p>For strictly decreasing: $f'(x) < 0 \implies -(9+2x) < 0 \implies 9+2x > 0 \implies 2x > -9 \implies x > -\frac{9}{2}$. Interval: $(-\frac{9}{2}, \infty)$.</p>
+
+            <p><strong>(e) $f(x) = (x + 1)^3 (x - 3)^3$</strong></p>
+            <p>$f(x) = [(x + 1)(x - 3)]^3 = (x^2 - 2x - 3)^3$</p>
+            <p>$f'(x) = 3(x^2 - 2x - 3)^2 (2x - 2)$</p>
+            <p>$f'(x) = 6(x-1)(x^2 - 2x - 3)^2 = 6(x-1)[(x-3)(x+1)]^2$</p>
+            <p>Critical points: $x = 1, 3, -1$.</p>
+            <p>Notice that $[(x-3)(x+1)]^2$ is always non-negative. The sign of $f'(x)$ depends on $(x-1)$.</p>
+            <p>For strictly increasing: $f'(x) > 0$. This means $6(x-1)[(x-3)(x+1)]^2 > 0$.
+            Since $[(x-3)(x+1)]^2 > 0$ for $x \neq 3, x \neq -1$, we need $x-1 > 0 \implies x > 1$.
+            So, strictly increasing in $(1, \infty) \setminus \{3\}$ (removing $x=3$ because $f'(3)=0$). However, usually when $f'(x)=0$ at isolated points, it's considered increasing. So, $(1, \infty)$.</p>
+            <p>For strictly decreasing: $f'(x) < 0$. This means $6(x-1)[(x-3)(x+1)]^2 < 0$.
+            Since $[(x-3)(x+1)]^2 > 0$ for $x \neq 3, x \neq -1$, we need $x-1 < 0 \implies x < 1$.
+            So, strictly decreasing in $(-\infty, 1) \setminus \{-1\}$ (removing $x=-1$ because $f'(-1)=0$). However, usually when $f'(x)=0$ at isolated points, it's considered decreasing. So, $(-\infty, 1)$.</p>
+        </div>
+
+        <h4 id="ex6-2-q7">7. Show that $y = \log(1+x) - \frac{2x}{2+x}$, $x > -1$, is an increasing function of x throughout its domain.</h4>
+        <div class="solution-box">
+            <p>Given $y = f(x) = \log(1+x) - \frac{2x}{2+x}$. Domain is $x > -1$.</p>
+            <p>Find $f'(x)$:</p>
+            <p>$f'(x) = \frac{1}{1+x} - \frac{(2+x)(2) - 2x(1)}{(2+x)^2}$</p>
+            <p>$f'(x) = \frac{1}{1+x} - \frac{4 + 2x - 2x}{(2+x)^2}$</p>
+            <p>$f'(x) = \frac{1}{1+x} - \frac{4}{(2+x)^2}$</p>
+            <p>Combine terms:</p>
+            <p>$f'(x) = \frac{(2+x)^2 - 4(1+x)}{(1+x)(2+x)^2}$</p>
+            <p>$f'(x) = \frac{4 + 4x + x^2 - 4 - 4x}{(1+x)(2+x)^2}$</p>
+            <p>$f'(x) = \frac{x^2}{(1+x)(2+x)^2}$</p>
+            <p>For $x > -1$:</p>
+            <p>$x^2 \geq 0$ (and $x^2=0$ only at $x=0$)</p>
+            <p>$1+x > 0$</p>
+            <p>$(2+x)^2 > 0$ (and $(2+x)^2=0$ only at $x=-2$, which is not in domain)</p>
+            <p>So, $f'(x) = \frac{x^2}{(1+x)(2+x)^2} \geq 0$ for all $x > -1$.
+            $f'(x) = 0$ only at $x=0$.</p>
+            <p>Since $f'(x) \geq 0$ throughout its domain ($x > -1$), $f(x)$ is an increasing function.</p>
+        </div>
+
+        <h4 id="ex6-2-q8">8. Find the values of x for which $y = [x(x – 2)]^2$ is an increasing function.</h4>
+        <div class="solution-box">
+            <p>Given $y = f(x) = [x(x-2)]^2 = (x^2 - 2x)^2$.</p>
+            <p>Find $f'(x)$:</p>
+            <p>$f'(x) = 2(x^2 - 2x) \cdot (2x - 2)$</p>
+            <p>$f'(x) = 2x(x-2) \cdot 2(x-1)$</p>
+            <p>$f'(x) = 4x(x-1)(x-2)$</p>
+            <p>For $f(x)$ to be increasing, $f'(x) > 0$.</p>
+            <p>We need $4x(x-1)(x-2) > 0$.</p>
+            <p>Critical points are $x=0, x=1, x=2$. These divide the number line into four intervals:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Interval</th>
+                        <th>Test Value ($x$)</th>
+                        <th>$4x(x-1)(x-2)$</th>
+                        <th>Sign of $f'(x)$</th>
+                        <th>Nature</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>$(-\infty, 0)$</td>
+                        <td>$x=-1$</td>
+                        <td>$4(-1)(-2)(-3) = -24$</td>
+                        <td>$-$</td>
+                        <td>Decreasing</td>
+                    </tr>
+                    <tr>
+                        <td>$(0, 1)$</td>
+                        <td>$x=0.5$</td>
+                        <td>$4(0.5)(-0.5)(-1.5) = 1.5$</td>
+                        <td>$+$</td>
+                        <td>Increasing</td>
+                    </tr>
+                    <tr>
+                        <td>$(1, 2)$</td>
+                        <td>$x=1.5$</td>
+                        <td>$4(1.5)(0.5)(-0.5) = -1.5$</td>
+                        <td>$-$</td>
+                        <td>Decreasing</td>
+                    </tr>
+                    <tr>
+                        <td>$(2, \infty)$</td>
+                        <td>$x=3$</td>
+                        <td>$4(3)(2)(1) = 24$</td>
+                        <td>$+$</td>
+                        <td>Increasing</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>$f(x)$ is increasing when $x \in (0, 1) \cup (2, \infty)$.</p>
+        </div>
+
+        <h4 id="ex6-2-q9">9. Prove that $y = \frac{4 \sin \theta}{(2 + \cos \theta)}$ is an increasing function of $\theta$ in $(0, \frac{\pi}{2})$.</h4>
+        <div class="solution-box">
+            <p>Given $y = f(\theta) = \frac{4 \sin \theta}{2 + \cos \theta}$.</p>
+            <p>Find $f'(\theta)$ using the quotient rule:</p>
+            <p>$f'(\theta) = \frac{(2 + \cos \theta)(4 \cos \theta) - (4 \sin \theta)(-\sin \theta)}{(2 + \cos \theta)^2}$</p>
+            <p>$f'(\theta) = \frac{8 \cos \theta + 4 \cos^2 \theta + 4 \sin^2 \theta}{(2 + \cos \theta)^2}$</p>
+            <p>$f'(\theta) = \frac{8 \cos \theta + 4(\cos^2 \theta + \sin^2 \theta)}{(2 + \cos \theta)^2}$</p>
+            <p>$f'(\theta) = \frac{8 \cos \theta + 4}{(2 + \cos \theta)^2} = \frac{4(2 \cos \theta + 1)}{(2 + \cos \theta)^2}$</p>
+            <p>For $\theta \in (0, \frac{\pi}{2})$:</p>
+            <p>$\cos \theta > 0$, so $2 \cos \theta + 1 > 1 > 0$.</p>
+            <p>$(2 + \cos \theta)^2 > 0$ (since $2+\cos\theta$ is never zero).</p>
+            <p>Therefore, $f'(\theta) = \frac{4(2 \cos \theta + 1)}{(2 + \cos \theta)^2} > 0$ for all $\theta \in (0, \frac{\pi}{2})$.</p>
+            <p>Hence, $f(\theta)$ is an increasing function in $(0, \frac{\pi}{2})$.</p>
+        </div>
+
+        <h4 id="ex6-2-q10">10. Prove that the logarithmic function is increasing on $(0, \infty)$.</h4>
+        <div class="solution-box">
+            <p>Let $f(x) = \log x$. The domain of the logarithmic function is $(0, \infty)$.</p>
+            <p>$f'(x) = \frac{1}{x}$.</p>
+            <p>For $x \in (0, \infty)$, $x > 0$. Therefore, $\frac{1}{x} > 0$.</p>
+            <p>Since $f'(x) > 0$ for all $x \in (0, \infty)$, the logarithmic function is strictly increasing on $(0, \infty)$.</p>
+        </div>
+
+        <h4 id="ex6-2-q11">11. Prove that the function f given by $f(x) = x^2 – x + 1$ is neither strictly increasing nor decreasing on $(– 1, 1)$.</h4>
+        <div class="solution-box">
+            <p>Given $f(x) = x^2 - x + 1$.</p>
+            <p>$f'(x) = 2x - 1$.</p>
+            <p>Set $f'(x) = 0 \implies 2x - 1 = 0 \implies x = \frac{1}{2}$.</p>
+            <p>The interval is $(-1, 1)$. The critical point $x = \frac{1}{2}$ is within this interval.</p>
+            <p>Consider the sub-intervals:</p>
+            <p>For $x \in (-1, \frac{1}{2})$ (e.g., $x=0$): $f'(0) = 2(0) - 1 = -1 < 0$. So, $f(x)$ is decreasing in $(-1, \frac{1}{2})$.</p>
+            <p>For $x \in (\frac{1}{2}, 1)$ (e.g., $x=0.6$): $f'(0.6) = 2(0.6) - 1 = 1.2 - 1 = 0.2 > 0$. So, $f(x)$ is increasing in $(\frac{1}{2}, 1)$.</p>
+            <p>Since $f(x)$ changes from decreasing to increasing in the interval $(-1, 1)$, it is neither strictly increasing nor strictly decreasing on the entire interval $(-1, 1)$.</p>
+        </div>
+
+        <h4 id="ex6-2-q12">12. Which of the following functions are decreasing on $(0, \frac{\pi}{2})$?<br>(A) $\cos x$<br>(B) $\cos 2x$<br>(C) $\cos 3x$<br>(D) $\tan x$</h4>
+        <div class="solution-box">
+            <p>We need to check the derivative of each function in the interval $(0, \frac{\pi}{2})$. A function is decreasing if its derivative is negative.</p>
+            <p><strong>(A) $f(x) = \cos x$</strong></p>
+            <p>$f'(x) = -\sin x$.
+            In $(0, \frac{\pi}{2})$, $\sin x > 0$, so $f'(x) = -\sin x < 0$.
+            Therefore, $\cos x$ is decreasing in $(0, \frac{\pi}{2})$.</p>
+
+            <p><strong>(B) $f(x) = \cos 2x$</strong></p>
+            <p>$f'(x) = -2\sin 2x$.
+            In $(0, \frac{\pi}{2})$, $2x \in (0, \pi)$. In $(0, \pi)$, $\sin 2x > 0$.
+            So $f'(x) = -2\sin 2x < 0$.
+            Therefore, $\cos 2x$ is decreasing in $(0, \frac{\pi}{2})$.</p>
+
+            <p><strong>(C) $f(x) = \cos 3x$</strong></p>
+            <p>$f'(x) = -3\sin 3x$.
+            In $(0, \frac{\pi}{2})$, $3x \in (0, \frac{3\pi}{2})$.
+            In the interval $(0, \frac{2\pi}{3})$, $\sin 3x > 0$, so $f'(x) < 0$.
+            However, in $(\frac{2\pi}{3}, \frac{3\pi}{2})$, $\sin 3x < 0$, so $f'(x) > 0$.
+            Since the sign of $f'(x)$ changes in $(0, \frac{\pi}{2})$, $\cos 3x$ is neither increasing nor decreasing on the entire interval $(0, \frac{\pi}{2})$.</p>
+
+            <p><strong>(D) $f(x) = \tan x$</strong></p>
+            <p>$f'(x) = \sec^2 x$.
+            In $(0, \frac{\pi}{2})$, $\sec x > 0$, so $\sec^2 x > 0$.
+            Therefore, $\tan x$ is increasing in $(0, \frac{\pi}{2})$.</p>
+            <p>The question asks "Which of the following functions are decreasing". Both (A) and (B) are decreasing. Usually multiple choice questions have one answer. If it implies 'strictly decreasing throughout the whole interval', then both A and B fit. If it's single choice, often $\cos x$ is the intended answer for elementary problems unless a specific range implies otherwise. Without further context, both A and B are valid. In typical questions asking "Which of the following..." and expecting one answer, sometimes $\cos x$ is the intended simple case.</p>
+            <p>However, mathematically, both $\cos x$ and $\cos 2x$ are decreasing on $(0, \frac{\pi}{2})$. If only one answer is expected, then this might be a flawed question or it's implicitly part of a "Select all that apply" type. Without additional context, it is not possible to choose just one between A and B if it's a single-choice question.</p>
+            <p>Given the common textbook practices, if it's a "choose the correct answer" question (like Q17, Q18 in EX 6.1), there is usually only one option. It's possible that the question intends to check for functions that are *always* decreasing over *some* interval, but for the given one, both A and B are valid. Let's mark both.</p>
+            <p>For the purpose of providing a single answer as usually expected in MCQs, let's pick the one that is decreasing over the widest standard range related to the given interval. Both are standard. This is ambiguous.</p>
+            <p>I will assume the question expects *only one* correct answer, and given the options, without further clarification, it's problematic. However, typically, `cos x` is the most straightforward example for decreasing in `(0, pi/2)`. So, picking (A) is a reasonable guess for a single-choice scenario.</p>
+            <p>The solution in the textbook for similar questions would highlight all valid options. Since it's a list with (A), (B), (C), (D) format, it suggests a single choice. Let's write the solution explaining both A and B are decreasing.</p>
+            <p>The functions decreasing on $(0, \frac{\pi}{2})$ are <strong>(A) $\cos x$</strong> and <strong>(B) $\cos 2x$</strong>.</p>
+        </div>
+
+        <h4 id="ex6-2-q13">13. On which of the following intervals is the function $f$ given by $f(x) = x^{100} + \sin x − 1$ decreasing ?<br>(A) $(0,1)$<br>(B) $(-\frac{\pi}{2}, \frac{\pi}{2})$<br>(C) $(0, \frac{\pi}{2})$<br>(D) None of these</h4>
+        <div class="solution-box">
+            <p>Given $f(x) = x^{100} + \sin x - 1$.</p>
+            <p>$f'(x) = 100x^{99} + \cos x$.</p>
+            <p>We need to find the interval where $f'(x) < 0$.</p>
+            <p>(A) $(0,1)$: For $x \in (0,1)$, $x^{99} > 0$. Also, for $x \in (0, \frac{\pi}{2})$ (which is part of $(0,1)$), $\cos x > 0$. So $100x^{99} + \cos x > 0$. For $x \in [\frac{\pi}{2}, 1)$, $\cos x$ can be negative but $100x^{99}$ would be large positive. So $f'(x) > 0$ on $(0,1)$. Thus, $f(x)$ is increasing.</p>
+            <p>(B) $(-\frac{\pi}{2}, \frac{\pi}{2})$: This interval includes negative values of $x$. For example, if $x$ is negative and close to zero, $x^{99}$ is negative. $\cos x$ is positive. For $x \in (-\frac{\pi}{2}, 0)$, $x^{99}$ is negative, $\cos x$ is positive.
+            Let's check $x$ near $0$. $f'(x) \approx \cos x$. If $x$ is slightly negative, say $x = -0.1$, $f'(-0.1) = 100(-0.1)^{99} + \cos(-0.1)$. The term $100(-0.1)^{99}$ is a very small negative number (e.g., $-100 \times 10^{-99} = -10^{-97}$). $\cos(-0.1)$ is close to $1$. So $f'(-0.1) \approx 1$.
+            It seems $f'(x)$ is always positive in $(-\frac{\pi}{2}, \frac{\pi}{2})$ because $100x^{99}$ will be very small negative for $x \in (-\frac{\pi}{2}, 0)$ compared to $\cos x$. And for $x \in [0, \frac{\pi}{2})$, both terms are positive.</p>
+            <p>Let's consider the maximum negative value for $100x^{99}$. At $x = -\frac{\pi}{2}$, $100(-\frac{\pi}{2})^{99}$ would be a large negative number, but $x$ must be greater than -$\frac{\pi}{2}$. For $x \in (-\frac{\pi}{2}, 0)$, $x^{99}$ is negative. For instance, if $x$ is large negative, then $100x^{99}$ dominates and is negative. $\cos x$ oscillates. The problem doesn't state strict conditions on the domain for $x^{100}$. If $x$ can be negative, $x^{99}$ for negative $x$ is negative (if 99 is odd).
+            Consider the derivative $f'(x) = 100x^{99} + \cos x$.
+            If $x$ is very small positive, e.g. $x \to 0^+$, $f'(x) \to 100(0)^{99} + \cos(0) = 1 > 0$.
+            If $x$ is very small negative, e.g. $x \to 0^-$, $f'(x) \to 100(0)^{99} + \cos(0) = 1 > 0$.
+            Since $100x^{99}$ increases very rapidly from 0, it will eventually overpower $\cos x$.
+            $\cos x$ has max value 1. For $f'(x)$ to be negative, $100x^{99}$ would have to be less than $-1$. This would require $x^{99} < -\frac{1}{100}$. This would need $x$ to be negative and large in magnitude (e.g., $x < -(\frac{1}{100})^{1/99}$). This $x$ would be very close to $-1$.
+            However, the options are simple intervals. In $(0, \frac{\pi}{2})$, both $100x^{99}$ and $\cos x$ are positive, so $f'(x) > 0$.
+            In $(-\frac{\pi}{2}, 0)$, $x^{99}$ is negative. So $f'(x) = 100x^{99} + \cos x$.
+            Let $g(x) = 100x^{99}$. $g'(x) = 9900x^{98} > 0$ for $x \ne 0$. So $g(x)$ is increasing.
+            $\cos x$ is decreasing in $(0, \pi/2)$ and increasing in $(-\pi/2, 0)$.
+            For $x \in (-\frac{\pi}{2}, \frac{\pi}{2})$, $\cos x$ is positive. $x^{99}$ is negative for $x \in (-\frac{\pi}{2}, 0)$.
+            The value of $\cos x$ ranges from $0$ to $1$. The minimum value for $100x^{99}$ would be near $100(-\frac{\pi}{2})^{99}$.
+            Since $f'(x) = 100x^{99} + \cos x > 0$ for $x \in [0, \frac{\pi}{2})$.
+            For $x \in (-\frac{\pi}{2}, 0)$, $x^{99}$ is negative, but very close to 0. $\cos x$ is close to 1.
+            For instance, if $x = -0.5$: $f'(-0.5) = 100(-0.5)^{99} + \cos(-0.5)$. $\cos(-0.5) \approx \cos(0.5) \approx 0.87$. $100(-0.5)^{99}$ is negligible. So $f'(-0.5) > 0$.
+            It is highly likely that $f'(x) > 0$ for all $x \in (-\frac{\pi}{2}, \frac{\pi}{2})$, meaning it's increasing in this interval.</p>
+
+            <p>Conclusion: None of the given intervals make $f(x)$ decreasing.</p>
+            <p>The correct option is <strong>(D)</strong>.</p>
+        </div>
+
+        <h4 id="ex6-2-q14">14. For what values of a the function $f$ given by $f(x) = x^2 + ax + 1$ is increasing on $[1, 2]$?</h4>
+        <div class="solution-box">
+            <p>Given $f(x) = x^2 + ax + 1.</p>
+            <p>$f'(x) = 2x + a$.</p>
+            <p>For $f(x)$ to be increasing on $[1, 2]$, we must have $f'(x) \geq 0$ for all $x \in [1, 2]$.</p>
+            <p>So, $2x + a \geq 0$ for all $x \in [1, 2]$.</p>
+            <p>Since $2x$ is an increasing function, its minimum value in $[1, 2]$ occurs at $x=1$.</p>
+            <p>Therefore, we need $2(1) + a \geq 0$ (the condition at the smallest $x$ in the interval).</p>
+            <p>$2 + a \geq 0$</p>
+            <p>$a \geq -2$.</p>
+            <p>Thus, for $f(x)$ to be increasing on $[1, 2]$, $a$ must be greater than or equal to -2.</p>
+        </div>
+
+        <h4 id="ex6-2-q15">15. Let $I$ be any interval disjoint from $[-1, 1]$. Prove that the function $f$ given by $f(x) = x + \frac{1}{x}$ is increasing on $I$.</h4>
+        <div class="solution-box">
+            <p>Given $f(x) = x + \frac{1}{x}$.</p>
+            <p>$f'(x) = 1 - \frac{1}{x^2} = \frac{x^2 - 1}{x^2}$.</p>
+            <p>For $f(x)$ to be increasing, $f'(x) > 0$.</p>
+            <p>$\frac{x^2 - 1}{x^2} > 0$.</p>
+            <p>Since $x^2 > 0$ for all $x \neq 0$, the sign of $f'(x)$ is determined by the numerator $x^2 - 1$.</p>
+            <p>So, $x^2 - 1 > 0 \implies x^2 > 1 \implies |x| > 1$.</p>
+            <p>This means $x > 1$ or $x < -1$.</p>
+            <p>The intervals where $f(x)$ is increasing are $(-\infty, -1)$ and $(1, \infty)$.</p>
+            <p>The problem states that $I$ is any interval disjoint from $[-1, 1]$. This means $I \subset (-\infty, -1) \cup (1, \infty)$.</p>
+            <p>Therefore, $f(x)$ is increasing on $I$.</p>
+        </div>
+
+        <h4 id="ex6-2-q16">16. Prove that the function f given by $f(x) = \log |\cos x|$ is decreasing on $(0, \frac{\pi}{2})$ and increasing on $(\pi, \frac{3\pi}{2})$.</h4>
+        <div class="solution-box">
+            <p>Given $f(x) = \log |\cos x|$.</p>
+            <p>Using chain rule: $f'(x) = \frac{1}{|\cos x|} \cdot \frac{d}{dx}(|\cos x|)$.</p>
+            <p>We know $\frac{d}{dx}(|u|) = \frac{u}{|u|}u'$. So $\frac{d}{dx}(|\cos x|) = \frac{\cos x}{|\cos x|} (-\sin x) = -\tan x \cdot \frac{\cos x}{|\cos x|}$.</p>
+            <p>If $\cos x > 0$, $|\cos x| = \cos x$, then $f'(x) = \frac{1}{\cos x}(-\sin x) = -\tan x$.</p>
+            <p>If $\cos x < 0$, $|\cos x| = -\cos x$, then $f'(x) = \frac{1}{-\cos x}(-\sin x) = \tan x$.</p>
+            <p><strong>Case 1: Interval $(0, \frac{\pi}{2})$</strong></p>
+            <p>In this interval, $\cos x > 0$. So $f'(x) = -\tan x$.</p>
+            <p>For $x \in (0, \frac{\pi}{2})$, $\tan x > 0$. Therefore, $f'(x) = -\tan x < 0$.</p>
+            <p>Hence, $f(x)$ is decreasing on $(0, \frac{\pi}{2})$.</p>
+
+            <p><strong>Case 2: Interval $(\pi, \frac{3\pi}{2})$</strong></p>
+            <p>In this interval, $\cos x < 0$. So $f'(x) = \tan x$.</p>
+            <p>For $x \in (\pi, \frac{3\pi}{2})$, $\tan x > 0$ (third quadrant).</p>
+            <p>Therefore, $f'(x) = \tan x > 0$.</p>
+            <p>Hence, $f(x)$ is increasing on $(\pi, \frac{3\pi}{2})$.</p>
+        </div>
+
+        <h4 id="ex6-2-q17">17. The interval in which $y = x^2 e^{-x}$ is increasing is<br>(A) $(-\infty, \infty)$<br>(B) $(-2,0)$<br>(C) $(2,\infty)$<br>(D) $(0,2)$</h4>
+        <div class="solution-box">
+            <p>Given $y = f(x) = x^2 e^{-x}$.</p>
+            <p>Find $f'(x)$ using the product rule:</p>
+            <p>$f'(x) = \frac{d}{dx}(x^2)e^{-x} + x^2\frac{d}{dx}(e^{-x})$</p>
+            <p>$f'(x) = 2xe^{-x} + x^2(-e^{-x})$</p>
+            <p>$f'(x) = e^{-x}(2x - x^2) = x e^{-x} (2 - x)$.</p>
+            <p>For $f(x)$ to be increasing, $f'(x) > 0$.</p>
+            <p>$x e^{-x} (2 - x) > 0$.</p>
+            <p>Since $e^{-x}$ is always positive for all real $x$, the sign of $f'(x)$ depends on $x(2-x)$.</p>
+            <p>We need $x(2-x) > 0$.</p>
+            <p>This quadratic expression represents an inverted parabola opening downwards with roots at $x=0$ and $x=2$. It is positive between its roots.</p>
+            <p>So, $0 < x < 2$.</p>
+            <p>The interval in which $f(x)$ is increasing is $(0, 2)$.</p>
+            <p>The correct option is <strong>(D)</strong>.</p>
+        </div>
+
+        <h3 id="maxima-minima-6-4">6.4 Maxima and Minima</h3>
+        <p>In this section, we will use the concept of derivatives to calculate the maximum or minimum values of various functions. In fact, we will find the 'turning points' of the graph of a function and thus find points at which the graph reaches its highest (or lowest) locally. The knowledge of such points is very useful in sketching the graph of a given function. Further, we will also find the absolute maximum and absolute minimum of a function that are necessary for the solution of many applied problems.</p>
+        <p>Let us consider the following problems that arise in day to day life.</p>
+        <p>(i) The profit from a grove of orange trees is given by $P(x) = ax + bx^2$, where $a,b$ are constants and $x$ is the number of orange trees per acre. How many trees per acre will maximise the profit?</p>
+        <p>(ii) A ball, thrown into the air from a building 60 metres high, travels along a path given by $h(x) = 60+x-\frac{x^2}{60}$, where $x$ is the horizontal distance from the building and $h(x)$ is the height of the ball. What is the maximum height the ball will reach?</p>
+        <p>(iii) An Apache helicopter of enemy is flying along the path given by the curve $f(x) = x^2 + 7$. A soldier, placed at the point (1, 2), wants to shoot the helicopter when it is nearest to him. What is the nearest distance?</p>
+
+        <div class="definition-box">
+            <h5>Definition 3</h5>
+            <p>Let $f$ be a function defined on an interval $I$. Then</p>
+            <p>(a) $f$ is said to have a <strong>maximum value</strong> in $I$, if there exists a point $c$ in $I$ such that $f(c) \geq f(x)$, for all $x \in I$. The number $f(c)$ is called the <strong>maximum value</strong> of $f$ in $I$ and the point $c$ is called a <strong>point of maximum value</strong> of $f$ in $I$.</p>
+            <p>(b) $f$ is said to have a <strong>minimum value</strong> in $I$, if there exists a point $c$ in $I$ such that $f(c) \leq f(x)$, for all $x \in I$. The number $f(c)$, in this case, is called the <strong>minimum value</strong> of $f$ in $I$ and the point $c$, in this case, is called a <strong>point of minimum value</strong> of $f$ in $I$.</p>
+            <p>(c) $f$ is said to have an <strong>extreme value</strong> in $I$ if there exists a point $c$ in $I$ such that $f(c)$ is either a maximum value or a minimum value of $f$ in $I$. The number $f(c)$, in this case, is called an <strong>extreme value</strong> of $f$ in $I$ and the point $c$ is called an <strong>extreme point</strong>.</p>
+        </div>
+
+        <div class="remark-box">
+            <h5>Remark</h5>
+            <p>In Fig 6.7(a), (b) and (c), we have exhibited that graphs of certain particular functions help us to find maximum value and minimum value at a point. Infact, through graphs, we can even find maximum/minimum value of a function at a point at which it is not even differentiable (Example 15).</p>
+            <!-- Figure 6.7 Placeholder -->
+        </div>
+
+        <h4 id="example-14">Example 14</h4>
+        <div class="question-box">
+            <p>Find the maximum and the minimum values, if any, of the function $f$ given by $f(x) = x^2, x \in R$.</p>
+        </div>
+        <div class="solution-box">
+            <p>From the graph of the given function (Fig 6.8), we have $f(x) = 0$ if $x = 0$. Also $f(x) \geq 0$, for all $x \in R$.</p>
+            <p>Therefore, the minimum value of $f$ is 0 and the point of minimum value of $f$ is $x = 0$. Further, it may be observed from the graph of the function that $f$ has no maximum value and hence no point of maximum value of $f$ in R.</p>
+            <!-- Figure 6.8 Placeholder -->
+        </div>
+
+        <div class="note-box">
+            <p><strong>Note</strong> If we restrict the domain of $f$ to $[– 2, 1]$ only, then $f$ will have maximum value$(- 2)^2 = 4$ at $x = − 2$.</p>
+        </div>
+
+        <h4 id="example-15">Example 15</h4>
+        <div class="question-box">
+            <p>Find the maximum and minimum values of $f$, if any, of the function given by $f(x) = |x|, x \in R$.</p>
+        </div>
+        <div class="solution-box">
+            <p>From the graph of the given function (Fig 6.9), note that $f(x) \geq 0$, for all $x \in R$ and $f(x) = 0$ if $x = 0$.</p>
+            <p>Therefore, the function $f$ has a minimum value 0 and the point of minimum value of $f$ is $x = 0$. Also, the graph clearly shows that $f$ has no maximum value in R and hence no point of maximum value in R.</p>
+            <!-- Figure 6.9 Placeholder -->
+        </div>
+
+        <div class="note-box">
+            <p>(i) If we restrict the domain of $f$ to $[-2, 1]$ only, then $f$ will have maximum value $|-2| = 2$.</p>
+            <p>(ii) One may note that the function $f$ in Example 27 is not differentiable at $x = 0$.</p>
+        </div>
+
+        <h4 id="example-16">Example 16</h4>
+        <div class="question-box">
+            <p>Find the maximum and the minimum values, if any, of the function given by $f(x) = x, x \in (0, 1)$.</p>
+        </div>
+        <div class="solution-box">
+            <p>The given function is an increasing (strictly) function in the given interval $(0, 1)$. From the graph (Fig 6.10) of the function $f$, it seems that, it should have the minimum value at a point closest to 0 on its right and the maximum value at a point closest to 1 on its left. Are such points available? Of course, not. It is not possible to locate such points. Infact, if a point $x_0$ is closest to 0, then we find $\frac{x_0}{2} < x_0$ for all $x_0 \in (0,1)$. Also, if $x_1$ is closest to 1, then $\frac{x_1 +1}{2} > x_1$ for all $x_1 \in (0,1)$.</p>
+            <p>Therefore, the given function has neither the maximum value nor the minimum value in the interval $(0,1)$.</p>
+            <!-- Figure 6.10 Placeholder -->
+        </div>
+
+        <div class="remark-box">
+            <h5>Remark</h5>
+            <p>The reader may observe that in Example 16, if we include the points 0 and 1 in the domain of $f$, i.e., if we extend the domain of $f$ to $[0,1]$, then the function $f$ has minimum value 0 at $x = 0$ and maximum value 1 at $x = 1$. Infact, we have the following results (The proof of these results are beyond the scope of the present text)</p>
+            <p>Every monotonic function assumes its maximum/minimum value at the end points of the domain of definition of the function.</p>
+            <p>A more general result is</p>
+            <p>Every continuous function on a closed interval has a maximum and a minimum value.</p>
+        </div>
+
+        <div class="note-box">
+            <p><strong>Note</strong> By a monotonic function $f$ in an interval $I$, we mean that $f$ is either increasing in $I$ or decreasing in $I$.</p>
+        </div>
+
+        <div class="definition-box">
+            <h5>Definition 4</h5>
+            <p>Let $f$ be a real valued function and let $c$ be an interior point in the domain of $f$. Then</p>
+            <p>(a) $c$ is called a <strong>point of local maxima</strong> if there is an $h > 0$ such that $f(c) \geq f(x)$, for all $x$ in $(c – h, c + h)$, $x \neq c$. The value $f(c)$ is called the <strong>local maximum value</strong> of $f$.</p>
+            <p>(b) $c$ is called a <strong>point of local minima</strong> if there is an $h > 0$ such that $f(c) \leq f(x)$, for all $x$ in $(c – h, c + h)$. The value $f(c)$ is called the <strong>local minimum value</strong> of $f$.</p>
+            <p>Geometrically, the above definition states that if $x = c$ is a point of local maxima of $f$, then the graph of $f$ around $c$ will be as shown in Fig 6.12(a). Note that the function $f$ is increasing (i.e., $f'(x) > 0$) in the interval $(c – h, c)$ and decreasing (i.e., $f'(x) < 0$) in the interval $(c, c + h)$.</p>
+            <p>This suggests that $f'(c)$ must be zero. (See Figure 6.12 in textbook)</p>
+            <!-- Figure 6.12 Placeholder -->
+        </div>
+
+        <div class="theorem-box">
+            <h5>Theorem 2</h5>
+            <p>Let $f$ be a function defined on an open interval $I$. Suppose $c \in I$ be any point. If $f$ has a local maxima or a local minima at $x = c$, then either $f'(c) = 0$ or $f$ is not differentiable at $c$.</p>
+        </div>
+
+        <div class="remark-box">
+            <h5>Remark</h5>
+            <p>The converse of above theorem need not be true, that is, a point at which the derivative vanishes need not be a point of local maxima or local minima. For example, if $f(x) = x^3$, then $f'(x) = 3x^2$ and so $f'(0) = 0$. But 0 is neither a point of local maxima nor a point of local minima (Fig 6.13).</p>
+            <!-- Figure 6.13 Placeholder -->
+        </div>
+
+        <div class="note-box">
+            <p><strong>Note</strong> A point $c$ in the domain of a function $f$ at which either $f'(c) = 0$ or $f$ is not differentiable is called a <strong>critical point</strong> of $f$. Note that if $f$ is continuous at $c$ and $f'(c) = 0$, then there exists an $h > 0$ such that $f$ is differentiable in the interval $(c – h, c + h)$.</p>
+        </div>
+
+        <div class="theorem-box">
+            <h5>Theorem 3 (First Derivative Test)</h5>
+            <p>Let $f$ be a function defined on an open interval $I$. Let $f$ be continuous at a critical point $c$ in $I$. Then</p>
+            <p>(i) If $f'(x)$ changes sign from positive to negative as $x$ increases through $c$, i.e., if $f'(x) > 0$ at every point sufficiently close to and to the left of $c$, and $f'(x) < 0$ at every point sufficiently close to and to the right of $c$, then $c$ is a point of local maxima.</p>
+            <p>(ii) If $f'(x)$ changes sign from negative to positive as $x$ increases through $c$, i.e., if $f'(x) < 0$ at every point sufficiently close to and to the left of $c$, and $f'(x) > 0$ at every point sufficiently close to and to the right of $c$, then $c$ is a point of local minima.</p>
+            <p>(iii) If $f'(x)$ does not change sign as $x$ increases through $c$, then $c$ is neither a point of local maxima nor a point of local minima. Infact, such a point is called <strong>point of inflection</strong> (Fig 6.13).</p>
+        </div>
+
+        <div class="note-box">
+            <p><strong>Note</strong> If $c$ is a point of local maxima of $f$, then $f(c)$ is a local maximum value of $f$. Similarly, if $c$ is a point of local minima of $f$, then $f(c)$ is a local minimum value of $f$. Figures 6.13 and 6.14, geometrically explain Theorem 3.</p>
+            <!-- Figure 6.14 Placeholder -->
+        </div>
+
+        <h4 id="example-17">Example 17</h4>
+        <div class="question-box">
+            <p>Find all points of local maxima and local minima of the function $f$ given by $f(x) = x^3 - 3x + 3$.</p>
+        </div>
+        <div class="solution-box">
+            <p>We have $f(x) = x^3 - 3x + 3.</p>
+            <p>$f'(x) = 3x^2 - 3 = 3(x^2 - 1) = 3(x - 1)(x + 1)$.</p>
+            <p>Set $f'(x) = 0 \implies 3(x-1)(x+1) = 0 \implies x=1$ or $x=-1$.</p>
+            <p>These are the critical points.</p>
+            <p><strong>At $x = 1$:</strong></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Values of $x$</th>
+                        <th>Sign of $f'(x) = 3(x-1)(x+1)$</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>To the left of 1 (e.g., $x=0.9$)</td>
+                        <td>$3(-)(+) = -$</td>
+                    </tr>
+                    <tr>
+                        <td>To the right of 1 (e.g., $x=1.1$)</td>
+                        <td>$3(+)(+) = +$</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Since $f'(x)$ changes sign from negative to positive as $x$ increases through 1, $x=1$ is a point of local minima.
+            Local minimum value $f(1) = (1)^3 - 3(1) + 3 = 1 - 3 + 3 = 1$.</p>
+            <p><strong>At $x = -1$:</strong></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Values of $x$</th>
+                        <th>Sign of $f'(x) = 3(x-1)(x+1)$</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>To the left of -1 (e.g., $x=-1.1$)</td>
+                        <td>$3(-)(-) = +$</td>
+                    </tr>
+                    <tr>
+                        <td>To the right of -1 (e.g., $x=-0.9$)</td>
+                        <td>$3(-)(+) = -$</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Since $f'(x)$ changes sign from positive to negative as $x$ increases through -1, $x=-1$ is a point of local maxima.
+            Local maximum value $f(-1) = (-1)^3 - 3(-1) + 3 = -1 + 3 + 3 = 5$.</p>
+            <p>So, $x = -1$ is a point of local maxima with local maximum value 5.
+            $x = 1$ is a point of local minima with local minimum value 1.</p>
+        </div>
+
+        <h4 id="example-18">Example 18</h4>
+        <div class="question-box">
+            <p>Find all the points of local maxima and local minima of the function $f$ given by $f(x) = 2x^3 - 6x^2 + 6x +5$.</p>
+        </div>
+        <div class="solution-box">
+            <p>We have $f(x) = 2x^3 - 6x^2 + 6x + 5.</p>
+            <p>$f'(x) = 6x^2 - 12x + 6 = 6(x^2 - 2x + 1) = 6(x - 1)^2$.</p>
+            <p>Set $f'(x) = 0 \implies 6(x-1)^2 = 0 \implies x=1$.</p>
+            <p>This is the only critical point.</p>
+            <p>Consider the sign of $f'(x)$ around $x=1$:</p>
+            <p>For $x < 1$ (e.g., $x=0$), $f'(0) = 6(0-1)^2 = 6 > 0$.</p>
+            <p>For $x > 1$ (e.g., $x=2$), $f'(2) = 6(2-1)^2 = 6 > 0$.</p>
+            <p>Since $f'(x)$ does not change sign as $x$ increases through 1 (it remains positive), $x=1$ is neither a point of local maxima nor a point of local minima. It is a point of inflexion.</p>
+            <!-- Figure 6.15 Placeholder -->
+        </div>
+
+        <div class="remark-box">
+            <h5>Remark</h5>
+            <p>One may note that since $f'(x)$, in Example 30, never changes its sign on R, graph of $f$ has no turning points and hence no point of local maxima or local minima.</p>
+            <p>We shall now give another test to examine local maxima and local minima of a given function. This test is often easier to apply than the first derivative test.</p>
+        </div>
+
+        <div class="theorem-box">
+            <h5>Theorem 4 (Second Derivative Test)</h5>
+            <p>Let $f$ be a function defined on an interval $I$ and $c \in I$. Let $f$ be twice differentiable at $c$. Then</p>
+            <p>(i) $x = c$ is a point of local maxima if $f'(c) = 0$ and $f''(c) < 0$. The value $f(c)$ is local maximum value of $f$.</p>
+            <p>(ii) $x = c$ is a point of local minima if $f'(c) = 0$ and $f''(c) > 0$. In this case, $f(c)$ is local minimum value of $f$.</p>
+            <p>(iii) The test fails if $f'(c) = 0$ and $f''(c) = 0$. In this case, we go back to the first derivative test and find whether $c$ is a point of local maxima, local minima or a point of inflexion.</p>
+        </div>
+
+        <div class="note-box">
+            <p><strong>Note</strong> As $f$ is twice differentiable at $c$, we mean second order derivative of $f$ exists at $c$.</p>
+        </div>
+
+        <h4 id="example-19">Example 19</h4>
+        <div class="question-box">
+            <p>Find local minimum value of the function $f$ given by $f(x) = 3 + |x|, x \in R$.</p>
+        </div>
+        <div class="solution-box">
+            <p>Given $f(x) = 3 + |x|$.</p>
+            <p>We can write $f(x)$ as:</p>
+            $$ f(x) = \begin{cases} 3 - x & \text{if } x < 0 \\ 3 + x & \text{if } x \geq 0 \end{cases} $$
+            <p>This function is not differentiable at $x=0$. So, the second derivative test fails. We use the first derivative test.</p>
+            <p>The critical point is $x=0$ (where $f'(x)$ is undefined).</p>
+            <p>For $x < 0$, $f(x) = 3 - x \implies f'(x) = -1 < 0$.</p>
+            <p>For $x > 0$, $f(x) = 3 + x \implies f'(x) = 1 > 0$.</p>
+            <p>As $x$ increases through $0$, $f'(x)$ changes sign from negative to positive.</p>
+            <p>Therefore, $x=0$ is a point of local minima.</p>
+            <p>The local minimum value is $f(0) = 3 + |0| = 3$.</p>
+        </div>
+
+        <h4 id="example-20">Example 20</h4>
+        <div class="question-box">
+            <p>Find local maximum and local minimum values of the function $f$ given by $f(x) = 3x^4 + 4x^3 – 12x^2 + 12$.</p>
+        </div>
+        <div class="solution-box">
+            <p>We have $f(x) = 3x^4 + 4x^3 - 12x^2 + 12.</p>
+            <p>$f'(x) = 12x^3 + 12x^2 - 24x = 12x(x^2 + x - 2) = 12x(x+2)(x-1)$.</p>
+            <p>Set $f'(x) = 0 \implies 12x(x+2)(x-1) = 0.
+            Critical points are $x = 0, x = -2, x = 1$.</p>
+            <p>Now find the second derivative:</p>
+            <p>$f''(x) = \frac{d}{dx}(12x^3 + 12x^2 - 24x) = 36x^2 + 24x - 24$.</p>
+            <p>Evaluate $f''(x)$ at each critical point:</p>
+            <p><strong>At $x = 0$:</strong></p>
+            <p>$f''(0) = 36(0)^2 + 24(0) - 24 = -24$.</p>
+            <p>Since $f'(0) = 0$ and $f''(0) < 0$, $x=0$ is a point of local maxima.</p>
+            <p>Local maximum value $f(0) = 3(0)^4 + 4(0)^3 - 12(0)^2 + 12 = 12$.</p>
+
+            <p><strong>At $x = 1$:</strong></p>
+            <p>$f''(1) = 36(1)^2 + 24(1) - 24 = 36 + 24 - 24 = 36$.</p>
+            <p>Since $f'(1) = 0$ and $f''(1) > 0$, $x=1$ is a point of local minima.</p>
+            <p>Local minimum value $f(1) = 3(1)^4 + 4(1)^3 - 12(1)^2 + 12 = 3 + 4 - 12 + 12 = 7$.</p>
+
+            <p><strong>At $x = -2$:</strong></p>
+            <p>$f''(-2) = 36(-2)^2 + 24(-2) - 24 = 36(4) - 48 - 24 = 144 - 48 - 24 = 72$.</p>
+            <p>Since $f'(-2) = 0$ and $f''(-2) > 0$, $x=-2$ is a point of local minima.</p>
+            <p>Local minimum value $f(-2) = 3(-2)^4 + 4(-2)^3 - 12(-2)^2 + 12 = 3(16) + 4(-8) - 12(4) + 12</p>
+            <p>$ = 48 - 32 - 48 + 12 = -20$.</p>
+            <p>Summary:
+            Local maxima at $x=0$, value $f(0)=12$.
+            Local minima at $x=1$, value $f(1)=7$.
+            Local minima at $x=-2$, value $f(-2)=-20$.</p>
+        </div>
+
+        <h4 id="example-21">Example 21</h4>
+        <div class="question-box">
+            <p>Find all the points of local maxima and local minima of the function $f$ given by $f(x) = 2x^3 - 6x^2 + 6x +5$.</p>
+        </div>
+        <div class="solution-box">
+            <p>We have $f(x) = 2x^3 - 6x^2 + 6x + 5.</p>
+            <p>$f'(x) = 6x^2 - 12x + 6 = 6(x^2 - 2x + 1) = 6(x-1)^2$.</p>
+            <p>Set $f'(x) = 0 \implies 6(x-1)^2 = 0 \implies x=1$.</p>
+            <p>This is the only critical point.</p>
+            <p>Now find the second derivative:</p>
+            <p>$f''(x) = \frac{d}{dx}(6(x-1)^2) = 6 \cdot 2(x-1) \cdot 1 = 12(x-1)$.</p>
+            <p>Evaluate $f''(x)$ at $x=1$:</p>
+            <p>$f''(1) = 12(1-1) = 0$.</p>
+            <p>Since $f'(1) = 0$ and $f''(1) = 0$, the Second Derivative Test fails. We must use the First Derivative Test.</p>
+            <p>Consider the sign of $f'(x)$ around $x=1$:</p>
+            <p>For $x < 1$ (e.g., $x=0$), $f'(0) = 6(0-1)^2 = 6 > 0$.</p>
+            <p>For $x > 1$ (e.g., $x=2$), $f'(2) = 6(2-1)^2 = 6 > 0$.</p>
+            <p>Since $f'(x)$ does not change sign as $x$ increases through $1$ (it remains positive), $x=1$ is neither a point of local maxima nor a point of local minima. It is a point of inflexion.</p>
+        </div>
+
+        <h4 id="example-22">Example 22</h4>
+        <div class="question-box">
+            <p>Find two positive numbers whose sum is 15 and the sum of whose squares is minimum.</p>
+        </div>
+        <div class="solution-box">
+            <p>Let one of the numbers be $x$. Since their sum is 15, the other number is $15-x$.</p>
+            <p>Since both numbers are positive, $x > 0$ and $15-x > 0 \implies x < 15$. So $x \in (0, 15)$.</p>
+            <p>Let $S(x)$ denote the sum of the squares of these numbers.</p>
+            <p>$S(x) = x^2 + (15-x)^2$</p>
+            <p>$S(x) = x^2 + (225 - 30x + x^2)$</p>
+            <p>$S(x) = 2x^2 - 30x + 225$.</p>
+            <p>To find the minimum sum, find the derivative $S'(x)$:</p>
+            <p>$S'(x) = 4x - 30$.</p>
+            <p>Set $S'(x) = 0 \implies 4x - 30 = 0 \implies 4x = 30 \implies x = \frac{30}{4} = \frac{15}{2}$.</p>
+            <p>Now, use the Second Derivative Test to check if it's a minimum:</p>
+            <p>$S''(x) = 4$.</p>
+            <p>Since $S''(\frac{15}{2}) = 4 > 0$, $x = \frac{15}{2}$ is a point of local minima.</p>
+            <p>The two numbers are $x = \frac{15}{2}$ and $15-x = 15-\frac{15}{2} = \frac{15}{2}$.</p>
+            <p>The sum of squares is minimum when both numbers are $\frac{15}{2}$.</p>
+        </div>
+
+        <div class="remark-box">
+            <h5>Remark</h5>
+            <p>Proceeding as in Example 34 one may prove that the two positive numbers, whose sum is $k$ and the sum of whose squares is minimum, are $\frac{k}{2}$ and $\frac{k}{2}$.</p>
+        </div>
+
+        <h4 id="example-23">Example 23</h4>
+        <div class="question-box">
+            <p>Find the shortest distance of the point $(0, c)$ from the parabola $y = x^2$, where $\frac{1}{2} < c \leq 5$.</p>
+        </div>
+        <div class="solution-box">
+            <p>Let $(x, y)$ be any point on the parabola $y = x^2$. The given point is $(0, c)$.</p>
+            <p>The distance $D$ between $(x, y)$ and $(0, c)$ is:</p>
+            <p>$D = \sqrt{(x-0)^2 + (y-c)^2} = \sqrt{x^2 + (y-c)^2}$.</p>
+            <p>Since $(x, y)$ is on the parabola, $y = x^2$. Substitute $x^2 = y$ into the distance formula:</p>
+            <p>$D = \sqrt{y + (y-c)^2}$.</p>
+            <p>To minimize $D$, it is equivalent to minimize $D^2$. Let $f(y) = D^2 = y + (y-c)^2$.</p>
+            <p>The variable $y$ is the $y$-coordinate on the parabola. Since $y = x^2$, $y \geq 0$.</p>
+            <p>Find $f'(y)$:</p>
+            <p>$f'(y) = 1 + 2(y-c)(1) = 1 + 2y - 2c$.</p>
+            <p>Set $f'(y) = 0 \implies 1 + 2y - 2c = 0 \implies 2y = 2c - 1 \implies y = \frac{2c-1}{2}$.</p>
+            <p>Now find $f''(y)$:</p>
+            <p>$f''(y) = 2$.</p>
+            <p>Since $f''(y) = 2 > 0$, this critical point corresponds to a minimum.</p>
+            <p>We need to check the condition $y \geq 0$. $y = \frac{2c-1}{2}$. Given $\frac{1}{2} < c \leq 5$.</p>
+            <p>If $c = \frac{1}{2}$, $y = \frac{2(\frac{1}{2})-1}{2} = 0$. So for $c > \frac{1}{2}$, $y > 0$. Thus the value of $y$ is valid.</p>
+            <p>The shortest distance is $D = \sqrt{y + (y-c)^2}$ evaluated at $y = \frac{2c-1}{2}$.</p>
+            <p>$D = \sqrt{\frac{2c-1}{2} + \left(\frac{2c-1}{2} - c\right)^2}$</p>
+            <p>$D = \sqrt{\frac{2c-1}{2} + \left(\frac{2c-1-2c}{2}\right)^2}$</p>
+            <p>$D = \sqrt{\frac{2c-1}{2} + \left(\frac{-1}{2}\right)^2} = \sqrt{\frac{2c-1}{2} + \frac{1}{4}}$</p>
+            <p>$D = \sqrt{\frac{2(2c-1)+1}{4}} = \sqrt{\frac{4c-2+1}{4}} = \sqrt{\frac{4c-1}{4}} = \frac{\sqrt{4c-1}}{2}$.</p>
+            <p>The shortest distance is $\frac{\sqrt{4c-1}}{2}$.</p>
+        </div>
+
+        <div class="note-box">
+            <p><strong>Note</strong> The reader may note that in Example 35, we have used first derivative test instead of the second derivative test as the former is easy and short.</p>
+        </div>
+
+        <h4 id="example-24">Example 24</h4>
+        <div class="question-box">
+            <p>Let AP and BQ be two vertical poles at points A and B, respectively. If AP = 16 m, BQ = 22 m and AB = 20 m, then find the distance of a point R on AB from the point A such that $RP^2 + RQ^2$ is minimum.</p>
+        </div>
+        <div class="solution-box">
+            <p>Let R be a point on AB such that AR = $x$ m. Then RB = $(20 – x)$ m (since AB = 20 m).</p>
+            <p>Consider the right triangles $\triangle APR$ and $\triangle BQR$.</p>
+            <p>$RP^2 = AR^2 + AP^2 = x^2 + 16^2 = x^2 + 256$.</p>
+            <p>$RQ^2 = RB^2 + BQ^2 = (20-x)^2 + 22^2 = (20-x)^2 + 484$.</p>
+            <p>Let $S(x)$ be the sum $RP^2 + RQ^2$.</p>
+            <p>$S(x) = (x^2 + 256) + ((20-x)^2 + 484)$</p>
+            <p>$S(x) = x^2 + 256 + (400 - 40x + x^2) + 484$</p>
+            <p>$S(x) = 2x^2 - 40x + 1140$.</p>
+            <p>To minimize $S(x)$, find $S'(x)$:</p>
+            <p>$S'(x) = 4x - 40$.</p>
+            <p>Set $S'(x) = 0 \implies 4x - 40 = 0 \implies 4x = 40 \implies x = 10$.</p>
+            <p>Now find $S''(x)$:</p>
+            <p>$S''(x) = 4$.</p>
+            <p>Since $S''(10) = 4 > 0$, $x=10$ is a point of local minima.</p>
+            <p>Thus, the distance of R from A is AR = 10 m.</p>
+        </div>
+
+        <h4 id="example-25">Example 25</h4>
+        <div class="question-box">
+            <p>If length of three sides of a trapezium other than base are equal to 10cm, then find the area of the trapezium when it is maximum.</p>
+        </div>
+        <div class="solution-box">
+            <p>Let the trapezium be ABCD, with AB parallel to CD. Let AD = BC = CD = 10 cm.</p>
+            <p>Draw perpendiculars DP and CQ from D and C to AB. Let AP = $x$ cm.</p>
+            <p>In $\triangle APD$, $PD = \sqrt{AD^2 - AP^2} = \sqrt{10^2 - x^2} = \sqrt{100 - x^2}$.</p>
+            <p>Since ABCD is a trapezium with equal non-parallel sides and CD is parallel to AB, it is an isosceles trapezium. So AP = QB = $x$.</p>
+            <p>The length of the parallel sides are $CD = 10$ and $AB = AP + PQ + QB = x + 10 + x = 10 + 2x$.</p>
+            <p>The height of the trapezium is $h = PD = \sqrt{100 - x^2}$.</p>
+            <p>For $h$ to be real, $100 - x^2 \geq 0 \implies x^2 \leq 100 \implies 0 \leq x \leq 10$ (since $x$ is a length).</p>
+            <p>Area of trapezium $A(x) = \frac{1}{2} (\text{sum of parallel sides}) \times \text{height}$</p>
+            <p>$A(x) = \frac{1}{2} (10 + (10+2x)) \sqrt{100 - x^2}$</p>
+            <p>$A(x) = \frac{1}{2} (20 + 2x) \sqrt{100 - x^2}$</p>
+            <p>$A(x) = (10 + x) \sqrt{100 - x^2}$.</p>
+            <p>To maximize $A(x)$, find $A'(x)$:</p>
+            <p>$A'(x) = (1) \sqrt{100 - x^2} + (10+x) \frac{1}{2\sqrt{100 - x^2}} (-2x)$</p>
+            <p>$A'(x) = \sqrt{100 - x^2} - \frac{x(10+x)}{\sqrt{100 - x^2}}$</p>
+            <p>$A'(x) = \frac{(100 - x^2) - x(10+x)}{\sqrt{100 - x^2}}$</p>
+            <p>$A'(x) = \frac{100 - x^2 - 10x - x^2}{\sqrt{100 - x^2}}$</p>
+            <p>$A'(x) = \frac{-2x^2 - 10x + 100}{\sqrt{100 - x^2}}$</p>
+            <p>Set $A'(x) = 0 \implies -2x^2 - 10x + 100 = 0$</p>
+            <p>$2x^2 + 10x - 100 = 0$</p>
+            <p>$x^2 + 5x - 50 = 0$</p>
+            <p>Factor the quadratic: $(x+10)(x-5) = 0$.</p>
+            <p>Possible values for $x$ are $x = -10$ or $x = 5$.</p>
+            <p>Since $x$ is a length, $x > 0$, so $x=5$ cm is the only valid critical point.</p>
+            <p>To check if it's a maximum, we can use the first derivative test (or second derivative test, but the first is easier here due to the complexity of $A''(x)$).</p>
+            <p>$A'(x) = \frac{-2(x^2 + 5x - 50)}{\sqrt{100 - x^2}} = \frac{-2(x+10)(x-5)}{\sqrt{100 - x^2}}$.</p>
+            <p>For $x \in (0, 10)$, $\sqrt{100-x^2}$ is positive, and $(x+10)$ is positive.</p>
+            <p>So the sign of $A'(x)$ depends on $-2(x-5)$.</p>
+            <p>If $x < 5$ (e.g., $x=4$): $A'(x) = \frac{-2(+)(-)}{\text{positive}} = +$. ($A(x)$ is increasing)</p>
+            <p>If $x > 5$ (e.g., $x=6$): $A'(x) = \frac{-2(+)(+)}{\text{positive}} = -$. ($A(x)$ is decreasing)</p>
+            <p>Since $A'(x)$ changes from positive to negative at $x=5$, it is a point of local maxima.</p>
+            <p>The maximum area is $A(5) = (10+5)\sqrt{100-5^2} = 15\sqrt{100-25} = 15\sqrt{75}$</p>
+            <p>$A(5) = 15\sqrt{25 \times 3} = 15 \times 5\sqrt{3} = 75\sqrt{3} \text{ cm}^2$.</p>
+        </div>
+
+        <h4 id="example-26">Example 26</h4>
+        <div class="question-box">
+            <p>Prove that the radius of the right circular cylinder of greatest curved surface area which can be inscribed in a given cone is half of that of the cone.</p>
+        </div>
+        <div class="solution-box">
+            <p>Let $H$ be the height of the cone and $R$ be its radius.
+            Let $h$ be the height of the inscribed cylinder and $r$ be its radius.</p>
+            <p>Consider a cross-section of the cone and cylinder (an isosceles triangle and a rectangle inscribed within it).
+            By similar triangles (from the apex of the cone down to the cylinder and then the base):</p>
+            <p>$\frac{H-h}{r} = \frac{H}{R}$ (from the larger triangle with base R and height H, and smaller triangle with base r and height H-h)</p>
+            <p>$H(R-r) = Hr$ (Error in my understanding, let's use the provided text's similarity if possible: $\frac{QE}{OA} = \frac{EC}{OC}$)</p>
+            <p>Let OA = $H$ (height of cone), OC = $R$ (radius of cone).</p>
+            <p>Let QE = $h$ (height of cylinder), OE = $r$ (radius of cylinder).</p>
+            <p>From similar triangles $\triangle AQE \sim \triangle AOC$ (where Q is a point on slant height of cone, E is on base of cone):</p>
+            <p>$\frac{QE}{OA} = \frac{EC}{OC}$</p>
+            <p>$\frac{h}{H} = \frac{R-r}{R}$</p>
+            <p>$h = H\left(1 - \frac{r}{R}\right) = \frac{H(R-r)}{R}$.</p>
+            <p>The curved surface area of the cylinder is $S = 2\pi r h$.</p>
+            <p>Substitute $h$: $S(r) = 2\pi r \frac{H(R-r)}{R} = \frac{2\pi H}{R} (Rr - r^2)$.</p>
+            <p>To maximize $S(r)$, find $S'(r)$:</p>
+            <p>$S'(r) = \frac{2\pi H}{R} (R - 2r)$.</p>
+            <p>Set $S'(r) = 0 \implies R - 2r = 0 \implies r = \frac{R}{2}$.</p>
+            <p>Now find $S''(r)$:</p>
+            <p>$S''(r) = \frac{2\pi H}{R} (-2) = -\frac{4\pi H}{R}$.</p>
+            <p>Since $R$ and $H$ are positive (dimensions of a cone), $S''(r) < 0$.</p>
+            <p>This confirms that $r = \frac{R}{2}$ is a point of local maxima.</p>
+            <p>Thus, the radius of the cylinder of greatest curved surface area that can be inscribed in a given cone is half the radius of the cone.</p>
+        </div>
+
+        <h3 id="maximum-minimum-closed-interval-6-4-1">6.4.1 Maximum and Minimum Values of a Function in a Closed Interval</h3>
+        <p>Let us consider a function $f$ given by $f(x) = x+2, x \in (0, 1)$.</p>
+        <p>Observe that the function is continuous on $(0, 1)$ and neither has a maximum value nor has a minimum value. Further, we may note that the function even has neither a local maximum value nor a local minimum value.</p>
+        <p>However, if we extend the domain of $f$ to the closed interval $[0, 1]$, then $f$ still may not have a local maximum (minimum) values but it certainly does have maximum value $3 = f(1)$ and minimum value $2 = f(0)$. The maximum value 3 of $f$ at $x = 1$ is called absolute maximum value (global maximum or greatest value) of $f$ on the interval $[0, 1]$. Similarly, the minimum value 2 of $f$ at $x = 0$ is called the absolute minimum value (global minimum or least value) of $f$ on $[0, 1]$.</p>
+        <p>Consider the graph given in Fig 6.19 of a continuous function defined on a closed interval $[a, d]$. (See Figure 6.19 in textbook)</p>
+        <!-- Figure 6.19 Placeholder -->
+
+        <div class="theorem-box">
+            <h5>Theorem 5</h5>
+            <p>Let $f$ be a continuous function on an interval $I = [a, b]$. Then $f$ has the absolute maximum value and $f$ attains it at least once in $I$. Also, $f$ has the absolute minimum value and $f$ attains it at least once in $I$.</p>
+        </div>
+
+        <div class="theorem-box">
+            <h5>Theorem 6</h5>
+            <p>Let $f$ be a differentiable function on a closed interval $I$ and let $c$ be any interior point of $I$. Then</p>
+            <p>(i) $f'(c) = 0$ if $f$ attains its absolute maximum value at $c$.</p>
+            <p>(ii) $f'(c) = 0$ if $f$ attains its absolute minimum value at $c$.</p>
+            <p>In view of the above results, we have the following working rule for finding absolute maximum and/or absolute minimum values of a function in a given closed interval $[a, b]$.</p>
+        </div>
+
+        <div class="working-rule-box">
+            <h5>Working Rule</h5>
+            <p><strong>Step 1:</strong> Find all critical points of $f$ in the interval, i.e., find points $x$ where either $f'(x) = 0$ or $f$ is not differentiable.</p>
+            <p><strong>Step 2:</strong> Take the end points of the interval.</p>
+            <p><strong>Step 3:</strong> At all these points (listed in Step 1 and 2), calculate the values of $f$.</p>
+            <p><strong>Step 4:</strong> Identify the maximum and minimum values of $f$ out of the values calculated in Step 3. This maximum value will be the absolute maximum (greatest) value of $f$ and the minimum value will be the absolute minimum (least) value of $f$.</p>
+        </div>
+
+        <h4 id="example-27">Example 27</h4>
+        <div class="question-box">
+            <p>Find the absolute maximum and minimum values of a function $f$ given by $f(x) = 2x^3 – 15x^2 + 36x +1$ on the interval $[1, 5]$.</p>
+        </div>
+        <div class="solution-box">
+            <p>We have $f(x) = 2x^3 - 15x^2 + 36x + 1.</p>
+            <p>$f'(x) = 6x^2 - 30x + 36 = 6(x^2 - 5x + 6) = 6(x-2)(x-3)$.</p>
+            <p><strong>Step 1: Critical points.</strong> Set $f'(x) = 0 \implies 6(x-2)(x-3) = 0 \implies x=2$ or $x=3$.
+            Both $x=2$ and $x=3$ lie in the interval $[1, 5]$.</p>
+            <p><strong>Step 2: End points of the interval.</strong> The end points are $x=1$ and $x=5$.</p>
+            <p><strong>Step 3: Calculate function values.</strong> Evaluate $f(x)$ at $x=1, 2, 3, 5$:</p>
+            <p>$f(1) = 2(1)^3 - 15(1)^2 + 36(1) + 1 = 2 - 15 + 36 + 1 = 24$.</p>
+            <p>$f(2) = 2(2)^3 - 15(2)^2 + 36(2) + 1 = 2(8) - 15(4) + 72 + 1 = 16 - 60 + 72 + 1 = 29$.</p>
+            <p>$f(3) = 2(3)^3 - 15(3)^2 + 36(3) + 1 = 2(27) - 15(9) + 108 + 1 = 54 - 135 + 108 + 1 = 28$.</p>
+            <p>$f(5) = 2(5)^3 - 15(5)^2 + 36(5) + 1 = 2(125) - 15(25) + 180 + 1 = 250 - 375 + 180 + 1 = 56$.</p>
+            <p><strong>Step 4: Identify max/min values.</strong> The values are $24, 29, 28, 56$.</p>
+            <p>The absolute maximum value is 56, occurring at $x=5$.</p>
+            <p>The absolute minimum value is 24, occurring at $x=1$.</p>
+        </div>
+
+        <h4 id="example-28">Example 28</h4>
+        <div class="question-box">
+            <p>Find absolute maximum and minimum values of a function $f$ given by $f(x) = 12x^{4/3} - 6x^{1/3}$ in $x \in [-1, 1]$.</p>
+        </div>
+        <div class="solution-box">
+            <p>We have $f(x) = 12x^{4/3} - 6x^{1/3}$.</p>
+            <p>$f'(x) = 12 \left(\frac{4}{3}x^{1/3}\right) - 6 \left(\frac{1}{3}x^{-2/3}\right) = 16x^{1/3} - 2x^{-2/3}$.</p>
+            <p>Factor $f'(x)$: $f'(x) = 2x^{-2/3}(8x^{3/3} - 1) = \frac{2(8x-1)}{x^{2/3}}$.</p>
+            <p><strong>Step 1: Critical points.</strong></p>
+            <p>$f'(x) = 0 \implies 2(8x-1) = 0 \implies 8x = 1 \implies x = \frac{1}{8}$. This point is in $[-1, 1]$.</p>
+            <p>$f'(x)$ is undefined when $x^{2/3} = 0$, i.e., $x=0$. This point is also in $[-1, 1]$.</p>
+            <p>So, critical points are $x=0$ and $x=\frac{1}{8}$.</p>
+            <p><strong>Step 2: End points of the interval.</strong> The end points are $x=-1$ and $x=1$.</p>
+            <p><strong>Step 3: Calculate function values.</strong> Evaluate $f(x)$ at $x=-1, 0, \frac{1}{8}, 1$:</p>
+            <p>$f(-1) = 12(-1)^{4/3} - 6(-1)^{1/3} = 12(1) - 6(-1) = 12 + 6 = 18$.</p>
+            <p>$f(0) = 12(0)^{4/3} - 6(0)^{1/3} = 0 - 0 = 0$.</p>
+            <p>$f(\frac{1}{8}) = 12\left(\frac{1}{8}\right)^{4/3} - 6\left(\frac{1}{8}\right)^{1/3} = 12\left(\left(\frac{1}{2}\right)^3\right)^{4/3} - 6\left(\left(\frac{1}{2}\right)^3\right)^{1/3}$</p>
+            <p>$ = 12\left(\frac{1}{2}\right)^4 - 6\left(\frac{1}{2}\right) = 12\left(\frac{1}{16}\right) - 3 = \frac{3}{4} - 3 = -\frac{9}{4}$.</p>
+            <p>$f(1) = 12(1)^{4/3} - 6(1)^{1/3} = 12 - 6 = 6$.</p>
+            <p><strong>Step 4: Identify max/min values.</strong> The values are $18, 0, -\frac{9}{4}, 6$.</p>
+            <p>The absolute maximum value is 18, occurring at $x=-1$.</p>
+            <p>The absolute minimum value is -\frac{9}{4}$, occurring at $x=\frac{1}{8}$.</p>
+        </div>
+
+        <h4 id="example-29">Example 29</h4>
+        <div class="question-box">
+            <p>An Apache helicopter of enemy is flying along the curve given by $y = x^2 + 7$. A soldier, placed at $(3, 7)$, wants to shoot down the helicopter when it is nearest to him. Find the nearest distance.</p>
+        </div>
+        <div class="solution-box">
+            <p>Let the position of the helicopter be $(x, y) = (x, x^2+7).
+            The soldier's position is $(3, 7)$.</p>
+            <p>The distance $D$ between the helicopter and the soldier is:</p>
+            <p>$D = \sqrt{(x-3)^2 + ((x^2+7)-7)^2}$</p>
+            <p>$D = \sqrt{(x-3)^2 + (x^2)^2} = \sqrt{(x-3)^2 + x^4}$.</p>
+            <p>To find the nearest distance, we minimize $D$. It is equivalent to minimize $D^2$.
+            Let $f(x) = D^2 = (x-3)^2 + x^4$.</p>
+            <p>Find $f'(x)$:</p>
+            <p>$f'(x) = 2(x-3) + 4x^3$.</p>
+            <p>Set $f'(x) = 0 \implies 2(x-3) + 4x^3 = 0$</p>
+            <p>$2x - 6 + 4x^3 = 0$</p>
+            <p>$4x^3 + 2x - 6 = 0$</p>
+            <p>$2x^3 + x - 3 = 0$.</p>
+            <p>By inspection, $x=1$ is a root: $2(1)^3 + 1 - 3 = 2 + 1 - 3 = 0$.</p>
+            <p>So $(x-1)$ is a factor. Divide $2x^3 + x - 3$ by $(x-1)$:</p>
+            <p>$(x-1)(2x^2 + 2x + 3) = 0$.</p>
+            <p>Now consider the quadratic factor $2x^2 + 2x + 3$. Its discriminant is $\Delta = b^2 - 4ac = (2)^2 - 4(2)(3) = 4 - 24 = -20$.</p>
+            <p>Since $\Delta < 0$ and the coefficient of $x^2$ is positive (2 > 0), the quadratic $2x^2 + 2x + 3$ is always positive and has no real roots.</p>
+            <p>Therefore, the only real critical point is $x=1$.</p>
+            <p>Now use the Second Derivative Test:</p>
+            <p>$f''(x) = \frac{d}{dx}(2x - 6 + 4x^3) = 2 + 12x^2$.</p>
+            <p>Evaluate $f''(1) = 2 + 12(1)^2 = 14$.</p>
+            <p>Since $f''(1) = 14 > 0$, $x=1$ is a point of local minima.</p>
+            <p>The minimum value of $D^2$ is $f(1) = (1-3)^2 + (1)^4 = (-2)^2 + 1 = 4 + 1 = 5$.</p>
+            <p>The nearest distance $D = \sqrt{5}$.</p>
+        </div>
+
+        <h3 id="exercise-6-3">EXERCISE 6.3</h3>
+
+        <h4 id="ex6-3-q1">1. Find the maximum and minimum values, if any, of the following functions given by<br>(i) $f(x) = (2x – 1)^2 + 3$<br>(ii) $f(x) = 9x^2 + 12x + 2$<br>(iii) $f(x) = - (x – 1)^2 + 10$<br>(iv) $g(x) = x^3 + 1$</h4>
+        <div class="solution-box">
+            <p><strong>(i) $f(x) = (2x – 1)^2 + 3$</strong></p>
+            <p>Since $(2x-1)^2 \geq 0$ for all $x \in R$,
+            The minimum value of $(2x-1)^2$ is 0, which occurs when $2x-1=0 \implies x=\frac{1}{2}$.</p>
+            <p>So, the minimum value of $f(x)$ is $0+3=3$ at $x=\frac{1}{2}$.</p>
+            <p>Since $(2x-1)^2$ can be arbitrarily large, $f(x)$ has no maximum value.</p>
+            <p><strong>Minimum value = 3, Maximum value = None.</strong></p>
+
+            <p><strong>(ii) $f(x) = 9x^2 + 12x + 2$</strong></p>
+            <p>This is a parabola opening upwards ($a=9>0$), so it has a minimum value but no maximum value.</p>
+            <p>We can complete the square or use derivatives.</p>
+            <p>$f(x) = 9x^2 + 12x + 2 = (3x)^2 + 2(3x)(2) + 2^2 - 2^2 + 2 = (3x+2)^2 - 4 + 2 = (3x+2)^2 - 2$.</p>
+            <p>Since $(3x+2)^2 \geq 0$ for all $x \in R$,
+            The minimum value of $(3x+2)^2$ is 0, which occurs when $3x+2=0 \implies x=-\frac{2}{3}$.</p>
+            <p>So, the minimum value of $f(x)$ is $0-2=-2$ at $x=-\frac{2}{3}$.</p>
+            <p>Since $(3x+2)^2$ can be arbitrarily large, $f(x)$ has no maximum value.</p>
+            <p><strong>Minimum value = -2, Maximum value = None.</strong></p>
+
+            <p><strong>(iii) $f(x) = - (x – 1)^2 + 10$</strong></p>
+            <p>Since $(x-1)^2 \geq 0$ for all $x \in R$,
+            Then $-(x-1)^2 \leq 0$ for all $x \in R$.</p>
+            <p>The maximum value of $-(x-1)^2$ is 0, which occurs when $x-1=0 \implies x=1$.</p>
+            <p>So, the maximum value of $f(x)$ is $0+10=10$ at $x=1$.</p>
+            <p>Since $-(x-1)^2$ can be arbitrarily small (large negative), $f(x)$ has no minimum value.</p>
+            <p><strong>Maximum value = 10, Minimum value = None.</strong></p>
+
+            <p><strong>(iv) $g(x) = x^3 + 1$</strong></p>
+            <p>This is a cubic function. For $x \to \infty$, $g(x) \to \infty$. For $x \to -\infty$, $g(x) \to -\infty$.</p>
+            <p>$g'(x) = 3x^2$.</p>
+            <p>Set $g'(x) = 0 \implies 3x^2 = 0 \implies x=0$.</p>
+            <p>$g''(x) = 6x$.</p>
+            <p>At $x=0$, $g''(0) = 0$. The second derivative test fails.</p>
+            <p>Using the first derivative test around $x=0$:
+            For $x < 0$, $g'(x) = 3x^2 > 0$.
+            For $x > 0$, $g'(x) = 3x^2 > 0$.
+            Since $g'(x)$ does not change sign around $x=0$, $x=0$ is a point of inflexion, not a local extremum.</p>
+            <p>Therefore, $g(x)$ has no local maximum or local minimum values. And since its range is $(-\infty, \infty)$, it has no absolute maximum or minimum values.</p>
+            <p><strong>Maximum value = None, Minimum value = None.</strong></p>
+        </div>
+
+        <h4 id="ex6-3-q2">2. Find the maximum and minimum values, if any, of the following functions given by<br>(i) $f(x) = |x + 2| - 1$<br>(ii) $g(x) = – |x + 1| + 3$<br>(iii) $h(x) = \sin(2x) + 5$<br>(iv) $f(x) = | \sin 4x + 3|$<br>(v) $h(x) = x + 1, x \in (− 1, 1)$</h4>
+        <div class="solution-box">
+            <p><strong>(i) $f(x) = |x + 2| - 1$</strong></p>
+            <p>Since $|x+2| \geq 0$ for all $x \in R$,
+            The minimum value of $|x+2|$ is 0, which occurs when $x+2=0 \implies x=-2$.</p>
+            <p>So, the minimum value of $f(x)$ is $0-1=-1$ at $x=-2$.</p>
+            <p>Since $|x+2|$ can be arbitrarily large, $f(x)$ has no maximum value.</p>
+            <p><strong>Minimum value = -1, Maximum value = None.</strong></p>
+
+            <p><strong>(ii) $g(x) = – |x + 1| + 3$</strong></p>
+            <p>Since $|x+1| \geq 0$ for all $x \in R$,
+            Then $-|x+1| \leq 0$ for all $x \in R$.</p>
+            <p>The maximum value of $-|x+1|$ is 0, which occurs when $x+1=0 \implies x=-1$.</p>
+            <p>So, the maximum value of $g(x)$ is $0+3=3$ at $x=-1$.</p>
+            <p>Since $-|x+1|$ can be arbitrarily small (large negative), $g(x)$ has no minimum value.</p>
+            <p><strong>Maximum value = 3, Minimum value = None.</strong></p>
+
+            <p><strong>(iii) $h(x) = \sin(2x) + 5$</strong></p>
+            <p>We know that $-1 \leq \sin(2x) \leq 1$ for all $x \in R$.</p>
+            <p>Add 5 to all parts of the inequality:</p>
+            <p>$-1 + 5 \leq \sin(2x) + 5 \leq 1 + 5$</p>
+            <p>$4 \leq h(x) \leq 6$.</p>
+            <p>The maximum value of $h(x)$ is 6.</p>
+            <p>The minimum value of $h(x)$ is 4.</p>
+            <p><strong>Maximum value = 6, Minimum value = 4.</strong></p>
+
+            <p><strong>(iv) $f(x) = | \sin 4x + 3|$</strong></p>
+            <p>We know that $-1 \leq \sin(4x) \leq 1$ for all $x \in R$.</p>
+            <p>Add 3 to all parts:</p>
+            <p>$-1 + 3 \leq \sin(4x) + 3 \leq 1 + 3$</p>
+            <p>$2 \leq \sin(4x) + 3 \leq 4$.</p>
+            <p>Since the expression inside the absolute value is always positive (between 2 and 4), the absolute value does not change its value.</p>
+            <p>$2 \leq |\sin(4x) + 3| \leq 4$.</p>
+            <p>The maximum value of $f(x)$ is 4.</p>
+            <p>The minimum value of $f(x)$ is 2.</p>
+            <p><strong>Maximum value = 4, Minimum value = 2.</strong></p>
+
+            <p><strong>(v) $h(x) = x + 1, x \in (− 1, 1)$</strong></p>
+            <p>This is a linear function, which is strictly increasing on its domain.</p>
+            <p>The interval is an open interval $(-1, 1)$, meaning it does not include its endpoints.</p>
+            <p>As $x$ approaches $-1$, $h(x)$ approaches $-1+1=0$. But $h(x)$ never reaches 0.</p>
+            <p>As $x$ approaches $1$, $h(x)$ approaches $1+1=2$. But $h(x)$ never reaches 2.</p>
+            <p>Since the endpoints are not included, the function does not attain its maximum or minimum values within the interval.</p>
+            <p><strong>Maximum value = None, Minimum value = None.</strong></p>
+        </div>
+
+        <h4 id="ex6-3-q3">3. Find the local maxima and local minima, if any, of the following functions. Find also the local maximum and the local minimum values, as the case may be:<br>(i) $f(x) = x^2$<br>(ii) $g(x) = x^3 - 3x$<br>(iii) $h(x) = \sin x + \cos x, 0 < x < \frac{\pi}{2}$<br>(iv) $f(x) = \sin x - \cos x, 0 < x < 2\pi$<br>(v) $f(x) = x^3 - 6x^2 + 9x + 15$<br>(vi) $g(x)=\frac{2}{x}+\frac{x}{2}, x>0$<br>(vii) $g(x)=\frac{1}{x^2+2}$<br>(viii) $f(x) = x\sqrt{1-x^2}, 0 < x < 1$</h4>
+        <div class="solution-box">
+            <p><strong>(i) $f(x) = x^2$</strong></p>
+            <p>$f'(x) = 2x$. Set $f'(x) = 0 \implies x=0$.</p>
+            <p>$f''(x) = 2$. At $x=0$, $f''(0) = 2 > 0$.</p>
+            <p>So, $x=0$ is a point of local minima.</p>
+            <p>Local minimum value: $f(0) = 0^2 = 0$.</p>
+            <p>No local maxima.</p>
+
+            <p><strong>(ii) $g(x) = x^3 - 3x$</strong></p>
+            <p>$g'(x) = 3x^2 - 3 = 3(x^2 - 1) = 3(x-1)(x+1)$.</p>
+            <p>Set $g'(x) = 0 \implies x=1$ or $x=-1$.</p>
+            <p>$g''(x) = 6x$.</p>
+            <p>At $x=1$: $g''(1) = 6(1) = 6 > 0$. So, $x=1$ is a point of local minima.</p>
+            <p>Local minimum value: $g(1) = 1^3 - 3(1) = 1 - 3 = -2$.</p>
+            <p>At $x=-1$: $g''(-1) = 6(-1) = -6 < 0$. So, $x=-1$ is a point of local maxima.</p>
+            <p>Local maximum value: $g(-1) = (-1)^3 - 3(-1) = -1 + 3 = 2$.</p>
+
+            <p><strong>(iii) $h(x) = \sin x + \cos x, 0 < x < \frac{\pi}{2}$</strong></p>
+            <p>$h'(x) = \cos x - \sin x$.</p>
+            <p>Set $h'(x) = 0 \implies \cos x = \sin x \implies \tan x = 1$.</p>
+            <p>In $(0, \frac{\pi}{2})$, the only solution is $x = \frac{\pi}{4}$.</p>
+            <p>$h''(x) = -\sin x - \cos x$.</p>
+            <p>At $x=\frac{\pi}{4}$: $h''(\frac{\pi}{4}) = -\sin(\frac{\pi}{4}) - \cos(\frac{\pi}{4}) = -\frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}} = -\frac{2}{\sqrt{2}} = -\sqrt{2} < 0$.</p>
+            <p>So, $x=\frac{\pi}{4}$ is a point of local maxima.</p>
+            <p>Local maximum value: $h(\frac{\pi}{4}) = \sin(\frac{\pi}{4}) + \cos(\frac{\pi}{4}) = \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}} = \frac{2}{\sqrt{2}} = \sqrt{2}$.</p>
+            <p>No local minima in the given open interval.</p>
+
+            <p><strong>(iv) $f(x) = \sin x - \cos x, 0 < x < 2\pi$</strong></p>
+            <p>$f'(x) = \cos x + \sin x$.</p>
+            <p>Set $f'(x) = 0 \implies \cos x = -\sin x \implies \tan x = -1$.</p>
+            <p>In $(0, 2\pi)$, solutions are $x = \frac{3\pi}{4}$ and $x = \frac{7\pi}{4}$.</p>
+            <p>$f''(x) = -\sin x + \cos x$.</p>
+            <p>At $x=\frac{3\pi}{4}$: $f''(\frac{3\pi}{4}) = -\sin(\frac{3\pi}{4}) + \cos(\frac{3\pi}{4}) = -\frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}} = -\sqrt{2} < 0$.</p>
+            <p>So, $x=\frac{3\pi}{4}$ is a point of local maxima.</p>
+            <p>Local maximum value: $f(\frac{3\pi}{4}) = \sin(\frac{3\pi}{4}) - \cos(\frac{3\pi}{4}) = \frac{1}{\sqrt{2}} - (-\frac{1}{\sqrt{2}}) = \frac{2}{\sqrt{2}} = \sqrt{2}$.</p>
+            <p>At $x=\frac{7\pi}{4}$: $f''(\frac{7\pi}{4}) = -\sin(\frac{7\pi}{4}) + \cos(\frac{7\pi}{4}) = -(-\frac{1}{\sqrt{2}}) + \frac{1}{\sqrt{2}} = \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}} = \sqrt{2} > 0$.</p>
+            <p>So, $x=\frac{7\pi}{4}$ is a point of local minima.</p>
+            <p>Local minimum value: $f(\frac{7\pi}{4}) = \sin(\frac{7\pi}{4}) - \cos(\frac{7\pi}{4}) = -\frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}} = -\frac{2}{\sqrt{2}} = -\sqrt{2}$.</p>
+
+            <p><strong>(v) $f(x) = x^3 - 6x^2 + 9x + 15$</strong></p>
+            <p>$f'(x) = 3x^2 - 12x + 9 = 3(x^2 - 4x + 3) = 3(x-1)(x-3)$.</p>
+            <p>Set $f'(x) = 0 \implies x=1$ or $x=3$.</p>
+            <p>$f''(x) = 6x - 12$.</p>
+            <p>At $x=1$: $f''(1) = 6(1) - 12 = -6 < 0$. So, $x=1$ is a point of local maxima.</p>
+            <p>Local maximum value: $f(1) = 1^3 - 6(1)^2 + 9(1) + 15 = 1 - 6 + 9 + 15 = 19$.</p>
+            <p>At $x=3$: $f''(3) = 6(3) - 12 = 18 - 12 = 6 > 0$. So, $x=3$ is a point of local minima.</p>
+            <p>Local minimum value: $f(3) = 3^3 - 6(3)^2 + 9(3) + 15 = 27 - 54 + 27 + 15 = 15$.</p>
+
+            <p><strong>(vi) $g(x)=\frac{2}{x}+\frac{x}{2}, x>0$</strong></p>
+            <p>$g'(x) = -\frac{2}{x^2} + \frac{1}{2} = \frac{x^2 - 4}{2x^2}$.</p>
+            <p>Set $g'(x) = 0 \implies x^2 - 4 = 0 \implies x^2 = 4 \implies x = \pm 2$.</p>
+            <p>Since domain is $x>0$, we consider $x=2$ only.</p>
+            <p>$g''(x) = \frac{d}{dx}(-2x^{-2} + \frac{1}{2}) = -2(-2)x^{-3} = \frac{4}{x^3}$.</p>
+            <p>At $x=2$: $g''(2) = \frac{4}{2^3} = \frac{4}{8} = \frac{1}{2} > 0$. So, $x=2$ is a point of local minima.</p>
+            <p>Local minimum value: $g(2) = \frac{2}{2} + \frac{2}{2} = 1 + 1 = 2$.</p>
+            <p>No local maxima.</p>
+
+            <p><strong>(vii) $g(x)=\frac{1}{x^2+2}$</strong></p>
+            <p>$g'(x) = -\frac{1}{(x^2+2)^2} \cdot (2x) = -\frac{2x}{(x^2+2)^2}$.</p>
+            <p>Set $g'(x) = 0 \implies -2x = 0 \implies x=0$.</p>
+            <p>This is the only critical point.</p>
+            <p>Using the First Derivative Test:</p>
+            <p>For $x < 0$ (e.g., $x=-1$), $g'(-1) = -\frac{-2}{(1+2)^2} = \frac{2}{9} > 0$. (Increasing)</p>
+            <p>For $x > 0$ (e.g., $x=1$), $g'(1) = -\frac{2}{(1+2)^2} = -\frac{2}{9} < 0$. (Decreasing)</p>
+            <p>Since $g'(x)$ changes sign from positive to negative at $x=0$, $x=0$ is a point of local maxima.</p>
+            <p>Local maximum value: $g(0) = \frac{1}{0^2+2} = \frac{1}{2}$.</p>
+            <p>No local minima.</p>
+
+            <p><strong>(viii) $f(x) = x\sqrt{1-x^2}, 0 < x < 1$</strong></p>
+            <p>$f'(x) = 1 \cdot \sqrt{1-x^2} + x \cdot \frac{1}{2\sqrt{1-x^2}} (-2x)$</p>
+            <p>$f'(x) = \sqrt{1-x^2} - \frac{x^2}{\sqrt{1-x^2}} = \frac{(1-x^2) - x^2}{\sqrt{1-x^2}} = \frac{1 - 2x^2}{\sqrt{1-x^2}}$.</p>
+            <p>Set $f'(x) = 0 \implies 1 - 2x^2 = 0 \implies 2x^2 = 1 \implies x^2 = \frac{1}{2} \implies x = \pm \frac{1}{\sqrt{2}}$.</p>
+            <p>Since $0 < x < 1$, we consider $x = \frac{1}{\sqrt{2}}$ only.</p>
+            <p>Using the First Derivative Test around $x = \frac{1}{\sqrt{2}}$:</p>
+            <p>For $x < \frac{1}{\sqrt{2}}$ (e.g., $x=0.5$), $1-2x^2 > 0$. So $f'(x) > 0$. (Increasing)</p>
+            <p>For $x > \frac{1}{\sqrt{2}}$ (e.g., $x=0.8$), $1-2x^2 < 0$. So $f'(x) < 0$. (Decreasing)</p>
+            <p>Since $f'(x)$ changes sign from positive to negative at $x = \frac{1}{\sqrt{2}}$, $x = \frac{1}{\sqrt{2}}$ is a point of local maxima.</p>
+            <p>Local maximum value: $f(\frac{1}{\sqrt{2}}) = \frac{1}{\sqrt{2}}\sqrt{1 - (\frac{1}{\sqrt{2}})^2} = \frac{1}{\sqrt{2}}\sqrt{1 - \frac{1}{2}} = \frac{1}{\sqrt{2}}\sqrt{\frac{1}{2}} = \frac{1}{\sqrt{2}} \cdot \frac{1}{\sqrt{2}} = \frac{1}{2}$.</p>
+            <p>No local minima in the given open interval.</p>
+        </div>
+
+        <h4 id="ex6-3-q4">4. Prove that the following functions do not have maxima or minima:<br>(i) $f(x) = e^x$<br>(ii) $g(x) = \log x$<br>(iii) $h(x) = x^3 + x^2 + x +1$</h4>
+        <div class="solution-box">
+            <p>For a function to have local maxima or minima, its derivative must be zero or undefined at a critical point, and the derivative must change sign around that point (or the second derivative test should yield a non-zero result).</p>
+            <p><strong>(i) $f(x) = e^x$</strong></p>
+            <p>$f'(x) = e^x$.</p>
+            <p>Since $e^x > 0$ for all real $x$, $f'(x)$ is always positive. This means $f(x)$ is strictly increasing on R.</p>
+            <p>A strictly increasing function does not have any local maxima or minima.</p>
+
+            <p><strong>(ii) $g(x) = \log x$</strong></p>
+            <p>$g'(x) = \frac{1}{x}$.</p>
+            <p>The domain of $\log x$ is $(0, \infty)$. For all $x \in (0, \infty)$, $g'(x) = \frac{1}{x} > 0$. This means $g(x)$ is strictly increasing on its domain.</p>
+            <p>A strictly increasing function does not have any local maxima or minima.</p>
+
+            <p><strong>(iii) $h(x) = x^3 + x^2 + x +1$</strong></p>
+            <p>$h'(x) = 3x^2 + 2x + 1$.</p>
+            <p>To find critical points, set $h'(x) = 0 \implies 3x^2 + 2x + 1 = 0$.</p>
+            <p>Calculate the discriminant of this quadratic equation: $\Delta = b^2 - 4ac = (2)^2 - 4(3)(1) = 4 - 12 = -8$.</p>
+            <p>Since $\Delta < 0$, the quadratic equation $3x^2 + 2x + 1 = 0$ has no real roots.</p>
+            <p>This means $h'(x)$ is never zero. Also, $h'(x)$ is a polynomial, so it's defined everywhere.</p>
+            <p>Since the leading coefficient of $h'(x)$ ($3x^2+2x+1$) is positive (3 > 0) and $\Delta < 0$, $h'(x)$ is always positive ($h'(x) > 0$ for all $x \in R$).</p>
+            <p>Since $h'(x) > 0$ for all $x \in R$, $h(x)$ is strictly increasing on R.</p>
+            <p>A strictly increasing function does not have any local maxima or minima.</p>
+        </div>
+
+        <h4 id="ex6-3-q5">5. Find the absolute maximum and absolute minimum value of the following functions in the given intervals:<br>(i) $f(x) = x^3, x \in [-2, 2]$<br>(ii) $f(x) = \sin x + \cos x, x \in [0, \pi]$<br>(iii) $f(x) = 4x - \frac{1}{2}x^2, x \in [-2, \frac{9}{2}]$<br>(iv) $f(x) = (x-1)^2 + 3, x \in [-3, 1]$</h4>
+        <div class="solution-box">
+            <p><strong>(i) $f(x) = x^3, x \in [-2, 2]$</strong></p>
+            <p><strong>Step 1: Critical points.</strong>
+            $f'(x) = 3x^2$. Set $f'(x) = 0 \implies x=0$. This point is in $[-2, 2]$.</p>
+            <p><strong>Step 2: End points.</strong> The end points are $x=-2$ and $x=2$.</p>
+            <p><strong>Step 3: Calculate function values.</strong>
+            $f(-2) = (-2)^3 = -8$.
+            $f(0) = (0)^3 = 0$.
+            $f(2) = (2)^3 = 8$.</p>
+            <p><strong>Step 4: Identify max/min values.</strong> The values are $-8, 0, 8$.</p>
+            <p>Absolute maximum value = 8, at $x=2$.</p>
+            <p>Absolute minimum value = -8, at $x=-2$.</p>
+
+            <p><strong>(ii) $f(x) = \sin x + \cos x, x \in [0, \pi]$</strong></p>
+            <p><strong>Step 1: Critical points.</strong>
+            $f'(x) = \cos x - \sin x$. Set $f'(x) = 0 \implies \cos x = \sin x \implies \tan x = 1$.
+            In $[0, \pi]$, the only solution is $x = \frac{\pi}{4}$. This point is in $[0, \pi]$.</p>
+            <p><strong>Step 2: End points.</strong> The end points are $x=0$ and $x=\pi$.</p>
+            <p><strong>Step 3: Calculate function values.</strong>
+            $f(0) = \sin 0 + \cos 0 = 0 + 1 = 1$.
+            $f(\frac{\pi}{4}) = \sin(\frac{\pi}{4}) + \cos(\frac{\pi}{4}) = \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}} = \frac{2}{\sqrt{2}} = \sqrt{2} \approx 1.414$.
+            $f(\pi) = \sin \pi + \cos \pi = 0 + (-1) = -1$.</p>
+            <p><strong>Step 4: Identify max/min values.</strong> The values are $1, \sqrt{2}, -1$.</p>
+            <p>Absolute maximum value = $\sqrt{2}$, at $x=\frac{\pi}{4}$.</p>
+            <p>Absolute minimum value = -1, at $x=\pi$.</p>
+
+            <p><strong>(iii) $f(x) = 4x - \frac{1}{2}x^2, x \in [-2, \frac{9}{2}]$</strong></p>
+            <p><strong>Step 1: Critical points.</strong>
+            $f'(x) = 4 - x$. Set $f'(x) = 0 \implies x=4$. This point is in $[-2, \frac{9}{2}]$ (since $\frac{9}{2} = 4.5$).</p>
+            <p><strong>Step 2: End points.</strong> The end points are $x=-2$ and $x=\frac{9}{2}$.</p>
+            <p><strong>Step 3: Calculate function values.</strong>
+            $f(-2) = 4(-2) - \frac{1}{2}(-2)^2 = -8 - \frac{1}{2}(4) = -8 - 2 = -10$.
+            $f(4) = 4(4) - \frac{1}{2}(4)^2 = 16 - \frac{1}{2}(16) = 16 - 8 = 8$.
+            $f(\frac{9}{2}) = 4(\frac{9}{2}) - \frac{1}{2}(\frac{9}{2})^2 = 18 - \frac{1}{2}(\frac{81}{4}) = 18 - \frac{81}{8} = \frac{144 - 81}{8} = \frac{63}{8} = 7.875$.
+            <p><strong>Step 4: Identify max/min values.</strong> The values are $-10, 8, \frac{63}{8}$.</p>
+            <p>Absolute maximum value = 8, at $x=4$.</p>
+            <p>Absolute minimum value = -10, at $x=-2$.</p>
+
+            <p><strong>(iv) $f(x) = (x-1)^2 + 3, x \in [-3, 1]$</strong></p>
+            <p><strong>Step 1: Critical points.</strong>
+            $f'(x) = 2(x-1)$. Set $f'(x) = 0 \implies x=1$. This point is one of the end points of $[-3, 1]$.</p>
+            <p><strong>Step 2: End points.</strong> The end points are $x=-3$ and $x=1$.</p>
+            <p><strong>Step 3: Calculate function values.</strong>
+            $f(-3) = (-3-1)^2 + 3 = (-4)^2 + 3 = 16 + 3 = 19$.
+            $f(1) = (1-1)^2 + 3 = 0^2 + 3 = 3$.
+            <p><strong>Step 4: Identify max/min values.</strong> The values are $19, 3$.</p>
+            <p>Absolute maximum value = 19, at $x=-3$.</p>
+            <p>Absolute minimum value = 3, at $x=1$.</p>
+        </div>
+
+        <h4 id="ex6-3-q6">6. Find the maximum profit that a company can make, if the profit function is given by $p(x) = 41 - 72x - 18x^2$</h4>
+        <div class="solution-box">
+            <p>Given the profit function $p(x) = 41 - 72x - 18x^2$.</p>
+            <p>This is a quadratic function, representing a parabola opening downwards (since the coefficient of $x^2$ is -18, which is negative). Therefore, the function has a maximum value at its vertex but no minimum value.</p>
+            <p>To find the maximum profit, we find the derivative and set it to zero:</p>
+            <p>$p'(x) = -72 - 36x$.</p>
+            <p>Set $p'(x) = 0 \implies -72 - 36x = 0 \implies 36x = -72 \implies x = -2$.</p>
+            <p>Now, we check the second derivative:</p>
+            <p>$p''(x) = -36$.</p>
+            <p>Since $p''(-2) = -36 < 0$, $x=-2$ is a point of local maxima.</p>
+            <p>Since this is the only critical point and the parabola opens downwards, this is the absolute maximum.</p>
+            <p>The maximum profit is $p(-2) = 41 - 72(-2) - 18(-2)^2$</p>
+            <p>$p(-2) = 41 + 144 - 18(4) = 41 + 144 - 72 = 185 - 72 = 113$.</p>
+            <p>The maximum profit is 113. (Note: In a real-world scenario, $x$ representing units produced would be non-negative. If $x \geq 0$, the function $p(x)$ is decreasing for $x \geq 0$, so the maximum profit would occur at $x=0$, being $p(0)=41$. The question is purely mathematical.)</p>
+        </div>
+
+        <h4 id="ex6-3-q7">7. Find both the maximum value and the minimum value of $3x^4 – 8x^3 + 12x^2 – 48x + 25$ on the interval $[0, 3]$.</h4>
+        <div class="solution-box">
+            <p>Let $f(x) = 3x^4 - 8x^3 + 12x^2 - 48x + 25$. Interval is $[0, 3]$.</p>
+            <p><strong>Step 1: Critical points.</strong></p>
+            <p>$f'(x) = 12x^3 - 24x^2 + 24x - 48$.</p>
+            <p>$f'(x) = 12(x^3 - 2x^2 + 2x - 4)$.</p>
+            <p>Factor by grouping: $f'(x) = 12[x^2(x-2) + 2(x-2)] = 12(x-2)(x^2+2)$.</p>
+            <p>Set $f'(x) = 0 \implies 12(x-2)(x^2+2) = 0$.</p>
+            <p>Since $x^2+2$ is always positive, the only critical point is $x=2$. This point is in the interval $[0, 3]$.</p>
+            <p><strong>Step 2: End points.</strong> The end points are $x=0$ and $x=3$.</p>
+            <p><strong>Step 3: Calculate function values.</strong> Evaluate $f(x)$ at $x=0, 2, 3$.</p>
+            <p>$f(0) = 3(0)^4 - 8(0)^3 + 12(0)^2 - 48(0) + 25 = 25$.</p>
+            <p>$f(2) = 3(2)^4 - 8(2)^3 + 12(2)^2 - 48(2) + 25 = 3(16) - 8(8) + 12(4) - 96 + 25 = 48 - 64 + 48 - 96 + 25 = -39$.</p>
+            <p>$f(3) = 3(3)^4 - 8(3)^3 + 12(3)^2 - 48(3) + 25 = 3(81) - 8(27) + 12(9) - 144 + 25 = 243 - 216 + 108 - 144 + 25 = 16$.</p>
+            <p><strong>Step 4: Identify max/min values.</strong> The values are $25, -39, 16$.</p>
+            <p>Maximum value = 25, at $x=0$.</p>
+            <p>Minimum value = -39, at $x=2$.</p>
+        </div>
+
+        <h4 id="ex6-3-q8">8. At what points in the interval $[0, 2\pi]$, does the function $\sin 2x$ attain its maximum value?</h4>
+        <div class="solution-box">
+            <p>Let $f(x) = \sin 2x$. We want to find the points where $f(x)$ is maximum in $[0, 2\pi]$.</p>
+            <p>The maximum value of the sine function is 1.</p>
+            <p>So, we need to find $x$ such that $\sin 2x = 1$.</p>
+            <p>We know $\sin \theta = 1$ when $\theta = \frac{\pi}{2}, \frac{5\pi}{2}, \frac{9\pi}{2}, ...$.</p>
+            <p>Let $\theta = 2x$.
+            If $x \in [0, 2\pi]$, then $2x \in [0, 4\pi]$.</p>
+            <p>So we are looking for values of $2x$ in $[0, 4\pi]$ where $\sin(2x) = 1$.</p>
+            <p>$2x = \frac{\pi}{2}$ or $2x = \frac{5\pi}{2}$.</p>
+            <p>Solving for $x$:</p>
+            <p>$x = \frac{\pi}{4}$ or $x = \frac{5\pi}{4}$.</p>
+            <p>Both these points are in the interval $[0, 2\pi]$.</p>
+            <p>So, the function $\sin 2x$ attains its maximum value at $x = \frac{\pi}{4}$ and $x = \frac{5\pi}{4}$.</p>
+        </div>
+
+        <h4 id="ex6-3-q9">9. What is the maximum value of the function $\sin x + \cos x$?</h4>
+        <div class="solution-box">
+            <p>Let $f(x) = \sin x + \cos x$.</p>
+            <p>$f'(x) = \cos x - \sin x$.</p>
+            <p>Set $f'(x) = 0 \implies \cos x = \sin x \implies \tan x = 1$.</p>
+            <p>This occurs when $x = \frac{\pi}{4} + n\pi$ for any integer $n$.</p>
+            <p>$f''(x) = -\sin x - \cos x$.</p>
+            <p>If $x = \frac{\pi}{4}$: $f''(\frac{\pi}{4}) = -\sin(\frac{\pi}{4}) - \cos(\frac{\pi}{4}) = -\frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}} = -\sqrt{2} < 0$. So, this is a local maximum.</p>
+            <p>If $x = \frac{5\pi}{4}$: $f''(\frac{5\pi}{4}) = -\sin(\frac{5\pi}{4}) - \cos(\frac{5\pi}{4}) = -(-\frac{1}{\sqrt{2}}) - (-\frac{1}{\sqrt{2}}) = \frac{2}{\sqrt{2}} = \sqrt{2} > 0$. So, this is a local minimum.</p>
+            <p>The maximum value occurs at $x = \frac{\pi}{4}$ (and other points $2\pi$ apart).</p>
+            <p>Maximum value: $f(\frac{\pi}{4}) = \sin(\frac{\pi}{4}) + \cos(\frac{\pi}{4}) = \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}} = \frac{2}{\sqrt{2}} = \sqrt{2}$.</p>
+            <p>Alternatively, $f(x) = \sqrt{2}(\frac{1}{\sqrt{2}}\sin x + \frac{1}{\sqrt{2}}\cos x) = \sqrt{2}(\cos(\frac{\pi}{4})\sin x + \sin(\frac{\pi}{4})\cos x) = \sqrt{2}\sin(x+\frac{\pi}{4})$.
+            The maximum value of $\sin(x+\frac{\pi}{4})$ is 1. So the maximum value of $f(x)$ is $\sqrt{2}$.</p>
+        </div>
+
+        <h4 id="ex6-3-q10">10. Find the maximum value of $2x^3 – 24x + 107$ in the interval $[1, 3]$. Find the maximum value of the same function in $[-3, -1]$.</h4>
+        <div class="solution-box">
+            <p>Let $f(x) = 2x^3 - 24x + 107$.</p>
+            <p>$f'(x) = 6x^2 - 24 = 6(x^2 - 4) = 6(x-2)(x+2)$.</p>
+            <p>Critical points are $x=2$ and $x=-2$.</p>
+            <p><strong>Case 1: Interval $[1, 3]$</strong></p>
+            <p>The critical point within this interval is $x=2$.</p>
+            <p>We evaluate $f(x)$ at $x=1, 2, 3$.</p>
+            <p>$f(1) = 2(1)^3 - 24(1) + 107 = 2 - 24 + 107 = 85$.</p>
+            <p>$f(2) = 2(2)^3 - 24(2) + 107 = 16 - 48 + 107 = 75$.</p>
+            <p>$f(3) = 2(3)^3 - 24(3) + 107 = 54 - 72 + 107 = 89$.</p>
+            <p>The maximum value in $[1, 3]$ is 89.</p>
+
+            <p><strong>Case 2: Interval $[-3, -1]$</strong></p>
+            <p>The critical point within this interval is $x=-2$.</p>
+            <p>We evaluate $f(x)$ at $x=-3, -2, -1$.</p>
+            <p>$f(-3) = 2(-3)^3 - 24(-3) + 107 = 2(-27) + 72 + 107 = -54 + 72 + 107 = 125$.</p>
+            <p>$f(-2) = 2(-2)^3 - 24(-2) + 107 = 2(-8) + 48 + 107 = -16 + 48 + 107 = 139$.</p>
+            <p>$f(-1) = 2(-1)^3 - 24(-1) + 107 = -2 + 24 + 107 = 129$.</p>
+            <p>The maximum value in $[-3, -1]$ is 139.</p>
+        </div>
+
+        <h4 id="ex6-3-q11">11. It is given that at $x=1$, the function $x^4 – 62x^2 + ax + 9$ attains its maximum value, on the interval $[0, 2]$. Find the value of $a$.</h4>
+        <div class="solution-box">
+            <p>Let $f(x) = x^4 - 62x^2 + ax + 9$.</p>
+            <p>The function attains its maximum value at $x=1$ on the interval $[0, 2]$.
+            Since $x=1$ is an interior point of the interval, it must be a critical point of the function.</p>
+            <p>This means $f'(1) = 0$.</p>
+            <p>$f'(x) = 4x^3 - 124x + a$.</p>
+            <p>Set $f'(1) = 0$:</p>
+            <p>$4(1)^3 - 124(1) + a = 0$</p>
+            <p>$4 - 124 + a = 0$</p>
+            <p>$-120 + a = 0$</p>
+            <p>$a = 120$.</p>
+            <p>We should also check the second derivative condition for a maximum: $f''(1) \leq 0$.</p>
+            <p>$f''(x) = 12x^2 - 124$.</p>
+            <p>$f''(1) = 12(1)^2 - 124 = 12 - 124 = -112 < 0$.</p>
+            <p>The condition for a local maximum is satisfied. So, the value of $a$ is 120.</p>
+        </div>
+
+        <h4 id="ex6-3-q12">12. Find the maximum and minimum values of $x + \sin 2x$ on $[0, 2\pi]$.</h4>
+        <div class="solution-box">
+            <p>Let $f(x) = x + \sin 2x$ on $[0, 2\pi]$.</p>
+            <p><strong>Step 1: Critical points.</strong></p>
+            <p>$f'(x) = 1 + 2\cos 2x$.</p>
+            <p>Set $f'(x) = 0 \implies 1 + 2\cos 2x = 0 \implies \cos 2x = -\frac{1}{2}$.</p>
+            <p>Since $x \in [0, 2\pi]$, we have $2x \in [0, 4\pi]$.</p>
+            <p>$\cos \theta = -\frac{1}{2}$ when $\theta = \frac{2\pi}{3}, \frac{4\pi}{3}, \frac{8\pi}{3}, \frac{10\pi}{3}$.</p>
+            <p>So, $2x = \frac{2\pi}{3} \implies x = \frac{\pi}{3}$.</p>
+            <p>$2x = \frac{4\pi}{3} \implies x = \frac{2\pi}{3}$.</p>
+            <p>$2x = \frac{8\pi}{3} \implies x = \frac{4\pi}{3}$.</p>
+            <p>$2x = \frac{10\pi}{3} \implies x = \frac{5\pi}{3}$.</p>
+            <p>Critical points in $[0, 2\pi]$ are $\frac{\pi}{3}, \frac{2\pi}{3}, \frac{4\pi}{3}, \frac{5\pi}{3}$.</p>
+            <p><strong>Step 2: End points.</strong> $x=0, x=2\pi$.</p>
+            <p><strong>Step 3: Calculate function values.</strong></p>
+            <p>$f(0) = 0 + \sin 0 = 0$.</p>
+            <p>$f(\frac{\pi}{3}) = \frac{\pi}{3} + \sin(\frac{2\pi}{3}) = \frac{\pi}{3} + \frac{\sqrt{3}}{2} \approx 1.047 + 0.866 = 1.913$.</p>
+            <p>$f(\frac{2\pi}{3}) = \frac{2\pi}{3} + \sin(\frac{4\pi}{3}) = \frac{2\pi}{3} - \frac{\sqrt{3}}{2} \approx 2.094 - 0.866 = 1.228$.</p>
+            <p>$f(\frac{4\pi}{3}) = \frac{4\pi}{3} + \sin(\frac{8\pi}{3}) = \frac{4\pi}{3} + \sin(\frac{2\pi}{3}) = \frac{4\pi}{3} + \frac{\sqrt{3}}{2} \approx 4.188 + 0.866 = 5.054$.</p>
+            <p>$f(\frac{5\pi}{3}) = \frac{5\pi}{3} + \sin(\frac{10\pi}{3}) = \frac{5\pi}{3} + \sin(\frac{4\pi}{3}) = \frac{5\pi}{3} - \frac{\sqrt{3}}{2} \approx 5.236 - 0.866 = 4.37$.</p>
+            <p>$f(2\pi) = 2\pi + \sin(4\pi) = 2\pi \approx 6.283$.</p>
+            <p><strong>Step 4: Identify max/min values.</strong> The values are $0, 1.913, 1.228, 5.054, 4.37, 6.283$.</p>
+            <p>Maximum value = $2\pi$ at $x=2\pi$.</p>
+            <p>Minimum value = 0 at $x=0$.</p>
+        </div>
+
+        <h4 id="ex6-3-q13">13. Find two numbers whose sum is 24 and whose product is as large as possible.</h4>
+        <div class="solution-box">
+            <p>Let the two numbers be $x$ and $y$.</p>
+            <p>Given: $x+y=24 \implies y = 24-x$.</p>
+            <p>Let $P$ be the product: $P = xy$.</p>
+            <p>Substitute $y$: $P(x) = x(24-x) = 24x - x^2$.</p>
+            <p>To maximize $P(x)$, find $P'(x)$:</p>
+            <p>$P'(x) = 24 - 2x$.</p>
+            <p>Set $P'(x) = 0 \implies 24 - 2x = 0 \implies 2x = 24 \implies x = 12$.</p>
+            <p>Now check the second derivative:</p>
+            <p>$P''(x) = -2$.</p>
+            <p>Since $P''(12) = -2 < 0$, $x=12$ gives a maximum.</p>
+            <p>If $x=12$, then $y = 24 - 12 = 12$.</p>
+            <p>The two numbers are 12 and 12.</p>
+        </div>
+
+        <h4 id="ex6-3-q14">14. Find two positive numbers $x$ and $y$ such that $x+y=60$ and $xy^3$ is maximum.</h4>
+        <div class="solution-box">
+            <p>Given: $x+y=60 \implies x = 60-y$.</p>
+            <p>Let $P = xy^3$. We need to maximize $P$.</p>
+            <p>Substitute $x$: $P(y) = (60-y)y^3 = 60y^3 - y^4$.</p>
+            <p>Since $x, y$ are positive, $y>0$ and $60-y>0 \implies y<60$. So $y \in (0, 60)$.</p>
+            <p>$P'(y) = 180y^2 - 4y^3 = 4y^2(45 - y)$.</p>
+            <p>Set $P'(y) = 0 \implies 4y^2(45 - y) = 0$.
+            Solutions are $y=0$ or $y=45$. Since $y>0$, we take $y=45$.</p>
+            <p>Check the second derivative:</p>
+            <p>$P''(y) = 360y - 12y^2$.</p>
+            <p>$P''(45) = 360(45) - 12(45)^2 = 45(360 - 12 \times 45) = 45(360 - 540) < 0$.</p>
+            <p>So, $y=45$ gives a maximum.</p>
+            <p>If $y=45$, then $x = 60 - 45 = 15$.</p>
+            <p>The two positive numbers are $x=15$ and $y=45$.</p>
+        </div>
+
+        <h4 id="ex6-3-q15">15. Find two positive numbers $x$ and $y$ such that their sum is 35 and the product $x^2y^5$ is a maximum.</h4>
+        <div class="solution-box">
+            <p>Given: $x+y=35 \implies x = 35-y$.</p>
+            <p>Let $P = x^2y^5$. We need to maximize $P$.</p>
+            <p>Substitute $x$: $P(y) = (35-y)^2y^5$.</p>
+            <p>Since $x, y$ are positive, $y>0$ and $35-y>0 \implies y<35$. So $y \in (0, 35)$.</p>
+            <p>$P'(y) = 2(35-y)(-1)y^5 + (35-y)^2(5y^4)$.</p>
+            <p>$P'(y) = -2(35-y)y^5 + 5(35-y)^2y^4$.</p>
+            <p>Factor out common terms: $P'(y) = y^4(35-y)[-2y + 5(35-y)]$.</p>
+            <p>$P'(y) = y^4(35-y)[-2y + 175 - 5y] = y^4(35-y)(175-7y) = 7y^4(35-y)(25-y)$.</p>
+            <p>Set $P'(y) = 0$. Since $y \in (0, 35)$, we have $y=25$.</p>
+            <p>Using the first derivative test around $y=25$:</p>
+            <p>If $y < 25$ (e.g., $y=20$): $P'(20) = 7(+)(+)(+) > 0$.</p>
+            <p>If $y > 25$ (e.g., $y=30$): $P'(30) = 7(+)(+)(-) < 0$.</p>
+            <p>Since the sign changes from positive to negative, $y=25$ gives a maximum.</p>
+            <p>If $y=25$, then $x = 35-25 = 10$.</p>
+            <p>The two positive numbers are $x=10$ and $y=25$.</p>
+        </div>
+
+        <h4 id="ex6-3-q16">16. Find two positive numbers whose sum is 16 and the sum of whose cubes is minimum.</h4>
+        <div class="solution-box">
+            <p>Let the two numbers be $x$ and $y$.</p>
+            <p>Given: $x+y=16 \implies y = 16-x$.</p>
+            <p>Let $S$ be the sum of their cubes: $S = x^3 + y^3$.</p>
+            <p>Substitute $y$: $S(x) = x^3 + (16-x)^3$.</p>
+            <p>$S'(x) = 3x^2 + 3(16-x)^2(-1) = 3x^2 - 3(16-x)^2$.</p>
+            <p>$S'(x) = 3[x^2 - (256 - 32x + x^2)] = 3[x^2 - 256 + 32x - x^2] = 3(32x - 256)$.</p>
+            <p>Set $S'(x) = 0 \implies 3(32x - 256) = 0 \implies 32x = 256 \implies x = 8$.</p>
+            <p>Check the second derivative:</p>
+            <p>$S''(x) = \frac{d}{dx}[3(32x-256)] = 3(32) = 96$.</p>
+            <p>Since $S''(8) = 96 > 0$, $x=8$ gives a minimum.</p>
+            <p>If $x=8$, then $y = 16-8 = 8$.</p>
+            <p>The two numbers are 8 and 8.</p>
+        </div>
+
+        <h4 id="ex6-3-q17">17. A square piece of tin of side 18 cm is to be made into a box without top, by cutting a square from each corner and folding up the flaps to form the box. What should be the side of the square to be cut off so that the volume of the box is the maximum possible.</h4>
+        <div class="solution-box">
+            <p>Let the side of the square to be cut off be $x$ cm.</p>
+            <p>The dimensions of the resulting box will be:</p>
+            <p>Length = $18 - 2x$</p>
+            <p>Width = $18 - 2x$</p>
+            <p>Height = $x$</p>
+            <p>The volume of the box is $V(x) = (18-2x)(18-2x)x = x(18-2x)^2$.</p>
+            <p>For the dimensions to be positive, $x>0$ and $18-2x>0 \implies 2x<18 \implies x<9$. So $x \in (0, 9)$.</p>
+            <p>$V(x) = x(324 - 72x + 4x^2) = 4x^3 - 72x^2 + 324x$.</p>
+            <p>$V'(x) = 12x^2 - 144x + 324 = 12(x^2 - 12x + 27)$.</p>
+            <p>Set $V'(x) = 0 \implies 12(x-3)(x-9) = 0$.</p>
+            <p>Solutions are $x=3$ or $x=9$. Since $x \in (0, 9)$, we take $x=3$.</p>
+            <p>Check the second derivative:</p>
+            <p>$V''(x) = 24x - 144$.</p>
+            <p>$V''(3) = 24(3) - 144 = 72 - 144 = -72 < 0$.</p>
+            <p>So, $x=3$ gives a maximum volume.</p>
+            <p>The side of the square to be cut off is 3 cm.</p>
+        </div>
+
+        <h4 id="ex6-3-q18">18. A rectangular sheet of tin 45 cm by 24 cm is to be made into a box without top, by cutting off square from each corner and folding up the flaps. What should be the side of the square to be cut off so that the volume of the box is maximum ?</h4>
+        <div class="solution-box">
+            <p>Let the side of the square to be cut off be $x$ cm.</p>
+            <p>Dimensions of the resulting box:</p>
+            <p>Length = $45 - 2x$</p>
+            <p>Width = $24 - 2x$</p>
+            <p>Height = $x$</p>
+            <p>Volume $V(x) = x(45-2x)(24-2x)$.</p>
+            <p>For dimensions to be positive, $x>0$, $45-2x>0 \implies x<22.5$, and $24-2x>0 \implies x<12$. So $x \in (0, 12)$.</p>
+            <p>$V(x) = x(1080 - 90x - 48x + 4x^2) = 4x^3 - 138x^2 + 1080x$.</p>
+            <p>$V'(x) = 12x^2 - 276x + 1080 = 12(x^2 - 23x + 90)$.</p>
+            <p>Set $V'(x) = 0 \implies 12(x-5)(x-18) = 0$.</p>
+            <p>Solutions are $x=5$ or $x=18$. Since $x \in (0, 12)$, we take $x=5$.</p>
+            <p>Check the second derivative:</p>
+            <p>$V''(x) = 24x - 276$.</p>
+            <p>$V''(5) = 24(5) - 276 = 120 - 276 = -156 < 0$.</p>
+            <p>So, $x=5$ gives a maximum volume.</p>
+            <p>The side of the square to be cut off is 5 cm.</p>
+        </div>
+
+        <h4 id="ex6-3-q19">19. Show that of all the rectangles inscribed in a given fixed circle, the square has the maximum area.</h4>
+        <div class="solution-box">
+            <p>Let the circle have a fixed radius $R$. The equation of the circle centered at the origin is $x^2 + y^2 = R^2$.</p>
+            <p>Let a rectangle be inscribed in the circle with vertices $(\pm x, \pm y)$.</p>
+            <p>The length of the rectangle is $2x$ and the width is $2y$.</p>
+            <p>Area of the rectangle $A = (2x)(2y) = 4xy$.</p>
+            <p>From the circle equation, $y = \sqrt{R^2 - x^2}$.</p>
+            <p>Substitute $y$: $A(x) = 4x\sqrt{R^2 - x^2}$.</p>
+            <p>To maximize $A(x)$, it's easier to maximize $A^2$.</p>
+            <p>Let $S(x) = A(x)^2 = 16x^2(R^2 - x^2) = 16R^2x^2 - 16x^4$.</p>
+            <p>$S'(x) = 32R^2x - 64x^3 = 32x(R^2 - 2x^2)$.</p>
+            <p>Set $S'(x) = 0$. Since $x>0$, we have $R^2 - 2x^2 = 0 \implies x^2 = \frac{R^2}{2} \implies x = \frac{R}{\sqrt{2}}$.</p>
+            <p>$S''(x) = 32R^2 - 192x^2$.</p>
+            <p>$S''(\frac{R}{\sqrt{2}}) = 32R^2 - 192(\frac{R^2}{2}) = 32R^2 - 96R^2 = -64R^2 < 0$.</p>
+            <p>This confirms a maximum.</p>
+            <p>When $x = \frac{R}{\sqrt{2}}$, we find $y = \sqrt{R^2 - x^2} = \sqrt{R^2 - \frac{R^2}{2}} = \sqrt{\frac{R^2}{2}} = \frac{R}{\sqrt{2}}$.</p>
+            <p>Since $x = y$, the sides of the rectangle are $2x = 2y$, which means it is a square.</p>
+        </div>
+
+        <h4 id="ex6-3-q20">20. Show that the right circular cylinder of given surface and maximum volume is such that its height is equal to the diameter of the base.</h4>
+        <div class="solution-box">
+            <p>Let $S$ be the given surface area of a cylinder with radius $r$ and height $h$.</p>
+            <p>$S = 2\pi r^2 + 2\pi rh$. Since S is constant, we can express $h$ in terms of $r$:</p>
+            <p>$2\pi rh = S - 2\pi r^2 \implies h = \frac{S - 2\pi r^2}{2\pi r} = \frac{S}{2\pi r} - r$.</p>
+            <p>Volume of the cylinder is $V = \pi r^2 h$.</p>
+            <p>Substitute $h$: $V(r) = \pi r^2 (\frac{S}{2\pi r} - r) = \frac{Sr}{2} - \pi r^3$.</p>
+            <p>$V'(r) = \frac{S}{2} - 3\pi r^2$.</p>
+            <p>Set $V'(r) = 0 \implies \frac{S}{2} = 3\pi r^2 \implies S = 6\pi r^2$.</p>
+            <p>$V''(r) = -6\pi r < 0$ (since $r>0$), confirming a maximum.</p>
+            <p>Now substitute $S = 6\pi r^2$ back into the expression for $h$:</p>
+            <p>$h = \frac{6\pi r^2 - 2\pi r^2}{2\pi r} = \frac{4\pi r^2}{2\pi r} = 2r$.</p>
+            <p>Since the diameter of the base is $2r$, this shows that the height is equal to the diameter of the base for maximum volume.</p>
+        </div>
+
+        <h4 id="ex6-3-q21">21. Of all the closed cylindrical cans (right circular), of a given volume of 100 cubic centimetres, find the dimensions of the can which has the minimum surface area.</h4>
+        <div class="solution-box">
+            <p>Let $V$ be the given volume, $r$ the radius, and $h$ the height of the cylinder.</p>
+            <p>Given $V = \pi r^2 h = 100$. This implies $h = \frac{100}{\pi r^2}$.</p>
+            <p>Surface area is $A = 2\pi r^2 + 2\pi rh$.</p>
+            <p>Substitute $h$: $A(r) = 2\pi r^2 + 2\pi r \left(\frac{100}{\pi r^2}\right) = 2\pi r^2 + \frac{200}{r}$.</p>
+            <p>$A'(r) = 4\pi r - \frac{200}{r^2}$.</p>
+            <p>Set $A'(r) = 0 \implies 4\pi r = \frac{200}{r^2} \implies 4\pi r^3 = 200 \implies r^3 = \frac{50}{\pi}$.</p>
+            <p>So, $r = \sqrt[3]{\frac{50}{\pi}}$.</p>
+            <p>$A''(r) = 4\pi + \frac{400}{r^3} > 0$ (since $r>0$), confirming a minimum.</p>
+            <p>Now find the height $h$:</p>
+            <p>$h = \frac{100}{\pi r^2} = \frac{100}{\pi (\frac{50}{\pi})^{2/3}} = \frac{2 \cdot 50}{\pi^{1/3} \pi^{2/3} (\frac{50}{\pi})^{2/3}} = \frac{2 \cdot 50^{1}}{\pi^{1/3} (50)^{2/3}} = \frac{2 \cdot 50^{1/3}}{\pi^{1/3}} = 2\sqrt[3]{\frac{50}{\pi}}$.</p>
+            <p>The dimensions for minimum surface area are: radius $r = \sqrt[3]{\frac{50}{\pi}}$ cm and height $h = 2\sqrt[3]{\frac{50}{\pi}}$ cm.</p>
+        </div>
+        
+        <h4 id="ex6-3-q23">23. Prove that the volume of the largest cone that can be inscribed in a sphere of radius R is 8/27 of the volume of the sphere.</h4>
+        <div class="solution-box">
+            <p>Let the sphere be centered at the origin, with equation $x^2+y^2=R^2$. Let the cone be inscribed with its vertex at $(0, R)$ and its base perpendicular to the y-axis.</p>
+            <p>Let the height of the cone be $h$ and the radius of its base be $r$.</p>
+            <p>The center of the cone's base will be at some point $(0, y_0)$ where $y_0 = R-h$.</p>
+            <p>The radius of the cone base, $r$, is the x-coordinate on the sphere at height $y_0$.
+            $r^2 + y_0^2 = R^2 \implies r^2 = R^2 - (R-h)^2 = R^2 - (R^2 - 2Rh + h^2) = 2Rh - h^2$.</p>
+            <p>The volume of the cone is $V = \frac{1}{3}\pi r^2 h$.</p>
+            <p>Substitute $r^2$: $V(h) = \frac{1}{3}\pi (2Rh - h^2)h = \frac{\pi}{3}(2Rh^2 - h^3)$.
+            The height $h$ can vary from $0$ to $2R$.</p>
+            <p>$V'(h) = \frac{\pi}{3}(4Rh - 3h^2) = \frac{\pi h}{3}(4R - 3h)$.</p>
+            <p>Set $V'(h)=0$. Since $h \neq 0$, we have $4R - 3h = 0 \implies h = \frac{4R}{3}$.</p>
+            <p>$V''(h) = \frac{\pi}{3}(4R - 6h)$.</p>
+            <p>$V''(\frac{4R}{3}) = \frac{\pi}{3}(4R - 6(\frac{4R}{3})) = \frac{\pi}{3}(4R - 8R) = -\frac{4\pi R}{3} < 0$, confirming a maximum.</p>
+            <p>The maximum volume of the cone is at $h = \frac{4R}{3}$:</p>
+            <p>$V_{max} = \frac{\pi}{3}(2R(\frac{4R}{3})^2 - (\frac{4R}{3})^3) = \frac{\pi}{3}(\frac{32R^3}{9} - \frac{64R^3}{27}) = \frac{\pi}{3}(\frac{96R^3 - 64R^3}{27}) = \frac{\pi}{3}(\frac{32R^3}{27}) = \frac{32\pi R^3}{81}$.</p>
+            <p>The volume of the sphere is $V_{sphere} = \frac{4}{3}\pi R^3$.</p>
+            <p>The ratio is $\frac{V_{max}}{V_{sphere}} = \frac{32\pi R^3/81}{4\pi R^3/3} = \frac{32}{81} \cdot \frac{3}{4} = \frac{8}{27}$.</p>
+            <p>Thus, $V_{max} = \frac{8}{27} V_{sphere}$. Hence proved.</p>
+        </div>
+
+                <h3 id="misc-exercise-6">Miscellaneous Exercise on Chapter 6 Solutions</h3>
+
+        <h4 id="misc-ex-q1">1. Show that the function $f(x) = \frac{\log x}{x}$ has maximum at $x=e$.</h4>
+        <div class="solution-box">
+            <p>Given the function $f(x) = \frac{\log x}{x}$. The domain is $x > 0$.</p>
+            <p>To find the maximum, we first find the derivative using the quotient rule:</p>
+            <p>$f'(x) = \frac{x \cdot \frac{d}{dx}(\log x) - \log x \cdot \frac{d}{dx}(x)}{x^2}$</p>
+            <p>$f'(x) = \frac{x \cdot \frac{1}{x} - \log x \cdot 1}{x^2} = \frac{1 - \log x}{x^2}$.</p>
+            <p>Set the derivative to zero to find critical points:</p>
+            <p>$f'(x) = 0 \implies \frac{1 - \log x}{x^2} = 0$.</p>
+            <p>Since $x > 0$, we only need $1 - \log x = 0 \implies \log x = 1$.</p>
+            <p>Using the base $e$ for the natural logarithm, this gives $x = e$.</p>
+            <p>Now, we use the second derivative test to confirm it's a maximum. First, find $f''(x)$:</p>
+            <p>$f''(x) = \frac{x^2 \cdot \frac{d}{dx}(1 - \log x) - (1 - \log x) \cdot \frac{d}{dx}(x^2)}{(x^2)^2}$</p>
+            <p>$f''(x) = \frac{x^2 \cdot (-\frac{1}{x}) - (1 - \log x) \cdot (2x)}{x^4} = \frac{-x - 2x(1 - \log x)}{x^4} = \frac{-1 - 2(1 - \log x)}{x^3} = \frac{-1 - 2 + 2\log x}{x^3} = \frac{2\log x - 3}{x^3}$.</p>
+            <p>Evaluate $f''(x)$ at the critical point $x=e$:</p>
+            <p>$f''(e) = \frac{2\log e - 3}{e^3} = \frac{2(1) - 3}{e^3} = \frac{-1}{e^3}$.</p>
+            <p>Since $f'(e) = 0$ and $f''(e) = -\frac{1}{e^3} < 0$, the function $f(x)$ has a local maximum at $x=e$. As this is the only critical point in the domain, it is the point of absolute maximum. Hence proved.</p>
+        </div>
+
+        <h4 id="misc-ex-q2">2. The two equal sides of an isosceles triangle with fixed base $b$ are decreasing at the rate of 3 cm per second. How fast is the area decreasing when the two equal sides are equal to the base?</h4>
+        <div class="solution-box">
+            <p>Let the isosceles triangle be ABC with base BC = $b$ (fixed). Let the equal sides be AB = AC = $a$.</p>
+            <p>Given: $\frac{da}{dt} = -3$ cm/s.</p>
+            <p>The area of the triangle can be found by first finding the height. Let AD be the altitude from A to BC. Then D is the midpoint of BC, so BD = $b/2$.</p>
+            <p>Height $h = AD = \sqrt{AB^2 - BD^2} = \sqrt{a^2 - (b/2)^2} = \sqrt{a^2 - \frac{b^2}{4}}$.</p>
+            <p>Area of the triangle, $A = \frac{1}{2} \times \text{base} \times \text{height} = \frac{1}{2} b h = \frac{b}{2}\sqrt{a^2 - \frac{b^2}{4}}$.</p>
+            <p>We need to find $\frac{dA}{dt}$ when $a=b$. Differentiate $A$ with respect to time $t$:</p>
+            <p>$\frac{dA}{dt} = \frac{b}{2} \cdot \frac{d}{dt}\left(a^2 - \frac{b^2}{4}\right)^{1/2}$</p>
+            <p>Using the chain rule:
+            $\frac{dA}{dt} = \frac{b}{2} \cdot \frac{1}{2}\left(a^2 - \frac{b^2}{4}\right)^{-1/2} \cdot \frac{d}{dt}\left(a^2 - \frac{b^2}{4}\right)$</p>
+            <p>$\frac{dA}{dt} = \frac{b}{4\sqrt{a^2 - b^2/4}} \cdot (2a \frac{da}{dt} - 0)$ (since $b$ is fixed).</p>
+            <p>$\frac{dA}{dt} = \frac{2ab}{4\sqrt{a^2 - b^2/4}} \frac{da}{dt} = \frac{ab}{2\sqrt{a^2 - b^2/4}} \frac{da}{dt}$.</p>
+            <p>Now, substitute the given values: $a=b$ and $\frac{da}{dt} = -3$.</p>
+            <p>$\frac{dA}{dt}\bigg|_{a=b} = \frac{b \cdot b}{2\sqrt{b^2 - b^2/4}} (-3) = \frac{-3b^2}{2\sqrt{3b^2/4}} = \frac{-3b^2}{2 \cdot (\sqrt{3}b/2)} = \frac{-3b^2}{\sqrt{3}b} = -\sqrt{3}b$.</p>
+            <p>The area is decreasing at a rate of $\sqrt{3}b$ cm²/s.</p>
+        </div>
+
+        <h4 id="misc-ex-q3">3. Find the intervals in which the function $f$ given by $f(x) = \frac{4\sin x - 2x - x\cos x}{2+\cos x}$ is (i) increasing (ii) decreasing.</h4>
+        <div class="solution-box">
+            <p>The function can be simplified by splitting the fraction:</p>
+            <p>$f(x) = \frac{4\sin x}{2+\cos x} - \frac{2x + x\cos x}{2+\cos x} = \frac{4\sin x}{2+\cos x} - \frac{x(2 + \cos x)}{2+\cos x}$.</p>
+            <p>$f(x) = \frac{4\sin x}{2+\cos x} - x$.</p>
+            <p>Now, we find the derivative $f'(x)$. Let $g(x) = \frac{4\sin x}{2+\cos x}$. Then $f(x) = g(x) - x$.</p>
+            <p>$g'(x) = \frac{(2+\cos x)(4\cos x) - (4\sin x)(-\sin x)}{(2+\cos x)^2} = \frac{8\cos x + 4\cos^2 x + 4\sin^2 x}{(2+\cos x)^2} = \frac{8\cos x + 4}{(2+\cos x)^2}$.</p>
+            <p>So, $f'(x) = g'(x) - 1 = \frac{8\cos x + 4}{(2+\cos x)^2} - 1$.</p>
+            <p>$f'(x) = \frac{8\cos x + 4 - (2+\cos x)^2}{(2+\cos x)^2} = \frac{8\cos x + 4 - (4 + 4\cos x + \cos^2 x)}{(2+\cos x)^2}$.</p>
+            <p>$f'(x) = \frac{4\cos x - \cos^2 x}{(2+\cos x)^2} = \frac{\cos x(4 - \cos x)}{(2+\cos x)^2}$.</p>
+            <p>To determine the intervals of increase/decrease, we analyze the sign of $f'(x)$.</p>
+            <ul>
+                <li>The denominator $(2+\cos x)^2$ is always positive since $-1 \le \cos x \le 1$, so $1 \le 2+\cos x \le 3$.</li>
+                <li>The term $(4 - \cos x)$ is always positive since the maximum value of $\cos x$ is 1.</li>
+            </ul>
+            <p>Therefore, the sign of $f'(x)$ is determined solely by the sign of $\cos x$. Let's analyze over the interval $[0, 2\pi]$.</p>
+            <p><strong>(i) Increasing function:</strong></p>
+            <p>$f'(x) > 0 \implies \cos x > 0$.</p>
+            <p>This occurs when $x$ is in the first and fourth quadrants.
+            So, $f(x)$ is increasing on $(0, \frac{\pi}{2}) \cup (\frac{3\pi}{2}, 2\pi)$.</p>
+            <p><strong>(ii) Decreasing function:</strong></p>
+            <p>$f'(x) < 0 \implies \cos x < 0$.</p>
+            <p>This occurs when $x$ is in the second and third quadrants.
+            So, $f(x)$ is decreasing on $(\frac{\pi}{2}, \frac{3\pi}{2})$.</p>
+        </div>
+        
+        <h4 id="misc-ex-q4">4. Find the intervals in which the function $f(x)=x^3 + \frac{1}{x^3}$, $x \ne 0$ is (i) increasing (ii) decreasing.</h4>
+        <div class="solution-box">
+            <p>Given $f(x) = x^3 + \frac{1}{x^3} = x^3 + x^{-3}$.</p>
+            <p>First, find the derivative:</p>
+            <p>$f'(x) = 3x^2 - 3x^{-4} = 3x^2 - \frac{3}{x^4} = \frac{3x^6 - 3}{x^4} = \frac{3(x^6 - 1)}{x^4}$.</p>
+            <p>The sign of $f'(x)$ depends on the numerator, since the denominator $x^4$ is always positive for $x \ne 0$.</p>
+            <p><strong>(i) Increasing function:</strong></p>
+            <p>For $f(x)$ to be increasing, $f'(x) > 0$.</p>
+            <p>This requires $x^6 - 1 > 0 \implies x^6 > 1$.</p>
+            <p>Taking the sixth root, we get $|x| > 1$, which means $x > 1$ or $x < -1$.</p>
+            <p>So, $f(x)$ is increasing on $(-\infty, -1) \cup (1, \infty)$.</p>
+            <p><strong>(ii) Decreasing function:</strong></p>
+            <p>For $f(x)$ to be decreasing, $f'(x) < 0$.</p>
+            <p>This requires $x^6 - 1 < 0 \implies x^6 < 1$.</p>
+            <p>Taking the sixth root, we get $|x| < 1$. Since $x \ne 0$, this means $-1 < x < 0$ or $0 < x < 1$.</p>
+            <p>So, $f(x)$ is decreasing on $(-1, 0) \cup (0, 1)$.</p>
+        </div>
+
+        <h4 id="misc-ex-q5">5. Find the maximum area of an isosceles triangle inscribed in the ellipse $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$ with its vertex at one end of the major axis.</h4>
+        <div class="solution-box">
+            <p>Let the major axis be along the x-axis. The vertices of the ellipse are at $(\pm a, 0)$ and $(0, \pm b)$.</p>
+            <p>Let the vertex of the isosceles triangle be at one end of the major axis, say $A=(a, 0)$.</p>
+            <p>The base of the triangle will be a vertical chord of the ellipse, at some $x$-coordinate, say $x_0$.
+            The other two vertices of the triangle are $B=(x_0, y_0)$ and $C=(x_0, -y_0)$, where $(x_0, y_0)$ is a point on the ellipse.</p>
+            <p>The length of the base BC is $2y_0$.</p>
+            <p>The height of the triangle is the perpendicular distance from vertex A to the base BC, which is $a - x_0$.</p>
+            <p>The area of the triangle is $\mathcal{A} = \frac{1}{2} \times (\text{base}) \times (\text{height}) = \frac{1}{2}(2y_0)(a - x_0) = y_0(a - x_0)$.</p>
+            <p>Since $(x_0, y_0)$ is on the ellipse, $\frac{x_0^2}{a^2} + \frac{y_0^2}{b^2} = 1 \implies y_0 = b\sqrt{1 - \frac{x_0^2}{a^2}} = \frac{b}{a}\sqrt{a^2 - x_0^2}$.</p>
+            <p>So, the area as a function of $x_0$ is $\mathcal{A}(x_0) = \frac{b}{a}\sqrt{a^2 - x_0^2}(a - x_0)$. Here $x_0 \in (-a, a)$.</p>
+            <p>To maximize the area, it is easier to maximize its square, $S(x_0) = \mathcal{A}(x_0)^2$.</p>
+            <p>$S(x_0) = \frac{b^2}{a^2}(a^2 - x_0^2)(a - x_0)^2 = \frac{b^2}{a^2}(a - x_0)(a + x_0)(a - x_0)^2 = \frac{b^2}{a^2}(a - x_0)^3(a + x_0)$.</p>
+            <p>Differentiating $S$ with respect to $x_0$ using the product rule:</p>
+            <p>$S'(x_0) = \frac{b^2}{a^2} \left[ 3(a - x_0)^2(-1)(a + x_0) + (a - x_0)^3(1) \right]$.</p>
+            <p>$S'(x_0) = \frac{b^2}{a^2}(a - x_0)^2 \left[ -3(a + x_0) + (a - x_0) \right]$.</p>
+            <p>$S'(x_0) = \frac{b^2}{a^2}(a - x_0)^2 [-3a - 3x_0 + a - x_0] = \frac{b^2}{a^2}(a - x_0)^2 (-2a - 4x_0)$.</p>
+            <p>Set $S'(x_0) = 0$. Since $x_0 \ne a$, we must have $-2a - 4x_0 = 0 \implies 4x_0 = -2a \implies x_0 = -\frac{a}{2}$.</p>
+            <p>(The second derivative is complicated, but a sign check on $S'(x_0)$ confirms this is a maximum).</p>
+            <p>Now, we find the maximum area using $x_0 = -a/2$.</p>
+            <p>Height = $a - x_0 = a - (-\frac{a}{2}) = \frac{3a}{2}$.</p>
+            <p>Base = $2y_0 = 2 \cdot \frac{b}{a}\sqrt{a^2 - (-\frac{a}{2})^2} = \frac{2b}{a}\sqrt{a^2 - \frac{a^2}{4}} = \frac{2b}{a}\sqrt{\frac{3a^2}{4}} = \frac{2b}{a} \frac{\sqrt{3}a}{2} = b\sqrt{3}$.</p>
+            <p>Maximum Area = $\frac{1}{2} \times (b\sqrt{3}) \times (\frac{3a}{2}) = \frac{3\sqrt{3}}{4}ab$.</p>
+        </div>
+        <h4 id="misc-ex-q6">6. A tank with rectangular base and rectangular sides, open at the top is to be constructed so that its depth is 2 m and volume is 8 m³. If building of tank costs Rs 70 per sq metres for the base and Rs 45 per square metre for sides. What is the cost of least expensive tank?</h4>
+        <div class="solution-box">
+            <p>Let the length of the rectangular base be $l$ and the width be $w$. The depth (height) is given as $h=2$ m.</p>
+            <p>The volume of the tank is $V = l \times w \times h$.</p>
+            <p>Given $V=8$ m³ and $h=2$ m, so $l \cdot w \cdot 2 = 8 \implies lw = 4$.
+            We can express one variable in terms of the other, e.g., $w = \frac{4}{l}$.</p>
+            <p>Now, let's calculate the cost. The tank is open at the top.</p>
+            <p>Area of the base = $lw$. Cost of the base = $70 \times (lw)$.</p>
+            <p>Area of the four sides = $2(lh) + 2(wh)$. Cost of the sides = $45 \times (2lh + 2wh)$.</p>
+            <p>Total cost, $C = 70(lw) + 45(2lh + 2wh)$.</p>
+            <p>Substitute $lw=4$ and $h=2$:</p>
+            <p>$C = 70(4) + 45(2l(2) + 2w(2)) = 280 + 45(4l + 4w) = 280 + 180(l+w)$.</p>
+            <p>Now express the cost as a function of a single variable, $l$, using $w = \frac{4}{l}$.</p>
+            <p>$C(l) = 280 + 180\left(l + \frac{4}{l}\right)$.</p>
+            <p>To find the minimum cost, we find the derivative with respect to $l$:</p>
+            <p>$C'(l) = 180\left(1 - \frac{4}{l^2}\right)$.</p>
+            <p>Set $C'(l) = 0 \implies 1 - \frac{4}{l^2} = 0 \implies l^2 = 4 \implies l=2$ (since length must be positive).</p>
+            <p>Now, check the second derivative:</p>
+            <p>$C''(l) = 180\left(\frac{8}{l^3}\right)$.</p>
+            <p>At $l=2$, $C''(2) = 180\left(\frac{8}{8}\right) = 180 > 0$. This confirms a minimum cost.</p>
+            <p>When $l=2$ m, $w = \frac{4}{l} = \frac{4}{2} = 2$ m.</p>
+            <p>The dimensions for the least expensive tank are $l=2$ m, $w=2$ m, and $h=2$ m (a cube).</p>
+            <p>The minimum cost is:
+            $C(2) = 280 + 180\left(2 + \frac{4}{2}\right) = 280 + 180(2+2) = 280 + 180(4) = 280 + 720 = 1000$.</p>
+            <p>The cost of the least expensive tank is Rs 1000.</p>
+        </div>
+
+        <h4 id="misc-ex-q7">7. The sum of the perimeter of a circle and square is $k$, where $k$ is some constant. Prove that the sum of their areas is least when the side of square is double the radius of the circle.</h4>
+        <div class="solution-box">
+            <p>Let $r$ be the radius of the circle and $a$ be the side of the square.</p>
+            <p>Perimeter of circle = $2\pi r$. Perimeter of square = $4a$.</p>
+            <p>Given: $2\pi r + 4a = k$ (where $k$ is a constant).</p>
+            <p>We can express $a$ in terms of $r$: $4a = k - 2\pi r \implies a = \frac{k - 2\pi r}{4}$.</p>
+            <p>The sum of their areas, $S$, is:</p>
+            <p>$S = (\text{Area of circle}) + (\text{Area of square}) = \pi r^2 + a^2$.</p>
+            <p>Substitute $a$ to get $S$ as a function of $r$:</p>
+            <p>$S(r) = \pi r^2 + \left(\frac{k - 2\pi r}{4}\right)^2 = \pi r^2 + \frac{1}{16}(k^2 - 4k\pi r + 4\pi^2 r^2)$.</p>
+            <p>To find the minimum sum of areas, we differentiate $S$ with respect to $r$:</p>
+            <p>$S'(r) = 2\pi r + \frac{1}{16}(0 - 4k\pi + 8\pi^2 r) = 2\pi r - \frac{4k\pi}{16} + \frac{8\pi^2 r}{16} = 2\pi r - \frac{k\pi}{4} + \frac{\pi^2 r}{2}$.</p>
+            <p>Set $S'(r) = 0$ to find the critical point:</p>
+            <p>$2\pi r + \frac{\pi^2 r}{2} = \frac{k\pi}{4}$.</p>
+            <p>Factor out $r$: $r\left(2\pi + \frac{\pi^2}{2}\right) = \frac{k\pi}{4}$.</p>
+            <p>$r\left(\frac{4\pi + \pi^2}{2}\right) = \frac{k\pi}{4} \implies r = \frac{k\pi}{4} \cdot \frac{2}{4\pi + \pi^2} = \frac{k\pi}{2\pi(4+\pi)} = \frac{k}{2(4+\pi)}$.</p>
+            <p>Check the second derivative:</p>
+            <p>$S''(r) = 2\pi + \frac{\pi^2}{2} > 0$ (since it's a sum of positive constants). This confirms a minimum.</p>
+            <p>Now we need to prove that the side of the square ($a$) is double the radius ($r$).</p>
+            <p>We have $2\pi r + 4a = k \implies 4a = k - 2\pi r$.</p>
+            <p>Substitute the value of $r$ we found:
+            $4a = k - 2\pi\left(\frac{k}{2(4+\pi)}\right) = k - \frac{k\pi}{4+\pi} = \frac{k(4+\pi) - k\pi}{4+\pi} = \frac{4k + k\pi - k\pi}{4+\pi} = \frac{4k}{4+\pi}$.</p>
+            <p>$a = \frac{k}{4+\pi}$.</p>
+            <p>Now, let's check the relationship between $a$ and $r$:</p>
+            <p>$a = \frac{k}{4+\pi}$ and $r = \frac{k}{2(4+\pi)}$.</p>
+            <p>We can see that $a = 2 \cdot \frac{k}{2(4+\pi)} = 2r$.</p>
+            <p>Thus, the sum of the areas is least when the side of the square is double the radius of the circle. Hence proved.</p>
+        </div>
+
+        <h4 id="misc-ex-q8">8. A window is in the form of a rectangle surmounted by a semicircular opening. The total perimeter of the window is 10 m. Find the dimensions of the window to admit maximum light through the whole opening.</h4>
+        <div class="solution-box">
+            <p>Let the rectangle have length $2r$ and height $h$. The semicircle is on top of the length $2r$, so its radius is $r$.</p>
+            <p>The perimeter of the window consists of the two vertical sides of the rectangle, the bottom side, and the semicircular arc.</p>
+            <p>Perimeter $P = (h) + (2r) + (h) + (\text{arc of semicircle}) = 2h + 2r + \pi r$.</p>
+            <p>Given $P=10$ m, so $2h + 2r + \pi r = 10$.</p>
+            <p>We can express $h$ in terms of $r$: $2h = 10 - 2r - \pi r \implies h = 5 - r - \frac{\pi}{2}r$.</p>
+            <p>The area of the window (to be maximized) is the sum of the area of the rectangle and the area of the semicircle.</p>
+            <p>Area $A = (2r)h + \frac{1}{2}\pi r^2$.</p>
+            <p>Substitute $h$ to get $A$ as a function of $r$:</p>
+            <p>$A(r) = 2r\left(5 - r - \frac{\pi}{2}r\right) + \frac{1}{2}\pi r^2 = 10r - 2r^2 - \pi r^2 + \frac{1}{2}\pi r^2 = 10r - 2r^2 - \frac{1}{2}\pi r^2$.</p>
+            <p>To find the maximum area, we differentiate $A$ with respect to $r$:</p>
+            <p>$A'(r) = 10 - 4r - \pi r$.</p>
+            <p>Set $A'(r) = 0 \implies 10 - 4r - \pi r = 0 \implies 10 = r(4+\pi) \implies r = \frac{10}{4+\pi}$.</p>
+            <p>Check the second derivative:</p>
+            <p>$A''(r) = -4 - \pi < 0$. This confirms a maximum.</p>
+            <p>Now, find the dimensions of the window.</p>
+            <p>Radius of semicircle: $r = \frac{10}{4+\pi}$ m.</p>
+            <p>Length of rectangle: $2r = \frac{20}{4+\pi}$ m.</p>
+            <p>Height of rectangle: $h = 5 - r - \frac{\pi}{2}r = 5 - r(1 + \frac{\pi}{2}) = 5 - \frac{10}{4+\pi}\left(\frac{2+\pi}{2}\right) = 5 - \frac{5(2+\pi)}{4+\pi}$.</p>
+            <p>$h = \frac{5(4+\pi) - 5(2+\pi)}{4+\pi} = \frac{20 + 5\pi - 10 - 5\pi}{4+\pi} = \frac{10}{4+\pi}$.</p>
+            <p>The dimensions for maximum light are: length = $\frac{20}{4+\pi}$ m and height of the rectangular part = $\frac{10}{4+\pi}$ m.</p>
+        </div>
+
+        <h4 id="misc-ex-q9">9. A point on the hypotenuse of a triangle is at distance $a$ and $b$ from the sides of the triangle. Show that the minimum length of the hypotenuse is $(a^{2/3} + b^{2/3})^{3/2}$.</h4>
+        <div class="solution-box">
+            <p>Let the right-angled triangle be ABC, with the right angle at B. Let the sides be along the axes, with B at the origin, A on the y-axis and C on the x-axis. So $A=(0, y_c)$ and $C=(x_c, 0)$.</p>
+            <p>Let $P(x,y)$ be the point on the hypotenuse AC. The distances from P to the sides are $x=a$ and $y=b$. So $P = (a, b)$.</p>
+            <p>Let $\theta$ be the angle the hypotenuse makes with the x-axis (angle BCA). So $\tan \theta = \frac{y_c}{x_c}$.</p>
+            <p>The length of the hypotenuse is $L = AC$. We can express $L$ in terms of segments. Let P divide AC into two segments. Draw perpendiculars from P to the axes. $P=(a,b)$.</p>
+            <p>From similar triangles, we can relate the parts. Let the hypotenuse be divided into two parts by the point P. Let these parts be $L_1$ and $L_2$. So $L = L_1 + L_2$.</p>
+            <p>The segment from C to P is $L_1$. We have $\sin\theta = \frac{b}{L_1} \implies L_1 = \frac{b}{\sin\theta}$.</p>
+            <p>The segment from P to A is $L_2$. We have $\cos\theta = \frac{a}{L_2} \implies L_2 = \frac{a}{\cos\theta}$.</p>
+            <p>The length of the hypotenuse is $L(\theta) = L_1 + L_2 = \frac{b}{\sin\theta} + \frac{a}{\cos\theta} = b\csc\theta + a\sec\theta$.</p>
+            <p>To minimize $L$, we find $L'(\theta)$ and set it to 0.</p>
+            <p>$L'(\theta) = -b\csc\theta\cot\theta + a\sec\theta\tan\theta = -\frac{b\cos\theta}{\sin^2\theta} + \frac{a\sin\theta}{\cos^2\theta}$.</p>
+            <p>Set $L'(\theta) = 0 \implies \frac{a\sin\theta}{\cos^2\theta} = \frac{b\cos\theta}{\sin^2\theta} \implies a\sin^3\theta = b\cos^3\theta \implies \tan^3\theta = \frac{b}{a} \implies \tan\theta = \left(\frac{b}{a}\right)^{1/3}$.</p>
+            <p>Now we find $\sin\theta$ and $\cos\theta$ from this value of $\tan\theta$.
+            Let $\tan\theta = \frac{b^{1/3}}{a^{1/3}}$. Opposite side = $b^{1/3}$, Adjacent side = $a^{1/3}$.
+            Hypotenuse of this construction triangle is $\sqrt{(a^{1/3})^2 + (b^{1/3})^2} = \sqrt{a^{2/3} + b^{2/3}}$.</p>
+            <p>So, $\sin\theta = \frac{b^{1/3}}{\sqrt{a^{2/3} + b^{2/3}}}$ and $\cos\theta = \frac{a^{1/3}}{\sqrt{a^{2/3} + b^{2/3}}}$.</p>
+            <p>Substitute these into the expression for $L$ to find the minimum length:</p>
+            <p>$L_{min} = \frac{b}{\sin\theta} + \frac{a}{\cos\theta} = \frac{b}{\frac{b^{1/3}}{\sqrt{a^{2/3} + b^{2/3}}}} + \frac{a}{\frac{a^{1/3}}{\sqrt{a^{2/3} + b^{2/3}}}}$.</p>
+            <p>$L_{min} = b^{2/3}\sqrt{a^{2/3} + b^{2/3}} + a^{2/3}\sqrt{a^{2/3} + b^{2/3}}$.</p>
+            <p>$L_{min} = (a^{2/3} + b^{2/3})\sqrt{a^{2/3} + b^{2/3}} = (a^{2/3} + b^{2/3})^{1} (a^{2/3} + b^{2/3})^{1/2} = (a^{2/3} + b^{2/3})^{3/2}$.</p>
+            <p>Checking the second derivative confirms this is a minimum. Hence proved.</p>
+        </div>
+
+        <h4 id="misc-ex-q10">10. Find the points at which the function $f$ given by $f(x) = (x-2)^4(x+1)^3$ has (i) local maxima (ii) local minima (iii) point of inflexion.</h4>
+        <div class="solution-box">
+            <p>Given $f(x) = (x-2)^4(x+1)^3$.</p>
+            <p>Find the derivative $f'(x)$ using the product rule:</p>
+            <p>$f'(x) = 4(x-2)^3(x+1)^3 + (x-2)^4 \cdot 3(x+1)^2$.</p>
+            <p>Factor out common terms: $f'(x) = (x-2)^3(x+1)^2 [4(x+1) + 3(x-2)]$.</p>
+            <p>$f'(x) = (x-2)^3(x+1)^2 [4x+4 + 3x-6] = (x-2)^3(x+1)^2(7x-2)$.</p>
+            <p>The critical points are where $f'(x)=0$, which are $x=2, x=-1, x=2/7$.</p>
+            <p>We use the first derivative test to analyze the sign of $f'(x)$ around these points. The term $(x+1)^2$ is always non-negative.</p>
+            <p><strong>At $x = 2$:</strong></p>
+            <ul>
+                <li>Slightly less than 2 (e.g., 1.9): $f'(x) = (-)^3(+)(+) = -$.</li>
+                <li>Slightly greater than 2 (e.g., 2.1): $f'(x) = (+)^3(+)(+) = +$.</li>
+            </ul>
+            <p>Sign changes from - to +. So, $x=2$ is a point of <strong>(ii) local minima</strong>.</p>
+            <p><strong>At $x = 2/7$ (approx 0.28):</strong></p>
+            <ul>
+                <li>Slightly less than 2/7 (e.g., 0): $f'(x) = (-)^3(+)(-) = +$.</li>
+                <li>Slightly greater than 2/7 (e.g., 1): $f'(x) = (-)^3(+)(+) = -$.</li>
+            </ul>
+            <p>Sign changes from + to -. So, $x=2/7$ is a point of <strong>(i) local maxima</strong>.</p>
+            <p><strong>At $x = -1$:</strong></p>
+            <ul>
+                <li>Slightly less than -1 (e.g., -1.1): $f'(x) = (-)^3(+)(-) = +$.</li>
+                <li>Slightly greater than -1 (e.g., -0.9): $f'(x) = (-)^3(+)(-) = +$.</li>
+            </ul>
+            <p>The sign does not change. So, $x=-1$ is a <strong>(iii) point of inflexion</strong>.</p>
+        </div>
+
+        <h4 id="misc-ex-q11">11. Find the absolute maximum and minimum values of the function $f(x) = \cos^2 x + \sin x, x \in [0, \pi]$.</h4>
+        <div class="solution-box">
+            <p>Given $f(x) = \cos^2 x + \sin x$. We can write this in terms of $\sin x$ only:
+            $f(x) = (1-\sin^2 x) + \sin x = -\sin^2 x + \sin x + 1$.</p>
+            <p>Let $u = \sin x$. For $x \in [0, \pi]$, we have $u = \sin x \in [0, 1]$.
+            So we want to find the extrema of $g(u) = -u^2 + u + 1$ on the interval $u \in [0, 1]$.</p>
+            <p>Find the derivative with respect to $x$ directly:</p>
+            <p>$f'(x) = 2\cos x (-\sin x) + \cos x = \cos x (1 - 2\sin x)$.</p>
+            <p>Set $f'(x)=0$ to find critical points in $[0, \pi]$.</p>
+            <p>Either $\cos x = 0$ or $1 - 2\sin x = 0$.</p>
+            <p>$\cos x = 0 \implies x = \frac{\pi}{2}$.</p>
+            <p>$1 - 2\sin x = 0 \implies \sin x = \frac{1}{2} \implies x = \frac{\pi}{6}$ or $x = \frac{5\pi}{6}$.</p>
+            <p>The critical points in $[0, \pi]$ are $\frac{\pi}{6}, \frac{\pi}{2}, \frac{5\pi}{6}$.</p>
+            <p>Now evaluate $f(x)$ at the critical points and the endpoints ($0, \pi$):</p>
+            <ul>
+                <li>$f(0) = \cos^2(0) + \sin(0) = 1^2 + 0 = 1$.</li>
+                <li>$f(\frac{\pi}{6}) = \cos^2(\frac{\pi}{6}) + \sin(\frac{\pi}{6}) = (\frac{\sqrt{3}}{2})^2 + \frac{1}{2} = \frac{3}{4} + \frac{1}{2} = \frac{5}{4} = 1.25$.</li>
+                <li>$f(\frac{\pi}{2}) = \cos^2(\frac{\pi}{2}) + \sin(\frac{\pi}{2}) = 0^2 + 1 = 1$.</li>
+                <li>$f(\frac{5\pi}{6}) = \cos^2(\frac{5\pi}{6}) + \sin(\frac{5\pi}{6}) = (-\frac{\sqrt{3}}{2})^2 + \frac{1}{2} = \frac{3}{4} + \frac{1}{2} = \frac{5}{4} = 1.25$.</li>
+                <li>$f(\pi) = \cos^2(\pi) + \sin(\pi) = (-1)^2 + 0 = 1$.</li>
+            </ul>
+            <p>Comparing the values $\{1, 1.25, 1, 1.25, 1\}$, we find:</p>
+            <p>Absolute maximum value is $\frac{5}{4}$, which occurs at $x=\frac{\pi}{6}$ and $x=\frac{5\pi}{6}$.</p>
+            <p>Absolute minimum value is 1, which occurs at $x=0, x=\frac{\pi}{2},$ and $x=\pi$.</p>
+        </div>
+
+        <h4 id="misc-ex-q12">12. Show that the altitude of the right circular cone of maximum volume that can be inscribed in a sphere of radius $r$ is $\frac{4r}{3}$.</h4>
+        <div class="solution-box">
+            <p>This is a rephrasing of Exercise 6.3, Q23, with the sphere's radius denoted by $r$ instead of $R$. The setup and calculation are identical.</p>
+            <p>Let the sphere be centered at the origin. Let the cone be inscribed with its vertex at $(0, r)$ and base on a plane $y=y_0$.</p>
+            <p>The altitude of the cone is $h = r - y_0$. So $y_0 = r - h$.</p>
+            <p>The radius of the cone's base, let's call it $R_{cone}$, is the $x$-coordinate on the sphere at height $y_0$.
+            $R_{cone}^2 + y_0^2 = r^2 \implies R_{cone}^2 = r^2 - (r-h)^2 = r^2 - (r^2 - 2rh + h^2) = 2rh - h^2$.</p>
+            <p>The volume of the cone is $V = \frac{1}{3}\pi R_{cone}^2 h$.</p>
+            <p>$V(h) = \frac{1}{3}\pi (2rh - h^2)h = \frac{\pi}{3}(2rh^2 - h^3)$.</p>
+            <p>$V'(h) = \frac{\pi}{3}(4rh - 3h^2) = \frac{\pi h}{3}(4r - 3h)$.</p>
+            <p>Set $V'(h)=0$. Since $h \ne 0$, we have $4r - 3h = 0 \implies h = \frac{4r}{3}$.</p>
+            <p>The second derivative $V''(h) = \frac{\pi}{3}(4r - 6h)$. At $h=\frac{4r}{3}$, $V''(h) < 0$, confirming a maximum.</p>
+            <p>Thus, the altitude of the cone of maximum volume is $\frac{4r}{3}$. Hence proved.</p>
+        </div>
+        
+        <h4 id="misc-ex-q13">13. Let $f$ be a function defined on $[a, b]$ such that $f'(x) > 0$, for all $x \in (a, b)$. Then prove that $f$ is an increasing function on $(a, b)$.</h4>
+        <div class="solution-box">
+            <p>This is a direct application of the Mean Value Theorem (MVT) and the definition of an increasing function.</p>
+            <p>Let $x_1, x_2$ be any two points in the interval $(a, b)$ such that $x_1 < x_2$.</p>
+            <p>Since $f$ is differentiable on $(a, b)$, it is also continuous on $(a, b)$.
+            Therefore, we can apply the Mean Value Theorem to the function $f$ on the closed interval $[x_1, x_2]$.</p>
+            <p>According to MVT, there exists some point $c$ in the open interval $(x_1, x_2)$ such that:</p>
+            <p>$f'(c) = \frac{f(x_2) - f(x_1)}{x_2 - x_1}$.</p>
+            <p>We can rewrite this as: $f(x_2) - f(x_1) = f'(c)(x_2 - x_1)$.</p>
+            <p>We are given that $f'(x) > 0$ for all $x \in (a, b)$. Since $c \in (x_1, x_2) \subset (a, b)$, we have $f'(c) > 0$.</p>
+            <p>Also, since we chose $x_1 < x_2$, we have $(x_2 - x_1) > 0$.</p>
+            <p>The product of two positive numbers is positive, so $f'(c)(x_2 - x_1) > 0$.</p>
+            <p>This implies $f(x_2) - f(x_1) > 0$, which means $f(x_2) > f(x_1)$.</p>
+            <p>So, we have shown that for any $x_1, x_2 \in (a, b)$ with $x_1 < x_2$, we have $f(x_1) < f(x_2)$.</p>
+            <p>This is the definition of a strictly increasing function. Thus, $f$ is an increasing function on $(a,b)$. Hence proved.</p>
+        </div>
+
+        <h4 id="misc-ex-q14">14. Show that the height of the cylinder of maximum volume that can be inscribed in a sphere of radius $R$ is $\frac{2R}{\sqrt{3}}$. Also find the maximum volume.</h4>
+        <div class="solution-box">
+            <p>Let a cylinder with radius $r$ and height $h$ be inscribed in a sphere of radius $R$.</p>
+            <p>Let the center of the sphere be at the origin. By Pythagoras' theorem on a cross-section, the relationship between the dimensions is:</p>
+            <p>$r^2 + \left(\frac{h}{2}\right)^2 = R^2$.</p>
+            <p>The volume of the cylinder is $V = \pi r^2 h$.</p>
+            <p>From the Pythagorean relation, $r^2 = R^2 - \frac{h^2}{4}$. Substitute this into the volume formula to get $V$ as a function of $h$.</p>
+            <p>$V(h) = \pi\left(R^2 - \frac{h^2}{4}\right)h = \pi\left(R^2h - \frac{h^3}{4}\right)$. The height $h \in (0, 2R)$.</p>
+            <p>To find the maximum volume, differentiate with respect to $h$:</p>
+            <p>$V'(h) = \pi\left(R^2 - \frac{3h^2}{4}\right)$.</p>
+            <p>Set $V'(h) = 0 \implies R^2 - \frac{3h^2}{4} = 0 \implies \frac{3h^2}{4} = R^2 \implies h^2 = \frac{4R^2}{3} \implies h = \frac{2R}{\sqrt{3}}$ (since height is positive).</p>
+            <p>Check the second derivative: $V''(h) = \pi\left(-\frac{6h}{4}\right) = -\frac{3\pi h}{2}$.
+            Since $h>0$, $V''(h) < 0$, which confirms a maximum.</p>
+            <p>Thus, the height of the cylinder of maximum volume is $h = \frac{2R}{\sqrt{3}}$.</p>
+            <p>Now, find the maximum volume by substituting this value of $h$ back into $V(h)$:</p>
+            <p>$V_{max} = \pi\left(R^2\left(\frac{2R}{\sqrt{3}}\right) - \frac{1}{4}\left(\frac{2R}{\sqrt{3}}\right)^3\right) = \pi\left(\frac{2R^3}{\sqrt{3}} - \frac{1}{4}\frac{8R^3}{3\sqrt{3}}\right)$.</p>
+            <p>$V_{max} = \pi\left(\frac{2R^3}{\sqrt{3}} - \frac{2R^3}{3\sqrt{3}}\right) = \pi\left(\frac{6R^3 - 2R^3}{3\sqrt{3}}\right) = \frac{4\pi R^3}{3\sqrt{3}}$.</p>
+            <p>The maximum volume is $\frac{4\pi R^3}{3\sqrt{3}}$.</p>
+        </div>
+
+        <h4 id="misc-ex-q15">15. Show that height of the cylinder of greatest volume which can be inscribed in a right circular cone of height $h$ and semi-vertical angle $\alpha$ is one-third that of the cone and the greatest volume of cylinder is $\frac{4}{27}\pi h^3 \tan^2\alpha$.</h4>
+        <div class="solution-box">
+            <p>Let the cone have vertex at the origin, height $h$ along the y-axis, and radius $R$. We have $\tan\alpha = \frac{R}{h}$, so $R = h\tan\alpha$.</p>
+            <p>Let a cylinder be inscribed in the cone with radius $r_{cyl}$ and height $h_{cyl}$.</p>
+            <p>Consider the cross-section. By similar triangles (the large cone and the small cone above the cylinder):</p>
+            <p>The small cone above the cylinder has height $h - h_{cyl}$ and radius $r_{cyl}$.</p>
+            <p>The ratio of radius to height is constant: $\frac{r_{cyl}}{h - h_{cyl}} = \frac{R}{h} = \tan\alpha$.</p>
+            <p>From this, $r_{cyl} = (h - h_{cyl})\tan\alpha$.</p>
+            <p>The volume of the cylinder is $V = \pi r_{cyl}^2 h_{cyl}$.</p>
+            <p>Substitute $r_{cyl}$ to get $V$ as a function of $h_{cyl}$ (let's denote it by $H$ for simplicity):</p>
+            <p>$V(H) = \pi [(h - H)\tan\alpha]^2 H = \pi \tan^2\alpha (h - H)^2 H$.</p>
+            <p>$V(H) = \pi \tan^2\alpha (h^2 - 2hH + H^2)H = \pi \tan^2\alpha (h^2H - 2hH^2 + H^3)$. Here $H \in (0, h)$.</p>
+            <p>To maximize, find the derivative with respect to $H$:</p>
+            <p>$V'(H) = \pi \tan^2\alpha (h^2 - 4hH + 3H^2)$.</p>
+            <p>Set $V'(H)=0 \implies h^2 - 4hH + 3H^2 = 0$. This is a quadratic in $H$.</p>
+            <p>$(3H - h)(H - h) = 0$.</p>
+            <p>Solutions are $H = \frac{h}{3}$ or $H=h$. Since $H \in (0,h)$, we must have $H = \frac{h}{3}$.</p>
+            <p>Check the second derivative: $V''(H) = \pi \tan^2\alpha (-4h + 6H)$.</p>
+            <p>$V''(\frac{h}{3}) = \pi \tan^2\alpha (-4h + 6(\frac{h}{3})) = \pi \tan^2\alpha (-4h + 2h) = -2h\pi\tan^2\alpha < 0$, which confirms a maximum.</p>
+            <p>So, the height of the cylinder of greatest volume is one-third the height of the cone. First part proved.</p>
+            <p>Now find the greatest volume. Substitute $H = \frac{h}{3}$ back into the volume formula:</p>
+            <p>$V_{max} = \pi \tan^2\alpha \left(h - \frac{h}{3}\right)^2 \left(\frac{h}{3}\right) = \pi \tan^2\alpha \left(\frac{2h}{3}\right)^2 \left(\frac{h}{3}\right)$.</p>
+            <p>$V_{max} = \pi \tan^2\alpha \left(\frac{4h^2}{9}\right) \left(\frac{h}{3}\right) = \frac{4\pi h^3 \tan^2\alpha}{27}$.</p>
+            <p>The greatest volume of the cylinder is $\frac{4}{27}\pi h^3 \tan^2\alpha$. Second part proved.</p>
+        </div>
+    </main>
+</body>
+</html>

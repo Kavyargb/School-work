@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnetic Field</title>
+
+    <!-- MathJax v3 Configuration and Library -->
+    <script>
+    window.MathJax = {
+      loader: {load: ['[tex]/mhchem', '[tex]/cancel']},
+      tex: {
+        packages: {'[+]': ['mhchem', 'cancel']},
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    
+    <!-- Link to Central Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="body-content">
+    <!-- Top navigation bar placeholder -->
+    <nav class="global-nav" id="global-navbar"></nav>
+    
+    <!-- Sidebar placeholder -->
+    <nav id="index-sidebar"></nav>
+    <script src="../main.js"></script>
+
+    <script src="../nav.js"></script>
+
+    <main class="main-content">
+        <h3 id="intro_ch34">Introduction to Magnetic Field</h3>
+        <p>If a charge $q$ is placed at rest near a metallic wire carrying a current $i$, it experiences almost no force. This suggests there is no significant electric field. However, if the same charge $q$ is projected with a velocity $\vec{v}$, it experiences a force, indicating the presence of a new kind of field. This field, which acts only on moving charges, is called the <strong>magnetic field</strong> ($\vec{B}$). The force exerted by a magnetic field is called <strong>magnetic force</strong>.</p>
+        <p>The magnetic force $\vec{F}$ on a charged particle is defined by the equation:</p>
+        <div class="math-eq">$$ \vec{F} = q(\vec{v} \times \vec{B}) $$</div>
+        <p>This is part of the more general <strong>Lorentz Force</strong> law, which includes both electric and magnetic forces: $\vec{F} = q(\vec{E} + \vec{v} \times \vec{B})$.</p>
+        <h4>Properties of Magnetic Force:</h4>
+        <ul>
+            <li>The force is proportional to the magnitude of the charge $q$.</li>
+            <li>The force is proportional to the speed $v$ of the particle.</li>
+            <li>The force is zero if the velocity $\vec{v}$ is parallel to the magnetic field $\vec{B}$.</li>
+            <li>The force is always perpendicular to both $\vec{v}$ and $\vec{B}$.</li>
+            <li>Because the magnetic force is always perpendicular to the velocity, it does <strong>no work</strong> on the particle. Consequently, it cannot change the particle's kinetic energy or speed.</li>
+        </ul>
+        <p>The SI unit of magnetic field is the <strong>tesla (T)</strong>. Another common unit is the <strong>gauss (G)</strong>, where $1 \text{ T} = 10^4 \text{ G}$.</p>
+        <hr>
+
+        <h3 id="relation_eb">Relation between Electric and Magnetic Fields</h3>
+        <p>Electric and magnetic fields are not independent entities. They are two aspects of a single entity called the <strong>electromagnetic field</strong>. A field that appears as purely magnetic in one frame of reference may appear as a combination of electric and magnetic fields in another frame moving with respect to the first. This is a key concept in the special theory of relativity.</p>
+        <hr>
+
+        <h3 id="motion_particle_b_field">Motion of a Charged Particle in a Uniform Magnetic Field</h3>
+        <p>Since the magnetic force does no work on a charged particle, its speed and kinetic energy remain constant. The force only changes the direction of the particle's velocity.</p>
+        <h4>Case 1: Velocity perpendicular to the magnetic field</h4>
+        <p>If a particle with charge $q$ and mass $m$ is projected with velocity $\vec{v}$ perpendicular to a uniform magnetic field $\vec{B}$, it experiences a force of constant magnitude $F = qvB$. This force is always perpendicular to $\vec{v}$, acting as a centripetal force, causing the particle to move in a <strong>circular path</strong>.</p>
+        <p>The radius of the circular path is found by equating the magnetic force to the centripetal force:</p>
+        <div class="math-eq">$$ qvB = \frac{mv^2}{r} \implies r = \frac{mv}{qB} $$</div>
+        <p>The time period of the revolution is:</p>
+        <div class="math-eq">$$ T = \frac{2\pi r}{v} = \frac{2\pi m}{qB} $$</div>
+        <p>The frequency of revolution, known as the <strong>cyclotron frequency</strong>, is:</p>
+        <div class="math-eq">$$ \nu = \frac{1}{T} = \frac{qB}{2\pi m} $$</div>
+        <p>Notably, the time period and frequency are independent of the particle's speed and the radius of the orbit.</p>
+        <h4>Case 2: Velocity not perpendicular to the magnetic field</h4>
+        <p>If the velocity $\vec{v}$ makes an angle with $\vec{B}$, we can resolve it into two components: $v_{||}$ (parallel to $\vec{B}$) and $v_{\perp}$ (perpendicular to $\vec{B}$).</p>
+        <ul>
+            <li>The parallel component $v_{||}$ is unaffected by the magnetic field, so the particle moves with constant velocity along the field direction.</li>
+            <li>The perpendicular component $v_{\perp}$ causes the particle to move in a circle in the plane perpendicular to $\vec{B}$.</li>
+        </ul>
+        <p>The combination of these two motions results in a <strong>helical path</strong>. The radius of the helix is $r = \frac{mv_{\perp}}{qB}$ and the pitch (distance moved along the field in one revolution) is $p = v_{||}T = v_{||} \frac{2\pi m}{qB}$.</p>
+        <hr>
+        
+        <h3 id="force_current_wire">Magnetic Force on a Current-carrying Wire</h3>
+        <p>A current-carrying wire placed in a magnetic field experiences a force because the moving charges (electrons) inside it experience a magnetic force.</p>
+        <p>The magnetic force $d\vec{F}$ on a small current element $i\, d\vec{l}$ is given by:</p>
+        <div class="math-eq">$$ d\vec{F} = i (d\vec{l} \times \vec{B}) $$</div>
+        <p>For a straight wire of length $l$ carrying current $i$ in a uniform magnetic field $\vec{B}$, the total force is:</p>
+        <div class="math-eq">$$ \vec{F} = i (\vec{l} \times \vec{B}) $$</div>
+        <p>The magnitude of the force is $F = ilB \sin\theta$, where $\theta$ is the angle between the wire and the magnetic field.</p>
+        <hr>
+
+        <h3 id="torque_current_loop">Torque on a Current Loop</h3>
+        <p>A current loop placed in a uniform magnetic field experiences a torque that tends to align it with the field. For a rectangular loop of sides $l$ and $b$ carrying current $i$ in a field $\vec{B}$, the forces on opposite sides cancel out, resulting in zero net force. However, these forces can produce a net torque.</p>
+        <p>The torque on the loop is given by:</p>
+        <div class="math-eq">$$ \vec{\tau} = \vec{\mu} \times \vec{B} $$</div>
+        <p>where $\vec{\mu}$ is the <strong>magnetic dipole moment</strong> of the loop, defined as:</p>
+        <div class="math-eq">$$ \vec{\mu} = i \vec{A} $$</div>
+        <p>Here, $\vec{A}$ is the area vector of the loop, with its direction perpendicular to the plane of the loop, given by the right-hand thumb rule. If a coil has $N$ turns, the magnetic moment is $\vec{\mu} = Ni\vec{A}$.</p>
+        <p>The magnitude of the torque is $\tau = \mu B \sin\theta$, where $\theta$ is the angle between the magnetic moment and the magnetic field. The torque is zero when $\vec{\mu}$ is parallel ($\theta=0^\circ$) or anti-parallel ($\theta=180^\circ$) to $\vec{B}$.</p>
+        <hr>
+
+        <h3 id="hcv_examples">HC Verma Worked Out Examples</h3>
+        
+        <h4 id="ex34_1_w">Example 34.1</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A proton is projected with a speed of $3 \times 10^6 \text{ m s}^{-1}$ horizontally from east to west. A uniform magnetic field $\vec{B}$ of strength $2.0 \times 10^{-3}$ T exists in the vertically upward direction. (a) Find the force on the proton just after it is projected. (b) What is the acceleration produced?</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>(a) The velocity $\vec{v}$ is horizontal from east to west. The magnetic field $\vec{B}$ is vertically upward. The angle between $\vec{v}$ and $\vec{B}$ is $90^\circ$.</p>
+            <p>The magnetic force is $\vec{F} = q(\vec{v} \times \vec{B})$. The direction of $\vec{v} \times \vec{B}$ is towards the south. Since the charge on a proton is positive, the force is also towards the south.</p>
+            <p>The magnitude of the force is:</p>
+            <div class="math-eq">$$ F = qvB\sin\theta = (1.6 \times 10^{-19} \text{ C}) (3.0 \times 10^6 \text{ m s}^{-1}) (2.0 \times 10^{-3} \text{ T}) \sin(90^\circ) $$</div>
+            <div class="math-eq">$$ F = 9.6 \times 10^{-16} \text{ N} $$</div>
+            <p>(b) The mass of a proton is $m_p = 1.67 \times 10^{-27}$ kg. The acceleration is:</p>
+            <div class="math-eq">$$ a = \frac{F}{m_p} = \frac{9.6 \times 10^{-16} \text{ N}}{1.67 \times 10^{-27} \text{ kg}} = 5.8 \times 10^{11} \text{ m s}^{-2} $$</div>
+        </div>
+        <hr>
+
+        <h4 id="ex34_3_w">Example 34.3</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>Figure shows two long metal rails placed horizontally and parallel to each other at a separation $l$. A uniform magnetic field $B$ exists in the vertically downward direction. A wire of mass $m$ can slide on the rails. The rails are connected to a constant current source which drives a current $i$ in the circuit. The friction coefficient between the rails and the wire is $\mu$. (a) What should be the minimum value of $\mu$ which can prevent the wire from sliding on the rails? (b) Describe the motion of the wire if the value of $\mu$ is half the value found in the previous part.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>(a) The magnetic force on the wire of length $l$ is $\vec{F} = i(\vec{l} \times \vec{B})$. The direction of the current is along $\vec{l}$ and $\vec{B}$ is vertically downward. The force $F = ilB$ acts horizontally, perpendicular to the wire. Let's assume it acts to the right.</p>
+            <p>To prevent the wire from sliding, the force of static friction must be equal and opposite to this magnetic force. The maximum static friction is $f_{s,max} = \mu_s N = \mu_s mg$.</p>
+            <p>For the wire to be prevented from sliding, the minimum coefficient of static friction $\mu_{min}$ must satisfy:</p>
+            <div class="math-eq">$$ \mu_{min} mg = ilB \implies \mu_{min} = \frac{ilB}{mg} $$</div>
+            
+            <p>(b) If the coefficient of kinetic friction is $\mu = \frac{\mu_{min}}{2} = \frac{ilB}{2mg}$, the wire will slide. The kinetic frictional force is $f_k = \mu mg = \frac{ilB}{2}$. This force opposes the motion.</p>
+            <p>The net force on the wire is:</p>
+            <div class="math-eq">$$ F_{net} = F_{magnetic} - f_k = ilB - \frac{ilB}{2} = \frac{ilB}{2} $$</div>
+            <p>The acceleration of the wire is:</p>
+            <div class="math-eq">$$ a = \frac{F_{net}}{m} = \frac{ilB}{2m} $$</div>
+            <p>The wire will slide with a constant acceleration of $\frac{ilB}{2m}$ to the right.</p>
+        </div>
+        <hr>
+        
+        <h3 id="hcv_exercises">HC Verma Exercises Solved</h3>
+
+        <h4 id="exer34_1">Exercise 34.1</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>An alpha particle is projected vertically upward with a speed of $3.0 \times 10^4 \text{ km s}^{-1}$ in a region where a magnetic field of magnitude 1.0 T exists in the direction south to north. Find the magnetic force that acts on the $\alpha$-particle.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>An alpha particle has a charge $q = +2e = 2 \times 1.6 \times 10^{-19} \text{ C} = 3.2 \times 10^{-19} \text{ C}$.</p>
+            <p>The velocity $\vec{v}$ is vertically upward. The speed is $v = 3.0 \times 10^4 \text{ km s}^{-1} = 3.0 \times 10^7 \text{ m s}^{-1}$.</p>
+            <p>The magnetic field $\vec{B}$ is from south to north (horizontal). The magnitude is $B = 1.0 \text{ T}$.</p>
+            <p>The angle $\theta$ between $\vec{v}$ (upward) and $\vec{B}$ (north) is $90^\circ$.</p>
+            <p>The magnetic force is given by $\vec{F} = q(\vec{v} \times \vec{B})$. The magnitude is:</p>
+            <div class="math-eq">$$ F = qvB\sin\theta = (3.2 \times 10^{-19} \text{ C}) (3.0 \times 10^7 \text{ m s}^{-1}) (1.0 \text{ T}) \sin(90^\circ) = 9.6 \times 10^{-12} \text{ N} $$</div>
+            <p>For the direction, using the right-hand rule: $\vec{v}$ is up, $\vec{B}$ is north. $\vec{v} \times \vec{B}$ points to the west. Since the charge $q$ is positive, the force $\vec{F}$ is also directed towards the west.</p>
+        </div>
+        <hr>
+        
+        <h4 id="exer34_2">Exercise 34.2</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>An electron is projected horizontally with a kinetic energy of 10 keV. A magnetic field of strength $1.0 \times 10^{-7}$ T exists in the vertically upward direction. (a) Will the electron deflect towards right or towards left of its motion? (b) Calculate the sideways deflection of the electron in travelling through 1 m. Make appropriate approximations.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>(a) Let the electron be projected horizontally along the positive x-axis, so $\vec{v} = v\hat{i}$. The magnetic field is vertically upward, so $\vec{B} = B\hat{k}$.</p>
+            <p>The magnetic force is $\vec{F} = q(\vec{v} \times \vec{B})$. For an electron, $q = -e$.</p>
+            <div class="math-eq">$$ \vec{F} = (-e)(v\hat{i} \times B\hat{k}) = -e(vB)(\hat{i} \times \hat{k}) = -e(vB)(-\hat{j}) = evB\hat{j} $$</div>
+            <p>The force is in the positive y-direction. If you are looking in the direction of motion (x-axis), the positive y-axis is to your left. So, the electron deflects towards the left.</p>
+            <p>(b) First, find the electron's speed from its kinetic energy:</p>
+            <div class="math-eq">$$ K.E. = 10 \text{ keV} = 10 \times 10^3 \times 1.6 \times 10^{-19} \text{ J} = 1.6 \times 10^{-15} \text{ J} $$</div>
+            <div class="math-eq">$$ K.E. = \frac{1}{2} m_e v^2 \implies v = \sqrt{\frac{2 \times K.E.}{m_e}} = \sqrt{\frac{2 \times 1.6 \times 10^{-15}}{9.1 \times 10^{-31}}} \approx 5.93 \times 10^7 \text{ m/s} $$</div>
+            <p>The force is always perpendicular to the velocity, so the path is a circular arc. We can approximate the horizontal velocity as constant for a small deflection. The time to travel a horizontal distance $x=1$ m is $t \approx x/v$.</p>
+            <p>The sideways acceleration is $a_y = \frac{F_y}{m_e} = \frac{evB}{m_e}$. The sideways deflection $s$ (or $y$) is:</p>
+            <div class="math-eq">$$ s = \frac{1}{2} a_y t^2 = \frac{1}{2} \left(\frac{evB}{m_e}\right) \left(\frac{x}{v}\right)^2 = \frac{eBx^2}{2m_e v} $$</div>
+            <p>An alternative way is using the kinetic energy: $m_ev = \sqrt{2m_e K.E.}$.</p>
+            <div class="math-eq">$$ s = \frac{eBx^2}{2\sqrt{2m_e K.E.}} = \frac{(1.6 \times 10^{-19})(1.0 \times 10^{-7})(1)^2}{2\sqrt{2(9.1 \times 10^{-31})(1.6 \times 10^{-15})}} \approx 0.0148 \text{ m} = 1.5 \text{ cm} $$</div>
+        </div>
+        <hr>
+
+        <h4 id="exer34_3">Exercise 34.3</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A magnetic field of $\vec{B} = (4.0 \times 10^{-3} \hat{k})$ T exerts a force of $\vec{F} = (4.0\hat{i} + 3.0\hat{j}) \times 10^{-10}$ N on a particle having a charge of $q = 1.0 \times 10^{-9}$ C and going in the x-y plane. Find the velocity of the particle.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>Let the velocity of the particle be $\vec{v} = v_x \hat{i} + v_y \hat{j}$. The magnetic force is given by $\vec{F} = q(\vec{v} \times \vec{B})$.</p>
+            <div class="math-eq">$$ \vec{v} \times \vec{B} = (v_x \hat{i} + v_y \hat{j}) \times (B_z \hat{k}) = v_x B_z (\hat{i} \times \hat{k}) + v_y B_z (\hat{j} \times \hat{k}) = v_x B_z (-\hat{j}) + v_y B_z (\hat{i}) $$</div>
+            <p>So, the force is $\vec{F} = q(v_y B_z \hat{i} - v_x B_z \hat{j}) = F_x \hat{i} + F_y \hat{j}$.</p>
+            <p>Comparing the components: $F_x = q v_y B_z$ and $F_y = -q v_x B_z$.</p>
+            <p>We are given: $q = 1.0 \times 10^{-9} \text{ C}$, $B_z = 4.0 \times 10^{-3} \text{ T}$, $F_x = 4.0 \times 10^{-10} \text{ N}$, $F_y = 3.0 \times 10^{-10} \text{ N}$.</p>
+            <p>Solving for $v_x$ and $v_y$:</p>
+            <div class="math-eq">$$ v_y = \frac{F_x}{q B_z} = \frac{4.0 \times 10^{-10}}{(1.0 \times 10^{-9})(4.0 \times 10^{-3})} = 100 \text{ m/s} $$</div>
+            <div class="math-eq">$$ v_x = \frac{F_y}{-q B_z} = \frac{3.0 \times 10^{-10}}{-(1.0 \times 10^{-9})(4.0 \times 10^{-3})} = -75 \text{ m/s} $$</div>
+            <p>Therefore, the velocity of the particle is: $\vec{v} = (-75 \hat{i} + 100 \hat{j}) \text{ m/s}$.</p>
+        </div>
+        <hr>
+
+        <h4 id="exer34_4">Exercise 34.4</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>An experimenter's diary reads as follows: "a charged particle is projected in a magnetic field of $(7.0\hat{i} - 3.0\hat{j}) \times 10^{-3}$ T. The acceleration of the particle is found to be $(x\hat{i} + 7.0\hat{j}) \times 10^{-6} \text{ m s}^{-2}$". The number to the left of $\hat{i}$ in the last expression was not readable. What can this number be?</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>The magnetic force on a charged particle is given by $\vec{F} = q(\vec{v} \times \vec{B})$. A key property of this force is that it is always perpendicular to the magnetic field $\vec{B}$.</p>
+            <p>Since $\vec{F} = m\vec{a}$, the acceleration vector $\vec{a}$ must also be perpendicular to the magnetic field vector $\vec{B}$.</p>
+            <p>Two vectors are perpendicular if their dot product is zero. So, $\vec{a} \cdot \vec{B} = 0$.</p>
+            <p>Given:
+            <ul>
+                <li>$\vec{B} = (7.0\hat{i} - 3.0\hat{j}) \times 10^{-3}$ T</li>
+                <li>$\vec{a} = (x\hat{i} + 7.0\hat{j}) \times 10^{-6} \text{ m s}^{-2}$</li>
+            </ul>
+            </p>
+            <p>Calculating the dot product:</p>
+            <div class="math-eq">$$ \vec{a} \cdot \vec{B} = (x\hat{i} + 7.0\hat{j}) \cdot (7.0\hat{i} - 3.0\hat{j}) = 0 $$</div>
+            <p>(The constant factors $10^{-3}$ and $10^{-6}$ can be ignored as the product must be zero).</p>
+            <div class="math-eq">$$ (x)(7.0) + (7.0)(-3.0) = 0 $$</div>
+            <div class="math-eq">$$ 7x - 21 = 0 \implies 7x = 21 \implies x = 3 $$</div>
+            <p>The unreadable number must be 3.</p>
+        </div>
+        <hr>
+
+        <h4 id="exer34_5">Exercise 34.5</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A 10 g bullet having a charge of $4.00 \mu$C is fired at a speed of 270 m s⁻¹ in a horizontal direction. A vertical magnetic field of $500 \mu$T exists in the space. Find the deflection of the bullet due to the magnetic field as it travels through 100 m. Make appropriate approximations.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>We need to find the deflection due to the magnetic field, so we can ignore the effect of gravity.</p>
+            <p>The magnetic force is perpendicular to both the velocity and the magnetic field. Since the velocity is horizontal and the field is vertical, the force will be horizontal and perpendicular to the direction of motion. This will cause a sideways deflection.</p>
+            <p>Given:
+            <ul>
+                <li>Mass, $m = 10 \text{ g} = 0.01$ kg</li>
+                <li>Charge, $q = 4.00 \mu\text{C} = 4.0 \times 10^{-6}$ C</li>
+                <li>Speed, $v = 270$ m/s</li>
+                <li>Magnetic Field, $B = 500 \mu\text{T} = 5.0 \times 10^{-4}$ T</li>
+                <li>Distance travelled, $d = 100$ m</li>
+            </ul>
+            </p>
+            <p>The magnitude of the magnetic force is $F = qvB$ (since $\vec{v} \perp \vec{B}$).</p>
+            <div class="math-eq">$$ F = (4.0 \times 10^{-6})(270)(5.0 \times 10^{-4}) = 5.4 \times 10^{-7} \text{ N} $$</div>
+            <p>This force causes a sideways acceleration $a = F/m$.</p>
+            <div class="math-eq">$$ a = \frac{5.4 \times 10^{-7} \text{ N}}{0.01 \text{ kg}} = 5.4 \times 10^{-5} \text{ m/s}^2 $$</div>
+            <p>We can approximate the forward velocity as constant. The time taken to travel 100 m is:</p>
+            <div class="math-eq">$$ t = \frac{d}{v} = \frac{100 \text{ m}}{270 \text{ m/s}} = \frac{10}{27} \text{ s} $$</div>
+            <p>The sideways deflection $s$ is given by the equation of motion:</p>
+            <div class="math-eq">$$ s = \frac{1}{2}at^2 = \frac{1}{2}(5.4 \times 10^{-5}) \left(\frac{10}{27}\right)^2 \approx 3.7 \times 10^{-6} \text{ m} $$</div>
+        </div>
+        <hr>
+
+        <h4 id="exer34_6">Exercise 34.6</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>When a proton is released from rest in a room, it starts with an initial acceleration $a_0$ towards west. When it is projected towards north with a speed $v_0$, it moves with an initial acceleration $3a_0$ towards west. Find the electric field and the minimum possible magnetic field in the room.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>Let the proton have charge $e$ and mass $m_p$.</p>
+            <p><b>Case 1: Released from rest ($\vec{v}=0$)</b></p>
+            <p>The force is purely electric: $\vec{F}_E = e\vec{E}$. The acceleration is $\vec{a} = \vec{F}_E/m_p = (e/m_p)\vec{E}$.</p>
+            <p>Given that $\vec{a} = a_0$ towards west, the electric field must be directed to the west, and its magnitude is:</p>
+            <div class="math-eq">$$ a_0 = \frac{eE}{m_p} \implies E = \frac{m_p a_0}{e} $$</div>
+            <p>So, $\vec{E} = \frac{m_p a_0}{e}$ towards west.</p>
+            <p><b>Case 2: Projected north ($\vec{v} = v_0$ north)</b></p>
+            <p>The total force is the Lorentz force: $\vec{F}_{total} = e\vec{E} + e(\vec{v}_0 \times \vec{B})$.</p>
+            <p>The total acceleration is $\vec{a}_{total} = \vec{F}_{total}/m_p = (e\vec{E}/m_p) + (e/m_p)(\vec{v}_0 \times \vec{B}) = \vec{a}_E + \vec{a}_B$.</p>
+            <p>We know $\vec{a}_E = a_0$ west. We are given $\vec{a}_{total} = 3a_0$ west.</p>
+            <p>Therefore, the acceleration due to the magnetic field is:</p>
+            <div class="math-eq">$$ \vec{a}_B = \vec{a}_{total} - \vec{a}_E = (3a_0 \text{ west}) - (a_0 \text{ west}) = 2a_0 \text{ west} $$</div>
+            <p>The magnetic force causes this acceleration: $m_p \vec{a}_B = e(\vec{v}_0 \times \vec{B})$.</p>
+            <p>We have $\vec{v}_0$ (north) and the resulting force direction (west). Using the right-hand rule for a positive charge ($\vec{F} = q(\vec{v} \times \vec{B})$), if $\vec{v}$ is north and $\vec{F}$ is west, the magnetic field $\vec{B}$ must be directed vertically downwards.</p>
+            <p>The magnitude of the magnetic acceleration is $a_B = (e/m_p) v_0 B \sin\theta$. For minimum $B$, we need maximum $\sin\theta$, which is 1. This occurs when $\vec{B}$ is perpendicular to $\vec{v}_0$. Our downward direction for $\vec{B}$ satisfies this.</p>
+            <p>Magnitude calculation:</p>
+            <div class="math-eq">$$ a_B = 2a_0 = \frac{e v_0 B}{m_p} \implies B = \frac{2m_p a_0}{e v_0} $$</div>
+            <p>The minimum magnetic field is $\frac{2m_p a_0}{e v_0}$ directed vertically downwards.</p>
+        </div>
+        <hr>
+
+        <h4 id="exer34_7">Exercise 34.7</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>Consider a 10-cm long portion of a straight wire carrying a current of 10 A placed in a magnetic field of 0.1 T making an angle of 53° with the wire. What magnetic force does the wire experience?</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>The magnitude of the magnetic force on a straight wire is given by $F = ilB \sin\theta$.</p>
+            <p>Given:
+            <ul>
+                <li>Length of the wire, $l = 10 \text{ cm} = 0.1 \text{ m}$</li>
+                <li>Current, $i = 10 \text{ A}$</li>
+                <li>Magnetic field, $B = 0.1 \text{ T}$</li>
+                <li>Angle, $\theta = 53^\circ$</li>
+            </ul>
+            </p>
+            <p>The magnitude of the force is:</p>
+            <div class="math-eq">$$ F = (10 \text{ A})(0.1 \text{ m})(0.1 \text{ T})\sin(53^\circ) $$</div>
+            <p>Using the approximation $\sin(53^\circ) \approx 0.8$ (or more precisely, 0.7986):</p>
+            <div class="math-eq">$$ F = (0.1) \times 0.7986 \approx 0.08 \text{ N} $$</div>
+            <p>The direction of the force is perpendicular to both the wire and the magnetic field, as given by the right-hand rule for $\vec{F} = i(\vec{l} \times \vec{B})$.</p>
+        </div>
+        <hr>
+
+        <h4 id="exer34_8">Exercise 34.8</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A current of 2 A enters at the corner d of a square frame abcd of side 20 cm and leaves at the opposite corner b. A magnetic field $B=0.1$ T exists in the space in a direction perpendicular to the plane of the frame. Find the magnitude and direction of the magnetic forces on the four sides of the frame.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>The total current is 2 A. Due to the symmetry of the square frame, the current splits equally into two paths: `d-c-b` and `d-a-b`. So, a current of $i=1$ A flows through each path.</p>
+            <p>Let's set up a coordinate system with the square in the x-y plane, and vertices at `d(0,L)`, `c(L,L)`, `b(L,0)`, `a(0,0)`, where side length $L = 20 \text{ cm} = 0.2 \text{ m}$. Let the magnetic field $\vec{B}$ be pointing out of the page ($\vec{B} = B\hat{k}$).</p>
+            <p>The force on a wire is $\vec{F} = i(\vec{l} \times \vec{B})$. The magnitude is $F=iLB = (1 \text{ A})(0.2 \text{ m})(0.1 \text{ T}) = 0.02 \text{ N}$ for all sides since the field is perpendicular.</p>
+            <p>Now, let's find the direction for each side, assuming current enters at d and leaves at b:</p>
+            <ul>
+                <li><b>Path d-c-b:</b>
+                    <ul>
+                        <li><b>Force on side dc:</b> Current from d to c. $\vec{l}_{dc} = L\hat{i}$.
+                        $\vec{F}_{dc} = i(\vec{l}_{dc} \times \vec{B}) = i(L\hat{i} \times B\hat{k}) = iLB(-\hat{j})$. Force is 0.02 N downward.</li>
+                        <li><b>Force on side cb:</b> Current from c to b. $\vec{l}_{cb} = -L\hat{j}$.
+                        $\vec{F}_{cb} = i(\vec{l}_{cb} \times \vec{B}) = i(-L\hat{j} \times B\hat{k}) = -iLB(\hat{i})$. Force is 0.02 N to the left.</li>
+                    </ul>
+                </li>
+                <li><b>Path d-a-b:</b>
+                    <ul>
+                        <li><b>Force on side da:</b> Current from d to a. $\vec{l}_{da} = -L\hat{j}$.
+                        $\vec{F}_{da} = i(\vec{l}_{da} \times \vec{B}) = i(-L\hat{j} \times B\hat{k}) = -iLB(\hat{i})$. Force is 0.02 N to the left.</li>
+                        <li><b>Force on side ab:</b> Current from a to b. $\vec{l}_{ab} = L\hat{i}$.
+                        $\vec{F}_{ab} = i(\vec{l}_{ab} \times \vec{B}) = i(L\hat{i} \times B\hat{k}) = iLB(-\hat{j})$. Force is 0.02 N downward.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>In summary:
+            <ul>
+                <li>Force on da: 0.02 N towards left.</li>
+                <li>Force on cb: 0.02 N towards left.</li>
+                <li>Force on dc: 0.02 N downward.</li>
+                <li>Force on ab: 0.02 N downward.</li>
+            </ul>
+            </p>
+        </div>
+        <hr>
+
+        <h4 id="exer34_9">Exercise 34.9</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A magnetic field of strength $1.0$ T is produced by a strong electromagnet in a cylindrical region of radius 4.0 cm. A wire, carrying a current of 2.0 A, is placed perpendicular to and intersecting the axis of the cylindrical region. Find the magnitude of the force acting on the wire.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>The magnetic field exists only within the cylindrical region. The wire is placed perpendicular to the axis of this region, so it passes through the center. The length of the wire that is inside the magnetic field is equal to the diameter of the cylinder.</p>
+            <p>Given:
+            <ul>
+                <li>Radius of cylindrical region, $R = 4.0 \text{ cm} = 0.04 \text{ m}$.</li>
+                <li>Length of wire inside the field, $l = 2R = 0.08 \text{ m}$.</li>
+                <li>Current, $i = 2.0 \text{ A}$.</li>
+                <li>Magnetic field, $B = 1.0 \text{ T}$.</li>
+            </ul>
+            </p>
+            <p>The magnetic field is directed along the cylinder's axis. Since the wire is perpendicular to the axis, the wire is perpendicular to the magnetic field. Thus, the angle $\theta=90^\circ$.</p>
+            <p>The magnitude of the force is:</p>
+            <div class="math-eq">$$ F = i l B \sin\theta = (2.0 \text{ A})(0.08 \text{ m})(1.0 \text{ T})\sin(90^\circ) = 0.16 \text{ N} $$</div>
+            <p>The force acting on the wire is 0.16 N.</p>
+        </div>
+        <hr>
+
+        <h4 id="exer34_10">Exercise 34.10</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A wire of length $l$ carries a current $i$ along the x-axis. A magnetic field exists which is given as $\vec{B} = B_0(\hat{i} + \hat{j} + \hat{k})$ T. Find the magnitude of the magnetic force acting on the wire.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>The wire lies along the x-axis, so the current element vector can be written as $\vec{l} = l\hat{i}$. The current is $i$.</p>
+            <p>The magnetic field is $\vec{B} = B_0(\hat{i} + \hat{j} + \hat{k})$.</p>
+            <p>The magnetic force is given by $\vec{F} = i(\vec{l} \times \vec{B})$.</p>
+            <div class="math-eq">$$ \vec{F} = i(l\hat{i}) \times B_0(\hat{i} + \hat{j} + \hat{k}) $$</div>
+            <div class="math-eq">$$ \vec{F} = i l B_0 [\hat{i} \times (\hat{i} + \hat{j} + \hat{k})] $$</div>
+            <p>Using the properties of the cross product: $\hat{i} \times \hat{i} = 0$, $\hat{i} \times \hat{j} = \hat{k}$, and $\hat{i} \times \hat{k} = -\hat{j}$.</p>
+            <div class="math-eq">$$ \vec{F} = i l B_0 [(\hat{i} \times \hat{i}) + (\hat{i} \times \hat{j}) + (\hat{i} \times \hat{k})] $$</div>
+            <div class="math-eq">$$ \vec{F} = i l B_0 [0 + \hat{k} - \hat{j}] = i l B_0 (-\hat{j} + \hat{k}) $$</div>
+            <p>The magnitude of the force is the magnitude of this vector:</p>
+            <div class="math-eq">$$ |\vec{F}| = |i l B_0 (-\hat{j} + \hat{k})| = i l B_0 \sqrt{(-1)^2 + (1)^2} = \sqrt{2} i l B_0 $$</div>
+        </div>
+        <hr>
+
+        <h4 id="exer34_11">Exercise 34.11</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A current of 5.0 A exists in the circuit shown in the figure. The wire PQ has a length of 50 cm and the magnetic field in which it is immersed has a magnitude of 0.20 T. Find the magnetic force acting on the wire PQ.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>The force on the wire PQ depends on its length, the current it carries, and the magnetic field.</p>
+            <p>Given:
+            <ul>
+                <li>Current, $i = 5.0 \text{ A}$. The diagram shows the current flowing upwards in wire PQ.</li>
+                <li>Length, $l = 50 \text{ cm} = 0.5 \text{ m}$.</li>
+                <li>Magnetic field, $B = 0.20 \text{ T}$. The 'x' symbols indicate the field is directed into the page.</li>
+            </ul>
+            </p>
+            <p>The wire PQ is perpendicular to the magnetic field, so the angle $\theta = 90^\circ$.</p>
+            <p>The magnitude of the magnetic force is:</p>
+            <div class="math-eq">$$ F = i l B \sin\theta = (5.0 \text{ A})(0.5 \text{ m})(0.20 \text{ T})\sin(90^\circ) = 0.5 \text{ N} $$</div>
+            <p>The direction of the force is given by the right-hand rule. With current upwards and field inwards, the force $\vec{F} = i(\vec{l} \times \vec{B})$ is directed to the left.</p>
+            <p>The magnetic force on wire PQ is 0.5 N to the left.</p>
+        </div>
+        <hr>
+
+        <h4 id="exer34_12">Exercise 34.12</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A circular loop of radius $a$, carrying a current $i$, is placed in a two-dimensional magnetic field. The center of the loop coincides with the center of the field. The strength of the magnetic field at the periphery of the loop is $B$. Find the magnetic force on the wire.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>The problem describes a two-dimensional, radially outward magnetic field, similar to the diagram provided (Figure 34-E4). The force on a small element of the loop $d\vec{l}$ is $d\vec{F} = i(d\vec{l} \times \vec{B})$.</p>
+            <p>Let's use a coordinate system where the loop is in the x-y plane, centered at the origin.
+            <ul>
+                <li>A small current element at angle $\phi$ is $d\vec{l} = a\,d\phi(-\sin\phi\hat{i} + \cos\phi\hat{j})$ (for counter-clockwise current).</li>
+                <li>The radial magnetic field at that point is $\vec{B} = B(\cos\phi\hat{i} + \sin\phi\hat{j})$.</li>
+            </ul></p>
+            <p>Now, we compute the cross product:</p>
+            <div class="math-eq">$$ d\vec{l} \times \vec{B} = [a\,d\phi(-\sin\phi\hat{i} + \cos\phi\hat{j})] \times [B(\cos\phi\hat{i} + \sin\phi\hat{j})] $$</div>
+            <div class="math-eq">$$ = aB\,d\phi[(-\sin\phi\sin\phi)(\hat{i}\times\hat{j}) + (\cos\phi\cos\phi)(\hat{j}\times\hat{i})] $$</div>
+            <div class="math-eq">$$ = aB\,d\phi[-\sin^2\phi(\hat{k}) - \cos^2\phi(\hat{k})] = -aB\,d\phi(\sin^2\phi + \cos^2\phi)\hat{k} = -aB\,d\phi\,\hat{k} $$</div>
+            <p>The force element is $d\vec{F} = i(d\vec{l} \times \vec{B}) = -iaB\,d\phi\,\hat{k}$.</p>
+            <p>The force on every element is in the same direction ($-\hat{k}$, or into the page). To find the total force, we integrate around the loop:</p>
+            <div class="math-eq">$$ \vec{F} = \int_{0}^{2\pi} d\vec{F} = \int_{0}^{2\pi} -iaB\,\hat{k}\,d\phi = -iaB\hat{k} \int_{0}^{2\pi} d\phi = -iaB(2\pi)\hat{k} $$</div>
+            <p>The magnitude of the force is $F = 2\pi a i B$. The direction is perpendicular to the plane of the loop, pointing inwards (assuming counter-clockwise current).</p>
+        </div>
+        <hr>
+
+        <h4 id="exer34_13">Exercise 34.13</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A hypothetical magnetic field existing in a region is given by $\vec{B} = B_0 \vec{e}_r$, where $\vec{e}_r$ denotes the unit vector along the radial direction from the origin. A circular loop of radius $a$, carrying a current $i$, is placed with its plane parallel to the x-y plane and its centre at $(0, 0, d)$. Find the magnitude of the magnetic force acting on the loop.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>The field is spherically radial from the origin: $\vec{B} = B_0 \vec{e}_r = B_0 \frac{\vec{R}}{|\vec{R}|}$, where $\vec{R}$ is the position vector from the origin.</p>
+            <p>A point on the loop can be parameterized by angle $\phi$:
+            $\vec{R} = a\cos\phi\hat{i} + a\sin\phi\hat{j} + d\hat{k}$.</p>
+            <p>The distance from the origin to any point on the loop is constant:
+            $|\vec{R}| = \sqrt{(a\cos\phi)^2 + (a\sin\phi)^2 + d^2} = \sqrt{a^2+d^2}$.</p>
+            <p>So the magnetic field on the loop is: $\vec{B} = \frac{B_0}{\sqrt{a^2+d^2}}(a\cos\phi\hat{i} + a\sin\phi\hat{j} + d\hat{k})$.</p>
+            <p>The current element vector is $d\vec{l} = a\,d\phi(-\sin\phi\hat{i} + \cos\phi\hat{j})$.</p>
+            <p>The force on this element is $d\vec{F} = i(d\vec{l} \times \vec{B})$. Let's compute the cross product:</p>
+            <div class="math-eq">$$ d\vec{l} \times \vec{B} = \frac{aB_0 d\phi}{\sqrt{a^2+d^2}} (-\sin\phi\hat{i} + \cos\phi\hat{j}) \times (a\cos\phi\hat{i} + a\sin\phi\hat{j} + d\hat{k}) $$</div>
+            <p>Breaking it down:
+            <ul>
+                <li>$\hat{i}$ component: $(\cos\phi\hat{j}) \times (d\hat{k}) = d\cos\phi\hat{i}$</li>
+                <li>$\hat{j}$ component: $(-\sin\phi\hat{i}) \times (d\hat{k}) = d\sin\phi\hat{j}$</li>
+                <li>$\hat{k}$ component: $(-\sin\phi\hat{i})\times(a\sin\phi\hat{j}) + (\cos\phi\hat{j})\times(a\cos\phi\hat{i}) = -a\sin^2\phi\hat{k} - a\cos^2\phi\hat{k} = -a\hat{k}$</li>
+            </ul>
+            </p>
+            <p>So, $d\vec{F} = \frac{iaB_0 d\phi}{\sqrt{a^2+d^2}} (d\cos\phi\hat{i} + d\sin\phi\hat{j} - a\hat{k})$.</p>
+            <p>To find the total force, we integrate from $\phi=0$ to $2\pi$. The integrals of $\cos\phi$ and $\sin\phi$ over a full cycle are zero. So the net force in the x and y directions is zero.</p>
+            <div class="math-eq">$$ F_x = F_y = 0 $$</div>
+            <p>The z-component remains:</p>
+            <div class="math-eq">$$ F_z = \int_0^{2\pi} \frac{iaB_0}{\sqrt{a^2+d^2}} (-a) d\phi = \frac{-ia^2 B_0}{\sqrt{a^2+d^2}} \int_0^{2\pi} d\phi = \frac{-2\pi i a^2 B_0}{\sqrt{a^2+d^2}} $$</div>
+            <p>The magnitude of the force is the absolute value of this z-component:</p>
+            <div class="math-eq">$$ F = \frac{2\pi i a^2 B_0}{\sqrt{a^2+d^2}} $$</div>
+        </div>
+        <hr>
+
+        <h4 id="exer34_14">Exercise 34.14</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A rectangular wire-loop of width $a$ is suspended from a spring balance as shown. An anticlockwise current $i$ exists in the loop. A magnetic field $B$ exists in the lower region. Find the change in the tension of the spring if the direction of the current in the loop is reversed.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>Let the loop have width $a$ and height $b$. The magnetic field $\vec{B}$ is directed into the page. Let's analyze the forces on each segment of the loop.</p>
+            <p>The horizontal forces on the vertical segments (sides AD and BC) are equal and opposite, so they cancel out and do not affect the spring balance.</p>
+            <p>We only need to consider the vertical forces on the horizontal segments (AB and CD).</p>
+            <p><b>Case 1: Anticlockwise current</b></p>
+            <ul>
+                <li>Segment AB is outside the field, so the force on it is zero.</li>
+                <li>Segment CD (length $a$) is inside the field. The current is to the left. Using the right-hand rule ($\vec{F} = i(\vec{l} \times \vec{B})$), with $\vec{l}$ to the left and $\vec{B}$ into the page, the force $\vec{F}_{CD}$ is downwards.</li>
+                <li>Magnitude: $F_{down} = iaB$.</li>
+                <li>This downward magnetic force adds to the weight of the loop. The tension in the spring is $T_1 = W + F_{down} = W + iaB$.</li>
+            </ul>
+            <p><b>Case 2: Clockwise current (reversed)</b></p>
+            <ul>
+                <li>Segment AB is still outside the field, force is zero.</li>
+                <li>Segment CD now has current to the right. With $\vec{l}$ to the right and $\vec{B}$ into the page, the force $\vec{F}_{CD}$ is upwards.</li>
+                <li>Magnitude: $F_{up} = iaB$.</li>
+                <li>This upward magnetic force counteracts the weight. The tension is $T_2 = W - F_{up} = W - iaB$.</li>
+            </ul>
+            <p>The change in tension is $\Delta T = T_1 - T_2$. (Or $T_2 - T_1$, depending on definition). Let's find the magnitude of the change. The total swing in force is from $iaB$ down to $iaB$ up.</p>
+            <div class="math-eq">$$ \text{Change in force} = F_{up} - (-F_{down}) = iaB - (-iaB) = 2iaB $$</div>
+            <p>This is the change in the reading of the spring balance. The tension changes by $2iaB$.</p>
+        </div>
+        <hr>
+
+        <h4 id="exer34_15">Exercise 34.15</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A current loop of arbitrary shape lies in a uniform magnetic field $B$. Show that the net magnetic force acting on the loop is zero.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>The magnetic force on a small element of the current loop $d\vec{l}$ is given by $d\vec{F} = i(d\vec{l} \times \vec{B})$.</p>
+            <p>To find the total force on the entire loop, we must integrate this expression over the closed path of the loop:</p>
+            <div class="math-eq">$$ \vec{F}_{net} = \oint i(d\vec{l} \times \vec{B}) $$</div>
+            <p>Since the current $i$ is constant around the loop and the magnetic field $\vec{B}$ is uniform (constant in space), we can take them out of the integral:</p>
+            <div class="math-eq">$$ \vec{F}_{net} = i \left( \left(\oint d\vec{l}\right) \times \vec{B} \right) $$</div>
+            <p>The integral $\oint d\vec{l}$ represents the vector sum of all the infinitesimal length elements along a closed path. This vector sum is always zero for any closed loop, because the path starts and ends at the same point (the net displacement is zero).</p>
+            <div class="math-eq">$$ \oint d\vec{l} = 0 $$</div>
+            <p>Therefore, the net force on the loop is:</p>
+            <div class="math-eq">$$ \vec{F}_{net} = i (0 \times \vec{B}) = 0 $$</div>
+            <p>This shows that the net magnetic force on any closed current loop in a uniform magnetic field is zero, regardless of its shape.</p>
+        </div>
+        <hr>
+
+        <h4 id="exer34_16">Exercise 34.16</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>Prove that the force acting on a current-carrying wire, joining two fixed points a and b in a uniform magnetic field, is independent of the shape of the wire.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>Consider a wire of arbitrary shape carrying a current $i$ from point a to point b in a uniform magnetic field $\vec{B}$.</p>
+            <p>The force on an infinitesimal element $d\vec{l}$ of the wire is $d\vec{F} = i(d\vec{l} \times \vec{B})$.</p>
+            <p>To find the total force on the wire, we integrate this expression from point a to point b:</p>
+            <div class="math-eq">$$ \vec{F} = \int_{a}^{b} i(d\vec{l} \times \vec{B}) $$</div>
+            <p>Since the current $i$ is constant along the wire and the magnetic field $\vec{B}$ is uniform, we can take them out of the integral:</p>
+            <div class="math-eq">$$ \vec{F} = i \left( \left(\int_{a}^{b} d\vec{l}\right) \times \vec{B} \right) $$</div>
+            <p>The integral $\int_{a}^{b} d\vec{l}$ is the vector sum of all the infinitesimal length elements from a to b. This is simply the net displacement vector from the start point to the end point, let's call it $\vec{L}_{ab}$.</p>
+            <div class="math-eq">$$ \vec{L}_{ab} = \int_{a}^{b} d\vec{l} $$</div>
+            <p>So the total force is:</p>
+            <div class="math-eq">$$ \vec{F} = i (\vec{L}_{ab} \times \vec{B}) $$</div>
+            <p>This final expression for the force depends only on the current $i$, the uniform magnetic field $\vec{B}$, and the vector $\vec{L}_{ab}$ connecting the fixed endpoints a and b. It does not depend on the specific path or shape of the wire between these points. Therefore, the force is independent of the shape of the wire.</p>
+        </div>
+        <hr>
+
+        <h4 id="exer34_17">Exercise 34.17</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A semicircular wire of radius 5.0 cm carries a current of 5.0 A. A magnetic field B of magnitude 0.50 T exists along the perpendicular to the plane of the wire. Find the magnitude of the magnetic force acting on the wire.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>As shown in Exercise 34.16, the force on a wire segment in a uniform magnetic field depends only on the vector connecting its endpoints. For the semicircular wire, this is the vector along its diameter.</p>
+            <p>The effective length vector $\vec{L}$ connects the two ends of the diameter. Its magnitude is the diameter of the semicircle, $L = 2R$.</p>
+            <p>Given:
+            <ul>
+                <li>Radius $R = 5.0 \text{ cm} = 0.05 \text{ m}$.</li>
+                <li>Effective length $L = 2R = 0.10 \text{ m}$.</li>
+                <li>Current $i = 5.0 \text{ A}$.</li>
+                <li>Magnetic field $B = 0.50 \text{ T}$.</li>
+            </ul>
+            </p>
+            <p>The magnetic field is perpendicular to the plane of the wire, which means it is also perpendicular to the effective length vector $\vec{L}$. So, the angle $\theta$ between $\vec{L}$ and $\vec{B}$ is $90^\circ$.</p>
+            <p>The magnitude of the magnetic force is:</p>
+            <div class="math-eq">$$ F = iLB\sin(90^\circ) = (5.0 \text{ A})(0.10 \text{ m})(0.50 \text{ T}) = 0.25 \text{ N} $$</div>
+        </div>
+        <hr>
+
+        <h4 id="exer34_18">Exercise 34.18</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A wire, carrying a current $i$, is kept in the x-y plane along the curve $y = A \sin(2\pi x/\lambda)$. A magnetic field $\vec{B}$ exists in the z-direction. Find the magnitude of the magnetic force on the portion of the wire between $x=0$ and $x=\lambda$.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>The force on a wire segment in a uniform magnetic field depends only on the vector connecting its endpoints, $\vec{L}$, via the formula $\vec{F} = i(\vec{L} \times \vec{B})$.</p>
+            <p>We need to find the coordinates of the start and end points of the wire segment.</p>
+            <ul>
+                <li>Start point (at $x=0$): $y = A\sin(0) = 0$. The point is $(0, 0, 0)$.</li>
+                <li>End point (at $x=\lambda$): $y = A\sin(2\pi \lambda/\lambda) = A\sin(2\pi) = 0$. The point is $(\lambda, 0, 0)$.</li>
+            </ul>
+            <p>The displacement vector $\vec{L}$ from the start point to the end point is:</p>
+            <div class="math-eq">$$ \vec{L} = (\lambda - 0)\hat{i} + (0 - 0)\hat{j} + (0 - 0)\hat{k} = \lambda\hat{i} $$</div>
+            <p>The magnetic field is given as $\vec{B} = B\hat{k}$.</p>
+            <p>The magnetic force is:</p>
+            <div class="math-eq">$$ \vec{F} = i(\vec{L} \times \vec{B}) = i(\lambda\hat{i} \times B\hat{k}) = i\lambda B (\hat{i} \times \hat{k}) = -i\lambda B \hat{j} $$</div>
+            <p>The magnitude of the force is:</p>
+            <div class="math-eq">$$ F = |\vec{F}| = i\lambda B $$</div>
+        </div>
+        <hr>
+
+        <h4 id="exer34_19">Exercise 34.19</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A rigid wire consists of a semicircular portion of radius R and two straight sections. The wire is partially immersed in a perpendicular magnetic field $B$, as shown in figure 34-E6. Find the magnetic force on the wire if it carries a current $i$.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>The wire has three parts: the left straight section, the semicircular section, and the right straight section. Let's analyze the forces.</p>
+            <p>The current flows into the loop on one straight section and out on the other. This means the currents in the two straight sections inside the field are in opposite directions.</p>
+            <p>Let the current in the left straight section be downwards, and in the right straight section be upwards. The magnetic field is into the page.
+            <ul>
+                <li>Force on left straight section: $\vec{F}_{left} = i(\vec{l}_{down} \times \vec{B}_{in})$. By the right-hand rule, this force is to the left.</li>
+                <li>Force on right straight section: $\vec{F}_{right} = i(\vec{l}_{up} \times \vec{B}_{in})$. By the right-hand rule, this force is to the right.</li>
+            </ul>
+            </p>
+            <p>Since the straight sections are symmetric, these two forces are equal in magnitude and opposite in direction. They cancel each other out.</p>
+            <div class="math-eq">$$ \vec{F}_{straight\_sections} = 0 $$</div>
+            <p>The net force on the wire is therefore just the force on the semicircular portion.</p>
+            <p>For the semicircular wire of radius R, the effective straight length connecting its endpoints is its diameter, $L = 2R$. The force is given by $F = iLB$.</p>
+            <div class="math-eq">$$ F_{net} = F_{semicircle} = i(2R)B $$</div>
+            <p>The direction of this force is upwards (using the right-hand rule on the effective straight segment from left to right).</p>
+        </div>
+        <hr>
+
+        <h4 id="exer34_20">Exercise 34.20</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A straight horizontal wire of mass 10 mg and length 1.0 m carries a current of 2.0 A. What minimum magnetic field B should be applied in the region so that the magnetic force on the wire may balance its weight?</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>To balance the weight of the wire, the magnetic force must be directed vertically upwards and have a magnitude equal to the gravitational force, $W = mg$.</p>
+            <p>Given:
+            <ul>
+                <li>Mass $m = 10 \text{ mg} = 10 \times 10^{-6} \text{ kg}$.</li>
+                <li>Length $l = 1.0 \text{ m}$.</li>
+                <li>Current $i = 2.0 \text{ A}$.</li>
+                <li>Let $g \approx 9.8 \text{ m/s}^2$.</li>
+            </ul>
+            </p>
+            <p>The weight of the wire is:</p>
+            <div class="math-eq">$$ W = (10 \times 10^{-6} \text{ kg})(9.8 \text{ m/s}^2) = 9.8 \times 10^{-5} \text{ N} $$</div>
+            <p>The magnetic force is $F_m = ilB\sin\theta$. To get the maximum possible upward force for a given field strength $B$, the field should be perpendicular to the wire ($\theta = 90^\circ$, so $\sin\theta = 1$). This gives the minimum required magnetic field.</p>
+            <p>Equating the magnetic force to the weight:</p>
+            <div class="math-eq">$$ ilB_{min} = mg $$</div>
+            <p>Solving for the minimum magnetic field $B_{min}$:</p>
+            <div class="math-eq">$$ B_{min} = \frac{mg}{il} = \frac{9.8 \times 10^{-5} \text{ N}}{(2.0 \text{ A})(1.0 \text{ m})} = 4.9 \times 10^{-5} \text{ T} $$</div>
+            <p>The direction of the magnetic field must be horizontal and perpendicular to the wire, such that the force $\vec{F} = i(\vec{l} \times \vec{B})$ is vertically upward.</p>
+        </div>
+        <hr>
+
+        <h4 id="exer34_21">Exercise 34.21</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>Figure 34-E7 shows a triangular wire loop PQR with mass 200 g suspended from a fixed point O by two threads of length 20.0 cm each. A magnetic field of 0.500 T exists in the region on the wire PQ. The wires connecting PQ with the battery are loose and exert no force on PQ. (a) Find the tension in the threads when the switch S is open. (b) A current of 2.0 A is established when the switch S is closed. Find the tension in the threads now. (Assume the angle the threads make with the vertical is 30°).</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>Given: Mass $m=200\text{g} = 0.2$ kg, length of wire PQ is $l=20\text{cm}=0.2$ m, magnetic field $B=0.5$ T, current $i=2.0$ A. The angle with the vertical is $\alpha=30^\circ$.</p>
+            <p><b>(a) Switch S is open (no current)</b></p>
+            <p>The loop is in equilibrium under its weight and the tension in the two threads. The vertical components of tension balance the weight.</p>
+            <div class="math-eq">$$ 2T\cos\alpha = mg $$</div>
+            <div class="math-eq">$$ 2T\cos(30^\circ) = (0.2 \text{ kg})(9.8 \text{ m/s}^2) = 1.96 \text{ N} $$</div>
+            <div class="math-eq">$$ T = \frac{1.96}{2 \cos(30^\circ)} = \frac{1.96}{2(\sqrt{3}/2)} = \frac{1.96}{\sqrt{3}} \approx 1.13 \text{ N} $$</div>
+            
+            <p><b>(b) Switch S is closed (current flows)</b></p>
+            <p>A magnetic force now acts on the wire PQ. The solution sheet implies the force is downwards. This happens if the current flows from Q to P (current to the left, field in, force is down). Let's assume this direction.</p>
+            <p>The magnitude of the magnetic force is:</p>
+            <div class="math-eq">$$ F_m = ilB = (2.0 \text{ A})(0.2 \text{ m})(0.5 \text{ T}) = 0.2 \text{ N} $$</div>
+            <p>This downward force adds to the weight. The new equilibrium equation for the vertical forces is:</p>
+            <div class="math-eq">$$ 2T'\cos\alpha = mg + F_m $$</div>
+            <div class="math-eq">$$ 2T'\cos(30^\circ) = 1.96 \text{ N} + 0.2 \text{ N} = 2.16 \text{ N} $$</div>
+            <div class="math-eq">$$ T' = \frac{2.16}{2 \cos(30^\circ)} = \frac{2.16}{\sqrt{3}} \approx 1.25 \text{ N} $$</div>
+        </div>
+        <hr>
+
+        <h4 id="exer34_23">Exercise 34.23</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A metal wire PQ of mass 10 g lies at rest on two horizontal metal rails separated by 4.90 cm (figure 34-E9). A vertically downward magnetic field of magnitude 0.800 T exists in the space. The resistance of the circuit is slowly reduced and it is found that when the resistance goes below 20.0 $\Omega$, the wire PQ starts sliding. Find the coefficient of friction between the wire and the rails.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>The wire starts sliding when the magnetic force on it just overcomes the maximum static friction force.</p>
+            <p>First, calculate the current in the circuit at the moment the wire starts to slide. The battery voltage is given as 6.0 V in the diagram.</p>
+            <div class="math-eq">$$ i = \frac{V}{R} = \frac{6.0 \text{ V}}{20.0 \Omega} = 0.3 \text{ A} $$</div>
+            <p>Next, calculate the magnetic force on the wire PQ.
+            Given:
+            <ul>
+                <li>Current, $i = 0.3 \text{ A}$</li>
+                <li>Length, $l = 4.90 \text{ cm} = 0.049 \text{ m}$</li>
+                <li>Magnetic field, $B = 0.800 \text{ T}$</li>
+            </ul>
+            The field is vertical and the wire is horizontal, so they are perpendicular ($\theta=90^\circ$).</p>
+            <div class="math-eq">$$ F_m = ilB = (0.3)(0.049)(0.800) = 0.01176 \text{ N} $$</div>
+            <p>At the threshold of sliding, this magnetic force is equal to the maximum static friction force, $f_s = \mu_s N = \mu_s mg$.</p>
+            <p>Given: Mass $m = 10 \text{ g} = 0.01$ kg. Let $g=9.8 \text{ m/s}^2$.</p>
+            <div class="math-eq">$$ F_m = \mu_s mg $$</div>
+            <div class="math-eq">$$ 0.01176 = \mu_s (0.01)(9.8) = \mu_s (0.098) $$</div>
+            <div class="math-eq">$$ \mu_s = \frac{0.01176}{0.098} = 0.12 $$</div>
+            <p>The coefficient of static friction is 0.12.</p>
+        </div>
+        <hr>
+
+        <h4 id="exer34_30">Exercise 34.30</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A particle having a charge of $2.0 \times 10^{-8}$ C and a mass of $2.0 \times 10^{-10}$ g is projected with a speed of $2.0 \times 10^3$ m s⁻¹ in a region having a uniform magnetic field of 0.10 T. The velocity is perpendicular to the field. Find the radius of the circle formed by the particle and also the time period.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>When a charged particle moves perpendicular to a uniform magnetic field, it follows a circular path where the magnetic force provides the centripetal force.</p>
+            <p>Given:
+            <ul>
+                <li>Charge $q = 2.0 \times 10^{-8} \text{ C}$.</li>
+                <li>Mass $m = 2.0 \times 10^{-10} \text{ g} = 2.0 \times 10^{-13} \text{ kg}$.</li>
+                <li>Speed $v = 2.0 \times 10^3 \text{ m/s}$.</li>
+                <li>Magnetic field $B = 0.10 \text{ T}$.</li>
+            </ul>
+            </p>
+            <p><b>Radius of the circle:</b></p>
+            <div class="math-eq">$$ qvB = \frac{mv^2}{r} \implies r = \frac{mv}{qB} $$</div>
+            <div class="math-eq">$$ r = \frac{(2.0 \times 10^{-13} \text{ kg})(2.0 \times 10^3 \text{ m/s})}{(2.0 \times 10^{-8} \text{ C})(0.10 \text{ T})} = \frac{4.0 \times 10^{-10}}{2.0 \times 10^{-9}} = 0.2 \text{ m} = 20 \text{ cm} $$</div>
+            <p><b>Time period of revolution:</b></p>
+            <p>The time period is independent of the velocity and radius:</p>
+            <div class="math-eq">$$ T = \frac{2\pi r}{v} = \frac{2\pi}{v} \left( \frac{mv}{qB} \right) = \frac{2\pi m}{qB} $$</div>
+            <div class="math-eq">$$ T = \frac{2\pi (2.0 \times 10^{-13} \text{ kg})}{(2.0 \times 10^{-8} \text{ C})(0.10 \text{ T})} = \frac{4\pi \times 10^{-13}}{2.0 \times 10^{-9}} = 2\pi \times 10^{-4} \text{ s} \approx 6.28 \times 10^{-4} \text{ s} $$</div>
+        </div>
+        <hr>
+
+        <h4 id="exer34_31">Exercise 34.31</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A proton describes a circle of radius 1.0 cm in a magnetic field of strength 0.10 T. What would be the radius of the circle described by an $\alpha$-particle moving with the same speed in the same magnetic field?</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>The radius of the circular path of a charged particle in a magnetic field is given by $r = mv/qB$.</p>
+            <p>In this problem, the speed $v$ and the magnetic field $B$ are the same for both the proton and the alpha particle. Therefore, the radius is proportional to the mass-to-charge ratio ($m/q$).</p>
+            <div class="math-eq">$$ r \propto \frac{m}{q} $$</div>
+            <p>Let's compare the properties of a proton ($p$) and an alpha particle ($\alpha$):
+            <ul>
+                <li>Proton: mass $m_p$, charge $q_p = e$.</li>
+                <li>Alpha particle: mass $m_\alpha \approx 4m_p$, charge $q_\alpha = 2e$.</li>
+            </ul></p>
+            <p>The ratio of their radii is:</p>
+            <div class="math-eq">$$ \frac{r_\alpha}{r_p} = \frac{m_\alpha/q_\alpha}{m_p/q_p} = \frac{4m_p/2e}{m_p/e} = \frac{2(m_p/e)}{m_p/e} = 2 $$</div>
+            <p>So, the radius for the alpha particle is twice the radius for the proton.</p>
+            <div class="math-eq">$$ r_\alpha = 2 \times r_p = 2 \times (1.0 \text{ cm}) = 2.0 \text{ cm} $$</div>
+        </div>
+        <hr>
+
+        <h4 id="exer34_35">Exercise 34.35</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A doubly-ionized helium atom (an $\alpha$-particle) travels at right angles to a magnetic field of magnitude 1.0 T at a velocity of 10 km/s. Find (a) the force acting on the particle, (b) the radius of the circle in which it moves and (c) the time taken by the particle to complete the circle.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>A doubly-ionized helium atom is an alpha particle.
+            <ul>
+                <li>Charge, $q = +2e = 2 \times 1.6 \times 10^{-19} = 3.2 \times 10^{-19}$ C.</li>
+                <li>Mass, $m \approx 4 \text{ amu} \approx 4 \times 1.66 \times 10^{-27} \text{ kg} = 6.64 \times 10^{-27}$ kg.</li>
+                <li>Velocity, $v = 10 \text{ km/s} = 10^4$ m/s.</li>
+                <li>Magnetic field, $B = 1.0$ T.</li>
+                <li>Angle, $\theta=90^\circ$.</li>
+            </ul></p>
+            <p><b>(a) Force on the particle</b></p>
+            <div class="math-eq">$$ F = qvB\sin\theta = (3.2 \times 10^{-19})(10^4)(1.0)(1) = 3.2 \times 10^{-15} \text{ N} $$</div>
+            
+            <p><b>(b) Radius of the circle</b></p>
+            <div class="math-eq">$$ r = \frac{mv}{qB} = \frac{(6.64 \times 10^{-27})(10^4)}{3.2 \times 10^{-19}} \approx 2.08 \times 10^{-4} \text{ m} \approx 0.21 \text{ mm} $$</div>
+
+            <p><b>(c) Time to complete the circle (Period)</b></p>
+            <div class="math-eq">$$ T = \frac{2\pi m}{qB} = \frac{2\pi (6.64 \times 10^{-27})}{3.2 \times 10^{-19}} \approx 1.30 \times 10^{-7} \text{ s} $$</div>
+            <p><i>Note: The provided solutions use $m = 4 \times 1.6 \times 10^{-27} = 6.4 \times 10^{-27}$ kg. Using this value gives $r=2.0 \times 10^{-4}$ m and $T=4\pi \times 10^{-8} \approx 1.26 \times 10^{-7}$ s.</i></p>
+        </div>
+        <hr>
+
+        <h4 id="exer34_40">Exercise 34.40</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A narrow beam of singly-ionized carbon atoms, moving at a constant velocity of $6.0 \times 10^4$ m/s, is sent perpendicularly into a rectangular region having a uniform magnetic field $B=0.5$ T. It is found that two beams emerge from the field in two different directions. The separation from the incident beam for these two beams are 3.0 cm and 3.5 cm. Identify the isotopes of carbon in the beam. (Take mass of carbon atom $= A(1.6 \times 10^{-27})$ kg, where A is the mass number).</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>This is a mass spectrometer setup. The ions travel in semicircular paths. The separation from the incident beam is the diameter of the path, $d = 2r$.</p>
+            <p>The radius of the path is given by $r = mv/qB$. Therefore, the diameter is $d = 2mv/qB$.</p>
+            <p>In this problem, $v, q, B$ are the same for all ions. So the diameter $d$ is directly proportional to the mass $m$ of the ion.</p>
+            <div class="math-eq">$$ d \propto m $$</div>
+            <p>Let the two isotopes have masses $m_1$ and $m_2$, corresponding to diameters $d_1 = 3.0$ cm and $d_2 = 3.5$ cm.</p>
+            <p>The ratio of their masses is equal to the ratio of their diameters:</p>
+            <div class="math-eq">$$ \frac{m_2}{m_1} = \frac{d_2}{d_1} = \frac{3.5 \text{ cm}}{3.0 \text{ cm}} = \frac{7}{6} $$</div>
+            <p>The masses of isotopes are proportional to their mass numbers ($A$). So, the ratio of the mass numbers of the two carbon isotopes is also 7/6.</p>
+            <div class="math-eq">$$ \frac{A_2}{A_1} = \frac{7}{6} $$</div>
+            <p>We are looking for two common isotopes of carbon whose mass numbers are in the ratio 7:6. The most common isotopes of carbon are C-12, C-13, and C-14. Let's check the ratio for C-14 and C-12:</p>
+            <div class="math-eq">$$ \frac{14}{12} = \frac{7}{6} $$</div>
+            <p>This matches our result. Therefore, the two isotopes present in the beam are Carbon-12 and Carbon-14.</p>
+        </div>
+        <hr>
+
+        <h4 id="exer34_50">Exercise 34.50</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A proton projected in a magnetic field of 0.020 T travels along a helical path of radius 5.0 cm and pitch 20 cm. Find the components of the velocity of the proton along and perpendicular to the magnetic field. Take the mass of the proton = $1.6 \times 10^{-27}$ kg.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>The motion of the proton is a helix. This motion can be decomposed into two parts:
+            <ul>
+                <li>Circular motion in the plane perpendicular to the magnetic field, with velocity $v_\perp$.</li>
+                <li>Uniform motion along the direction of the magnetic field, with velocity $v_{||}$.</li>
+            </ul></p>
+            <p>The radius of the helix is determined by $v_\perp$:
+            <div class="math-eq">$$ r = \frac{m v_\perp}{qB} \implies v_\perp = \frac{rqB}{m} $$</div>
+            The pitch of the helix is determined by $v_{||}$ and the time period $T$:
+            <div class="math-eq">$$ p = v_{||} T = v_{||} \left(\frac{2\pi m}{qB}\right) \implies v_{||} = \frac{p q B}{2\pi m} $$</div></p>
+            <p>Given:
+            <ul>
+                <li>$B = 0.020$ T</li>
+                <li>$r = 5.0 \text{ cm} = 0.05$ m</li>
+                <li>$p = 20 \text{ cm} = 0.20$ m</li>
+                <li>Proton properties: $q = 1.6 \times 10^{-19}$ C, $m = 1.6 \times 10^{-27}$ kg</li>
+            </ul></p>
+            <p><b>Velocity component perpendicular to B ($v_\perp$):</b></p>
+            <div class="math-eq">$$ v_\perp = \frac{(0.05 \text{ m})(1.6 \times 10^{-19} \text{ C})(0.020 \text{ T})}{1.6 \times 10^{-27} \text{ kg}} = 1.0 \times 10^5 \text{ m/s} $$</div>
+            <p><b>Velocity component parallel to B ($v_{||}$):</b></p>
+            <div class="math-eq">$$ v_{||} = \frac{(0.20 \text{ m})(1.6 \times 10^{-19} \text{ C})(0.020 \text{ T})}{2\pi (1.6 \times 10^{-27} \text{ kg})} = \frac{0.20 \times 0.020}{2\pi \times 10^{-8}} \text{ m/s} \approx 6.37 \times 10^4 \text{ m/s} $$</div>
+        </div>
+        <hr>
+
+        <h4 id="exer34_53">Exercise 34.53</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A rectangular coil of 100 turns has length 5 cm and width 4 cm. It is placed with its plane parallel to a uniform magnetic field of 0.2 T. A current of 2 A is sent through the coil. Find the magnitude of the torque acting on the coil.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>The torque on a current loop in a magnetic field is given by $\vec{\tau} = \vec{\mu} \times \vec{B}$, where $\vec{\mu}$ is the magnetic dipole moment of the loop. The magnitude is $\tau = \mu B \sin\theta$.</p>
+            <p>The magnetic moment is $\vec{\mu} = Ni\vec{A}$, where $N$ is the number of turns, $i$ is the current, and $\vec{A}$ is the area vector.</p>
+            <p>Given:
+            <ul>
+                <li>Number of turns, $N = 100$.</li>
+                <li>Length = 5 cm = 0.05 m, Width = 4 cm = 0.04 m.</li>
+                <li>Area, $A = (0.05 \text{ m}) \times (0.04 \text{ m}) = 0.002 \text{ m}^2 = 2 \times 10^{-3} \text{ m}^2$.</li>
+                <li>Current, $i = 2 \text{ A}$.</li>
+                <li>Magnetic field, $B = 0.2 \text{ T}$.</li>
+            </ul>
+            </p>
+            <p>The coil's plane is parallel to the magnetic field. The area vector $\vec{A}$ (and thus the magnetic moment $\vec{\mu}$) is perpendicular to the plane of the coil. Therefore, the angle $\theta$ between $\vec{\mu}$ and $\vec{B}$ is $90^\circ$. This orientation gives the maximum torque.</p>
+            <p>First, calculate the magnitude of the magnetic moment:</p>
+            <div class="math-eq">$$ \mu = NiA = (100)(2 \text{ A})(2 \times 10^{-3} \text{ m}^2) = 0.4 \text{ A}\cdot\text{m}^2 $$</div>
+            <p>Now, calculate the magnitude of the torque:</p>
+            <div class="math-eq">$$ \tau = \mu B \sin\theta = (0.4 \text{ A}\cdot\text{m}^2)(0.2 \text{ T})\sin(90^\circ) = 0.08 \text{ N}\cdot\text{m} $$</div>
+        </div>
+        <hr>
+
+        <h4 id="exer34_54">Exercise 34.54</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>A 50-turn circular coil of radius 2.0 cm carrying a current of 5.0 A is rotated in a magnetic field of strength 0.20 T. (a) What is the maximum torque that can be exerted on the coil? (b) In a particular position, the torque is half of this maximum value. What is the angle between the magnetic field and the plane of the coil?</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>The torque is given by $\tau = NiAB \sin\theta$, where $\theta$ is the angle between the magnetic moment $\vec{\mu}$ and the magnetic field $\vec{B}$.</p>
+            <p>Given:
+            <ul>
+                <li>$N = 50$, $r = 2.0 \text{ cm} = 0.02 \text{ m}$, $i=5.0 \text{ A}$, $B=0.20 \text{ T}$.</li>
+                <li>Area, $A = \pi r^2 = \pi (0.02)^2 = 4\pi \times 10^{-4} \text{ m}^2$.</li>
+            </ul>
+            </p>
+            <p><b>(a) Maximum Torque</b></p>
+            <p>Maximum torque occurs when $\sin\theta = 1$, which means $\theta=90^\circ$. This happens when the magnetic moment is perpendicular to the field (i.e., the plane of the coil is parallel to the field).</p>
+            <div class="math-eq">$$ \tau_{max} = NiAB = (50)(5.0)(4\pi \times 10^{-4})(0.20) $$</div>
+            <div class="math-eq">$$ \tau_{max} = 200\pi \times 10^{-4} = 0.02\pi \approx 0.0628 \text{ N}\cdot\text{m} $$</div>
+            
+            <p><b>(b) Angle for half maximum torque</b></p>
+            <p>We are given $\tau = \tau_{max} / 2$.</p>
+            <div class="math-eq">$$ NiAB \sin\theta = \frac{1}{2} (NiAB) $$</div>
+            <div class="math-eq">$$ \sin\theta = \frac{1}{2} \implies \theta = 30^\circ \text{ or } 150^\circ $$</div>
+            <p>Here, $\theta$ is the angle between the magnetic moment (normal to the coil) and the magnetic field. The question asks for the angle between the magnetic field and the plane of the coil. Let's call this angle $\alpha$.</p>
+            <p>The angle between the plane and the normal is $90^\circ$. So, $\alpha = 90^\circ - \theta$.</p>
+            <div class="math-eq">$$ \alpha = 90^\circ - 30^\circ = 60^\circ $$</div>
+            <p>The angle between the magnetic field and the plane of the coil is 60°.</p>
+        </div>
+        <hr>
+
+        <h4 id="exer34_59">Exercise 34.59</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>Consider a nonconducting ring of radius $r$ and mass $m$ which has a total charge $q$ distributed uniformly on it. The ring is rotated about its axis with an angular speed $\omega$. (a) Find the equivalent electric current in the ring. (b) Find the magnetic moment $\mu$ of the ring. (c) Show that $\mu = \frac{q}{2m}l$ where $l$ is the angular momentum of the ring about its axis of rotation.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p><b>(a) Equivalent Current</b></p>
+            <p>The ring rotates with angular speed $\omega$. The time period of one revolution is $T = 2\pi/\omega$. In this time, the total charge $q$ passes any given point. The equivalent current $i$ is the charge passing per unit time.</p>
+            <div class="math-eq">$$ i = \frac{q}{T} = \frac{q}{2\pi/\omega} = \frac{q\omega}{2\pi} $$</div>
+
+            <p><b>(b) Magnetic Moment</b></p>
+            <p>The magnetic moment of a current loop is $\mu = iA$, where A is the area of the loop. For the ring, $A = \pi r^2$.</p>
+            <div class="math-eq">$$ \mu = \left(\frac{q\omega}{2\pi}\right)(\pi r^2) = \frac{q\omega r^2}{2} $$</div>
+
+            <p><b>(c) Relation with Angular Momentum</b></p>
+            <p>The angular momentum $l$ of the ring (treated as a point mass on the circumference) is $l = I\omega$, where $I$ is the moment of inertia. For a ring, $I = mr^2$.</p>
+            <div class="math-eq">$$ l = (mr^2)\omega $$</div>
+            <p>Now, let's find the ratio of the magnetic moment $\mu$ to the angular momentum $l$:</p>
+            <div class="math-eq">$$ \frac{\mu}{l} = \frac{q\omega r^2 / 2}{mr^2 \omega} = \frac{q}{2m} $$</div>
+            <p>This gives the relation:</p>
+            <div class="math-eq">$$ \mu = \frac{q}{2m} l $$</div>
+            <p>This ratio, $\gamma = \mu/l = q/2m$, is known as the gyromagnetic ratio for the orbiting charge.</p>
+        </div>
+        <hr>
+
+        <h4 id="exer34_60">Exercise 34.60</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>Consider a nonconducting plate of radius $r$ and mass $m$ which has a charge $q$ distributed uniformly over it. The plate is rotated about its axis with an angular speed $\omega$. Show that the magnetic moment $\mu$ and the angular momentum $l$ of the plate are related as $\mu = \frac{q}{2m}l$.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>We can find the total magnetic moment by integrating the moments of infinitesimal rings that make up the disc.</p>
+            <p>Consider a thin ring of radius $x$ and width $dx$.
+            <ul>
+                <li>Surface charge density: $\sigma = \frac{q}{\pi r^2}$.</li>
+                <li>Area of the ring: $dA = 2\pi x\,dx$.</li>
+                <li>Charge on the ring: $dq = \sigma\,dA = \frac{q}{\pi r^2}(2\pi x\,dx) = \frac{2q}{r^2}x\,dx$.</li>
+            </ul></p>
+            <p>This ring rotates with angular speed $\omega$, so its equivalent current is $di = \frac{dq}{T} = \frac{dq \omega}{2\pi} = \frac{(2q/r^2)x\,dx \cdot \omega}{2\pi} = \frac{q\omega}{\pi r^2}x\,dx$.</p>
+            <p>The magnetic moment of this small ring is $d\mu = (di) \times (\text{Area of ring}) = (\frac{q\omega}{\pi r^2}x\,dx)(\pi x^2) = \frac{q\omega}{r^2}x^3\,dx$.</p>
+            <p>To get the total magnetic moment, we integrate from $x=0$ to $x=r$:</p>
+            <div class="math-eq">$$ \mu = \int_0^r d\mu = \int_0^r \frac{q\omega}{r^2}x^3\,dx = \frac{q\omega}{r^2} \left[\frac{x^4}{4}\right]_0^r = \frac{q\omega}{r^2} \frac{r^4}{4} = \frac{q\omega r^2}{4} $$</div>
+            <p>The angular momentum of the disc is $l = I\omega$. For a disc, $I = \frac{1}{2}mr^2$.</p>
+            <div class="math-eq">$$ l = \frac{1}{2}mr^2\omega $$</div>
+            <p>Now, let's find the ratio $\mu/l$:</p>
+            <div class="math-eq">$$ \frac{\mu}{l} = \frac{q\omega r^2 / 4}{(1/2)mr^2 \omega} = \frac{q/4}{m/2} = \frac{q}{2m} $$</div>
+            <p>Therefore, we have shown that $\mu = \frac{q}{2m}l$.</p>
+        </div>
+        <hr>
+
+        <h4 id="exer34_61">Exercise 34.61</h4>
+        <div class="question-block">
+            <h5>Question</h5>
+            <p>Consider a solid sphere of radius $r$ and mass $m$ which has a charge $q$ distributed uniformly over its volume. The sphere is rotated about a diameter with an angular speed $\omega$. Show that the magnetic moment $\mu$ and the angular momentum $l$ of the sphere are related as $\mu = \frac{q}{2m}l$.</p>
+        </div>
+        <div class="answer-block">
+            <h5>Solution</h5>
+            <p>We can find the total magnetic moment by integrating the moments of infinitesimal discs that make up the sphere.</p>
+            <p>Consider a thin disc of thickness $dz$ at a distance $z$ from the center. Its radius is $x = \sqrt{r^2-z^2}$.
+            <ul>
+                <li>Volume charge density: $\rho = \frac{q}{(4/3)\pi r^3}$.</li>
+                <li>Volume of the disc: $dV = (\pi x^2)dz = \pi(r^2-z^2)dz$.</li>
+                <li>Charge on the disc: $dq = \rho\,dV = \frac{3q}{4\pi r^3}\pi(r^2-z^2)dz = \frac{3q}{4r^3}(r^2-z^2)dz$.</li>
+            </ul></p>
+            <p>From the previous problem (Ex 34.60), we know the magnetic moment of a rotating disc is $\frac{(\text{charge})\omega(\text{radius})^2}{4}$. For our elemental disc:</p>
+            <div class="math-eq">$$ d\mu = \frac{dq \cdot \omega \cdot x^2}{4} = \frac{\omega(r^2-z^2)}{4} \left(\frac{3q}{4r^3}(r^2-z^2)dz\right) = \frac{3q\omega}{16r^3}(r^2-z^2)^2 dz $$</div>
+            <p>To get the total magnetic moment, we integrate from $z=-r$ to $z=r$:</p>
+            <div class="math-eq">$$ \mu = \int_{-r}^{r} d\mu = \frac{3q\omega}{16r^3} \int_{-r}^{r} (r^4 - 2r^2z^2 + z^4) dz $$</div>
+            <p>The integral is an even function, so we can write:</p>
+            <div class="math-eq">$$ \int_{-r}^{r} \dots dz = 2 \int_{0}^{r} (r^4 - 2r^2z^2 + z^4) dz = 2\left[r^4z - \frac{2r^2z^3}{3} + \frac{z^5}{5}\right]_0^r = 2\left(r^5 - \frac{2r^5}{3} + \frac{r^5}{5}\right) = 2r^5\left(\frac{15-10+3}{15}\right) = \frac{16r^5}{15} $$</div>
+            <p>Substituting this back into the expression for $\mu$:</p>
+            <div class="math-eq">$$ \mu = \frac{3q\omega}{16r^3} \left(\frac{16r^5}{15}\right) = \frac{q\omega r^2}{5} $$</div>
+            <p>The angular momentum of a solid sphere is $l = I\omega$. For a sphere, $I = \frac{2}{5}mr^2$.</p>
+            <div class="math-eq">$$ l = \frac{2}{5}mr^2\omega $$</div>
+            <p>Now, let's find the ratio $\mu/l$:</p>
+            <div class="math-eq">$$ \frac{\mu}{l} = \frac{q\omega r^2 / 5}{(2/5)mr^2 \omega} = \frac{q/5}{2m/5} = \frac{q}{2m} $$</div>
+            <p>Therefore, we have shown that $\mu = \frac{q}{2m}l$.</p>
+        </div>
+        <hr>
+
+    </main>
+</body>
+</html>

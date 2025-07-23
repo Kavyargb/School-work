@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> MySQL and Python</title>
+
+    <!-- MathJax v3 Configuration and Library -->
+    <script>
+    window.MathJax = {
+      loader: {load: ['[tex]/mhchem', '[tex]/cancel']},
+      tex: {
+        packages: {'[+]': ['mhchem', 'cancel']},
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    
+    <!-- Link to Central Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="body-content">
+    <!-- Top navigation bar placeholder -->
+    <nav class="global-nav" id="global-navbar"></nav>
+    
+    <!-- Sidebar placeholder -->
+    <nav id="index-sidebar"></nav>
+    <script src="../main.js"></script>
+
+    <script src="../nav.js"></script>
+
+    <main class="main-content">
+        <!-- For all examples, we will assume two tables: -->
+        <!-- Employees(EmployeeID, FirstName, LastName, Salary, HireDate, DepartmentID) -->
+        <!-- Departments(DepartmentID, DepartmentName) -->
+        
+        <h3 id="s1">I. SQL Fundamentals: Introduction & Syntax</h3>
+        <div class="solution-box">
+            <p><strong>SQL (Structured Query Language)</strong> is the standard language for interacting with relational databases like MySQL, PostgreSQL, SQL Server, etc. It's used to create, manage, and query data.</p>
+            <p><strong>MySQL</strong> is a specific, open-source Relational Database Management System (RDBMS) that uses SQL. Think of SQL as the language and MySQL as one of the most popular platforms that understands this language.</p>
+            <h5>SQL Syntax Rules</h5>
+            <ul>
+                <li>SQL keywords are <strong>not case-sensitive</strong> (`SELECT` is the same as `select`), but it's a common convention to write them in uppercase for readability.</li>
+                <li>Table and column names can be case-sensitive depending on the operating system and database configuration. It's best practice to be consistent.</li>
+                <li>Statements are terminated with a semicolon (`;`). While often optional in single-statement clients, it's required when running multiple statements.</li>
+            </ul>
+        </div>
+        
+        <h3 id="s2">I. SQL Fundamentals: Data Types</h3>
+        <div class="solution-box">
+            <p>When creating a table, each column must be assigned a data type. This defines what kind of data the column can hold.</p>
+            <h5>Common MySQL Data Types</h5>
+            <ul>
+                <li><strong>String Types:</strong>
+                    <ul>
+                        <li><code>VARCHAR(n)</code>: A variable-length string that can hold up to `n` characters. Use this for most text data (names, titles).</li>
+                        <li><code>TEXT</code>: For long-form text (e.g., product descriptions, articles).</li>
+                    </ul>
+                </li>
+                <li><strong>Numeric Types:</strong>
+                    <ul>
+                        <li><code>INT</code> or <code>INTEGER</code>: Whole numbers.</li>
+                        <li><code>DECIMAL(p, s)</code> or <code>NUMERIC(p, s)</code>: Fixed-point numbers, ideal for currency. `p` is the total number of digits, `s` is the number of digits after the decimal point. E.g., `DECIMAL(10, 2)` can store a number like `12345678.99`.</li>
+                        <li><code>FLOAT</code>, <code>DOUBLE</code>: Floating-point numbers.</li>
+                    </ul>
+                </li>
+                <li><strong>Date and Time Types:</strong>
+                    <ul>
+                        <li><code>DATE</code>: Stores a date in 'YYYY-MM-DD' format.</li>
+                        <li><code>DATETIME</code>: Stores a date and time in 'YYYY-MM-DD HH:MI:SS' format.</li>
+                        <li><code>TIMESTAMP</code>: Similar to `DATETIME` but is often used for tracking when a row was last updated.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <h3 id="s3">I. SQL Fundamentals: Database & Table Management</h3>
+        <div class="solution-box">
+            <h5>Creating and Dropping a Database</h5>
+            <p>A database is a container for your tables.</p>
+            <pre class="code-box"><span class="keyword">CREATE DATABASE</span> company_db;
+<span class="keyword">DROP DATABASE</span> company_db;</pre>
+            
+            <h5>Creating and Dropping a Table</h5>
+            <p>Tables store the actual data in rows and columns.</p>
+            <pre class="code-box"><span class="comment">-- A simple table definition for our examples</span>
+<span class="keyword">CREATE TABLE</span> Departments (
+    DepartmentID <span class="keyword">INT PRIMARY KEY</span>,
+    DepartmentName <span class="keyword">VARCHAR</span>(<span class="number">100</span>)
+);
+
+<span class="keyword">CREATE TABLE</span> Employees (
+    EmployeeID <span class="keyword">INT PRIMARY KEY AUTO_INCREMENT</span>,
+    FirstName <span class="keyword">VARCHAR</span>(<span class="number">50</span>),
+    LastName <span class="keyword">VARCHAR</span>(<span class="number">50</span>),
+    Salary <span class="keyword">DECIMAL</span>(<span class="number">10</span>, <span class="number">2</span>),
+    HireDate <span class="keyword">DATE</span>,
+    DepartmentID <span class="keyword">INT</span>,
+    <span class="keyword">FOREIGN KEY</span> (DepartmentID) <span class="keyword">REFERENCES</span> Departments(DepartmentID)
+);
+
+<span class="comment">-- To delete a table</span>
+<span class="keyword">DROP TABLE</span> Employees;</pre>
+        </div>
+
+        <h3 id="s4">I. SQL Fundamentals: Comments & Operators</h3>
+        <div class="solution-box">
+            <h5>Comments</h5>
+            <p>Comments are used to explain parts of your SQL code. They are ignored by the database.</p>
+            <pre class="code-box"><span class="comment">-- This is a single-line comment</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Employees;
+
+<span class="comment">/* 
+This is a 
+multi-line comment.
+*/</span></pre>
+            <h5>SQL Operators</h5>
+            <p>Operators are used in the `WHERE` clause to perform comparisons and logical operations.</p>
+            <ul>
+                <li><strong>Arithmetic:</strong> `+`, `-`, `*`, `/`, `%` (Modulo)</li>
+                <li><strong>Comparison:</strong> `=`, `!=` or `<>`, `>`, `<`, `>=`, `<=`</li>
+                <li><strong>Logical:</strong> `AND`, `OR`, `NOT`, `IN`, `BETWEEN`, `LIKE`, `EXISTS`</li>
+            </ul>
+        </div>
+        
+        <hr>
+
+        <h3 id="s5">II. Data Query & Manipulation: SELECT / DISTINCT / TOP</h3>
+        <div class="solution-box">
+            <h5>SELECT</h5>
+            <p>The `SELECT` statement is used to query data from a database. You can select all columns using `*` or specify individual columns.</p>
+            <pre class="code-box"><span class="comment">-- Select all columns from the Employees table</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Employees;
+
+<span class="comment">-- Select only specific columns</span>
+<span class="keyword">SELECT</span> FirstName, LastName, Salary <span class="keyword">FROM</span> Employees;</pre>
+            
+            <h5>SELECT DISTINCT</h5>
+            <p>Returns only unique (distinct) values from a column.</p>
+            <pre class="code-box"><span class="comment">-- Find the unique DepartmentIDs that have employees</span>
+<span class="keyword">SELECT DISTINCT</span> DepartmentID <span class="keyword">FROM</span> Employees;</pre>
+            
+            <h5>SELECT TOP (LIMIT in MySQL)</h5>
+            <p>Used to specify the number of records to return. While other databases use `TOP`, MySQL uses `LIMIT`.</p>
+            <pre class="code-box"><span class="comment">-- Get the first 5 employees from the table</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Employees
+<span class="keyword">LIMIT</span> <span class="number">5</span>;</pre>
+        </div>
+        
+        <h3 id="s6">II. Data Query & Manipulation: WHERE Clause</h3>
+        <div class="solution-box">
+            <p>The `WHERE` clause is used to filter records and extract only those that fulfill a specified condition.</p>
+            <pre class="code-box"><span class="comment">-- Find all employees with a salary greater than 70000</span>
+<span class="keyword">SELECT</span> FirstName, Salary <span class="keyword">FROM</span> Employees
+<span class="keyword">WHERE</span> Salary <span class="operator">></span> <span class="number">70000</span>;
+
+<span class="comment">-- Find the employee with the last name 'Smith'</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Employees
+<span class="keyword">WHERE</span> LastName <span class="operator">=</span> <span class="string">'Smith'</span>;</pre>
+        </div>
+        
+        <h3 id="s7">II. Data Query & Manipulation: Logical Operators</h3>
+        <div class="solution-box">
+            <h5>AND, OR, NOT</h5>
+            <p>These operators are used to combine multiple conditions in a `WHERE` clause.</p>
+            <pre class="code-box"><span class="comment">-- Employees in Department 1 AND have a salary over 60000</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Employees
+<span class="keyword">WHERE</span> DepartmentID <span class="operator">=</span> <span class="number">1</span> <span class="keyword">AND</span> Salary <span class="operator">></span> <span class="number">60000</span>;
+
+<span class="comment">-- Employees in Department 1 OR Department 2</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Employees
+<span class="keyword">WHERE</span> DepartmentID <span class="operator">=</span> <span class="number">1</span> <span class="keyword">OR</span> DepartmentID <span class="operator">=</span> <span class="number">2</span>;
+
+<span class="comment">-- Employees NOT in Department 1</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Employees
+<span class="keyword">WHERE NOT</span> DepartmentID <span class="operator">=</span> <span class="number">1</span>;</pre>
+        </div>
+        
+        <h3 id="s8">II. Data Query & Manipulation: ORDER BY</h3>
+        <div class="solution-box">
+            <p>The `ORDER BY` keyword is used to sort the result-set in ascending or descending order.</p>
+            <ul>
+                <li><code>ASC</code>: Ascending order (default).</li>
+                <li><code>DESC</code>: Descending order.</li>
+            </ul>
+            <pre class="code-box"><span class="comment">-- Get all employees, sorted by salary in descending order</span>
+<span class="keyword">SELECT</span> FirstName, Salary <span class="keyword">FROM</span> Employees
+<span class="keyword">ORDER BY</span> Salary <span class="keyword">DESC</span>;
+
+<span class="comment">-- Sort by DepartmentID, then by LastName alphabetically</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Employees
+<span class="keyword">ORDER BY</span> DepartmentID, LastName <span class="keyword">ASC</span>;</pre>
+        </div>
+
+        <h3 id="s9">II. Data Query & Manipulation: INSERT INTO</h3>
+        <div class="solution-box">
+            <p>The `INSERT INTO` statement is used to add new rows of data to a table.</p>
+            <pre class="code-box"><span class="comment">-- Insert a new department</span>
+<span class="keyword">INSERT INTO</span> Departments (DepartmentID, DepartmentName)
+<span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="string">'Engineering'</span>);
+
+<span class="comment">-- Insert a new employee (EmployeeID is auto-incremented, so we don't provide it)</span>
+<span class="keyword">INSERT INTO</span> Employees (FirstName, LastName, Salary, HireDate, DepartmentID)
+<span class="keyword">VALUES</span> (<span class="string">'Jane'</span>, <span class="string">'Doe'</span>, <span class="number">80000.00</span>, <span class="string">'2023-01-15'</span>, <span class="number">1</span>);
+</pre>
+        </div>
+
+        <h3 id="s10">II. Data Query & Manipulation: NULL Values & Functions</h3>
+        <div class="solution-box">
+            <p>A `NULL` value in a table is a field with no value. It is different from zero or an empty string. To check for `NULL`, you must use `IS NULL` or `IS NOT NULL`.</p>
+            <pre class="code-box"><span class="comment">-- Find employees who have not been assigned a department</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Employees
+<span class="keyword">WHERE</span> DepartmentID <span class="keyword">IS NULL</span>;
+</pre>
+            <h5>NULL Functions</h5>
+            <p>These functions help substitute `NULL` values with something else in your query results.</p>
+            <ul>
+                <li><code>IFNULL(column, value)</code>: Returns `value` if `column` is `NULL`, otherwise returns the column's value.</li>
+                <li><code>COALESCE(val1, val2, ...)</code>: Returns the first non-NULL value in the list.</li>
+            </ul>
+            <pre class="code-box"><span class="comment">-- Display 'No Department' for employees with a NULL DepartmentID</span>
+<span class="keyword">SELECT</span> FirstName, <span class="function">IFNULL</span>(DepartmentID, <span class="string">'No Department'</span>) <span class="keyword">FROM</span> Employees;</pre>
+        </div>
+        
+        <h3 id="s11">II. Data Query & Manipulation: UPDATE</h3>
+        <div class="solution-box">
+            <p>The `UPDATE` statement is used to modify existing records in a table. <strong>Always use a `WHERE` clause with `UPDATE`</strong>, or you will update all rows in the table!</p>
+            <pre class="code-box"><span class="comment">-- Give Jane Doe a raise</span>
+<span class="keyword">UPDATE</span> Employees
+<span class="keyword">SET</span> Salary <span class="operator">=</span> <span class="number">85000.00</span>
+<span class="keyword">WHERE</span> EmployeeID <span class="operator">=</span> <span class="number">1</span>; <span class="comment">-- Assuming Jane's ID is 1</span></pre>
+        </div>
+        
+        <h3 id="s12">II. Data Query & Manipulation: DELETE</h3>
+        <div class="solution-box">
+            <p>The `DELETE` statement is used to delete existing records from a table. <strong>Always use a `WHERE` clause with `DELETE`</strong>, or you will delete all rows!</p>
+            <pre class="code-box"><span class="comment">-- Delete the employee with ID 3</span>
+<span class="keyword">DELETE FROM</span> Employees
+<span class="keyword">WHERE</span> EmployeeID <span class="operator">=</span> <span class="number">3</span>;</pre>
+        </div>
+        
+        <hr>
+
+        <h3 id="s13">III. Advanced Filtering: LIKE & Wildcards</h3>
+        <div class="solution-box">
+            <p>The `LIKE` operator is used in a `WHERE` clause to search for a specified pattern in a column.</p>
+            <ul>
+                <li><code>%</code> (Percent sign): Represents zero, one, or multiple characters.</li>
+                <li><code>_</code> (Underscore): Represents a single character.</li>
+            </ul>
+            <pre class="code-box"><span class="comment">-- Find all employees whose first name starts with 'J'</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Employees
+<span class="keyword">WHERE</span> FirstName <span class="keyword">LIKE</span> <span class="string">'J%'</span>;
+
+<span class="comment">-- Find all employees whose last name has 'o' as the second letter</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Employees
+<span class="keyword">WHERE</span> LastName <span class="keyword">LIKE</span> <span class="string">'_o%'</span>;</pre>
+        </div>
+
+        <h3 id="s14">III. Advanced Filtering: IN & BETWEEN</h3>
+        <div class="solution-box">
+            <h5>IN</h5>
+            <p>The `IN` operator allows you to specify multiple values in a `WHERE` clause. It's a shorthand for multiple `OR` conditions.</p>
+            <pre class="code-box"><span class="comment">-- Find employees in Department 1, 3, or 5</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Employees
+<span class="keyword">WHERE</span> DepartmentID <span class="keyword">IN</span> (<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>);
+</pre>
+            <h5>BETWEEN</h5>
+            <p>The `BETWEEN` operator selects values within a given range. The values can be numbers, text, or dates. The endpoints are inclusive.</p>
+            <pre class="code-box"><span class="comment">-- Find employees with a salary between 50000 and 70000</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Employees
+<span class="keyword">WHERE</span> Salary <span class="keyword">BETWEEN</span> <span class="number">50000</span> <span class="keyword">AND</span> <span class="number">70000</span>;</pre>
+        </div>
+
+        <h3 id="s15">III. Advanced Filtering: Aliases</h3>
+        <div class="solution-box">
+            <p>SQL aliases are used to give a table or a column in a table a temporary, more readable name. They are especially useful in joins and with aggregate functions.</p>
+            <pre class="code-box"><span class="comment">-- Alias a column</span>
+<span class="keyword">SELECT</span> FirstName, Salary <span class="keyword">AS</span> AnnualSalary <span class="keyword">FROM</span> Employees;
+
+<span class="comment">-- Alias tables (very useful in Joins)</span>
+<span class="keyword">SELECT</span> e.FirstName, d.DepartmentName
+<span class="keyword">FROM</span> Employees <span class="keyword">AS</span> e
+<span class="keyword">JOIN</span> Departments <span class="keyword">AS</span> d <span class="keyword">ON</span> e.DepartmentID <span class="operator">=</span> d.DepartmentID;</pre>
+        </div>
+        
+        <hr>
+
+        <h3 id="s16">IV. Aggregation & Grouping: Aggregate Functions</h3>
+        <div class="solution-box">
+            <p>Aggregate functions perform a calculation on a set of values and return a single value.</p>
+            <ul>
+                <li><code>COUNT()</code>: Counts the number of rows.</li>
+                <li><code>SUM()</code>: Calculates the sum of a numeric column.</li>
+                <li><code>AVG()</code>: Calculates the average value of a numeric column.</li>
+                <li><code>MIN()</code>: Returns the smallest value in a column.</li>
+                <li><code>MAX()</code>: Returns the largest value in a column.</li>
+            </ul>
+            <pre class="code-box"><span class="comment">-- Find the total number of employees</span>
+<span class="keyword">SELECT COUNT</span>(EmployeeID) <span class="keyword">FROM</span> Employees;
+
+<span class="comment">-- Find the average salary</span>
+<span class="keyword">SELECT AVG</span>(Salary) <span class="keyword">AS</span> AverageSalary <span class="keyword">FROM</span> Employees;
+
+<span class="comment">-- Find the highest and lowest salaries</span>
+<span class="keyword">SELECT MAX</span>(Salary) <span class="keyword">AS</span> HighestSalary, <span class="function">MIN</span>(Salary) <span class="keyword">AS</span> LowestSalary <span class="keyword">FROM</span> Employees;</pre>
+        </div>
+
+        <h3 id="s17">IV. Aggregation & Grouping: GROUP BY</h3>
+        <div class="solution-box">
+            <p>The `GROUP BY` statement groups rows that have the same values in specified columns into summary rows. It is often used with aggregate functions to perform calculations on each group.</p>
+            <pre class="code-box"><span class="comment">-- Find the number of employees in each department</span>
+<span class="keyword">SELECT</span> DepartmentID, <span class="function">COUNT</span>(EmployeeID) <span class="keyword">AS</span> NumberOfEmployees
+<span class="keyword">FROM</span> Employees
+<span class="keyword">GROUP BY</span> DepartmentID;
+
+<span class="comment">-- Find the average salary for each department</span>
+<span class="keyword">SELECT</span> d.DepartmentName, <span class="function">AVG</span>(e.Salary) <span class="keyword">AS</span> AvgSalary
+<span class="keyword">FROM</span> Employees e
+<span class="keyword">JOIN</span> Departments d <span class="keyword">ON</span> e.DepartmentID <span class="operator">=</span> d.DepartmentID
+<span class="keyword">GROUP BY</span> d.DepartmentName;</pre>
+        </div>
+
+        <h3 id="s18">IV. Aggregation & Grouping: HAVING</h3>
+        <div class="solution-box">
+            <p>The `HAVING` clause was added to SQL because the `WHERE` keyword cannot be used with aggregate functions. `HAVING` filters the results of `GROUP BY`.</p>
+            <pre class="code-box"><span class="comment">-- Find departments that have more than 10 employees</span>
+<span class="keyword">SELECT</span> DepartmentID, <span class="function">COUNT</span>(EmployeeID) <span class="keyword">AS</span> EmployeeCount
+<span class="keyword">FROM</span> Employees
+<span class="keyword">GROUP BY</span> DepartmentID
+<span class="keyword">HAVING COUNT</span>(EmployeeID) <span class="operator">></span> <span class="number">10</span>;</pre>
+        </div>
+
+        <hr>
+
+        <h3 id="s19">V. Joining Tables: INNER JOIN</h3>
+        <div class="solution-box">
+            <p>The `INNER JOIN` keyword selects records that have matching values in both tables. It is the most common type of join.</p>
+            <pre class="code-box"><span class="comment">-- Get a list of employees and their department names</span>
+<span class="keyword">SELECT</span> e.FirstName, e.LastName, d.DepartmentName
+<span class="keyword">FROM</span> Employees <span class="keyword">AS</span> e
+<span class="keyword">INNER JOIN</span> Departments <span class="keyword">AS</span> d
+<span class="keyword">ON</span> e.DepartmentID <span class="operator">=</span> d.DepartmentID;</pre>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" fill="#f0f0f0">
+                <rect width="100%" height="100%" fill="#1e1b29" rx="10" />
+                <circle cx="150" cy="150" r="80" stroke="#ff3d8b" stroke-width="4" fill="rgba(255, 61, 139, 0.2)" />
+                <text x="150" y="150" text-anchor="middle" font-size="18">Table A</text>
+                <circle cx="250" cy="150" r="80" stroke="#00e5ff" stroke-width="4" fill="rgba(0, 229, 255, 0.2)" />
+                <text x="250" y="150" text-anchor="middle" font-size="18">Table B</text>
+                <path d="M199.7,194.8C183.1,213.7,160.1,225,135,225c-44.2,0-80-35.8-80-80s35.8-80,80-80c25.1,0,48.1,11.3,64.7,29.2" fill="none" />
+                <path d="M200,105c16.6-18.9,39.6-30,65-30c44.2,0,80,35.8,80,80s-35.8,80-80,80c-25.4,0-48.4-11.1-65-30" fill="none" />
+                <defs><clipPath id="clip"><path d="M250,70c44.2,0,80,35.8,80,80s-35.8,80-80,80c-25.4,0-48.4-11.1-65-30c16.6,18.9,39.6,30,65,30c44.2,0,80-35.8,80-80s-35.8-80-80-80c-25.4,0-48.4-11.1-65-30C201.6,58.9,224.6,70,250,70z" /></clipPath></defs>
+                <circle cx="150" cy="150" r="80" fill="#9e4dff" clip-path="url(#clip)" />
+                <text x="200" y="50" text-anchor="middle" font-size="24" font-weight="bold">INNER JOIN</text>
+            </svg>
+            <p class="img-caption">Returns only the overlapping (matching) records.</p>
+        </div>
+        
+        <h3 id="s20">V. Joining Tables: LEFT & RIGHT JOIN</h3>
+        <div class="solution-box">
+            <h5>LEFT JOIN</h5>
+            <p>The `LEFT JOIN` keyword returns all records from the left table (table1), and the matching records from the right table (table2). The result is `NULL` from the right side if there is no match.</p>
+            <pre class="code-box"><span class="comment">-- List ALL employees, and their department name if they have one</span>
+<span class="keyword">SELECT</span> e.FirstName, d.DepartmentName
+<span class="keyword">FROM</span> Employees e
+<span class="keyword">LEFT JOIN</span> Departments d <span class="keyword">ON</span> e.DepartmentID <span class="operator">=</span> d.DepartmentID;</pre>
+            <h5>RIGHT JOIN</h5>
+            <p>The `RIGHT JOIN` keyword returns all records from the right table (table2), and the matching records from the left table (table1). The result is `NULL` from the left side when there is no match.</p>
+            <pre class="code-box"><span class="comment">-- List ALL departments, and the employees in them if any exist</span>
+<span class="keyword">SELECT</span> e.FirstName, d.DepartmentName
+<span class="keyword">FROM</span> Employees e
+<span class="keyword">RIGHT JOIN</span> Departments d <span class="keyword">ON</span> e.DepartmentID <span class="operator">=</span> d.DepartmentID;</pre>
+        </div>
+        
+        <h3 id="s21">V. Joining Tables: FULL & SELF JOIN</h3>
+        <div class="solution-box">
+            <h5>FULL OUTER JOIN</h5>
+            <p>The `FULL OUTER JOIN` keyword returns all records when there is a match in either left or right table records. <strong>Note:</strong> MySQL does not have a `FULL OUTER JOIN` keyword. It can be emulated by combining `LEFT JOIN` and `RIGHT JOIN` with `UNION`.</p>
+            <pre class="code-box"><span class="comment">-- Emulating a FULL JOIN in MySQL</span>
+<span class="keyword">SELECT</span> e.FirstName, d.DepartmentName
+<span class="keyword">FROM</span> Employees e <span class="keyword">LEFT JOIN</span> Departments d <span class="keyword">ON</span> e.DepartmentID <span class="operator">=</span> d.DepartmentID
+<span class="keyword">UNION</span>
+<span class="keyword">SELECT</span> e.FirstName, d.DepartmentName
+<span class="keyword">FROM</span> Employees e <span class="keyword">RIGHT JOIN</span> Departments d <span class="keyword">ON</span> e.DepartmentID <span class="operator">=</span> d.DepartmentID;</pre>
+            <h5>SELF JOIN</h5>
+            <p>A `SELF JOIN` is a regular join, but the table is joined with itself. This is useful for hierarchical data or comparing rows within the same table. Imagine an `Employees` table with a `ManagerID` column that refers back to `EmployeeID`.</p>
+            <pre class="code-box"><span class="comment">-- Find each employee and their manager's name</span>
+<span class="keyword">SELECT</span> e.FirstName <span class="keyword">AS</span> Employee, m.FirstName <span class="keyword">AS</span> Manager
+<span class="keyword">FROM</span> Employees e
+<span class="keyword">JOIN</span> Employees m <span class="keyword">ON</span> e.ManagerID <span class="operator">=</span> m.EmployeeID;</pre>
+        </div>
+        
+        <h3 id="s22">V. Joining Tables: UNION</h3>
+        <div class="solution-box">
+            <p>The `UNION` operator is used to combine the result-set of two or more `SELECT` statements. Each `SELECT` statement within `UNION` must have the same number of columns, the columns must have similar data types, and the columns in each `SELECT` statement must also be in the same order.</p>
+            <p>By default, `UNION` selects only distinct values. Use `UNION ALL` to allow duplicate values.</p>
+            <pre class="code-box"><span class="comment">-- Get a single list of all cities from Customers and Suppliers tables</span>
+<span class="keyword">SELECT</span> City <span class="keyword">FROM</span> Customers
+<span class="keyword">UNION</span>
+<span class="keyword">SELECT</span> City <span class="keyword">FROM</span> Suppliers
+<span class="keyword">ORDER BY</span> City;</pre>
+        </div>
+        
+        <hr>
+
+        <h3 id="s23">VI. Constraints & DDL: ALTER TABLE</h3>
+        <div class="solution-box">
+            <p>The `ALTER TABLE` statement is used to add, delete, or modify columns in an existing table. It can also be used to add and drop various constraints.</p>
+            <pre class="code-box"><span class="comment">-- Add a new 'Email' column to the Employees table</span>
+<span class="keyword">ALTER TABLE</span> Employees
+<span class="keyword">ADD</span> Email <span class="keyword">VARCHAR</span>(<span class="number">100</span>);
+
+<span class="comment">-- Modify the data type of a column</span>
+<span class="keyword">ALTER TABLE</span> Employees
+<span class="keyword">MODIFY COLUMN</span> Salary <span class="keyword">DECIMAL</span>(<span class="number">12</span>, <span class="number">2</span>);
+
+<span class="comment">-- Drop a column</span>
+<span class="keyword">ALTER TABLE</span> Employees
+<span class="keyword">DROP COLUMN</span> Email;</pre>
+        </div>
+        
+        <h3 id="s24">VI. Constraints & DDL: Constraints Overview</h3>
+        <div class="solution-box">
+            <p>Constraints are rules enforced on data columns in a table. They are used to limit the type of data that can go into a table, ensuring the accuracy and reliability of the data. Constraints can be specified when the table is created with `CREATE TABLE` or after with `ALTER TABLE`.</p>
+            <ul>
+                <li><code>NOT NULL</code>: Ensures a column cannot have a `NULL` value.</li>
+                <li><code>UNIQUE</code>: Ensures that all values in a column are different.</li>
+                <li><code>PRIMARY KEY</code>: A combination of a `NOT NULL` and `UNIQUE`. Uniquely identifies each row in a table.</li>
+                <li><code>FOREIGN KEY</code>: Uniquely identifies a row/record in another table, creating a link between them.</li>
+                <li><code>CHECK</code>: Ensures that all values in a column satisfy a specific condition.</li>
+                <li><code>DEFAULT</code>: Sets a default value for a column when no value is specified.</li>
+                <li><code>INDEX</code>: Used to create and retrieve data from the database very quickly.</li>
+            </ul>
+        </div>
+        
+        <h3 id="s25">VI. Constraints & DDL: PRIMARY & FOREIGN KEY</h3>
+        <div class="solution-box">
+            <h5>PRIMARY KEY</h5>
+            <p>The `PRIMARY KEY` constraint uniquely identifies each record in a table. Primary keys must contain `UNIQUE` values, and cannot contain `NULL` values. A table can have only one primary key.</p>
+            <pre class="code-box"><span class="keyword">CREATE TABLE</span> Products (
+    ProductID <span class="keyword">INT PRIMARY KEY</span>,
+    ProductName <span class="keyword">VARCHAR</span>(<span class="number">100</span>)
+);
+</pre>
+            <h5>FOREIGN KEY</h5>
+            <p>A `FOREIGN KEY` is a key used to link two tables together. It is a field (or collection of fields) in one table that refers to the `PRIMARY KEY` in another table. The table containing the foreign key is the child table, and the table containing the primary key is the parent table.</p>
+            <pre class="code-box"><span class="keyword">CREATE TABLE</span> Orders (
+    OrderID <span class="keyword">INT PRIMARY KEY</span>,
+    OrderDate <span class="keyword">DATE</span>,
+    ProductID <span class="keyword">INT</span>,
+    <span class="keyword">FOREIGN KEY</span> (ProductID) <span class="keyword">REFERENCES</span> Products(ProductID)
+);
+</pre>
+        </div>
+        
+        <h3 id="s26">VI. Constraints & DDL: CHECK, DEFAULT, AUTO_INCREMENT</h3>
+        <div class="solution-box">
+            <h5>CHECK</h5>
+            <p>The `CHECK` constraint is used to limit the value range that can be placed in a column.</p>
+            <pre class="code-box"><span class="comment">-- Ensure salary is always positive</span>
+<span class="keyword">CREATE TABLE</span> Employees (
+    EmployeeID <span class="keyword">INT PRIMARY KEY</span>,
+    Salary <span class="keyword">DECIMAL</span>(<span class="number">10</span>, <span class="number">2</span>) <span class="keyword">CHECK</span> (Salary <span class="operator">></span> <span class="number">0</span>)
+);
+</pre>
+            <h5>DEFAULT</h5>
+            <p>The `DEFAULT` constraint is used to set a default value for a column.</p>
+            <pre class="code-box"><span class="comment">-- Set default hire date to the current date</span>
+<span class="keyword">CREATE TABLE</span> Employees (
+    EmployeeID <span class="keyword">INT PRIMARY KEY</span>,
+    HireDate <span class="keyword">DATE DEFAULT</span> (<span class="function">CURRENT_DATE</span>)
+);
+</pre>
+            <h5>AUTO_INCREMENT</h5>
+            <p>This allows a unique number to be generated automatically when a new record is inserted into a table. This is often the primary key.</p>
+            <pre class="code-box"><span class="keyword">CREATE TABLE</span> Users (
+    UserID <span class="keyword">INT PRIMARY KEY AUTO_INCREMENT</span>,
+    Username <span class="keyword">VARCHAR</span>(<span class="number">50</span>)
+);
+</pre>
+        </div>
+        
+        <hr>
+
+        <h3 id="s27">VII. Advanced SQL: Indexes & Views</h3>
+        <div class="solution-box">
+            <h5>INDEX</h5>
+            <p>An `INDEX` is a performance-tuning method of allowing faster retrieval of records. An index creates an entry for each value that appears in the indexed columns. Users cannot see the indexes; they are just used to speed up searches/queries. However, they slow down data modification (`UPDATE` and `INSERT`).</p>
+            <pre class="code-box"><span class="comment">-- Create an index on the LastName column for faster searches</span>
+<span class="keyword">CREATE INDEX</span> idx_lastname
+<span class="keyword">ON</span> Employees (LastName);
+</pre>
+            <h5>VIEW</h5>
+            <p>A view is a virtual table based on the result-set of an SQL statement. A view contains rows and columns, just like a real table. The fields in a view are fields from one or more real tables in the database. They are useful for simplifying complex queries, providing a layer of security, and presenting data in a specific way.</p>
+            <pre class="code-box"><span class="comment">-- Create a view that only shows employees in the Engineering department</span>
+<span class="keyword">CREATE VIEW</span> EngineeringEmployees <span class="keyword">AS</span>
+<span class="keyword">SELECT</span> EmployeeID, FirstName, LastName
+<span class="keyword">FROM</span> Employees
+<span class="keyword">WHERE</span> DepartmentID <span class="operator">=</span> <span class="number">1</span>;</pre>
+        </div>
+
+        <h3 id="s28">VII. Advanced SQL: CASE Statement</h3>
+        <div class="solution-box">
+            <p>The `CASE` statement goes through conditions and returns a value when the first condition is met (like an `if-then-else` statement). Once a condition is true, it will stop reading and return the result. If no conditions are true, it returns the value in the `ELSE` clause.</p>
+            <pre class="code-box"><span class="keyword">SELECT</span> FirstName, Salary,
+    <span class="keyword">CASE</span>
+        <span class="keyword">WHEN</span> Salary <span class="operator">></span> <span class="number">100000</span> <span class="keyword">THEN</span> <span class="string">'High Earner'</span>
+        <span class="keyword">WHEN</span> Salary <span class="operator">>=</span> <span class="number">60000</span> <span class="keyword">THEN</span> <span class="string">'Mid Earner'</span>
+        <span class="keyword">ELSE</span> <span class="string">'Standard Earner'</span>
+    <span class="keyword">END AS</span> SalaryCategory
+<span class="keyword">FROM</span> Employees;</pre>
+        </div>
+        
+        <h3 id="s29">VII. Advanced SQL: EXISTS, ANY, ALL</h3>
+        <div class="solution-box">
+            <p>These operators are used with subqueries (a query within a query).</p>
+            <h5>EXISTS</h5>
+            <p>Tests for the existence of any record in a subquery. It returns `TRUE` if the subquery returns one or more records.</p>
+            <pre class="code-box"><span class="comment">-- Find departments that have at least one employee</span>
+<span class="keyword">SELECT</span> DepartmentName <span class="keyword">FROM</span> Departments d
+<span class="keyword">WHERE EXISTS</span> (
+    <span class="keyword">SELECT</span> <span class="number">1</span> <span class="keyword">FROM</span> Employees e <span class="keyword">WHERE</span> e.DepartmentID <span class="operator">=</span> d.DepartmentID
+);
+</pre>
+            <h5>ANY and ALL</h5>
+            <p>`ANY` and `ALL` are used to compare a value to every value in a list or subquery. They must be preceded by a comparison operator.</p>
+            <ul>
+                <li>`> ANY`: greater than the minimum value in the subquery.</li>
+                <li>`> ALL`: greater than the maximum value in the subquery.</li>
+            </ul>
+            <pre class="code-box"><span class="comment">-- Find employees whose salary is greater than ANY salary in the Sales department</span>
+<span class="keyword">SELECT</span> FirstName <span class="keyword">FROM</span> Employees
+<span class="keyword">WHERE</span> Salary <span class="operator">> ANY</span> (
+    <span class="keyword">SELECT</span> Salary <span class="keyword">FROM</span> Employees <span class="keyword">WHERE</span> DepartmentID <span class="operator">=</span> <span class="number">2</span> <span class="comment">-- Assuming 2 is Sales</span>
+);
+</pre>
+        </div>
+        
+        <h3 id="s30">VII. Advanced SQL: Copying Data</h3>
+        <div class="solution-box">
+            <h5>INSERT INTO SELECT</h5>
+            <p>This statement copies data from one table and inserts it into another table. The data types in source and target tables must match.</p>
+            <pre class="code-box"><span class="comment">-- Archive all employees hired before 2010 into an archive table</span>
+<span class="keyword">INSERT INTO</span> ArchivedEmployees (EmployeeID, FirstName, LastName)
+<span class="keyword">SELECT</span> EmployeeID, FirstName, LastName
+<span class="keyword">FROM</span> Employees
+<span class="keyword">WHERE</span> HireDate <span class="operator"><</span> <span class="string">'2010-01-01'</span>;</pre>
+            <h5>CREATE TABLE AS (MySQL's version of SELECT INTO)</h5>
+            <p>Creates a new table and populates it with the results of a `SELECT` statement.</p>
+            <pre class="code-box"><span class="comment">-- Create a backup of the Employees table</span>
+<span class="keyword">CREATE TABLE</span> EmployeesBackup <span class="keyword">AS</span>
+<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Employees;</pre>
+        </div>
+
+        <h3 id="s31">VII. Advanced SQL: Stored Procedures</h3>
+        <div class="solution-box">
+            <p>A stored procedure is a prepared SQL code that you can save, so the code can be reused over and over again. You can pass parameters to a stored procedure, so that it can act based on the parameter value(s) that are passed.</p>
+            <pre class="code-box"><span class="comment">-- Create a procedure to get employees from a specific department</span>
+<span class="keyword">DELIMITER</span> //
+
+<span class="keyword">CREATE PROCEDURE</span> GetEmployeesByDept(IN dept_id INT)
+<span class="keyword">BEGIN</span>
+    <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Employees <span class="keyword">WHERE</span> DepartmentID <span class="operator">=</span> dept_id;
+<span class="keyword">END</span> //
+
+<span class="keyword">DELIMITER</span> ;
+
+<span class="comment">-- Call the procedure</span>
+<span class="keyword">CALL</span> GetEmployeesByDept(<span class="number">1</span>);</pre>
+        </div>
+        
+        <hr>
+
+        <h3 id="s32">VIII. Practical Topics: SQL Injection</h3>
+        <div class="solution-box">
+            <p><strong>SQL Injection</strong> is a web security vulnerability that allows an attacker to interfere with the queries that an application makes to its database. It generally allows an attacker to view data that they are not normally able to retrieve. This might include data belonging to other users, or any other data that the application itself is able to access.</p>
+            <p>The most common cause is concatenating user input directly into an SQL query. <strong>The solution is to always use prepared statements with parameter binding.</strong></p>
+            <pre class="code-box"><span class="comment">-- VULNERABLE CODE (DO NOT USE)</span>
+<span class="variable">user_id</span> <span class="operator">=</span> <span class="string">"105 OR 1=1"</span> <span class="comment">-- Malicious input from a user</span>
+<span class="variable">query</span> <span class="operator">=</span> <span class="string">"SELECT * FROM Users WHERE UserID = "</span> <span class="operator">+</span> <span class="variable">user_id</span>
+<span class="comment">-- The final query becomes `SELECT * FROM Users WHERE UserID = 105 OR 1=1`, which returns ALL users!</span>
+
+<span class="comment">-- SAFE CODE (Using Parameter Binding in Python)</span>
+<span class="variable">user_id</span> <span class="operator">=</span> <span class="string">"105 OR 1=1"</span>
+<span class="variable">cursor</span>.<span class="function">execute</span>(<span class="string">"SELECT * FROM Users WHERE UserID = %s"</span>, (<span class="variable">user_id</span>,))
+<span class="comment">-- The database treats the input as a single string value, not as executable code.</span></pre>
+        </div>
+
+        <h3 id="s33">VIII. Practical Topics: Backup & Hosting</h3>
+        <div class="solution-box">
+            <h5>BACKUP DATABASE</h5>
+            <p>Backups are critical for disaster recovery. The `mysqldump` command-line utility is the standard way to create a logical backup of a MySQL database. This creates a `.sql` file containing `CREATE TABLE` and `INSERT INTO` statements to recreate the database.</p>
+            <pre class="code-box"><span class="comment"># This is a command-line command, not SQL</span>
+mysqldump -u [username] -p [database_name] > backup.sql</pre>
+            <h5>SQL Hosting</h5>
+            <p>To use a MySQL database for a live application, you need a host. Options include:</p>
+            <ul>
+                <li><strong>Shared Hosting:</strong> Cheapest option, but with limited resources. Good for small sites.</li>
+                <li><strong>VPS (Virtual Private Server):</strong> More control and resources than shared hosting.</li>
+                <li><strong>Dedicated Server:</strong> Full control over a physical server. Expensive.</li>
+                <li><strong>Managed Database Services:</strong> Cloud providers like Amazon RDS, Google Cloud SQL, and DigitalOcean Managed Databases handle all the maintenance, backups, and scaling for you. This is a very popular and robust option.</li>
+            </ul>
+        </div>
+        
+        <h3 id="s34">VIII. Practical Topics: Connecting with Python</h3>
+        <div class="solution-box">
+            <p>To interact with a MySQL database from Python, you need a connector library. The official one is `mysql-connector-python`.</p>
+            <h5>Installation</h5>
+            <pre class="code-box">pip install mysql-connector-python</pre>
+            <h5>Example Python Script</h5>
+            <pre class="code-box"><span class="keyword">import</span> mysql.connector
+<span class="keyword">from</span> mysql.connector <span class="keyword">import</span> Error
+
+<span class="keyword">try</span><span class="operator">:</span>
+    <span class="comment"># Establish the connection</span>
+    <span class="variable">connection</span> <span class="operator">=</span> mysql.connector.<span class="function">connect</span>(
+        <span class="variable">host</span><span class="operator">=</span><span class="string">'localhost'</span>,
+        <span class="variable">database</span><span class="operator">=</span><span class="string">'company_db'</span>,
+        <span class="variable">user</span><span class="operator">=</span><span class="string">'your_username'</span>,
+        <span class="variable">password</span><span class="operator">=</span><span class="string">'your_password'</span>
+    )
+
+    <span class="keyword">if</span> <span class="variable">connection</span>.is_connected()<span class="operator">:</span>
+        <span class="variable">cursor</span> <span class="operator">=</span> <span class="variable">connection</span>.cursor()
+
+        <span class="comment"># --- Example 1: Inserting Data (Safely!) ---</span>
+        <span class="variable">new_employee</span> <span class="operator">=</span> (<span class="string">'John'</span>, <span class="string">'Smith'</span>, <span class="number">65000</span>, <span class="number">1</span>)
+        <span class="variable">insert_query</span> <span class="operator">=</span> <span class="string">"""INSERT INTO Employees (FirstName, LastName, Salary, DepartmentID)
+                          VALUES (%s, %s, %s, %s)"""</span>
+        <span class="variable">cursor</span>.<span class="function">execute</span>(<span class="variable">insert_query</span>, <span class="variable">new_employee</span>)
+        <span class="variable">connection</span>.commit() <span class="comment"># Must commit changes for INSERT, UPDATE, DELETE</span>
+        <span class="function builtin">print</span>(<span class="string">f"</span><span class="operator">{</span><span class="variable">cursor</span>.rowcount<span class="operator">}</span><span class="string"> record inserted."</span>)
+
+        <span class="comment"># --- Example 2: Selecting Data ---</span>
+        <span class="variable">select_query</span> <span class="operator">=</span> <span class="string">"SELECT FirstName, LastName FROM Employees WHERE Salary > %s"</span>
+        <span class="variable">salary_threshold</span> <span class="operator">=</span> (<span class="number">70000</span>,) <span class="comment"># Note the comma to make it a tuple</span>
+        <span class="variable">cursor</span>.<span class="function">execute</span>(<span class="variable">select_query</span>, <span class="variable">salary_threshold</span>)
+        
+        <span class="variable">records</span> <span class="operator">=</span> <span class="variable">cursor</span>.fetchall() <span class="comment"># Fetch all rows from the result</span>
+        <span class="function builtin">print</span>(<span class="string">"\nHigh-earning employees:"</span>)
+        <span class="keyword">for</span> <span class="variable">row</span> <span class="keyword">in</span> <span class="variable">records</span><span class="operator">:</span>
+            <span class="function builtin">print</span>(row)
+
+<span class="keyword">except</span> Error <span class="keyword">as</span> e<span class="operator">:</span>
+    <span class="function builtin">print</span>(<span class="string">"Error while connecting to MySQL"</span>, e)
+
+<span class="keyword">finally</span><span class="operator">:</span>
+    <span class="comment"># Close the connection</span>
+    <span class="keyword">if</span> 'connection' <span class="keyword">in</span> <span class="function builtin">locals</span>() <span class="keyword">and</span> <span class="variable">connection</span>.is_connected()<span class="operator">:</span>
+        <span class="variable">cursor</span>.close()
+        <span class="variable">connection</span>.close()
+        <span class="function builtin">print</span>(<span class="string">"\nMySQL connection is closed."</span>)
+</pre>
+        </div>
+
+        <hr>
+        
+        <h3 id="questions">IX. Practice Questions & Solutions</h3>
+        
+        <div class="question-box"><strong>Q1.</strong> Write a SQL query to find the names (`FirstName` and `LastName`) of all employees who work in the 'Sales' department. Assume you need to join the `Employees` and `Departments` tables.</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <pre class="code-box"><span class="keyword">SELECT</span> e.FirstName, e.LastName
+<span class="keyword">FROM</span> Employees <span class="keyword">AS</span> e
+<span class="keyword">INNER JOIN</span> Departments <span class="keyword">AS</span> d <span class="keyword">ON</span> e.DepartmentID <span class="operator">=</span> d.DepartmentID
+<span class="keyword">WHERE</span> d.DepartmentName <span class="operator">=</span> <span class="string">'Sales'</span>;</pre>
+        </div>
+
+        <div class="question-box"><strong>Q2.</strong> Write a SQL query to find the name of the department with the highest average salary.</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <p>This requires a combination of `JOIN`, `GROUP BY`, `ORDER BY`, and `LIMIT`.</p>
+            <pre class="code-box"><span class="keyword">SELECT</span> d.DepartmentName, <span class="function">AVG</span>(e.Salary) <span class="keyword">AS</span> AverageSalary
+<span class="keyword">FROM</span> Employees <span class="keyword">AS</span> e
+<span class="keyword">JOIN</span> Departments <span class="keyword">AS</span> d <span class="keyword">ON</span> e.DepartmentID <span class="operator">=</span> d.DepartmentID
+<span class="keyword">GROUP BY</span> d.DepartmentName
+<span class="keyword">ORDER BY</span> AverageSalary <span class="keyword">DESC
+LIMIT 1</span>;</pre>
+        </div>
+
+        <div class="question-box"><strong>Q3.</strong> Write a SQL query to list all departments that have no employees.</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <p>This is a classic use case for a `LEFT JOIN` where we look for `NULL` values on the "right" side (the Employees table).</p>
+            <pre class="code-box"><span class="keyword">SELECT</span> d.DepartmentName
+<span class="keyword">FROM</span> Departments d
+<span class="keyword">LEFT JOIN</span> Employees e <span class="keyword">ON</span> d.DepartmentID <span class="operator">=</span> e.DepartmentID
+<span class="keyword">WHERE</span> e.EmployeeID <span class="keyword">IS NULL</span>;</pre>
+        </div>
+
+        <div class="question-box"><strong>Q4.</strong> You need to increase the salary of all employees in the 'Engineering' department by 10%. Write the `UPDATE` statement to do this.</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <p>This requires a subquery in the `WHERE` clause to find the correct `DepartmentID`.</p>
+            <pre class="code-box"><span class="keyword">UPDATE</span> Employees
+<span class="keyword">SET</span> Salary <span class="operator">=</span> Salary <span class="operator">*</span> <span class="number">1.10</span>
+<span class="keyword">WHERE</span> DepartmentID <span class="operator">=</span> (
+    <span class="keyword">SELECT</span> DepartmentID <span class="keyword">FROM</span> Departments <span class="keyword">WHERE</span> DepartmentName <span class="operator">=</span> <span class="string">'Engineering'</span>
+);
+</pre>
+        </div>
+        
+    </main>
+</body>
+</html>

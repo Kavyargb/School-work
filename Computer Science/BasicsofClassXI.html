@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Basics of Python Programming</title>
+
+    <!-- MathJax v3 Configuration and Library -->
+    <script>
+    window.MathJax = {
+      loader: {load: ['[tex]/mhchem', '[tex]/cancel']},
+      tex: {
+        packages: {'[+]': ['mhchem', 'cancel']},
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    
+    <!-- Link to Central Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="body-content">
+    <!-- Top navigation bar placeholder -->
+    <nav class="global-nav" id="global-navbar"></nav>
+    
+    <!-- Sidebar placeholder -->
+    <nav id="index-sidebar"></nav>
+    <script src="../main.js"></script>
+
+    <script src="../nav.js"></script>
+
+    <main class="main-content">
+        <h3 id="s1">1. Variables & Data Types</h3>
+        <div class="question-box">
+            <strong>Topic:</strong> Introduction to variables for storing data and the fundamental data types in Python.
+        </div>
+        <div class="solution-box">
+            <h5>Introduction to Python</h5>
+            <p>Python is a high-level, interpreted, general-purpose programming language known for its simple syntax and readability. It allows you to write programs with fewer lines of code compared to other languages like C++ or Java. This makes it an excellent choice for beginners and for rapid application development.</p>
+
+            <h5>Variables</h5>
+            <p>A variable is a named location in memory used to store data. You can think of it as a labeled box where you can put information. In Python, you create a variable by assigning a value to it using the equals sign (`=`).</p>
+<pre class="code-box"><span class="comment"># Variable assignment</span>
+<span class="variable">course_name</span> <span class="operator">=</span> <span class="string">"Python Basics"</span>
+<span class="variable">chapter</span> <span class="operator">=</span> <span class="number">1</span>
+<span class="variable">is_completed</span> <span class="operator">=</span> <span class="keyword">False</span></pre>
+            <p><strong>Naming Rules:</strong> Variable names must start with a letter or an underscore (`_`), can contain letters, numbers, and underscores, and are case-sensitive (`age`, `Age`, and `AGE` are three different variables).</p>
+
+            <h5>Core Data Types</h5>
+            <p>Python has several built-in data types. The most fundamental are:</p>
+            <ul>
+                <li><strong>Integer (`int`):</strong> Whole numbers, both positive and negative, without decimals. Ex: `10`, `-3`, `0`.</li>
+                <li><strong>Float (`float`):</strong> Numbers with a decimal point. Ex: `9.81`, `-0.5`, `3.14`.</li>
+                <li><strong>String (`str`):</strong> A sequence of characters, enclosed in single (`'`) or double (`"`) quotes. Ex: `"Hello, World!"`, `'Python'`.</li>
+                <li><strong>Boolean (`bool`):</strong> Represents one of two values: `True` or `False`. Used for logical operations.</li>
+            </ul>
+            <p>You can check the type of a variable using the built-in `type()` function.</p>
+<pre class="code-box"><span class="variable">number</span> <span class="operator">=</span> <span class="number">42</span>
+<span class="function builtin">print</span>(<span class="function builtin">type</span>(<span class="variable">number</span>))  <span class="comment"># Output: <class 'int'></span>
+
+<span class="variable">pi</span> <span class="operator">=</span> <span class="number">3.14</span>
+<span class="function builtin">print</span>(<span class="function builtin">type</span>(<span class="variable">pi</span>))      <span class="comment"># Output: <class 'float'></span></pre>
+            
+            <h5>Type Casting</h5>
+            <p>You can convert data from one type to another using casting functions like `int()`, `float()`, `str()`, and `bool()`.</p>
+<pre class="code-box"><span class="variable">age_str</span> <span class="operator">=</span> <span class="string">"25"</span>
+<span class="variable">age_int</span> <span class="operator">=</span> <span class="function builtin">int</span>(<span class="variable">age_str</span>) <span class="comment"># Converts string to integer</span>
+<span class="function builtin">print</span>(<span class="variable">age_int</span> <span class="operator">+</span> <span class="number">5</span>)    <span class="comment"># Output: 30</span></pre>
+        </div>
+        
+        <h3 id="s2">2. Operators & Expressions</h3>
+        <div class="question-box">
+            <strong>Topic:</strong> Using operators to perform calculations and comparisons, forming expressions.
+        </div>
+        <div class="solution-box">
+            <p>Operators are special symbols that perform operations on values and variables (operands). An expression is a combination of values, variables, and operators that evaluates to a single value.</p>
+            
+            <h5>Arithmetic Operators</h5>
+            <p>Used for mathematical calculations.</p>
+            <ul>
+                <li>`+` (Addition), `-` (Subtraction), `*` (Multiplication)</li>
+                <li>`/` (Division): Always returns a float. `10 / 3` is `3.333...`</li>
+                <li>`//` (Floor Division): Divides and rounds down to the nearest whole number. `10 // 3` is `3`.</li>
+                <li>`%` (Modulus): Returns the remainder of a division. `10 % 3` is `1`.</li>
+                <li>`**` (Exponentiation): Raises to the power of. `2 ** 3` is `8`.</li>
+            </ul>
+
+            <h5>Comparison Operators</h5>
+            <p>Used to compare two values. They return a Boolean (`True` or `False`).</p>
+            <ul>
+                <li>`==` (Equal to)</li>
+                <li>`!=` (Not equal to)</li>
+                <li>`>` (Greater than), `<` (Less than)</li>
+                <li>`>=` (Greater than or equal to), `<=` (Less than or equal to)</li>
+            </ul>
+<pre class="code-box"><span class="variable">x</span> <span class="operator">=</span> <span class="number">10</span>
+<span class="variable">y</span> <span class="operator">=</span> <span class="number">5</span>
+<span class="function builtin">print</span>(<span class="variable">x</span> <span class="operator">></span> <span class="variable">y</span>)      <span class="comment"># Output: True</span>
+<span class="function builtin">print</span>(<span class="variable">x</span> <span class="operator">==</span> <span class="variable">y</span> <span class="operator">*</span> <span class="number">2</span>) <span class="comment"># Output: True</span></pre>
+
+            <h5>Logical Operators</h5>
+            <p>Used to combine conditional statements.</p>
+            <ul>
+                <li>`and`: Returns `True` if both operands are true.</li>
+                <li>`or`: Returns `True` if at least one operand is true.</li>
+                <li>`not`: Inverts the boolean value.</li>
+            </ul>
+<pre class="code-box"><span class="variable">has_key</span> <span class="operator">=</span> <span class="keyword">True</span>
+<span class="variable">knows_password</span> <span class="operator">=</span> <span class="keyword">False</span>
+<span class="function builtin">print</span>(<span class="variable">has_key</span> <span class="keyword">and</span> <span class="variable">knows_password</span>) <span class="comment"># Output: False</span>
+<span class="function builtin">print</span>(<span class="variable">has_key</span> <span class="keyword">or</span> <span class="variable">knows_password</span>)  <span class="comment"># Output: True</span>
+<span class="function builtin">print</span>(<span class="keyword">not</span> <span class="variable">has_key</span>)                  <span class="comment"># Output: False</span></pre>
+
+            <h5>Assignment Operators</h5>
+            <p>Used to assign values to variables. The standard is `=`, but compound operators provide a shorthand.</p>
+            <p>`count += 1` is a shorthand for `count = count + 1`. This works for other operators as well (`-=`, `*=`, `/=`, etc.).</p>
+        </div>
+
+        <h3 id="s3">3. Control Structures</h3>
+        <div class="question-box">
+            <strong>Topic:</strong> Controlling the flow of program execution with conditional statements and loops.
+        </div>
+        <div class="solution-box">
+            <p>Control structures allow you to execute certain blocks of code conditionally or repeatedly.</p>
+            
+            <h5>Conditional Statements: `if`, `elif`, `else`</h5>
+            <p>These structures allow your program to make decisions. The code inside an `if` block runs only if its condition is `True`. `elif` (else if) checks another condition if the previous `if`/`elif` was `False`. `else` runs if all preceding conditions were `False`.</p>
+<pre class="code-box"><span class="variable">score</span> <span class="operator">=</span> <span class="number">85</span>
+<span class="keyword">if</span> <span class="variable">score</span> <span class="operator">>=</span> <span class="number">90</span><span class="operator">:</span>
+    <span class="function builtin">print</span>(<span class="string">"Grade: A"</span>)
+<span class="keyword">elif</span> <span class="variable">score</span> <span class="operator">>=</span> <span class="number">80</span><span class="operator">:</span>
+    <span class="function builtin">print</span>(<span class="string">"Grade: B"</span>) <span class="comment"># This block will run</span>
+<span class="keyword">else</span><span class="operator">:</span>
+    <span class="function builtin">print</span>(<span class="string">"Grade: C or below"</span>)</pre>
+            
+            <h5>Loops</h5>
+            <p>Loops are used to execute a block of code multiple times.</p>
+            <h5>`for` Loop</h5>
+            <p>The `for` loop iterates over a sequence (like a list, tuple, string, or a range of numbers).</p>
+<pre class="code-box"><span class="comment"># Looping through a range of numbers</span>
+<span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="function builtin">range</span>(<span class="number">5</span>)<span class="operator">:</span>  <span class="comment"># range(5) generates numbers 0, 1, 2, 3, 4</span>
+    <span class="function builtin">print</span>(<span class="variable">i</span>)
+
+<span class="comment"># Looping through a string</span>
+<span class="keyword">for</span> <span class="variable">char</span> <span class="keyword">in</span> <span class="string">"Python"</span><span class="operator">:</span>
+    <span class="function builtin">print</span>(<span class="variable">char</span>, <span class="variable">end</span><span class="operator">=</span><span class="string">"-"</span>) <span class="comment"># Output: P-y-t-h-o-n-</span></pre>
+            
+            <h5>`while` Loop</h5>
+            <p>The `while` loop continues to execute as long as its condition remains `True`.</p>
+<pre class="code-box"><span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>
+<span class="keyword">while</span> <span class="variable">count</span> <span class="operator"><</span> <span class="number">3</span><span class="operator">:</span>
+    <span class="function builtin">print</span>(<span class="string">"Looping..."</span>)
+    <span class="variable">count</span> <span class="operator">+=</span> <span class="number">1</span></pre>
+
+            <h5>Loop Control: `break` and `continue`</h5>
+            <ul>
+                <li><strong>`break`</strong>: Immediately exits the current loop.</li>
+                <li><strong>`continue`</strong>: Skips the rest of the current iteration and proceeds to the next one.</li>
+            </ul>
+        </div>
+        
+        <h3 id="s4">4. Strings</h3>
+        <div class="question-box">
+            <strong>Topic:</strong> Manipulating text data using Python's powerful string methods.
+        </div>
+        <div class="solution-box">
+            <p>A string is an <strong>immutable</strong> sequence of characters. Immutability means that once a string is created, it cannot be changed. Methods that appear to modify a string actually return a new string with the modification.</p>
+            
+            <h5>Indexing and Slicing</h5>
+            <p>You can access individual characters using an index (starting from 0) or a range of characters using slicing `[start:stop:step]`.</p>
+<pre class="code-box"><span class="variable">s</span> <span class="operator">=</span> <span class="string">"Hello, World!"</span>
+<span class="function builtin">print</span>(<span class="variable">s</span>[<span class="number">0</span>])          <span class="comment"># Output: H</span>
+<span class="function builtin">print</span>(<span class="variable">s</span>[<span class="operator">-</span><span class="number">1</span>])         <span class="comment"># Output: ! (negative indexing from the end)</span>
+<span class="function builtin">print</span>(<span class="variable">s</span>[<span class="number">7</span><span class="operator">:</span><span class="number">12</span>])      <span class="comment"># Output: World (slicing)</span></pre>
+
+            <h5>Common String Methods</h5>
+            <ul>
+                <li><code>len(s)</code>: Returns the length of the string.</li>
+                <li><code>s.upper()</code> / <code>s.lower()</code>: Returns a new string in all uppercase or all lowercase.</li>
+                <li><code>s.strip()</code>: Returns a new string with leading/trailing whitespace removed.</li>
+                <li><code>s.startswith(prefix)</code> / <code>s.endswith(suffix)</code>: Returns `True` or `False`.</li>
+                <li><code>s.replace(old, new)</code>: Returns a new string where all occurrences of `old` are replaced by `new`.</li>
+                <li><code>s.split(delimiter)</code>: Splits the string at the delimiter and returns a list of substrings.</li>
+                <li><code>delimiter.join(list_of_strings)</code>: Joins elements of a list into a single string, with the delimiter between each element.</li>
+                <li><code>s.find(substring)</code>: Returns the index of the first occurrence of the substring, or -1 if not found.</li>
+            </ul>
+<pre class="code-box"><span class="variable">message</span> <span class="operator">=</span> <span class="string">"  Welcome to Python!  "</span>
+<span class="function builtin">print</span>(<span class="variable">message</span>.<span class="function">strip</span>())         <span class="comment"># Output: "Welcome to Python!"</span>
+<span class="function builtin">print</span>(<span class="variable">message</span>.<span class="function">lower</span>().<span class="function">startswith</span>(<span class="string">'welcome'</span>)) <span class="comment"># Output: True (method chaining)</span>
+<span class="variable">words</span> <span class="operator">=</span> <span class="variable">message</span>.<span class="function">strip</span>().<span class="function">split</span>(<span class="string">' '</span>)
+<span class="function builtin">print</span>(<span class="variable">words</span>)                <span class="comment"># Output: ['Welcome', 'to', 'Python!']</span></pre>
+            
+            <h5>Formatted Strings (f-strings)</h5>
+            <p>F-strings provide a concise and convenient way to embed expressions inside string literals.</p>
+<pre class="code-box"><span class="variable">name</span> <span class="operator">=</span> <span class="string">"Alice"</span>
+<span class="variable">age</span> <span class="operator">=</span> <span class="number">30</span>
+<span class="variable">greeting</span> <span class="operator">=</span> <span class="string">f"Hello, my name is </span><span class="operator">{</span><span class="variable">name</span><span class="operator">}</span><span class="string"> and I am </span><span class="operator">{</span><span class="variable">age</span><span class="operator">}</span><span class="string"> years old."</span>
+<span class="function builtin">print</span>(<span class="variable">greeting</span>)</pre>
+        </div>
+
+        <h3 id="s5">5. Lists</h3>
+        <div class="question-box">
+            <strong>Topic:</strong> Understanding and using lists, Python's versatile, mutable, ordered sequence type.
+        </div>
+        <div class="solution-box">
+            <p>A list is an ordered and <strong>mutable</strong> collection of items. Mutable means you can change its content—add, remove, or modify elements—after it has been created. Lists are defined by enclosing comma-separated items in square brackets `[]`.</p>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#c9c5d4">
+              <defs>
+                <marker id="arrow-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#00e5ff" />
+                </marker>
+              </defs>
+              <rect width="100%" height="100%" fill="#1e1b29" rx="10" />
+              
+              <text x="400" y="50" text-anchor="middle" font-size="24" fill="var(--heading-glow)" font-weight="bold">Mutability: List vs. Tuple</text>
+              <text x="200" y="90" text-anchor="middle" font-size="20" fill="#ff3d8b">List (Mutable)</text>
+              <text x="600" y="90" text-anchor="middle" font-size="20" fill="#9e4dff">Tuple (Immutable)</text>
+              <line x1="400" y1="70" x2="400" y2="450" stroke="#3a354f" stroke-width="2" />
+
+              <g id="list-side">
+                <rect x="50" y="120" width="300" height="80" rx="8" fill="#161420" stroke="#ff3d8b" />
+                <text x="65" y="145" font-family="'Fira Code', 'Courier New', monospace" fill="#dcdfe4">my_list = [1, 2, 3]</text>
+                <text x="65" y="175" font-size="14" fill="#6a9955" font-style="italic"># Address: 0x100A</text>
+                
+                <line x1="200" y1="200" x2="200" y2="240" stroke="#00e5ff" stroke-width="2.5" marker-end="url(#arrow-flow)" />
+                <text x="230" y="225" font-family="'Fira Code', 'Courier New', monospace" fill="#dcdcaa">.append(4)</text>
+
+                <rect x="50" y="250" width="300" height="120" rx="8" fill="#161420" stroke="#ff3d8b" />
+                <text x="65" y="275" font-family="'Fira Code', 'Courier New', monospace" fill="#dcdfe4">my_list</text>
+                <text x="65" y="300" font-family="'Fira Code', 'Courier New', monospace" fill="#f0f0f0" font-size="20" font-weight="bold">[1, 2, 3, 4]</text>
+                <text x="65" y="340" font-size="14" fill="#b5cea8" font-style="italic"># Address: 0x100A (Same)</text>
+                <text x="65" y="355" font-size="14" fill="#f0f0f0">Object is modified in-place.</text>
+              </g>
+
+              <g id="tuple-side">
+                <rect x="450" y="120" width="300" height="80" rx="8" fill="#161420" stroke="#9e4dff" />
+                <text x="465" y="145" font-family="'Fira Code', 'Courier New', monospace" fill="#dcdfe4">my_tuple = (1, 2, 3)</text>
+                <text x="465" y="175" font-size="14" fill="#6a9955" font-style="italic"># Address: 0x200B</text>
+
+                <line x1="600" y1="200" x2="600" y2="240" stroke="#00e5ff" stroke-width="2.5" marker-end="url(#arrow-flow)" />
+                <text x="630" y="225" font-family="'Fira Code', 'Courier New', monospace" fill="#dcdfe4">+ (4,)</text>
+
+                <rect x="450" y="250" width="300" height="120" rx="8" fill="#161420" stroke="#9e4dff" />
+                <text x="465" y="275" font-family="'Fira Code', 'Courier New', monospace" fill="#dcdfe4">my_tuple</text>
+                <text x="465" y="300" font-family="'Fira Code', 'Courier New', monospace" fill="#f0f0f0" font-size="20" font-weight="bold">(1, 2, 3, 4)</text>
+                <text x="465" y="340" font-size="14" fill="#ce9178" font-style="italic"># Address: 0x300C (New)</text>
+                <text x="465" y="355" font-size="14" fill="#f0f0f0">A new object is created.</text>
+              </g>
+            </svg>
+            <p class="img-caption">Figure: Lists are modified in-place, while operations on tuples create new objects.</p>
+
+            <h5>Common List Methods</h5>
+            <ul>
+                <li><code>len(my_list)</code>: Returns the number of items in the list.</li>
+                <li><code>my_list.append(item)</code>: Adds an item to the end of the list.</li>
+                <li><code>my_list.extend(another_list)</code>: Appends all items from another list.</li>
+                <li><code>my_list.insert(index, item)</code>: Inserts an item at a specific index.</li>
+                <li><code>my_list.remove(item)</code>: Removes the first occurrence of an item. Raises an error if the item is not found.</li>
+                <li><code>my_list.pop(index)</code>: Removes and returns the item at the given index. If no index is specified, it removes and returns the last item.</li>
+                <li><code>my_list.sort()</code>: Sorts the list in place.</li>
+                <li><code>my_list.reverse()</code>: Reverses the elements of the list in place.</li>
+                <li><code>my_list.index(item)</code>: Returns the index of the first occurrence of an item.</li>
+                <li><code>my_list.count(item)</code>: Returns the number of times an item appears in the list.</li>
+            </ul>
+<pre class="code-box"><span class="variable">numbers</span> <span class="operator">=</span> [<span class="number">1</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">2</span>]
+<span class="variable">numbers</span>.<span class="function">sort</span>()     <span class="comment"># numbers is now [1, 2, 3, 4, 5]</span>
+<span class="variable">numbers</span>.<span class="function">append</span>(<span class="number">6</span>)  <span class="comment"># numbers is now [1, 2, 3, 4, 5, 6]</span>
+<span class="variable">popped_item</span> <span class="operator">=</span> <span class="variable">numbers</span>.<span class="function">pop</span>(<span class="number">2</span>) <span class="comment"># popped_item is 3, numbers is [1, 2, 4, 5, 6]</span></pre>
+        </div>
+
+        <h3 id="s6">6. Tuples</h3>
+        <div class="question-box">
+            <strong>Topic:</strong> Introducing tuples, the immutable counterpart to lists, and their use cases.
+        </div>
+        <div class="solution-box">
+            <p>A tuple is an ordered and <strong>immutable</strong> collection of items. Once a tuple is created, you cannot change its contents. Tuples are defined by enclosing comma-separated items in parentheses `()`.</p>
+            <p>Their immutability makes them faster than lists and suitable for protecting data from accidental changes. They can also be used as keys in dictionaries, whereas lists cannot.</p>
+<pre class="code-box"><span class="variable">point</span> <span class="operator">=</span> (<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>)
+<span class="function builtin">print</span>(<span class="variable">point</span>[<span class="number">0</span>]) <span class="comment"># Output: 10</span>
+
+<span class="comment"># The following line would cause an error:</span>
+<span class="comment"># point[0] = 15  # TypeError: 'tuple' object does not support item assignment</span></pre>
+
+            <h5>Tuple Methods</h5>
+            <p>Tuples have very few methods due to their immutability.</p>
+            <ul>
+                <li><code>my_tuple.count(item)</code>: Returns the number of times an item appears.</li>
+                <li><code>my_tuple.index(item)</code>: Returns the index of the first occurrence of an item.</li>
+            </ul>
+
+            <h5>Tuple Packing and Unpacking</h5>
+            <p>You can create a tuple by "packing" values together. The reverse, "unpacking," allows you to assign the items of a tuple to multiple variables at once.</p>
+<pre class="code-box"><span class="variable">coordinates</span> <span class="operator">=</span> (<span class="number">45.6</span>, <span class="number">90.2</span>) <span class="comment"># Packing</span>
+<span class="variable">lat</span>, <span class="variable">lon</span> <span class="operator">=</span> <span class="variable">coordinates</span>    <span class="comment"># Unpacking</span>
+<span class="function builtin">print</span>(<span class="string">f"Latitude: </span><span class="operator">{</span><span class="variable">lat</span><span class="operator">}</span><span class="string">, Longitude: </span><span class="operator">{</span><span class="variable">lon</span><span class="operator">}</span><span class="string">"</span>)</pre>
+            <p>This is very useful for swapping variables: `a, b = b, a`.</p>
+        </div>
+
+        <h3 id="s7">7. Dictionaries</h3>
+        <div class="question-box">
+            <strong>Topic:</strong> Working with dictionaries, which store data in key-value pairs for efficient lookup.
+        </div>
+        <div class="solution-box">
+            <p>A dictionary is a mutable, unordered (in Python < 3.7) or insertion-ordered (Python 3.7+) collection of <strong>key-value pairs</strong>. Each key must be unique and immutable (e.g., a string, number, or tuple). Dictionaries are optimized for retrieving values when the key is known. They are defined with curly braces `{}`.</p>
+<pre class="code-box"><span class="variable">student</span> <span class="operator">=</span> <span class="operator">{</span>
+    <span class="string">"name"</span><span class="operator">:</span> <span class="string">"Alice"</span>,
+    <span class="string">"age"</span><span class="operator">:</span> <span class="number">21</span>,
+    <span class="string">"courses"</span><span class="operator">:</span> [<span class="string">"Math"</span>, <span class="string">"Physics"</span>]
+<span class="operator">}</span></pre>
+            
+            <h5>Accessing, Modifying, and Adding Items</h5>
+            <ul>
+                <li><strong>Accessing:</strong> Use square brackets with the key: `student['name']`. This raises a `KeyError` if the key doesn't exist.</li>
+                <li><strong>Modifying:</strong> Assign a new value to an existing key: `student['age'] = 22`.</li>
+                <li><strong>Adding:</strong> Assign a value to a new key: `student['major'] = "Computer Science"`.</li>
+            </ul>
+
+            <h5>Common Dictionary Methods</h5>
+            <ul>
+                <li><code>d.get(key, default)</code>: Safely gets a value. Returns `None` (or the specified `default` value) if the key is not found, instead of raising an error.</li>
+                <li><code>d.keys()</code>: Returns a view object displaying a list of all keys.</li>
+                <li><code>d.values()</code>: Returns a view object displaying a list of all values.</li>
+                <li><code>d.items()</code>: Returns a view object displaying a list of key-value tuple pairs. This is useful for looping.</li>
+                <li><code>d.pop(key)</code>: Removes the specified key and returns the corresponding value.</li>
+                <li><code>d.update(other_dict)</code>: Updates the dictionary with key-value pairs from another dictionary.</li>
+            </ul>
+<pre class="code-box"><span class="comment"># Safely getting a value</span>
+<span class="variable">major</span> <span class="operator">=</span> <span class="variable">student</span>.<span class="function">get</span>(<span class="string">'major'</span>, <span class="string">'Undeclared'</span>)
+<span class="function builtin">print</span>(<span class="variable">major</span>) <span class="comment"># Output: Undeclared</span>
+
+<span class="comment"># Looping through items</span>
+<span class="keyword">for</span> <span class="variable">key</span>, <span class="variable">value</span> <span class="keyword">in</span> <span class="variable">student</span>.<span class="function">items</span>()<span class="operator">:</span>
+    <span class="function builtin">print</span>(<span class="string">f"</span><span class="operator">{</span><span class="variable">key</span><span class="operator">}</span><span class="string">: </span><span class="operator">{</span><span class="variable">value</span><span class="operator">}</span><span class="string">"</span>)</pre>
+        </div>
+        
+        <h3 id="s8">8. Sets</h3>
+        <div class="question-box">
+            <strong>Topic:</strong> Using sets for storing unique elements and performing mathematical set operations.
+        </div>
+        <div class="solution-box">
+            <p>A set is a mutable, unordered collection of <strong>unique</strong> elements. They are useful for membership testing and eliminating duplicate entries. Sets are defined with curly braces `{}` or the `set()` function. An empty set must be created with `set()`, as `{}` creates an empty dictionary.</p>
+<pre class="code-box"><span class="variable">numbers</span> <span class="operator">=</span> <span class="operator">{</span><span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span><span class="operator">}</span>
+<span class="function builtin">print</span>(<span class="variable">numbers</span>) <span class="comment"># Output: {1, 2, 3} (duplicates are automatically removed)</span></pre>
+            
+            <h5>Adding and Removing Elements</h5>
+            <ul>
+                <li><code>my_set.add(item)</code>: Adds a single element to the set.</li>
+                <li><code>my_set.remove(item)</code>: Removes an element. Raises a `KeyError` if the element is not in the set.</li>
+                <li><code>my_set.discard(item)</code>: Removes an element if it is present, but does nothing otherwise (no error).</li>
+                <li><code>my_set.pop()</code>: Removes and returns an arbitrary element from the set.</li>
+                <li><code>my_set.clear()</code>: Removes all elements from the set.</li>
+            </ul>
+
+            <h5>Set Operations</h5>
+            <p>Sets excel at mathematical operations.</p>
+            <ul>
+                <li><strong>Union:</strong> `set1 | set2` or `set1.union(set2)`. Returns a new set with all elements from both sets.</li>
+                <li><strong>Intersection:</strong> `set1 & set2` or `set1.intersection(set2)`. Returns a new set with only the elements common to both sets.</li>
+                <li><strong>Difference:</strong> `set1 - set2` or `set1.difference(set2)`. Returns a new set with elements in `set1` but not in `set2`.</li>
+                <li><strong>Symmetric Difference:</strong> `set1 ^ set2` or `set1.symmetric_difference(set2)`. Returns a new set with elements in either set, but not both.</li>
+            </ul>
+<pre class="code-box"><span class="variable">a</span> <span class="operator">=</span> <span class="operator">{</span><span class="string">'apple'</span>, <span class="string">'banana'</span>, <span class="string">'cherry'</span><span class="operator">}</span>
+<span class="variable">b</span> <span class="operator">=</span> <span class="operator">{</span><span class="string">'banana'</span>, <span class="string">'orange'</span>, <span class="string">'mango'</span><span class="operator">}</span>
+
+<span class="comment"># Intersection</span>
+<span class="function builtin">print</span>(<span class="variable">a</span> <span class="operator">&</span> <span class="variable">b</span>) <span class="comment"># Output: {'banana'}</span>
+<span class="comment"># Union</span>
+<span class="function builtin">print</span>(<span class="variable">a</span> <span class="operator">|</span> <span class="variable">b</span>) <span class="comment"># Output: {'apple', 'cherry', 'mango', 'orange', 'banana'}</span></pre>
+        </div>
+
+        <hr>
+
+        <h3 id="questions">Practice Questions & Solutions</h3>
+        
+        <div class="question-box"><strong>Q1.</strong> What is the data type of the result of <code>10 / 2</code>?</div>
+        <div class="solution-box"><h5>Solution</h5><p>Float (`float`). The standard division operator `/` in Python always returns a float, even if the result is a whole number (e.g., `5.0`).</p></div>
+        
+        <div class="question-box"><strong>Q2.</strong> What is the data type of the result of <code>10 // 2</code>?</div>
+        <div class="solution-box"><h5>Solution</h5><p>Integer (`int`). The floor division operator `//` performs division and rounds the result down to the nearest whole number, returning an integer.</p></div>
+
+        <div class="question-box"><strong>Q3.</strong> Write a single line of Python code to swap the values of two variables, <code>a</code> and <code>b</code>.</div>
+        <div class="solution-box"><h5>Solution</h5><pre class="code-box">a, b = b, a</pre></div>
+
+        <div class="question-box"><strong>Q4.</strong> What will be the output of <code>print("abc" * 3)</code>?</div>
+        <div class="solution-box"><h5>Solution</h5><p>The string will be concatenated with itself 3 times.</p><pre class="code-box">"abcabcabc"</pre></div>
+
+        <div class="question-box"><strong>Q5.</strong> A variable name cannot start with which character: a letter, an underscore, or a number?</div>
+        <div class="solution-box"><h5>Solution</h5><p>A number. Variable names must start with a letter or an underscore.</p></div>
+
+        <div class="question-box"><strong>Q6.</strong> What is the output of <code>bool("False")</code>?</div>
+        <div class="solution-box"><h5>Solution</h5><p><code>True</code>. In Python, non-empty strings are considered "truthy". The only "falsy" string is an empty string (`""`). The content of the string does not matter.</p></div>
+        
+        <div class="question-box"><strong>Q7.</strong> Write a program that takes a user's age as input and prints "Adult" if they are 18 or older, and "Minor" otherwise.</div>
+        <div class="solution-box"><h5>Solution</h5><pre class="code-box">age_str = input("Enter your age: ")
+age = int(age_str)
+
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")</pre></div>
+
+        <div class="question-box"><strong>Q8.</strong> What is the difference between the <code>==</code> operator and the <code>is</code> operator?</div>
+        <div class="solution-box"><h5>Solution</h5><p><code>==</code> checks for <strong>equality of value</strong> (do the two variables have the same content?), while <code>is</code> checks for <strong>identity</strong> (do the two variables point to the exact same object in memory?).</p></div>
+
+        <div class="question-box"><strong>Q9.</strong> What is the output of the following code?
+<pre class="code-box">x = 10
+if x > 5 and x < 15:
+    print("A")
+elif x > 8:
+    print("B")
+else:
+    print("C")</pre></div>
+        <div class="solution-box"><h5>Solution</h5><p><code>A</code>. The first condition `x > 5 and x < 15` is true, so its block is executed and the rest of the `elif`/`else` structure is skipped.</p></div>
+        
+        <div class="question-box"><strong>Q10.</strong> How can you get the last character of a string <code>s</code>?</div>
+        <div class="solution-box"><h5>Solution</h5><p>Using negative indexing:</p><pre class="code-box">s[-1]</pre></div>
+
+        <div class="question-box"><strong>Q11.</strong> Given <code>s = "Programming"</code>, what is the result of <code>s[1:4]</code>?</div>
+        <div class="solution-box"><h5>Solution</h5><p><code>"rog"</code>. Slicing goes from the start index up to (but not including) the stop index.</p></div>
+        
+        <div class="question-box"><strong>Q12.</strong> How do you check if a string <code>s</code> contains the substring "gram"?</div>
+        <div class="solution-box"><h5>Solution</h5><p>Using the <code>in</code> operator:</p><pre class="code-box">"gram" in s</pre></div>
+        
+        <div class="question-box"><strong>Q13.</strong> Write code to remove all leading and trailing spaces from the string <code>text = "   some text   "</code>.</div>
+        <div class="solution-box"><h5>Solution</h5><pre class="code-box">trimmed_text = text.strip()</pre></div>
+        
+        <div class="question-box"><strong>Q14.</strong> What method would you use to convert the string <code>"1,2,3,4"</code> into the list <code>['1', '2', '3', '4']</code>?</div>
+        <div class="solution-box"><h5>Solution</h5><p>The <code>split()</code> method.</p><pre class="code-box">"1,2,3,4".split(',')</pre></div>
+        
+        <div class="question-box"><strong>Q15.</strong> How do you join the list <code>words = ['Python', 'is', 'fun']</code> into the string <code>"Python-is-fun"</code>?</div>
+        <div class="solution-box"><h5>Solution</h5><p>The <code>join()</code> method.</p><pre class="code-box">"-".join(words)</pre></div>
+        
+        <div class="question-box"><strong>Q16.</strong> Is a string mutable or immutable? What does that mean?</div>
+        <div class="solution-box"><h5>Solution</h5><p>Immutable. It means that once a string is created, its characters cannot be changed. Any method that appears to modify a string (like <code>.upper()</code> or <code>.replace()</code>) actually returns a new modified string, leaving the original unchanged.</p></div>
+        
+        <div class="question-box"><strong>Q17.</strong> How do you create an empty list? Provide two ways.</div>
+        <div class="solution-box"><h5>Solution</h5><pre class="code-box">my_list = []
+# or
+my_list = list()</pre></div>
+        
+        <div class="question-box"><strong>Q18.</strong> Given <code>my_list = [10, 20, 30]</code>, how do you add the number <code>40</code> to the end of it?</div>
+        <div class="solution-box"><h5>Solution</h5><pre class="code-box">my_list.append(40)</pre></div>
+        
+        <div class="question-box"><strong>Q19.</strong> How do you insert the number <code>15</code> at index 1 in `my_list` from the previous question?</div>
+        <div class="solution-box"><h5>Solution</h5><pre class="code-box">my_list.insert(1, 15)</pre></div>
+        
+        <div class="question-box"><strong>Q20.</strong> What is the difference between <code>list.append()</code> and <code>list.extend()</code>?</div>
+        <div class="solution-box"><h5>Solution</h5><p><code>append()</code> adds its argument as a single element to the end of a list. <code>extend()</code> iterates over its argument and adds each item individually. For example, if you append a list, it becomes a nested list. If you extend with a list, the elements are merged.</p></div>
+
+        <div class="question-box"><strong>Q21.</strong> How do you remove the last item from a list and store it in a variable?</div>
+        <div class="solution-box"><h5>Solution</h5><p>Using the <code>pop()</code> method.</p><pre class="code-box">last_item = my_list.pop()</pre></div>
+        
+        <div class="question-box"><strong>Q22.</strong> Write a list comprehension to create a list of squares of numbers from 0 to 9.</div>
+        <div class="solution-box"><h5>Solution</h5><pre class="code-box">squares = [x**2 for x in range(10)]</pre></div>
+        
+        <div class="question-box"><strong>Q23.</strong> What happens if you try to access an index that is out of bounds in a list?</div>
+        <div class="solution-box"><h5>Solution</h5><p>Python will raise an <code>IndexError</code>.</p></div>
+
+        <div class="question-box"><strong>Q24.</strong> How do you sort a list <code>nums</code> in descending order?</div>
+        <div class="solution-box"><h5>Solution</h5><pre class="code-box">nums.sort(reverse=True)</pre></div>
+
+        <div class="question-box"><strong>Q25.</strong> Is a tuple mutable or immutable?</div>
+        <div class="solution-box"><h5>Solution</h5><p>Immutable.</p></div>
+        
+        <div class="question-box"><strong>Q26.</strong> How do you create a tuple with only one element, the number 5?</div>
+        <div class="solution-box"><h5>Solution</h5><p>You must include a trailing comma.</p><pre class="code-box">single_element_tuple = (5,)</pre></div>
+        
+        <div class="question-box"><strong>Q27.</strong> Why might you choose to use a tuple instead of a list? Give two reasons.</div>
+        <div class="solution-box"><h5>Solution</h5><ol><li><strong>Performance:</strong> Tuples are slightly faster and use less memory than lists.</li><li><strong>Immutability:</strong> To ensure data cannot be accidentally changed. They can also be used as dictionary keys, while lists cannot.</li></ol></div>
+        
+        <div class="question-box"><strong>Q28.</strong> What is tuple unpacking? Provide an example.</div>
+        <div class="solution-box"><h5>Solution</h5><p>It's the process of assigning the elements of a tuple to multiple variables in a single statement.</p><pre class="code-box">point = (10, 20)
+x, y = point  # x becomes 10, y becomes 20</pre></div>
+        
+        <div class="question-box"><strong>Q29.</strong> What are the two main methods available for tuples?</div>
+        <div class="solution-box"><h5>Solution</h5><p><code>.count(item)</code> and <code>.index(item)</code>.</p></div>
+        
+        <div class="question-box"><strong>Q30.</strong> Can a list be a key in a dictionary? Why or why not?</div>
+        <div class="solution-box"><h5>Solution</h5><p>No. Dictionary keys must be immutable. Since lists are mutable (their contents can change), they cannot be used as keys.</p></div>
+        
+        <div class="question-box"><strong>Q31.</strong> How do you create an empty dictionary?</div>
+        <div class="solution-box"><h5>Solution</h5><pre class="code-box">my_dict = {}
+# or
+my_dict = dict()</pre></div>
+        
+        <div class="question-box"><strong>Q32.</strong> Given <code>d = {'a': 1, 'b': 2}</code>, how do you get the value associated with the key 'b'?</div>
+        <div class="solution-box"><h5>Solution</h5><pre class="code-box">value = d['b']</pre></div>
+        
+        <div class="question-box"><strong>Q33.</strong> How can you safely get the value for key 'c' from the dictionary <code>d</code> in the previous question without causing an error?</div>
+        <div class="solution-box"><h5>Solution</h5><p>Using the <code>.get()</code> method.</p><pre class="code-box">value = d.get('c')  # This will return None
+# Or with a default value:
+value = d.get('c', 0) # This will return 0</pre></div>
+        
+        <div class="question-box"><strong>Q34.</strong> How do you get a list of all keys from a dictionary <code>d</code>?</div>
+        <div class="solution-box"><h5>Solution</h5><pre class="code-box">keys_list = list(d.keys())</pre></div>
+        
+        <div class="question-box"><strong>Q35.</strong> How do you remove the key-value pair for key 'a' from dictionary <code>d</code>?</div>
+        <div class="solution-box"><h5>Solution</h5><p>Two common ways are using <code>pop()</code> or <code>del</code>.</p><pre class="code-box">d.pop('a')
+# or
+del d['a']</pre></div>
+        
+        <div class="question-box"><strong>Q36.</strong> How can you iterate over both the keys and values of a dictionary simultaneously?</div>
+        <div class="solution-box"><h5>Solution</h5><p>Using the <code>.items()</code> method in a for loop.</p><pre class="code-box">for key, value in d.items():
+    print(f"{key}: {value}")</pre></div>
+        
+        <div class="question-box"><strong>Q37.</strong> What will the following code print?
+<pre class="code-box">s = {1, 2, 2, 3, 4, 3}
+print(len(s))</pre></div>
+        <div class="solution-box"><h5>Solution</h5><p><code>4</code>. Sets only store unique elements, so the duplicates are ignored. The unique elements are {1, 2, 3, 4}.</p></div>
+        
+        <div class="question-box"><strong>Q38.</strong> How do you create an empty set?</div>
+        <div class="solution-box"><h5>Solution</h5><p>You must use the <code>set()</code> constructor. Using <code>{}</code> creates an empty dictionary.</p><pre class="code-box">my_set = set()</pre></div>
+        
+        <div class="question-box"><strong>Q39.</strong> What is the main difference between <code>set.remove(item)</code> and <code>set.discard(item)</code>?</div>
+        <div class="solution-box"><h5>Solution</h5><p>If the item is not in the set, <code>remove()</code> will raise a <code>KeyError</code>, while <code>discard()</code> will do nothing and not raise an error.</p></div>
+        
+        <div class="question-box"><strong>Q40.</strong> Given <code>set_a = {1, 2, 3}</code> and <code>set_b = {3, 4, 5}</code>, what is the result of <code>set_a & set_b</code> (intersection)?</div>
+        <div class="solution-box"><h5>Solution</h5><p><code>{3}</code></p></div>
+        
+        <div class="question-box"><strong>Q41.</strong> What is the result of <code>set_a | set_b</code> (union)?</div>
+        <div class="solution-box"><h5>Solution</h5><p><code>{1, 2, 3, 4, 5}</code></p></div>
+
+        <div class="question-box"><strong>Q42.</strong> What is the result of <code>set_a - set_b</code> (difference)?</div>
+        <div class="solution-box"><h5>Solution</h5><p><code>{1, 2}</code></p></div>
+
+        <div class="question-box"><strong>Q43.</strong> How can you use a set to find all the unique letters in a string like <code>s = "hello world"</code>?</div>
+        <div class="solution-box"><h5>Solution</h5><p>By casting the string to a set.</p><pre class="code-box">unique_letters = set("hello world")
+# Result will be {'h', 'e', 'l', 'o', ' ', 'w', 'r', 'd'}</pre></div>
+
+        <div class="question-box"><strong>Q44.</strong> What is the output of <code>10 > 5 and 20 < 15</code>?</div>
+        <div class="solution-box"><h5>Solution</h5><p><code>False</code>. The first part (<code>10 > 5</code>) is True, but the second part (<code>20 < 15</code>) is False. The <code>and</code> operator requires both sides to be True.</p></div>
+
+        <div class="question-box"><strong>Q45.</strong> Write a <code>while</code> loop that prints numbers from 10 down to 1.</div>
+        <div class="solution-box"><h5>Solution</h5><pre class="code-box">num = 10
+while num >= 1:
+    print(num)
+    num -= 1</pre></div>
+        
+        <div class="question-box"><strong>Q46.</strong> What does the <code>range(1, 10, 2)</code> function generate?</div>
+        <div class="solution-box"><h5>Solution</h5><p>It generates numbers starting from 1, up to (but not including) 10, with a step of 2. The numbers are: 1, 3, 5, 7, 9.</p></div>
+
+        <div class="question-box"><strong>Q47.</strong> How would you use a loop to find the sum of all numbers in a list <code>nums = [10, 20, 30, 40]</code>?</div>
+        <div class="solution-box"><h5>Solution</h5><p>While the built-in <code>sum(nums)</code> is best, a loop solution would be:</p><pre class="code-box">total = 0
+for number in nums:
+    total += number
+print(total)</pre></div>
+        
+        <div class="question-box"><strong>Q48.</strong> What is the purpose of the <code>continue</code> keyword in a loop?</div>
+        <div class="solution-box"><h5>Solution</h5><p>It immediately stops the current iteration of the loop and jumps to the beginning of the next iteration.</p></div>
+        
+        <div class="question-box"><strong>Q49.</strong> Fix the error in this code:
+<pre class="code-box">age = input("Enter your age: ")
+print("Next year, you will be " + (age + 1))
+</pre></div>
+        <div class="solution-box"><h5>Solution</h5><p>The <code>input()</code> function returns a string. You cannot add a string and an integer. You must first cast the input to an integer and then cast the result back to a string for concatenation.</p><pre class="code-box">age_str = input("Enter your age: ")
+age_int = int(age_str)
+print("Next year, you will be " + str(age_int + 1))</pre></div>
+        
+        <div class="question-box"><strong>Q50.</strong> What is the final value of <code>count</code>?
+<pre class="code-box">count = 0
+for i in range(10):
+    if i % 2 == 0:
+        continue
+    count += 1
+</pre></div>
+        <div class="solution-box"><h5>Solution</h5><p>The final value of <code>count</code> is <strong>5</strong>. The loop iterates for `i` from 0 to 9. The `continue` statement skips the `count += 1` line for all even numbers (0, 2, 4, 6, 8). The count is only incremented for the odd numbers (1, 3, 5, 7, 9), which are 5 numbers in total.</p></div>
+        
+    </main>
+</body>
+</html>

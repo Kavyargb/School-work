@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Python File Handling</title>
+
+    <!-- MathJax v3 Configuration and Library -->
+    <script>
+    window.MathJax = {
+      loader: {load: ['[tex]/mhchem', '[tex]/cancel']},
+      tex: {
+        packages: {'[+]': ['mhchem', 'cancel']},
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    
+    <!-- Link to Central Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="body-content">
+    <!-- Top navigation bar placeholder -->
+    <nav class="global-nav" id="global-navbar"></nav>
+    
+    <!-- Sidebar placeholder -->
+    <nav id="index-sidebar"></nav>
+    <script src="../main.js"></script>
+
+    <script src="../nav.js"></script>
+    <main class="main-content">
+        <h3 id="s1">1. Reading from Files with `with open()`</h3>
+        <div class="question-box">
+            <strong>Topic:</strong> Safely opening files, reading their content, and ensuring they are closed properly.
+        </div>
+        <div class="solution-box">
+            <h5>What is File Handling?</h5>
+            <p>File handling allows your Python programs to read data from and write data to files on your computer's disk. This is essential for data persistence—saving data so it can be used later, even after your program has finished running.</p>
+            
+            <h5>The `with open()` Statement: The Right Way</h5>
+            <p>The standard and safest way to interact with files in Python is using the <code>with open()</code> statement. This creates a "context" where the file is open. Once the indented block under the <code>with</code> statement is finished, Python automatically closes the file, even if errors occur. This prevents data corruption and resource leaks.</p>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#c9c5d4">
+              <defs>
+                <marker id="arrow-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#00e5ff"></path>
+                </marker>
+              </defs>
+              <rect width="100%" height="100%" fill="#1e1b29" rx="10"></rect>
+              <text x="400" y="40" text-anchor="middle" font-size="24" fill="var(--heading-glow)" font-weight="bold">The `with open()` Data Flow</text>
+              
+              <g id="python-program">
+                <rect x="50" y="100" width="250" height="150" rx="8" fill="#161420" stroke="#3a354f"></rect>
+                <text x="175" y="130" text-anchor="middle" font-size="18" fill="#ff3d8b">Python Program</text>
+                <text x="70" y="170" font-family="'Fira Code', 'Courier New', monospace" fill="#dcdcaa">with open('file.txt', 'r') as f:</text>
+                <text x="90" y="200" font-family="'Fira Code', 'Courier New', monospace" fill="#c9c5d4">content = f.read()</text>
+              </g>
+
+              <g id="file-system">
+                 <rect x="500" y="100" width="250" height="150" rx="8" fill="#161420" stroke="#3a354f"></rect>
+                <text x="625" y="130" text-anchor="middle" font-size="18" fill="#00e5ff">File on Disk</text>
+                <path d="M575 160 h80 v50 h-60 l-20 -20 z" stroke="#c9c5d4" fill="#2a273a"></path>
+                <path d="M635 160 v-10 l20 10" stroke="#c9c5d4" fill="none"></path>
+                <text x="590" y="185" font-family="'Fira Code', 'Courier New', monospace">file.txt</text>
+              </g>
+
+              <g id="arrows">
+                <text x="400" y="165" text-anchor="middle" fill="#dcdcaa">1. Open & Acquire</text>
+                <line x1="305" y1="175" x2="495" y2="175" stroke="#dcdcaa" stroke-width="2.5" marker-end="url(#arrow-flow)"></line>
+                <text x="400" y="215" text-anchor="middle" fill="#c9c5d4">2. Read data</text>
+                <line x1="495" y1="225" x2="305" y2="225" stroke="#c9c5d4" stroke-width="2.5" marker-end="url(#arrow-flow)"></line>
+                <text x="400" y="270" text-anchor="middle" font-size="14" fill="#ff3d8b" font-style="italic">File is automatically closed when block exits</text>
+              </g>
+            </svg>
+            <p class="img-caption">Figure: The `with` statement safely manages the connection between your program and the file on disk.</p>
+            
+            <h5>Common Reading Methods</h5>
+            <ul>
+                <li><code>file.read()</code>: Reads the entire content of the file into a single string.</li>
+                <li><code>file.readline()</code>: Reads a single line from the file, including the newline character `\n`.</li>
+                <li><code>file.readlines()</code>: Reads all lines from the file into a list of strings.</li>
+            </ul>
+<pre class="code-box"><span class="comment"># Assume we have a file "poem.txt" with the following content:</span>
+<span class="comment">#   Roses are red,</span>
+<span class="comment">#   Violets are blue.</span>
+
+<span class="comment"># Using .read()</span>
+<span class="keyword">with</span> <span class="function builtin">open</span>(<span class="string">'poem.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> <span class="variable">file</span><span class="operator">:</span>
+    <span class="variable">content</span> <span class="operator">=</span> <span class="variable">file</span>.<span class="function">read</span>()
+    <span class="function builtin">print</span>(<span class="variable">content</span>)
+
+<span class="comment"># Using a loop (memory efficient for large files)</span>
+<span class="keyword">with</span> <span class="function builtin">open</span>(<span class="string">'poem.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> <span class="variable">file</span><span class="operator">:</span>
+    <span class="keyword">for</span> <span class="variable">line</span> <span class="keyword">in</span> <span class="variable">file</span><span class="operator">:</span>
+        <span class="function builtin">print</span>(<span class="variable">line</span>.<span class="function">strip</span>()) <span class="comment"># .strip() removes leading/trailing whitespace</span>
+</pre>
+        </div>
+
+        <h3 id="s2">2. Writing and Appending to Files</h3>
+        <div class="question-box">
+            <strong>Topic:</strong> Creating new files, overwriting existing ones, and adding content to the end of a file.
+        </div>
+        <div class="solution-box">
+            <p>To write data, you open a file in write (<code>'w'</code>) or append (<code>'a'</code>) mode.</p>
+            <ul>
+                <li><strong>Write Mode (`'w'`)</strong>: Opens a file for writing. If the file exists, its contents are <strong>erased</strong>. If the file does not exist, it is created.</li>
+                <li><strong>Append Mode (`'a'`)</strong>: Opens a file for writing. If the file exists, new data is written to the <strong>end</strong> of the file. If the file does not exist, it is created.</li>
+            </ul>
+            
+            <h5>Common Writing Methods</h5>
+            <ul>
+                <li><code>file.write(string)</code>: Writes a single string to the file. You must add newline characters (<code>\n</code>) manually if you want line breaks.</li>
+                <li><code>file.writelines(list_of_strings)</code>: Writes all strings from a list (or other iterable) to the file. Note: It does <em>not</em> add newlines automatically.</li>
+            </ul>
+<pre class="code-box"><span class="comment"># Write mode ('w') - will overwrite shopping_list.txt if it exists</span>
+<span class="variable">items</span> <span class="operator">=</span> [<span class="string">'milk\n'</span>, <span class="string">'bread\n'</span>, <span class="string">'eggs\n'</span>]
+<span class="keyword">with</span> <span class="function builtin">open</span>(<span class="string">'shopping_list.txt'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> <span class="variable">f</span><span class="operator">:</span>
+    <span class="variable">f</span>.<span class="function">write</span>(<span class="string">'My Shopping List:\n'</span>)
+    <span class="variable">f</span>.<span class="function">writelines</span>(<span class="variable">items</span>)
+
+<span class="comment"># Append mode ('a') - adds to the end of the file</span>
+<span class="keyword">with</span> <span class="function builtin">open</span>(<span class="string">'shopping_list.txt'</span>, <span class="string">'a'</span>) <span class="keyword">as</span> <span class="variable">f</span><span class="operator">:</span>
+    <span class="variable">f</span>.<span class="function">write</span>(<span class="string">'cheese\n'</span>)
+</pre>
+        </div>
+        
+        <h3 id="s3">3. Understanding File Modes</h3>
+        <div class="question-box">
+            <strong>Topic:</strong> An overview of the different modes available for opening files.
+        </div>
+        <div class="solution-box">
+            <p>The mode passed to `open()` determines what you can do with the file. The most common modes are:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mode</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>'r'</code></td>
+                        <td><strong>Read (default)</strong>. Opens for reading. Raises an error if the file doesn't exist.</td>
+                    </tr>
+                    <tr>
+                        <td><code>'w'</code></td>
+                        <td><strong>Write</strong>. Opens for writing, truncating (clearing) the file first. Creates the file if it doesn't exist.</td>
+                    </tr>
+                    <tr>
+                        <td><code>'a'</code></td>
+                        <td><strong>Append</strong>. Opens for writing, appending to the end of the file. Creates the file if it doesn't exist.</td>
+                    </tr>
+                    <tr>
+                        <td><code>'x'</code></td>
+                        <td><strong>Create</strong>. Creates a new file exclusively. Raises an error if the file already exists.</td>
+                    </tr>
+                    <tr>
+                        <td><code>'+'</code></td>
+                        <td><strong>Update (Read and Write)</strong>. Can be added to other modes (e.g., <code>'r+'</code>, <code>'w+'</code>, <code>'a+'</code>) to allow both reading and writing.</td>
+                    </tr>
+                    <tr>
+                        <td><code>'b'</code></td>
+                        <td><strong>Binary Mode</strong>. For non-text files like images or executables. Append to other modes (e.g., <code>'rb'</code>, <code>'wb'</code>).</td>
+                    </tr>
+                </tbody>
+            </table>
+<pre class="code-box"><span class="comment"># Example of 'r+' mode: Read and then overwrite</span>
+<span class="keyword">with</span> <span class="function builtin">open</span>(<span class="string">'notes.txt'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> <span class="variable">f</span><span class="operator">:</span> <span class="variable">f</span>.<span class="function">write</span>(<span class="string">'Line 1'</span>) <span class="comment"># Create a file first</span>
+
+<span class="keyword">with</span> <span class="function builtin">open</span>(<span class="string">'notes.txt'</span>, <span class="string">'r+'</span>) <span class="keyword">as</span> <span class="variable">f</span><span class="operator">:</span>
+    <span class="variable">content</span> <span class="operator">=</span> <span class="variable">f</span>.<span class="function">read</span>()
+    <span class="function builtin">print</span>(<span class="string">f"Original: </span><span class="operator">{</span><span class="variable">content</span><span class="operator">}</span><span class="string">"</span>)
+    <span class="variable">f</span>.<span class="function">seek</span>(<span class="number">0</span>) <span class="comment"># Move cursor back to the start</span>
+    <span class="variable">f</span>.<span class="function">write</span>(<span class="string">'NEW Line'</span>) <span class="comment"># Overwrite the beginning</span>
+</pre>
+        </div>
+
+        <h3 id="s4">4. Working with Paths and `pathlib`</h3>
+        <div class="question-box">
+            <strong>Topic:</strong> Constructing file paths in a way that works across different operating systems (Windows, macOS, Linux).
+        </div>
+        <div class="solution-box">
+            <h5>The Problem with Simple Strings</h5>
+            <p>Writing paths as simple strings like <code>"data/my_file.txt"</code> can be problematic. Windows uses a backslash `\` as a path separator, while macOS and Linux use a forward slash `/`. Hardcoding one or the other makes your code less portable.</p>
+            
+            <h5>The Modern Solution: `pathlib`</h5>
+            <p>The `pathlib` module (introduced in Python 3.4) provides an object-oriented way to handle filesystem paths. This is the modern, recommended approach.</p>
+            <ul>
+                <li>It uses the correct path separator for the current OS automatically.</li>
+                <li>It provides useful methods for checking if a path exists, if it's a file or directory, etc.</li>
+            </ul>
+<pre class="code-box"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path
+
+<span class="comment"># Create a Path object - it doesn't create the file/dir on disk yet</span>
+<span class="variable">data_folder</span> <span class="operator">=</span> <span class="function">Path</span>(<span class="string">'project_data'</span>)
+<span class="variable">file_path</span> <span class="operator">=</span> <span class="variable">data_folder</span> <span class="operator">/</span> <span class="string">'reports'</span> <span class="operator">/</span> <span class="string">'january.csv'</span>
+
+<span class="function builtin">print</span>(<span class="string">f"Path object: </span><span class="operator">{</span><span class="variable">file_path</span><span class="operator">}</span><span class="string">"</span>)
+<span class="function builtin">print</span>(<span class="string">f"As a string: </span><span class="operator">{</span><span class="function builtin">str</span>(<span class="variable">file_path</span>)<span class="operator">}</span><span class="string">"</span>)
+
+<span class="comment"># You can pass the Path object directly to open()</span>
+<span class="comment"># Let's first ensure the directory exists</span>
+<span class="variable">file_path</span>.<span class="variable">parent</span>.<span class="function">mkdir</span>(<span class="variable">parents</span><span class="operator">=</span><span class="keyword">True</span>, <span class="variable">exist_ok</span><span class="operator">=</span><span class="keyword">True</span>)
+
+<span class="keyword">with</span> <span class="function builtin">open</span>(<span class="variable">file_path</span>, <span class="string">'w'</span>) <span class="keyword">as</span> <span class="variable">f</span><span class="operator">:</span>
+    <span class="variable">f</span>.<span class="function">write</span>(<span class="string">'Sales,Units\n1000,50'</span>)
+
+<span class="function builtin">print</span>(<span class="string">f"Does file exist? </span><span class="operator">{</span><span class="variable">file_path</span>.<span class="function">exists</span>()<span class="operator">}</span><span class="string">"</span>)
+</pre>
+        </div>
+        
+        <hr>
+
+        <h3 id="questions">Practice Questions & Solutions</h3>
+
+        <div class="question-box"><strong>Q1.</strong> Write a function `count_words(filepath)` that takes a file path, reads the file, and returns the total number of words. Assume words are separated by spaces.</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <p>We read the entire file, then use the `split()` string method to get a list of words, and finally return the length of that list.</p>
+            <pre class="code-box"><span class="keyword">def</span> <span class="function">count_words</span>(<span class="variable">filepath</span>)<span class="operator">:</span>
+    <span class="string">"""Counts the number of words in a file."""</span>
+    <span class="keyword">try</span><span class="operator">:</span>
+        <span class="keyword">with</span> <span class="function builtin">open</span>(<span class="variable">filepath</span>, <span class="string">'r'</span>) <span class="keyword">as</span> <span class="variable">file</span><span class="operator">:</span>
+            <span class="variable">text</span> <span class="operator">=</span> <span class="variable">file</span>.<span class="function">read</span>()
+            <span class="variable">words</span> <span class="operator">=</span> <span class="variable">text</span>.<span class="function">split</span>()
+            <span class="keyword">return</span> <span class="function builtin">len</span>(<span class="variable">words</span>)
+    <span class="keyword">except</span> FileNotFoundError<span class="operator">:</span>
+        <span class="keyword">return</span> <span class="string">"Error: File not found."</span>
+
+<span class="comment"># Create a dummy file for testing</span>
+<span class="keyword">with</span> <span class="function builtin">open</span>(<span class="string">'sample.txt'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> <span class="variable">f</span><span class="operator">:</span>
+    <span class="variable">f</span>.<span class="function">write</span>(<span class="string">'This is a test file.'</span>)
+
+<span class="function builtin">print</span>(<span class="function">count_words</span>(<span class="string">'sample.txt'</span>))      <span class="comment"># Expected: 5</span>
+<span class="function builtin">print</span>(<span class="function">count_words</span>(<span class="string">'nonexistent.txt'</span>)) <span class="comment"># Expected: Error message</span>
+</pre>
+        </div>
+        
+        <div class="question-box"><strong>Q2.</strong> Write a function `write_list_to_file(filepath, data_list)` that takes a file path and a list of strings, and writes each string in the list to a new line in the file. The function should overwrite the file if it already exists.</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <p>We open the file in write mode (<code>'w'</code>) and loop through the list, writing each item followed by a newline character `\n`.</p>
+            <pre class="code-box"><span class="keyword">def</span> <span class="function">write_list_to_file</span>(<span class="variable">filepath</span>, <span class="variable">data_list</span>)<span class="operator">:</span>
+    <span class="string">"""Writes each item from a list to a new line in a file."""</span>
+    <span class="keyword">with</span> <span class="function builtin">open</span>(<span class="variable">filepath</span>, <span class="string">'w'</span>) <span class="keyword">as</span> <span class="variable">file</span><span class="operator">:</span>
+        <span class="keyword">for</span> <span class="variable">item</span> <span class="keyword">in</span> <span class="variable">data_list</span><span class="operator">:</span>
+            <span class="variable">file</span>.<span class="function">write</span>(<span class="string">f"</span><span class="operator">{</span><span class="variable">item</span><span class="operator">}</span><span class="string">\n"</span>)
+
+<span class="variable">groceries</span> <span class="operator">=</span> [<span class="string">'Apples'</span>, <span class="string">'Bananas'</span>, <span class="string">'Carrots'</span>]
+<span class="function">write_list_to_file</span>(<span class="string">'groceries.txt'</span>, <span class="variable">groceries</span>)
+<span class="comment"># Check the content of groceries.txt, it should have 3 lines.</span>
+</pre>
+        </div>
+
+        <div class="question-box"><strong>Q3.</strong> Write a function `copy_and_convert_to_uppercase(source_path, dest_path)` that reads a source file, converts all its text to uppercase, and writes the result to a destination file.</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <p>This involves a read operation followed by a write operation. We can nest the `with` statements or do them sequentially. Sequentially is often more readable.</p>
+            <pre class="code-box"><span class="keyword">def</span> <span class="function">copy_and_convert_to_uppercase</span>(<span class="variable">source_path</span>, <span class="variable">dest_path</span>)<span class="operator">:</span>
+    <span class="string">"""Reads a file, converts content to uppercase, and writes to a new file."""</span>
+    <span class="keyword">try</span><span class="operator">:</span>
+        <span class="comment"># First, read the content from the source file</span>
+        <span class="keyword">with</span> <span class="function builtin">open</span>(<span class="variable">source_path</span>, <span class="string">'r'</span>) <span class="keyword">as</span> <span class="variable">source_file</span><span class="operator">:</span>
+            <span class="variable">content</span> <span class="operator">=</span> <span class="variable">source_file</span>.<span class="function">read</span>()
+        
+        <span class="comment"># Then, write the modified content to the destination file</span>
+        <span class="keyword">with</span> <span class="function builtin">open</span>(<span class="variable">dest_path</span>, <span class="string">'w'</span>) <span class="keyword">as</span> <span class="variable">dest_file</span><span class="operator">:</span>
+            <span class="variable">dest_file</span>.<span class="function">write</span>(<span class="variable">content</span>.<span class="function">upper</span>())
+        
+        <span class="function builtin">print</span>(<span class="string">f"Successfully copied and converted to </span><span class="operator">{</span><span class="variable">dest_path</span><span class="operator">}</span><span class="string">."</span>)
+    <span class="keyword">except</span> FileNotFoundError<span class="operator">:</span>
+        <span class="function builtin">print</span>(<span class="string">f"Error: Source file </span><span class="operator">{</span><span class="variable">source_path</span><span class="operator">}</span><span class="string"> not found."</span>)
+
+<span class="comment"># Setup</span>
+<span class="keyword">with</span> <span class="function builtin">open</span>(<span class="string">'original.txt'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> <span class="variable">f</span><span class="operator">:</span> <span class="variable">f</span>.<span class="function">write</span>(<span class="string">'hello world'</span>)
+<span class="comment"># Run</span>
+<span class="function">copy_and_convert_to_uppercase</span>(<span class="string">'original.txt'</span>, <span class="string">'uppercase.txt'</span>)
+<span class="comment"># uppercase.txt will contain "HELLO WORLD"</span>
+</pre>
+        </div>
+        
+        <div class="question-box"><strong>Q4.</strong> Write a function `log_message(log_file, message)` that appends a timestamped message to a log file. Example line: `[2023-10-27 10:30:00] User logged in.`</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <p>This is a perfect use case for append mode (`'a'`). We'll use the `datetime` module to get the current timestamp.</p>
+            <pre class="code-box"><span class="keyword">import</span> datetime
+
+<span class="keyword">def</span> <span class="function">log_message</span>(<span class="variable">log_file</span>, <span class="variable">message</span>)<span class="operator">:</span>
+    <span class="string">"""Appends a timestamped message to a log file."""</span>
+    <span class="variable">timestamp</span> <span class="operator">=</span> datetime.datetime.<span class="function">now</span>().<span class="function">strftime</span>(<span class="string">'%Y-%m-%d %H:%M:%S'</span>)
+    <span class="variable">log_entry</span> <span class="operator">=</span> <span class="string">f"[{timestamp}] {message}\n"</span>
+    
+    <span class="keyword">with</span> <span class="function builtin">open</span>(<span class="variable">log_file</span>, <span class="string">'a'</span>) <span class="keyword">as</span> <span class="variable">file</span><span class="operator">:</span>
+        <span class="variable">file</span>.<span class="function">write</span>(<span class="variable">log_entry</span>)
+
+<span class="function">log_message</span>(<span class="string">'app.log'</span>, <span class="string">'Application started.'</span>)
+<span class="function">log_message</span>(<span class="string">'app.log'</span>, <span class="string">'Processing data...'</span>)
+<span class="comment"># Check app.log, you will see two timestamped entries.</span>
+</pre>
+        </div>
+
+        <div class="question-box"><strong>Q5.</strong> A file named `scores.csv` contains student scores in the format `student_name,score` on each line. Write a function `calculate_average_score(filepath)` that reads this file and returns the average score. Handle potential errors like the file not existing or a line not having a valid score.</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <p>This problem requires reading line by line, splitting each line, converting the score part to a number, and handling potential `ValueError` if the conversion fails.</p>
+            <pre class="code-box"><span class="keyword">def</span> <span class="function">calculate_average_score</span>(<span class="variable">filepath</span>)<span class="operator">:</span>
+    <span class="string">"""Calculates the average score from a CSV-like file."""</span>
+    <span class="variable">total_score</span> <span class="operator">=</span> <span class="number">0</span>
+    <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>
+    <span class="keyword">try</span><span class="operator">:</span>
+        <span class="keyword">with</span> <span class="function builtin">open</span>(<span class="variable">filepath</span>, <span class="string">'r'</span>) <span class="keyword">as</span> <span class="variable">file</span><span class="operator">:</span>
+            <span class="keyword">for</span> <span class="variable">line</span> <span class="keyword">in</span> <span class="variable">file</span><span class="operator">:</span>
+                <span class="keyword">try</span><span class="operator">:</span>
+                    <span class="variable">name</span>, <span class="variable">score_str</span> <span class="operator">=</span> <span class="variable">line</span>.<span class="function">strip</span>().<span class="function">split</span>(<span class="string">','</span>)
+                    <span class="variable">total_score</span> <span class="operator">+=</span> <span class="function builtin">int</span>(<span class="variable">score_str</span>)
+                    <span class="variable">count</span> <span class="operator">+=</span> <span class="number">1</span>
+                <span class="keyword">except</span> ValueError<span class="operator">:</span>
+                    <span class="function builtin">print</span>(<span class="string">f"Skipping invalid line: </span><span class="operator">{</span><span class="variable">line</span>.<span class="function">strip</span>()<span class="operator">}</span><span class="string">"</span>)
+        
+        <span class="keyword">return</span> <span class="variable">total_score</span> <span class="operator">/</span> <span class="variable">count</span> <span class="keyword">if</span> <span class="variable">count</span> <span class="operator">></span> <span class="number">0</span> <span class="keyword">else</span> <span class="number">0</span>
+    <span class="keyword">except</span> FileNotFoundError<span class="operator">:</span>
+        <span class="keyword">return</span> <span class="string">"File not found."</span>
+
+<span class="comment"># Setup</span>
+<span class="keyword">with</span> <span class="function builtin">open</span>(<span class="string">'scores.csv'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> <span class="variable">f</span><span class="operator">:</span>
+    <span class="variable">f</span>.<span class="function">write</span>(<span class="string">'Alice,88\nBob,95\nCharlie,invalid\nDavid,76'</span>)
+<span class="comment"># Run</span>
+<span class="variable">average</span> <span class="operator">=</span> <span class="function">calculate_average_score</span>(<span class="string">'scores.csv'</span>)
+<span class="function builtin">print</span>(<span class="string">f"Average score: </span><span class="operator">{</span><span class="variable">average</span><span class="operator">}</span><span class="string">"</span>) <span class="comment"># Expected: (88+95+76)/3 = 86.33...</span>
+</pre>
+        </div>
+
+    </main>
+</body>
+</html>

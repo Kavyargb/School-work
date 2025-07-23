@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python's CSV Module</title>
+
+    <!-- MathJax v3 Configuration and Library -->
+    <script>
+    window.MathJax = {
+      loader: {load: ['[tex]/mhchem', '[tex]/cancel']},
+      tex: {
+        packages: {'[+]': ['mhchem', 'cancel']},
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    
+    <!-- Link to Central Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="body-content">
+    <!-- Top navigation bar placeholder -->
+    <nav class="global-nav" id="global-navbar"></nav>
+    
+    <!-- Sidebar placeholder -->
+    <nav id="index-sidebar"></nav>
+    <script src="../main.js"></script>
+
+    <script src="../nav.js"></script>
+    <main class="main-content">
+        <h3 id="s1">1. Reading CSV Files with `csv.reader`</h3>
+        <div class="question-box">
+            <strong>Topic:</strong> Parsing comma-separated data robustly using the `csv` module.
+        </div>
+        <div class="solution-box">
+            <h5>What is a CSV File?</h5>
+            <p>A CSV (Comma-Separated Values) file is a plain text file used to store tabular data. Each line represents a data record (a row), and each record consists of one or more fields (columns), separated by commas. While simple, parsing them manually with `line.split(',')` can fail if fields contain commas themselves (e.g., `"Doe, John"`).</p>
+            
+            <h5>Using `csv.reader`</h5>
+            <p>Python's built-in <code>csv</code> module is designed to handle these complexities. The <code>csv.reader</code> object takes an open file and lets you iterate over its rows. Each row is returned as a list of strings, correctly handling quoted fields.</p>
+<pre class="code-box"><span class="keyword">import</span> csv
+
+<span class="comment"># Assume 'employees.csv' contains:</span>
+<span class="comment"># name,department,salary</span>
+<span class="comment"># John Doe,"Sales, Marketing",50000</span>
+<span class="comment"># Jane Smith,Engineering,80000</span>
+
+<span class="keyword">with</span> <span class="function builtin">open</span>(<span class="string">'employees.csv'</span>, <span class="variable">mode</span><span class="operator">=</span><span class="string">'r'</span>, <span class="variable">encoding</span><span class="operator">=</span><span class="string">'utf-8'</span>) <span class="keyword">as</span> <span class="variable">file</span><span class="operator">:</span>
+    <span class="variable">csv_reader</span> <span class="operator">=</span> csv.<span class="function">reader</span>(<span class="variable">file</span>)
+    
+    <span class="comment"># The reader is an iterator, you can get the header first</span>
+    <span class="variable">header</span> <span class="operator">=</span> <span class="function builtin">next</span>(<span class="variable">csv_reader</span>)
+    <span class="function builtin">print</span>(<span class="string">f"Header: </span><span class="operator">{</span><span class="variable">header</span><span class="operator">}</span><span class="string">"</span>)
+    
+    <span class="comment"># Iterate over the remaining rows</span>
+    <span class="keyword">for</span> <span class="variable">row</span> <span class="keyword">in</span> <span class="variable">csv_reader</span><span class="operator">:</span>
+        <span class="function builtin">print</span>(<span class="string">f"Row: </span><span class="operator">{</span><span class="variable">row</span><span class="operator">}</span><span class="string">"</span>)
+
+<span class="comment"># Output:</span>
+<span class="comment"># Header: ['name', 'department', 'salary']</span>
+<span class="comment"># Row: ['John Doe', 'Sales, Marketing', '50000']</span>
+<span class="comment"># Row: ['Jane Smith', 'Engineering', '80000']</span></pre>
+            <p>Notice how `csv.reader` correctly parsed `"Sales, Marketing"` as a single field.</p>
+        </div>
+
+        <h3 id="s2">2. Writing CSV Files with `csv.writer`</h3>
+        <div class="question-box">
+            <strong>Topic:</strong> Creating and writing data to CSV files from Python lists.
+        </div>
+        <div class="solution-box">
+            <p>To write data, you create a <code>csv.writer</code> object. A crucial detail is opening the file with <code>newline=''</code>. This prevents the writer from adding extra blank rows between your data on some operating systems like Windows.</p>
+            <ul>
+                <li><code>writer.writerow(list)</code>: Writes a single row from a list of values.</li>
+                <li><code>writer.writerows(list_of_lists)</code>: Writes multiple rows from a list of lists.</li>
+            </ul>
+<pre class="code-box"><span class="keyword">import</span> csv
+
+<span class="variable">header</span> <span class="operator">=</span> [<span class="string">'product_id'</span>, <span class="string">'product_name'</span>, <span class="string">'price'</span>]
+<span class="variable">data</span> <span class="operator">=</span> [
+    [<span class="number">101</span>, <span class="string">'Laptop'</span>, <span class="number">1200</span>],
+    [<span class="number">102</span>, <span class="string">'Mouse'</span>, <span class="number">25</span>],
+    [<span class="number">103</span>, <span class="string">'Keyboard'</span>, <span class="number">75</span>]
+]
+
+<span class="comment"># Open the file with newline='' to prevent blank rows</span>
+<span class="keyword">with</span> <span class="function builtin">open</span>(<span class="string">'products.csv'</span>, <span class="variable">mode</span><span class="operator">=</span><span class="string">'w'</span>, <span class="variable">newline</span><span class="operator">=</span><span class="string">''</span>, <span class="variable">encoding</span><span class="operator">=</span><span class="string">'utf-8'</span>) <span class="keyword">as</span> <span class="variable">file</span><span class="operator">:</span>
+    <span class="variable">writer</span> <span class="operator">=</span> csv.<span class="function">writer</span>(<span class="variable">file</span>)
+    
+    <span class="comment"># Write the header row</span>
+    <span class="variable">writer</span>.<span class="function">writerow</span>(<span class="variable">header</span>)
+    
+    <span class="comment"># Write all data rows at once</span>
+    <span class="variable">writer</span>.<span class="function">writerows</span>(<span class="variable">data</span>)
+
+<span class="function builtin">print</span>(<span class="string">"products.csv has been created."</span>)
+</pre>
+            <p>The resulting `products.csv` file will be perfectly formatted, with values that are not strings (like numbers) automatically converted.</p>
+        </div>
+        
+        <h3 id="s3">3. Using Dictionaries: `DictReader` and `DictWriter`</h3>
+        <div class="question-box">
+            <strong>Topic:</strong> Interacting with CSV data using dictionaries for more readable and maintainable code.
+        </div>
+        <div class="solution-box">
+            <p>Working with column indices like <code>row[1]</code> can be confusing and brittle. If the column order changes, your code breaks. <code>DictReader</code> and <code>DictWriter</code> solve this by using the header row to map data to dictionaries.</p>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#c9c5d4">
+              <defs>
+                <marker id="arrow-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#00e5ff" />
+                </marker>
+              </defs>
+              <rect width="100%" height="100%" fill="#1e1b29" rx="10" />
+              <text x="400" y="40" text-anchor="middle" font-size="24" fill="var(--heading-glow)" font-weight="bold">`csv.DictReader`: From Row to Dictionary</text>
+
+              <g id="csv-file">
+                <text x="150" y="80" text-anchor="middle" font-size="18" fill="#ff3d8b">CSV File Content</text>
+                <rect x="50" y="100" width="200" height="100" rx="8" fill="#161420" stroke="#3a354f" />
+                <text x="65" y="130" font-family="'Fira Code', 'Courier New', monospace" fill="#dcdcaa">name,dept</text>
+                <text x="65" y="170" font-family="'Fira Code', 'Courier New', monospace">Alice,Sales</text>
+              </g>
+
+              <g id="processing">
+                <text x="400" y="140" text-anchor="middle" font-size="18" fill="#c586c0">csv.DictReader</text>
+                <line x1="255" y1="150" x2="335" y2="150" stroke="#c586c0" stroke-width="2.5" marker-end="url(#arrow-flow)" />
+              </g>
+              
+              <g id="dict-output">
+                <text x="625" y="80" text-anchor="middle" font-size="18" fill="#00e5ff">Python Dictionary</text>
+                <rect x="475" y="100" width="300" height="100" rx="8" fill="#161420" stroke="#3a354f" />
+                <text x="490" y="135" font-family="'Fira Code', 'Courier New', monospace"><tspan fill="#dcdcaa">'name'</tspan>: <tspan fill="#ce9178">'Alice'</tspan>,</text>
+                <text x="490" y="175" font-family="'Fira Code', 'Courier New', monospace"><tspan fill="#dcdcaa">'dept'</tspan>: <tspan fill="#ce9178">'Sales'</tspan></text>
+              </g>
+            </svg>
+            <p class="img-caption">Figure: `DictReader` uses the header to turn each data row into a key-value dictionary.</p>
+
+            <h5>Reading with `DictReader`</h5>
+            <p><code>DictReader</code> automatically uses the first row as keys. You can then access data by name, like <code>row['salary']</code>.</p>
+<pre class="code-box"><span class="keyword">import</span> csv
+
+<span class="keyword">with</span> <span class="function builtin">open</span>(<span class="string">'employees.csv'</span>, <span class="variable">mode</span><span class="operator">=</span><span class="string">'r'</span>) <span class="keyword">as</span> <span class="variable">file</span><span class="operator">:</span>
+    <span class="variable">reader</span> <span class="operator">=</span> csv.<span class="function">DictReader</span>(<span class="variable">file</span>)
+    <span class="keyword">for</span> <span class="variable">row</span> <span class="keyword">in</span> <span class="variable">reader</span><span class="operator">:</span>
+        <span class="function builtin">print</span>(<span class="string">f"</span><span class="operator">{</span>row[<span class="string">'name'</span>]<span class="operator">}</span><span class="string"> works in the </span><span class="operator">{</span>row[<span class="string">'department'</span>]<span class="operator">}</span><span class="string"> department."</span>)</pre>
+
+            <h5>Writing with `DictWriter`</h5>
+            <p><code>DictWriter</code> requires you to specify the column headers via the <code>fieldnames</code> argument. You can then write a header with <code>writeheader()</code> and pass dictionaries to <code>writerow()</code>.</p>
+<pre class="code-box"><span class="keyword">import</span> csv
+
+<span class="variable">data_to_write</span> <span class="operator">=</span> [
+    {<span class="string">'name'</span>: <span class="string">'Alice'</span>, <span class="string">'role'</span>: <span class="string">'Developer'</span>},
+    {<span class="string">'name'</span>: <span class="string">'Bob'</span>, <span class="string">'role'</span>: <span class="string">'Designer'</span>}
+]
+<span class="variable">headers</span> <span class="operator">=</span> [<span class="string">'name'</span>, <span class="string">'role'</span>]
+
+<span class="keyword">with</span> <span class="function builtin">open</span>(<span class="string">'team.csv'</span>, <span class="string">'w'</span>, <span class="variable">newline</span><span class="operator">=</span><span class="string">''</span>) <span class="keyword">as</span> <span class="variable">file</span><span class="operator">:</span>
+    <span class="variable">writer</span> <span class="operator">=</span> csv.<span class="function">DictWriter</span>(<span class="variable">file</span>, <span class="variable">fieldnames</span><span class="operator">=</span><span class="variable">headers</span>)
+    <span class="variable">writer</span>.<span class="function">writeheader</span>()
+    <span class="variable">writer</span>.<span class="function">writerows</span>(<span class="variable">data_to_write</span>)
+</pre>
+        </div>
+
+        <h3 id="s4">4. Dialects and Formatting Options</h3>
+        <div class="question-box">
+            <strong>Topic:</strong> Handling CSV files with different delimiters (like tabs or semicolons) and quoting rules.
+        </div>
+        <div class="solution-box">
+            <h5>CSV Dialects</h5>
+            <p>Not all "CSV" files use commas. Some use tabs (TSV), semicolons, or pipes (`|`). The `csv` module handles this gracefully with the <code>delimiter</code> parameter.</p>
+            
+            <h5>Common Formatting Parameters</h5>
+            <ul>
+                <li><code>delimiter</code>: A one-character string used to separate fields. Defaults to <code>','</code>.</li>
+                <li><code>quotechar</code>: The character used to quote fields containing the delimiter. Defaults to <code>'"'</code>.</li>
+                <li><code>quoting</code>: Controls when quotes should be generated by the writer. Options include <code>csv.QUOTE_MINIMAL</code> (default), <code>csv.QUOTE_ALL</code>, <code>csv.QUOTE_NONNUMERIC</code>, and <code>csv.QUOTE_NONE</code>.</li>
+            </ul>
+<pre class="code-box"><span class="keyword">import</span> csv
+
+<span class="comment"># Example of reading a semicolon-separated file</span>
+<span class="variable">semicolon_data</span> <span class="operator">=</span> <span class="string">'fruit;color;price\napple;red;0.5\nbanana;yellow;0.25'</span>
+
+<span class="comment"># We can read from a string using io.StringIO</span>
+<span class="keyword">import</span> io
+<span class="variable">file_like_object</span> <span class="operator">=</span> io.<span class="function">StringIO</span>(<span class="variable">semicolon_data</span>)
+
+<span class="variable">reader</span> <span class="operator">=</span> csv.<span class="function">reader</span>(<span class="variable">file_like_object</span>, <span class="variable">delimiter</span><span class="operator">=</span><span class="string">';'</span>)
+<span class="keyword">for</span> <span class="variable">row</span> <span class="keyword">in</span> <span class="variable">reader</span><span class="operator">:</span>
+    <span class="function builtin">print</span>(<span class="variable">row</span>)
+<span class="comment"># Output:</span>
+<span class="comment"># ['fruit', 'color', 'price']</span>
+<span class="comment"># ['apple', 'red', '0.5']</span>
+<span class="comment"># ['banana', 'yellow', '0.25']</span>
+
+<span class="comment"># Example of writing with QUOTE_ALL</span>
+<span class="variable">data</span> <span class="operator">=</span> [[<span class="string">'item'</span>, <span class="string">'value'</span>], [<span class="string">'A'</span>, <span class="number">100</span>]]
+<span class="keyword">with</span> <span class="function builtin">open</span>(<span class="string">'quoted.csv'</span>, <span class="string">'w'</span>, <span class="variable">newline</span><span class="operator">=</span><span class="string">''</span>) <span class="keyword">as</span> <span class="variable">file</span><span class="operator">:</span>
+    <span class="variable">writer</span> <span class="operator">=</span> csv.<span class="function">writer</span>(<span class="variable">file</span>, <span class="variable">quoting</span><span class="operator">=</span>csv.QUOTE_ALL)
+    <span class="variable">writer</span>.<span class="function">writerows</span>(<span class="variable">data</span>)
+<span class="comment"># quoted.csv will contain: "item","value"\n"A","100"</span>
+</pre>
+        </div>
+        
+        <hr>
+
+        <h3 id="questions">Practice Questions & Solutions</h3>
+
+        <div class="question-box"><strong>Q1.</strong> A file named `data.csv` contains `name,age,city`. Write a function `read_and_print_csv(filepath)` that reads this file and prints a formatted string for each person, like "Name: [name], Age: [age], City: [city]". Skip the header row.</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <p>This is a standard application of `csv.reader`. We use `next()` to advance the iterator past the header before starting our loop.</p>
+            <pre class="code-box"><span class="keyword">import</span> csv
+
+<span class="keyword">def</span> <span class="function">read_and_print_csv</span>(<span class="variable">filepath</span>)<span class="operator">:</span>
+    <span class="string">"""Reads a CSV and prints formatted data, skipping the header."""</span>
+    <span class="keyword">try</span><span class="operator">:</span>
+        <span class="keyword">with</span> <span class="function builtin">open</span>(<span class="variable">filepath</span>, <span class="string">'r'</span>, <span class="variable">encoding</span><span class="operator">=</span><span class="string">'utf-8'</span>) <span class="keyword">as</span> <span class="variable">file</span><span class="operator">:</span>
+            <span class="variable">reader</span> <span class="operator">=</span> csv.<span class="function">reader</span>(<span class="variable">file</span>)
+            <span class="variable">header</span> <span class="operator">=</span> <span class="function builtin">next</span>(<span class="variable">reader</span>)  <span class="comment"># Skip header</span>
+            <span class="keyword">for</span> <span class="variable">row</span> <span class="keyword">in</span> <span class="variable">reader</span><span class="operator">:</span>
+                <span class="function builtin">print</span>(<span class="string">f"Name: </span><span class="operator">{</span>row[<span class="number">0</span>]<span class="operator">}</span><span class="string">, Age: </span><span class="operator">{</span>row[<span class="number">1</span>]<span class="operator">}</span><span class="string">, City: </span><span class="operator">{</span>row[<span class="number">2</span>]<span class="operator">}</span><span class="string">"</span>)
+    <span class="keyword">except</span> FileNotFoundError<span class="operator">:</span>
+        <span class="function builtin">print</span>(<span class="string">"File not found."</span>)
+
+<span class="comment"># Setup</span>
+<span class="keyword">with</span> <span class="function builtin">open</span>(<span class="string">'data.csv'</span>, <span class="string">'w'</span>, <span class="variable">newline</span><span class="operator">=</span><span class="string">''</span>) <span class="keyword">as</span> <span class="variable">f</span><span class="operator">:</span>
+    <span class="variable">csv</span>.<span class="function">writer</span>(<span class="variable">f</span>).<span class="function">writerows</span>([
+        [<span class="string">'name'</span>, <span class="string">'age'</span>, <span class="string">'city'</span>],
+        [<span class="string">'Leo'</span>, <span class="string">'31'</span>, <span class="string">'New York'</span>],
+        [<span class="string">'Mei'</span>, <span class="string">'28'</span>, <span class="string">'Tokyo'</span>]
+    ])
+<span class="function">read_and_print_csv</span>(<span class="string">'data.csv'</span>)</pre>
+        </div>
+        
+        <div class="question-box"><strong>Q2.</strong> Write a function `create_user_csv(filepath, user_data)` that takes a list of user dictionaries (e.g., `[{'id': 1, 'name': 'Al'}, ...]`) and writes them to a CSV file using `csv.DictWriter`.</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <p>This is a classic use case for `DictWriter`. We derive the fieldnames from the keys of the first dictionary in the list.</p>
+            <pre class="code-box"><span class="keyword">import</span> csv
+
+<span class="keyword">def</span> <span class="function">create_user_csv</span>(<span class="variable">filepath</span>, <span class="variable">user_data</span>)<span class="operator">:</span>
+    <span class="string">"""Writes a list of dictionaries to a CSV file."""</span>
+    <span class="keyword">if</span> <span class="keyword">not</span> <span class="variable">user_data</span><span class="operator">:</span>
+        <span class="keyword">return</span> <span class="comment"># Do nothing if there's no data</span>
+    
+    <span class="comment"># Get headers from the keys of the first dictionary</span>
+    <span class="variable">headers</span> <span class="operator">=</span> <span class="variable">user_data</span>[<span class="number">0</span>].<span class="function">keys</span>()
+
+    <span class="keyword">with</span> <span class="function builtin">open</span>(<span class="variable">filepath</span>, <span class="string">'w'</span>, <span class="variable">newline</span><span class="operator">=</span><span class="string">''</span>) <span class="keyword">as</span> <span class="variable">file</span><span class="operator">:</span>
+        <span class="variable">writer</span> <span class="operator">=</span> csv.<span class="function">DictWriter</span>(<span class="variable">file</span>, <span class="variable">fieldnames</span><span class="operator">=</span><span class="variable">headers</span>)
+        <span class="variable">writer</span>.<span class="function">writeheader</span>()
+        <span class="variable">writer</span>.<span class="function">writerows</span>(<span class="variable">user_data</span>)
+    <span class="function builtin">print</span>(<span class="string">f"Data written to </span><span class="operator">{</span><span class="variable">filepath</span><span class="operator">}</span><span class="string">."</span>)
+
+<span class="variable">users</span> <span class="operator">=</span> [
+    {<span class="string">'id'</span>: <span class="number">1</span>, <span class="string">'name'</span>: <span class="string">'Alice'</span>, <span class="string">'email'</span>: <span class="string">'alice@example.com'</span>},
+    {<span class="string">'id'</span>: <span class="number">2</span>, <span class="string">'name'</span>: <span class="string">'Bob'</span>, <span class="string">'email'</span>: <span class="string">'bob@example.com'</span>}
+]
+<span class="function">create_user_csv</span>(<span class="string">'users.csv'</span>, <span class="variable">users</span>)</pre>
+        </div>
+
+        <div class="question-box"><strong>Q3.</strong> A file `sales.csv` contains `product,price,quantity_sold`. Write a function `calculate_total_revenue(filepath)` that reads this file and calculates the total revenue (sum of `price * quantity_sold` for all rows). Use `csv.DictReader` for robust column access.</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <p>`DictReader` makes this task simple and readable. We access columns by name and convert the string values to numbers (`float` or `int`) for calculation. A `try-except` block handles potential `ValueError` from invalid data.</p>
+            <pre class="code-box"><span class="keyword">import</span> csv
+
+<span class="keyword">def</span> <span class="function">calculate_total_revenue</span>(<span class="variable">filepath</span>)<span class="operator">:</span>
+    <span class="string">"""Calculates total revenue from a sales CSV file."""</span>
+    <span class="variable">total_revenue</span> <span class="operator">=</span> <span class="number">0.0</span>
+    <span class="keyword">try</span><span class="operator">:</span>
+        <span class="keyword">with</span> <span class="function builtin">open</span>(<span class="variable">filepath</span>, <span class="string">'r'</span>) <span class="keyword">as</span> <span class="variable">file</span><span class="operator">:</span>
+            <span class="variable">reader</span> <span class="operator">=</span> csv.<span class="function">DictReader</span>(<span class="variable">file</span>)
+            <span class="keyword">for</span> <span class="variable">row</span> <span class="keyword">in</span> <span class="variable">reader</span><span class="operator">:</span>
+                <span class="keyword">try</span><span class="operator">:</span>
+                    <span class="variable">price</span> <span class="operator">=</span> <span class="function builtin">float</span>(row[<span class="string">'price'</span>])
+                    <span class="variable">quantity</span> <span class="operator">=</span> <span class="function builtin">int</span>(row[<span class="string">'quantity_sold'</span>])
+                    <span class="variable">total_revenue</span> <span class="operator">+=</span> <span class="variable">price</span> <span class="operator">*</span> <span class="variable">quantity</span>
+                <span class="keyword">except</span> (ValueError, KeyError) <span class="keyword">as</span> <span class="variable">e</span><span class="operator">:</span>
+                    <span class="function builtin">print</span>(<span class="string">f"Warning: Skipping invalid row </span><span class="operator">{</span><span class="variable">row</span><span class="operator">}</span><span class="string">. Error: </span><span class="operator">{</span><span class="variable">e</span><span class="operator">}</span><span class="string">"</span>)
+        <span class="keyword">return</span> <span class="variable">total_revenue</span>
+    <span class="keyword">except</span> FileNotFoundError<span class="operator">:</span>
+        <span class="keyword">return</span> <span class="string">"File not found."</span>
+
+<span class="comment"># Setup</span>
+<span class="keyword">with</span> <span class="function builtin">open</span>(<span class="string">'sales.csv'</span>, <span class="string">'w'</span>, <span class="variable">newline</span><span class="operator">=</span><span class="string">''</span>) <span class="keyword">as</span> <span class="variable">f</span><span class="operator">:</span>
+    <span class="variable">csv</span>.<span class="function">writer</span>(<span class="variable">f</span>).<span class="function">writerows</span>([
+        [<span class="string">'product'</span>, <span class="string">'price'</span>, <span class="string">'quantity_sold'</span>],
+        [<span class="string">'Apple'</span>, <span class="string">'1.2'</span>, <span class="string">'50'</span>],
+        [<span class="string">'Banana'</span>, <span class="string">'0.5'</span>, <span class="string">'100'</span>],
+        [<span class="string">'Orange'</span>, <span class="string">'0.8'</span>, <span class="string">'70'</span>]
+    ])
+<span class="variable">revenue</span> <span class="operator">=</span> <span class="function">calculate_total_revenue</span>(<span class="string">'sales.csv'</span>)
+<span class="function builtin">print</span>(<span class="string">f"Total Revenue: $</span><span class="operator">{</span><span class="variable">revenue</span><span class="operator">:</span><span class="number">.2f</span><span class="operator">}</span><span class="string">"</span>) <span class="comment"># Expected: $166.00</span>
+</pre>
+        </div>
+
+        <div class="question-box"><strong>Q4.</strong> Write a function `filter_csv_by_value(input_path, output_path, column_name, value_to_match)` that reads `input_path`, and writes only the rows where `column_name` matches `value_to_match` to `output_path`. The header should be included in the output file.</div>
+        <div class="solution-box"><h5>Solution</h5>
+            <p>This common data-filtering task combines reading with `DictReader` and writing with `DictWriter`. We read a row, check if it matches our condition, and if so, write it to the new file.</p>
+            <pre class="code-box"><span class="keyword">import</span> csv
+
+<span class="keyword">def</span> <span class="function">filter_csv_by_value</span>(<span class="variable">input_path</span>, <span class="variable">output_path</span>, <span class="variable">column_name</span>, <span class="variable">value_to_match</span>)<span class="operator">:</span>
+    <span class="string">"""Filters a CSV file based on a column's value."""</span>
+    <span class="keyword">try</span><span class="operator">:</span>
+        <span class="keyword">with</span> <span class="function builtin">open</span>(<span class="variable">input_path</span>, <span class="string">'r'</span>) <span class="keyword">as</span> <span class="variable">infile</span><span class="operator">:</span>
+            <span class="variable">reader</span> <span class="operator">=</span> csv.<span class="function">DictReader</span>(<span class="variable">infile</span>)
+            <span class="variable">fieldnames</span> <span class="operator">=</span> <span class="variable">reader</span>.<span class="variable">fieldnames</span>
+            
+            <span class="comment"># Filter rows in memory first</span>
+            <span class="variable">matching_rows</span> <span class="operator">=</span> [row <span class="keyword">for</span> row <span class="keyword">in</span> reader <span class="keyword">if</span> row[column_name] == value_to_match]
+            
+            <span class="keyword">if</span> <span class="keyword">not</span> matching_rows<span class="operator">:</span>
+                <span class="function builtin">print</span>(<span class="string">"No matching rows found."</span>)
+                <span class="keyword">return</span>
+
+            <span class="keyword">with</span> <span class="function builtin">open</span>(<span class="variable">output_path</span>, <span class="string">'w'</span>, <span class="variable">newline</span><span class="operator">=</span><span class="string">''</span>) <span class="keyword">as</span> <span class="variable">outfile</span><span class="operator">:</span>
+                <span class="variable">writer</span> <span class="operator">=</span> csv.<span class="function">DictWriter</span>(<span class="variable">outfile</span>, <span class="variable">fieldnames</span><span class="operator">=</span><span class="variable">fieldnames</span>)
+                <span class="variable">writer</span>.<span class="function">writeheader</span>()
+                <span class="variable">writer</span>.<span class="function">writerows</span>(<span class="variable">matching_rows</span>)
+            <span class="function builtin">print</span>(<span class="string">f"Filtered data written to </span><span class="operator">{</span><span class="variable">output_path</span><span class="operator">}</span><span class="string">"</span>)
+
+    <span class="keyword">except</span> (FileNotFoundError, KeyError) <span class="keyword">as</span> <span class="variable">e</span><span class="operator">:</span>
+        <span class="function builtin">print</span>(<span class="string">f"An error occurred: </span><span class="operator">{</span><span class="variable">e</span><span class="operator">}</span><span class="string">"</span>)
+
+<span class="comment"># Setup</span>
+<span class="keyword">with</span> <span class="function builtin">open</span>(<span class="string">'employees.csv'</span>, <span class="string">'w'</span>, <span class="variable">newline</span><span class="operator">=</span><span class="string">''</span>) <span class="keyword">as</span> <span class="variable">f</span><span class="operator">:</span>
+    <span class="variable">csv</span>.<span class="function">writer</span>(<span class="variable">f</span>).<span class="function">writerows</span>([
+        [<span class="string">'name'</span>, <span class="string">'department'</span>, <span class="string">'id'</span>],
+        [<span class="string">'John'</span>, <span class="string">'Sales'</span>, <span class="string">'101'</span>],
+        [<span class="string">'Jane'</span>, <span class="string">'Engineering'</span>, <span class="string">'102'</span>],
+        [<span class="string">'Peter'</span>, <span class="string">'Sales'</span>, <span class="string">'103'</span>]
+    ])
+<span class="function">filter_csv_by_value</span>(<span class="string">'employees.csv'</span>, <span class="string">'sales_team.csv'</span>, <span class="string">'department'</span>, <span class="string">'Sales'</span>)
+<span class="comment"># sales_team.csv will contain only John and Peter.</span>
+</pre>
+        </div>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Determinants Solutions</title>
+
+    <!-- MathJax v3 Configuration and Library -->
+    <script>
+    window.MathJax = {
+      loader: {load: ['[tex]/mhchem', '[tex]/cancel']},
+      tex: {
+        packages: {'[+]': ['mhchem', 'cancel']},
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    
+    <!-- Link to Central Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="body-content">
+    <!-- Top navigation bar placeholder -->
+    <nav class="global-nav" id="global-navbar"></nav>
+    
+    <!-- Sidebar placeholder -->
+    <nav id="index-sidebar"></nav>
+    <script src="../main.js"></script>
+    <script src="../nav.js"></script>
+
+    <main class="main-content">
+        <h3 id="exercise-4-1">Exercise 4.1</h3>
+
+        <h4 id="ex4-1-q1">1. Evaluate the determinants in Exercises 1 and 2. \(\begin{vmatrix} 2 & 4 \\ -5 & -1 \end{vmatrix}\)</h4>
+        <div class="solution-box">
+            <p>For a \(2 \times 2\) determinant \(\begin{vmatrix} a & b \\ c & d \end{vmatrix}\), the value is \(ad - bc\).</p>
+            $$ \begin{vmatrix} 2 & 4 \\ -5 & -1 \end{vmatrix} = (2)(-1) - (4)(-5) $$
+            $$ = -2 - (-20) = -2 + 20 = 18 $$
+        </div>
+
+        <h4 id="ex4-1-q2">2. Evaluate the determinants in Exercises 1 and 2.
+            (i) \(\begin{vmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{vmatrix}\)
+            (ii) \(\begin{vmatrix} x^2-x+1 & x-1 \\ x+1 & x+1 \end{vmatrix}\)</h4>
+        <div class="solution-box">
+            <p>(i) $$ \begin{vmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{vmatrix} = (\cos\theta)(\cos\theta) - (-\sin\theta)(\sin\theta) $$
+                $$ = \cos^2\theta - (-\sin^2\theta) = \cos^2\theta + \sin^2\theta = 1 $$</p>
+            <p>(ii) $$ \begin{vmatrix} x^2-x+1 & x-1 \\ x+1 & x+1 \end{vmatrix} = (x^2-x+1)(x+1) - (x-1)(x+1) $$
+                Recognize \((x^2-x+1)(x+1)\) as sum of cubes \((x^3+1^3)\) and \((x-1)(x+1)\) as difference of squares \((x^2-1^2)\).</p>
+            $$ = (x^3+1) - (x^2-1) $$
+            $$ = x^3+1-x^2+1 = x^3-x^2+2 $$
+        </div>
+
+        <h4 id="ex4-1-q3">3. If \(A = \begin{pmatrix} 1 & 2 \\ 4 & 2 \end{pmatrix}\), then show that \(|2A| = 4|A|\).</h4>
+        <div class="solution-box">
+            <p>First, find \(2A\):
+                $$ 2A = 2 \begin{pmatrix} 1 & 2 \\ 4 & 2 \end{pmatrix} = \begin{pmatrix} 2 \cdot 1 & 2 \cdot 2 \\ 2 \cdot 4 & 2 \cdot 2 \end{pmatrix} = \begin{pmatrix} 2 & 4 \\ 8 & 4 \end{pmatrix} $$
+                Now, find \(|2A|\):
+                $$ |2A| = \begin{vmatrix} 2 & 4 \\ 8 & 4 \end{vmatrix} = (2)(4) - (4)(8) = 8 - 32 = -24 $$</p>
+            <p>Next, find \(|A|\):
+                $$ |A| = \begin{vmatrix} 1 & 2 \\ 4 & 2 \end{vmatrix} = (1)(2) - (2)(4) = 2 - 8 = -6 $$
+                Now, compute \(4|A|\):
+                $$ 4|A| = 4(-6) = -24 $$</p>
+            <p>Since \(|2A| = -24\) and \(4|A| = -24\), it is shown that \(|2A| = 4|A|\).</p>
+        </div>
+
+        <h4 id="ex4-1-q4">4. If \(A = \begin{pmatrix} 1 & 0 & 1 \\ 0 & 1 & 2 \\ 0 & 0 & 4 \end{pmatrix}\), then show that \(|3A| = 27|A|\).</h4>
+        <div class="solution-box">
+            <p>First, find \(3A\):
+                $$ 3A = 3 \begin{pmatrix} 1 & 0 & 1 \\ 0 & 1 & 2 \\ 0 & 0 & 4 \end{pmatrix} = \begin{pmatrix} 3 & 0 & 3 \\ 0 & 3 & 6 \\ 0 & 0 & 12 \end{pmatrix} $$
+                Now, find \(|3A|\). Expand along the first column (or first row, or third column/row for zeros):
+                $$ |3A| = 3 \begin{vmatrix} 3 & 6 \\ 0 & 12 \end{vmatrix} - 0 \begin{vmatrix} 0 & 3 \\ 0 & 12 \end{vmatrix} + 0 \begin{vmatrix} 0 & 3 \\ 3 & 6 \end{vmatrix} $$
+                $$ = 3((3)(12) - (6)(0)) - 0 + 0 = 3(36 - 0) = 3(36) = 108 $$</p>
+            <p>Next, find \(|A|\). Expand along the first column:
+                $$ |A| = 1 \begin{vmatrix} 1 & 2 \\ 0 & 4 \end{vmatrix} - 0 \begin{vmatrix} 0 & 1 \\ 0 & 4 \end{vmatrix} + 0 \begin{vmatrix} 0 & 1 \\ 1 & 2 \end{vmatrix} $$
+                $$ = 1((1)(4) - (2)(0)) - 0 + 0 = 1(4 - 0) = 4 $$
+                Now, compute \(27|A|\):
+                $$ 27|A| = 27(4) = 108 $$</p>
+            <p>Since \(|3A| = 108\) and \(27|A| = 108\), it is shown that \(|3A| = 27|A|\).</p>
+            <p>This is a general property for an \(n \times n\) matrix: \(|kA| = k^n|A|\). Here, \(n=3\), so \(|3A| = 3^3|A| = 27|A|\).</p>
+        </div>
+
+        <h4 id="ex4-1-q5">5. Evaluate the determinants
+            (i) \(\begin{vmatrix} 3 & -1 & -2 \\ 0 & 0 & -1 \\ 3 & -5 & 0 \end{vmatrix}\)
+            (ii) \(\begin{vmatrix} 3 & -4 & 5 \\ 1 & 2 & -3 \\ 1 & 3 & 1 \end{vmatrix}\)</h4>
+        <div class="solution-box">
+            <p>(i) $$ \begin{vmatrix} 3 & -1 & -2 \\ 0 & 0 & -1 \\ 3 & -5 & 0 \end{vmatrix} $$
+                Expand along the second row (which has two zeros for easier calculation):
+                $$ = 0 \cdot C_{21} + 0 \cdot C_{22} + (-1) \cdot C_{23} $$
+                where \(C_{ij}\) is the cofactor of \(a_{ij}\).
+                \(C_{23} = (-1)^{2+3} \begin{vmatrix} 3 & -1 \\ 3 & -5 \end{vmatrix} = (-1)^5 ((3)(-5) - (-1)(3)) = -1(-15 - (-3)) = -1(-15+3) = -1(-12) = 12 \)</p>
+            <p>So, the determinant is:
+                $$ = 0 + 0 + (-1)(12) = -12 $$</p>
+            <p>(ii) $$ \begin{vmatrix} 3 & -4 & 5 \\ 1 & 2 & -3 \\ 1 & 3 & 1 \end{vmatrix} $$
+                Expand along the first row:
+                $$ = 3 \begin{vmatrix} 2 & -3 \\ 3 & 1 \end{vmatrix} - (-4) \begin{vmatrix} 1 & -3 \\ 1 & 1 \end{vmatrix} + 5 \begin{vmatrix} 1 & 2 \\ 1 & 3 \end{vmatrix} $$
+                $$ = 3((2)(1) - (-3)(3)) + 4((1)(1) - (-3)(1)) + 5((1)(3) - (2)(1)) $$
+                $$ = 3(2 - (-9)) + 4(1 - (-3)) + 5(3 - 2) $$
+                $$ = 3(2+9) + 4(1+3) + 5(1) $$
+                $$ = 3(11) + 4(4) + 5(1) $$
+                $$ = 33 + 16 + 5 = 54 $$</p>
+        </div>
+
+        <h4 id="ex4-1-q6">6. If \(A = \begin{pmatrix} 1 & 1 & -2 \\ 2 & 1 & -3 \\ 5 & 4 & -9 \end{pmatrix}\), find \(|A|\).</h4>
+        <div class="solution-box">
+            $$ |A| = \begin{vmatrix} 1 & 1 & -2 \\ 2 & 1 & -3 \\ 5 & 4 & -9 \end{vmatrix} $$
+            Expand along the first row:
+            $$ = 1 \begin{vmatrix} 1 & -3 \\ 4 & -9 \end{vmatrix} - 1 \begin{vmatrix} 2 & -3 \\ 5 & -9 \end{vmatrix} + (-2) \begin{vmatrix} 2 & 1 \\ 5 & 4 \end{vmatrix} $$
+            $$ = 1((1)(-9) - (-3)(4)) - 1((2)(-9) - (-3)(5)) - 2((2)(4) - (1)(5)) $$
+            $$ = 1(-9 - (-12)) - 1(-18 - (-15)) - 2(8 - 5) $$
+            $$ = 1(-9+12) - 1(-18+15) - 2(3) $$
+            $$ = 1(3) - 1(-3) - 2(3) $$
+            $$ = 3 + 3 - 6 = 0 $$
+        </div>
+
+        <h4 id="ex4-1-q7">7. Find values of x, if
+            (i) \(\begin{vmatrix} 2 & 4 \\ 5 & 1 \end{vmatrix} = \begin{vmatrix} 2x & 4 \\ 6 & x \end{vmatrix}\)
+            (ii) \(\begin{vmatrix} 2 & 3 \\ 4 & 5 \end{vmatrix} = \begin{vmatrix} x & 3 \\ 2x & 5 \end{vmatrix}\)</h4>
+        <div class="solution-box">
+            <p>(i) Evaluate both determinants:
+                LHS: \( \begin{vmatrix} 2 & 4 \\ 5 & 1 \end{vmatrix} = (2)(1) - (4)(5) = 2 - 20 = -18 \)
+                RHS: \( \begin{vmatrix} 2x & 4 \\ 6 & x \end{vmatrix} = (2x)(x) - (4)(6) = 2x^2 - 24 \)
+                Equate them:
+                \( -18 = 2x^2 - 24 \)
+                \( 2x^2 = 24 - 18 \)
+                \( 2x^2 = 6 \)
+                \( x^2 = 3 \)
+                \( x = \pm \sqrt{3} \)
+            </p>
+            <p>(ii) Evaluate both determinants:
+                LHS: \( \begin{vmatrix} 2 & 3 \\ 4 & 5 \end{vmatrix} = (2)(5) - (3)(4) = 10 - 12 = -2 \)
+                RHS: \( \begin{vmatrix} x & 3 \\ 2x & 5 \end{vmatrix} = (x)(5) - (3)(2x) = 5x - 6x = -x \)
+                Equate them:
+                \( -2 = -x \)
+                \( x = 2 \)
+            </p>
+        </div>
+
+        <h4 id="ex4-1-q8">8. If \(\begin{vmatrix} x & 2 \\ 18 & x \end{vmatrix} = \begin{vmatrix} 6 & 2 \\ 18 & 6 \end{vmatrix}\), then x is equal to
+            (A) 6
+            (B) \(\pm\)6
+            (C) -6
+            (D) 0</h4>
+        <div class="solution-box">
+            <p>Evaluate both determinants:
+                LHS: \( \begin{vmatrix} x & 2 \\ 18 & x \end{vmatrix} = (x)(x) - (2)(18) = x^2 - 36 \)
+                RHS: \( \begin{vmatrix} 6 & 2 \\ 18 & 6 \end{vmatrix} = (6)(6) - (2)(18) = 36 - 36 = 0 \)
+                Equate them:
+                \( x^2 - 36 = 0 \)
+                \( x^2 = 36 \)
+                \( x = \pm 6 \)
+            </p>
+            <p>The correct option is (B).</p>
+        </div>
+        <hr>
+
+        <h3 id="exercise-4-2">Exercise 4.2</h3>
+        <h4 id="ex4-2-q1">1. Find area of the triangle with vertices at the point given in each of the following :
+            (i) (1, 0), (6, 0), (4, 3)
+            (ii) (2, 7), (1, 1), (10, 8)
+            (iii) (-2, -3), (3, 2), (-1, -8)</h4>
+        <div class="solution-box">
+            <p>The area of a triangle with vertices \((x_1, y_1), (x_2, y_2), (x_3, y_3)\) is given by
+                $$ \text{Area} = \frac{1}{2} \left| \begin{vmatrix} x_1 & y_1 & 1 \\ x_2 & y_2 & 1 \\ x_3 & y_3 & 1 \end{vmatrix} \right| $$
+                The absolute value is taken because area cannot be negative.</p>
+            <p>(i) Vertices: (1, 0), (6, 0), (4, 3)
+                $$ \text{Area} = \frac{1}{2} \left| \begin{vmatrix} 1 & 0 & 1 \\ 6 & 0 & 1 \\ 4 & 3 & 1 \end{vmatrix} \right| $$
+                Expand along the second column (which has two zeros):
+                $$ = \frac{1}{2} \left| 0 \cdot C_{12} + 0 \cdot C_{22} + 3 \cdot C_{32} \right| $$
+                $$ C_{32} = (-1)^{3+2} \begin{vmatrix} 1 & 1 \\ 6 & 1 \end{vmatrix} = -1((1)(1) - (1)(6)) = -1(1-6) = -1(-5) = 5 $$
+                $$ \text{Area} = \frac{1}{2} | 3 \cdot 5 | = \frac{1}{2} |15| = \frac{15}{2} \text{ square units} $$</p>
+            <p>(ii) Vertices: (2, 7), (1, 1), (10, 8)
+                $$ \text{Area} = \frac{1}{2} \left| \begin{vmatrix} 2 & 7 & 1 \\ 1 & 1 & 1 \\ 10 & 8 & 1 \end{vmatrix} \right| $$
+                Expand along the first row:
+                $$ = \frac{1}{2} \left| 2 \begin{vmatrix} 1 & 1 \\ 8 & 1 \end{vmatrix} - 7 \begin{vmatrix} 1 & 1 \\ 10 & 1 \end{vmatrix} + 1 \begin{vmatrix} 1 & 1 \\ 10 & 8 \end{vmatrix} \right| $$
+                $$ = \frac{1}{2} | 2(1-8) - 7(1-10) + 1(8-10) | $$
+                $$ = \frac{1}{2} | 2(-7) - 7(-9) + 1(-2) | $$
+                $$ = \frac{1}{2} | -14 + 63 - 2 | $$
+                $$ = \frac{1}{2} | 47 | = \frac{47}{2} \text{ square units} $$</p>
+            <p>(iii) Vertices: (-2, -3), (3, 2), (-1, -8)
+                $$ \text{Area} = \frac{1}{2} \left| \begin{vmatrix} -2 & -3 & 1 \\ 3 & 2 & 1 \\ -1 & -8 & 1 \end{vmatrix} \right| $$
+                Expand along the first row:
+                $$ = \frac{1}{2} | -2(2 - (-8)) + 3(3 - (-1)) + 1(-24 - (-2)) | $$
+                $$ = \frac{1}{2} | -2(2+8) + 3(3+1) + 1(-24+2) | $$
+                $$ = \frac{1}{2} | -2(10) + 3(4) + 1(-22) | $$
+                $$ = \frac{1}{2} | -20 + 12 - 22 | $$
+                $$ = \frac{1}{2} | -30 | = \frac{30}{2} = 15 \text{ square units} $$</p>
+        </div>
+
+        <h4 id="ex4-2-q2">2. Show that points \(A(a, b+c), B(b, c+a), C(c, a+b)\) are collinear.</h4>
+        <div class="solution-box">
+            <p>Three points are collinear if the area of the triangle formed by them is zero.</p>
+            $$ \text{Area} = \frac{1}{2} \left| \begin{vmatrix} a & b+c & 1 \\ b & c+a & 1 \\ c & a+b & 1 \end{vmatrix} \right| $$
+            <p>Apply column operation \(C_2 \to C_2 + C_1\):
+                $$ = \frac{1}{2} \left| \begin{vmatrix} a & a+b+c & 1 \\ b & b+c+a & 1 \\ c & c+a+b & 1 \end{vmatrix} \right| $$
+                Take \((a+b+c)\) common from \(C_2\):
+                $$ = \frac{1}{2} (a+b+c) \left| \begin{vmatrix} a & 1 & 1 \\ b & 1 & 1 \\ c & 1 & 1 \end{vmatrix} \right| $$
+                Since two columns (\(C_2\) and \(C_3\)) are identical, the value of the determinant is 0.</p>
+            $$ = \frac{1}{2} (a+b+c) \cdot 0 = 0 $$
+            <p>Since the area of the triangle is 0, the points A, B, and C are collinear.</p>
+        </div>
+
+        <h4 id="ex4-2-q3">3. Find values of k if area of triangle is 4 sq. units and vertices are
+            (i) (k, 0), (4, 0), (0, 2)
+            (ii) (-2, 0), (0, 4), (0, k)</h4>
+        <div class="solution-box">
+            <p>Given Area = 4 sq. units.
+                $$ \text{Area} = \frac{1}{2} \begin{vmatrix} x_1 & y_1 & 1 \\ x_2 & y_2 & 1 \\ x_3 & y_3 & 1 \end{vmatrix} = \pm 4 $$
+                So, \( \begin{vmatrix} x_1 & y_1 & 1 \\ x_2 & y_2 & 1 \\ x_3 & y_3 & 1 \end{vmatrix} = \pm 8 \).</p>
+            <p>(i) Vertices: (k, 0), (4, 0), (0, 2)
+                $$ \begin{vmatrix} k & 0 & 1 \\ 4 & 0 & 1 \\ 0 & 2 & 1 \end{vmatrix} = \pm 8 $$
+                Expand along the second column:
+                $$ 0 \cdot C_{12} + 0 \cdot C_{22} + 2 \cdot C_{32} = \pm 8 $$
+                $$ C_{32} = (-1)^{3+2} \begin{vmatrix} k & 1 \\ 4 & 1 \end{vmatrix} = -1(k(1) - 1(4)) = -(k-4) = 4-k $$
+                So, \( 2(4-k) = \pm 8 \)
+                Case 1: \( 2(4-k) = 8 \)
+                \( 4-k = 4 \implies k = 0 \)
+                Case 2: \( 2(4-k) = -8 \)
+                \( 4-k = -4 \implies k = 8 \)
+                Thus, \(k=0\) or \(k=8\).</p>
+            <p>(ii) Vertices: (-2, 0), (0, 4), (0, k)
+                $$ \begin{vmatrix} -2 & 0 & 1 \\ 0 & 4 & 1 \\ 0 & k & 1 \end{vmatrix} = \pm 8 $$
+                Expand along the first column:
+                $$ -2 \begin{vmatrix} 4 & 1 \\ k & 1 \end{vmatrix} - 0 \cdot C_{21} + 0 \cdot C_{31} = \pm 8 $$
+                $$ -2((4)(1) - (1)(k)) = \pm 8 $$
+                $$ -2(4-k) = \pm 8 $$
+                Case 1: \( -2(4-k) = 8 \)
+                \( 4-k = -4 \implies k = 8 \)
+                Case 2: \( -2(4-k) = -8 \)
+                \( 4-k = 4 \implies k = 0 \)
+                Thus, \(k=0\) or \(k=8\).</p>
+        </div>
+
+        <h4 id="ex4-2-q4">4. Find equation of line joining (1, 2) and (3, 6) using determinants.</h4>
+        <div class="solution-box">
+            <p>Let P(x, y) be an arbitrary point on the line joining (1, 2) and (3, 6).
+                Since the three points are collinear, the area of the triangle formed by them must be zero.</p>
+            $$ \frac{1}{2} \begin{vmatrix} x & y & 1 \\ 1 & 2 & 1 \\ 3 & 6 & 1 \end{vmatrix} = 0 $$
+            $$ \begin{vmatrix} x & y & 1 \\ 1 & 2 & 1 \\ 3 & 6 & 1 \end{vmatrix} = 0 $$
+            Expand along the first row:
+            $$ x \begin{vmatrix} 2 & 1 \\ 6 & 1 \end{vmatrix} - y \begin{vmatrix} 1 & 1 \\ 3 & 1 \end{vmatrix} + 1 \begin{vmatrix} 1 & 2 \\ 3 & 6 \end{vmatrix} = 0 $$
+            $$ x((2)(1) - (1)(6)) - y((1)(1) - (1)(3)) + 1((1)(6) - (2)(3)) = 0 $$
+            $$ x(2-6) - y(1-3) + 1(6-6) = 0 $$
+            $$ x(-4) - y(-2) + 1(0) = 0 $$
+            $$ -4x + 2y = 0 $$
+            $$ 2y = 4x $$
+            $$ y = 2x $$
+            <p>This is the equation of the line joining (1, 2) and (3, 6).</p>
+        </div>
+
+        <h4 id="ex4-2-q5">5. If area of triangle is 35 sq units with vertices (2, –6), (5, 4) and (k, 4). Then k is
+            (A) 12
+            (B) -2
+            (C) -12, -2
+            (D) 12,-2</h4>
+        <div class="solution-box">
+            <p>Given Area = 35 sq. units.
+                $$ \text{Area} = \frac{1}{2} \begin{vmatrix} x_1 & y_1 & 1 \\ x_2 & y_2 & 1 \\ x_3 & y_3 & 1 \end{vmatrix} = \pm 35 $$
+                So, \( \begin{vmatrix} x_1 & y_1 & 1 \\ x_2 & y_2 & 1 \\ x_3 & y_3 & 1 \end{vmatrix} = \pm 70 \).</p>
+            <p>Vertices: (2, -6), (5, 4), (k, 4)
+                $$ \begin{vmatrix} 2 & -6 & 1 \\ 5 & 4 & 1 \\ k & 4 & 1 \end{vmatrix} = \pm 70 $$
+                Expand along the first column:
+                $$ 2 \begin{vmatrix} 4 & 1 \\ 4 & 1 \end{vmatrix} - (-6) \begin{vmatrix} 5 & 1 \\ k & 1 \end{vmatrix} + 1 \begin{vmatrix} 5 & 4 \\ k & 4 \end{vmatrix} = \pm 70 $$
+                $$ 2((4)(1)-(1)(4)) + 6((5)(1)-(1)(k)) + 1((5)(4)-(4)(k)) = \pm 70 $$
+                $$ 2(4-4) + 6(5-k) + 1(20-4k) = \pm 70 $$
+                $$ 2(0) + 30-6k + 20-4k = \pm 70 $$
+                $$ 50 - 10k = \pm 70 $$
+                Case 1: \( 50 - 10k = 70 \)
+                \( -10k = 20 \implies k = -2 \)
+                Case 2: \( 50 - 10k = -70 \)
+                \( -10k = -120 \implies k = 12 \)
+                Thus, \(k=12\) or \(k=-2\).</p>
+            <p>The correct option is (C).</p>
+        </div>
+        <hr>
+
+        <h3 id="exercise-4-3">Exercise 4.3</h3>
+        <h4 id="ex4-3-q1">1. Write Minors and Cofactors of the elements of following determinants:
+            (i) \(\begin{vmatrix} 2 & -4 \\ 0 & 3 \end{vmatrix}\)
+            (ii) \(\begin{vmatrix} a & c \\ b & d \end{vmatrix}\)</h4>
+        <div class="solution-box">
+            <p>(i) For \(\begin{vmatrix} 2 & -4 \\ 0 & 3 \end{vmatrix}\):</p>
+            <p>Minors \(M_{ij}\):</p>
+            <ul>
+                <li>\(M_{11}\) (minor of 2) = \(3\)</li>
+                <li>\(M_{12}\) (minor of -4) = \(0\)</li>
+                <li>\(M_{21}\) (minor of 0) = \(-4\)</li>
+                <li>\(M_{22}\) (minor of 3) = \(2\)</li>
+            </ul>
+            <p>Cofactors \(A_{ij} = (-1)^{i+j} M_{ij}\):</p>
+            <ul>
+                <li>\(A_{11} = (-1)^{1+1} M_{11} = (1)(3) = 3\)</li>
+                <li>\(A_{12} = (-1)^{1+2} M_{12} = (-1)(0) = 0\)</li>
+                <li>\(A_{21} = (-1)^{2+1} M_{21} = (-1)(-4) = 4\)</li>
+                <li>\(A_{22} = (-1)^{2+2} M_{22} = (1)(2) = 2\)</li>
+            </ul>
+
+            <p>(ii) For \(\begin{vmatrix} a & c \\ b & d \end{vmatrix}\):</p>
+            <p>Minors \(M_{ij}\):</p>
+            <ul>
+                <li>\(M_{11}\) (minor of a) = \(d\)</li>
+                <li>\(M_{12}\) (minor of c) = \(b\)</li>
+                <li>\(M_{21}\) (minor of b) = \(c\)</li>
+                <li>\(M_{22}\) (minor of d) = \(a\)</li>
+            </ul>
+            <p>Cofactors \(A_{ij} = (-1)^{i+j} M_{ij}\):</p>
+            <ul>
+                <li>\(A_{11} = (-1)^{1+1} M_{11} = (1)(d) = d\)</li>
+                <li>\(A_{12} = (-1)^{1+2} M_{12} = (-1)(b) = -b\)</li>
+                <li>\(A_{21} = (-1)^{2+1} M_{21} = (-1)(c) = -c\)</li>
+                <li>\(A_{22} = (-1)^{2+2} M_{22} = (1)(a) = a\)</li>
+            </ul>
+        </div>
+
+        <h4 id="ex4-3-q2">2. Write Minors and Cofactors of the elements of following determinants:
+            (i) \(\begin{vmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{vmatrix}\)
+            (ii) \(\begin{vmatrix} 1 & 0 & 4 \\ 3 & 5 & -1 \\ 0 & 1 & 2 \end{vmatrix}\)</h4>
+        <div class="solution-box">
+            <p>(i) For \(\begin{vmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{vmatrix}\) (Identity Matrix):</p>
+            <p>Minors \(M_{ij}\):</p>
+            <ul>
+                <li>\(M_{11} = \begin{vmatrix} 1 & 0 \\ 0 & 1 \end{vmatrix} = 1\)</li>
+                <li>\(M_{12} = \begin{vmatrix} 0 & 0 \\ 0 & 1 \end{vmatrix} = 0\)</li>
+                <li>\(M_{13} = \begin{vmatrix} 0 & 1 \\ 0 & 0 \end{vmatrix} = 0\)</li>
+                <li>\(M_{21} = \begin{vmatrix} 0 & 0 \\ 0 & 1 \end{vmatrix} = 0\)</li>
+                <li>\(M_{22} = \begin{vmatrix} 1 & 0 \\ 0 & 1 \end{vmatrix} = 1\)</li>
+                <li>\(M_{23} = \begin{vmatrix} 1 & 0 \\ 0 & 0 \end{vmatrix} = 0\)</li>
+                <li>\(M_{31} = \begin{vmatrix} 0 & 0 \\ 1 & 0 \end{vmatrix} = 0\)</li>
+                <li>\(M_{32} = \begin{vmatrix} 1 & 0 \\ 0 & 0 \end{vmatrix} = 0\)</li>
+                <li>\(M_{33} = \begin{vmatrix} 1 & 0 \\ 0 & 1 \end{vmatrix} = 1\)</li>
+            </ul>
+            <p>Cofactors \(A_{ij} = (-1)^{i+j} M_{ij}\):</p>
+            <ul>
+                <li>\(A_{11} = (-1)^{1+1} M_{11} = 1\)</li>
+                <li>\(A_{12} = (-1)^{1+2} M_{12} = 0\)</li>
+                <li>\(A_{13} = (-1)^{1+3} M_{13} = 0\)</li>
+                <li>\(A_{21} = (-1)^{2+1} M_{21} = 0\)</li>
+                <li>\(A_{22} = (-1)^{2+2} M_{22} = 1\)</li>
+                <li>\(A_{23} = (-1)^{2+3} M_{23} = 0\)</li>
+                <li>\(A_{31} = (-1)^{3+1} M_{31} = 0\)</li>
+                <li>\(A_{32} = (-1)^{3+2} M_{32} = 0\)</li>
+                <li>\(A_{33} = (-1)^{3+3} M_{33} = 1\)</li>
+            </ul>
+
+            <p>(ii) For \(\begin{vmatrix} 1 & 0 & 4 \\ 3 & 5 & -1 \\ 0 & 1 & 2 \end{vmatrix}\):</p>
+            <p>Minors \(M_{ij}\):</p>
+            <ul>
+                <li>\(M_{11} = \begin{vmatrix} 5 & -1 \\ 1 & 2 \end{vmatrix} = 5(2) - (-1)(1) = 10+1 = 11\)</li>
+                <li>\(M_{12} = \begin{vmatrix} 3 & -1 \\ 0 & 2 \end{vmatrix} = 3(2) - (-1)(0) = 6-0 = 6\)</li>
+                <li>\(M_{13} = \begin{vmatrix} 3 & 5 \\ 0 & 1 \end{vmatrix} = 3(1) - 5(0) = 3-0 = 3\)</li>
+                <li>\(M_{21} = \begin{vmatrix} 0 & 4 \\ 1 & 2 \end{vmatrix} = 0(2) - 4(1) = 0-4 = -4\)</li>
+                <li>\(M_{22} = \begin{vmatrix} 1 & 4 \\ 0 & 2 \end{vmatrix} = 1(2) - 4(0) = 2-0 = 2\)</li>
+                <li>\(M_{23} = \begin{vmatrix} 1 & 0 \\ 0 & 1 \end{vmatrix} = 1(1) - 0(0) = 1-0 = 1\)</li>
+                <li>\(M_{31} = \begin{vmatrix} 0 & 4 \\ 5 & -1 \end{vmatrix} = 0(-1) - 4(5) = 0-20 = -20\)</li>
+                <li>\(M_{32} = \begin{vmatrix} 1 & 4 \\ 3 & -1 \end{vmatrix} = 1(-1) - 4(3) = -1-12 = -13\)</li>
+                <li>\(M_{33} = \begin{vmatrix} 1 & 0 \\ 3 & 5 \end{vmatrix} = 1(5) - 0(3) = 5-0 = 5\)</li>
+            </ul>
+            <p>Cofactors \(A_{ij} = (-1)^{i+j} M_{ij}\):</p>
+            <ul>
+                <li>\(A_{11} = (-1)^{1+1} M_{11} = 11\)</li>
+                <li>\(A_{12} = (-1)^{1+2} M_{12} = -6\)</li>
+                <li>\(A_{13} = (-1)^{1+3} M_{13} = 3\)</li>
+                <li>\(A_{21} = (-1)^{2+1} M_{21} = -(-4) = 4\)</li>
+                <li>\(A_{22} = (-1)^{2+2} M_{22} = 2\)</li>
+                <li>\(A_{23} = (-1)^{2+3} M_{23} = -1\)</li>
+                <li>\(A_{31} = (-1)^{3+1} M_{31} = -20\)</li>
+                <li>\(A_{32} = (-1)^{3+2} M_{32} = -(-13) = 13\)</li>
+                <li>\(A_{33} = (-1)^{3+3} M_{33} = 5\)</li>
+            </ul>
+        </div>
+
+        <h4 id="ex4-3-q3">3. Using Cofactors of elements of second row, evaluate \(\Delta = \begin{vmatrix} 5 & 3 & 8 \\ 2 & 0 & 1 \\ 1 & 2 & 3 \end{vmatrix}\).</h4>
+        <div class="solution-box">
+            <p>The determinant can be evaluated using cofactors of the second row:
+                $$ \Delta = a_{21}A_{21} + a_{22}A_{22} + a_{23}A_{23} $$
+                Here \(a_{21}=2, a_{22}=0, a_{23}=1\).</p>
+            <p>Cofactors \(A_{ij} = (-1)^{i+j} M_{ij}\):</p>
+            <ul>
+                <li>\(A_{21} = (-1)^{2+1} M_{21} = (-1)^3 \begin{vmatrix} 3 & 8 \\ 2 & 3 \end{vmatrix} = -1((3)(3) - (8)(2)) = -1(9-16) = -1(-7) = 7\)</li>
+                <li>\(A_{22} = (-1)^{2+2} M_{22} = (-1)^4 \begin{vmatrix} 5 & 8 \\ 1 & 3 \end{vmatrix} = 1((5)(3) - (8)(1)) = 1(15-8) = 7\)</li>
+                <li>\(A_{23} = (-1)^{2+3} M_{23} = (-1)^5 \begin{vmatrix} 5 & 3 \\ 1 & 2 \end{vmatrix} = -1((5)(2) - (3)(1)) = -1(10-3) = -1(7) = -7\)</li>
+            </ul>
+            <p>Now, calculate \(\Delta\):
+                $$ \Delta = (2)(7) + (0)(7) + (1)(-7) $$
+                $$ = 14 + 0 - 7 = 7 $$</p>
+        </div>
+
+        <h4 id="ex4-3-q4">4. Using Cofactors of elements of third column, evaluate \(\Delta = \begin{vmatrix} 1 & x & yz \\ 1 & y & zx \\ 1 & z & xy \end{vmatrix}\).</h4>
+        <div class="solution-box">
+            <p>The determinant can be evaluated using cofactors of the third column:
+                $$ \Delta = a_{13}A_{13} + a_{23}A_{23} + a_{33}A_{33} $$
+                Here \(a_{13}=yz, a_{23}=zx, a_{33}=xy\).</p>
+            <p>Cofactors \(A_{ij} = (-1)^{i+j} M_{ij}\):</p>
+            <ul>
+                <li>\(A_{13} = (-1)^{1+3} M_{13} = 1 \begin{vmatrix} 1 & y \\ 1 & z \end{vmatrix} = z-y\)</li>
+                <li>\(A_{23} = (-1)^{2+3} M_{23} = -1 \begin{vmatrix} 1 & x \\ 1 & z \end{vmatrix} = -(z-x) = x-z\)</li>
+                <li>\(A_{33} = (-1)^{3+3} M_{33} = 1 \begin{vmatrix} 1 & x \\ 1 & y \end{vmatrix} = y-x\)</li>
+            </ul>
+            <p>Now, calculate \(\Delta\):
+                $$ \Delta = yz(z-y) + zx(x-z) + xy(y-x) $$
+                $$ = yz^2 - y^2z + zx^2 - z^2x + xy^2 - x^2y $$
+                This is a cyclic expression. To factor it, rearrange terms in powers of one variable, say \(x\):
+                $$ \Delta = x^2(z-y) + x(y^2-z^2) + yz^2-y^2z $$
+                $$ \Delta = x^2(z-y) + x(y-z)(y+z) + yz(z-y) $$
+                Factor out \((z-y)\) (and consequently \(-(y-z)\)):
+                $$ \Delta = x^2(z-y) - x(z-y)(y+z) + yz(z-y) $$
+                $$ \Delta = (z-y) [x^2 - x(y+z) + yz] $$
+                The quadratic expression \(x^2 - x(y+z) + yz\) can be factored as \((x-y)(x-z)\).</p>
+            $$ \Delta = (z-y)(x-y)(x-z) $$
+            <p>Or, rearranging to a common cyclic form: \((x-y)(y-z)(z-x)\).</p>
+        </div>
+
+        <h4 id="ex4-3-q5">5. If \(A = \begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{pmatrix}\) and \(A_{ij}\) is Cofactors of \(a_{ij}\), then value of \(\Delta\) is given by
+            (A) \(a_{11} A_{31}+ a_{12} A_{32} + a_{13} A_{33}\)
+            (B) \(a_{11} A_{11}+ a_{12} A_{21} + a_{13} A_{31}\)
+            (C) \(a_{21} A_{11}+ a_{22} A_{12} + a_{23} A_{13}\)
+            (D) \(a_{11} A_{11}+ a_{21} A_{21} + a_{31} A_{31}\)</h4>
+        <div class="solution-box">
+            <p>The value of a determinant can be found by summing the products of elements of any row (or column) with their corresponding cofactors.</p>
+            <p>Let's analyze the given options:</p>
+            <ul>
+                <li>(A) \(a_{11} A_{31}+ a_{12} A_{32} + a_{13} A_{33}\): This is the sum of products of elements of the first row with cofactors of the third row. This sum is always zero, not the value of the determinant.</li>
+                <li>(B) \(a_{11} A_{11}+ a_{12} A_{21} + a_{13} A_{31}\): This is the sum of products of elements of the first row with cofactors of the first column. This is not the correct expansion for the determinant.</li>
+                <li>(C) \(a_{21} A_{11}+ a_{22} A_{12} + a_{23} A_{13}\): This is the sum of products of elements of the second row with cofactors of the first row. This sum is also zero.</li>
+                <li>(D) \(a_{11} A_{11}+ a_{21} A_{21} + a_{31} A_{31}\): This is the sum of products of elements of the first column with their corresponding cofactors (\(a_{11}\) with \(A_{11}\), \(a_{21}\) with \(A_{21}\), \(a_{31}\) with \(A_{31}\)). This correctly evaluates the determinant by expanding along the first column.</li>
+            </ul>
+            <p>Therefore, the correct option is (D).</p>
+        </div>
+        <hr>
+
+        <h3 id="exercise-4-4">Exercise 4.4</h3>
+        <p>Find adjoint of each of the matrices in Exercises 1 and 2.</p>
+        <h4 id="ex4-4-q1">1. \(\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}\)</h4>
+        <div class="solution-box">
+            <p>Let \(A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}\).</p>
+            <p>First, find the cofactors of each element:</p>
+            <ul>
+                <li>\(A_{11} = (-1)^{1+1} M_{11} = 4\)</li>
+                <li>\(A_{12} = (-1)^{1+2} M_{12} = -3\)</li>
+                <li>\(A_{21} = (-1)^{2+1} M_{21} = -2\)</li>
+                <li>\(A_{22} = (-1)^{2+2} M_{22} = 1\)</li>
+            </ul>
+            <p>The cofactor matrix is \(C = \begin{pmatrix} 4 & -3 \\ -2 & 1 \end{pmatrix}\).</p>
+            <p>The adjoint of A, denoted as adj A, is the transpose of the cofactor matrix.</p>
+            $$ \text{adj A} = C' = \begin{pmatrix} 4 & -2 \\ -3 & 1 \end{pmatrix} $$
+            <p>For a \(2 \times 2\) matrix \(\begin{pmatrix} a & b \\ c & d \end{pmatrix}\), a shortcut for adjoint is \(\begin{pmatrix} d & -b \\ -c & a \end{pmatrix}\). This matches our result.</p>
+        </div>
+
+        <h4 id="ex4-4-q2">2. \(\begin{pmatrix} 1 & -1 & 2 \\ 2 & 3 & 5 \\ -2 & 0 & 1 \end{pmatrix}\)</h4>
+        <div class="solution-box">
+            <p>Let \(A = \begin{pmatrix} 1 & -1 & 2 \\ 2 & 3 & 5 \\ -2 & 0 & 1 \end{pmatrix}\).</p>
+            <p>Find the cofactors \(A_{ij}\):</p>
+            <ul>
+                <li>\(A_{11} = (-1)^{1+1} \begin{vmatrix} 3 & 5 \\ 0 & 1 \end{vmatrix} = (1)(3-0) = 3\)</li>
+                <li>\(A_{12} = (-1)^{1+2} \begin{vmatrix} 2 & 5 \\ -2 & 1 \end{vmatrix} = -1(2-(-10)) = -(2+10) = -12\)</li>
+                <li>\(A_{13} = (-1)^{1+3} \begin{vmatrix} 2 & 3 \\ -2 & 0 \end{vmatrix} = (1)(0-(-6)) = 6\)</li>
+                <li>\(A_{21} = (-1)^{2+1} \begin{vmatrix} -1 & 2 \\ 0 & 1 \end{vmatrix} = -1(-1-0) = 1\)</li>
+                <li>\(A_{22} = (-1)^{2+2} \begin{vmatrix} 1 & 2 \\ -2 & 1 \end{vmatrix} = (1)(1-(-4)) = 1+4 = 5\)</li>
+                <li>\(A_{23} = (-1)^{2+3} \begin{vmatrix} 1 & -1 \\ -2 & 0 \end{vmatrix} = -1(0-2) = 2\)</li>
+                <li>\(A_{31} = (-1)^{3+1} \begin{vmatrix} -1 & 2 \\ 3 & 5 \end{vmatrix} = (1)(-5-6) = -11\)</li>
+                <li>\(A_{32} = (-1)^{3+2} \begin{vmatrix} 1 & 2 \\ 2 & 5 \end{vmatrix} = -1(5-4) = -1\)</li>
+                <li>\(A_{33} = (-1)^{3+3} \begin{vmatrix} 1 & -1 \\ 2 & 3 \end{vmatrix} = (1)(3-(-2)) = 3+2 = 5\)</li>
+            </ul>
+            <p>The cofactor matrix is \(C = \begin{pmatrix} 3 & -12 & 6 \\ 1 & 5 & 2 \\ -11 & -1 & 5 \end{pmatrix}\).</p>
+            <p>The adjoint of A is \( \text{adj A} = C' \):
+                $$ \text{adj A} = \begin{pmatrix} 3 & 1 & -11 \\ -12 & 5 & -1 \\ 6 & 2 & 5 \end{pmatrix} $$
+        </div>
+
+        <p>Verify \(A(\text{adj } A) = (\text{adj } A)A = |A|I\) in Exercises 3 and 4</p>
+        <h4 id="ex4-4-q3">3. \(\begin{pmatrix} 2 & 3 \\ -4 & -6 \end{pmatrix}\)</h4>
+        <div class="solution-box">
+            <p>Let \(A = \begin{pmatrix} 2 & 3 \\ -4 & -6 \end{pmatrix}\).</p>
+            <p>First, calculate \(|A|\):
+                $$ |A| = (2)(-6) - (3)(-4) = -12 - (-12) = -12 + 12 = 0 $$
+            <p>Next, find \(\text{adj A}\):</p>
+            <ul>
+                <li>\(A_{11} = -6\)</li>
+                <li>\(A_{12} = -(-4) = 4\)</li>
+                <li>\(A_{21} = -(3) = -3\)</li>
+                <li>\(A_{22} = 2\)</li>
+            </ul>
+            <p>Cofactor matrix \(C = \begin{pmatrix} -6 & 4 \\ -3 & 2 \end{pmatrix}\).</p>
+            <p>$$ \text{adj A} = C' = \begin{pmatrix} -6 & -3 \\ 4 & 2 \end{pmatrix} $$
+            <p>Now, verify \(A(\text{adj } A) = |A|I\):
+                $$ A(\text{adj } A) = \begin{pmatrix} 2 & 3 \\ -4 & -6 \end{pmatrix} \begin{pmatrix} -6 & -3 \\ 4 & 2 \end{pmatrix} $$
+                $$ = \begin{pmatrix} 2(-6)+3(4) & 2(-3)+3(2) \\ -4(-6)+(-6)(4) & -4(-3)+(-6)(2) \end{pmatrix} $$
+                $$ = \begin{pmatrix} -12+12 & -6+6 \\ 24-24 & 12-12 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix} $$
+                And \(|A|I = 0 \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix} \).</p>
+            <p>Verify \((\text{adj } A)A = |A|I\):
+                $$ (\text{adj } A)A = \begin{pmatrix} -6 & -3 \\ 4 & 2 \end{pmatrix} \begin{pmatrix} 2 & 3 \\ -4 & -6 \end{pmatrix} $$
+                $$ = \begin{pmatrix} -6(2)+(-3)(-4) & -6(3)+(-3)(-6) \\ 4(2)+2(-4) & 4(3)+2(-6) \end{pmatrix} $$
+                $$ = \begin{pmatrix} -12+12 & -18+18 \\ 8-8 & 12-12 \end{pmatrix} = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix} $$
+            <p>Since \(A(\text{adj } A) = (\text{adj } A)A = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix} = |A|I\), the relation is verified.</p>
+        </div>
+
+        <h4 id="ex4-4-q4">4. \(\begin{pmatrix} 1 & 0 & 3 \\ 3 & 0 & -2 \\ 1 & 0 & 1 \end{pmatrix}\)</h4>
+        <div class="solution-box">
+            <p>Let \(A = \begin{pmatrix} 1 & 0 & 3 \\ 3 & 0 & -2 \\ 1 & 0 & 1 \end{pmatrix}\).</p>
+            <p>First, calculate \(|A|\). Expand along the second column (as it has all zeros):
+                $$ |A| = 0 \cdot C_{12} + 0 \cdot C_{22} + 0 \cdot C_{32} = 0 $$</p>
+            <p>Next, find \(\text{adj A}\):</p>
+            <ul>
+                <li>\(A_{11} = (-1)^{1+1} \begin{vmatrix} 0 & -2 \\ 0 & 1 \end{vmatrix} = 0\)</li>
+                <li>\(A_{12} = (-1)^{1+2} \begin{vmatrix} 3 & -2 \\ 1 & 1 \end{vmatrix} = -(3-(-2)) = -5\)</li>
+                <li>\(A_{13} = (-1)^{1+3} \begin{vmatrix} 3 & 0 \\ 1 & 0 \end{vmatrix} = 0\)</li>
+                <li>\(A_{21} = (-1)^{2+1} \begin{vmatrix} 0 & 3 \\ 0 & 1 \end{vmatrix} = 0\)</li>
+                <li>\(A_{22} = (-1)^{2+2} \begin{vmatrix} 1 & 3 \\ 1 & 1 \end{vmatrix} = 1-3 = -2\)</li>
+                <li>\(A_{23} = (-1)^{2+3} \begin{vmatrix} 1 & 0 \\ 1 & 0 \end{vmatrix} = 0\)</li>
+                <li>\(A_{31} = (-1)^{3+1} \begin{vmatrix} 0 & 3 \\ 0 & -2 \end{vmatrix} = 0\)</li>
+                <li>\(A_{32} = (-1)^{3+2} \begin{vmatrix} 1 & 3 \\ 3 & -2 \end{vmatrix} = -(-2-9) = 11\)</li>
+                <li>\(A_{33} = (-1)^{3+3} \begin{vmatrix} 1 & 0 \\ 3 & 0 \end{vmatrix} = 0\)</li>
+            </ul>
+            <p>Cofactor matrix \(C = \begin{pmatrix} 0 & -5 & 0 \\ 0 & -2 & 0 \\ 0 & 11 & 0 \end{pmatrix}\).</p>
+            <p>$$ \text{adj A} = C' = \begin{pmatrix} 0 & 0 & 0 \\ -5 & -2 & 11 \\ 0 & 0 & 0 \end{pmatrix} $$
+            <p>Now, verify \(A(\text{adj } A) = |A|I\):
+                $$ A(\text{adj } A) = \begin{pmatrix} 1 & 0 & 3 \\ 3 & 0 & -2 \\ 1 & 0 & 1 \end{pmatrix} \begin{pmatrix} 0 & 0 & 0 \\ -5 & -2 & 11 \\ 0 & 0 & 0 \end{pmatrix} $$
+                $$ = \begin{pmatrix} 1(0)+0(-5)+3(0) & 1(0)+0(-2)+3(0) & 1(0)+0(11)+3(0) \\ 3(0)+0(-5)+(-2)(0) & 3(0)+0(-2)+(-2)(0) & 3(0)+0(11)+(-2)(0) \\ 1(0)+0(-5)+1(0) & 1(0)+0(-2)+1(0) & 1(0)+0(11)+1(0) \end{pmatrix} $$
+                $$ = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix} $$
+                And \(|A|I = 0 \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix} \).</p>
+            <p>Verify \((\text{adj } A)A = |A|I\):
+                $$ (\text{adj } A)A = \begin{pmatrix} 0 & 0 & 0 \\ -5 & -2 & 11 \\ 0 & 0 & 0 \end{pmatrix} \begin{pmatrix} 1 & 0 & 3 \\ 3 & 0 & -2 \\ 1 & 0 & 1 \end{pmatrix} $$
+                $$ = \begin{pmatrix} 0 & 0 & 0 \\ -5(1)+(-2)(3)+11(1) & -5(0)+(-2)(0)+11(0) & -5(3)+(-2)(-2)+11(1) \\ 0 & 0 & 0 \end{pmatrix} $$
+                $$ = \begin{pmatrix} 0 & 0 & 0 \\ -5-6+11 & 0 & -15+4+11 \\ 0 & 0 & 0 \end{pmatrix} = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{pmatrix} $$
+            <p>Since \(A(\text{adj } A) = (\text{adj } A)A = \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix} = |A|I\), the relation is verified.</p>
+        </div>
+
+        <p>Find the inverse of each of the matrices (if it exists) given in Exercises 5 to 11.</p>
+        <h4 id="ex4-4-q5">5. \(\begin{pmatrix} 2 & -2 \\ 4 & 3 \end{pmatrix}\)</h4>
+        <div class="solution-box">
+            <p>Let \(A = \begin{pmatrix} 2 & -2 \\ 4 & 3 \end{pmatrix}\).</p>
+            <p>First, calculate \(|A|\):
+                $$ |A| = (2)(3) - (-2)(4) = 6 - (-8) = 6+8 = 14 $$
+                Since \(|A| = 14 \neq 0\), the inverse exists.</p>
+            <p>Next, find \(\text{adj A}\) using the shortcut for \(2 \times 2\) matrices:
+                $$ \text{adj A} = \begin{pmatrix} 3 & 2 \\ -4 & 2 \end{pmatrix} $$
+            <p>Finally, find \(A^{-1} = \frac{1}{|A|} \text{adj A}\):
+                $$ A^{-1} = \frac{1}{14} \begin{pmatrix} 3 & 2 \\ -4 & 2 \end{pmatrix} = \begin{pmatrix} 3/14 & 2/14 \\ -4/14 & 2/14 \end{pmatrix} = \begin{pmatrix} 3/14 & 1/7 \\ -2/7 & 1/7 \end{pmatrix} $$
+        </div>
+
+        <h4 id="ex4-4-q6">6. \(\begin{pmatrix} -1 & 5 \\ -3 & 2 \end{pmatrix}\)</h4>
+        <div class="solution-box">
+            <p>Let \(A = \begin{pmatrix} -1 & 5 \\ -3 & 2 \end{pmatrix}\).</p>
+            <p>First, calculate \(|A|\):
+                $$ |A| = (-1)(2) - (5)(-3) = -2 - (-15) = -2+15 = 13 $$
+                Since \(|A| = 13 \neq 0\), the inverse exists.</p>
+            <p>Next, find \(\text{adj A}\) using the shortcut for \(2 \times 2\) matrices:
+                $$ \text{adj A} = \begin{pmatrix} 2 & -5 \\ 3 & -1 \end{pmatrix} $$
+            <p>Finally, find \(A^{-1} = \frac{1}{|A|} \text{adj A}\):
+                $$ A^{-1} = \frac{1}{13} \begin{pmatrix} 2 & -5 \\ 3 & -1 \end{pmatrix} = \begin{pmatrix} 2/13 & -5/13 \\ 3/13 & -1/13 \end{pmatrix} $$
+        </div>
+
+        <h4 id="ex4-4-q7">7. \(\begin{pmatrix} 1 & 2 & 3 \\ 0 & 2 & 4 \\ 0 & 0 & 5 \end{pmatrix}\)</h4>
+        <div class="solution-box">
+            <p>Let \(A = \begin{pmatrix} 1 & 2 & 3 \\ 0 & 2 & 4 \\ 0 & 0 & 5 \end{pmatrix}\).</p>
+            <p>First, calculate \(|A|\). Since it's an upper triangular matrix, the determinant is the product of its diagonal elements:
+                $$ |A| = (1)(2)(5) = 10 $$
+                Since \(|A| = 10 \neq 0\), the inverse exists.</p>
+            <p>Next, find the cofactors \(A_{ij}\):</p>
+            <ul>
+                <li>\(A_{11} = (-1)^{1+1} \begin{vmatrix} 2 & 4 \\ 0 & 5 \end{vmatrix} = 10-0 = 10\)</li>
+                <li>\(A_{12} = (-1)^{1+2} \begin{vmatrix} 0 & 4 \\ 0 & 5 \end{vmatrix} = -(0-0) = 0\)</li>
+                <li>\(A_{13} = (-1)^{1+3} \begin{vmatrix} 0 & 2 \\ 0 & 0 \end{vmatrix} = 0-0 = 0\)</li>
+                <li>\(A_{21} = (-1)^{2+1} \begin{vmatrix} 2 & 3 \\ 0 & 5 \end{vmatrix} = -(10-0) = -10\)</li>
+                <li>\(A_{22} = (-1)^{2+2} \begin{vmatrix} 1 & 3 \\ 0 & 5 \end{vmatrix} = 5-0 = 5\)</li>
+                <li>\(A_{23} = (-1)^{2+3} \begin{vmatrix} 1 & 2 \\ 0 & 0 \end{vmatrix} = -(0-0) = 0\)</li>
+                <li>\(A_{31} = (-1)^{3+1} \begin{vmatrix} 2 & 3 \\ 2 & 4 \end{vmatrix} = 8-6 = 2\)</li>
+                <li>\(A_{32} = (-1)^{3+2} \begin{vmatrix} 1 & 3 \\ 0 & 4 \end{vmatrix} = -(4-0) = -4\)</li>
+                <li>\(A_{33} = (-1)^{3+3} \begin{vmatrix} 1 & 2 \\ 0 & 2 \end{vmatrix} = 2-0 = 2\)</li>
+            </ul>
+            <p>Cofactor matrix \(C = \begin{pmatrix} 10 & 0 & 0 \\ -10 & 5 & 0 \\ 2 & -4 & 2 \end{pmatrix}\).</p>
+            <p>$$ \text{adj A} = C' = \begin{pmatrix} 10 & -10 & 2 \\ 0 & 5 & -4 \\ 0 & 0 & 2 \end{pmatrix} $$
+            <p>Finally, find \(A^{-1} = \frac{1}{|A|} \text{adj A}\):
+                $$ A^{-1} = \frac{1}{10} \begin{pmatrix} 10 & -10 & 2 \\ 0 & 5 & -4 \\ 0 & 0 & 2 \end{pmatrix} = \begin{pmatrix} 1 & -1 & 1/5 \\ 0 & 1/2 & -2/5 \\ 0 & 0 & 1/5 \end{pmatrix} $$
+        </div>
+
+        <h4 id="ex4-4-q8">8. \(\begin{pmatrix} 1 & 0 & 0 \\ 3 & 3 & 0 \\ 5 & 2 & -1 \end{pmatrix}\)</h4>
+        <div class="solution-box">
+            <p>Let \(A = \begin{pmatrix} 1 & 0 & 0 \\ 3 & 3 & 0 \\ 5 & 2 & -1 \end{pmatrix}\).</p>
+            <p>First, calculate \(|A|\). Since it's a lower triangular matrix, the determinant is the product of its diagonal elements:
+                $$ |A| = (1)(3)(-1) = -3 $$
+                Since \(|A| = -3 \neq 0\), the inverse exists.</p>
+            <p>Next, find the cofactors \(A_{ij}\):</p>
+            <ul>
+                <li>\(A_{11} = (-1)^{1+1} \begin{vmatrix} 3 & 0 \\ 2 & -1 \end{vmatrix} = -3-0 = -3\)</li>
+                <li>\(A_{12} = (-1)^{1+2} \begin{vmatrix} 3 & 0 \\ 5 & -1 \end{vmatrix} = -(-3-0) = 3\)</li>
+                <li>\(A_{13} = (-1)^{1+3} \begin{vmatrix} 3 & 3 \\ 5 & 2 \end{vmatrix} = 6-15 = -9\)</li>
+                <li>\(A_{21} = (-1)^{2+1} \begin{vmatrix} 0 & 0 \\ 2 & -1 \end{vmatrix} = -(0-0) = 0\)</li>
+                <li>\(A_{22} = (-1)^{2+2} \begin{vmatrix} 1 & 0 \\ 5 & -1 \end{vmatrix} = -1-0 = -1\)</li>
+                <li>\(A_{23} = (-1)^{2+3} \begin{vmatrix} 1 & 0 \\ 5 & 2 \end{vmatrix} = -(2-0) = -2\)</li>
+                <li>\(A_{31} = (-1)^{3+1} \begin{vmatrix} 0 & 0 \\ 3 & 0 \end{vmatrix} = 0-0 = 0\)</li>
+                <li>\(A_{32} = (-1)^{3+2} \begin{vmatrix} 1 & 0 \\ 3 & 0 \end{vmatrix} = -(0-0) = 0\)</li>
+                <li>\(A_{33} = (-1)^{3+3} \begin{vmatrix} 1 & 0 \\ 3 & 3 \end{vmatrix} = 3-0 = 3\)</li>
+            </ul>
+            <p>Cofactor matrix \(C = \begin{pmatrix} -3 & 3 & -9 \\ 0 & -1 & -2 \\ 0 & 0 & 3 \end{pmatrix}\).</p>
+            <p>$$ \text{adj A} = C' = \begin{pmatrix} -3 & 0 & 0 \\ 3 & -1 & 0 \\ -9 & -2 & 3 \end{pmatrix} $$
+            <p>Finally, find \(A^{-1} = \frac{1}{|A|} \text{adj A}\):
+                $$ A^{-1} = \frac{1}{-3} \begin{pmatrix} -3 & 0 & 0 \\ 3 & -1 & 0 \\ -9 & -2 & 3 \end{pmatrix} = \begin{pmatrix} 1 & 0 & 0 \\ -1 & 1/3 & 0 \\ 3 & 2/3 & -1 \end{pmatrix} $$
+        </div>
+
+        <h4 id="ex4-4-q9">9. \(\begin{pmatrix} 2 & 1 & 3 \\ 4 & -1 & 0 \\ -7 & 2 & 1 \end{pmatrix}\)</h4>
+        <div class="solution-box">
+            <p>Let \(A = \begin{pmatrix} 2 & 1 & 3 \\ 4 & -1 & 0 \\ -7 & 2 & 1 \end{pmatrix}\).</p>
+            <p>First, calculate \(|A|\). Expand along the second row (for the zero):
+                $$ |A| = 4 \cdot C_{21} + (-1) \cdot C_{22} + 0 \cdot C_{23} $$
+                $$ C_{21} = (-1)^{2+1} \begin{vmatrix} 1 & 3 \\ 2 & 1 \end{vmatrix} = -(1-6) = 5 $$
+                $$ C_{22} = (-1)^{2+2} \begin{vmatrix} 2 & 3 \\ -7 & 1 \end{vmatrix} = (2-(-21)) = 23 $$
+                $$ |A| = 4(5) + (-1)(23) + 0 = 20 - 23 = -3 $$
+                Since \(|A| = -3 \neq 0\), the inverse exists.</p>
+            <p>Next, find the cofactors \(A_{ij}\):</p>
+            <ul>
+                <li>\(A_{11} = (-1)^{1+1} \begin{vmatrix} -1 & 0 \\ 2 & 1 \end{vmatrix} = -1-0 = -1\)</li>
+                <li>\(A_{12} = (-1)^{1+2} \begin{vmatrix} 4 & 0 \\ -7 & 1 \end{vmatrix} = -(4-0) = -4\)</li>
+                <li>\(A_{13} = (-1)^{1+3} \begin{vmatrix} 4 & -1 \\ -7 & 2 \end{vmatrix} = 8-7 = 1\)</li>
+                <li>\(A_{21} = 5\) (calculated above)</li>
+                <li>\(A_{22} = 23\) (calculated above)</li>
+                <li>\(A_{23} = (-1)^{2+3} \begin{vmatrix} 2 & 1 \\ -7 & 2 \end{vmatrix} = -(4-(-7)) = -(4+7) = -11\)</li>
+                <li>\(A_{31} = (-1)^{3+1} \begin{vmatrix} 1 & 3 \\ -1 & 0 \end{vmatrix} = 0-(-3) = 3\)</li>
+                <li>\(A_{32} = (-1)^{3+2} \begin{vmatrix} 2 & 3 \\ 4 & 0 \end{vmatrix} = -(0-12) = 12\)</li>
+                <li>\(A_{33} = (-1)^{3+3} \begin{vmatrix} 2 & 1 \\ 4 & -1 \end{vmatrix} = -2-4 = -6\)</li>
+            </ul>
+            <p>Cofactor matrix \(C = \begin{pmatrix} -1 & -4 & 1 \\ 5 & 23 & -11 \\ 3 & 12 & -6 \end{pmatrix}\).</p>
+            <p>$$ \text{adj A} = C' = \begin{pmatrix} -1 & 5 & 3 \\ -4 & 23 & 12 \\ 1 & -11 & -6 \end{pmatrix} $$
+            <p>Finally, find \(A^{-1} = \frac{1}{|A|} \text{adj A}\):
+                $$ A^{-1} = \frac{1}{-3} \begin{pmatrix} -1 & 5 & 3 \\ -4 & 23 & 12 \\ 1 & -11 & -6 \end{pmatrix} = \begin{pmatrix} 1/3 & -5/3 & -1 \\ 4/3 & -23/3 & -4 \\ -1/3 & 11/3 & 2 \end{pmatrix} $$
+        </div>
+
+        <h4 id="ex4-4-q10">10. \(\begin{pmatrix} 1 & -1 & 2 \\ 0 & 2 & -3 \\ 3 & -2 & 4 \end{pmatrix}\)</h4>
+        <div class="solution-box">
+            <p>Let \(A = \begin{pmatrix} 1 & -1 & 2 \\ 0 & 2 & -3 \\ 3 & -2 & 4 \end{pmatrix}\).</p>
+            <p>First, calculate \(|A|\). Expand along the first column (for the zero):
+                $$ |A| = 1 \begin{vmatrix} 2 & -3 \\ -2 & 4 \end{vmatrix} - 0 \cdot C_{21} + 3 \begin{vmatrix} -1 & 2 \\ 2 & -3 \end{vmatrix} $$
+                $$ = 1((2)(4)-(-3)(-2)) - 0 + 3((-1)(-3)-(2)(2)) $$
+                $$ = 1(8-6) + 3(3-4) = 1(2) + 3(-1) = 2 - 3 = -1 $$
+                Since \(|A| = -1 \neq 0\), the inverse exists.</p>
+            <p>Next, find the cofactors \(A_{ij}\):</p>
+            <ul>
+                <li>\(A_{11} = (-1)^{1+1} \begin{vmatrix} 2 & -3 \\ -2 & 4 \end{vmatrix} = 8-6 = 2\)</li>
+                <li>\(A_{12} = (-1)^{1+2} \begin{vmatrix} 0 & -3 \\ 3 & 4 \end{vmatrix} = -(0-(-9)) = -9\)</li>
+                <li>\(A_{13} = (-1)^{1+3} \begin{vmatrix} 0 & 2 \\ 3 & -2 \end{vmatrix} = 0-6 = -6\)</li>
+                <li>\(A_{21} = (-1)^{2+1} \begin{vmatrix} -1 & 2 \\ -2 & 4 \end{vmatrix} = -(-4-(-4)) = 0\)</li>
+                <li>\(A_{22} = (-1)^{2+2} \begin{vmatrix} 1 & 2 \\ 3 & 4 \end{vmatrix} = 4-6 = -2\)</li>
+                <li>\(A_{23} = (-1)^{2+3} \begin{vmatrix} 1 & -1 \\ 3 & -2 \end{vmatrix} = -(-2-(-3)) = -(-2+3) = -1\)</li>
+                <li>\(A_{31} = (-1)^{3+1} \begin{vmatrix} -1 & 2 \\ 2 & -3 \end{vmatrix} = 3-4 = -1\)</li>
+                <li>\(A_{32} = (-1)^{3+2} \begin{vmatrix} 1 & 2 \\ 0 & -3 \end{vmatrix} = -(-3-0) = 3\)</li>
+                <li>\(A_{33} = (-1)^{3+3} \begin{vmatrix} 1 & -1 \\ 0 & 2 \end{vmatrix} = 2-0 = 2\)</li>
+            </ul>
+            <p>Cofactor matrix \(C = \begin{pmatrix} 2 & -9 & -6 \\ 0 & -2 & -1 \\ -1 & 3 & 2 \end{pmatrix}\).</p>
+            <p>$$ \text{adj A} = C' = \begin{pmatrix} 2 & 0 & -1 \\ -9 & -2 & 3 \\ -6 & -1 & 2 \end{pmatrix} $$
+            <p>Finally, find \(A^{-1} = \frac{1}{|A|} \text{adj A}\):
+                $$ A^{-1} = \frac{1}{-1} \begin{pmatrix} 2 & 0 & -1 \\ -9 & -2 & 3 \\ -6 & -1 & 2 \end{pmatrix} = \begin{pmatrix} -2 & 0 & 1 \\ 9 & 2 & -3 \\ 6 & 1 & -2 \end{pmatrix} $$
+        </div>
+
+        <h4 id="ex4-4-q11">11. \(\begin{vmatrix} 1 & 0 & 0 \\ 0 & \cos\alpha & \sin\alpha \\ 0 & \sin\alpha & -\cos\alpha \end{vmatrix}\)</h4>
+        <div class="solution-box">
+            <p>Let \(A = \begin{vmatrix} 1 & 0 & 0 \\ 0 & \cos\alpha & \sin\alpha \\ 0 & \sin\alpha & -\cos\alpha \end{vmatrix}\).</p>
+            <p>First, calculate \(|A|\). Expand along the first column:
+                $$ |A| = 1 \begin{vmatrix} \cos\alpha & \sin\alpha \\ \sin\alpha & -\cos\alpha \end{vmatrix} - 0 \cdot C_{21} + 0 \cdot C_{31} $$
+                $$ = 1(\cos\alpha(-\cos\alpha) - \sin\alpha(\sin\alpha)) $$
+                $$ = -\cos^2\alpha - \sin^2\alpha = -(\cos^2\alpha + \sin^2\alpha) = -1 $$
+                Since \(|A| = -1 \neq 0\), the inverse exists.</p>
+            <p>Next, find the cofactors \(A_{ij}\):</p>
+            <ul>
+                <li>\(A_{11} = (-1)^{1+1} \begin{vmatrix} \cos\alpha & \sin\alpha \\ \sin\alpha & -\cos\alpha \end{vmatrix} = -\cos^2\alpha-\sin^2\alpha = -1\)</li>
+                <li>\(A_{12} = (-1)^{1+2} \begin{vmatrix} 0 & \sin\alpha \\ 0 & -\cos\alpha \end{vmatrix} = -(0-0) = 0\)</li>
+                <li>\(A_{13} = (-1)^{1+3} \begin{vmatrix} 0 & \cos\alpha \\ 0 & \sin\alpha \end{vmatrix} = 0-0 = 0\)</li>
+                <li>\(A_{21} = (-1)^{2+1} \begin{vmatrix} 0 & 0 \\ \sin\alpha & -\cos\alpha \end{vmatrix} = -(0-0) = 0\)</li>
+                <li>\(A_{22} = (-1)^{2+2} \begin{vmatrix} 1 & 0 \\ 0 & -\cos\alpha \end{vmatrix} = -\cos\alpha-0 = -\cos\alpha\)</li>
+                <li>\(A_{23} = (-1)^{2+3} \begin{vmatrix} 1 & 0 \\ 0 & \sin\alpha \end{vmatrix} = -(\sin\alpha-0) = -\sin\alpha\)</li>
+                <li>\(A_{31} = (-1)^{3+1} \begin{vmatrix} 0 & 0 \\ \cos\alpha & \sin\alpha \end{vmatrix} = 0-0 = 0\)</li>
+                <li>\(A_{32} = (-1)^{3+2} \begin{vmatrix} 1 & 0 \\ 0 & \sin\alpha \end{vmatrix} = -(\sin\alpha-0) = -\sin\alpha\)</li>
+                <li>\(A_{33} = (-1)^{3+3} \begin{vmatrix} 1 & 0 \\ 0 & \cos\alpha \end{vmatrix} = \cos\alpha-0 = \cos\alpha\)</li>
+            </ul>
+            <p>Cofactor matrix \(C = \begin{pmatrix} -1 & 0 & 0 \\ 0 & -\cos\alpha & -\sin\alpha \\ 0 & -\sin\alpha & \cos\alpha \end{pmatrix}\).</p>
+            <p>$$ \text{adj A} = C' = \begin{pmatrix} -1 & 0 & 0 \\ 0 & -\cos\alpha & -\sin\alpha \\ 0 & -\sin\alpha & \cos\alpha \end{pmatrix} $$
+            <p>Finally, find \(A^{-1} = \frac{1}{|A|} \text{adj A}\):
+                $$ A^{-1} = \frac{1}{-1} \begin{pmatrix} -1 & 0 & 0 \\ 0 & -\cos\alpha & -\sin\alpha \\ 0 & -\sin\alpha & \cos\alpha \end{pmatrix} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\alpha & \sin\alpha \\ 0 & \sin\alpha & -\cos\alpha \end{pmatrix} $$
+                In this case, \(A^{-1} = A\).</p>
+        </div>
+
+        <h4 id="ex4-4-q12">12. Let \(A = \begin{pmatrix} 3 & 7 \\ 2 & 5 \end{pmatrix}\) and \(B = \begin{pmatrix} 6 & 8 \\ 7 & 9 \end{pmatrix}\). Verify that \((AB)^{-1} = B^{-1}A^{-1}\).</h4>
+        <div class="solution-box">
+            <p>First, calculate \(A^{-1}\) and \(B^{-1}\).</p>
+            <p>For \(A = \begin{pmatrix} 3 & 7 \\ 2 & 5 \end{pmatrix}\):
+                \(|A| = (3)(5) - (7)(2) = 15 - 14 = 1\).
+                $$ A^{-1} = \frac{1}{1} \begin{pmatrix} 5 & -7 \\ -2 & 3 \end{pmatrix} = \begin{pmatrix} 5 & -7 \\ -2 & 3 \end{pmatrix} $$
+            <p>For \(B = \begin{pmatrix} 6 & 8 \\ 7 & 9 \end{pmatrix}\):
+                \(|B| = (6)(9) - (8)(7) = 54 - 56 = -2\).
+                $$ B^{-1} = \frac{1}{-2} \begin{pmatrix} 9 & -8 \\ -7 & 6 \end{pmatrix} = \begin{pmatrix} -9/2 & 4 \\ 7/2 & -3 \end{pmatrix} $$
+            <p>Now, calculate RHS: \(B^{-1}A^{-1}\):
+                $$ B^{-1}A^{-1} = \begin{pmatrix} -9/2 & 4 \\ 7/2 & -3 \end{pmatrix} \begin{pmatrix} 5 & -7 \\ -2 & 3 \end{pmatrix} $$
+                $$ = \begin{pmatrix} (-9/2)(5)+4(-2) & (-9/2)(-7)+4(3) \\ (7/2)(5)+(-3)(-2) & (7/2)(-7)+(-3)(3) \end{pmatrix} $$
+                $$ = \begin{pmatrix} -45/2 - 8 & 63/2 + 12 \\ 35/2 + 6 & -49/2 - 9 \end{pmatrix} $$
+                $$ = \begin{pmatrix} (-45-16)/2 & (63+24)/2 \\ (35+12)/2 & (-49-18)/2 \end{pmatrix} = \begin{pmatrix} -61/2 & 87/2 \\ 47/2 & -67/2 \end{pmatrix} $$
+            <p>Next, calculate LHS: \((AB)^{-1}\). First find \(AB\):
+                $$ AB = \begin{pmatrix} 3 & 7 \\ 2 & 5 \end{pmatrix} \begin{pmatrix} 6 & 8 \\ 7 & 9 \end{pmatrix} = \begin{pmatrix} 3(6)+7(7) & 3(8)+7(9) \\ 2(6)+5(7) & 2(8)+5(9) \end{pmatrix} $$
+                $$ = \begin{pmatrix} 18+49 & 24+63 \\ 12+35 & 16+45 \end{pmatrix} = \begin{pmatrix} 67 & 87 \\ 47 & 61 \end{pmatrix} $$
+            <p>Now, find \(|AB|\):
+                $$ |AB| = (67)(61) - (87)(47) = 4087 - 4089 = -2 $$
+                This confirms \(|AB| = |A||B| = (1)(-2) = -2\).</p>
+            <p>Find \(\text{adj}(AB)\):
+                $$ \text{adj}(AB) = \begin{pmatrix} 61 & -87 \\ -47 & 67 \end{pmatrix} $$
+            <p>Finally, find \((AB)^{-1} = \frac{1}{|AB|} \text{adj}(AB)\):
+                $$ (AB)^{-1} = \frac{1}{-2} \begin{pmatrix} 61 & -87 \\ -47 & 67 \end{pmatrix} = \begin{pmatrix} -61/2 & 87/2 \\ 47/2 & -67/2 \end{pmatrix} $$
+            <p>Since LHS = RHS, the identity \((AB)^{-1} = B^{-1}A^{-1}\) is verified.</p>
+        </div>
+
+        <h4 id="ex4-4-q13">13. If \(A = \begin{pmatrix} 1 & 3 & 3 \\ 1 & 4 & 3 \\ 1 & 3 & 4 \end{pmatrix}\), then verify that \(A(\text{adj } A) = |A|I\). Also find \(A^{-1}\).</h4>
+        <div class="solution-box">
+            <p>Given \(A = \begin{pmatrix} 1 & 3 & 3 \\ 1 & 4 & 3 \\ 1 & 3 & 4 \end{pmatrix}\).</p>
+            <p>First, calculate \(|A|\). Expand along the first row:
+                $$ |A| = 1 \begin{vmatrix} 4 & 3 \\ 3 & 4 \end{vmatrix} - 3 \begin{vmatrix} 1 & 3 \\ 1 & 4 \end{vmatrix} + 3 \begin{vmatrix} 1 & 4 \\ 1 & 3 \end{vmatrix} $$
+                $$ = 1(16-9) - 3(4-3) + 3(3-4) $$
+                $$ = 1(7) - 3(1) + 3(-1) = 7 - 3 - 3 = 1 $$
+                Since \(|A| = 1 \neq 0\), the inverse exists.</p>
+            <p>Next, find the cofactors \(A_{ij}\):</p>
+            <ul>
+                <li>\(A_{11} = (-1)^{1+1} \begin{vmatrix} 4 & 3 \\ 3 & 4 \end{vmatrix} = 16-9 = 7\)</li>
+                <li>\(A_{12} = (-1)^{1+2} \begin{vmatrix} 1 & 3 \\ 1 & 4 \end{vmatrix} = -(4-3) = -1\)</li>
+                <li>\(A_{13} = (-1)^{1+3} \begin{vmatrix} 1 & 4 \\ 1 & 3 \end{vmatrix} = 3-4 = -1\)</li>
+                <li>\(A_{21} = (-1)^{2+1} \begin{vmatrix} 3 & 3 \\ 3 & 4 \end{vmatrix} = -(12-9) = -3\)</li>
+                <li>\(A_{22} = (-1)^{2+2} \begin{vmatrix} 1 & 3 \\ 1 & 4 \end{vmatrix} = 4-3 = 1\)</li>
+                <li>\(A_{23} = (-1)^{2+3} \begin{vmatrix} 1 & 3 \\ 1 & 3 \end{vmatrix} = -(3-3) = 0\)</li>
+                <li>\(A_{31} = (-1)^{3+1} \begin{vmatrix} 3 & 3 \\ 4 & 3 \end{vmatrix} = 9-12 = -3\)</li>
+                <li>\(A_{32} = (-1)^{3+2} \begin{vmatrix} 1 & 3 \\ 1 & 3 \end{vmatrix} = -(3-3) = 0\)</li>
+                <li>\(A_{33} = (-1)^{3+3} \begin{vmatrix} 1 & 3 \\ 1 & 4 \end{vmatrix} = 4-3 = 1\)</li>
+            </ul>
+            <p>Cofactor matrix \(C = \begin{pmatrix} 7 & -1 & -1 \\ -3 & 1 & 0 \\ -3 & 0 & 1 \end{pmatrix}\).</p>
+            <p>$$ \text{adj A} = C' = \begin{pmatrix} 7 & -3 & -3 \\ -1 & 1 & 0 \\ -1 & 0 & 1 \end{pmatrix} $$
+            <p>Now, verify \(A(\text{adj } A) = |A|I\):
+                $$ A(\text{adj } A) = \begin{pmatrix} 1 & 3 & 3 \\ 1 & 4 & 3 \\ 1 & 3 & 4 \end{pmatrix} \begin{pmatrix} 7 & -3 & -3 \\ -1 & 1 & 0 \\ -1 & 0 & 1 \end{pmatrix} $$
+                $$ = \begin{pmatrix} 1(7)+3(-1)+3(-1) & 1(-3)+3(1)+3(0) & 1(-3)+3(0)+3(1) \\ 1(7)+4(-1)+3(-1) & 1(-3)+4(1)+3(0) & 1(-3)+4(0)+3(1) \\ 1(7)+3(-1)+4(-1) & 1(-3)+3(1)+4(0) & 1(-3)+3(0)+4(1) \end{pmatrix} $$
+                $$ = \begin{pmatrix} 7-3-3 & -3+3+0 & -3+0+3 \\ 7-4-3 & -3+4+0 & -3+0+3 \\ 7-3-4 & -3+3+0 & -3+0+4 \end{pmatrix} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} $$
+                And \(|A|I = 1 \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} \).</p>
+            <p>Since \(A(\text{adj } A) = |A|I\), the relation is verified.</p>
+            <p>Finally, find \(A^{-1} = \frac{1}{|A|} \text{adj A}\):
+                $$ A^{-1} = \frac{1}{1} \begin{pmatrix} 7 & -3 & -3 \\ -1 & 1 & 0 \\ -1 & 0 & 1 \end{pmatrix} = \begin{pmatrix} 7 & -3 & -3 \\ -1 & 1 & 0 \\ -1 & 0 & 1 \end{pmatrix} $$
+        </div>
+
+        <h4 id="ex4-4-q14">14. If \(A = \begin{pmatrix} 1 & 2 & 3 \\ 0 & 2 & -3 \\ -1 & 1 & 4 \end{pmatrix}\), then verify that \((AB)^{-1} = B^{-1}A^{-1}\). (There seems to be a typo, this question is identical to Ex 4.4 Q12 with different matrices. It should be \(A A^{-1} = A^{-1}A = I\)). Let's proceed with \(A A^{-1} = I\) and then \(A^{-1}\).</h4>
+        <div class="solution-box">
+            <p>This question asks to verify \((AB)^{-1} = B^{-1}A^{-1}\) which requires matrices A and B. The provided matrix is named A, but B is missing. Given the structure of the exercise, it's likely meant to be a verification of \(AA^{-1} = A^{-1}A = I\) for the single matrix A provided, or to show \(A^2 - 5A + 7I = O\) from Example 13. Since it says "verify that (AB)^-1...", I will assume it's asking to show \(AA^{-1} = A^{-1}A = I\).</p>
+            <p>Let \(A = \begin{pmatrix} 1 & 2 & 3 \\ 0 & 2 & -3 \\ -1 & 1 & 4 \end{pmatrix}\).</p>
+            <p>First, calculate \(|A|\). Expand along the first column:
+                $$ |A| = 1 \begin{vmatrix} 2 & -3 \\ 1 & 4 \end{vmatrix} - 0 \cdot C_{21} + (-1) \begin{vmatrix} 2 & 3 \\ 2 & -3 \end{vmatrix} $$
+                $$ = 1(8 - (-3)) - 0 - 1(-6 - 6) $$
+                $$ = 1(11) - 1(-12) = 11 + 12 = 23 $$
+                Since \(|A| = 23 \neq 0\), the inverse exists.</p>
+            <p>Next, find the cofactors \(A_{ij}\):</p>
+            <ul>
+                <li>\(A_{11} = 11\) (calculated above)</li>
+                <li>\(A_{12} = (-1)^{1+2} \begin{vmatrix} 0 & -3 \\ -1 & 4 \end{vmatrix} = -(0-3) = 3\)</li>
+                <li>\(A_{13} = (-1)^{1+3} \begin{vmatrix} 0 & 2 \\ -1 & 1 \end{vmatrix} = 0-(-2) = 2\)</li>
+                <li>\(A_{21} = (-1)^{2+1} \begin{vmatrix} 2 & 3 \\ 1 & 4 \end{vmatrix} = -(8-3) = -5\)</li>
+                <li>\(A_{22} = (-1)^{2+2} \begin{vmatrix} 1 & 3 \\ -1 & 4 \end{vmatrix} = 4-(-3) = 7\)</li>
+                <li>\(A_{23} = (-1)^{2+3} \begin{vmatrix} 1 & 2 \\ -1 & 1 \end{vmatrix} = -(1-(-2)) = -(1+2) = -3\)</li>
+                <li>\(A_{31} = (-1)^{3+1} \begin{vmatrix} 2 & 3 \\ 2 & -3 \end{vmatrix} = -6-6 = -12\)</li>
+                <li>\(A_{32} = (-1)^{3+2} \begin{vmatrix} 1 & 3 \\ 0 & -3 \end{vmatrix} = -(-3-0) = 3\)</li>
+                <li>\(A_{33} = (-1)^{3+3} \begin{vmatrix} 1 & 2 \\ 0 & 2 \end{vmatrix} = 2-0 = 2\)</li>
+            </ul>
+            <p>Cofactor matrix \(C = \begin{pmatrix} 11 & 3 & 2 \\ -5 & 7 & -3 \\ -12 & 3 & 2 \end{pmatrix}\).</p>
+            <p>$$ \text{adj A} = C' = \begin{pmatrix} 11 & -5 & -12 \\ 3 & 7 & 3 \\ 2 & -3 & 2 \end{pmatrix} $$
+            <p>Finally, find \(A^{-1} = \frac{1}{|A|} \text{adj A}\):
+                $$ A^{-1} = \frac{1}{23} \begin{pmatrix} 11 & -5 & -12 \\ 3 & 7 & 3 \\ 2 & -3 & 2 \end{pmatrix} = \begin{pmatrix} 11/23 & -5/23 & -12/23 \\ 3/23 & 7/23 & 3/23 \\ 2/23 & -3/23 & 2/23 \end{pmatrix} $$
+            <p>Now, verify \(AA^{-1} = I\):
+                $$ AA^{-1} = \begin{pmatrix} 1 & 2 & 3 \\ 0 & 2 & -3 \\ -1 & 1 & 4 \end{pmatrix} \frac{1}{23} \begin{pmatrix} 11 & -5 & -12 \\ 3 & 7 & 3 \\ 2 & -3 & 2 \end{pmatrix} $$
+                $$ = \frac{1}{23} \begin{pmatrix} 1(11)+2(3)+3(2) & 1(-5)+2(7)+3(-3) & 1(-12)+2(3)+3(2) \\ 0(11)+2(3)+(-3)(2) & 0(-5)+2(7)+(-3)(-3) & 0(-12)+2(3)+(-3)(2) \\ -1(11)+1(3)+4(2) & -1(-5)+1(7)+4(-3) & -1(-12)+1(3)+4(2) \end{pmatrix} $$
+                $$ = \frac{1}{23} \begin{pmatrix} 11+6+6 & -5+14-9 & -12+6+6 \\ 0+6-6 & 0+14+9 & 0+6-6 \\ -11+3+8 & 5+7-12 & 12+3+8 \end{pmatrix} $$
+                $$ = \frac{1}{23} \begin{pmatrix} 23 & 0 & 0 \\ 0 & 23 & 0 \\ 0 & 0 & 23 \end{pmatrix} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} = I $$
+            <p>The verification \(A^{-1}A = I\) would similarly hold true.</p>
+        </div>
+
+        <h4 id="ex4-4-q15">15. For the matrix \(A = \begin{pmatrix} 2 & -3 & 5 \\ 3 & 2 & -4 \\ 1 & 1 & -2 \end{pmatrix}\), show that \(A^2 - 5A + 7I = O\). Hence, find \(A^{-1}\).</h4>
+        <div class="solution-box">
+            <p>Given \(A = \begin{pmatrix} 2 & -3 & 5 \\ 3 & 2 & -4 \\ 1 & 1 & -2 \end{pmatrix}\).</p>
+            <p>First, calculate \(A^2 = A \cdot A\):
+                $$ A^2 = \begin{pmatrix} 2 & -3 & 5 \\ 3 & 2 & -4 \\ 1 & 1 & -2 \end{pmatrix} \begin{pmatrix} 2 & -3 & 5 \\ 3 & 2 & -4 \\ 1 & 1 & -2 \end{pmatrix} $$
+                $$ = \begin{pmatrix} 2(2)-3(3)+5(1) & 2(-3)-3(2)+5(1) & 2(5)-3(-4)+5(-2) \\ 3(2)+2(3)-4(1) & 3(-3)+2(2)-4(1) & 3(5)+2(-4)-4(-2) \\ 1(2)+1(3)-2(1) & 1(-3)+1(2)-2(1) & 1(5)+1(-4)-2(-2) \end{pmatrix} $$
+                $$ = \begin{pmatrix} 4-9+5 & -6-6+5 & 10+12-10 \\ 6+6-4 & -9+4-4 & 15-8+8 \\ 2+3-2 & -3+2-2 & 5-4+4 \end{pmatrix} $$
+                $$ A^2 = \begin{pmatrix} 0 & -7 & 12 \\ 8 & -9 & 15 \\ 3 & -3 & 5 \end{pmatrix} $$
+            <p>Next, calculate \(5A\):
+                $$ 5A = 5 \begin{pmatrix} 2 & -3 & 5 \\ 3 & 2 & -4 \\ 1 & 1 & -2 \end{pmatrix} = \begin{pmatrix} 10 & -15 & 25 \\ 15 & 10 & -20 \\ 5 & 5 & -10 \end{pmatrix} $$
+            <p>Then, calculate \(7I\):
+                $$ 7I = 7 \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix} 7 & 0 & 0 \\ 0 & 7 & 0 \\ 0 & 0 & 7 \end{pmatrix} $$
+            <p>Now, substitute these into the expression \(A^2 - 5A + 7I\):
+                $$ A^2 - 5A + 7I = \begin{pmatrix} 0 & -7 & 12 \\ 8 & -9 & 15 \\ 3 & -3 & 5 \end{pmatrix} - \begin{pmatrix} 10 & -15 & 25 \\ 15 & 10 & -20 \\ 5 & 5 & -10 \end{pmatrix} + \begin{pmatrix} 7 & 0 & 0 \\ 0 & 7 & 0 \\ 0 & 0 & 7 \end{pmatrix} $$
+                $$ = \begin{pmatrix} (0-10+7) & (-7-(-15)+0) & (12-25+0) \\ (8-15+0) & (-9-10+7) & (15-(-20)+0) \\ (3-5+0) & (-3-5+0) & (5-(-10)+7) \end{pmatrix} $$
+                $$ = \begin{pmatrix} -3 & 8 & -13 \\ -7 & -12 & 35 \\ -2 & -8 & 22 \end{pmatrix} $$
+                Wait, this is not \(O\). Let's recheck the calculation of \(A^2 - 5A + 7I = O\).</p>
+            <p>The problem is from the example in the textbook (Example 15, page 92). The given value of A there is different: \(A = \begin{pmatrix} 2 & 3 \\ 1 & 2 \end{pmatrix}\) for \(A^2 - 4A + I = 0\). The A matrix provided in Ex 4.4, Q15 is \(A = \begin{pmatrix} 2 & -3 & 5 \\ 3 & 2 & -4 \\ 1 & 1 & -2 \end{pmatrix}\). I will assume the provided matrix for Q15 is correct and thus the expression \(A^2 - 5A + 7I = O\) is incorrect for this matrix and it is asking to solve for A inverse only.</p>
+            <p>Let's re-evaluate \(A^2 - 5A + 7I\):
+                $$ \begin{pmatrix} 0 & -7 & 12 \\ 8 & -9 & 15 \\ 3 & -3 & 5 \end{pmatrix} - \begin{pmatrix} 10 & -15 & 25 \\ 15 & 10 & -20 \\ 5 & 5 & -10 \end{pmatrix} + \begin{pmatrix} 7 & 0 & 0 \\ 0 & 7 & 0 \\ 0 & 0 & 7 \end{pmatrix} $$
+                $$ = \begin{pmatrix} (0-10+7) & (-7+15+0) & (12-25+0) \\ (8-15+0) & (-9-10+7) & (15+20+0) \\ (3-5+0) & (-3-5+0) & (5+10+7) \end{pmatrix} $$
+                $$ = \begin{pmatrix} -3 & 8 & -13 \\ -7 & -12 & 35 \\ -2 & -8 & 22 \end{pmatrix} $$
+                This is definitely not the zero matrix. It seems there is a mismatch between the matrix A and the equation \(A^2 - 5A + 7I = O\).
+                I will proceed to find \(A^{-1}\) as the question asks, assuming the first part was intended to make inverse calculation easier from the polynomial, but since it's not zero, I'll calculate it directly.</p>
+
+            <p><strong>To find \(A^{-1}\):</strong></p>
+            <p>Calculate \(|A|\): Expand along the first row:
+                $$ |A| = 2 \begin{vmatrix} 2 & -4 \\ 1 & -2 \end{vmatrix} - (-3) \begin{vmatrix} 3 & -4 \\ 1 & -2 \end{vmatrix} + 5 \begin{vmatrix} 3 & 2 \\ 1 & 1 \end{vmatrix} $$
+                $$ = 2(-4 - (-4)) + 3(-6 - (-4)) + 5(3 - 2) $$
+                $$ = 2(0) + 3(-2) + 5(1) = 0 - 6 + 5 = -1 $$
+                Since \(|A| = -1 \neq 0\), the inverse exists.</p>
+            <p>Next, find the cofactors \(A_{ij}\):</p>
+            <ul>
+                <li>\(A_{11} = (-1)^{1+1} \begin{vmatrix} 2 & -4 \\ 1 & -2 \end{vmatrix} = -4-(-4) = 0\)</li>
+                <li>\(A_{12} = (-1)^{1+2} \begin{vmatrix} 3 & -4 \\ 1 & -2 \end{vmatrix} = -(-6-(-4)) = -(-2) = 2\)</li>
+                <li>\(A_{13} = (-1)^{1+3} \begin{vmatrix} 3 & 2 \\ 1 & 1 \end{vmatrix} = 3-2 = 1\)</li>
+                <li>\(A_{21} = (-1)^{2+1} \begin{vmatrix} -3 & 5 \\ 1 & -2 \end{vmatrix} = -(6-5) = -1\)</li>
+                <li>\(A_{22} = (-1)^{2+2} \begin{vmatrix} 2 & 5 \\ 1 & -2 \end{vmatrix} = -4-5 = -9\)</li>
+                <li>\(A_{23} = (-1)^{2+3} \begin{vmatrix} 2 & -3 \\ 1 & 1 \end{vmatrix} = -(2-(-3)) = -5\)</li>
+                <li>\(A_{31} = (-1)^{3+1} \begin{vmatrix} -3 & 5 \\ 2 & -4 \end{vmatrix} = 12-10 = 2\)</li>
+                <li>\(A_{32} = (-1)^{3+2} \begin{vmatrix} 2 & 5 \\ 3 & -4 \end{vmatrix} = -(-8-15) = -(-23) = 23\)</li>
+                <li>\(A_{33} = (-1)^{3+3} \begin{vmatrix} 2 & -3 \\ 3 & 2 \end{vmatrix} = 4-(-9) = 13\)</li>
+            </ul>
+            <p>Cofactor matrix \(C = \begin{pmatrix} 0 & 2 & 1 \\ -1 & -9 & -5 \\ 2 & 23 & 13 \end{pmatrix}\).</p>
+            <p>$$ \text{adj } A = C' = \begin{pmatrix} 0 & -1 & 2 \\ 2 & -9 & 23 \\ 1 & -5 & 13 \end{pmatrix} $$
+            <p>Finally, find \(A^{-1} = \frac{1}{|A|} \text{adj } A\):
+                $$ A^{-1} = \frac{1}{-1} \begin{pmatrix} 0 & -1 & 2 \\ 2 & -9 & 23 \\ 1 & -5 & 13 \end{pmatrix} = \begin{pmatrix} 0 & 1 & -2 \\ -2 & 9 & -23 \\ -1 & 5 & -13 \end{pmatrix} $$
+        </div>
+
+        <h4 id="ex4-4-q16">16. If \(A = \begin{pmatrix} 1 & 2 & 1 \\ 0 & 1 & -1 \\ 3 & -1 & 1 \end{pmatrix}\), show that \(A^3 - 6A^2 + 9A - 4I = O\). Hence, find \(A^{-1}\).</h4>
+        <div class="solution-box">
+            <p>Given \(A = \begin{pmatrix} 1 & 2 & 1 \\ 0 & 1 & -1 \\ 3 & -1 & 1 \end{pmatrix}\).</p>
+            <p>First, calculate \(A^2 = A \cdot A\):
+                $$ A^2 = \begin{pmatrix} 1 & 2 & 1 \\ 0 & 1 & -1 \\ 3 & -1 & 1 \end{pmatrix} \begin{pmatrix} 1 & 2 & 1 \\ 0 & 1 & -1 \\ 3 & -1 & 1 \end{pmatrix} $$
+                $$ = \begin{pmatrix} 1(1)+2(0)+1(3) & 1(2)+2(1)+1(-1) & 1(1)+2(-1)+1(1) \\ 0(1)+1(0)-1(3) & 0(2)+1(1)-1(-1) & 0(1)+1(-1)-1(1) \\ 3(1)-1(0)+1(3) & 3(2)-1(1)+1(-1) & 3(1)-1(-1)+1(1) \end{pmatrix} $$
+                $$ = \begin{pmatrix} 1+0+3 & 2+2-1 & 1-2+1 \\ 0+0-3 & 0+1+1 & 0-1-1 \\ 3+0+3 & 6-1-1 & 3+1+1 \end{pmatrix} = \begin{pmatrix} 4 & 3 & 0 \\ -3 & 2 & -2 \\ 6 & 4 & 5 \end{pmatrix} $$
+            <p>Next, calculate \(A^3 = A^2 \cdot A\):
+                $$ A^3 = \begin{pmatrix} 4 & 3 & 0 \\ -3 & 2 & -2 \\ 6 & 4 & 5 \end{pmatrix} \begin{pmatrix} 1 & 2 & 1 \\ 0 & 1 & -1 \\ 3 & -1 & 1 \end{pmatrix} $$
+                $$ = \begin{pmatrix} 4(1)+3(0)+0(3) & 4(2)+3(1)+0(-1) & 4(1)+3(-1)+0(1) \\ -3(1)+2(0)-2(3) & -3(2)+2(1)-2(-1) & -3(1)+2(-1)-2(1) \\ 6(1)+4(0)+5(3) & 6(2)+4(1)+5(-1) & 6(1)+4(-1)+5(1) \end{pmatrix} $$
+                $$ = \begin{pmatrix} 4+0+0 & 8+3+0 & 4-3+0 \\ -3+0-6 & -6+2+2 & -3-2-2 \\ 6+0+15 & 12+4-5 & 6-4+5 \end{pmatrix} = \begin{pmatrix} 4 & 11 & 1 \\ -9 & -2 & -7 \\ 21 & 11 & 7 \end{pmatrix} $$
+            <p>Now, substitute \(A^3\), \(A^2\), \(A\), and \(I\) into the expression \(A^3 - 6A^2 + 9A - 4I\):
+                $$ A^3 - 6A^2 + 9A - 4I = \begin{pmatrix} 4 & 11 & 1 \\ -9 & -2 & -7 \\ 21 & 11 & 7 \end{pmatrix} - 6\begin{pmatrix} 4 & 3 & 0 \\ -3 & 2 & -2 \\ 6 & 4 & 5 \end{pmatrix} + 9\begin{pmatrix} 1 & 2 & 1 \\ 0 & 1 & -1 \\ 3 & -1 & 1 \end{pmatrix} - 4\begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} $$
+                $$ = \begin{pmatrix} 4 & 11 & 1 \\ -9 & -2 & -7 \\ 21 & 11 & 7 \end{pmatrix} - \begin{pmatrix} 24 & 18 & 0 \\ -18 & 12 & -12 \\ 36 & 24 & 30 \end{pmatrix} + \begin{pmatrix} 9 & 18 & 9 \\ 0 & 9 & -9 \\ 27 & -9 & 9 \end{pmatrix} - \begin{pmatrix} 4 & 0 & 0 \\ 0 & 4 & 0 \\ 0 & 0 & 4 \end{pmatrix} $$
+                $$ = \begin{pmatrix} (4-24+9-4) & (11-18+18-0) & (1-0+9-0) \\ (-9-(-18)+0-0) & (-2-12+9-4) & (-7-(-12)-9-0) \\ (21-36+27-0) & (11-24-9-0) & (7-30+9-4) \end{pmatrix} $$
+                $$ = \begin{pmatrix} (4-24+9-4) & (11-18+18-0) & (1-0+9-0) \\ (-9+18) & (-14+9-4) & (-7+12-9) \\ (21-36+27) & (11-24-9) & (7-30+9-4) \end{pmatrix} $$
+                $$ = \begin{pmatrix} -15 & 11 & 10 \\ 9 & -7 & -4 \\ 12 & -22 & -18 \end{pmatrix} $$
+                This is also not \(O\). The question's equation might be specific to another matrix or has a typo in coefficients. I will again proceed to find \(A^{-1}\) directly.</p>
+
+            <p><strong>To find \(A^{-1}\):</strong></p>
+            <p>Calculate \(|A|\). Expand along the first row:
+                $$ |A| = 1 \begin{vmatrix} 1 & -1 \\ -1 & 1 \end{vmatrix} - 2 \begin{vmatrix} 0 & -1 \\ 3 & 1 \end{vmatrix} + 1 \begin{vmatrix} 0 & 1 \\ 3 & -1 \end{vmatrix} $$
+                $$ = 1(1-1) - 2(0-(-3)) + 1(0-3) $$
+                $$ = 1(0) - 2(3) + 1(-3) = 0 - 6 - 3 = -9 $$
+                Since \(|A| = -9 \neq 0\), the inverse exists.</p>
+            <p>Next, find the cofactors \(A_{ij}\):</p>
+            <ul>
+                <li>\(A_{11} = 0\) (calculated above)</li>
+                <li>\(A_{12} = -3\) (calculated above)</li>
+                <li>\(A_{13} = -3\) (calculated above)</li>
+                <li>\(A_{21} = (-1)^{2+1} \begin{vmatrix} 2 & 1 \\ -1 & 1 \end{vmatrix} = -(2-(-1)) = -3\)</li>
+                <li>\(A_{22} = (-1)^{2+2} \begin{vmatrix} 1 & 1 \\ 3 & 1 \end{vmatrix} = 1-3 = -2\)</li>
+                <li>\(A_{23} = (-1)^{2+3} \begin{vmatrix} 1 & 2 \\ 3 & -1 \end{vmatrix} = -(-1-6) = 7\)</li>
+                <li>\(A_{31} = (-1)^{3+1} \begin{vmatrix} 2 & 1 \\ 1 & -1 \end{vmatrix} = -2-1 = -3\)</li>
+                <li>\(A_{32} = (-1)^{3+2} \begin{vmatrix} 1 & 1 \\ 0 & -1 \end{vmatrix} = -(-1-0) = 1\)</li>
+                <li>\(A_{33} = (-1)^{3+3} \begin{vmatrix} 1 & 2 \\ 0 & 1 \end{vmatrix} = 1-0 = 1\)</li>
+            </ul>
+            <p>Cofactor matrix \(C = \begin{pmatrix} 0 & -3 & -3 \\ -3 & -2 & 7 \\ -3 & 1 & 1 \end{pmatrix}\).</p>
+            <p>$$ \text{adj } A = C' = \begin{pmatrix} 0 & -3 & -3 \\ -3 & -2 & 1 \\ -3 & 7 & 1 \end{pmatrix} $$
+            <p>Finally, find \(A^{-1} = \frac{1}{|A|} \text{adj } A\):
+                $$ A^{-1} = \frac{1}{-9} \begin{pmatrix} 0 & -3 & -3 \\ -3 & -2 & 1 \\ -3 & 7 & 1 \end{pmatrix} = \begin{pmatrix} 0 & 1/3 & 1/3 \\ 1/3 & 2/9 & -1/9 \\ 1/3 & -7/9 & -1/9 \end{pmatrix} $$
+        </div>
+
+        <h4 id="ex4-4-q17">17. If \(A\) is a nonsingular square matrix of order \(3 \times 3\). Then \(|\text{adj } A|\) is equal to
+            (A) \(|A|\)
+            (B) \(|A|^2\)
+            (C) \(|A|^3\)
+            (D) \(3|A|\)</h4>
+        <div class="solution-box">
+            <p>We know the property that \(A(\text{adj } A) = |A|I\), where \(I\) is the identity matrix of the same order as \(A\).</p>
+            <p>For an \(n \times n\) matrix \(A\), \(|A(\text{adj } A)| = ||A|I|\).</p>
+            <p>Using the property \(|kA| = k^n|A|\), where \(k\) is a scalar and \(n\) is the order of the matrix:
+                $$ |A(\text{adj } A)| = |A| \cdot |\text{adj } A| $$
+                $$ ||A|I| = |A|^n |I| $$
+                Since \(|I| = 1\),
+                $$ |A| \cdot |\text{adj } A| = |A|^n $$
+                Since A is a nonsingular matrix, \(|A| \neq 0\). We can divide by \(|A|\):
+                $$ |\text{adj } A| = |A|^{n-1} $$
+            <p>In this problem, the order of the matrix \(A\) is \(3 \times 3\), so \(n=3\).</p>
+            $$ |\text{adj } A| = |A|^{3-1} = |A|^2 $$
+            <p>The correct option is (B).</p>
+        </div>
+
+        <h4 id="ex4-4-q18">18. If \(A\) is an invertible matrix of order 2, then \(\det(A^{-1})\) is equal to
+            (A) \(\det(A)\)
+            (B) \(1/\det(A)\)
+            (C) 1
+            (D) 0</h4>
+        <div class="solution-box">
+            <p>If A is an invertible matrix, then \(A^{-1}\) exists, and by definition, \(AA^{-1} = I\), where \(I\) is the identity matrix.</p>
+            <p>Taking the determinant of both sides:
+                $$ |AA^{-1}| = |I| $$
+                Using the property \(|AB| = |A||B|\):
+                $$ |A| |A^{-1}| = |I| $$
+                We know that the determinant of an identity matrix is 1, so \(|I|=1\).</p>
+            $$ |A| |A^{-1}| = 1 $$
+            <p>Since A is invertible, \(|A| \neq 0\). So we can divide by \(|A|\):
+                $$ |A^{-1}| = \frac{1}{|A|} $$
+            <p>This means \(\det(A^{-1}) = 1/\det(A)\).</p>
+            <p>The correct option is (B).</p>
+        </div>
+        <hr>
+
+        <h3 id="exercise-4-5">Exercise 4.5</h3>
+        <p>Examine the consistency of the system of equations in Exercises 1 to 6.</p>
+        <h4 id="ex4-5-q1">1. \(x + 2y = 2\)
+            \(2x + 3y = 3\)</h4>
+        <div class="solution-box">
+            <p>The system of equations can be written in matrix form \(AX = B\):
+                $$ \begin{pmatrix} 1 & 2 \\ 2 & 3 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \end{pmatrix} $$
+                Let \(A = \begin{pmatrix} 1 & 2 \\ 2 & 3 \end{pmatrix}\).</p>
+            <p>Calculate \(|A|\):
+                $$ |A| = (1)(3) - (2)(2) = 3 - 4 = -1 $$
+                Since \(|A| = -1 \neq 0\), A is a non-singular matrix.
+                Therefore, the system of equations is consistent and has a unique solution.</p>
+        </div>
+
+        <h4 id="ex4-5-q2">2. \(2x - y = 5\)
+            \(x + y = 4\)</h4>
+        <div class="solution-box">
+            <p>The system of equations can be written in matrix form \(AX = B\):
+                $$ \begin{pmatrix} 2 & -1 \\ 1 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 5 \\ 4 \end{pmatrix} $$
+                Let \(A = \begin{pmatrix} 2 & -1 \\ 1 & 1 \end{pmatrix}\).</p>
+            <p>Calculate \(|A|\):
+                $$ |A| = (2)(1) - (-1)(1) = 2 - (-1) = 2+1 = 3 $$
+                Since \(|A| = 3 \neq 0\), A is a non-singular matrix.
+                Therefore, the system of equations is consistent and has a unique solution.</p>
+        </div>
+
+        <h4 id="ex4-5-q3">3. \(x + 3y = 5\)
+            \(2x + 6y = 8\)</h4>
+        <div class="solution-box">
+            <p>The system of equations can be written in matrix form \(AX = B\):
+                $$ \begin{pmatrix} 1 & 3 \\ 2 & 6 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 5 \\ 8 \end{pmatrix} $$
+                Let \(A = \begin{pmatrix} 1 & 3 \\ 2 & 6 \end{pmatrix}\).</p>
+            <p>Calculate \(|A|\):
+                $$ |A| = (1)(6) - (3)(2) = 6 - 6 = 0 $$
+                Since \(|A| = 0\), A is a singular matrix.
+                In this case, we need to calculate \((\text{adj } A)B\).</p>
+            <p>First, find \(\text{adj } A\):
+                $$ \text{adj } A = \begin{pmatrix} 6 & -3 \\ -2 & 1 \end{pmatrix} $$
+            <p>Now, calculate \((\text{adj } A)B\):
+                $$ (\text{adj } A)B = \begin{pmatrix} 6 & -3 \\ -2 & 1 \end{pmatrix} \begin{pmatrix} 5 \\ 8 \end{pmatrix} = \begin{pmatrix} 6(5)+(-3)(8) \\ -2(5)+1(8) \end{pmatrix} = \begin{pmatrix} 30-24 \\ -10+8 \end{pmatrix} = \begin{pmatrix} 6 \\ -2 \end{pmatrix} $$
+                Since \((\text{adj } A)B = \begin{pmatrix} 6 \\ -2 \end{pmatrix} \neq O\) (zero matrix), the system is inconsistent (has no solution).</p>
+        </div>
+
+        <h4 id="ex4-5-q4">4. \(x + y + z = 1\)
+            \(2x + 3y + 2z = 2\)
+            \(ax + ay + 2az = 4\)</h4>
+        <div class="solution-box">
+            <p>The system of equations can be written in matrix form \(AX = B\):
+                $$ \begin{pmatrix} 1 & 1 & 1 \\ 2 & 3 & 2 \\ a & a & 2a \end{pmatrix} \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 1 \\ 2 \\ 4 \end{pmatrix} $$
+                Let \(A = \begin{pmatrix} 1 & 1 & 1 \\ 2 & 3 & 2 \\ a & a & 2a \end{pmatrix}\).</p>
+            <p>Calculate \(|A|\): Expand along the first row:
+                $$ |A| = 1 \begin{vmatrix} 3 & 2 \\ a & 2a \end{vmatrix} - 1 \begin{vmatrix} 2 & 2 \\ a & 2a \end{vmatrix} + 1 \begin{vmatrix} 2 & 3 \\ a & a \end{vmatrix} $$
+                $$ = 1(6a-2a) - 1(4a-2a) + 1(2a-3a) $$
+                $$ = 4a - 2a - a = a $$
+                Thus, \(|A| = a\).</p>
+            <p><strong>Case 1: \(a \neq 0\)</strong>
+                If \(a \neq 0\), then \(|A| \neq 0\). A is non-singular, so the system is consistent and has a unique solution.</p>
+            <p><strong>Case 2: \(a = 0\)</strong>
+                If \(a = 0\), then \(|A| = 0\). A is singular.
+                The matrix A becomes \( \begin{pmatrix} 1 & 1 & 1 \\ 2 & 3 & 2 \\ 0 & 0 & 0 \end{pmatrix} \).
+                The system of equations becomes:
+                \(x + y + z = 1\)
+                \(2x + 3y + 2z = 2\)
+                \(0x + 0y + 0z = 4 \implies 0 = 4\)</p>
+            <p>Since \(0=4\) is a contradiction, the system is inconsistent when \(a=0\).</p>
+            <p><strong>Conclusion:</strong> The system is consistent if \(a \neq 0\), and inconsistent if \(a = 0\).</p>
+        </div>
+
+        <h4 id="ex4-5-q5">5. \(3x - y - 2z = 2\)
+            \(2y - z = -1\)
+            \(3x - 5y = 3\)</h4>
+        <div class="solution-box">
+            <p>The system of equations can be written in matrix form \(AX = B\):
+                $$ \begin{pmatrix} 3 & -1 & -2 \\ 0 & 2 & -1 \\ 3 & -5 & 0 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 2 \\ -1 \\ 3 \end{pmatrix} $$
+                Let \(A = \begin{pmatrix} 3 & -1 & -2 \\ 0 & 2 & -1 \\ 3 & -5 & 0 \end{pmatrix}\).</p>
+            <p>Calculate \(|A|\): Expand along the first column:
+                $$ |A| = 3 \begin{vmatrix} 2 & -1 \\ -5 & 0 \end{vmatrix} - 0 \cdot C_{21} + 3 \begin{vmatrix} -1 & -2 \\ 2 & -1 \end{vmatrix} $$
+                $$ = 3(0-5) - 0 + 3(1-(-4)) $$
+                $$ = 3(-5) + 3(1+4) = -15 + 3(5) = -15 + 15 = 0 $$
+                Since \(|A| = 0\), A is a singular matrix.
+                In this case, we need to calculate \((\text{adj } A)B\).</p>
+            <p>Find cofactors \(A_{ij}\):</p>
+            <ul>
+                <li>\(A_{11} = (-1)^{1+1} \begin{vmatrix} 2 & -1 \\ -5 & 0 \end{vmatrix} = 0-5 = -5\)</li>
+                <li>\(A_{12} = (-1)^{1+2} \begin{vmatrix} 0 & -1 \\ 3 & 0 \end{vmatrix} = -(0-(-3)) = -3\)</li>
+                <li>\(A_{13} = (-1)^{1+3} \begin{vmatrix} 0 & 2 \\ 3 & -5 \end{vmatrix} = 0-6 = -6\)</li>
+                <li>\(A_{21} = (-1)^{2+1} \begin{vmatrix} -1 & -2 \\ -5 & 0 \end{vmatrix} = -(0-10) = 10\)</li>
+                <li>\(A_{22} = (-1)^{2+2} \begin{vmatrix} 3 & -2 \\ 3 & 0 \end{vmatrix} = 0-(-6) = 6\)</li>
+                <li>\(A_{23} = (-1)^{2+3} \begin{vmatrix} 3 & -1 \\ 3 & -5 \end{vmatrix} = -(-15-(-3)) = -(-12) = 12\)</li>
+                <li>\(A_{31} = (-1)^{3+1} \begin{vmatrix} -1 & -2 \\ 2 & -1 \end{vmatrix} = 1-(-4) = 5\)</li>
+                <li>\(A_{32} = (-1)^{3+2} \begin{vmatrix} 3 & -2 \\ 0 & -1 \end{vmatrix} = -(-3-0) = 3\)</li>
+                <li>\(A_{33} = (-1)^{3+3} \begin{vmatrix} 3 & -1 \\ 0 & 2 \end{vmatrix} = 6-0 = 6\)</li>
+            </ul>
+            <p>Cofactor matrix \(C = \begin{pmatrix} -5 & -3 & -6 \\ 10 & 6 & 12 \\ 5 & 3 & 6 \end{pmatrix}\).</p>
+            <p>$$ \text{adj } A = C' = \begin{pmatrix} -5 & 10 & 5 \\ -3 & 6 & 3 \\ -6 & 12 & 6 \end{pmatrix} $$
+            <p>Now, calculate \((\text{adj } A)B\):
+                $$ (\text{adj } A)B = \begin{pmatrix} -5 & 10 & 5 \\ -3 & 6 & 3 \\ -6 & 12 & 6 \end{pmatrix} \begin{pmatrix} 2 \\ -1 \\ 3 \end{pmatrix} = \begin{pmatrix} -5(2)+10(-1)+5(3) \\ -3(2)+6(-1)+3(3) \\ -6(2)+12(-1)+6(3) \end{pmatrix} $$
+                $$ = \begin{pmatrix} -10-10+15 \\ -6-6+9 \\ -12-12+18 \end{pmatrix} = \begin{pmatrix} -5 \\ -3 \\ -6 \end{pmatrix} $$
+                Since \((\text{adj } A)B \neq O\), the system is inconsistent (has no solution).</p>
+        </div>
+
+        <h4 id="ex4-5-q6">6. \(5x - y + 4z = 5\)
+            \(2x + 3y + 5z = 2\)
+            \(5x - 2y + 6z = -1\)</h4>
+        <div class="solution-box">
+            <p>The system of equations can be written in matrix form \(AX = B\):
+                $$ \begin{pmatrix} 5 & -1 & 4 \\ 2 & 3 & 5 \\ 5 & -2 & 6 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 5 \\ 2 \\ -1 \end{pmatrix} $$
+                Let \(A = \begin{pmatrix} 5 & -1 & 4 \\ 2 & 3 & 5 \\ 5 & -2 & 6 \end{pmatrix}\).</p>
+            <p>Calculate \(|A|\): Expand along the first row:
+                $$ |A| = 5 \begin{vmatrix} 3 & 5 \\ -2 & 6 \end{vmatrix} - (-1) \begin{vmatrix} 2 & 5 \\ 5 & 6 \end{vmatrix} + 4 \begin{vmatrix} 2 & 3 \\ 5 & -2 \end{vmatrix} $$
+                $$ = 5(18-(-10)) + 1(12-25) + 4(-4-15) $$
+                $$ = 5(28) + 1(-13) + 4(-19) $$
+                $$ = 140 - 13 - 76 = 140 - 89 = 51 $$
+                Since \(|A| = 51 \neq 0\), A is a non-singular matrix.
+                Therefore, the system of equations is consistent and has a unique solution.</p>
+        </div>
+
+        <p>Solve system of linear equations, using matrix method, in Exercises 7 to 14.</p>
+        <h4 id="ex4-5-q7">7. \(5x + 2y = 4\)
+            \(7x + 3y = 5\)</h4>
+        <div class="solution-box">
+            <p>The system of equations is \(AX=B\):
+                $$ \begin{pmatrix} 5 & 2 \\ 7 & 3 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 4 \\ 5 \end{pmatrix} $$
+                Let \(A = \begin{pmatrix} 5 & 2 \\ 7 & 3 \end{pmatrix}\).</p>
+            <p>Calculate \(|A|\):
+                $$ |A| = (5)(3) - (2)(7) = 15 - 14 = 1 $$
+                Since \(|A| = 1 \neq 0\), the inverse exists.</p>
+            <p>Find \(\text{adj } A\):
+                $$ \text{adj } A = \begin{pmatrix} 3 & -2 \\ -7 & 5 \end{pmatrix} $$
+            <p>Find \(A^{-1} = \frac{1}{|A|} \text{adj } A\):
+                $$ A^{-1} = \frac{1}{1} \begin{pmatrix} 3 & -2 \\ -7 & 5 \end{pmatrix} = \begin{pmatrix} 3 & -2 \\ -7 & 5 \end{pmatrix} $$
+            <p>Now, \(X = A^{-1}B\):
+                $$ X = \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 3 & -2 \\ -7 & 5 \end{pmatrix} \begin{pmatrix} 4 \\ 5 \end{pmatrix} $$
+                $$ = \begin{pmatrix} 3(4)+(-2)(5) \\ -7(4)+5(5) \end{pmatrix} = \begin{pmatrix} 12-10 \\ -28+25 \end{pmatrix} = \begin{pmatrix} 2 \\ -3 \end{pmatrix} $$
+            <p>So, \(x=2\) and \(y=-3\).</p>
+        </div>
+
+        <h4 id="ex4-5-q8">8. \(2x - y = -2\)
+            \(3x + 4y = 3\)</h4>
+        <div class="solution-box">
+            <p>The system of equations is \(AX=B\):
+                $$ \begin{pmatrix} 2 & -1 \\ 3 & 4 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} -2 \\ 3 \end{pmatrix} $$
+                Let \(A = \begin{pmatrix} 2 & -1 \\ 3 & 4 \end{pmatrix}\).</p>
+            <p>Calculate \(|A|\):
+                $$ |A| = (2)(4) - (-1)(3) = 8 - (-3) = 11 $$
+                Since \(|A| = 11 \neq 0\), the inverse exists.</p>
+            <p>Find \(\text{adj } A\):
+                $$ \text{adj } A = \begin{pmatrix} 4 & 1 \\ -3 & 2 \end{pmatrix} $$
+            <p>Find \(A^{-1} = \frac{1}{|A|} \text{adj } A\):
+                $$ A^{-1} = \frac{1}{11} \begin{pmatrix} 4 & 1 \\ -3 & 2 \end{pmatrix} $$
+            <p>Now, \(X = A^{-1}B\):
+                $$ X = \begin{pmatrix} x \\ y \end{pmatrix} = \frac{1}{11} \begin{pmatrix} 4 & 1 \\ -3 & 2 \end{pmatrix} \begin{pmatrix} -2 \\ 3 \end{pmatrix} $$
+                $$ = \frac{1}{11} \begin{pmatrix} 4(-2)+1(3) \\ -3(-2)+2(3) \end{pmatrix} = \frac{1}{11} \begin{pmatrix} -8+3 \\ 6+6 \end{pmatrix} = \frac{1}{11} \begin{pmatrix} -5 \\ 12 \end{pmatrix} = \begin{pmatrix} -5/11 \\ 12/11 \end{pmatrix} $$
+            <p>So, \(x=-5/11\) and \(y=12/11\).</p>
+        </div>
+
+        <h4 id="ex4-5-q9">9. \(4x - 3y = 3\)
+            \(3x - 5y = 7\)</h4>
+        <div class="solution-box">
+            <p>The system of equations is \(AX=B\):
+                $$ \begin{pmatrix} 4 & -3 \\ 3 & -5 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 3 \\ 7 \end{pmatrix} $$
+                Let \(A = \begin{pmatrix} 4 & -3 \\ 3 & -5 \end{pmatrix}\).</p>
+            <p>Calculate \(|A|\):
+                $$ |A| = (4)(-5) - (-3)(3) = -20 - (-9) = -20+9 = -11 $$
+                Since \(|A| = -11 \neq 0\), the inverse exists.</p>
+            <p>Find \(\text{adj } A\):
+                $$ \text{adj } A = \begin{pmatrix} -5 & 3 \\ -3 & 4 \end{pmatrix} $$
+            <p>Find \(A^{-1} = \frac{1}{|A|} \text{adj } A\):
+                $$ A^{-1} = \frac{1}{-11} \begin{pmatrix} -5 & 3 \\ -3 & 4 \end{pmatrix} $$
+            <p>Now, \(X = A^{-1}B\):
+                $$ X = \begin{pmatrix} x \\ y \end{pmatrix} = \frac{1}{-11} \begin{pmatrix} -5 & 3 \\ -3 & 4 \end{pmatrix} \begin{pmatrix} 3 \\ 7 \end{pmatrix} $$
+                $$ = -\frac{1}{11} \begin{pmatrix} -5(3)+3(7) \\ -3(3)+4(7) \end{pmatrix} = -\frac{1}{11} \begin{pmatrix} -15+21 \\ -9+28 \end{pmatrix} = -\frac{1}{11} \begin{pmatrix} 6 \\ 19 \end{pmatrix} = \begin{pmatrix} -6/11 \\ -19/11 \end{pmatrix} $$
+            <p>So, \(x=-6/11\) and \(y=-19/11\).</p>
+        </div>
+
+        <h4 id="ex4-5-q10">10. \(5x + 2y = 3\)
+            \(3x + 2y = 5\)</h4>
+        <div class="solution-box">
+            <p>The system of equations is \(AX=B\):
+                $$ \begin{pmatrix} 5 & 2 \\ 3 & 2 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 3 \\ 5 \end{pmatrix} $$
+                Let \(A = \begin{pmatrix} 5 & 2 \\ 3 & 2 \end{pmatrix}\).</p>
+            <p>Calculate \(|A|\):
+                $$ |A| = (5)(2) - (2)(3) = 10 - 6 = 4 $$
+                Since \(|A| = 4 \neq 0\), the inverse exists.</p>
+            <p>Find \(\text{adj } A\):
+                $$ \text{adj } A = \begin{pmatrix} 2 & -2 \\ -3 & 5 \end{pmatrix} $$
+            <p>Find \(A^{-1} = \frac{1}{|A|} \text{adj } A\):
+                $$ A^{-1} = \frac{1}{4} \begin{pmatrix} 2 & -2 \\ -3 & 5 \end{pmatrix} $$
+            <p>Now, \(X = A^{-1}B\):
+                $$ X = \begin{pmatrix} x \\ y \end{pmatrix} = \frac{1}{4} \begin{pmatrix} 2 & -2 \\ -3 & 5 \end{pmatrix} \begin{pmatrix} 3 \\ 5 \end{pmatrix} $$
+                $$ = \frac{1}{4} \begin{pmatrix} 2(3)+(-2)(5) \\ -3(3)+5(5) \end{pmatrix} = \frac{1}{4} \begin{pmatrix} 6-10 \\ -9+25 \end{pmatrix} = \frac{1}{4} \begin{pmatrix} -4 \\ 16 \end{pmatrix} = \begin{pmatrix} -1 \\ 4 \end{pmatrix} $$
+            <p>So, \(x=-1\) and \(y=4\).</p>
+        </div>
+
+        <h4 id="ex4-5-q11">11. \(2x + y + z = 1\)
+            \(x - 2y - z = 3/2\)
+            \(3y - 5z = 9\)</h4>
+        <div class="solution-box">
+            <p>The system of equations is \(AX=B\):
+                $$ \begin{pmatrix} 2 & 1 & 1 \\ 1 & -2 & -1 \\ 0 & 3 & -5 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 1 \\ 3/2 \\ 9 \end{pmatrix} $$
+                Let \(A = \begin{pmatrix} 2 & 1 & 1 \\ 1 & -2 & -1 \\ 0 & 3 & -5 \end{pmatrix}\).</p>
+            <p>Calculate \(|A|\): Expand along the first column:
+                $$ |A| = 2 \begin{vmatrix} -2 & -1 \\ 3 & -5 \end{vmatrix} - 1 \begin{vmatrix} 1 & 1 \\ 3 & -5 \end{vmatrix} + 0 \cdot C_{31} $$
+                $$ = 2(10-(-3)) - 1(-5-3) + 0 $$
+                $$ = 2(13) - 1(-8) = 26 + 8 = 34 $$
+                Since \(|A| = 34 \neq 0\), the inverse exists.</p>
+            <p>Find cofactors \(A_{ij}\):</p>
+            <ul>
+                <li>\(A_{11} = 13\)</li>
+                <li>\(A_{12} = -(-5-0) = 5\)</li>
+                <li>\(A_{13} = 3-0 = 3\)</li>
+                <li>\(A_{21} = -(-5-3) = 8\)</li>
+                <li>\(A_{22} = -10-0 = -10\)</li>
+                <li>\(A_{23} = -(6-0) = -6\)</li>
+                <li>\(A_{31} = -1-(-2) = 1\)</li>
+                <li>\(A_{32} = -(-2-1) = 3\)</li>
+                <li>\(A_{33} = -4-1 = -5\)</li>
+            </ul>
+            <p>Cofactor matrix \(C = \begin{pmatrix} 13 & 5 & 3 \\ 8 & -10 & -6 \\ 1 & 3 & -5 \end{pmatrix}\).</p>
+            <p>$$ \text{adj } A = C' = \begin{pmatrix} 13 & 8 & 1 \\ 5 & -10 & 3 \\ 3 & -6 & -5 \end{pmatrix} $$
+            <p>Find \(A^{-1} = \frac{1}{|A|} \text{adj } A\):
+                $$ A^{-1} = \frac{1}{34} \begin{pmatrix} 13 & 8 & 1 \\ 5 & -10 & 3 \\ 3 & -6 & -5 \end{pmatrix} $$
+            <p>Now, \(X = A^{-1}B\):
+                $$ X = \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \frac{1}{34} \begin{pmatrix} 13 & 8 & 1 \\ 5 & -10 & 3 \\ 3 & -6 & -5 \end{pmatrix} \begin{pmatrix} 1 \\ 3/2 \\ 9 \end{pmatrix} $$
+                $$ = \frac{1}{34} \begin{pmatrix} 13(1)+8(3/2)+1(9) \\ 5(1)-10(3/2)+3(9) \\ 3(1)-6(3/2)-5(9) \end{pmatrix} $$
+                $$ = \frac{1}{34} \begin{pmatrix} 13+12+9 \\ 5-15+27 \\ 3-9-45 \end{pmatrix} = \frac{1}{34} \begin{pmatrix} 34 \\ 17 \\ -51 \end{pmatrix} $$
+                $$ X = \begin{pmatrix} 1 \\ 1/2 \\ -3/2 \end{pmatrix} $$
+            <p>So, \(x=1, y=1/2, z=-3/2\).</p>
+        </div>
+
+        <h4 id="ex4-5-q12">12. \(x - y + z = 4\)
+            \(2x + y - 3z = 0\)
+            \(x + y + z = 2\)</h4>
+        <div class="solution-box">
+            <p>The system of equations is \(AX=B\):
+                $$ \begin{pmatrix} 1 & -1 & 1 \\ 2 & 1 & -3 \\ 1 & 1 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 4 \\ 0 \\ 2 \end{pmatrix} $$
+                Let \(A = \begin{pmatrix} 1 & -1 & 1 \\ 2 & 1 & -3 \\ 1 & 1 & 1 \end{pmatrix}\).</p>
+            <p>Calculate \(|A|\): Expand along the first row:
+                $$ |A| = 1 \begin{vmatrix} 1 & -3 \\ 1 & 1 \end{vmatrix} - (-1) \begin{vmatrix} 2 & -3 \\ 1 & 1 \end{vmatrix} + 1 \begin{vmatrix} 2 & 1 \\ 1 & 1 \end{vmatrix} $$
+                $$ = 1(1-(-3)) + 1(2-(-3)) + 1(2-1) $$
+                $$ = 1(4) + 1(5) + 1(1) = 4 + 5 + 1 = 10 $$
+                Since \(|A| = 10 \neq 0\), the inverse exists.</p>
+            <p>Find cofactors \(A_{ij}\):</p>
+            <ul>
+                <li>\(A_{11} = 4\)</li>
+                <li>\(A_{12} = -5\)</li>
+                <li>\(A_{13} = 1\)</li>
+                <li>\(A_{21} = -(-1-1) = 2\)</li>
+                <li>\(A_{22} = 1-1 = 0\)</li>
+                <li>\(A_{23} = -(1-(-1)) = -2\)</li>
+                <li>\(A_{31} = 3-1 = 2\)</li>
+                <li>\(A_{32} = -(-3-2) = 5\)</li>
+                <li>\(A_{33} = 1-(-2) = 3\)</li>
+            </ul>
+            <p>Cofactor matrix \(C = \begin{pmatrix} 4 & -5 & 1 \\ 2 & 0 & -2 \\ 2 & 5 & 3 \end{pmatrix}\).</p>
+            <p>$$ \text{adj } A = C' = \begin{pmatrix} 4 & 2 & 2 \\ -5 & 0 & 5 \\ 1 & -2 & 3 \end{pmatrix} $$
+            <p>Find \(A^{-1} = \frac{1}{|A|} \text{adj } A\):
+                $$ A^{-1} = \frac{1}{10} \begin{pmatrix} 4 & 2 & 2 \\ -5 & 0 & 5 \\ 1 & -2 & 3 \end{pmatrix} $$
+            <p>Now, \(X = A^{-1}B\):
+                $$ X = \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \frac{1}{10} \begin{pmatrix} 4 & 2 & 2 \\ -5 & 0 & 5 \\ 1 & -2 & 3 \end{pmatrix} \begin{pmatrix} 4 \\ 0 \\ 2 \end{pmatrix} $$
+                $$ = \frac{1}{10} \begin{pmatrix} 4(4)+2(0)+2(2) \\ -5(4)+0(0)+5(2) \\ 1(4)-2(0)+3(2) \end{pmatrix} $$
+                $$ = \frac{1}{10} \begin{pmatrix} 16+0+4 \\ -20+0+10 \\ 4-0+6 \end{pmatrix} = \frac{1}{10} \begin{pmatrix} 20 \\ -10 \\ 10 \end{pmatrix} = \begin{pmatrix} 2 \\ -1 \\ 1 \end{pmatrix} $$
+            <p>So, \(x=2, y=-1, z=1\).</p>
+        </div>
+
+        <h4 id="ex4-5-q13">13. \(2x + 3y + 3z = 5\)
+            \(x - 2y + z = -4\)
+            \(3x - y - 2z = 3\)</h4>
+        <div class="solution-box">
+            <p>The system of equations is \(AX=B\):
+                $$ \begin{pmatrix} 2 & 3 & 3 \\ 1 & -2 & 1 \\ 3 & -1 & -2 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 5 \\ -4 \\ 3 \end{pmatrix} $$
+                Let \(A = \begin{pmatrix} 2 & 3 & 3 \\ 1 & -2 & 1 \\ 3 & -1 & -2 \end{pmatrix}\).</p>
+            <p>Calculate \(|A|\): Expand along the first row:
+                $$ |A| = 2 \begin{vmatrix} -2 & 1 \\ -1 & -2 \end{vmatrix} - 3 \begin{vmatrix} 1 & 1 \\ 3 & -2 \end{vmatrix} + 3 \begin{vmatrix} 1 & -2 \\ 3 & -1 \end{vmatrix} $$
+                $$ = 2(4-(-1)) - 3(-2-3) + 3(-1-(-6)) $$
+                $$ = 2(5) - 3(-5) + 3(5) = 10 + 15 + 15 = 40 $$
+                Since \(|A| = 40 \neq 0\), the inverse exists.</p>
+            <p>Find cofactors \(A_{ij}\):</p>
+            <ul>
+                <li>\(A_{11} = 5\)</li>
+                <li>\(A_{12} = -(-2-3) = 5\)</li>
+                <li>\(A_{13} = -1-(-6) = 5\)</li>
+                <li>\(A_{21} = -(-6-(-3)) = 3\)</li>
+                <li>\(A_{22} = -4-9 = -13\)</li>
+                <li>\(A_{23} = -(-2-9) = 11\)</li>
+                <li>\(A_{31} = 3-(-6) = 9\)</li>
+                <li>\(A_{32} = -(2-3) = 1\)</li>
+                <li>\(A_{33} = -4-3 = -7\)</li>
+            </ul>
+            <p>Cofactor matrix \(C = \begin{pmatrix} 5 & 5 & 5 \\ 3 & -13 & 11 \\ 9 & 1 & -7 \end{pmatrix}\).</p>
+            <p>$$ \text{adj } A = C' = \begin{pmatrix} 5 & 3 & 9 \\ 5 & -13 & 1 \\ 5 & 11 & -7 \end{pmatrix} $$
+            <p>Find \(A^{-1} = \frac{1}{|A|} \text{adj } A\):
+                $$ A^{-1} = \frac{1}{40} \begin{pmatrix} 5 & 3 & 9 \\ 5 & -13 & 1 \\ 5 & 11 & -7 \end{pmatrix} $$
+            <p>Now, \(X = A^{-1}B\):
+                $$ X = \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \frac{1}{40} \begin{pmatrix} 5 & 3 & 9 \\ 5 & -13 & 1 \\ 5 & 11 & -7 \end{pmatrix} \begin{pmatrix} 5 \\ -4 \\ 3 \end{pmatrix} $$
+                $$ = \frac{1}{40} \begin{pmatrix} 5(5)+3(-4)+9(3) \\ 5(5)-13(-4)+1(3) \\ 5(5)+11(-4)-7(3) \end{pmatrix} $$
+                $$ = \frac{1}{40} \begin{pmatrix} 25-12+27 \\ 25+52+3 \\ 25-44-21 \end{pmatrix} = \frac{1}{40} \begin{pmatrix} 40 \\ 80 \\ -40 \end{pmatrix} = \begin{pmatrix} 1 \\ 2 \\ -1 \end{pmatrix} $$
+            <p>So, \(x=1, y=2, z=-1\).</p>
+        </div>
+
+        <h4 id="ex4-5-q14">14. \(x - y + 2z = 7\)
+            \(3x + 4y - 5z = -5\)
+            \(2x - y + 3z = 12\)</h4>
+        <div class="solution-box">
+            <p>The system of equations is \(AX=B\):
+                $$ \begin{pmatrix} 1 & -1 & 2 \\ 3 & 4 & -5 \\ 2 & -1 & 3 \end{pmatrix} \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 7 \\ -5 \\ 12 \end{pmatrix} $$
+                Let \(A = \begin{pmatrix} 1 & -1 & 2 \\ 3 & 4 & -5 \\ 2 & -1 & 3 \end{pmatrix}\).</p>
+            <p>Calculate \(|A|\): Expand along the first row:
+                $$ |A| = 1 \begin{vmatrix} 4 & -5 \\ -1 & 3 \end{vmatrix} - (-1) \begin{vmatrix} 3 & -5 \\ 2 & 3 \end{vmatrix} + 2 \begin{vmatrix} 3 & 4 \\ 2 & -1 \end{vmatrix} $$
+                $$ = 1(12-5) + 1(9-(-10)) + 2(-3-8) $$
+                $$ = 1(7) + 1(19) + 2(-11) = 7 + 19 - 22 = 4 $$
+                Since \(|A| = 4 \neq 0\), the inverse exists.</p>
+            <p>Find cofactors \(A_{ij}\):</p>
+            <ul>
+                <li>\(A_{11} = 7\)</li>
+                <li>\(A_{12} = -19\)</li>
+                <li>\(A_{13} = -11\)</li>
+                <li>\(A_{21} = -(-3-(-2)) = 1\)</li>
+                <li>\(A_{22} = 3-4 = -1\)</li>
+                <li>\(A_{23} = -(-1-(-2)) = -1\)</li>
+                <li>\(A_{31} = 5-8 = -3\)</li>
+                <li>\(A_{32} = -(-5-6) = 11\)</li>
+                <li>\(A_{33} = 4-(-3) = 7\)</li>
+            </ul>
+            <p>Cofactor matrix \(C = \begin{pmatrix} 7 & -19 & -11 \\ 1 & -1 & -1 \\ -3 & 11 & 7 \end{pmatrix}\).</p>
+            <p>$$ \text{adj } A = C' = \begin{pmatrix} 7 & 1 & -3 \\ -19 & -1 & 11 \\ -11 & -1 & 7 \end{pmatrix} $$
+            <p>Find \(A^{-1} = \frac{1}{|A|} \text{adj } A\):
+                $$ A^{-1} = \frac{1}{4} \begin{pmatrix} 7 & 1 & -3 \\ -19 & -1 & 11 \\ -11 & -1 & 7 \end{pmatrix} $$
+            <p>Now, \(X = A^{-1}B\):
+                $$ X = \begin{pmatrix} x \\ y \\ z \end{pmatrix} = \frac{1}{4} \begin{pmatrix} 7 & 1 & -3 \\ -19 & -1 & 11 \\ -11 & -1 & 7 \end{pmatrix} \begin{pmatrix} 7 \\ -5 \\ 12 \end{pmatrix} $$
+                $$ = \frac{1}{4} \begin{pmatrix} 7(7)+1(-5)+(-3)(12) \\ -19(7)-1(-5)+11(12) \\ -11(7)-1(-5)+7(12) \end{pmatrix} $$
+                $$ = \frac{1}{4} \begin{pmatrix} 49-5-36 \\ -133+5+132 \\ -77+5+84 \end{pmatrix} = \begin{pmatrix} 8 \\ 4 \\ 12 \end{pmatrix} = \begin{pmatrix} 2 \\ 1 \\ 3 \end{pmatrix} $$
+            <p>So, \(x=2, y=1, z=3\).</p>
+        </div>
+        <hr>
+
+        <h3 id="miscellaneous-exercise-chapter-4">Miscellaneous Exercise (Chapter 4)</h3>
+        <p>1. Prove that the determinant \(\begin{vmatrix} x & \sin\theta & \cos\theta \\ -\sin\theta & -x & 1 \\ \cos\theta & 1 & x \end{vmatrix}\) is independent of \(\theta\).</p>
+        <div class="solution-box">
+            <p>Let \(\Delta\) be the given determinant:</p>
+            $$ \Delta = \begin{vmatrix} x & \sin\theta & \cos\theta \\ -\sin\theta & -x & 1 \\ \cos\theta & 1 & x \end{vmatrix} $$
+            <p>Expand along the first row:</p>
+            $$ \Delta = x \begin{vmatrix} -x & 1 \\ 1 & x \end{vmatrix} - \sin\theta \begin{vmatrix} -\sin\theta & 1 \\ \cos\theta & x \end{vmatrix} + \cos\theta \begin{vmatrix} -\sin\theta & -x \\ \cos\theta & 1 \end{vmatrix} $$
+            $$ \Delta = x((-x)(x) - (1)(1)) - \sin\theta((-\sin\theta)(x) - (1)(\cos\theta)) + \cos\theta((-\sin\theta)(1) - (-x)(\cos\theta)) $$
+            $$ \Delta = x(-x^2-1) - \sin\theta(-x\sin\theta-\cos\theta) + \cos\theta(-\sin\theta+x\cos\theta) $$
+            $$ \Delta = -x^3-x + x\sin^2\theta + \sin\theta\cos\theta - \sin\theta\cos\theta + x\cos^2\theta $$
+            $$ \Delta = -x^3-x + x\sin^2\theta + x\cos^2\theta $$
+            $$ \Delta = -x^3-x + x(\sin^2\theta + \cos^2\theta) $$
+            Since \(\sin^2\theta + \cos^2\theta = 1\):
+            $$ \Delta = -x^3-x + x(1) $$
+            $$ \Delta = -x^3-x+x = -x^3 $$
+            <p>Since the value of the determinant \(\Delta = -x^3\), it does not contain \(\theta\). Therefore, it is independent of \(\theta\).</p>
+        </div>
+
+        <p>2. Evaluate \(\begin{vmatrix} \cos\alpha\cos\beta & \cos\alpha\sin\beta & -\sin\alpha \\ -\sin\beta & \cos\beta & 0 \\ \sin\alpha\cos\beta & \sin\alpha\sin\beta & \cos\alpha \end{vmatrix}\).</p>
+        <div class="solution-box">
+            <p>Let \(\Delta\) be the given determinant:</p>
+            $$ \Delta = \begin{vmatrix} \cos\alpha\cos\beta & \cos\alpha\sin\beta & -\sin\alpha \\ -\sin\beta & \cos\beta & 0 \\ \sin\alpha\cos\beta & \sin\alpha\sin\beta & \cos\alpha \end{vmatrix} $$
+            <p>Expand along the second row (because of the zero element):</p>
+            $$ \Delta = -(-\sin\beta) \begin{vmatrix} \cos\alpha\sin\beta & -\sin\alpha \\ \sin\alpha\sin\beta & \cos\alpha \end{vmatrix} + \cos\beta \begin{vmatrix} \cos\alpha\cos\beta & -\sin\alpha \\ \sin\alpha\cos\beta & \cos\alpha \end{vmatrix} - 0 \cdot C_{23} $$
+            $$ \Delta = \sin\beta (\cos\alpha\sin\beta\cos\alpha - (-\sin\alpha)(\sin\alpha\sin\beta)) $$
+            $$ \qquad + \cos\beta (\cos\alpha\cos\beta\cos\alpha - (-\sin\alpha)(\sin\alpha\cos\beta)) $$
+            $$ \Delta = \sin\beta (\cos^2\alpha\sin\beta + \sin^2\alpha\sin\beta) $$
+            $$ \qquad + \cos\beta (\cos^2\alpha\cos\beta + \sin^2\alpha\cos\beta) $$
+            Factor out common terms:
+            $$ \Delta = \sin\beta (\sin\beta(\cos^2\alpha + \sin^2\alpha)) + \cos\beta (\cos\beta(\cos^2\alpha + \sin^2\alpha)) $$
+            Since \(\cos^2\alpha + \sin^2\alpha = 1\):
+            $$ \Delta = \sin\beta (\sin\beta \cdot 1) + \cos\beta (\cos\beta \cdot 1) $$
+            $$ \Delta = \sin^2\beta + \cos^2\beta $$
+            Again, since \(\sin^2\beta + \cos^2\beta = 1\):
+            $$ \Delta = 1 $$
+            <p>The value of the determinant is 1.</p>
+        </div>
+
+        <p>3. If \(A^{-1} = \begin{pmatrix} 3 & -1 & 1 \\ -15 & 6 & -5 \\ 5 & -2 & 2 \end{pmatrix}\) and \(B = \begin{pmatrix} 1 & 2 & -2 \\ -1 & 3 & 0 \\ 0 & -2 & 1 \end{pmatrix}\), find \((AB)^{-1}\).</p>
+        <div class="solution-box">
+            <p>We know that for invertible matrices A and B, \((AB)^{-1} = B^{-1}A^{-1}\).</p>
+            <p>We are given \(A^{-1} = \begin{pmatrix} 3 & -1 & 1 \\ -15 & 6 & -5 \\ 5 & -2 & 2 \end{pmatrix}\) and \(B = \begin{pmatrix} 1 & 2 & -2 \\ -1 & 3 & 0 \\ 0 & -2 & 1 \end{pmatrix}\).</p>
+            <p>First, we need to find \(B^{-1}\).
+                Calculate \(|B|\): Expand along the second row (due to the zero):
+                $$ |B| = -(-1) \begin{vmatrix} 2 & -2 \\ -2 & 1 \end{vmatrix} + 3 \begin{vmatrix} 1 & -2 \\ 0 & 1 \end{vmatrix} - 0 \cdot C_{23} $$
+                $$ = 1(2-4) + 3(1-0) = 1(-2) + 3(1) = -2 + 3 = 1 $$
+                Since \(|B| = 1 \neq 0\), \(B^{-1}\) exists.</p>
+            <p>Find cofactors of B, \(B_{ij}\):</p>
+            <ul>
+                <li>\(B_{11} = (-1)^{1+1} \begin{vmatrix} 3 & 0 \\ -2 & 1 \end{vmatrix} = 3-0 = 3\)</li>
+                <li>\(B_{12} = (-1)^{1+2} \begin{vmatrix} -1 & 0 \\ 0 & 1 \end{vmatrix} = -(-1-0) = 1\)</li>
+                <li>\(B_{13} = (-1)^{1+3} \begin{vmatrix} -1 & 3 \\ 0 & -2 \end{vmatrix} = 2-0 = 2\)</li>
+                <li>\(B_{21} = (-1)^{2+1} \begin{vmatrix} 2 & -2 \\ -2 & 1 \end{vmatrix} = -(2-4) = 2\)</li>
+                <li>\(B_{22} = (-1)^{2+2} \begin{vmatrix} 1 & -2 \\ 0 & 1 \end{vmatrix} = 1-0 = 1\)</li>
+                <li>\(B_{23} = (-1)^{2+3} \begin{vmatrix} 1 & 2 \\ 0 & -2 \end{vmatrix} = -(-2-0) = 2\)</li>
+                <li>\(B_{31} = (-1)^{3+1} \begin{vmatrix} 2 & -2 \\ 3 & 0 \end{vmatrix} = 0-(-6) = 6\)</li>
+                <li>\(B_{32} = (-1)^{3+2} \begin{vmatrix} 1 & -2 \\ -1 & 0 \end{vmatrix} = -(0-2) = 2\)</li>
+                <li>\(B_{33} = (-1)^{3+3} \begin{vmatrix} 1 & 2 \\ -1 & 3 \end{vmatrix} = 3-(-2) = 5\)</li>
+            </ul>
+            <p>Cofactor matrix of B is \(C_B = \begin{pmatrix} 3 & 1 & 2 \\ 2 & 1 & 2 \\ 6 & 2 & 5 \end{pmatrix}\).</p>
+            <p>$$ \text{adj } B = C_B' = \begin{pmatrix} 3 & 2 & 6 \\ 1 & 1 & 2 \\ 2 & 2 & 5 \end{pmatrix} $$
+            <p>$$ B^{-1} = \frac{1}{|B|} \text{adj } B = \frac{1}{1} \begin{pmatrix} 3 & 2 & 6 \\ 1 & 1 & 2 \\ 2 & 2 & 5 \end{pmatrix} = \begin{pmatrix} 3 & 2 & 6 \\ 1 & 1 & 2 \\ 2 & 2 & 5 \end{pmatrix} $$
+            <p>Now, calculate \((AB)^{-1} = B^{-1}A^{-1}\):
+                $$ (AB)^{-1} = \begin{pmatrix} 3 & 2 & 6 \\ 1 & 1 & 2 \\ 2 & 2 & 5 \end{pmatrix} \begin{pmatrix} 3 & -1 & 1 \\ -15 & 6 & -5 \\ 5 & -2 & 2 \end{pmatrix} $$
+                $$ = \begin{pmatrix} 3(3)+2(-15)+6(5) & 3(-1)+2(6)+6(-2) & 3(1)+2(-5)+6(2) \\ 1(3)+1(-15)+2(5) & 1(-1)+1(6)+2(-2) & 1(1)+1(-5)+2(2) \\ 2(3)+2(-15)+5(5) & 2(-1)+2(6)+5(-2) & 2(1)+2(-5)+5(2) \end{pmatrix} $$
+                $$ = \begin{pmatrix} 9-30+30 & -3+12-12 & 3-10+12 \\ 3-15+10 & -1+6-4 & 1-5+4 \\ 6-30+25 & -2+12-10 & 2-10+10 \end{pmatrix} $$
+                $$ = \begin{pmatrix} 9 & -3 & 5 \\ -2 & 1 & 0 \\ 1 & 0 & 2 \end{pmatrix} $$
+            <p>Thus, \((AB)^{-1} = \begin{pmatrix} 9 & -3 & 5 \\ -2 & 1 & 0 \\ 1 & 0 & 2 \end{pmatrix}\).</p>
+        </div>
+
+        <p>4. Let \(A = \begin{pmatrix} 1 & 2 & 1 \\ 2 & 3 & 1 \\ 1 & 1 & 5 \end{pmatrix}\). Verify that \((A^{-1})' = (A')^{-1}\).</p>
+        <div class="solution-box">
+            <p>Let \(A = \begin{pmatrix} 1 & 2 & 1 \\ 2 & 3 & 1 \\ 1 & 1 & 5 \end{pmatrix}\).</p>
+            <p><strong>Part 1: Calculate \((A^{-1})'\)</strong></p>
+            <p>First, find \(|A|\): Expand along the first row:
+                $$ |A| = 1 \begin{vmatrix} 3 & 1 \\ 1 & 5 \end{vmatrix} - 2 \begin{vmatrix} 2 & 1 \\ 1 & 5 \end{vmatrix} + 1 \begin{vmatrix} 2 & 3 \\ 1 & 1 \end{vmatrix} $$
+                $$ = 1(15-1) - 2(10-1) + 1(2-3) $$
+                $$ = 1(14) - 2(9) + 1(-1) = 14 - 18 - 1 = -5 $$
+                Since \(|A| = -5 \neq 0\), \(A^{-1}\) exists.</p>
+            <p>Find cofactors of A, \(A_{ij}\):</p>
+            <ul>
+                <li>\(A_{11} = 14\)</li>
+                <li>\(A_{12} = -(10-1) = -9\)</li>
+                <li>\(A_{13} = 2-3 = -1\)</li>
+                <li>\(A_{21} = -(10-1) = -9\)</li>
+                <li>\(A_{22} = 5-1 = 4\)</li>
+                <li>\(A_{23} = -(1-2) = 1\)</li>
+                <li>\(A_{31} = 2-3 = -1\)</li>
+                <li>\(A_{32} = -(1-2) = 1\)</li>
+                <li>\(A_{33} = 3-4 = -1\)</li>
+            </ul>
+            <p>Cofactor matrix of A is \(C_A = \begin{pmatrix} 14 & -9 & -1 \\ -9 & 4 & 1 \\ -1 & 1 & -1 \end{pmatrix}\).</p>
+            <p>$$ \text{adj } A = C_A' = \begin{pmatrix} 14 & -9 & -1 \\ -9 & 4 & 1 \\ -1 & 1 & -1 \end{pmatrix} $$
+            <p>$$ A^{-1} = \frac{1}{|A|} \text{adj } A = \frac{1}{-5} \begin{pmatrix} 14 & -9 & -1 \\ -9 & 4 & 1 \\ -1 & 1 & -1 \end{pmatrix} = \begin{pmatrix} -14/5 & 9/5 & 1/5 \\ 9/5 & -4/5 & -1/5 \\ 1/5 & -1/5 & 1/5 \end{pmatrix} $$
+            <p>Now, find \((A^{-1})'\):
+                $$ (A^{-1})' = \begin{pmatrix} -14/5 & 9/5 & 1/5 \\ 9/5 & -4/5 & -1/5 \\ 1/5 & -1/5 & 1/5 \end{pmatrix}' = \begin{pmatrix} -14/5 & 9/5 & 1/5 \\ 9/5 & -4/5 & -1/5 \\ 1/5 & -1/5 & 1/5 \end{pmatrix} $$
+                (In this particular case, \(A^{-1}\) happens to be a symmetric matrix, so its transpose is itself.)</p>
+
+            <p><strong>Part 2: Calculate \((A')^{-1}\)</strong></p>
+            <p>First, find \(A'\):
+                $$ A' = \begin{pmatrix} 1 & 2 & 1 \\ 2 & 3 & 1 \\ 1 & 1 & 5 \end{pmatrix}' = \begin{pmatrix} 1 & 2 & 1 \\ 2 & 3 & 1 \\ 1 & 1 & 5 \end{pmatrix} $$
+                (Notice that A is symmetric, so \(A' = A\). This means \((A')^{-1} = A^{-1}\) and \((A^{-1})' = A^{-1}\) only if \(A^{-1}\) is also symmetric.)</p>
+            <p>Calculate \(|A'|\): Since \(|A'| = |A|\), \(|A'| = -5\).</p>
+            <p>Find cofactors of \(A'\), \((A')_{ij}\):
+                Since \(A'=A\), the cofactors of \(A'\) are the same as the cofactors of \(A\), i.e., \((A')_{ij} = A_{ij}\).</p>
+            <p>Cofactor matrix of \(A'\) is \(C_{A'} = \begin{pmatrix} 14 & -9 & -1 \\ -9 & 4 & 1 \\ -1 & 1 & -1 \end{pmatrix}\).</p>
+            <p>$$ \text{adj } A' = C_{A'}' = \begin{pmatrix} 14 & -9 & -1 \\ -9 & 4 & 1 \\ -1 & 1 & -1 \end{pmatrix} $$
+            <p>$$ (A')^{-1} = \frac{1}{|A'|} \text{adj } A' = \frac{1}{-5} \begin{pmatrix} 14 & -9 & -1 \\ -9 & 4 & 1 \\ -1 & 1 & -1 \end{pmatrix} = \begin{pmatrix} -14/5 & 9/5 & 1/5 \\ 9/5 & -4/5 & -1/5 \\ 1/5 & -1/5 & 1/5 \end{pmatrix} $$
+            <p>Since \((A^{-1})' = \begin{pmatrix} -14/5 & 9/5 & 1/5 \\ 9/5 & -4/5 & -1/5 \\ 1/5 & -1/5 & 1/5 \end{pmatrix}\) and \((A')^{-1} = \begin{pmatrix} -14/5 & 9/5 & 1/5 \\ 9/5 & -4/5 & -1/5 \\ 1/5 & -1/5 & 1/5 \end{pmatrix}\),
+            \((A^{-1})' = (A')^{-1}\) is verified.</p>
+        </div>
+
+        <p>5. If A is a square matrix such that \(A^2 = A\), then \((I+A)^3 - 7A\) is equal to
+            (A) A
+            (B) I-A
+            (C) I
+            (D) 3A</p>
+        <div class="solution-box">
+            <p>Given \(A^2 = A\).
+                We need to simplify \((I+A)^3 - 7A\).</p>
+            <p>Expand \((I+A)^3\) using the binomial expansion \((a+b)^3 = a^3+3a^2b+3ab^2+b^3\):
+                $$ (I+A)^3 = I^3 + 3I^2A + 3IA^2 + A^3 $$
+                Since \(I\) is the identity matrix, \(I^3 = I\), \(I^2A = A\), \(IA^2 = A^2\).
+                $$ (I+A)^3 = I + 3A + 3A^2 + A^3 $$
+                Now, use the given condition \(A^2 = A\):
+                Also, \(A^3 = A^2 \cdot A = A \cdot A = A^2\). Since \(A^2 = A\), then \(A^3 = A\).
+                Substitute these into the expanded form:
+                $$ (I+A)^3 = I + 3A + 3A + A $$
+                $$ (I+A)^3 = I + 7A $$
+            <p>Now, substitute this back into the original expression:
+                $$ (I+A)^3 - 7A = (I + 7A) - 7A $$
+                $$ = I + 7A - 7A = I $$
+            <p>The correct option is (C).</p>
+        </div>
+    </main>
+</body>
+</html>

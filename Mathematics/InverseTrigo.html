@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Inverse Trigonometric Solutions</title>
+
+    <!-- MathJax v3 Configuration and Library -->
+    <script>
+    window.MathJax = {
+      loader: {load: ['[tex]/mhchem', '[tex]/cancel']},
+      tex: {
+        packages: {'[+]': ['mhchem', 'cancel']},
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    
+    <!-- Link to Central Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="body-content">
+    <!-- Top navigation bar placeholder -->
+    <nav class="global-nav" id="global-navbar"></nav>
+    
+    <!-- Sidebar placeholder -->
+    <nav id="index-sidebar"></nav>
+    <script src="../main.js"></script>
+
+    <script src="../nav.js"></script>
+    <main class="main-content">
+        <h3>Inverse Trigonometric Functions</h3>
+
+        <h3 id="exercise-2-1">Exercise 2.1</h3>
+
+        <p>Find the principal values of the following:</p>
+
+        <h4 id="ex2-1-q1">1. \(\sin^{-1} \left(-\frac{1}{2}\right)\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \sin^{-1} \left(-\frac{1}{2}\right)\).</p>
+            <p>Then \(\sin y = -\frac{1}{2}\).</p>
+            <p>The principal value branch of \(\sin^{-1} x\) is \([-\frac{\pi}{2}, \frac{\pi}{2}]\).</p>
+            <p>We know that \(\sin \left(\frac{\pi}{6}\right) = \frac{1}{2}\).</p>
+            <p>Therefore, \(\sin \left(-\frac{\pi}{6}\right) = -\frac{1}{2}\).</p>
+            <p>Since \(-\frac{\pi}{6} \in [-\frac{\pi}{2}, \frac{\pi}{2}]\), the principal value is \(-\frac{\pi}{6}\).</p>
+            $$ \sin^{-1} \left(-\frac{1}{2}\right) = -\frac{\pi}{6} $$
+        </div>
+
+        <h4 id="ex2-1-q2">2. \(\cos^{-1} \left(\frac{\sqrt{3}}{2}\right)\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \cos^{-1} \left(\frac{\sqrt{3}}{2}\right)\).</p>
+            <p>Then \(\cos y = \frac{\sqrt{3}}{2}\).</p>
+            <p>The principal value branch of \(\cos^{-1} x\) is \([0, \pi]\).</p>
+            <p>We know that \(\cos \left(\frac{\pi}{6}\right) = \frac{\sqrt{3}}{2}\).</p>
+            <p>Since \(\frac{\pi}{6} \in [0, \pi]\), the principal value is \(\frac{\pi}{6}\).</p>
+            $$ \cos^{-1} \left(\frac{\sqrt{3}}{2}\right) = \frac{\pi}{6} $$
+        </div>
+
+        <h4 id="ex2-1-q3">3. \(\csc^{-1} (2)\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \csc^{-1} (2)\).</p>
+            <p>Then \(\csc y = 2\), which means \(\sin y = \frac{1}{2}\).</p>
+            <p>The principal value branch of \(\csc^{-1} x\) is \([-\frac{\pi}{2}, \frac{\pi}{2}] \setminus \{0\}\).</p>
+            <p>We know that \(\sin \left(rac{\pi}{6}\right) = \frac{1}{2}\).</p>
+            <p>Since \(\frac{\pi}{6} \in [-\frac{\pi}{2}, \frac{\pi}{2}] \setminus \{0\}\), the principal value is \(\frac{\pi}{6}\).</p>
+            $$ \csc^{-1} (2) = \frac{\pi}{6} $$
+        </div>
+
+        <h4 id="ex2-1-q4">4. \(\tan^{-1} (-\sqrt{3})\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \tan^{-1} (-\sqrt{3})\).</p>
+            <p>Then \(\tan y = -\sqrt{3}\).</p>
+            <p>The principal value branch of \(\tan^{-1} x\) is \((-\frac{\pi}{2}, \frac{\pi}{2})\).</p>
+            <p>We know that \(\tan \left(rac{\pi}{3}\right) = \sqrt{3}\).</p>
+            <p>Therefore, \(\tan \left(-\frac{\pi}{3}\right) = -\sqrt{3}\).</p>
+            <p>Since \(-\frac{\pi}{3} \in (-\frac{\pi}{2}, \frac{\pi}{2})\), the principal value is \(-\frac{\pi}{3}\).</p>
+            $$ \tan^{-1} (-\sqrt{3}) = -\frac{\pi}{3} $$
+        </div>
+
+        <h4 id="ex2-1-q5">5. \(\cos^{-1} \left(-\frac{1}{2}\right)\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \cos^{-1} \left(-\frac{1}{2}\right)\).</p>
+            <p>Then \(\cos y = -\frac{1}{2}\).</p>
+            <p>The principal value branch of \(\cos^{-1} x\) is \([0, \pi]\).</p>
+            <p>We know that \(\cos \left(rac{\pi}{3}\right) = \frac{1}{2}\).</p>
+            <p>Since \(\cos (\pi - \theta) = -\cos \theta\), we have \(\cos \left(\pi - \frac{\pi}{3}\right) = -\cos \frac{\pi}{3} = -\frac{1}{2}\).</p>
+            <p>So, \(\cos \left(\frac{2\pi}{3}\right) = -\frac{1}{2}\).</p>
+            <p>Since \(\frac{2\pi}{3} \in [0, \pi]\), the principal value is \(\frac{2\pi}{3}\).</p>
+            $$ \cos^{-1} \left(-\frac{1}{2}\right) = \frac{2\pi}{3} $$
+        </div>
+
+        <h4 id="ex2-1-q6">6. \(\tan^{-1} (-1)\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \tan^{-1} (-1)\).</p>
+            <p>Then \(\tan y = -1\).</p>
+            <p>The principal value branch of \(\tan^{-1} x\) is \((-\frac{\pi}{2}, \frac{\pi}{2})\).</p>
+            <p>We know that \(\tan \left(rac{\pi}{4}\right) = 1\).</p>
+            <p>Therefore, \(\tan \left(-\frac{\pi}{4}\right) = -1\).</p>
+            <p>Since \(-\frac{\pi}{4} \in (-\frac{\pi}{2}, \frac{\pi}{2})\), the principal value is \(-\frac{\pi}{4}\).</p>
+            $$ \tan^{-1} (-1) = -\frac{\pi}{4} $$
+        </div>
+
+        <h4 id="ex2-1-q7">7. \(\sec^{-1} \left(\frac{2}{\sqrt{3}}\right)\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \sec^{-1} \left(\frac{2}{\sqrt{3}}\right)\).</p>
+            <p>Then \(\sec y = \frac{2}{\sqrt{3}}\), which means \(\cos y = \frac{\sqrt{3}}{2}\).</p>
+            <p>The principal value branch of \(\sec^{-1} x\) is \([0, \pi] \setminus \{\frac{\pi}{2}\}\).\)</p>
+            <p>We know that \(\cos \left(rac{\pi}{6}\right) = \frac{\sqrt{3}}{2}\).</p>
+            <p>Since \(\frac{\pi}{6} \in [0, \pi] \setminus \{\frac{\pi}{2}\}\), the principal value is \(\frac{\pi}{6}\).</p>
+            $$ \sec^{-1} \left(\frac{2}{\sqrt{3}}\right) = \frac{\pi}{6} $$
+        </div>
+
+        <h4 id="ex2-1-q8">8. \(\cot^{-1} (\sqrt{3})\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \cot^{-1} (\sqrt{3})\).</p>
+            <p>Then \(\cot y = \sqrt{3}\).</p>
+            <p>The principal value branch of \(\cot^{-1} x\) is \((0, \pi)\).</p>
+            <p>We know that \(\cot \left(rac{\pi}{6}\right) = \sqrt{3}\).</p>
+            <p>Since \(\frac{\pi}{6} \in (0, \pi)\), the principal value is \(\frac{\pi}{6}\).</p>
+            $$ \cot^{-1} (\sqrt{3}) = \frac{\pi}{6} $$
+        </div>
+
+        <h4 id="ex2-1-q9">9. \(\cos^{-1} \left(-\frac{1}{\sqrt{2}}\right)\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \cos^{-1} \left(-\frac{1}{\sqrt{2}}\right)\).</p>
+            <p>Then \(\cos y = -\frac{1}{\sqrt{2}}\).</p>
+            <p>The principal value branch of \(\cos^{-1} x\) is \([0, \pi]\).</p>
+            <p>We know that \(\cos \left(rac{\pi}{4}\right) = \frac{1}{\sqrt{2}}\).</p>
+            <p>Since \(\cos (\pi - \theta) = -\cos \theta\), we have \(\cos \left(\pi - \frac{\pi}{4}\right) = -\cos \frac{\pi}{4} = -\frac{1}{\sqrt{2}}\).</p>
+            <p>So, \(\cos \left(\frac{3\pi}{4}\right) = -\frac{1}{\sqrt{2}}\).</p>
+            <p>Since \(\frac{3\pi}{4} \in [0, \pi]\), the principal value is \(\frac{3\pi}{4}\).</p>
+            $$ \cos^{-1} \left(-\frac{1}{\sqrt{2}}\right) = \frac{3\pi}{4} $$
+        </div>
+
+        <h4 id="ex2-1-q10">10. \(\csc^{-1} (-\sqrt{2})\)</h4>
+        <div class="solution-box">
+            <p>Let \(y = \csc^{-1} (-\sqrt{2})\).</p>
+            <p>Then \(\csc y = -\sqrt{2}\), which means \(\sin y = -\frac{1}{\sqrt{2}}\).</p>
+            <p>The principal value branch of \(\csc^{-1} x\) is \([-\frac{\pi}{2}, \frac{\pi}{2}] \setminus \{0\}\).</p>
+            <p>We know that \(\sin \left(rac{\pi}{4}\right) = \frac{1}{\sqrt{2}}\).</p>
+            <p>Therefore, \(\sin \left(-\frac{\pi}{4}\right) = -\frac{1}{\sqrt{2}}\).</p>
+            <p>Since \(-\frac{\pi}{4} \in [-\frac{\pi}{2}, \frac{\pi}{2}] \setminus \{0\}\), the principal value is \(-\frac{\pi}{4}\).</p>
+            $$ \csc^{-1} (-\sqrt{2}) = -\frac{\pi}{4} $$
+        </div>
+
+        <p>Find the values of the following:</p>
+
+        <h4 id="ex2-1-q11">11. \(\tan^{-1}(1) + \cos^{-1}\left(-\frac{1}{2}\right) + \sin^{-1}\left(-\frac{1}{2}\right)\)</h4>
+        <div class="solution-box">
+            <p>We evaluate each term separately:</p>
+            <p>\(\tan^{-1}(1)\): Let \(y_1 = \tan^{-1}(1)\). \(\tan y_1 = 1\). Principal value is \(y_1 = \frac{\pi}{4}\).</p>
+            <p>\(\cos^{-1}\left(-\frac{1}{2}\right)\): Let \(y_2 = \cos^{-1}\left(-\frac{1}{2}\right)\). \(\cos y_2 = -\frac{1}{2}\). Principal value is \(y_2 = \frac{2\pi}{3}\) (from Q5).</p>
+            <p>\(\sin^{-1}\left(-\frac{1}{2}\right)\): Let \(y_3 = \sin^{-1}\left(-\frac{1}{2}\right)\). \(\sin y_3 = -\frac{1}{2}\). Principal value is \(y_3 = -\frac{\pi}{6}\) (from Q1).</p>
+            <p>Summing them:</p>
+            $$ \frac{\pi}{4} + \frac{2\pi}{3} + \left(-\frac{\pi}{6}\right) = \frac{\pi}{4} + \frac{2\pi}{3} - \frac{\pi}{6} $$
+            Find a common denominator (12):
+            $$ = \frac{3\pi}{12} + \frac{8\pi}{12} - \frac{2\pi}{12} = \frac{3\pi + 8\pi - 2\pi}{12} = \frac{9\pi}{12} = \frac{3\pi}{4} $$
+            $$ \tan^{-1}(1) + \cos^{-1}\left(-\frac{1}{2}\right) + \sin^{-1}\left(-\frac{1}{2}\right) = \frac{3\pi}{4} $$
+        </div>
+
+        <h4 id="ex2-1-q12">12. \(\cos^{-1}\left(\frac{1}{2}\right) + 2\sin^{-1}\left(\frac{1}{2}\right)\)</h4>
+        <div class="solution-box">
+            <p>We evaluate each term:</p>
+            <p>\(\cos^{-1}\left(\frac{1}{2}\right)\): Let \(y_1 = \cos^{-1}\left(\frac{1}{2}\right)\). \(\cos y_1 = \frac{1}{2}\). Principal value is \(y_1 = \frac{\pi}{3}\).</p>
+            <p>\(\sin^{-1}\left(\frac{1}{2}\right)\): Let \(y_2 = \sin^{-1}\left(\frac{1}{2}\right)\). \(\sin y_2 = \frac{1}{2}\). Principal value is \(y_2 = \frac{\pi}{6}\).</p>
+            <p>Summing them:</p>
+            $$ \frac{\pi}{3} + 2\left(\frac{\pi}{6}\right) = \frac{\pi}{3} + \frac{\pi}{3} = \frac{2\pi}{3} $$
+            $$ \cos^{-1}\left(\frac{1}{2}\right) + 2\sin^{-1}\left(\frac{1}{2}\right) = \frac{2\pi}{3} $$
+        </div>
+
+        <h4 id="ex2-1-q13">13. If \(\sin^{-1} x = y\), then</h4>
+        <p>(A) \(0 \leq y \leq \pi\)
+        (B) \(-\frac{\pi}{2} \leq y \leq \frac{\pi}{2}\)
+        (C) \(0 < y < \pi\)
+        (D) \(-\frac{\pi}{2} < y < \frac{\pi}{2}\)</p>
+        <div class="solution-box">
+            <p>The principal value branch of \(\sin^{-1} x\) is \([-\frac{\pi}{2}, \frac{\pi}{2}]\).</p>
+            <p>So, if \(y = \sin^{-1} x\), then \(y\) must be in this interval.</p>
+            <p>The correct option is <strong>(B)</strong>.</p>
+        </div>
+
+        <h4 id="ex2-1-q14">14. \(\tan^{-1} \sqrt{3} - \sec^{-1} (-2)\) is equal to</h4>
+        <p>(A) \(\pi\)
+        (B) \(-\frac{\pi}{3}\)
+        (C) \(\frac{\pi}{3}\)
+        (D) \(\frac{2\pi}{3}\)</p>
+        <div class="solution-box">
+            <p>We evaluate each term:</p>
+            <p>\(\tan^{-1} \sqrt{3}\): Let \(y_1 = \tan^{-1} \sqrt{3}\). \(\tan y_1 = \sqrt{3}\). Principal value is \(y_1 = \frac{\pi}{3}\).</p>
+            <p>\(\sec^{-1} (-2)\): Let \(y_2 = \sec^{-1} (-2)\). \(\sec y_2 = -2\), so \(\cos y_2 = -\frac{1}{2}\).</p>
+            <p>The principal value branch of \(\sec^{-1} x\) is \([0, \pi] \setminus \{\frac{\pi}{2}\}\).</p>
+            <p>We know \(\cos (\pi - \frac{\pi}{3}) = -\cos \frac{\pi}{3} = -\frac{1}{2}\). So, \(\cos \frac{2\pi}{3} = -\frac{1}{2}\).</p>
+            <p>Since \(\frac{2\pi}{3} \in [0, \pi] \setminus \{\frac{\pi}{2}\}\), the principal value is \(y_2 = \frac{2\pi}{3}\).</p>
+            <p>Subtracting them:</p>
+            $$ \frac{\pi}{3} - \frac{2\pi}{3} = -\frac{\pi}{3} $$
+            <p>The correct option is <strong>(B)</strong>.</p>
+        </div>
+
+        <h3 id="exercise-2-2">Exercise 2.2</h3>
+
+        <p>Prove the following:</p>
+
+        <h4 id="ex2-2-q1">1. \(3\sin^{-1} x = \sin^{-1} (3x - 4x^3)\), \(x \in \left[-\frac{1}{2}, \frac{1}{2}\right]\)</h4>
+        <div class="solution-box">
+            <p>Let \(\sin^{-1} x = \theta\).</p>
+            <p>Then \(x = \sin \theta\).</p>
+            <p>Since \(x \in \left[-\frac{1}{2}, \frac{1}{2}\right]\), \(\theta \in \left[-\frac{\pi}{6}, \frac{\pi}{6}\right]\).</p>
+            <p>Consider the RHS: \(\sin^{-1} (3x - 4x^3)\).</p>
+            Substitute \(x = \sin \theta\):
+            $$ \sin^{-1} (3\sin\theta - 4\sin^3\theta) $$
+            We know the trigonometric identity \(3\sin\theta - 4\sin^3\theta = \sin 3\theta\).</p>
+            $$ = \sin^{-1} (\sin 3\theta) $$
+            Since \(\theta \in \left[-\frac{\pi}{6}, \frac{\pi}{6}\right]\), it follows that \(3\theta \in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]\).</p>
+            <p>In the interval \([-\frac{\pi}{2}, \frac{\pi}{2}]\), \(\sin^{-1} (\sin A) = A\).</p>
+            So, \( \sin^{-1} (\sin 3\theta) = 3\theta \).</p>
+            Substitute back \(\theta = \sin^{-1} x\):
+            $$ = 3\sin^{-1} x $$
+            Thus, \(3\sin^{-1} x = \sin^{-1} (3x - 4x^3)\) is proven for the given domain.</p>
+        </div>
+
+        <h4 id="ex2-2-q2">2. \(3\cos^{-1} x = \cos^{-1} (4x^3 - 3x)\), \(x \in \left[\frac{1}{2}, 1\right]\)</h4>
+        <div class="solution-box">
+            <p>Let \(\cos^{-1} x = \theta\).</p>
+            <p>Then \(x = \cos \theta\).</p>
+            <p>Since \(x \in \left[\frac{1}{2}, 1\right]\), \(\theta \in \left[0, \frac{\pi}{3}\right]\).</p>
+            <p>Consider the RHS: \(\cos^{-1} (4x^3 - 3x)\).</p>
+            Substitute \(x = \cos \theta\):
+            $$ \cos^{-1} (4\cos^3\theta - 3\cos\theta) $$
+            We know the trigonometric identity \(4\cos^3\theta - 3\cos\theta = \cos 3\theta\).</p>
+            $$ = \cos^{-1} (\cos 3\theta) $$
+            Since \(\theta \in \left[0, \frac{\pi}{3}\right]\), it follows that \(3\theta \in [0, \pi]\).</p>
+            <p>In the interval \([0, \pi]\), \(\cos^{-1} (\cos A) = A\).</p>
+            So, \( \cos^{-1} (\cos 3\theta) = 3\theta \).</p>
+            Substitute back \(\theta = \cos^{-1} x\):
+            $$ = 3\cos^{-1} x $$
+            Thus, \(3\cos^{-1} x = \cos^{-1} (4x^3 - 3x)\) is proven for the given domain.</p>
+        </div>
+
+        <h4 id="ex2-2-q3">3. \(\tan^{-1} \left(\frac{\sqrt{1+x^2} - 1}{x}\right)\), \(x \neq 0\) in the simplest form.</h4>
+        <div class="solution-box">
+            <p>Let \(x = \tan \theta\).</p>
+            <p>Then \(\theta = \tan^{-1} x\).</p>
+            Substitute \(x = \tan \theta\) into the expression:
+            $$ \tan^{-1} \left(\frac{\sqrt{1+\tan^2\theta} - 1}{\tan\theta}\right) $$
+            We know \(\sqrt{1+\tan^2\theta} = \sqrt{\sec^2\theta} = |\sec\theta|\).</p>
+            <p>Assuming \(\theta \in (-\frac{\pi}{2}, \frac{\pi}{2})\) (principal value branch of \(\tan^{-1} x\)), \(\sec\theta > 0\), so \(|\sec\theta| = \sec\theta\).</p>
+            $$ = \tan^{-1} \left(\frac{\sec\theta - 1}{\tan\theta}\right) $$
+            Convert to \(\sin\) and \(\cos\):
+            $$ = \tan^{-1} \left(\frac{\frac{1}{\cos\theta} - 1}{\frac{\sin\theta}{\cos\theta}}\right) = \tan^{-1} \left(\frac{\frac{1-\cos\theta}{\cos\theta}}{\frac{\sin\theta}{\cos\theta}}\right) = \tan^{-1} \left(\frac{1-\cos\theta}{\sin\theta}\right) $$
+            Use half-angle formulas: \(1-\cos\theta = 2\sin^2\left(\frac{\theta}{2}\right)\) and \(\sin\theta = 2\sin\left(\frac{\theta}{2}\right)\cos\left(\frac{\theta}{2}\right)\).</p>
+            $$ = \tan^{-1} \left(\frac{2\sin^2\left(\frac{\theta}{2}\right)}{2\sin\left(\frac{\theta}{2}\right)\cos\left(\frac{\theta}{2}\right)}\right) = \tan^{-1} \left(\frac{\sin\left(\frac{\theta}{2}\right)}{\cos\left(\frac{\theta}{2}\right)}\right) = \tan^{-1} \left(\tan\left(\frac{\theta}{2}\right)\right) $$
+            Since \(\theta \in (-\frac{\pi}{2}, \frac{\pi}{2})\), it implies \(\frac{\theta}{2} \in (-\frac{\pi}{4}, \frac{\pi}{4})\). In this interval, \(\tan^{-1}(\tan A) = A\).</p>
+            $$ = \frac{\theta}{2} $$
+            Substitute back \(\theta = \tan^{-1} x\):
+            $$ = \frac{1}{2}\tan^{-1} x $$
+            The simplest form is \(\frac{1}{2}\tan^{-1} x\).
+        </div>
+
+        <h4 id="ex2-2-q4">4. \(\tan^{-1} \left(\sqrt{\frac{1-\cos x}{1+\cos x}}\right)\), \(0 < x < \pi\) in the simplest form.</h4>
+        <div class="solution-box">
+            <p>Given the expression \(\tan^{-1} \left(\sqrt{\frac{1-\cos x}{1+\cos x}}\right)\).</p>
+            <p>Use half-angle formulas: \(1-\cos x = 2\sin^2\left(\frac{x}{2}\right)\) and \(1+\cos x = 2\cos^2\left(\frac{x}{2}\right)\).</p>
+            $$ \sqrt{\frac{1-\cos x}{1+\cos x}} = \sqrt{\frac{2\sin^2\left(\frac{x}{2}\right)}{2\cos^2\left(\frac{x}{2}\right)}} = \sqrt{\tan^2\left(\frac{x}{2}\right)} = \left|\tan\left(\frac{x}{2}\right)\right| $$
+            Given \(0 < x < \pi\), this implies \(0 < \frac{x}{2} < \frac{\pi}{2}\).</p>
+            <p>In this interval, \(\tan\left(\frac{x}{2}\right) > 0\), so \(\left|\tan\left(\frac{x}{2}\right)\right| = \tan\left(\frac{x}{2}\right)\).</p>
+            So the expression becomes:
+            $$ \tan^{-1} \left(\tan\left(\frac{x}{2}\right)\right) $$
+            Since \(0 < \frac{x}{2} < \frac{\pi}{2}\), which is within the principal value branch of \(\tan^{-1} A\) (\((-\frac{\pi}{2}, \frac{\pi}{2})\)), \(\tan^{-1}(\tan A) = A\).</p>
+            $$ = \frac{x}{2} $$
+            The simplest form is \(\frac{x}{2}\).
+        </div>
+
+        <h4 id="ex2-2-q5">5. \(\tan^{-1} \left(\frac{\cos x - \sin x}{\cos x + \sin x}\right)\), \(-\frac{\pi}{4} < x < \frac{3\pi}{4}\) in the simplest form.</h4>
+        <div class="solution-box">
+            <p>Given the expression \(\tan^{-1} \left(\frac{\cos x - \sin x}{\cos x + \sin x}\right)\).</p>
+            <p>Divide the numerator and denominator by \(\cos x\):</p>
+            $$ \tan^{-1} \left(\frac{1 - \frac{\sin x}{\cos x}}{1 + \frac{\sin x}{\cos x}}\right) = \tan^{-1} \left(\frac{1 - \tan x}{1 + \tan x}\right) $$
+            We know the tangent addition formula: \(\tan(A-B) = \frac{\tan A - \tan B}{1 + \tan A \tan B}\).</p>
+            <p>Comparing, we can write \(1\) as \(\tan\left(\frac{\pi}{4}\right)\):</p>
+            $$ = \tan^{-1} \left(\frac{\tan\left(\frac{\pi}{4}\right) - \tan x}{1 + \tan\left(\frac{\pi}{4}\right)\tan x}\right) = \tan^{-1} \left(\tan\left(\frac{\pi}{4} - x\right)\right) $$
+            Given \(-\frac{\pi}{4} < x < \frac{3\pi}{4}\).</p>
+            Multiply by \(-1\): \(-\frac{3\pi}{4} < -x < \frac{\pi}{4}\).
+            Add \(\frac{\pi}{4}\): \(-\frac{3\pi}{4} + \frac{\pi}{4} < \frac{\pi}{4} - x < \frac{\pi}{4} + \frac{\pi}{4}\).
+            So, \(-\frac{2\pi}{4} < \frac{\pi}{4} - x < \frac{2\pi}{4}\), which simplifies to \(-\frac{\pi}{2} < \frac{\pi}{4} - x < \frac{\pi}{2}\).</p>
+            <p>This interval \((-\frac{\pi}{2}, \frac{\pi}{2})\) is the principal value branch of \(\tan^{-1} A\).</p>
+            So, \( \tan^{-1} \left(\tan\left(\frac{\pi}{4} - x\right)\right) = \frac{\pi}{4} - x \).
+            The simplest form is \(\frac{\pi}{4} - x\).
+        </div>
+
+        <h4 id="ex2-2-q6">6. \(\tan^{-1} \left(\frac{x}{\sqrt{a^2 - x^2}}\right)\), \(|x| < a\) in the simplest form.</h4>
+        <div class="solution-box">
+            <p>Given the expression \(\tan^{-1} \left(\frac{x}{\sqrt{a^2 - x^2}}\right)\).</p>
+            Since \(|x| < a\), we can substitute \(x = a \sin \theta\).
+            Then \(\theta = \sin^{-1}\left(\frac{x}{a}\right)\).
+            The range for \(\theta\) is \((-\frac{\pi}{2}, \frac{\pi}{2})\).</p>
+            Substitute \(x = a \sin \theta\):
+            $$ \tan^{-1} \left(\frac{a \sin \theta}{\sqrt{a^2 - (a \sin \theta)^2}}\right) = \tan^{-1} \left(\frac{a \sin \theta}{\sqrt{a^2 - a^2 \sin^2\theta}}\right) $$
+            $$ = \tan^{-1} \left(\frac{a \sin \theta}{\sqrt{a^2(1 - \sin^2\theta)}}\right) = \tan^{-1} \left(\frac{a \sin \theta}{\sqrt{a^2\cos^2\theta}}\right) $$
+            $$ = \tan^{-1} \left(\frac{a \sin \theta}{|a \cos \theta|}\right) $$
+            Since \(a > 0\) (implied by \(\sqrt{a^2}\)) and \(\theta \in (-\frac{\pi}{2}, \frac{\pi}{2})\), \(\cos\theta > 0\), so \(|a \cos \theta| = a \cos \theta\).</p>
+            $$ = \tan^{-1} \left(\frac{a \sin \theta}{a \cos \theta}\right) = \tan^{-1} (\tan \theta) $$
+            Since \(\theta \in (-\frac{\pi}{2}, \frac{\pi}{2})\), \(\tan^{-1}(\tan \theta) = \theta\).</p>
+            Substitute back \(\theta = \sin^{-1}\left(\frac{x}{a}\right)\):
+            $$ = \sin^{-1}\left(\frac{x}{a}\right) $$
+            The simplest form is \(\sin^{-1}\left(\frac{x}{a}\right)\).
+        </div>
+
+        <h4 id="ex2-2-q7">7. \(\tan^{-1} \left(\frac{3a^2x - x^3}{a^3 - 3ax^2}\right)\), \(a > 0; -\frac{a}{\sqrt{3}} < x < \frac{a}{\sqrt{3}}\)
+ in the simplest form.</h4>
+        <div class="solution-box">
+            <p>Given the expression \(\tan^{-1} \left(\frac{3a^2x - x^3}{a^3 - 3ax^2}\right)\).</p>
+            To match the \(\tan 3\theta\) formula, we should substitute \(x = a \tan \theta\).
+            Then \(\theta = \tan^{-1}\left(\frac{x}{a}\right)\).
+            Given \(-\frac{a}{\sqrt{3}} < x < \frac{a}{\sqrt{3}}\).
+            Dividing by \(a\): \(-\frac{1}{\sqrt{3}} < \frac{x}{a} < \frac{1}{\sqrt{3}}\).
+            So, \(-\frac{1}{\sqrt{3}} < \tan \theta < \frac{1}{\sqrt{3}}\), which means \(-\frac{\pi}{6} < \theta < \frac{\pi}{6}\).
+            Substitute \(x = a \tan \theta\) into the expression:
+            $$ \tan^{-1} \left(\frac{3a^2(a \tan \theta) - (a \tan \theta)^3}{a^3 - 3a(a \tan \theta)^2}\right) = \tan^{-1} \left(\frac{3a^3 \tan \theta - a^3 \tan^3\theta}{a^3 - 3a^3 \tan^2\theta}\right) $$
+            Factor out \(a^3\) from numerator and denominator:
+            $$ = \tan^{-1} \left(\frac{a^3(3 \tan \theta - \tan^3\theta)}{a^3(1 - 3 \tan^2\theta)}\right) = \tan^{-1} \left(\frac{3 \tan \theta - \tan^3\theta}{1 - 3 \tan^2\theta}\right) $$
+            We know the trigonometric identity \(\frac{3 \tan \theta - \tan^3\theta}{1 - 3 \tan^2\theta} = \tan 3\theta\).
+            $$ = \tan^{-1} (\tan 3\theta) $$
+            Since \(-\frac{\pi}{6} < \theta < \frac{\pi}{6}\), it follows that \(-\frac{\pi}{2} < 3\theta < \frac{\pi}{2}\).
+            This interval \((-\frac{\pi}{2}, \frac{\pi}{2})\) is the principal value branch of \(\tan^{-1} A\).
+            So, \( \tan^{-1} (\tan 3\theta) = 3\theta \).
+            Substitute back \(\theta = \tan^{-1}\left(\frac{x}{a}\right)\):
+            $$ = 3\tan^{-1}\left(\frac{x}{a}\right) $$
+            The simplest form is \(3\tan^{-1}\left(\frac{x}{a}\right)\).
+        </div>
+
+        <p>Find the values of each of the following:</p>
+
+        <h4 id="ex2-2-q8">8. \(\tan^{-1} \left[2\cos\left(2\sin^{-1}\left(\frac{1}{2}\right)\right)\right]\)</h4>
+        <div class="solution-box">
+            <p>Evaluate from inside out:</p>
+            <p>First, find \(\sin^{-1}\left(\frac{1}{2}\right)\):
+            Let \(A = \sin^{-1}\left(\frac{1}{2}\right)\). \(\sin A = \frac{1}{2}\). The principal value is \(A = \frac{\pi}{6}\).</p>
+            <p>Next, evaluate \(2\sin^{-1}\left(\frac{1}{2}\right)\):
+            \(2A = 2\left(\frac{\pi}{6}\right) = \frac{\pi}{3}\).</p>
+            <p>Next, evaluate \(\cos\left(2\sin^{-1}\left(\frac{1}{2}\right)\right)\):
+            \(\cos\left(\frac{\pi}{3}\right) = \frac{1}{2}\).</p>
+            <p>Finally, evaluate \(\tan^{-1} \left[2\cos\left(2\sin^{-1}\left(\frac{1}{2}\right)\right)\right]\):
+            \(\tan^{-1} \left[2\left(\frac{1}{2}\right)\right] = \tan^{-1} (1)\).</p>
+            <p>The principal value of \(\tan^{-1}(1)\) is \(\frac{\pi}{4}\).</p>
+            $$ \tan^{-1} \left[2\cos\left(2\sin^{-1}\left(\frac{1}{2}\right)\right)\right] = \frac{\pi}{4} $$
+        </div>
+
+        <h4 id="ex2-2-q9">9. \(\tan \frac{1}{2}\left[\sin^{-1} \left(\frac{2x}{1+x^2}\right) + \cos^{-1} \left(\frac{1-y^2}{1+y^2}\right)\right]\), \(|x| < 1, y > 0\) and \(xy < 1\).</h4>
+        <div class="solution-box">
+            <p>We use standard substitutions for the inverse trigonometric terms:</p>
+            <p>For \(\sin^{-1} \left(\frac{2x}{1+x^2}\right)\): Let \(x = \tan A\). Then \(A = \tan^{-1} x\).</p>
+            Since \(|x| < 1\), \(-\frac{\pi}{4} < A < \frac{\pi}{4}\). So \(-\frac{\pi}{2} < 2A < \frac{\pi}{2}\).
+            \(\sin^{-1} \left(\frac{2\tan A}{1+\tan^2 A}\right) = \sin^{-1} (\sin 2A) = 2A = 2\tan^{-1} x\).</p>
+
+            <p>For \(\cos^{-1} \left(\frac{1-y^2}{1+y^2}\right)\): Let \(y = \tan B\). Then \(B = \tan^{-1} y\).</p>
+            Since \(y > 0\), \(0 < B < \frac{\pi}{2}\). So \(0 < 2B < \pi\).
+            \(\cos^{-1} \left(\frac{1-\tan^2 B}{1+\tan^2 B}\right) = \cos^{-1} (\cos 2B) = 2B = 2\tan^{-1} y\).</p>
+
+            <p>Substitute these back into the expression:</p>
+            $$ \tan \frac{1}{2} \left[2\tan^{-1} x + 2\tan^{-1} y\right] $$
+            $$ = \tan \frac{1}{2} \left[2(\tan^{-1} x + \tan^{-1} y)\right] $$
+            $$ = \tan (\tan^{-1} x + \tan^{-1} y) $$
+            We use the formula \(\tan^{-1} x + \tan^{-1} y = \tan^{-1} \left(\frac{x+y}{1-xy}\right)\) when \(xy < 1\).
+            The condition \(xy < 1\) is given in the problem.</p>
+            $$ = \tan \left(\tan^{-1} \left(\frac{x+y}{1-xy}\right)\right) $$
+            $$ = \frac{x+y}{1-xy} $$
+            The value of the expression is \(\frac{x+y}{1-xy}\).
+        </div>
+
+        <p>Find the values of each of the expressions in Exercises 10 to 18.</p>
+
+        <h4 id="ex2-2-q10">10. \(\sin\left(\sin^{-1}\left(\frac{2\pi}{3}\right)\right)\) (Typo in problem, should be \( \sin\left(\sin^{-1}(\frac{2}{3})\right) \) or \( \sin^{-1}(\sin(\frac{2\pi}{3})) \). Assuming the latter interpretation)</h4>
+        <div class="solution-box">
+            <p>Assuming the question is \(\sin^{-1}\left(\sin\left(\frac{2\pi}{3}\right)\right)\):</p>
+            <p>We need to find the principal value of \(\sin^{-1} (\sin \theta)\).
+            The principal value branch of \(\sin^{-1} x\) is \([-\frac{\pi}{2}, \frac{\pi}{2}]\).</p>
+            <p>\(\sin\left(\frac{2\pi}{3}\right) = \sin\left(\pi - \frac{\pi}{3}\right) = \sin\left(\frac{\pi}{3}\right) = \frac{\sqrt{3}}{2}\).</p>
+            So the expression becomes \(\sin^{-1}\left(\frac{\sqrt{3}}{2}\right)\).
+            We know \(\sin\left(\frac{\pi}{3}\right) = \frac{\sqrt{3}}{2}\).
+            Since \(\frac{\pi}{3} \in [-\frac{\pi}{2}, \frac{\pi}{2}]\), the principal value is \(\frac{\pi}{3}\).</p>
+            $$ \sin^{-1}\left(\sin\left(\frac{2\pi}{3}\right)\right) = \frac{\pi}{3} $$
+            <p>If the question was literally \(\sin\left(\sin^{-1}\left(\frac{2\pi}{3}\right)\right)\):
+            The domain of \(\sin^{-1} x\) is \([-1, 1]\). Since \(\frac{2\pi}{3} \approx 2.09\), it is outside the domain \([-1, 1]\).
+            So, \(\sin^{-1}\left(\frac{2\pi}{3}\right)\) is not defined for real numbers. This would make the entire expression undefined.</p>
+            <p>Based on typical textbook problems, the interpretation \(\sin^{-1}(\sin \theta)\) is more likely.</p>
+        </div>
+
+        <h4 id="ex2-2-q11">11. \(\tan^{-1}\left(\tan\left(rac{3\pi}{4}\right)\right)\)</h4>
+        <div class="solution-box">
+            <p>We need to find the principal value of \(\tan^{-1} (\tan \theta)\).
+            The principal value branch of \(\tan^{-1} x\) is \((-\frac{\pi}{2}, \frac{\pi}{2})\).
+            \(\tan\left(\frac{3\pi}{4}\right) = \tan\left(\pi - \frac{\pi}{4}\right) = -\tan\left(\frac{\pi}{4}\right) = -1\).
+            So the expression becomes \(\tan^{-1}(-1)\).
+            We know \(\tan\left(-\frac{\pi}{4}\right) = -1\).
+            Since \(-\frac{\pi}{4} \in (-\frac{\pi}{2}, \frac{\pi}{2})\), the principal value is \(\frac{\pi}{4}\).
+            $$ \tan^{-1}\left(\tan\left(\frac{3\pi}{4}\right)\right) = -\frac{\pi}{4} $$
+        </div>
+
+        <h4 id="ex2-2-q12">12. \(\tan\frac{1}{2}\sin^{-1}\left(\frac{2x}{1+x^2}\right) + \cos^{-1}\left(\frac{1-x^2}{1+x^2}\right)\) (Typo in problem, it should be \(\tan (\frac{1}{2} (\sin^{-1} (\frac{2x}{1+x^2}) + \cos^{-1} (\frac{1-x^2}{1+x^2}))) \). Assuming \(x > 0\). The problem in the PDF shows \(\tan(\frac{1}{2}\sin^{-1}(\frac{2x}{1+x^2}) + \cos^{-1}(\frac{1-x^2}{1+x^2}))\) without outer \(\tan\). Re-reading problem carefully, it's missing the outer \(\tan\) in the Misc Exercise Q12 also. From Ex 2.2, Q9 the \(\tan\) is present. Let's assume the outer \(\tan\) is present, and it's a sum of inverse functions. Let's assume question is \(\tan \frac{1}{2}\left[\sin^{-1} \left(\frac{2x}{1+x^2}\right) + \cos^{-1} \left(\frac{1-x^2}{1+x^2}\right)\right]\), assuming \(x>0\)). This is similar to Q9.</h4>
+        <div class="solution-box">
+            <p>This expression is exactly the same as Q9 of Exercise 2.2, with \(y=x\).
+            However, for \(\sin^{-1} \left(\frac{2x}{1+x^2}\right)\) and \(\cos^{-1} \left(\frac{1-x^2}{1+x^2}\right)\) to be simplified to \(2\tan^{-1}x\), \(x\) must be in \(|x| \le 1\).</p>
+            <p>From Q9, we know that \(\sin^{-1} \left(\frac{2x}{1+x^2}\right) = 2\tan^{-1} x\) (for \(|x| \leq 1\)).</p>
+            <p>And \(\cos^{-1} \left(\frac{1-x^2}{1+x^2}\right) = 2\tan^{-1} x\) (for \(x \geq 0\)).</p>
+            <p>So, the expression becomes:</p>
+            $$ \tan \frac{1}{2} [2\tan^{-1} x + 2\tan^{-1} x] $$
+            $$ = \tan \frac{1}{2} [4\tan^{-1} x] $$
+            $$ = \tan (2\tan^{-1} x) $$
+            We use the formula \(2\tan^{-1} x = \tan^{-1}\left(\frac{2x}{1-x^2}\right)\) for \(|x|<1\).
+            $$ = \tan \left(\tan^{-1}\left(\frac{2x}{1-x^2}\right)\right) $$
+            $$ = \frac{2x}{1-x^2} $$
+            <p>This is valid for \(|x|<1\). The problem statement in the Miscellaneous Exercise specifies \(x>0\), so for \(x \in (0,1)\) this result holds.</p>
+        </div>
+
+        <h4 id="ex2-2-q13">13. \(\cos^{-1}\left(\cos\left(\frac{7\pi}{6}\right)\right)\)</h4>
+        <div class="solution-box">
+            <p>We need to find the principal value of \(\cos^{-1} (\cos \theta)\).
+            The principal value branch of \(\cos^{-1} x\) is \([0, \pi]\).
+            The angle \(\frac{7\pi}{6}\) is not in \([0, \pi]\).
+            We use the property \(\cos (2\pi - \theta) = \cos \theta\).
+            $$ \cos\left(\frac{7\pi}{6}\right) = \cos\left(2\pi - \frac{7\pi}{6}\right) = \cos\left(\frac{12\pi - 7\pi}{6}\right) = \cos\left(\frac{5\pi}{6}\right) $$
+            Now, \(\frac{5\pi}{6} \in [0, \pi]\).
+            So the expression becomes \(\cos^{-1}\left(\cos\left(\frac{5\pi}{6}\right)\right)\).
+            $$ = \frac{5\pi}{6} $$
+            The correct option is <strong>(B)</strong> from the PDF for Q13 of Ex 2.1, but this question is part of "Find the values of each of the expressions in Exercises 10 to 18" in Ex 2.2.
+        </div>
+
+        <h4 id="ex2-2-q14">14. \(\sin^{-1} (1-x) - 2\sin^{-1} x = \frac{\pi}{2}\), then \(x\) is equal to</h4>
+        <p>(A) \(0, \frac{1}{2}\)
+        (B) \(1, \frac{1}{2}\)
+        (C) \(0\)
+        (D) \(\frac{1}{2}\)</p>
+        <div class="solution-box">
+            <p>Given the equation: \(\sin^{-1} (1-x) - 2\sin^{-1} x = \frac{\pi}{2}\).
+            Let \(\sin^{-1} x = A\). Then \(x = \sin A\).
+            The domain of \(\sin^{-1} x\) is \([-1, 1]\). So \(x \in [-1, 1]\).
+            Also, \(1-x \in [-1, 1]\), so \(0 \leq x \leq 2\).
+            Combining both, \(x \in [0, 1]\).
+            Rearrange the equation:
+            $$ \sin^{-1} (1-x) = \frac{\pi}{2} + 2\sin^{-1} x $$
+            Take \(\sin\) of both sides:
+            $$ 1-x = \sin\left(\frac{\pi}{2} + 2\sin^{-1} x\right) $$
+            We know \(\sin(\frac{\pi}{2} + \theta) = \cos \theta\).
+            $$ 1-x = \cos(2\sin^{-1} x) $$
+            Let \(\sin^{-1} x = A\). Then \(1-x = \cos(2A)\).
+            We know \(\cos(2A) = 1 - 2\sin^2 A\).
+            Since \(\sin A = x\), we have \(\cos(2A) = 1 - 2x^2\).
+            Substitute this back:
+            $$ 1-x = 1 - 2x^2 $$
+            $$ -x = -2x^2 $$
+            $$ 2x^2 - x = 0 $$
+            Factor out \(x\):
+            $$ x(2x - 1) = 0 $$
+            This gives two possible solutions: \(x = 0\) or \(x = \frac{1}{2}\).
+            <p>Now, we must check these solutions in the original equation and principal value ranges.</p>
+            <p><strong>Check \(x = 0\):</strong>
+            LHS: \(\sin^{-1} (1-0) - 2\sin^{-1} (0) = \sin^{-1}(1) - 2(0) = \frac{\pi}{2} - 0 = \frac{\pi}{2}\).
+            RHS: \(\frac{\pi}{2}\).
+            LHS = RHS. So, \(x = 0\) is a solution.</p>
+
+            <p><strong>Check \(x = \frac{1}{2}\):</strong>
+            LHS: \(\sin^{-1} (1-\frac{1}{2}) - 2\sin^{-1} (\frac{1}{2}) = \sin^{-1}(\frac{1}{2}) - 2\sin^{-1}(\frac{1}{2})\).
+            Since \(\sin^{-1}(\frac{1}{2}) = \frac{\pi}{6}\).
+            LHS: \( \frac{\pi}{6} - 2\left(\frac{\pi}{6}\right) = \frac{\pi}{6} - \frac{2\pi}{6} = -\frac{\pi}{6}\).
+            RHS: \(\frac{\pi}{2}\).
+            LHS \(\neq\) RHS. So, \(x = \frac{1}{2}\) is NOT a solution.</p>
+            <p>Therefore, the only solution is \(x = 0\).</p>
+            <p>The correct option is <strong>(C)</strong>.</p>
+        </div>
+    </div>
+    <script src="../nav.js"></script>
+</body>
+</html>

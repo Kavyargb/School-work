@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Physics Holiday Homework Assignment</title>
+
+    <!-- MathJax v3 Configuration and Library -->
+    <script>
+    window.MathJax = {
+      loader: {load: ['[tex]/mhchem', '[tex]/cancel']},
+      tex: {
+        packages: {'[+]': ['mhchem', 'cancel']},
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    
+    <!-- Link to Central Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="body-content">
+    <!-- Top navigation bar placeholder -->
+    <nav class="global-nav" id="global-navbar"></nav>
+    
+    <!-- Sidebar placeholder -->
+    <nav id="index-sidebar"></nav>
+    <script src="../main.js"></script>
+
+    <script src="../nav.js"></script>
+
+    <main class="main-content">
+        <h3 id="q1">Q1: Electric Field on Dipole Axis</h3>
+        <p>For a quick revision, visit: <a href="./Physics/ElectricChargesandField.html#electric_dipole">Electric Dipole</a></p>
+        <div class="question-box">
+            <strong>Q1.</strong> Derive the expression for the electric field due to an electric dipole on the axis of the dipole. Also, write the electric field in the case of the short dipole.
+        </div>
+        <div class="solution-box">
+            <h5>Derivation of Electric Field on the Axial Line of a Dipole</h5>
+            <p>Consider an electric dipole consisting of two point charges, $-q$ and $+q$, separated by a distance $2a$. Let P be a point on the axis of the dipole at a distance $r$ from its center O.</p>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#c9c5d4">
+  <defs>
+    <filter id="glow-pink" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+      <feFlood flood-color="#ff3d8b" result="color" />
+      <feComposite in="color" in2="blur" operator="in" result="glow" />
+      <feMerge>
+        <feMergeNode in="glow" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="glow-purple" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+      <feFlood flood-color="#9e4dff" result="color" />
+      <feComposite in="color" in2="blur" operator="in" result="glow" />
+      <feMerge>
+        <feMergeNode in="glow" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#00e5ff" />
+    </marker>
+    <marker id="arrow-pink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff3d8b" />
+    </marker>
+    <marker id="dist-marker" viewBox="0 0 2 10" refX="1" refY="5" markerWidth="2" markerHeight="10" orient="auto">
+      <line x1="1" y1="0" x2="1" y2="10" stroke="#c9c5d4" stroke-width="2" />
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#1e1b29" rx="10" />
+  <line x1="40" y1="175" x2="660" y2="175" stroke="#3a354f" stroke-width="2" />
+  <g transform="translate(200 175)">
+    <circle r="15" fill="#9e4dff" filter="url(#glow-purple)" />
+    <text text-anchor="middle" dy=".3em" font-size="20" fill="#f0f0f0" font-weight="bold">-</text>
+    <text x="0" y="-25" text-anchor="middle" font-size="18">-q</text>
+    <text x="0" y="35" text-anchor="middle" font-size="18">A</text>
+  </g>
+  <g transform="translate(300 175)">
+    <circle r="15" fill="#ff3d8b" filter="url(#glow-pink)" />
+    <text text-anchor="middle" dy=".3em" font-size="20" fill="#f0f0f0" font-weight="bold">+</text>
+    <text x="0" y="-25" text-anchor="middle" font-size="18">+q</text>
+    <text x="0" y="35" text-anchor="middle" font-size="18">B</text>
+  </g>
+  <circle cx="250" cy="175" r="4" fill="#f0f0f0" />
+  <text x="250" y="205" text-anchor="middle" font-size="18">O</text>
+  <circle cx="550" cy="175" r="4" fill="#f0f0f0" />
+  <text x="550" y="205" text-anchor="middle" font-size="18">P</text>
+  <line x1="550" y1="150" x2="650" y2="150" stroke="#00e5ff" stroke-width="2.5" marker-end="url(#arrow-blue)" />
+  <text x="600" y="140" text-anchor="middle" fill="#00e5ff" font-size="18">
+    <tspan font-style="italic" font-weight="bold">E</tspan><tspan dy="5" font-size="12">+q</tspan>
+  </text>
+  <line x1="550" y1="125" x2="480" y2="125" stroke="#00e5ff" stroke-width="2" marker-end="url(#arrow-blue)" />
+  <text x="515" y="115" text-anchor="middle" fill="#00e5ff" font-size="18">
+    <tspan font-style="italic" font-weight="bold">E</tspan><tspan dy="5" font-size="12">-q</tspan>
+  </text>
+  <line x1="220" y1="225" x2="280" y2="225" stroke="#ff3d8b" stroke-width="2.5" marker-end="url(#arrow-pink)" />
+  <text x="250" y="250" text-anchor="middle" fill="#ff3d8b" font-size="20" font-style="italic" font-weight="bold">p</text>
+  <line x1="200" y1="175" x2="200" y2="280" stroke="#3a354f" stroke-dasharray="3,3" />
+  <line x1="250" y1="175" x2="250" y2="280" stroke="#3a354f" stroke-dasharray="3,3" />
+  <line x1="300" y1="175" x2="300" y2="280" stroke="#3a354f" stroke-dasharray="3,3" />
+  <line x1="200" y1="280" x2="250" y2="280" stroke="#c9c5d4" marker-start="url(#dist-marker)" marker-end="url(#dist-marker)" />
+  <text x="225" y="300" text-anchor="middle">a</text>
+  <line x1="250" y1="280" x2="300" y2="280" stroke="#c9c5d4" marker-start="url(#dist-marker)" marker-end="url(#dist-marker)" />
+  <text x="275" y="300" text-anchor="middle">a</text>
+  <line x1="250" y1="175" x2="250" y2="80" stroke="#3a354f" stroke-dasharray="3,3" />
+  <line x1="550" y1="175" x2="550" y2="80" stroke="#3a354f" stroke-dasharray="3,3" />
+  <line x1="250" y1="80" x2="550" y2="80" stroke="#c9c5d4" marker-start="url(#dist-marker)" marker-end="url(#dist-marker)" />
+  <text x="400" y="70" text-anchor="middle">r</text>
+  <line x1="300" y1="175" x2="300" y2="100" stroke="#3a354f" stroke-dasharray="3,3" />
+  <line x1="550" y1="175" x2="550" y2="100" stroke="#3a354f" stroke-dasharray="3,3" />
+  <line x1="300" y1="100" x2="550" y2="100" stroke="#c9c5d4" marker-start="url(#dist-marker)" marker-end="url(#dist-marker)" />
+  <text x="425" y="120" text-anchor="middle">r - a</text>
+  <line x1="200" y1="175" x2="200" y2="60" stroke="#3a354f" stroke-dasharray="3,3" />
+  <line x1="550" y1="175" x2="550" y2="60" stroke="#3a354f" stroke-dasharray="3,3" />
+  <line x1="200" y1="60" x2="550" y2="60" stroke="#c9c5d4" marker-start="url(#dist-marker)" marker-end="url(#dist-marker)" />
+  <text x="375" y="50" text-anchor="middle">r + a</text>
+</svg>
+            <p class="img-caption">Figure: Point P on the axial line of a dipole.</p>
+            <p>The electric field at P due to the charge $+q$ (at B) is directed along BP:</p>
+            $$ \vec{E}_{+q} = \frac{1}{4\pi\epsilon_0} \frac{q}{(r-a)^2} \hat{p} $$
+            <p>The electric field at P due to the charge $-q$ (at A) is directed along PA:</p>
+            $$ \vec{E}_{-q} = \frac{1}{4\pi\epsilon_0} \frac{q}{(r+a)^2} (-\hat{p}) $$
+            <p>The net electric field $\vec{E}_{axial}$ at P is the vector sum of $\vec{E}_{+q}$ and $\vec{E}_{-q}$:</p>
+            $$ \vec{E}_{axial} = \vec{E}_{+q} + \vec{E}_{-q} = \frac{q}{4\pi\epsilon_0} \left[ \frac{1}{(r-a)^2} - \frac{1}{(r+a)^2} \right] \hat{p} $$
+            $$ \vec{E}_{axial} = \frac{q}{4\pi\epsilon_0} \left[ \frac{(r+a)^2 - (r-a)^2}{(r^2-a^2)^2} \right] \hat{p} $$
+            <p>Using $(x+y)^2 - (x-y)^2 = 4xy$, we get:</p>
+            $$ \vec{E}_{axial} = \frac{q}{4\pi\epsilon_0} \frac{4ar}{(r^2-a^2)^2} \hat{p} $$
+            <p>Since the electric dipole moment is $\vec{p} = q(2a)\hat{p}$, we can write:</p>
+            $$ \vec{E}_{axial} = \frac{1}{4\pi\epsilon_0} \frac{2(q \cdot 2a)r}{(r^2-a^2)^2} \hat{p} = \frac{1}{4\pi\epsilon_0} \frac{2\vec{p}r}{(r^2-a^2)^2} $$
+            
+            <h5>Case of a Short Dipole</h5>
+            <p>For a short dipole, the distance $r$ is much larger than the separation $a$ (i.e., $r \gg a$). In this case, $a^2$ can be neglected compared to $r^2$.</p>
+            $$ (r^2 - a^2)^2 \approx (r^2)^2 = r^4 $$
+            <p>The expression for the electric field simplifies to:</p>
+            $$ \vec{E}_{axial} \approx \frac{1}{4\pi\epsilon_0} \frac{2\vec{p}r}{r^4} $$
+            $$ \vec{E}_{axial} = \frac{1}{4\pi\epsilon_0} \frac{2\vec{p}}{r^3} $$
+            <p>The direction of the electric field on the axial line is along the direction of the dipole moment.</p>
+        </div>
+
+        <h3 id="q2">Q2: Electric Field on Dipole Equator</h3>
+          <p>For a quick revision, visit: <a href="./Physics/ElectricChargesandField.html#electric_dipole">Electric Dipole</a></p>
+        <div class="question-box">
+            <strong>Q2.</strong> Derive the expression for the electric field due to an electric dipole on the equatorial plane of the dipole. Also, write the electric field in the case of the short dipole.
+        </div>
+        <div class="solution-box">
+            <h5>Derivation of Electric Field on the Equatorial Line of a Dipole</h5>
+            <p>Consider a point P on the equatorial line of the dipole at a distance $r$ from its center O. The distance of P from both charges is $\sqrt{r^2+a^2}$.</p>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#c9c5d4">
+  <defs>
+    <filter id="glow-pink" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"></feGaussianBlur>
+      <feFlood flood-color="#ff3d8b" result="color"></feFlood>
+      <feComposite in="color" in2="blur" operator="in" result="glow"></feComposite>
+      <feMerge>
+        <feMergeNode in="glow"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+    <filter id="glow-purple" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"></feGaussianBlur>
+      <feFlood flood-color="#9e4dff" result="color"></feFlood>
+      <feComposite in="color" in2="blur" operator="in" result="glow"></feComposite>
+      <feMerge>
+        <feMergeNode in="glow"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#00e5ff"></path>
+    </marker>
+    <marker id="arrow-pink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff3d8b"></path>
+    </marker>
+    <marker id="dist-marker" viewBox="0 0 2 10" refX="1" refY="5" markerWidth="2" markerHeight="10" orient="auto">
+      <line x1="1" y1="0" x2="1" y2="10" stroke="#c9c5d4" stroke-width="2"></line>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#1e1b29" rx="10"></rect>
+  <line x1="50" y1="350" x2="550" y2="350" stroke="#3a354f" stroke-width="2"></line>
+  <line x1="300" y1="50" x2="300" y2="370" stroke="#3a354f" stroke-width="2" stroke-dasharray="4,4"></line>
+  <g transform="translate(150 350)">
+    <circle r="15" fill="#9e4dff" filter="url(#glow-purple)"></circle>
+    <text text-anchor="middle" dy=".3em" font-size="20" fill="#f0f0f0" font-weight="bold">-</text>
+    <text x="0" y="-25" text-anchor="middle" font-size="18">-q</text>
+    <text x="-25" y="10" text-anchor="middle" font-size="18">A</text>
+  </g>
+  <g transform="translate(450 350)">
+    <circle r="15" fill="#ff3d8b" filter="url(#glow-pink)"></circle>
+    <text text-anchor="middle" dy=".3em" font-size="20" fill="#f0f0f0" font-weight="bold">+</text>
+    <text x="0" y="-25" text-anchor="middle" font-size="18">+q</text>
+    <text x="25" y="10" text-anchor="middle" font-size="18">B</text>
+  </g>
+  <circle cx="300" cy="350" r="4" fill="#f0f0f0"></circle>
+  <text x="300" y="380" text-anchor="middle" font-size="18">O</text>
+  <circle cx="300" cy="100" r="4" fill="#f0f0f0"></circle>
+  <text x="315" y="95" font-size="20">P</text>
+  <line x1="150" y1="350" x2="300" y2="100" stroke="#3a354f" stroke-width="2"></line>
+  <line x1="450" y1="350" x2="300" y2="100" stroke="#3a354f" stroke-width="2"></line>
+  <g transform="translate(300 100)">
+    <!-- E+q vector (up-left), away from +q -->
+    <line x1="0" y1="0" x2="120" y2="0" transform="rotate(-121)" stroke="#00e5ff" stroke-width="2.5" marker-end="url(#arrow-blue)"></line>
+    <text x="80" y="-10" transform="rotate(-121)" fill="#00e5ff" font-size="18">
+      <tspan font-style="italic" font-weight="bold">E</tspan><tspan dy="5" font-size="12">+q</tspan>
+    </text>
+    <!-- E-q vector (down-left), towards -q -->
+    <line x1="0" y1="0" x2="120" y2="0" transform="rotate(121)" stroke="#00e5ff" stroke-width="2.5" marker-end="url(#arrow-blue)"></line>
+    <text x="80" y="20" transform="rotate(121)" fill="#00e5ff" font-size="18">
+      <tspan font-style="italic" font-weight="bold">E</tspan><tspan dy="5" font-size="12">-q</tspan>
+    </text>
+    <!-- Resultant vector E_eq -->
+    <line x1="0" y1="0" x2="-123.6" y2="0" stroke="#ff3d8b" stroke-width="3.5" marker-end="url(#arrow-pink)"></line>
+    <text x="-62" y="-15" text-anchor="middle" fill="#ff3d8b" font-size="20">
+      <tspan font-style="italic" font-weight="bold">E</tspan><tspan dy="5" font-size="12">eq</tspan>
+    </text>
+    <!-- Component lines and labels -->
+    <line x1="-61.8" y1="-102.8" x2="-61.8" y2="0" stroke="#3a354f" stroke-dasharray="3,3"></line>
+    <line x1="-61.8" y1="102.8" x2="-61.8" y2="0" stroke="#3a354f" stroke-dasharray="3,3"></line>
+    <line x1="-150" y1="0" x2="0" y2="0" stroke="#ff3d8b" stroke-dasharray="3,3"></line>
+    <text x="-95" y="20" fill="#00e5ff" font-size="14">E cosθ</text>
+    <text x="10" y="-51.4" dy=".3em" fill="#00e5ff" font-size="14">E sinθ</text>
+    <text x="10" y="58.4" dy=".3em" fill="#00e5ff" font-size="14">E sinθ</text>
+  </g>
+  <!-- Corrected angle markers for theta -->
+  <path d="M 170 320 A 20 20 0 0 1 185 350" fill="none" stroke="#f0f0f0"></path>
+  <text x="195" y="335" font-size="16">θ</text>
+  
+  <line x1="300" y1="350" x2="300" y2="390" stroke="#3a354f" stroke-dasharray="3,3"></line>
+  <line x1="150" y1="350" x2="150" y2="390" stroke="#3a354f" stroke-dasharray="3,3"></line>
+  <line x1="150" y1="390" x2="300" y2="390" stroke="#c9c5d4" marker-start="url(#dist-marker)" marker-end="url(#dist-marker)"></line>
+  <text x="225" y="410" text-anchor="middle">a</text>
+  <line x1="450" y1="350" x2="450" y2="390" stroke="#3a354f" stroke-dasharray="3,3"></line>
+  <line x1="300" y1="390" x2="450" y2="390" stroke="#c9c5d4" marker-start="url(#dist-marker)" marker-end="url(#dist-marker)"></line>
+  <text x="375" y="410" text-anchor="middle">a</text>
+  <line x1="300" y1="100" x2="80" y2="100" stroke="#3a354f" stroke-dasharray="3,3"></line>
+  <line x1="300" y1="350" x2="80" y2="350" stroke="#3a354f" stroke-dasharray="3,3"></line>
+  <line x1="80" y1="100" x2="80" y2="350" stroke="#c9c5d4" marker-start="url(#dist-marker)" marker-end="url(#dist-marker)"></line>
+  <text x="60" y="225" text-anchor="middle">r</text>
+  <text x="220" y="210" text-anchor="middle" transform="rotate(-59 225 225)">
+    √(r<tspan baseline-shift="super" font-size="12">2</tspan> + a<tspan baseline-shift="super" font-size="12">2</tspan>)
+  </text>
+  <line x1="250" y1="320" x2="350" y2="320" stroke="#ff3d8b" stroke-width="2.5" marker-end="url(#arrow-pink)"></line>
+  <text x="300" y="310" text-anchor="middle" fill="#ff3d8b" font-size="20" font-style="italic" font-weight="bold">p</text>
+</svg>
+            <p class="img-caption">Figure: Point P on the equatorial line of a dipole.</p>
+            <p>The magnitude of the electric field at P due to charges $+q$ and $-q$ is the same:</p>
+            $$ E_{+q} = E_{-q} = \frac{1}{4\pi\epsilon_0} \frac{q}{r^2+a^2} $$
+            <p>The fields can be resolved into components. The components perpendicular to the dipole axis ($E_{+q}\sin\theta$ and $E_{-q}\sin\theta$) are equal and opposite, so they cancel out. The components parallel to the dipole axis ($E_{+q}\cos\theta$ and $E_{-q}\cos\theta$) add up.</p>
+            <p>The net electric field $\vec{E}_{eq}$ is:</p>
+            $$ E_{eq} = E_{+q}\cos\theta + E_{-q}\cos\theta = 2E_{+q}\cos\theta $$
+            <p>From the figure, $\cos\theta = \frac{a}{\sqrt{r^2+a^2}}$.</p>
+            $$ E_{eq} = 2 \left( \frac{1}{4\pi\epsilon_0} \frac{q}{r^2+a^2} \right) \left( \frac{a}{\sqrt{r^2+a^2}} \right) = \frac{1}{4\pi\epsilon_0} \frac{2qa}{(r^2+a^2)^{3/2}} $$
+            <p>Since the dipole moment magnitude is $p = 2qa$, we get:</p>
+            $$ E_{eq} = \frac{1}{4\pi\epsilon_0} \frac{p}{(r^2+a^2)^{3/2}} $$
+            <p>The direction of $\vec{E}_{eq}$ is opposite to the dipole moment vector $\vec{p}$. In vector form:</p>
+            $$ \vec{E}_{eq} = -\frac{1}{4\pi\epsilon_0} \frac{\vec{p}}{(r^2+a^2)^{3/2}} $$
+
+            <h5>Case of a Short Dipole</h5>
+            <p>For a short dipole, $r \gg a$, so $a^2$ can be neglected compared to $r^2$.</p>
+            $$ (r^2+a^2)^{3/2} \approx (r^2)^{3/2} = r^3 $$
+            <p>The expression simplifies to:</p>
+            $$ \vec{E}_{eq} = -\frac{1}{4\pi\epsilon_0} \frac{\vec{p}}{r^3} $$
+        </div>
+
+        <h3 id="q3">Q3: Electric Flux & Gauss's Law</h3>
+        <p>For a quick revision, visit: <a href="./Physics/ElectricChargesandField.html#gauss_law">Gauss' Law & Applications</a></p>
+        <div class="question-box">
+            <strong>Q3.</strong> Define electric flux. Using the concept of flux, find the total amount of electric field passing through a closed surface using the concept of Gauss law.
+        </div>
+        <div class="solution-box">
+            <h5>Electric Flux ($\Phi_E$)</h5>
+            <p>Electric flux is a measure of the flow of the electric field through a given area. It is defined as the product of the component of the electric field perpendicular to the area and the magnitude of the area. For a uniform electric field $\vec{E}$ passing through a flat area $\vec{A}$, the flux is given by the dot product:</p>
+            $$ \Phi_E = \vec{E} \cdot \vec{A} = EA \cos\theta $$
+            <p>For a non-uniform field and a curved surface, the flux is calculated by integrating the field over the surface:</p>
+            $$ \Phi_E = \int_S \vec{E} \cdot d\vec{A} $$
+            <p>The SI unit of electric flux is Volt-meter (V·m) or Newton-meter squared per Coulomb (N·m²/C).</p>
+            
+            <h5>Finding Total Flux using Gauss's Law</h5>
+            <p>Gauss's law provides a direct way to find the total electric flux ("total amount of electric field passing through") a closed surface, known as a Gaussian surface.</p>
+            <p><strong>Statement of Gauss's Law:</strong> The total electric flux through any closed surface is equal to $\frac{1}{\epsilon_0}$ times the net electric charge ($q_{in}$) enclosed within the surface.</p>
+            <p>Mathematically:</p>
+            $$ \Phi_{total} = \oint_S \vec{E} \cdot d\vec{A} = \frac{q_{in}}{\epsilon_0} $$
+            <p>Therefore, to find the total flux through a closed surface, one simply needs to determine the total charge enclosed by that surface and divide it by the permittivity of free space ($\epsilon_0$). The shape of the surface and the distribution of charge inside it do not affect the total flux.</p>
+        </div>
+
+        <h3 id="q4">Q4: Flux Through a Cube</h3>
+        <p>For a quick revision, visit: <a href="./Physics/ElectricChargesandField.html#electric_flux">Electric Flux</a></p>
+        <div class="question-box">
+            <strong>Q4.</strong> Find the flux through a cube when a charge is placed at:
+            (i) Centre of the cube, (ii) at the centre of one surface of the cube, (iii) at the centre of one edge of a cube, (iv) at any vertex of the cube.
+            Also, find the flux through any one surface of the cube in each case.
+        </div>
+        <div class="solution-box">
+            <p>We use Gauss's Law, $\Phi_{total} = \frac{q_{in}}{\epsilon_0}$, where $q_{in}$ is the charge enclosed by the Gaussian surface (the cube).</p>
+            
+            <h5>(i) Charge at the Centre</h5>
+            <ul>
+                <li><strong>Total Flux:</strong> The entire charge $q$ is inside the cube. So, $q_{in} = q$.
+                $$ \Phi_{total} = \frac{q}{\epsilon_0} $$</li>
+                <li><strong>Flux through one surface:</strong> The cube has 6 identical faces, and the charge is placed symmetrically. Therefore, the flux is distributed equally among the 6 faces.
+                $$ \Phi_{one\;surface} = \frac{1}{6} \Phi_{total} = \frac{q}{6\epsilon_0} $$</li>
+            </ul>
+
+            <h5>(ii) Charge at the Centre of one Surface</h5>
+            <ul>
+                <li><strong>Total Flux:</strong> The charge is on the boundary. To use Gauss's Law, we imagine a second identical cube placed adjacent to the first, sharing the face. The charge $q$ is now at the center of this larger system of two cubes. The total flux through both cubes is $q/\epsilon_0$. The flux through our original cube is half of this.
+                $$ \Phi_{total} = \frac{1}{2} \left( \frac{q}{\epsilon_0} \right) = \frac{q}{2\epsilon_0} $$</li>
+                <li><strong>Flux through one surface:</strong> Flux passes through the 5 faces that do not contain the charge. The flux through the face containing the charge is zero because the electric field is parallel to it. By symmetry arguments (which are complex), the flux through the opposite face is different from the other four. The question's phrase "any one surface" is ambiguous here. If it means the opposite face, the flux is $q/10\epsilon_0$. If it means one of the 4 adjacent side faces, it's $q/20\epsilon_0$. Without further specification, we only state the total flux.</li>
+            </ul>
+
+            <h5>(iii) Charge at the Centre of one Edge</h5>
+            <ul>
+                <li><strong>Total Flux:</strong> An edge is shared by 4 cubes. We imagine 3 more cubes arranged around the edge to completely enclose the charge. The total flux through the 4 cubes is $q/\epsilon_0$. The flux through our original cube is one-fourth of this.
+                $$ \Phi_{total} = \frac{1}{4} \left( \frac{q}{\epsilon_0} \right) = \frac{q}{4\epsilon_0} $$</li>
+            </ul>
+
+            <h5>(iv) Charge at a Vertex</h5>
+            <ul>
+                <li><strong>Total Flux:</strong> A vertex is shared by 8 cubes. We imagine 7 more cubes arranged to completely enclose the charge. The total flux through the 8 cubes is $q/\epsilon_0$. The flux through our original cube is one-eighth of this.
+                $$ \Phi_{total} = \frac{1}{8} \left( \frac{q}{\epsilon_0} \right) = \frac{q}{8\epsilon_0} $$</li>
+            </ul>
+        </div>
+        
+        <h3 id="q5">Q5: Potential Energy of Charges</h3>
+          <p>For a quick revision, visit: <a href="./Physics/ElectricPotentialAndCapacitance.html#potential_system">Potential Due to a System of Charges</a></p>
+        <div class="question-box">
+            <strong>Q5.</strong> Derive an expression for the potential energy due to a system of charges for:
+            (i) One charge system, (ii) Two charge system, (iii) Three charge system, (iv) four charge system.
+        </div>
+        <div class="solution-box">
+            <p>The potential energy of a system of charges is the total work done in assembling the charges by bringing them from infinity to their respective positions.</p>
+            
+            <h5>(i) One Charge System ($q_1$)</h5>
+            <p>To bring the first charge $q_1$ from infinity to a point, no work is done because there is no external electric field to oppose it.</p>
+            $$ U_1 = 0 $$
+
+            <h5>(ii) Two Charge System ($q_1, q_2$)</h5>
+            <p>First, bring $q_1$ (Work $W_1=0$). Now, bring $q_2$ from infinity to a point at distance $r_{12}$ from $q_1$. The work done is against the field of $q_1$.</p>
+            $$ W_2 = q_2 \times V_1 = q_2 \left( \frac{1}{4\pi\epsilon_0} \frac{q_1}{r_{12}} \right) $$
+            <p>The total potential energy is $U_{12} = W_1 + W_2$.</p>
+            $$ U_{12} = \frac{1}{4\pi\epsilon_0} \frac{q_1 q_2}{r_{12}} $$
+            
+            <h5>(iii) Three Charge System ($q_1, q_2, q_3$)</h5>
+            <p>We assemble the charges sequentially.
+            <br>Work to bring $q_1$: $W_1 = 0$.
+            <br>Work to bring $q_2$: $W_2 = \frac{1}{4\pi\epsilon_0} \frac{q_1 q_2}{r_{12}}$.
+            <br>Work to bring $q_3$ against the field of $q_1$ and $q_2$:
+            $$ W_3 = q_3 \times (V_1 + V_2) = q_3 \left( \frac{1}{4\pi\epsilon_0} \frac{q_1}{r_{13}} + \frac{1}{4\pi\epsilon_0} \frac{q_2}{r_{23}} \right) $$
+            <p>Total potential energy $U_{123} = W_1 + W_2 + W_3$ is the sum of energies of all possible pairs.</p>
+            $$ U_{123} = \frac{1}{4\pi\epsilon_0} \left( \frac{q_1 q_2}{r_{12}} + \frac{q_1 q_3}{r_{13}} + \frac{q_2 q_3}{r_{23}} \right) $$
+            
+            <h5>(iv) Four Charge System ($q_1, q_2, q_3, q_4$)</h5>
+            <p>Following the same logic, the total potential energy is the sum of the potential energies of all six possible pairs of charges.</p>
+            $$ U_{1234} = U_{12} + U_{13} + U_{14} + U_{23} + U_{24} + U_{34} $$
+            $$ U_{1234} = \frac{1}{4\pi\epsilon_0} \left( \frac{q_1 q_2}{r_{12}} + \frac{q_1 q_3}{r_{13}} + \frac{q_1 q_4}{r_{14}} + \frac{q_2 q_3}{r_{23}} + \frac{q_2 q_4}{r_{24}} + \frac{q_3 q_4}{r_{34}} \right) $$
+        </div>
+
+        <h3 id="q6">Q6: Working of Screw Gauge</h3>
+        <div class="question-box">
+            <strong>Q6.</strong> Explain the working of a screw gauge to find the diameter of a given wire.
+        </div>
+        <div class="solution-box">
+            <h5>Principle</h5>
+            <p>A screw gauge works on the principle of converting a small linear motion into a larger circular motion. When the circular thimble is rotated one full turn, the screw moves forward or backward by a fixed linear distance called the <strong>pitch</strong>.</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#f0f0f0">
+  <defs>
+    <linearGradient id="metal-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c0c0c0" />
+      <stop offset="50%" stop-color="#f0f0f0" />
+      <stop offset="100%" stop-color="#b0b0b0" />
+    </linearGradient>
+    <pattern id="knurl" patternUnits="userSpaceOnUse" width="5" height="5">
+      <path d="M-1,1 l2,-2 M0,5 l5,-5 M4,6 l2,-2" stroke="#888" stroke-width="0.7" />
+    </pattern>
+    <marker id="arrow-label" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <circle cx="5" cy="5" r="2" fill="#00e5ff" />
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#1e1b29" rx="10" />
+  <g stroke="#3a354f" stroke-width="1">
+    <path d="M 50 50 C 20 50, 20 100, 20 150 V 250 C 20 300, 20 350, 50 350 H 100 V 310 H 60 C 50 310, 50 280, 50 250 V 150 C 50 120, 50 90, 60 90 H 100 V 50 Z" fill="url(#metal-grad)" />
+    <rect x="100" y="165" width="50" height="20" fill="url(#metal-grad)" />
+    <rect x="200" y="165" width="130" height="20" fill="url(#metal-grad)" />
+    <rect x="330" y="155" width="100" height="40" fill="#3a354f" />
+    <rect x="330" y="155" width="100" height="40" fill="url(#metal-grad)" fill-opacity="0.3" />
+    <rect x="430" y="145" width="80" height="60" fill="url(#knurl)" />
+    <rect x="430" y="145" width="80" height="60" fill="#3a354f" fill-opacity="0.5" />
+    <rect x="510" y="155" width="50" height="40" fill="url(#knurl)" />
+    <rect x="510" y="155" width="50" height="40" fill="#3a354f" fill-opacity="0.5" />
+    <rect x="560" y="165" width="20" height="20" fill="url(#metal-grad)" />
+  </g>
+  <g fill="#f0f0f0">
+    <line x1="335" y1="175" x2="430" y2="175" stroke="#f0f0f0" stroke-width="1.5" />
+    <g font-size="8" text-anchor="middle">
+      <path d="M 335 175 v -5 M 345 175 v -5 M 355 175 v -5 M 365 175 v -5 M 375 175 v -5 M 385 175 v -5 M 395 175 v -5 M 405 175 v -5 M 415 175 v-5 M 425 175 v -5" stroke="#f0f0f0" />
+      <text x="355" y="167">0</text><text x="405" y="167">5</text>
+    </g>
+    <g font-size="10" text-anchor="end">
+      <text x="445" y="160">45</text><text x="440" y="175" dy=".3em">0</text><text x="440" y="197">5</text>
+    </g>
+  </g>
+  <circle cx="175" cy="175" r="15" fill="#ffb703" stroke="#f0f0f0" stroke-width="1.5" />
+  <g fill="#00e5ff" text-anchor="start" font-size="18">
+    <path d="M 125 150 l 30 -30 l 50 0" stroke="#00e5ff" fill="none" marker-start="url(#arrow-label)" />
+    <text x="210" y="120">Stud</text>
+    <path d="M 175 200 l 0 30 l 50 0" stroke="#00e5ff" fill="none" marker-start="url(#arrow-label)" />
+    <text x="230" y="230">Wire</text>
+    <path d="M 265 195 l 30 30 l 50 0" stroke="#00e5ff" fill="none" marker-start="url(#arrow-label)" />
+    <text x="350" y="225">Screw</text>
+    <path d="M 380 150 l 0 -30 l 20 0" stroke="#00e5ff" fill="none" marker-start="url(#arrow-label)" />
+    <text x="380" y="110">Main Scale</text>
+    <path d="M 470 215 l 0 30 l 50 0" stroke="#00e5ff" fill="none" marker-start="url(#arrow-label)" />
+    <text x="485" y="240">Thimble</text>
+    <path d="M 470 140 l 0 -30 l 50 0" stroke="#00e5ff" fill="none" marker-start="url(#arrow-label)" />
+    <text x="525" y="110">Circular Scale</text>
+    <path d="M 535 205 l 30 30 l 50 0" stroke="#00e5ff" fill="none" marker-start="url(#arrow-label)" />
+    <text x="565" y="230">Ratchet</text>
+  </g>
+</svg>            
+            <h5>Key Terms</h5>
+            <ul>
+                <li><strong>Pitch:</strong> The distance moved by the screw for one complete rotation of the circular scale. Pitch = (Distance moved by screw) / (Number of full rotations).</li>
+                <li><strong>Least Count (LC):</strong> The smallest distance that can be measured accurately with the instrument. LC = (Pitch) / (Total number of divisions on the circular scale).</li>
+            </ul>
+
+            <h5>Procedure to Measure Diameter</h5>
+            <ol>
+                <li><strong>Find the Least Count (LC):</strong> Determine the pitch and the number of divisions on the circular scale to calculate the LC. For a standard screw gauge, pitch is 1 mm and there are 100 divisions, so LC = 1 mm / 100 = 0.01 mm.</li>
+                <li><strong>Check for Zero Error:</strong> Close the jaws of the screw gauge completely. If the zero of the circular scale coincides with the baseline of the main scale, there is no zero error. If it is above or below, note the zero error (positive or negative).</li>
+                <li><strong>Place the Wire:</strong> Place the given wire between the jaws (stud and screw) of the gauge. Turn the ratchet until it makes a clicking sound to ensure gentle and uniform pressure.</li>
+                <li><strong>Take Readings:</strong>
+                    <ul>
+                        <li><strong>Main Scale Reading (MSR):</strong> Note the reading on the linear (main) scale that is visible just before the edge of the circular scale. This is the MSR in millimeters.</li>
+                        <li><strong>Circular Scale Reading (CSR):</strong> Note the division on the circular scale that aligns with the baseline of the main scale. This is the CSR.</li>
+                    </ul>
+                </li>
+                <li><strong>Calculate the Diameter:</strong>
+                    <p>Observed Diameter = MSR + (CSR × LC)</p>
+                    <p>Corrected Diameter = Observed Diameter - Zero Error (with sign)</p>
+                </li>
+                <li><strong>Repeat:</strong> Take readings at different points on the wire and in mutually perpendicular directions to account for any non-uniformity. Calculate the average diameter.</li>
+            </ol>
+        </div>
+        
+        <h3 id="q7">Q7: Point of Zero Potential</h3>
+        <div class="question-box">
+            <strong>Q7.</strong> Find the points at which the value of potential due to the system of charges +5μC and -12μC is equal to zero.
+        </div>
+        <div class="solution-box">
+            <p>Let the charges be $q_1 = +5\mu C$ and $q_2 = -12\mu C$. Let the distance between them be $d$. Let's place $q_1$ at the origin ($x=0$) and $q_2$ at $x=d$.
+            The potential at a point P with coordinate $x_p$ is given by:</p>
+            $$ V_P = V_1 + V_2 = \frac{1}{4\pi\epsilon_0} \left( \frac{q_1}{|x_p|} + \frac{q_2}{|x_p - d|} \right) $$
+            <p>For the potential to be zero, $V_P = 0$, which means:</p>
+            $$ \frac{q_1}{|x_p|} + \frac{q_2}{|x_p - d|} = 0 \implies \frac{5 \times 10^{-6}}{|x_p|} = \frac{12 \times 10^{-6}}{|x_p - d|} \implies 5|x_p - d| = 12|x_p| $$
+            <p>Since the charges have opposite signs, a point of zero potential cannot be on the right of the larger magnitude charge ($-12\mu C$). The points must lie either between the charges or to the left of the smaller magnitude charge ($+5\mu C$).</p>
+            
+            <h5>Case 1: Point P is between the charges ($0 < x_p < d$)</h5>
+            <p>Here, $|x_p| = x_p$ and $|x_p - d| = d - x_p$.</p>
+            $$ 5(d - x_p) = 12(x_p) $$
+            $$ 5d - 5x_p = 12x_p $$
+            $$ 17x_p = 5d \implies x_p = \frac{5d}{17} $$
+            <p>This point lies between the charges, so it is a valid solution. It is at a distance of $\frac{5d}{17}$ from the $+5\mu C$ charge towards the $-12\mu C$ charge.</p>
+
+            <h5>Case 2: Point P is to the left of $q_1$ ($x_p < 0$)</h5>
+            <p>Here, $|x_p| = -x_p$ and $|x_p - d| = d - x_p$.</p>
+            $$ 5(d - x_p) = 12(-x_p) $$
+            $$ 5d - 5x_p = -12x_p $$
+            $$ 7x_p = -5d \implies x_p = -\frac{5d}{7} $$
+            <p>This point lies to the left of the origin, so it is also a valid solution. It is at a distance of $\frac{5d}{7}$ from the $+5\mu C$ charge away from the $-12\mu C$ charge.</p>
+            <p><strong>Conclusion:</strong> There are two such points. Since the distance $d$ is not given, the positions are expressed in terms of $d$.</p>
+        </div>
+        
+        <h3 id="q8">Q8: PE of Three Charges</h3>
+          <p>For a quick revision, visit: <a href="./Physics/ElectricPotentialAndCapacitance.html#potential_system">Potential Due to a System of Charges</a></p>
+        <div class="question-box">
+            <strong>Q8.</strong> Three charges 2μC, 6μC and 8μC are placed at equal distances on a line, each at 5 cm from each other. Find the net potential energy of the system.
+        </div>
+        <div class="solution-box">
+            <p>Let the charges be $q_1 = 2\mu C = 2 \times 10^{-6} C$, $q_2 = 6\mu C = 6 \times 10^{-6} C$, and $q_3 = 8\mu C = 8 \times 10^{-6} C$.
+            The charges are on a line. The distances between them are:
+            </p>
+            <ul>
+                <li>Distance between $q_1$ and $q_2$, $r_{12} = 5 \text{ cm} = 0.05 \text{ m}$.</li>
+                <li>Distance between $q_2$ and $q_3$, $r_{23} = 5 \text{ cm} = 0.05 \text{ m}$.</li>
+                <li>Distance between $q_1$ and $q_3$, $r_{13} = 5 \text{ cm} + 5 \text{ cm} = 10 \text{ cm} = 0.10 \text{ m}$.</li>
+            </ul>
+            <p>The total potential energy $U$ of the system is the sum of the potential energies of all pairs:</p>
+            $$ U = U_{12} + U_{13} + U_{23} = \frac{1}{4\pi\epsilon_0} \left( \frac{q_1 q_2}{r_{12}} + \frac{q_1 q_3}{r_{13}} + \frac{q_2 q_3}{r_{23}} \right) $$
+            <p>Substituting the values ($k = \frac{1}{4\pi\epsilon_0} = 9 \times 10^9 \text{ N m}^2/\text{C}^2$):</p>
+            $$ U = 9 \times 10^9 \left( \frac{(2 \times 10^{-6})(6 \times 10^{-6})}{0.05} + \frac{(2 \times 10^{-6})(8 \times 10^{-6})}{0.10} + \frac{(6 \times 10^{-6})(8 \times 10^{-6})}{0.05} \right) $$
+            $$ U = 9 \times 10^9 \times 10^{-12} \left( \frac{12}{0.05} + \frac{16}{0.10} + \frac{48}{0.05} \right) $$
+            $$ U = 9 \times 10^{-3} \left( 240 + 160 + 960 \right) $$
+            $$ U = 9 \times 10^{-3} \times (1360) $$
+            $$ U = 12240 \times 10^{-3} = 12.24 \text{ J} $$
+            <p>The net potential energy of the system is <strong>12.24 Joules</strong>.</p>
+        </div>
+
+        <h3 id="q9">Q9: Equipotential Surface</h3>
+          <p>For a quick revision, visit: <a href="./Physics/ElectricPotentialAndCapacitance.html#equipotentil">Equipotential Surfaces</a></p>
+        <div class="question-box">
+            <strong>Q9.</strong> Define an equipotential surface. Explain:
+            (i) The amount of work done to move a charge from one point to another on an equipotential surface is equal to zero.
+            (ii) The electric field on an equipotential surface must be tangential at every point.
+        </div>
+        <div class="solution-box">
+            <h5>Definition</h5>
+            <p>An <strong>equipotential surface</strong> is a surface in space on which the electric potential is constant at every point. It is a locus of points having the same electric potential.</p>
+            
+            <h5>(i) Work Done is Zero</h5>
+            <p>The work done ($W$) in moving a test charge $q_0$ from a point A to a point B in an electric field is given by:</p>
+            $$ W_{AB} = q_0 (V_B - V_A) $$
+            <p>where $V_A$ and $V_B$ are the potentials at points A and B, respectively.
+            <br>If points A and B both lie on the same equipotential surface, then by definition, their potentials are equal: $V_A = V_B$.
+            <br>Therefore, the potential difference is zero: $V_B - V_A = 0$.
+            <br>Substituting this into the work equation:</p>
+            $$ W_{AB} = q_0 \times 0 = 0 $$
+            <p>Thus, no work is done in moving a charge between any two points on an equipotential surface.</p>
+
+            <h5>(ii) Explanation of the relationship between Electric Field and the Surface</h5>
+            <p>The statement given in the question, "The electric field on an equipotential surface must be tangential at every point," is <strong>incorrect</strong>. The correct relationship is that the electric field is always <strong>perpendicular (normal)</strong> to the equipotential surface at every point.</p>
+            <p><strong>Explanation:</strong>
+            The work done can also be expressed as the line integral of the electric force:</p>
+            $$ W_{AB} = \int_A^B \vec{F} \cdot d\vec{l} = \int_A^B (q_0\vec{E}) \cdot d\vec{l} $$
+            <p>As we proved in part (i), $W_{AB} = 0$ for any path $d\vec{l}$ on the equipotential surface.
+            Therefore:</p>
+            $$ q_0 \int_A^B \vec{E} \cdot d\vec{l} = 0 \implies \vec{E} \cdot d\vec{l} = 0 $$
+            $$ E \, dl \cos\theta = 0 $$
+            <p>Since neither the electric field $E$ nor the path element $dl$ is generally zero, it must be that $\cos\theta = 0$. This implies $\theta = 90^\circ$.
+            Here, $\theta$ is the angle between the electric field vector $\vec{E}$ and the displacement vector $d\vec{l}$ on the surface.
+            Since $d\vec{l}$ is tangential to the surface, the electric field $\vec{E}$ must be perpendicular to it, and therefore perpendicular to the equipotential surface at every point.</p>
+        </div>
+        
+        <h3 id="q10">Q10: Drift Velocity & Current</h3>
+          <p>For a quick revision, visit: <a href="./Physics//CurrentElectricity.html#section-32-2">Drift Speed</a></p>
+        <div class="question-box">
+            <strong>Q10.</strong> Derive the expression for the drift velocity of electrons moving in a conductor. Hence, find the relation between current and drift velocity.
+        </div>
+        <div class="solution-box">
+            <h5>Derivation of Drift Velocity ($v_d$)</h5>
+            <p>In a metallic conductor, free electrons are in continuous random motion. When an external electric field $\vec{E}$ is applied, each electron experiences an electrostatic force:</p>
+            $$ \vec{F} = -e\vec{E} $$
+            <p>where $-e$ is the charge of an electron. This force causes the electron to accelerate. The acceleration $\vec{a}$ is given by Newton's second law:</p>
+            $$ \vec{a} = \frac{\vec{F}}{m} = -\frac{e\vec{E}}{m} $$
+            <p>where $m$ is the mass of the electron.
+            <br>The electrons frequently collide with the positive ions of the metallic lattice. Between two successive collisions, an electron gains a velocity component due to this acceleration. Let $\tau$ be the average time between two successive collisions, known as the <strong>relaxation time</strong>.
+            <br>The additional velocity acquired by an electron in time $\tau$ is $\vec{v} = \vec{a}\tau$.
+            <br>The average velocity gained by all electrons is the <strong>drift velocity</strong>, $\vec{v}_d$. Assuming the average velocity just after a collision is zero, the drift velocity is:</p>
+            $$ \vec{v}_d = \vec{a}\tau = -\frac{e\vec{E}\tau}{m} $$
+            <p>The magnitude of the drift velocity is $v_d = \frac{eE\tau}{m}$. The negative sign indicates that electrons drift in the direction opposite to the electric field.</p>
+            
+            <h5>Relation between Current and Drift Velocity</h5>
+            <p>Consider a section of a conductor with cross-sectional area $A$ and length $\Delta L$.
+            Let $n$ be the number of free electrons per unit volume (electron density).</p>
+            <p>The volume of this section is $V = A \cdot \Delta L$.
+            <br>The total number of free electrons in this volume is $N = n \cdot V = n A \Delta L$.
+            <br>The total charge in this section is $\Delta Q = N \cdot e = n A \Delta L e$.
+            <br>The time taken for these electrons to cross the length $\Delta L$ at a drift speed $v_d$ is $\Delta t = \frac{\Delta L}{v_d}$.
+            <br>The electric current $I$ is the rate of flow of charge:</p>
+            $$ I = \frac{\Delta Q}{\Delta t} = \frac{n A \Delta L e}{\Delta L / v_d} $$
+            $$ I = n A e v_d $$
+            <p>This is the required relation between electric current $I$ and drift velocity $v_d$.</p>
+        </div>
+        
+        <h3 id="q11">Q11: Combination of Cells</h3>
+        <div class="question-box">
+            <strong>Q11.</strong> Derive an expression for a combination of cells in the following: (i) Series combination, (ii) Parallel combination.
+        </div>
+        <div class="solution-box">
+            <h5>(i) Series Combination</h5>
+            <p>Consider two cells with emfs $\mathcal{E}_1, \mathcal{E}_2$ and internal resistances $r_1, r_2$ connected in series between points A and C. Let the current flowing through the combination be $I$.</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 250" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" fill="#c9c5d4">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#00e5ff" />
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#1e1b29" rx="10" />
+  <path d="M 50 125 L 120 125 M 220 125 L 280 125 M 380 125 L 450 125" stroke="#c9c5d4" stroke-width="2" fill="none" />
+  <g transform="translate(120 125)">
+    <rect x="-10" y="-40" width="110" height="80" stroke="#3a354f" stroke-dasharray="5,5" fill="none" rx="5" />
+    <line x1="5" y1="-25" x2="5" y2="25" stroke="#f0f0f0" stroke-width="2" />
+    <line x1="15" y1="-15" x2="15" y2="15" stroke="#f0f0f0" stroke-width="4" />
+    <path d="M 40 0 l 5 -10 l 10 20 l 10 -20 l 10 20 l 10 -20 l 10 20 l 5 -10" stroke="#9e4dff" stroke-width="2" fill="none" />
+    <text x="10" y="-45" font-size="18">
+      <tspan font-style="italic">ε</tspan><tspan dy="5" font-size="12">1</tspan>
+    </text>
+    <text x="70" y="-15" text-anchor="middle">
+      <tspan font-style="italic">r</tspan><tspan dy="5" font-size="12">1</tspan>
+    </text>
+  </g>
+  <g transform="translate(280 125)">
+    <rect x="-10" y="-40" width="110" height="80" stroke="#3a354f" stroke-dasharray="5,5" fill="none" rx="5" />
+    <line x1="5" y1="-25" x2="5" y2="25" stroke="#f0f0f0" stroke-width="2" />
+    <line x1="15" y1="-15" x2="15" y2="15" stroke="#f0f0f0" stroke-width="4" />
+    <path d="M 40 0 l 5 -10 l 10 20 l 10 -20 l 10 20 l 10 -20 l 10 20 l 5 -10" stroke="#9e4dff" stroke-width="2" fill="none" />
+    <text x="10" y="-45" font-size="18">
+      <tspan font-style="italic">ε</tspan><tspan dy="5" font-size="12">2</tspan>
+    </text>
+    <text x="70" y="-15" text-anchor="middle">
+      <tspan font-style="italic">r</tspan><tspan dy="5" font-size="12">2</tspan>
+    </text>
+  </g>
+  <text x="50" y="150" text-anchor="middle" font-size="20" fill="#f0f0f0">A</text>
+  <text x="250" y="150" text-anchor="middle" font-size="20" fill="#f0f0f0">B</text>
+  <text x="450" y="150" text-anchor="middle" font-size="20" fill="#f0f0f0">C</text>
+  <path d="M 150 70 a 50 50 0 0 1 200 0" stroke="#00e5ff" stroke-width="2.5" fill="none" marker-end="url(#arrow-blue)" />
+  <text x="250" y="60" text-anchor="middle" fill="#00e5ff" font-size="24" font-style="italic" font-weight="bold">I</text>
+</svg>            <p>The potential difference across the first cell (between A and B) is:</p>
+            $$ V_{AB} = V_A - V_B = \mathcal{E}_1 - Ir_1 $$
+            <p>The potential difference across the second cell (between B and C) is:</p>
+            $$ V_{BC} = V_B - V_C = \mathcal{E}_2 - Ir_2 $$
+            <p>The total potential difference across the combination (between A and C) is:</p>
+            $$ V_{AC} = V_A - V_C = (V_A - V_B) + (V_B - V_C) = V_{AB} + V_{BC} $$
+            $$ V_{AC} = (\mathcal{E}_1 - Ir_1) + (\mathcal{E}_2 - Ir_2) = (\mathcal{E}_1 + \mathcal{E}_2) - I(r_1 + r_2) $$
+            <p>If we replace this combination with a single equivalent cell of emf $\mathcal{E}_{eq}$ and internal resistance $r_{eq}$, the potential difference across it would be $V_{AC} = \mathcal{E}_{eq} - Ir_{eq}$.
+            Comparing the two expressions, we get:</p>
+            $$ \mathcal{E}_{eq} = \mathcal{E}_1 + \mathcal{E}_2 \quad \text{and} \quad r_{eq} = r_1 + r_2 $$
+            <p>For N cells in series: $\mathcal{E}_{eq} = \sum \mathcal{E}_i$ and $r_{eq} = \sum r_i$.</p>
+
+            <h5>(ii) Parallel Combination</h5>
+            <p>Consider two cells with emfs $\mathcal{E}_1, \mathcal{E}_2$ and internal resistances $r_1, r_2$ connected in parallel between points A and B. Let the total current be $I = I_1 + I_2$.</p>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" fill="#c9c5d4">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#00e5ff" />
+    </marker>
+    <marker id="arrow-pink" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff3d8b" />
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#1e1b29" rx="10" />
+  <path d="M 50 175 L 120 175 M 120 175 L 120 100 L 380 100 L 380 175 M 120 175 L 120 250 L 380 250 L 380 175 M 380 175 L 450 175" stroke="#c9c5d4" stroke-width="2" fill="none" />
+  <g transform="translate(180 100)">
+    <line x1="5" y1="-25" x2="5" y2="25" stroke="#f0f0f0" stroke-width="2" />
+    <line x1="15" y1="-15" x2="15" y2="15" stroke="#f0f0f0" stroke-width="4" />
+    <path d="M 40 0 l 5 -10 l 10 20 l 10 -20 l 10 20 l 10 -20 l 10 20 l 5 -10" stroke="#9e4dff" stroke-width="2" fill="none" />
+    <text x="10" y="-30" font-size="18">
+      <tspan font-style="italic">ε</tspan><tspan dy="5" font-size="12">1</tspan>
+    </text>
+    <text x="70" y="-15" text-anchor="middle">
+      <tspan font-style="italic">r</tspan><tspan dy="5" font-size="12">1</tspan>
+    </text>
+  </g>
+  <g transform="translate(180 250)">
+    <line x1="5" y1="-25" x2="5" y2="25" stroke="#f0f0f0" stroke-width="2" />
+    <line x1="15" y1="-15" x2="15" y2="15" stroke="#f0f0f0" stroke-width="4" />
+    <path d="M 40 0 l 5 -10 l 10 20 l 10 -20 l 10 20 l 10 -20 l 10 20 l 5 -10" stroke="#9e4dff" stroke-width="2" fill="none" />
+    <text x="10" y="-30" font-size="18">
+      <tspan font-style="italic">ε</tspan><tspan dy="5" font-size="12">2</tspan>
+    </text>
+    <text x="70" y="-15" text-anchor="middle">
+      <tspan font-style="italic">r</tspan><tspan dy="5" font-size="12">2</tspan>
+    </text>
+  </g>
+  <text x="110" y="160" text-anchor="middle" font-size="20" fill="#f0f0f0">A</text>
+  <text x="390" y="160" text-anchor="middle" font-size="20" fill="#f0f0f0">B</text>
+  <line x1="50" y1="175" x2="110" y2="175" stroke="#ff3d8b" stroke-width="2.5" marker-end="url(#arrow-pink)" />
+  <text x="80" y="165" text-anchor="middle" fill="#ff3d8b" font-style="italic" font-weight="bold" font-size="20">I</text>
+  <line x1="120" y1="100" x2="170" y2="100" stroke="#00e5ff" stroke-width="2" marker-end="url(#arrow-blue)" />
+  <text x="145" y="90" text-anchor="middle" fill="#00e5ff" font-style="italic" font-size="18">I<tspan dy="5" font-size="12">1</tspan></text>
+  <line x1="120" y1="250" x2="170" y2="250" stroke="#00e5ff" stroke-width="2" marker-end="url(#arrow-blue)" />
+  <text x="145" y="270" text-anchor="middle" fill="#00e5ff" font-style="italic" font-size="18">I<tspan dy="5" font-size="12">2</tspan></text>
+  <line x1="390" y1="175" x2="450" y2="175" stroke="#ff3d8b" stroke-width="2.5" marker-end="url(#arrow-pink)" />
+  <text x="420" y="165" text-anchor="middle" fill="#ff3d8b" font-style="italic" font-weight="bold" font-size="20">I</text>
+</svg>            <p>Let $V = V_A - V_B$ be the terminal voltage across the combination.
+            For the first cell: $V = \mathcal{E}_1 - I_1r_1 \implies I_1 = \frac{\mathcal{E}_1 - V}{r_1}$.
+            <br>For the second cell: $V = \mathcal{E}_2 - I_2r_2 \implies I_2 = \frac{\mathcal{E}_2 - V}{r_2}$.
+            <br>Substituting these into $I = I_1 + I_2$:</p>
+            $$ I = \frac{\mathcal{E}_1 - V}{r_1} + \frac{\mathcal{E}_2 - V}{r_2} = \left(\frac{\mathcal{E}_1}{r_1} + \frac{\mathcal{E}_2}{r_2}\right) - V\left(\frac{1}{r_1} + \frac{1}{r_2}\right) $$
+            <p>Rearranging for V:</p>
+            $$ V\left(\frac{1}{r_1} + \frac{1}{r_2}\right) = \left(\frac{\mathcal{E}_1}{r_1} + \frac{\mathcal{E}_2}{r_2}\right) - I $$
+            $$ V = \frac{\frac{\mathcal{E}_1r_2 + \mathcal{E}_2r_1}{r_1r_2}}{\frac{r_1+r_2}{r_1r_2}} - I \frac{1}{\frac{r_1+r_2}{r_1r_2}} = \frac{\mathcal{E}_1r_2 + \mathcal{E}_2r_1}{r_1+r_2} - I \frac{r_1r_2}{r_1+r_2} $$
+            <p>Comparing with $V = \mathcal{E}_{eq} - Ir_{eq}$, we get:</p>
+            $$ \mathcal{E}_{eq} = \frac{\mathcal{E}_1r_2 + \mathcal{E}_2r_1}{r_1+r_2} \quad \text{and} \quad r_{eq} = \frac{r_1r_2}{r_1+r_2} $$
+        </div>
+
+        <h3 id="q12">Q12: Kirchhoff's Laws</h3>
+        <p>For a quick revision, visit: <a href="./Physics/CurrentElectricity.html#section-32-7">Kirchhoff's Laws</a></p>
+        <div class="question-box">
+            <strong>Q12.</strong> Write the statement of both Kirchhoff's laws. Also, explain what laws are based on.
+        </div>
+        <div class="solution-box">
+            <h5>1. Kirchhoff's First Law (Junction Rule or KCL)</h5>
+            <ul>
+                <li><strong>Statement:</strong> The algebraic sum of the electric currents meeting at any junction in an electrical circuit is zero.
+                <br>Mathematically: $\sum I = 0$ at a junction.
+                <br>This means that the total current entering a junction must equal the total current leaving that junction.</li>
+                <li><strong>Basis:</strong> This law is based on the <strong>Law of Conservation of Charge</strong>. Since charge cannot accumulate or be lost at a junction, the rate at which charge enters the junction must be equal to the rate at which it leaves.</li>
+            </ul>
+
+            <h5>2. Kirchhoff's Second Law (Loop Rule or KVL)</h5>
+            <ul>
+                <li><strong>Statement:</strong> The algebraic sum of the changes in potential (or potential differences) around any closed loop in an electrical circuit is zero.
+                <br>Mathematically: $\sum \Delta V = 0$ for any closed loop.
+                <br>This means that if you start at any point in a closed loop and traverse it, the sum of all the electromotive forces (emfs) encountered is equal to the sum of all the potential drops across the resistors.</li>
+                <li><strong>Basis:</strong> This law is based on the <strong>Law of Conservation of Energy</strong>. The electric potential at a point is a measure of the potential energy per unit charge. If we move a charge around a closed loop and return to the starting point, its potential energy must be the same, meaning the net change in energy (and thus potential) is zero.</li>
+            </ul>
+        </div>
+        
+        <h3 id="q13">Q13: Capacitance (Vacuum)</h3>
+        <div class="question-box">
+            <strong>Q13.</strong> Derive an expression for capacitance in the case of a parallel plate capacitor, in case the medium separating both plates is a vacuum.
+        </div>
+        <div class="solution-box">
+            <p>Consider a parallel plate capacitor consisting of two large parallel conducting plates, each of area $A$, separated by a small distance $d$. The medium between the plates is a vacuum (or air).</p>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" fill="#c9c5d4">
+  <defs>
+    <filter id="glow-blue" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+      <feFlood flood-color="#00e5ff" result="color" />
+      <feComposite in="color" in2="blur" operator="in" result="glow" />
+      <feMerge>
+        <feMergeNode in="glow" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#00e5ff" />
+    </marker>
+    <marker id="dist-marker" viewBox="0 0 2 10" refX="1" refY="5" markerWidth="2" markerHeight="10" orient="auto">
+      <line x1="1" y1="0" x2="1" y2="10" stroke="#c9c5d4" stroke-width="2" />
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" fill="#1e1b29" rx="10" />
+  <g>
+    <rect x="120" y="50" width="30" height="300" fill="#3a354f" />
+    <rect x="120" y="50" width="30" height="300" fill="#c9c5d4" stroke="#f0f0f0" stroke-width="1.5" rx="2" />
+    <rect x="350" y="50" width="30" height="300" fill="#3a354f" />
+    <rect x="350" y="50" width="30" height="300" fill="#c9c5d4" stroke="#f0f0f0" stroke-width="1.5" rx="2" />
+  </g>
+  <g font-size="22" font-weight="bold" text-anchor="middle">
+    <text x="135" y="80" fill="#ff3d8b">+</text>
+    <text x="135" y="120" fill="#ff3d8b">+</text>
+    <text x="135" y="160" fill="#ff3d8b">+</text>
+    <text x="135" y="200" fill="#ff3d8b">+</text>
+    <text x="135" y="240" fill="#ff3d8b">+</text>
+    <text x="135" y="280" fill="#ff3d8b">+</text>
+    <text x="135" y="320" fill="#ff3d8b">+</text>
+    <text x="365" y="80" fill="#9e4dff">-</text>
+    <text x="365" y="120" fill="#9e4dff">-</text>
+    <text x="365" y="160" fill="#9e4dff">-</text>
+    <text x="365" y="200" fill="#9e4dff">-</text>
+    <text x="365" y="240" fill="#9e4dff">-</text>
+    <text x="365" y="280" fill="#9e4dff">-</text>
+    <text x="365" y="320" fill="#9e4dff">-</text>
+  </g>
+  <text x="135" y="35" text-anchor="middle" font-size="22" fill="#ff3d8b" font-weight="bold">+Q</text>
+  <text x="365" y="35" text-anchor="middle" font-size="22" fill="#9e4dff" font-weight="bold">-Q</text>
+  <g stroke="#00e5ff" stroke-width="2" marker-end="url(#arrow-blue)" filter="url(#glow-blue)">
+    <line x1="170" y1="100" x2="330" y2="100" />
+    <line x1="170" y1="150" x2="330" y2="150" />
+    <line x1="170" y1="200" x2="330" y2="200" />
+    <line x1="170" y1="250" x2="330" y2="250" />
+    <line x1="170" y1="300" x2="330" y2="300" />
+  </g>
+  <text x="250" y="85" text-anchor="middle" fill="#00e5ff" font-size="24" font-style="italic" font-weight="bold">E</text>
+  <line x1="150" y1="360" x2="350" y2="360" stroke="#c9c5d4" marker-start="url(#dist-marker)" marker-end="url(#dist-marker)" />
+  <text x="250" y="380" text-anchor="middle">distance d</text>
+  <text x="70" y="200" text-anchor="middle">Area A</text>
+</svg>
+            <p>Let a charge $+Q$ be given to one plate and $-Q$ to the other. The surface charge density on each plate is:</p>
+            $$ \sigma = \frac{Q}{A} $$
+            <p>For large plates, the electric field in the region between the plates is uniform and is given by:</p>
+            $$ E = \frac{\sigma}{\epsilon_0} $$
+            <p>where $\epsilon_0$ is the permittivity of free space (vacuum).
+            Substituting the value of $\sigma$:</p>
+            $$ E = \frac{Q}{A\epsilon_0} $$
+            <p>The potential difference $V$ between the plates is the work done in moving a unit positive charge from the negative plate to the positive plate, which is:</p>
+            $$ V = E \times d $$
+            $$ V = \frac{Qd}{A\epsilon_0} $$
+            <p>The capacitance $C$ of a capacitor is defined as the ratio of the charge on either plate to the potential difference between the plates:</p>
+            $$ C = \frac{Q}{V} $$
+            <p>Substituting the expression for $V$:</p>
+            $$ C = \frac{Q}{\frac{Qd}{A\epsilon_0}} $$
+            $$ C = \frac{A\epsilon_0}{d} $$
+            <p>This is the expression for the capacitance of a parallel plate capacitor with a vacuum between its plates.</p>
+        </div>
+        
+        <h3 id="q14">Q14: Capacitance (Dielectric)</h3>
+        <div class="question-box">
+            <strong>Q14.</strong> Derive an expression for capacitance in the case of a parallel plate capacitor, in case the medium separating both plates is a Dielectric of dielectric constant k.
+        </div>
+        <div class="solution-box">
+            <p>Consider the same parallel plate capacitor with area $A$ and separation $d$. Now, the space between the plates is completely filled with a dielectric material of dielectric constant $K$.</p>
+            <p>When a dielectric is introduced into an external electric field $E_0$, it gets polarized, and an internal electric field $E_p$ is induced in the opposite direction. The net electric field inside the dielectric is reduced.</p>
+            <p>The electric field in vacuum between the plates was $E_0 = \frac{Q}{A\epsilon_0}$.
+            <br>The net electric field $E$ inside the dielectric is given by:</p>
+            $$ E = \frac{E_0}{K} = \frac{Q}{KA\epsilon_0} $$
+            <p>The potential difference $V$ between the plates is now:</p>
+            $$ V = E \times d $$
+            $$ V = \frac{Qd}{KA\epsilon_0} $$
+            <p>The new capacitance $C'$ with the dielectric is:</p>
+            $$ C' = \frac{Q}{V} $$
+            <p>Substituting the new expression for $V$:</p>
+            $$ C' = \frac{Q}{\frac{Qd}{KA\epsilon_0}} $$
+            $$ C' = \frac{KA\epsilon_0}{d} $$
+            <p>We know that the capacitance in vacuum is $C_0 = \frac{A\epsilon_0}{d}$. Therefore, we can write:</p>
+            $$ C' = K \cdot C_0 $$
+            <p>Thus, introducing a dielectric of constant $K$ increases the capacitance by a factor of $K$.</p>
+        </div>
+        
+        <h3 id="q15">Q15: Properties of E-Field Lines</h3>
+        <div class="question-box">
+            <strong>Q15.</strong> Mention all the properties of electric field lines.
+        </div>
+        <div class="solution-box">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#c9c5d4">
+  <!-- Definitions for filters and markers -->
+  <defs>
+    <!-- Glow filter for the positive charge -->
+    <filter id="glow-pink" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+      <feFlood flood-color="#ff3d8b" result="color" />
+      <feComposite in="color" in2="blur" operator="in" result="glow" />
+      <feMerge>
+        <feMergeNode in="glow" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <!-- Glow filter for the negative charge -->
+    <filter id="glow-purple" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+      <feFlood flood-color="#9e4dff" result="color" />
+      <feComposite in="color" in2="blur" operator="in" result="glow" />
+      <feMerge>
+        <feMergeNode in="glow" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <!-- Arrow marker for the field lines -->
+    <marker id="arrow-field" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#00e5ff" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#1e1b29" rx="10" />
+
+  <!-- Group for the electric field lines -->
+  <g stroke="#00e5ff" stroke-width="2" fill="none" marker-mid="url(#arrow-field)">
+    <!-- Curved lines originating from the center of +q and terminating at the center of -q -->
+    <!-- The charge circles will be drawn over the ends, creating the correct visual effect. -->
+    
+    <!-- Inner Pair -->
+    <path d="M 120,220 C 260,170 340,170 480,220" />
+    <path d="M 120,230 C 260,280 340,280 480,230" />
+    
+    <!-- Middle Pair -->
+    <path d="M 120,210 C 250,110 350,110 480,210" />
+    <path d="M 120,240 C 250,340 350,340 480,240" />
+
+    <!-- Outer Pair -->
+    <path d="M 120,200 C 220,30 380,30 480,200" />
+    <path d="M 120,250 C 220,420 380,420 480,250" />
+    
+    <!-- Straight line (drawn separately to start/end at circle edges) -->
+    <path d="M 140,225 L 460,225" marker-mid="none" marker-end="url(#arrow-field)" />
+  </g>
+
+  <!-- Positive Charge -->
+  <g transform="translate(100 225)">
+    <circle r="20" fill="#ff3d8b" filter="url(#glow-pink)" />
+    <text text-anchor="middle" dy=".3em" font-size="24" fill="#f0f0f0" font-weight="bold">+</text>
+    <text x="0" y="35" text-anchor="middle" font-size="18" fill="#f0f0f0">+q</text>
+  </g>
+
+  <!-- Negative Charge -->
+  <g transform="translate(500 225)">
+    <circle r="20" fill="#9e4dff" filter="url(#glow-purple)" />
+    <text text-anchor="middle" dy=".3em" font-size="24" fill="#f0f0f0" font-weight="bold">−</text>
+    <text x="0" y="35" text-anchor="middle" font-size="18" fill="#f0f0f0">-q</text>
+  </g>
+
+</svg>
+            <p>Electric field lines are imaginary lines used to visualize electric fields. Their key properties are:</p>
+            <ol>
+                <li><strong>Origin and Termination:</strong> Electric field lines originate from positive charges (or infinity) and terminate on negative charges (or infinity).</li>
+                <li><strong>Tangent gives Direction:</strong> The tangent drawn to an electric field line at any point gives the direction of the net electric field at that point.</li>
+                <li><strong>Never Intersect:</strong> Two electric field lines can never cross each other. If they did, it would mean there are two different directions of the electric field at the point of intersection, which is physically impossible.</li>
+                <li><strong>No Closed Loops:</strong> Electrostatic field lines do not form closed loops. This is because the electrostatic field is conservative in nature (work done in a closed path is zero).</li>
+                <li><strong>Perpendicular to Conductors:</strong> Electric field lines are always perpendicular to the surface of a conductor in electrostatic equilibrium. This is because the surface of a conductor is an equipotential surface.</li>
+                <li><strong>Density represents Strength:</strong> The relative density (closeness) of the field lines in a region represents the strength of the electric field. Where the lines are close, the field is strong; where they are far apart, the field is weak.</li>
+                <li><strong>Longitudinal Contraction and Lateral Pressure:</strong> Field lines tend to contract longitudinally (like a stretched string), which explains the attraction between opposite charges. They also exert a lateral pressure on each other, which explains the repulsion between like charges.</li>
+            </ol>
+        </div>
+        
+    </main>
+
+</body>
+</html>
